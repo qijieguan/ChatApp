@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './component/Header.js';
+import Home from './component/Home.js';
+import Register from './component/Register.js';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+
+//mongodb+srv://qijieguan:<qijieguan1819>@cluster0.b2u5k.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+      <Router>
+          <Header/>
+          <Switch>
+            <Route path="/" exact component={Home}/>
+            <Route path="/Register" exact component={Register}/>
+          </Switch>
+      </Router>
     </div>
   );
 }
