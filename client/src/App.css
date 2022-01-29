@@ -144,9 +144,7 @@ button {
     box-shadow: 0 0 3px rgb(44, 44, 44);
 }
 
-button:hover {
-    box-shadow: 0 0 5px 2px black;
-}
+button:hover { box-shadow: 0 0 5px 2px black; }
 
 a { text-decoration: none; }
 

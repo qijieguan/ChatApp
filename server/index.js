@@ -12,7 +12,6 @@ app.use(cors());
 
 const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
-const connection = mongoose.connection;
 
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);

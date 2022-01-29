@@ -1,21 +1,73 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const jwt = require('jsonwebtoken');
+
 router.route('/').get((req, res) => {
     User.find()
     .then(users => res.json(users))
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/register').post((req, res) => {
+    const username = req.body.username;
+    let password = req.body.password;
+    const image_url = req.body.image_url;
+
+    bcrypt.hash(password, saltRounds, (err, hash) => {
+        if (err) { console.log(err) }
+        else {
+            password = hash;
+            const newUser = new User({username, password, image_url});
+            newUser.save()
+            .then(() => res.json('Users added!'))
+            .catch(err => res.status(400).json("Error " + err));     
+        }
+    });    
+});
+
+router.route('/login').post((req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-    const image_url = req.body.image_url;
-    const newUser = new User({username, password, image_url});
-    
-    newUser.save()
-    .then(() => res.json('Users added!'))
-    .catch(err => res.status(400).json("Error " + err))
+
+    User.find({username: username}) 
+    .then(users => {
+        bcrypt.compare(password, users[0].password, (err, response) => {
+            if (err) { return; }
+            if (response) { 
+                const id = users[0]._id;
+                const token = jwt.sign({id}, process.env.JWT_SECRET, {expiresIn: 300});
+                res.json(token); 
+            }
+            else { res.json("Invalid Username/Password combinations!") }
+        });
+    })
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+const verifyJWT = (req, res, next) => {
+    const token = req.headers["x-access-token"];
+    if (!token) { res.send({auth: false, message: "Token is missing!", error: true}); }
+    else {
+        jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+            if (err) { res.send({auth: false, message: "Authentication failed!", error: true}); }
+            else { req.userID = decoded.id; next(); }
+        });
+    }
+}
+
+router.route('/auth').get(verifyJWT, (req, res) => { 
+    res.send({ auth: true, message: "User successfully authenticated!" });
+});
+
+router.route('/load').post((req, res) => {
+    const username = req.body.username;
+
+    User.find({username: username})
+    .then(user => {res.json(user[0])})
+    .catch(err => res.status(400).json("Error " + err));
 });
 
 module.exports = router;

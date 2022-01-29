@@ -10,6 +10,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
+    const [message, setMessage] = useState("");
 
     const readFiles = (files) => {
         if (!files) { return }
@@ -31,14 +32,15 @@ const Register = () => {
             body: data
         })
         .then(res => res.json()).then(json => {
-            axios.post('http://localhost:3001/users/add/', {
-            username: username,
-            password: password,
-            image_url: json.secure_url
-            }).then((response) => {
-                console.log(response.data);
+            axios.post('http://localhost:3001/users/register/', {
+                username: username,
+                password: password,
+                image_url: json.secure_url
+            }).then((response) => { 
+                setMessage(response.data)
+                document.getElementById("register-msg").style.display = 'block'; 
             });
-        })
+        });
     };
 
     const handleChange = (event) => {
@@ -49,13 +51,16 @@ const Register = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         uploadImage();
+        setUsername("");
+        setPassword("");
         setURL("");
         setFiles([]);
     };
 
     return(
         <form id="register" onSubmit={handleSubmit}>
-            <h1 id="register-label">Register Your Account</h1>
+            <h1 id="register-label" style={{display: 'none', color: 'limegreen'}}>Register Your Account</h1>
+            <h3 id="register-msg">{message}</h3>
             <div id="input-container">
                 <div id="input-image">
                     <img src={url ? url : defaultURL} id="preview-image" alt=""/>
