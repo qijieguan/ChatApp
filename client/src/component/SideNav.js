@@ -1,5 +1,5 @@
 import { AiFillHome } from 'react-icons/ai';
-import { BsFillPersonFill, BsFillPersonPlusFill } from 'react-icons/bs';
+import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 

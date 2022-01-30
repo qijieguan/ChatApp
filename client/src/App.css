@@ -240,14 +240,30 @@
 .user:hover .user-add { font-size: 36px; }
 
 button {
-    margin-right: 5px;
+    position: relative;
+    margin-right: 10px;
     font-size: 16px;
     border: 0;
     border-radius: 3px; 
     box-shadow: 0 0 3px rgb(44, 44, 44);
+    overflow: hidden;
 }
 
 button:hover { box-shadow: 0 0 5px 2px black; }
+
+span {
+    position: absolute;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: ripple 1s linear;
+}
+
+@keyframes ripple {
+    0% { width: 0; height: 0; opacity: 0.5;}
+    100% { width: 500px; height: 500px; opacity: 0;}
+}
 
 a { text-decoration: none; }
 
