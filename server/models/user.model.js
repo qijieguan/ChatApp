@@ -14,12 +14,23 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 3
+        minlength: 5
     },
     image_url : {
         type: String,
         required: true,
         unique: true,
+        trim: true,
+    },
+    firstname: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 3
+    },
+    lastname: {
+        type: String,
+        required: true,
         trim: true,
         minlength: 3
     }

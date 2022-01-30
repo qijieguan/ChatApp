@@ -45,7 +45,6 @@ const Login = () => {
         }).then((response) => {
             if (response.data.auth) {
                 localStorage.setItem("isLogged", true);
-                setToken("");
                 setModal(false);
                 axios.post('http://localhost:3001/users/load/', {
                     username: username

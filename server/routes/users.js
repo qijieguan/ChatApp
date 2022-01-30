@@ -15,12 +15,14 @@ router.route('/register').post((req, res) => {
     const username = req.body.username;
     let password = req.body.password;
     const image_url = req.body.image_url;
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) { console.log(err) }
         else {
             password = hash;
-            const newUser = new User({username, password, image_url});
+            const newUser = new User({username, password, image_url, firstname, lastname});
             newUser.save()
             .then(() => res.json('Users added!'))
             .catch(err => res.status(400).json("Error " + err));     
