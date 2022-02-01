@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { AiFillCloseSquare } from 'react-icons/ai';
+import { useEffect } from 'react';
 
 const Login = () => {
 
@@ -33,6 +34,10 @@ const Login = () => {
     const [token, setToken] = useState("");
     const [modal, setModal] = useState(false);
     const [message, setMessage] = useState("");
+
+    useEffect(() => {
+        if (localStorage.getItem('isLogged')) { window.location.href="/Dashboard" }
+    },[])
 
     const handleChange = (event) => {
         if (event.target.name === "name") { setUsername(event.target.value); }

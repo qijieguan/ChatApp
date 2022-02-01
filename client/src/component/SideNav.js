@@ -2,8 +2,24 @@ import { AiFillHome } from 'react-icons/ai';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setFriends } from './actions/index.js';
+import axios from 'axios';
 
 const Side = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if (localStorage.getItem("isLogged")) {
+            axios.post('http://localhost:3001/friends/', {
+                user_id: JSON.parse(localStorage.getItem('user'))._id,
+            })
+            .then((response) => { dispatch(setFriends(response.data)); });
+        }
+    }, [dispatch]);
+
     return (
         <div id="side-panel" style={{display: localStorage.getItem('isLogged') ? 'block' : 'none'}}>
             <Link to='/Dashboard' className="side-li" style={{borderRadius: '5px 0 0 0'}}>

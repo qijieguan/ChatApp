@@ -35,11 +35,11 @@ router.route('/login').post((req, res) => {
     const password = req.body.password;
 
     User.find({username: username}) 
-    .then(users => {
-        bcrypt.compare(password, users[0].password, (err, response) => {
+    .then(user => {
+        bcrypt.compare(password, user[0].password, (err, response) => {
             if (err) { return; }
             if (response) { 
-                const id = users[0]._id;
+                const id = user[0]._id;
                 const token = jwt.sign({id}, process.env.JWT_SECRET, {expiresIn: 300});
                 res.json(token); 
             }

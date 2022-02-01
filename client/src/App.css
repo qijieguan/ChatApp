@@ -202,7 +202,6 @@
     background: white;
     height: 100%;
     width: 100%;
-    border: 1px solid gray;
     box-shadow: 0 0 5px;
     transition: 0.5s all;
     transition-delay: 0.5s;

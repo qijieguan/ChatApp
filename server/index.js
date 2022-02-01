@@ -14,7 +14,10 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri);
 
 const usersRouter = require('./routes/users');
+const friendsRouter = require('./routes/friends');
+
 app.use('/users', usersRouter);
+app.use('/friends', friendsRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}!`);
