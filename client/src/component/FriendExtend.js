@@ -17,10 +17,14 @@ const Extend = ({ friend }) => {
 
     return (
         <div className="friend-extend">
-            <img src={friend.image_url} className="friend-profile" alt=""/>
-            <div className="friend-name">{friend.firstname} {friend.lastname}</div>
-            <BsFillChatDotsFill className='chat-icon' size={20}/>
-            <RiCloseCircleFill className='unfriend-icon' size={20} onClick={handleUnfriend}/>
+            <div className='friend-container'>
+                <img src={friend.image_url} className="friend-profile" alt=""/>
+                <div className="friend-name">{friend.firstname} {friend.lastname}</div>
+                <BsFillChatDotsFill className='chat-icon' size={20}/>
+                <div className='unfriend-icon'>
+                    <RiCloseCircleFill size={24} onClick={handleUnfriend}/>
+                </div>
+            </div>
         </div>
     );
 } 
