@@ -28,11 +28,7 @@ const Register = () => {
         data.append('file', files[0]);
         data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload',
-        {
-            method: 'POST',
-            body: data
-        })
+        fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => {
             axios.post('http://localhost:3001/users/register/', {
                 username: username,
@@ -41,7 +37,8 @@ const Register = () => {
                 firstname: fname,
                 lastname: lname
             }).then((response) => { 
-                setMessage(response.data)
+                axios.post('http://localhost:3001/friends/init/', { user_id: response.data._id });
+                setMessage("User is added!");
                 document.getElementById("register-msg").style.display = 'block'; 
             });
         });

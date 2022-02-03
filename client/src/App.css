@@ -42,7 +42,7 @@
 #home {
     display: flex;
     min-height: 800px;
-    background: url("https://images.pexels.com/photos/1111369/pexels-photo-1111369.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background: url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
     background-size: cover;
 }
 
@@ -53,15 +53,23 @@
     height: 500px;
     width: 400px;
     color: white;
-    background: linear-gradient(45deg, red, orange);
+    background: linear-gradient(45deg, blue, orange);
     border-radius: 5px;
     box-shadow: 0 0 5px black;
-    animation: translateXLeft 0.5s ease-out;
+    animation: translateXRight 0.5s ease-out;
 }
 
-@keyframes translateXLeft {
+@keyframes translateXRight {
     0% { transform: translateX(-100%) }
     100% { transform: translateX(0%) }
+}
+
+#login-label {
+    font-size: 32px;
+    letter-spacing: 1px;
+    color: transparent;
+    background: linear-gradient(45deg, navy, red);
+    background-clip: text;
 }
 
 #register {
@@ -90,7 +98,7 @@
     font-size: 32px;
     letter-spacing: 1px;
     color: transparent;
-    background: linear-gradient(45deg, orange, red);
+    background: linear-gradient(45deg, green, red);
     background-clip: text;
 }
 
@@ -137,11 +145,11 @@
     position: absolute;
     margin-top: 50px;
     right: 0;
-    animation: translateXRight 0.2s linear;
+    animation: translateXLeft 0.2s linear;
     z-index: 3;
 }
 
-@keyframes translateXRight {
+@keyframes translateXLeft {
     0% { transform: translateX(100%); }
     100% { transform: translateX(0%); }
 }
@@ -237,6 +245,76 @@
 .user:hover .user-name { font-size: 20px; }
 
 .user:hover .user-add { font-size: 36px; }
+
+#friend {
+    margin-left: 10%;
+    min-height: 700px;
+    width: 80%;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px;
+}
+
+.friend-extend {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 50px 0 0 5%;
+    height: 150px;
+    width: 18%;
+    border-radius: 5px;
+}
+
+.friend-name { color: white; transform: translateY(-100%); z-index: 2;}
+
+.friend-extend:hover .friend-name { color: yellowgreen; }
+
+.friend-profile {
+    height: 100%;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+    object-fit: cover;
+    z-index: 2;
+    animation: borderSwap 5s linear infinite alternate;
+}
+
+@keyframes borderSwap {
+    0% { box-shadow: 0 0 5px 1px; }
+    33% { box-shadow: 0 0 5px 1px green; }
+    66% { box-shadow: 0 0 5px 1px red; }
+    100% { box-shadow: 0 0 5px 1px blue; }
+}
+
+#friend h1 {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 45px;
+    color: yellowgreen;
+}
+
+.chat-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 10px 30px 0;
+    z-index: 2;
+    color: white;
+}
+
+.chat-icon:hover { color: yellowgreen; }
+
+.unfriend-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 8px;
+    color: gray;
+    z-index: 2;
+    opacity: 0.8;
+}
+
+.unfriend-icon:hover { color: red; }
 
 button {
     position: relative;

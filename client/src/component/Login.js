@@ -35,9 +35,7 @@ const Login = () => {
     const [modal, setModal] = useState(false);
     const [message, setMessage] = useState("");
 
-    useEffect(() => {
-        if (localStorage.getItem('isLogged')) { window.location.href="/Dashboard" }
-    },[])
+    useEffect(() => { if (sessionStorage.getItem('isLogged')) { window.location.href="/Dashboard" } },[]);
 
     const handleChange = (event) => {
         if (event.target.name === "name") { setUsername(event.target.value); }
@@ -45,16 +43,14 @@ const Login = () => {
     }
 
     const authentication = () => {
-        axios.get('http://localhost:3001/users/auth/', {
-            headers: { "x-access-token": token }
-        }).then((response) => {
+        axios.get('http://localhost:3001/users/auth/', { headers: { "x-access-token": token } })
+        .then((response) => {
             if (response.data.auth) {
-                localStorage.setItem("isLogged", true);
+                sessionStorage.setItem("isLogged", true);
                 setModal(false);
-                axios.post('http://localhost:3001/users/load/', {
-                    username: username
-                }).then((response) => { 
-                    localStorage.setItem("user", JSON.stringify(response.data)); 
+                axios.post('http://localhost:3001/users/load/', { username: username })
+                .then((response) => { 
+                    sessionStorage.setItem("user", JSON.stringify(response.data)); 
                     window.location.href = "/Dashboard";
                 });
             }
@@ -63,10 +59,8 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3001/users/login/', {
-            username: username,
-            password: password,
-        }).then((response) => { 
+        axios.post('http://localhost:3001/users/login/', { username: username, password: password, })
+        .then((response) => { 
             if (response.data !== "Invalid Username/Password combinations!") { 
                 setToken(response.data); 
                 setModal(true);
@@ -82,10 +76,10 @@ const Login = () => {
     return(
         <div>
             <form id="login" onSubmit={handleSubmit}>
-                <h1 style={{fontSize: '28px'}}>Login</h1>
+                <h1 id="login-label">Login</h1>
                 <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
                 <div style={inputStyle}>
-                    <div style={iconStyle}><FaUser size={20}/></div>
+                    <div style={Object.assign({background: 'blue'}, iconStyle)}><FaUser size={20}/></div>
                     <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 </div>
                 <div style={inputStyle}>

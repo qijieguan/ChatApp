@@ -5,8 +5,17 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 
+
 router.route('/').get((req, res) => {
     User.find()
+    .then(users => res.json(users))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+router.route('/').post((req, res) => {
+    const friend_ids = req.body.friend_ids;
+   
+    User.find({_id: {$in: friend_ids}})
     .then(users => res.json(users))
     .catch(err => res.status(400).json("Error " + err));
 });
@@ -24,7 +33,7 @@ router.route('/register').post((req, res) => {
             password = hash;
             const newUser = new User({username, password, image_url, firstname, lastname});
             newUser.save()
-            .then(() => res.json('Users added!'))
+            .then(user => res.json(user))
             .catch(err => res.status(400).json("Error " + err));     
         }
     });    
@@ -51,6 +60,7 @@ router.route('/login').post((req, res) => {
 
 const verifyJWT = (req, res, next) => {
     const token = req.headers["x-access-token"];
+    
     if (!token) { res.send({auth: false, message: "Token is missing!", error: true}); }
     else {
         jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {

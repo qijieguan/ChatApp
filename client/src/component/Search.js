@@ -13,11 +13,8 @@ const Search = () => {
 
     return(
         <div id="Search">
-            <h1 style={fontStyle}>Find and Connect with People</h1>
-            {users.length > 0 ?
-                users.map(user => <User key={uuid()} user={user}/>)
-                : ""
-            } 
+            <h1 style={fontStyle}>Discover and Connect with People</h1>
+            {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
         </div>
     );
 }

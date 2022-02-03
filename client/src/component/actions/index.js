@@ -1,13 +1,20 @@
-export const setFriends = item => {
+export const setFriends = data => {
     return {
         type: 'SET_FRIENDS',
-        payload: item
+        payload: data
     }
 }
 
-export const addFriend = item => {
+export const addFriend = id => {
     return {
         type: 'ADD_FRIEND',
-        payload: item
+        payload: id
+    }
+}
+
+export const deleteFriend = id => {
+    return {
+        type: 'DELETE_FRIEND',
+        payload: id
     }
 }
