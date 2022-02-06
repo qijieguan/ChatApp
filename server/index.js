@@ -15,9 +15,12 @@ mongoose.connect(uri);
 
 const usersRouter = require('./routes/users');
 const friendsRouter = require('./routes/friends');
+const textsRouter = require('./routes/texts');
 
 app.use('/users', usersRouter);
 app.use('/friends', friendsRouter);
+app.use('/texts', textsRouter);
+
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}!`);

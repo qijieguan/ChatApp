@@ -23,19 +23,19 @@ const User = ({ user }) => {
     }
 
     return (
-        <div className="user-container">
-            <div className='user' 
+        <div id="user-container">
+            <div id='user' 
                 style={{boxShadow: JSON.parse(sessionStorage.getItem('user'))._id === user._id ? '0 0 10px 5px green' : '' }}
             >
-                <img className="user-image" src={user.image_url} alt=""/>
-                <h1 className="user-name">
+                <img id="user-image" src={user.image_url} alt=""/>
+                <h1 id="user-name">
                     {user.firstname} {user.lastname} 
                     {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 
                         <>
                             {!status ?
-                                <MdPersonAdd className='user-add' color='orange' onClick={handleAdd}/>
+                                <MdPersonAdd id='user-add' color='orange' onClick={handleAdd}/>
                                 :
-                                <BsFillPersonCheckFill className='user-add' color="limegreen"/> 
+                                <BsFillPersonCheckFill id='user-add' color="limegreen"/> 
                             }
                         </> :''
                     }

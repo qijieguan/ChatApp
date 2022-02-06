@@ -18,3 +18,11 @@ export const deleteFriend = id => {
         payload: id
     }
 }
+
+export const setPrivate = id => {
+    return {
+        type: 'SET_PRIVATE',
+        payload: id
+    }
+}
+

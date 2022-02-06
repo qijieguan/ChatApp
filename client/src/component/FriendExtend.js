@@ -1,12 +1,18 @@
 import { RiCloseCircleFill } from 'react-icons/ri';
 import  { BsFillChatDotsFill } from 'react-icons/bs';
-import { useDispatch } from 'react-redux';
 import { deleteFriend } from './actions/index.js';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
+
 
 const Extend = ({ friend }) => {
 
     const dispatch = useDispatch();
+
+    const handleChat = () => { 
+        sessionStorage.setItem('select', friend._id);
+        window.location.href = '/Dashboard';
+    }
 
     const handleUnfriend = () => {
         axios.post('http://localhost:3001/friends/delete/', {
@@ -16,14 +22,12 @@ const Extend = ({ friend }) => {
     }
 
     return (
-        <div className="friend-extend">
-            <div className='friend-container'>
-                <img src={friend.image_url} className="friend-profile" alt=""/>
-                <div className="friend-name">{friend.firstname} {friend.lastname}</div>
-                <BsFillChatDotsFill className='chat-icon' size={20}/>
-                <div className='unfriend-icon'>
-                    <RiCloseCircleFill size={24} onClick={handleUnfriend}/>
-                </div>
+        <div id="friend-extend">
+            <div id='friend-container'>
+                <img src={friend.image_url} id="friend-profile" alt=""/>
+                <div id="friend-name">{friend.firstname} {friend.lastname}</div>
+                <BsFillChatDotsFill id='chat-icon' size={20} onClick={handleChat}/>
+                <div id='unfriend-icon'><RiCloseCircleFill size={24} onClick={handleUnfriend}/></div>
             </div>
         </div>
     );

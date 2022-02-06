@@ -25,10 +25,10 @@ router.route('/add').post((req, res) =>{
     Friend.find({$and: [{user_id: user_id}, {friends: friend_id}]})
     .then(result => {
         if (result.length === 0) {
-            Friend.updateOne({user_id: user_id}, { $push: {friends: friend_id} })
+            Friend.updateOne({user_id: user_id}, {$push: {friends: friend_id}})
             .then(() => {})
             .catch(err => res.status(400).json("Error " + err));
-            Friend.updateOne({user_id: friend_id}, { $push: {friends: user_id} })
+            Friend.updateOne({user_id: friend_id}, {$push: {friends: user_id}})
             .then(() => res.json(friend_id))
             .catch(err => res.status(400).json("Error " + err));
         }

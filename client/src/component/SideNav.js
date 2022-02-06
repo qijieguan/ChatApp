@@ -20,16 +20,16 @@ const Side = () => {
 
     return (
         <div id="side-panel" style={{display: sessionStorage.getItem('isLogged') ? 'block' : 'none'}}>
-            <Link to='/Dashboard' className="side-li" style={{borderRadius: '5px 0 0 0'}}>
-                <AiFillHome className="side-icon" color="white"/>
+            <Link to='/Dashboard' id="side-li" style={{borderRadius: '5px 0 0 0'}}>
+                <AiFillHome id="side-icon" color="white"/>
                 <div style={{color: 'white'}}>Home</div>
             </Link>
-            <Link to='/Friend' className="side-li">
-                <FaUserFriends className="side-icon" color="white"/>
+            <Link to='/Friend' id="side-li">
+                <FaUserFriends id="side-icon" color="white"/>
                 <div style={{color: 'white'}}>Friends</div>
             </Link>
-            <Link to="/Search" className="side-li" style={{borderRadius: '0 0 0 5px'}}>
-                <BsFillPersonPlusFill className="side-icon" color="white"/>
+            <Link to="/Search" id="side-li" style={{borderRadius: '0 0 0 5px'}}>
+                <BsFillPersonPlusFill id="side-icon" color="white"/>
                 <div style={{color: 'white'}}>Search</div>
             </Link>
         </div>

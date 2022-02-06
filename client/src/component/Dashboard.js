@@ -1,8 +1,8 @@
-const DashBoard = () => {
+import ChatBox from './ChatBox.js';
 
-    return (
-        <div id="dashboard"></div>
-    );
+
+const DashBoard = () => {
+    return ( <div id="dashboard"><ChatBox/></div> );
 };
 
 export default DashBoard;

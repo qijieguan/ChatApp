@@ -12,7 +12,11 @@
     justify-content: space-around;
 }
 
-.App { min-height: 800px; background: linear-gradient(45deg, yellow 33%, orange 33%, orange 66%, navy 66%); }
+.App { 
+    min-height: 800px; 
+    background: linear-gradient(45deg, yellow 33%, orange 33%, orange 66%, navy 66%); 
+    overflow: hidden;
+}
 
 #App-header {
     position: relative;
@@ -27,7 +31,8 @@
     margin-left: auto;
     font-family: 'Source Serif Pro', serif;
     font-size: 32px;
-    width: 30%;
+    text-shadow: 0 0 5px orange;
+    width: 24%;
     color: white;
 }
 
@@ -106,19 +111,9 @@
 
 #input-container { margin-bottom: 50px; display: flex; width: 100%; }
 
-#input-image {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    box-shadow: 0 -1px 5px black;
-}
+#input-image { display: flex; flex-direction: column; width: 30%; box-shadow: 0 -1px 5px black; }
 
-#preview-image {
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
-    border-bottom: 1px solid gray;
-}
+#preview-image { height: 300px; width: 100%; object-fit: cover; border-bottom: 1px solid gray; }
 
 #file { 
     text-indent: 10px;
@@ -132,14 +127,101 @@
 
 .input-dot::after { content: " *"; color: red; }
 
-#register-btn {
-    height: 50px;
-    width: 85%;
-    color: white;
-    background: linear-gradient(45deg, orange, red);
+#register-btn { height: 50px; width: 85%; color: white; background: linear-gradient(45deg, orange, red); }
+
+#dashboard { display: flex; align-items: unset; min-height: 900px; }
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    align-content: unset;
+    justify-content: unset;
+    margin: 75px 0;
+    height: 800px;
+    width: 500px;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 10px;
+    animation: slideUp 0.5s linear;
 }
 
-#dashboard { min-height: 900px; background: rgb(231, 231, 231); }
+@keyframes slideUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
+}
+
+#chat-label {
+    display: flex;
+    font-size: 20px;
+    text-shadow: 0 0 5px blue;
+    height: 60px;
+    width: 100%;
+    color: limegreen;
+    background: linear-gradient(45deg, blue, green);
+    border-radius: 10px 10px 0 0;
+}
+
+#chat-set { width: 100%; }
+
+#chat { display: flex; justify-content: flex-start; height: 75px; border: 1px solid gray; box-shadow: 0 0 5px; }
+
+#chat img { margin: 0 30px; height: 60px; width: 60px; object-fit: cover; border-radius: 10px; }
+
+#chat h1 { font-size: 24px; font-family: fantasy; }
+
+#chat:hover { background: blue; }
+
+#text-format {
+    margin: 18px 0 3px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: unset;
+    max-width: 80%;
+    min-height: 100px;
+    max-height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 5px;
+}
+
+#text-content { margin: 8px 0 0 8px; }
+
+#text-made-by { margin: auto 10px 0 0; text-align: right; font-size: 12px; }
+
+#private-chat { margin-top: 40px; min-height: 500px; width: 80%; overflow-y: scroll; }
+
+#private-chat-header {
+    text-indent: 10px;
+    display: flex;
+    justify-content: unset;
+    padding: 5px 0;
+    width: 100%;
+    font-size: 20px;
+    color: gray;
+    border-bottom: 1px solid gray;
+    box-shadow: 0 0 5px;
+}
+
+#back-btn { display: flex; margin-left: 10px; }
+
+#back-btn:hover { background: lawngreen; box-shadow: 0 0 5px 1px forestgreen; }
+
+#private-chat-header img { margin: 0 10px 0 15px; height: 60px; width: 60px; border-radius: 50px; object-fit: cover; }
+
+#text-input { margin: 50px 0 30px 5%; height: 100px; width: 100%;}
+
+#text-input input { height: 100%; width: 75%; box-shadow: 0 0 5px; outline-color: limegreen;}
+
+#text-input button { 
+    margin-left: 20px;
+    height: 80%;
+    width: 15%;
+    color: white;
+    background: limegreen;
+    border-radius: 40px;
+}
 
 #side-panel {
     position: absolute;
@@ -154,7 +236,7 @@
     100% { transform: translateX(0%); }
 }
 
-.side-li {
+#side-li {
     margin-left: auto;
     display: flex;
     flex-direction: column;
@@ -167,23 +249,17 @@
     transition-delay: 0.5;
 }
 
-.side-li:hover { height: 100px; width: 105px; box-shadow: 0 2px 5px black; }
+#side-li:hover { height: 100px; width: 105px; box-shadow: 0 2px 5px black; }
 
-.side-icon { font-size: 24px; }
+#side-icon { font-size: 24px; }
 
-.side-li div { color: white; }
+#side-li div { color: white; }
 
-.side-li:hover .side-icon { font-size: 32px; }
+#side-li:hover .side-icon { font-size: 32px; }
 
-.side-li:hover div { font-size: 16px; }
+#side-li:hover div { font-size: 16px; }
 
-#user-icon {
-    margin-right: 5px;
-    height: 45px;
-    width: 45px;
-    border-radius: 30px;
-    box-shadow: 0 0 5px;
-}
+#user-icon { margin-right: 5px; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
 
 #Search {
     padding-bottom: 50px;
@@ -191,11 +267,12 @@
     min-height: 600px;
     width: 80%;
     background: white;
+    border: 1px solid gray;
     border-radius: 3px;
     box-shadow: 0 0 5px black;
 }
 
-.user-container {
+#user-container {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -205,7 +282,7 @@
     border-radius: 50px;
 }
 
-.user {
+#user {
     position: absolute;
     justify-content: center;
     background: white;
@@ -218,19 +295,13 @@
     z-index: 1;
 }
 
-.user * { transition: 0.5s all; transition-delay: 0.5s; }
+#user * { transition: 0.5s all; transition-delay: 0.5s; }
 
-.user:hover { height: 500px; width: 300px; z-index: 2;}
+#user:hover { height: 500px; width: 300px; z-index: 2;}
 
-.user-image { 
-    position: relative;
-    height: 100%; 
-    width: 100%; 
-    object-fit: cover;
-    border-radius: 50px;
-}
+#user-image { position: relative; height: 100%; width: 100%; object-fit: cover; border-radius: 50px; }
 
-.user-name {
+#user-name {
     position: absolute;
     bottom: 0;
     display: flex;
@@ -241,28 +312,25 @@
     word-break: break-all;
 }
 
-.user-add { margin-left: 10px; font-size: 30px; }
+#user-add { margin-left: 10px; font-size: 30px; }
 
-.user:hover .user-name { font-size: 20px; }
+#user:hover .user-name { font-size: 20px; }
 
-.user:hover .user-add { font-size: 36px; }
+#user:hover .user-add { font-size: 36px; }
 
 #friend {
-    margin-left: 10%;
+    margin: 20px 0 0 10%;
     min-height: 700px;
     width: 80%;
     background: rgb(245, 245, 245);
+    border: 1px solid gray;
     border-radius: 5px;
     box-shadow: 0 0 5px;
 }
 
-#friend h1 {
-    text-align: center;
-    font-size: 45px;
-    color: yellowgreen;
-}
+#friend h1 { text-align: center; font-size: 45px; color: yellowgreen; }
 
-.friend-extend {
+#friend-extend {
     position: relative;
     display: inline-flex;
     flex-direction: column;
@@ -271,7 +339,7 @@
     margin-left: 5%;
 }
 
-.friend-container {
+#friend-container {
     display: flex;
     flex-direction: column;
     justify-content: unset;
@@ -288,14 +356,9 @@
     z-index: 1;
 }
 
-.friend-container:hover {
-    height: 250px;
-    width: 200px;
-    border-radius: 0;
-    z-index: 2;
-}
+#friend-container:hover { height: 250px; width: 200px; border-radius: 0; z-index: 2; }
 
-.friend-profile {
+#friend-profile {
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -311,23 +374,11 @@
     100% { box-shadow: 0 0 10px 2px blue; }
 }
 
-.friend-name { 
-    display: flex;
-    height: 30%; 
-    width: 80%;
-    color: white;
-}
+#friend-name { display: none; height: 30%; width: 80%; color: white; }
 
-.unfriend-icon {
-    display: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 10px 5px 0 0;
-    color: gray;
-}
+#unfriend-icon { display: none; position: absolute; top: 0; right: 0; margin: 10px 5px 0 0; color: gray; }
 
-.chat-icon {
+#chat-icon {
     display: none;
     position: absolute;
     right: 0;
@@ -339,15 +390,17 @@
     border-radius: 15px;
 }
 
-.chat-icon:hover { color: yellowgreen; }
+#chat-icon:hover { color: yellowgreen; }
 
-.unfriend-icon:hover { color: red; }
+#unfriend-icon:hover { color: red; }
 
-.friend-container:hover .friend-profile { height: 70%; border-radius: 0; }
+#friend-container:hover #friend-profile { height: 70%; border-radius: 0; }
 
-.friend-container:hover .chat-icon { display: unset; }
+#friend-container:hover #friend-name { display: flex; }
 
-.friend-container:hover .unfriend-icon { display: unset; }
+#friend-container:hover #chat-icon { display: unset; }
+
+#friend-container:hover #unfriend-icon { display: unset; }
 
 button {
     position: relative;
@@ -391,5 +444,7 @@ input {
 
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 
-
+::-webkit-scrollbar {
+    display: none;
+}
 

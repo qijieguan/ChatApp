@@ -12,6 +12,14 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
+router.route('/select').post((req, res) => {
+    const user_id = req.body.user_id;
+
+    User.find({_id: user_id})
+    .then(user => res.json(user[0]))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
 router.route('/').post((req, res) => {
     const friend_ids = req.body.friend_ids;
    
