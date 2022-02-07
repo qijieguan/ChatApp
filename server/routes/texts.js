@@ -33,7 +33,7 @@ router.route('/add').post((req, res) => {
     const friends = [req.body.user_id, req.body.friend_id];
     const text = {user_id: req.body.user_id, content: req.body.content};
 
-    Text.find({friends: friends})
+    Text.find({friends: {$all: friends}})
     .then(texts => {
         if (!texts.length) {
             const newFriend = new Text({friends, text});
