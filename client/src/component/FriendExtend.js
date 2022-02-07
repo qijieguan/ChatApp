@@ -14,8 +14,8 @@ const Extend = ({ friend }) => {
         window.location.href = '/Dashboard';
     }
 
-    const handleUnfriend = () => {
-        axios.post('http://localhost:3001/friends/delete/', {
+    const handleUnfriend = async () => {
+        await axios.post('http://localhost:3001/friends/delete/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: friend._id
         }).then((response) => { dispatch(deleteFriend(friend._id)) });

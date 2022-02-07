@@ -15,8 +15,8 @@ const User = ({ user }) => {
     useEffect(() => { friends.forEach(friend_id => { if (friend_id === user._id) { setStatus(true); } });
     }, [friends, user._id]);
 
-    const handleAdd = () => {
-        axios.post('http://localhost:3001/friends/add/', {
+    const handleAdd = async () => {
+        await axios.post('http://localhost:3001/friends/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
             friend_id: user._id
         }).then((response) => { dispatch(addFriend(response.data)); setStatus(true)});

@@ -42,8 +42,8 @@ const Login = () => {
         else { setPassword(event.target.value) }
     }
 
-    const authentication = () => {
-        axios.get('http://localhost:3001/users/auth/', { headers: { "x-access-token": token } })
+    const authentication = async () => {
+        await axios.get('http://localhost:3001/users/auth/', { headers: { "x-access-token": token } })
         .then((response) => {
             if (response.data.auth) {
                 sessionStorage.setItem("isLogged", true);
@@ -57,9 +57,9 @@ const Login = () => {
         });
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        axios.post('http://localhost:3001/users/login/', { username: username, password: password, })
+        await axios.post('http://localhost:3001/users/login/', { username: username, password: password, })
         .then((response) => { 
             if (response.data !== "Invalid Username/Password combinations!") { 
                 setToken(response.data); 

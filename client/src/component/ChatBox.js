@@ -36,10 +36,10 @@ const ChatBox = () => {
 
     const handleChange = (event) => { setText(event.target.value); }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (!textInp) {return;}
-        axios.post('http://localhost:3001/texts/add/', {
+        await axios.post('http://localhost:3001/texts/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: textInp

@@ -23,12 +23,12 @@ const Register = () => {
 
     const previewFile = (event) => { readFiles(event.target.files); };
 
-    const uploadImage = () => {
+    const uploadImage = async () => {
         const data = new FormData();
         data.append('file', files[0]);
         data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
+        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => {
             axios.post('http://localhost:3001/users/register/', {
                 username: username,
