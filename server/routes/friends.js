@@ -24,7 +24,7 @@ router.route('/add').post((req, res) =>{
 
     Friend.find({$and: [{user_id: user_id}, {friends: friend_id}]})
     .then(result => {
-        if (result.length === 0) {
+        if (!result.length) {
             Friend.updateOne({user_id: user_id}, {$push: {friends: friend_id}})
             .then(() => {})
             .catch(err => res.status(400).json("Error " + err));

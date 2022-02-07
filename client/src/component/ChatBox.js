@@ -13,17 +13,15 @@ const ChatBox = () => {
     const [chatSet, setChatSet] = useState([]);
     const [update, setUpdate] = useState(false);
 
-    const select = sessionStorage.getItem('select');
-
     useEffect(() => {
-        if (!select) {
+        if (!sessionStorage.getItem('select')) {
             axios.post('http://localhost:3001/texts/', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id
             })
             .then((response) => { setChatSet(response.data) }); 
         } 
         else {
-            axios.post('http://localhost:3001/users/select/', {user_id: select})
+            axios.post('http://localhost:3001/users/select/', {user_id: sessionStorage.getItem('select')})
             .then((response) => { 
                 setUser(response.data);
                 axios.post('http://localhost:3001/texts/select/', {
@@ -32,7 +30,7 @@ const ChatBox = () => {
                 }).then((response) => setTextSet(response.data.text));
             });
         }  
-    }, [select, update])
+    }, [update])
 
     const getSelect = (id) => { sessionStorage.setItem('select', id); setUpdate(!update); }
 
@@ -47,22 +45,18 @@ const ChatBox = () => {
             content: textInp
         });
         setUpdate(!update);
-        setChatSet([]);
         setText("");
     }
 
-    const goBack = () => { sessionStorage.removeItem('select'); setUpdate(!update); }
+    const goBack = () => { sessionStorage.removeItem('select');  setUpdate(!update); }
 
     return (
         <div id="chat-container">
             <div id='chat-label'>Chat Log</div>
-            {!select ?
+            {!sessionStorage.getItem('select') ?
                 <div id='chat-set'>
-                    {chatSet > 0 ?
-                        chatSet.length ?
-                            chatSet.map(chat => 
-                            <Chat key={uuid()} chat={chat} getSelect={getSelect}/>)
-                        :''
+                    {chatSet && chatSet.length ?
+                        chatSet.map(chat => <Chat key={uuid()} chat={chat} getSelect={getSelect}/>)
                         :''
                     }
                 </div>
@@ -76,16 +70,14 @@ const ChatBox = () => {
                         {user.firstname + " " + user.lastname}
                     </div>
                     <div id="private-chat">
-                        {textSet ?
-                            textSet.length ?
-                                textSet.map(text => <Text key={uuid()} friend={user} text={text}/>)
-                            :''
+                        {textSet && textSet.length?
+                            textSet.map(text => <Text key={uuid()} friend={user} text={text}/>)
                             :''
                         }
                     </div>
                 </>
             }
-            <div id='text-input' style={{display: select ? 'block' : 'none'}}>
+            <div id='text-input' style={{display: sessionStorage.getItem('select') ? 'block' : 'none'}}>
                 <input name='text' value={textInp} onChange={handleChange}/>
                 <button onClick={handleSubmit}>Send</button>
             </div>

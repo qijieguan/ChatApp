@@ -6,7 +6,6 @@ const textSchema = new Schema({
     friends: {
         type: Array,
         required: true,
-        unique: true,
         trim: true,
         minlength: 2
     },

@@ -7,10 +7,13 @@ router.route('/').post((req, res) => {
 
     Text.find({friends: user_id})
     .then(result => {
-        if (result.length === 0) { res.json('Texts not found') }
+        if (!result.length) { res.json([]) }
         else { 
-            let friend_id = result[0].friends.filter(el => el !== user_id);
-            User.find({_id: friend_id[0]})
+            let friend_ids = [];
+            result.forEach(element => {
+                friend_ids.push((element.friends.filter(id => id !== user_id))[0]);
+            });
+            User.find({_id: friend_ids})
             .then(user => res.json(user))
             .catch(err => res.status(400).json("Error " + err));
         }
@@ -30,9 +33,9 @@ router.route('/add').post((req, res) => {
     const friends = [req.body.user_id, req.body.friend_id];
     const text = {user_id: req.body.user_id, content: req.body.content};
 
-    Text.find({friends: {$all: friends}})
+    Text.find({friends: friends})
     .then(texts => {
-        if (texts.length === 0) {
+        if (!texts.length) {
             const newFriend = new Text({friends, text});
             newFriend.save()
             .then(() => res.json())
