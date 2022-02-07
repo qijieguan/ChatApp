@@ -13,7 +13,7 @@ const Side = () => {
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
-            axios.post('/friends', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
+            axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); });
         }
     }, [dispatch]);

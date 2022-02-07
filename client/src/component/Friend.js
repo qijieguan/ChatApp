@@ -9,7 +9,7 @@ const Friend = () => {
     const [friends, setFriends] = useState("");
 
     useEffect(() => {
-        axios.post('/users', { friend_ids: friend_ids })
+        axios.post('/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
     }, [friend_ids])
 

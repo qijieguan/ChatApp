@@ -16,7 +16,7 @@ const User = ({ user }) => {
     }, [friends, user._id]);
 
     const handleAdd = async () => {
-        await axios.post('/friends/add', {
+        await axios.post('/friends/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
             friend_id: user._id
         }).then((response) => { dispatch(addFriend(response.data)); setStatus(true)});
