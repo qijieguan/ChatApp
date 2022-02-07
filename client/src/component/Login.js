@@ -43,12 +43,12 @@ const Login = () => {
     }
 
     const authentication = async () => {
-        await axios.get('/users/auth/', { headers: { "x-access-token": token } })
+        await axios.get('/users/auth', { headers: { "x-access-token": token } })
         .then((response) => {
             if (response.data.auth) {
                 sessionStorage.setItem("isLogged", true);
                 setModal(false);
-                axios.post('/users/load/', { username: username })
+                axios.post('/users/load', { username: username })
                 .then((response) => { 
                     sessionStorage.setItem("user", JSON.stringify(response.data)); 
                     window.location.href = "/Dashboard";
@@ -59,7 +59,7 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await axios.post('/users/login/', { username: username, password: password, })
+        await axios.post('/users/login', { username: username, password: password, })
         .then((response) => { 
             if (response.data !== "Invalid Username/Password combinations!") { 
                 setToken(response.data); 

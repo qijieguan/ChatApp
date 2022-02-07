@@ -15,16 +15,16 @@ const ChatBox = () => {
 
     useEffect(() => {
         if (!sessionStorage.getItem('select')) {
-            axios.post('/texts/', {
+            axios.post('/texts', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id
             })
             .then((response) => { setChatSet(response.data) }); 
         } 
         else {
-            axios.post('/users/select/', {user_id: sessionStorage.getItem('select')})
+            axios.post('/users/select', {user_id: sessionStorage.getItem('select')})
             .then((response) => { 
                 setUser(response.data);
-                axios.post('/texts/select/', {
+                axios.post('/texts/select', {
                     user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                     friend_id: response.data._id
                 }).then((response) => setTextSet(response.data.text));
@@ -39,7 +39,7 @@ const ChatBox = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!textInp) {return;}
-        await axios.post('/texts/add/', {
+        await axios.post('/texts/add', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: textInp
