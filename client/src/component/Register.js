@@ -30,14 +30,14 @@ const Register = () => {
 
         await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => {
-            axios.post('http://localhost:3001/users/register/', {
+            axios.post('/users/register/', {
                 username: username,
                 password: password,
                 image_url: json.secure_url,
                 firstname: fname,
                 lastname: lname
             }).then((response) => { 
-                axios.post('http://localhost:3001/friends/init/', { user_id: response.data._id });
+                axios.post('/friends/init/', { user_id: response.data._id });
                 setMessage("User is added!");
                 document.getElementById("register-msg").style.display = 'block'; 
             });
