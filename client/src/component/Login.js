@@ -78,16 +78,11 @@ const Login = () => {
             <form id="login" onSubmit={handleSubmit}>
                 <h1 id="login-label">Login</h1>
                 <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
-                <div style={inputStyle}>
-                    <div style={Object.assign({background: 'blue'}, iconStyle)}><FaUser size={20}/></div>
-                    <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
-                </div>
-                <div style={inputStyle}>
-                    <div style={Object.assign({background: 'red'}, iconStyle)}><RiLockPasswordLine size={20}/></div>
-                    <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
-                </div>
-                <Link to='/Register' id="register-link">Register</Link>
+                <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
+                <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 <button type="submit" id="login-btn" style={btnStyle}>Sign In</button>
+                <h1 style={{color: 'gray'}}>or</h1>
+                <Link to='/Register' id="register-link"><button>Create a New Account</button></Link>
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
@@ -102,26 +97,13 @@ const Login = () => {
     );
 }
 
-const iconStyle = {
-    display: 'flex',
-    height: '100%',
-    width: '15%',
-    borderRadius: '3px 0 0 3px',
-    boxShadow: '-1px 0 3px black'
-}
-
-const inputStyle = {
-    display: 'flex', 
-    height: '50px', 
-    width: '80%'
-}
 
 const btnStyle = {
     fontSize: '16px',
-    height: '50px',
+    height: '40px',
     width: '80%',
     color: 'white',
-    background: 'linear-gradient(45deg, limegreen, green)',
+    background: 'orange',
 }
 
 const authBtnStyle = {

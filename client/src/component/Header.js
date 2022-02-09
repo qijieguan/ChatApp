@@ -36,16 +36,16 @@ const Header = () => {
             <h1>Chat App</h1>
             <div style={customStyle}>
                 {!sessionStorage.getItem("isLogged") ?
-                    <Link to='/'><button style={{background: 'linear-gradient(45deg, blue, aqua)', borderRadius: '50px'}}>Login</button></Link>
+                    <Link to='/'><button id="login-btn">Login</button></Link>
                     :
-                    <button style={{background: 'linear-gradient(45deg, red, orange)', borderRadius: '50px'}} onClick={logout}>Log Out</button>
+                    <button id="logout-btn" onClick={logout}>Log Out</button>
                 }
-                <button style={{background: 'linear-gradient(45deg, purple, violet)', marginRight: 'auto', borderRadius: '50px'}}>About</button>
+                <button id="about-btn">About</button>
                 {!sessionStorage.getItem("isLogged") ?
                     "" :
                     <>
                         <img src={user.image_url} id="user-icon" alt=""/>
-                        <h6 style={{color: 'white', wordBreak: 'break-all'}}>{user.firstname} {user.lastname}</h6>
+                        <h6 style={{color: 'white', wordBreak: 'break-all', marginRight: '10px'}}>{user.firstname} {user.lastname}</h6>
                     </>
                 }
             </div>
@@ -55,8 +55,7 @@ const Header = () => {
 
 const customStyle = {
     display: 'flex', 
-    justifyContent: 'none',
-    marginRight: '20px',
+    justifyContent: 'flex-start',
     height: '100%',
     width: '30%', 
 }

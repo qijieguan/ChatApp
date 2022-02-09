@@ -87,8 +87,7 @@ const Register = () => {
                     <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
                 </div>
             </div>
-            <Link to='/' id="login-link">Login</Link>
-            <button id="register-btn" type='submit'>Register</button>
+            <button id="register-btn" type='submit'>Create Account</button>
         </form>
     );
 }

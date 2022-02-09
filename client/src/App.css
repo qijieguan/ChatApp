@@ -13,7 +13,7 @@
 }
 
 .App { 
-    min-height: 800px; 
+    min-height: 700px; 
     background: linear-gradient(45deg, yellow 33%, orange 33%, orange 66%, navy 66%); 
     overflow: hidden;
 }
@@ -31,7 +31,7 @@
     margin-left: auto;
     font-family: 'Source Serif Pro', serif;
     font-size: 32px;
-    text-shadow: 0 0 5px orange;
+    text-shadow: 0 0 5px forestgreen;
     width: 24%;
     color: white;
 }
@@ -40,49 +40,57 @@
     font-family: 'Source Serif Pro', serif;
     padding: 10px 0;
     width: 100px;
-    color: white;
-    background: rgb(36, 36, 168);
+    border-radius: 50px;
 }
 
-#home {
-    display: flex;
-    min-height: 800px;
-    background: url("https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-    background-size: cover;
+#login-btn { color: forestgreen; background: limegreen; }
+
+#logout-btn { color: rgb(139, 47, 47); background: red; }
+
+#about-btn { color: green; border: 2px solid green; }
+
+#about-btn:hover { background: limegreen; border: 0; }
+
+#home-left { 
+    position: absolute;
+    display: inline-flex; 
+    background: white; 
+    width: 30%; 
+    height: 700px; 
+    border-right: 1px solid rgb(206, 206, 206);
+}
+
+#home-right { 
+    position: absolute;
+    right: 0;
+    display: inline-flex; 
+    background: url("https://cdn.pixabay.com/photo/2020/06/29/13/58/video-conference-5352757_960_720.png"); 
+    background-size:auto;
+    width: 70%;  
+    height: 700px;
 }
 
 #login {
-    margin-bottom: 125px;
+    margin-bottom: 200px;
     display: flex;
     flex-direction: column;
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 100%;
     color: white;
-    background: linear-gradient(45deg, blue, orange);
-    border-radius: 5px;
-    box-shadow: 0 0 5px black;
-    animation: translateXRight 0.5s ease-out;
 }
 
-@keyframes translateXRight {
-    0% { transform: translateX(-100%) }
-    100% { transform: translateX(0%) }
-}
+#login input { height: 35px; width: 100%; box-shadow: 0 0 3px; border-radius: 3px;}
 
-#login-label {
-    font-size: 32px;
-    letter-spacing: 1px;
-    color: transparent;
-    background: linear-gradient(45deg, navy, red);
-    background-clip: text;
-}
+#login input:focus { outline-color: green; }
+
+#login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
 
 #register {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 15%;
-    min-height: 800px;
+    min-height: 700px;
     width: 70%;
     background: linear-gradient(45deg, purple, gold);
     box-shadow: 0 0 5px black;
@@ -90,7 +98,7 @@
     animation: scale 0.5s linear;
 }
 
-#login-link, #register-link { margin: 0 auto 0 10%; font-size: 16px; color: sandybrown; }
+#register-link > button { height: 40px; font-size: 14px; color: white; background: green; }
 
 @keyframes scale {
     0% {transform: scale(0);}
@@ -259,11 +267,11 @@
 
 #side-li:hover div { font-size: 16px; }
 
-#user-icon { margin-right: 5px; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
+#user-icon { margin: 0 10px 0 auto; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
 
-#Search {
+#search {
     padding-bottom: 50px;
-    margin: 5% 0 10% 10%;
+    margin: 20px 0 5% 10%;
     min-height: 600px;
     width: 80%;
     background: white;
@@ -328,7 +336,7 @@
     box-shadow: 0 0 5px;
 }
 
-#friend h1 { text-align: center; font-size: 45px; color: yellowgreen; }
+#friend h1 { text-align: center; font-size: 45px; color: royalblue; text-shadow: 0 0 1px navy;}
 
 #friend-extend {
     position: relative;

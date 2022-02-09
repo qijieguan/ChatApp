@@ -12,7 +12,7 @@ const Search = () => {
     }, []);
 
     return(
-        <div id="Search">
+        <div id="search">
             <h1 style={fontStyle}>Discover and Connect with People</h1>
             {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
         </div>
@@ -25,6 +25,7 @@ const fontStyle = {
     fontSize: '45px',
     fontFamily: 'copperplate',
     color: 'limegreen',
+    textShadow: '0 0 1px green',
 };
 
 export default Search;
