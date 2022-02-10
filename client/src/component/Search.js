@@ -13,7 +13,7 @@ const Search = () => {
 
     return(
         <div id="search">
-            <h1 style={fontStyle}>Discover and Connect with People</h1>
+            <h1 style={fontStyle}>All Users</h1>
             {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
         </div>
     );
@@ -23,9 +23,9 @@ const fontStyle = {
     paddingTop: '20px',
     textAlign: 'center',
     fontSize: '45px',
-    fontFamily: 'copperplate',
+    fontFamily: 'fantasy',
+    letterSpacing: '1px',
     color: 'limegreen',
-    textShadow: '0 0 1px green',
 };
 
 export default Search;

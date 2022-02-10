@@ -1,5 +1,3 @@
-import { FaUser } from 'react-icons/fa';
-import { RiLockPasswordLine } from 'react-icons/ri';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';

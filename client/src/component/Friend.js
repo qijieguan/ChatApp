@@ -15,7 +15,7 @@ const Friend = () => {
 
     return (
         <div id="friend">
-           {friends.length > 0 ?
+           {friends.length ?
                 <>
                     <h1>My Friends</h1>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}

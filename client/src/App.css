@@ -65,7 +65,7 @@
     right: 0;
     display: inline-flex; 
     background: url("https://cdn.pixabay.com/photo/2020/06/29/13/58/video-conference-5352757_960_720.png"); 
-    background-size:auto;
+    background-size: auto;
     width: 70%;  
     height: 700px;
 }
@@ -150,7 +150,6 @@
     background: white;
     border: 1px solid gray;
     border-radius: 10px;
-    box-shadow: 0 0 10px;
     animation: slideUp 0.5s linear;
 }
 
@@ -251,7 +250,7 @@
     justify-content: space-evenly;
     height: 75px;
     width: 80px;
-    border-bottom: 1px solid rgb(233, 233, 233);
+    border: 1px solid rgb(233, 233, 233);
     background: rgb(42, 42, 187);
     transition: 1s all;
     transition-delay: 0.5;
@@ -270,14 +269,13 @@
 #user-icon { margin: 0 10px 0 auto; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
 
 #search {
-    padding-bottom: 50px;
-    margin: 20px 0 5% 10%;
+    padding-bottom: 125px;
+    margin-left: 10%;
     min-height: 600px;
     width: 80%;
     background: white;
     border: 1px solid gray;
     border-radius: 3px;
-    box-shadow: 0 0 5px black;
 }
 
 #user-container {
@@ -327,16 +325,15 @@
 #user:hover .user-add { font-size: 36px; }
 
 #friend {
-    margin: 20px 0 0 10%;
+    margin-left: 10%;
     min-height: 700px;
     width: 80%;
     background: rgb(245, 245, 245);
     border: 1px solid gray;
     border-radius: 5px;
-    box-shadow: 0 0 5px;
 }
 
-#friend h1 { text-align: center; font-size: 45px; color: royalblue; text-shadow: 0 0 1px navy;}
+#friend h1 { text-align: center; font-size: 45px; font-family: fantasy; letter-spacing: 1px; color: rgb(65, 65, 255); }
 
 #friend-extend {
     position: relative;
@@ -344,7 +341,7 @@
     flex-direction: column;
     height: 75px;
     width: 75px;
-    margin-left: 5%;
+    margin: 5% 0 0 5%;
 }
 
 #friend-container {
@@ -422,7 +419,7 @@ button {
 
 button:hover { box-shadow: 0 0 5px 2px black; }
 
-span {
+.ripples {
     position: absolute;
     background: #fff;
     transform: translate(-50%, -50%);
