@@ -18,19 +18,26 @@ const Side = () => {
         }
     }, [dispatch]);
 
+    const handleClick = (event) => {
+        let elements = document.querySelectorAll('#side-li');
+        elements.forEach(el => {el.style.background = 'white'; el.style.borderRight = '0'});
+        event.target.style.background = 'rgb(230, 230, 230)';
+        event.target.style.borderRight = '4px solid blue';
+    }
+
     return (
         <div id="side-panel" style={{display: sessionStorage.getItem('isLogged') ? 'block' : 'none'}}>
-            <Link to='/Dashboard' id="side-li" style={{borderRadius: '5px 0 0 0'}}>
-                <AiFillHome id="side-icon" color="white"/>
-                <div style={{color: 'white'}}>Home</div>
+            <Link to='/Dashboard' id="side-li" onClick={handleClick} style={{borderRadius: '5px 0 0 0'}}>
+                <AiFillHome id="side-icon" color="red"/>
+                <div style={{color: 'blue'}}>Home</div>
             </Link>
-            <Link to='/Friend' id="side-li">
-                <FaUserFriends id="side-icon" color="white"/>
-                <div style={{color: 'white'}}>Friends</div>
+            <Link to='/Friend' id="side-li" onClick={handleClick}>
+                <FaUserFriends id="side-icon" color="orange"/>
+                <div style={{color: 'blue'}}>Friends</div>
             </Link>
-            <Link to="/Search" id="side-li" style={{borderRadius: '0 0 0 5px'}}>
-                <BsFillPersonPlusFill id="side-icon" color="white"/>
-                <div style={{color: 'white'}}>Search</div>
+            <Link to="/Search" id="side-li" onClick={handleClick} style={{borderRadius: '0 0 0 5px'}}>
+                <BsFillPersonPlusFill id="side-icon" color="green"/>
+                <div style={{color: 'blue'}}>Search</div>
             </Link>
         </div>
     );

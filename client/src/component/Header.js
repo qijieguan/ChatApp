@@ -34,14 +34,14 @@ const Header = () => {
 
     return (
         <header id="App-header">
-            <h1>Chat App</h1>
+            <h1>CHAT APP</h1>
             <div style={customStyle}>
                 {!sessionStorage.getItem("isLogged") ?
                     <Link to='/'><button id="login-btn">Login</button></Link>
                     :
                     <button id="logout-btn" onClick={logout}>Log Out</button>
                 }
-                <button id="about-btn">About</button>
+                <Link to='/About'><button id="about-btn">About</button></Link>
                 {!sessionStorage.getItem("isLogged") ?
                     "" :
                     <>

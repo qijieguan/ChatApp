@@ -78,7 +78,7 @@ const Login = () => {
                 <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
                 <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
-                <button type="submit" id="login-btn" style={btnStyle}>Sign In</button>
+                <button type="submit" id="sign-in-btn">Sign In</button>
                 <h1 style={{color: 'gray'}}>or</h1>
                 <Link to='/Register' id="register-link"><button>Create a New Account</button></Link>
             </form>
@@ -93,15 +93,6 @@ const Login = () => {
 
         </div>
     );
-}
-
-
-const btnStyle = {
-    fontSize: '16px',
-    height: '40px',
-    width: '80%',
-    color: 'white',
-    background: 'orange',
 }
 
 const authBtnStyle = {

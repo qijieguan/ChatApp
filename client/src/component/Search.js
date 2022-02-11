@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import User from './User.js';
 import uuid from 'react-uuid';
 import axios from 'axios';
+import { FcGlobe } from 'react-icons/fc';
 
 const Search = () => {
 
@@ -13,19 +14,12 @@ const Search = () => {
 
     return(
         <div id="search">
-            <h1 style={fontStyle}>All Users</h1>
+            <h1 style={{color: 'limegreen'}}> All Users
+                <FcGlobe size={60} style={{marginLeft: '10px'}}/>
+            </h1>
             {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
         </div>
     );
 }
-
-const fontStyle = {
-    paddingTop: '20px',
-    textAlign: 'center',
-    fontSize: '45px',
-    fontFamily: 'fantasy',
-    letterSpacing: '1px',
-    color: 'limegreen',
-};
 
 export default Search;
