@@ -23,7 +23,7 @@ const About = () => {
             </div>
             <div id='about-right-2'/>
             <div id='about-left' style={{color: 'white', background: 'orange'}}>
-                Who are you?
+                Who am I?
                 <p style={{marginLeft: '3%', width: '90%', fontSize: '16px'}}>
                     I am a self-taught web developer who loves video games. My goal is to become
                     a professional web developer in the future. Always seeking to learn trending web 

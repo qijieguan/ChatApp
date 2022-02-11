@@ -21,8 +21,14 @@ const Header = () => {
 
                 let ripples = document.createElement('span');
                 ripples.classList.add("ripples");
+
+                if (this.getBoundingClientRect().width <= 200) { ripples.classList.add('rippleSmall') }
+                else if (this.getBoundingClientRect().width <= 400) { ripples.classList.add('rippleMedium') }
+                else { ripples.classList.add('rippleLarge') }
+
                 ripples.style.left = x + 'px';
                 ripples.style.top = y + 'px';
+
                 this.appendChild(ripples);
             
                 setTimeout(() => ripples.remove(), 1000);
