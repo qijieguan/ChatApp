@@ -46,11 +46,11 @@
 
 #login-btn { color: forestgreen; background: limegreen; }
 
-#logout-btn { color: rgb(139, 47, 47); background: red; }
+#logout-btn { color: darkred; background: red; }
 
-#about-btn { color: green; border: 2px solid green; }
+#about-btn { color: brown; border: 2px solid brown; }
 
-#about-btn:hover { background: limegreen; border: 0; }
+#about-btn:hover { color: white; background: brown; border: 0; }
 
 #home-left { 
     position: absolute;
@@ -80,7 +80,7 @@
     color: white;
 }
 
-#login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
+#login-label { font-size: 22px; letter-spacing: 1px; color: grey; }
 
 #login input { height: 35px; width: 100%; box-shadow: 0 0 3px; border-radius: 3px;}
 
@@ -383,9 +383,9 @@
 #user:hover .user-add { font-size: 36px; }
 
 #friend {
-    margin-left: 10%;
+    margin-left: 20%;
     min-height: 700px;
-    width: 80%;
+    width: 60%;
     background: rgb(245, 245, 245);
     border: 1px solid gray;
     border-radius: 5px;

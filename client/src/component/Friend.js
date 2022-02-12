@@ -11,7 +11,7 @@ const Friend = () => {
     const [friends, setFriends] = useState("");
 
     useEffect(() => {
-        axios.post('/users/', { friend_ids: friend_ids })
+        axios.post('http://localhost:3001/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
     }, [friend_ids])
 
@@ -26,7 +26,7 @@ const Friend = () => {
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
                 </>
                 :
-                <h1>Connect and form new friendships!</h1>
+                <h1>Add other users as friends!</h1>
            }
         </div>
     );
