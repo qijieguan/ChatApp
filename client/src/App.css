@@ -48,7 +48,7 @@
 
 #logout-btn { color: darkred; background: red; }
 
-#about-btn { color: brown; border: 2px solid brown; }
+#about-btn { color: brown; background: rgb(253, 229, 229); border: 2px solid brown; }
 
 #about-btn:hover { color: white; background: brown; border: 0; }
 
@@ -65,8 +65,9 @@
     position: absolute;
     right: 0;
     display: inline-flex; 
-    background: url("https://cdn.pixabay.com/photo/2020/06/29/13/58/video-conference-5352757_960_720.png"); 
-    background-size: auto;
+    background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
+    background-size: cover;
+    background-position: center;
     width: 70%;  
     height: 700px;
 }
@@ -214,14 +215,15 @@
 }
 
 #chat-label {
+    position: relative;
     display: flex;
     font-size: 20px;
-    text-shadow: 0 0 5px blue;
     height: 60px;
     width: 100%;
-    color: limegreen;
-    background: linear-gradient(45deg, blue, green);
+    color: white;
+    background: navy;
     border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 5px black;
 }
 
 #chat-set { width: 100%; }
@@ -453,11 +455,8 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    margin: 0 5px 25px 0;
-    padding: 6px 5px;
+    margin: 0 8px 40px 0;
     color: white;
-    background: rgb(34, 34, 34);
-    border-radius: 15px;
 }
 
 #chat-icon:hover { color: yellowgreen; }
