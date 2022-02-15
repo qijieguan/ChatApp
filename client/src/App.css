@@ -37,12 +37,7 @@
     color: white;
 }
 
-#App-header button {
-    font-family: 'Roboto', sans-serif;
-    padding: 10px 0;
-    width: 100px;
-    border-radius: 50px;
-}
+#App-header button { font-family: 'Roboto', sans-serif; padding: 10px 0; width: 100px; border-radius: 50px; }
 
 #login-btn { color: forestgreen; background: limegreen; }
 
@@ -163,10 +158,7 @@
     background: orange;
 }
 
-#about-left span {
-    font-size: 16px;
-    color: forestgreen;
-}
+#about-left span { font-size: 16px; color: forestgreen; }
 
 #about-right-1 {
     height: 50%;
@@ -223,12 +215,12 @@
     color: white;
     background: navy;
     border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 1px 5px black;
 }
 
 #chat-set { width: 100%; }
 
-#chat { display: flex; justify-content: flex-start; height: 75px; border: 1px solid gray; box-shadow: 0 0 5px; }
+#chat { display: flex; justify-content: flex-start; height: 75px; border-bottom: 1px solid gray; }
 
 #chat img { margin: 0 30px; height: 60px; width: 60px; object-fit: cover; border-radius: 10px; }
 
@@ -278,7 +270,7 @@
 
 #text-input input { height: 100%; width: 75%; box-shadow: 0 0 5px; outline-color: limegreen;}
 
-#text-input button { 
+#text-input button {  
     margin-left: 20px;
     height: 80%;
     width: 15%;
@@ -408,35 +400,23 @@
     flex-direction: column;
     height: 75px;
     width: 75px;
-    margin: 5% 0 0 5%;
+    margin: 5% 0 0 10%;
 }
 
 #friend-container {
     display: flex;
-    flex-direction: column;
     justify-content: unset;
     position: absolute;
     top: 0;
+    left: 0;
     height: 75px;
     width: 75px;
-    background: black;
+    background: rgb(34, 34, 34);
     border-radius: 40px;
     animation: borderSwap 5s linear infinite alternate;
     transition: 1s all;
-    transition-delay: 0.5s;
     overflow: hidden;
     z-index: 1;
-}
-
-#friend-container:hover { height: 250px; width: 200px; border-radius: 0; z-index: 2; }
-
-#friend-profile {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    border-radius: 40px;
-    transition: 1s all;
-    transition-delay: 1s;
 }
 
 @keyframes borderSwap {
@@ -446,30 +426,20 @@
     100% { box-shadow: 0 0 10px 2px blue; }
 }
 
-#friend-name { display: none; height: 30%; width: 80%; color: white; }
+#friend-container:hover { min-width: 200px; z-index: 2; overflow: auto; }
 
-#unfriend-icon { display: none; position: absolute; top: 0; right: 0; margin: 10px 5px 0 0; color: gray; }
+#friend-profile { position: absolute; height: 95%; width: 75px; object-fit: auto; border-radius: 40px; }
 
-#chat-icon {
-    display: none;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0 8px 40px 0;
-    color: white;
-}
+#friend-detail {  position: absolute; right: 30px; height: 100%; opacity: 0; transition: 0.5s all; }
+
+#friend-name { display: block; font-size: 16px; height: 65%; color: limegreen; }
+#chat-icon, #unfriend-icon {float: right; display: inline-flex; justify-content: flex-start; height: 35%; width: 40%; color: white; }
+
+#friend-container:hover #friend-detail { opacity: 1; }
 
 #chat-icon:hover { color: yellowgreen; }
 
 #unfriend-icon:hover { color: red; }
-
-#friend-container:hover #friend-profile { height: 70%; border-radius: 0; }
-
-#friend-container:hover #friend-name { display: flex; }
-
-#friend-container:hover #chat-icon { display: unset; }
-
-#friend-container:hover #unfriend-icon { display: unset; }
 
 button {
     position: relative;
@@ -523,7 +493,5 @@ input {
 
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 
-::-webkit-scrollbar {
-    display: none;
-}
+::-webkit-scrollbar { display: none; }
 

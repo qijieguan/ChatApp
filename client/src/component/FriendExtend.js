@@ -25,9 +25,11 @@ const Extend = ({ friend }) => {
         <div id="friend-extend">
             <div id='friend-container'>
                 <img src={friend.image_url} id="friend-profile" alt=""/>
-                <div id="friend-name">{friend.firstname} {friend.lastname}</div>
-                <BsFillChatDotsFill id='chat-icon' size={20} onClick={handleChat}/>
-                <div id='unfriend-icon'><RiCloseCircleFill size={24} onClick={handleUnfriend}/></div>
+                <div id='friend-detail'>
+                    <div id="friend-name">{friend.firstname} {friend.lastname}</div>
+                    <div id='unfriend-icon'><RiCloseCircleFill size={24} onClick={handleUnfriend}/></div>
+                    <div id='chat-icon'><BsFillChatDotsFill size={22} onClick={handleChat}/></div>
+                </div>
             </div>
         </div>
     );
