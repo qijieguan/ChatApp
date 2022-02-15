@@ -1,5 +1,5 @@
 import { MdPersonAdd } from 'react-icons/md';
-import { BsFillPersonCheckFill } from 'react-icons/bs';
+import { FiCheckCircle } from 'react-icons/fi';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFriend } from './actions/index.js';
@@ -32,12 +32,15 @@ const User = ({ user }) => {
                     {user.firstname} {user.lastname} 
                     {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 
                         <>
-                            {!status ?
-                                <MdPersonAdd id='user-add' color='orange' onClick={handleAdd}/>
+                            {!status ? 
+                                <div id='user-add-1'>
+                                    <MdPersonAdd color='orange' onClick={handleAdd}/>
+                                </div>
                                 :
-                                <BsFillPersonCheckFill id='user-add' color="limegreen"/> 
+                                <div id='user-add-2'> <FiCheckCircle color="limegreen"/> </div>
                             }
-                        </> :''
+                        </>
+                        :''
                     }
                 </h1>
             </div>

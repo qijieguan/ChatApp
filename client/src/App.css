@@ -15,7 +15,7 @@
 
 .App { 
     min-height: 700px; 
-    background: linear-gradient(45deg, yellow 33%, orange 33%, orange 66%, navy 66%); 
+    background: white;
     overflow: hidden;
 }
 
@@ -60,11 +60,40 @@
     position: absolute;
     right: 0;
     display: inline-flex; 
-    background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
     background-size: cover;
     background-position: center;
     width: 70%;  
     height: 700px;
+    animation: imageSwap 10s linear infinite;
+}
+
+@keyframes imageSwap {
+    0% {
+        background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
+        opacity: 1;
+    }
+    25% {
+        background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png");
+        opacity: 0;
+    }
+    26% {
+        background: url("https://cdn.pixabay.com/photo/2017/12/11/12/52/whatsapp-3012138_960_720.png");
+    }
+    51% {
+        background: url("https://cdn.pixabay.com/photo/2017/12/11/12/52/whatsapp-3012138_960_720.png");
+        opacity: 1;
+    }
+    75% {
+        background: url("https://cdn.pixabay.com/photo/2017/12/11/12/52/whatsapp-3012138_960_720.png");
+        opacity: 0;
+    }
+    76% {
+        background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
+    }
+    100% {
+        background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
+        opacity: 1;
+    }
 }
 
 #login {
@@ -222,7 +251,14 @@
 
 #chat { display: flex; justify-content: flex-start; height: 75px; border-bottom: 1px solid gray; }
 
-#chat img { margin: 0 30px; height: 60px; width: 60px; object-fit: cover; border-radius: 10px; }
+#chat img { 
+    margin: 0 30px; 
+    height: 60px; 
+    width: 60px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 0 3px;
+}
 
 #chat h1 { font-size: 24px; font-family: fantasy; }
 
@@ -244,7 +280,7 @@
 
 #text-content { margin: 8px 0 0 8px; }
 
-#text-made-by { margin: auto 10px 0 0; text-align: right; font-size: 12px; }
+#text-made-by { margin: auto 10px 0 0; text-align: right; color: green; font-size: 12px; }
 
 #private-chat { margin-top: 40px; min-height: 500px; width: 80%; overflow-y: scroll; }
 
@@ -255,16 +291,23 @@
     padding: 5px 0;
     width: 100%;
     font-size: 20px;
-    color: gray;
-    border-bottom: 1px solid gray;
-    box-shadow: 0 0 5px;
+    color: lime;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    box-shadow: 0 0 5px grey;
 }
 
 #back-btn { display: flex; margin-left: 10px; }
 
 #back-btn:hover { background: lawngreen; box-shadow: 0 0 5px 1px forestgreen; }
 
-#private-chat-header img { margin: 0 10px 0 15px; height: 60px; width: 60px; border-radius: 50px; object-fit: cover; }
+#private-chat-header img { 
+    margin: 0 10px 0 15px; 
+    height: 60px; 
+    width: 60px; 
+    object-fit: cover; 
+    border-radius: 50px; 
+    box-shadow: 0 0 3px;
+}
 
 #text-input { margin: 50px 0 30px 5%; height: 100px; width: 100%;}
 
@@ -347,10 +390,10 @@
     height: 100%;
     width: 100%;
     box-shadow: 0 0 5px;
-    transition: 0.5s all;
-    transition-delay: 0.5s;
     border-radius: 50px;
     z-index: 1;
+    transition: 0.5s all;
+    transition-delay: 0.5s;
 }
 
 #user * { transition: 0.5s all; transition-delay: 0.5s; }
@@ -370,11 +413,44 @@
     word-break: break-all;
 }
 
-#user-add { margin-left: 10px; font-size: 30px; }
+#user-add-1 *, #user-add-2 * { font-size: 26px; }
 
-#user:hover .user-name { font-size: 20px; }
+#user:hover #user-name { font-size: 30px; }
 
-#user:hover .user-add { font-size: 36px; }
+#user:hover #user-add-1 *, #user:hover #user-add-2 * { font-size: 32px; }
+
+#user-add-1::after, #user-add-2::after {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(75%, -85%, 0);
+    text-align: center;
+    padding: 10px 3px;
+    width: 150px;
+    background: white;
+    border-radius: 12px 5px 12px 5px;
+    box-shadow: 0 0 3px;
+    opacity: 0;
+    transition: 2s all;
+    transition-delay: 1s;
+}
+
+#user-add-1:hover::after { 
+    content: 'Add User';
+    display: block; 
+    color: orange;
+    background: rgb(255, 235, 198);
+    opacity: 1;
+}
+
+#user-add-2:hover::after { 
+    content: 'Current Friend';
+    display: block; 
+    color: limegreen;
+    background: rgb(198, 255, 198);
+    opacity: 1;
+}
 
 #friend {
     margin-left: 20%;
@@ -426,20 +502,45 @@
     100% { box-shadow: 0 0 10px 2px blue; }
 }
 
-#friend-container:hover { min-width: 200px; z-index: 2; overflow: auto; }
+#friend-container:hover { min-width: 200px; z-index: 2; overflow: unset; }
 
 #friend-profile { position: absolute; height: 95%; width: 75px; object-fit: auto; border-radius: 40px; }
 
 #friend-detail {  position: absolute; right: 30px; height: 100%; opacity: 0; transition: 0.5s all; }
 
-#friend-name { display: block; font-size: 16px; height: 65%; color: limegreen; }
-#chat-icon, #unfriend-icon {float: right; display: inline-flex; justify-content: flex-start; height: 35%; width: 40%; color: white; }
-
 #friend-container:hover #friend-detail { opacity: 1; }
 
-#chat-icon:hover { color: yellowgreen; }
+#friend-name { display: block; font-size: 16px; height: 65%; color: limegreen; }
+
+#chat-icon, #unfriend-icon {
+    float: right; 
+    position: relative; 
+    display: inline-flex; 
+    justify-content: flex-start; 
+    height: 35%; 
+    width: 40%; 
+    color: white; 
+}
 
 #unfriend-icon:hover { color: red; }
+#chat-icon:hover { color: navy; }
+
+#chat-icon::after, #unfriend-icon::after {
+    display: none;
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    top: 0;
+    right: 0;
+    transform: translate3d(83%, -92%, 0);
+    width: 100px;
+    background: white;
+    border-radius: 10px 5px 10px 2px;
+    box-shadow: 0 0 3px black;
+}
+
+#chat-icon:hover::after { content: 'Private Chat'; display: block; color: navy; border: 2px solid navy; }
+#unfriend-icon:hover::after { content: 'Unfriend'; display: block; color: red; border: 2px solid red; }
 
 button {
     position: relative;
