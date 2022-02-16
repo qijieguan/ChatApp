@@ -41,7 +41,7 @@ const Header = () => {
 
     return (
         <header id="App-header">
-            <h1>CHAT APP</h1>
+            <h1>CHAT APP <AiOutlineWechat size={40}/></h1>
             <div style={customStyle}>
                 {!sessionStorage.getItem("isLogged") ?
                     <Link to='/'><button id="login-btn">Login</button></Link>
@@ -53,7 +53,7 @@ const Header = () => {
                     "" :
                     <>
                         <img src={user.image_url} id="user-icon" alt=""/>
-                        <h6 style={{color: 'white', wordBreak: 'break-all', marginRight: '10px'}}>{user.firstname} {user.lastname}</h6>
+                        <h6 style={{color: 'gray', wordBreak: 'break-all', margin: '0 15px'}}>{user.firstname} {user.lastname}</h6>
                     </>
                 }
             </div>
@@ -63,9 +63,9 @@ const Header = () => {
 
 const customStyle = {
     display: 'flex', 
-    justifyContent: 'flex-start',
+    justifyContent: 'flex-end',
     height: '100%',
-    width: '30%', 
+    width: '33%', 
 }
 
 export default Header;

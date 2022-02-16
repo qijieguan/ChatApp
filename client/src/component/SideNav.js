@@ -13,7 +13,7 @@ const Side = () => {
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
-            axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
+            axios.post('http://localhost:3001/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); });
         }
     }, [dispatch]);
@@ -22,22 +22,22 @@ const Side = () => {
         let elements = document.querySelectorAll('#side-li');
         elements.forEach(el => {el.style.background = 'white'; el.style.borderRight = '0'});
         event.target.style.background = 'rgb(230, 230, 230)';
-        event.target.style.borderRight = '4px solid blue';
+        event.target.style.borderRight = '4px solid limegreen';
     }
 
     return (
         <div id="side-panel" style={{display: sessionStorage.getItem('isLogged') ? 'block' : 'none'}}>
             <Link to='/Dashboard' id="side-li" onClick={handleClick} style={{borderRadius: '5px 0 0 0'}}>
                 <AiFillHome id="side-icon" color="red"/>
-                <div style={{color: 'blue'}}>Home</div>
+                <div style={{color: 'limegreen'}}>Home</div>
             </Link>
             <Link to='/Friend' id="side-li" onClick={handleClick}>
                 <FaUserFriends id="side-icon" color="orange"/>
-                <div style={{color: 'blue'}}>Friends</div>
+                <div style={{color: 'limegreen'}}>Friends</div>
             </Link>
             <Link to="/Search" id="side-li" onClick={handleClick} style={{borderRadius: '0 0 0 5px'}}>
                 <BsFillPersonPlusFill id="side-icon" color="green"/>
-                <div style={{color: 'blue'}}>Search</div>
+                <div style={{color: 'limegreen'}}>Search</div>
             </Link>
         </div>
     );

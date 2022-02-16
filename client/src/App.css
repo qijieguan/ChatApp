@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 * {
     font-family: "Poppins", sans-serif;
@@ -15,7 +16,7 @@
 
 .App { 
     min-height: 700px; 
-    background: linear-gradient(45deg, blue 0, blue 33%, orange 33%, orange 66%, yellow 66%, yellow 100%);
+    background: rgb(226, 226, 226);
     overflow: hidden;
 }
 
@@ -24,30 +25,34 @@
     display: flex;
     height: 60px;
     width: 100%;
-    background: linear-gradient(180deg, blue, rgb(61, 61, 156));
-    box-shadow: 0 3px 5px black;
+    background: white;
+    box-shadow: 0 2px 3px grey;
 }
 
 #App-header h1 {
     margin-left: auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Courgette', cursive;
     font-size: 32px;
-    text-shadow: 0 0 5px forestgreen;
     width: 24%;
-    color: white;
+    color: black;
 }
 
-#App-header button { font-family: 'Roboto', sans-serif; padding: 10px 0; width: 100px; border-radius: 50px; }
+#App-header button { 
+    font-family: 'Roboto', sans-serif; 
+    padding: 10px 0; 
+    width: 100px; 
+    background: white;
+    border-radius: 50px;
+    box-shadow: none;
+}
 
-#login-btn { color: forestgreen; background: limegreen; }
+#logout-btn { color: darkred; }
 
-#logout-btn { color: darkred; background: red; }
+#App-header button:hover { box-shadow: 0 0 5px black; }
 
-#about-btn { color: brown; background: rgb(253, 229, 229); border: 2px solid brown; }
-
-#about-btn:hover { color: white; background: brown; border: 0; }
-
-#home { height: 700px; width: 100%; background: white;}
+#login-btn:hover { color: limegreen; border: 2px solid limegreen; }
+#about-btn:hover { color: white; background: teal; }
+#logout-btn:hover { color: white; background: darkred; }
 
 #home-left { 
     position: absolute;
@@ -66,6 +71,7 @@
     background-position: center;
     width: 70%;  
     height: 700px;
+    background: white;
     animation: imageSwap 10s linear infinite;
 }
 
@@ -175,7 +181,6 @@
     min-height: 700px;
     width: 80%;
     background: white;
-    border: 1px solid orange;
 }
 
 #about-left {
@@ -244,7 +249,7 @@
     height: 60px;
     width: 100%;
     color: white;
-    background: navy;
+    background: forestgreen;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 1px 5px black;
 }
@@ -262,9 +267,9 @@
     box-shadow: 0 0 3px;
 }
 
-#chat h1 { font-size: 24px; font-family: fantasy; }
+#chat h1 { font-size: 24px; font-family: 'Lobster', cursive; }
 
-#chat:hover { background: blue; }
+#chat:hover { background: limegreen; }
 
 #text-format {
     margin: 18px 0 3px 3px;
@@ -363,7 +368,7 @@
 
 #side-li:hover div { font-size: 16px; }
 
-#user-icon { margin: 0 10px 0 auto; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
+#user-icon {margin-left: 20px; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
 
 #search {
     padding-bottom: 125px;
@@ -468,7 +473,7 @@
     justify-content: center; 
     height: 100px; 
     font-size: 50px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Lobster', cursive;
     letter-spacing: '1px';
 }
 
@@ -588,11 +593,13 @@ input {
     height: 50px;
     text-indent: 3px;
     width: 85%;
-    color: gray;
+    color: black;
     border: 0;
     border-radius: 0 3px 3px 0;
     box-shadow: 1px 0 5px black;
 }
+
+input::placeholder { color: gray; }
 
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 

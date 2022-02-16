@@ -11,7 +11,7 @@ const Friend = () => {
     const [friends, setFriends] = useState("");
 
     useEffect(() => {
-        axios.post('/users/', { friend_ids: friend_ids })
+        axios.post('http://localhost:3001/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
     }, [friend_ids])
 
@@ -19,7 +19,7 @@ const Friend = () => {
         <div id="friend">
            {friends.length ?
                 <>
-                    <h1 style={{color: 'rgb(65, 65, 255)', letterSpacing: '2px', textShadow: '0 0 1px navy'}}> 
+                    <h1 style={{color: 'limegreen'}}> 
                         My Friends 
                         <FcVoicePresentation size={80} style={{margin: '0 0 10px 10px'}}/>
                     </h1>
