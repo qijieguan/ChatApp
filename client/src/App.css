@@ -46,6 +46,7 @@
     box-shadow: none;
 }
 
+#about-btn { margin-right: 75px; }
 #logout-btn { color: darkred; }
 
 #App-header button:hover { box-shadow: 0 0 5px black; }
