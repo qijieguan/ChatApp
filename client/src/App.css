@@ -112,9 +112,10 @@
     height: 400px;
     width: 100%;
     color: white;
+    animation: fadeSlide 0.2s linear;
 }
 
-#login-label { font-size: 22px; letter-spacing: 1px; color: grey; }
+#login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
 
 #login input { height: 35px; width: 100%; box-shadow: 0 0 3px; border-radius: 3px;}
 
@@ -191,9 +192,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+
+#about-left > div {
+    width: 90%;
     font-size: 32px;
-    color: white;
-    background: orange;
+    animation: fadeSlide 0.5s linear;
+}
+
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(-5%);}
+    100% { opacity: 1; transform: translateY(0%);}
 }
 
 #about-left span { font-size: 16px; color: forestgreen; }
@@ -606,4 +615,3 @@ input::placeholder { color: gray; }
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 
 ::-webkit-scrollbar { display: none; }
-

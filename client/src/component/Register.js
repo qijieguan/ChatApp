@@ -64,7 +64,7 @@ const Register = () => {
 
     return(
         <form id="register" onSubmit={handleSubmit}>
-            <h1 id="register-label">Register Your Account</h1>
+            <h1 id="register-label">Registeration</h1>
             <h3 id="register-msg">{message}</h3>
             <div id="input-container">
                 <div id="input-image">
@@ -86,7 +86,7 @@ const Register = () => {
                     <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
                 </div>
             </div>
-            <button id="register-btn" type='submit'>Create Account</button>
+            <button id="register-btn" type='submit'>Create New Account</button>
         </form>
     );
 }

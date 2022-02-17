@@ -74,7 +74,7 @@ const Login = () => {
     return(
         <div>
             <form id="login" onSubmit={handleSubmit}>
-                <h1 id="login-label">Login</h1>
+                <h1 id="login-label">Enter Your Credentials</h1>
                 <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
                 <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
