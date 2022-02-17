@@ -367,7 +367,8 @@
     min-height: 600px;
     width: 80%;
     background: white;
-    border: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 3px;
 }
 
@@ -455,7 +456,8 @@
     min-height: 700px;
     width: 60%;
     background: white;
-    border: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
     border-radius: 5px;
 }
 
