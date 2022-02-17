@@ -76,6 +76,11 @@
     animation: imageSwap 10s linear infinite;
 }
 
+@keyframes scale {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
 @keyframes imageSwap {
     0% {
         background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png"); 
@@ -112,7 +117,7 @@
     height: 400px;
     width: 100%;
     color: white;
-    animation: fadeSlide 0.2s linear;
+    animation: fadeSlideDown 0.2s linear;
 }
 
 #login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
@@ -139,11 +144,6 @@
 }
 
 #register-link > button { height: 40px; font-size: 14px; color: white; background: green; }
-
-@keyframes scale {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
 
 #register-label {
     text-align: center;
@@ -197,12 +197,7 @@
 #about-left > div {
     width: 90%;
     font-size: 32px;
-    animation: fadeSlide 0.5s linear;
-}
-
-@keyframes fadeSlide {
-    0% { opacity: 0; transform: translateY(-5%);}
-    100% { opacity: 1; transform: translateY(0%);}
+    animation: fadeSlideDown 0.5s linear;
 }
 
 #about-left span { font-size: 16px; color: forestgreen; }
@@ -246,11 +241,6 @@
     border: 1px solid gray;
     border-radius: 10px;
     animation: slideUp 0.5s linear;
-}
-
-@keyframes slideUp {
-    0% { transform: translateY(100%); }
-    100% { transform: translateY(0%); }
 }
 
 #chat-label {
@@ -346,11 +336,6 @@
     right: 0;
     animation: translateXLeft 0.2s linear;
     z-index: 3;
-}
-
-@keyframes translateXLeft {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(0%); }
 }
 
 #side-li {
@@ -486,6 +471,7 @@
     font-size: 50px;
     font-family: 'Lobster', cursive;
     letter-spacing: '1px';
+    animation: fadeSlideLeft 0.5s linear;
 }
 
 #friend-extend {
@@ -511,13 +497,6 @@
     transition: 1s all;
     overflow: hidden;
     z-index: 1;
-}
-
-@keyframes borderSwap {
-    0% { box-shadow: 0 0 5px 2px; }
-    33% { box-shadow: 0 0 5px 2px green; }
-    66% { box-shadow: 0 0 10px 2px red; }
-    100% { box-shadow: 0 0 10px 2px blue; }
 }
 
 #friend-container:hover { min-width: 200px; z-index: 2; overflow: unset; }
@@ -581,21 +560,6 @@ button:hover { box-shadow: 0 0 5px 2px black; }
 .rippleMedium { animation: rippleMedium 1s linear; }
 .rippleLarge { animation: rippleLarge 1s linear; }
 
-@keyframes rippleSmall {
-    0% { width: 0; height: 0; opacity: 0.5;}
-    100% { width: 300px; height: 300px; opacity: 0;}
-}
-
-@keyframes rippleMedium {
-    0% { width: 0; height: 0; opacity: 0.5;}
-    100% { width: 600px; height: 600px; opacity: 0;}
-}
-
-@keyframes rippleLarge {
-    0% { width: 0; height: 0; opacity: 0.5;}
-    100% { width: 1000px; height: 1000px; opacity: 0;}
-}
-
 a { text-decoration: none; }
 
 input {
@@ -615,3 +579,45 @@ input::placeholder { color: gray; }
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 
 ::-webkit-scrollbar { display: none; }
+
+@keyframes slideUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0%); }
+}
+
+@keyframes translateXLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes borderSwap {
+    0% { box-shadow: 0 0 5px 2px; }
+    33% { box-shadow: 0 0 5px 2px green; }
+    66% { box-shadow: 0 0 10px 2px red; }
+    100% { box-shadow: 0 0 10px 2px blue; }
+}
+
+@keyframes rippleSmall {
+    0% { width: 0; height: 0; opacity: 0.5;}
+    100% { width: 300px; height: 300px; opacity: 0;}
+}
+
+@keyframes rippleMedium {
+    0% { width: 0; height: 0; opacity: 0.5;}
+    100% { width: 600px; height: 600px; opacity: 0;}
+}
+
+@keyframes rippleLarge {
+    0% { width: 0; height: 0; opacity: 0.5;}
+    100% { width: 1000px; height: 1000px; opacity: 0;}
+}
+
+@keyframes fadeSlideLeft {
+    0% { opacity: 0; transform: translateX(-5%);}
+    100% { opacity: 1; transform: translateX(0%);}
+}
+
+@keyframes fadeSlideDown {
+    0% { opacity: 0; transform: translateY(-5%);}
+    100% { opacity: 1; transform: translateY(0%);}
+}
