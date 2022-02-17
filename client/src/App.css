@@ -367,9 +367,8 @@
     min-height: 600px;
     width: 80%;
     background: white;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
     border-radius: 3px;
+    box-shadow: 0 0 5px gray;
 }
 
 #user-container {
@@ -456,8 +455,7 @@
     min-height: 700px;
     width: 60%;
     background: white;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
+    box-shadow: 0 0 5px gray;
     border-radius: 5px;
 }
 
