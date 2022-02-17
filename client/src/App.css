@@ -26,11 +26,10 @@
     height: 60px;
     width: 100%;
     background: white;
-    box-shadow: 0 2px 3px grey;
 }
 
 #App-header h1 {
-    margin-left: auto;
+    margin: 0 auto 0 5%;
     font-family: 'Courgette', cursive;
     font-size: 32px;
     width: 24%;
