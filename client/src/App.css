@@ -491,7 +491,6 @@
     left: 0;
     height: 75px;
     width: 75px;
-    background: rgb(34, 34, 34);
     border-radius: 40px;
     animation: borderSwap 5s linear infinite alternate;
     transition: 1s all;
