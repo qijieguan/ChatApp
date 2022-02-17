@@ -117,7 +117,7 @@
     height: 400px;
     width: 100%;
     color: white;
-    animation: fadeSlideDown 0.2s linear;
+    animation: fadeSlideUp 0.4s linear;
 }
 
 #login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
@@ -194,13 +194,9 @@
     justify-content: space-evenly;
 }
 
-#about-left > div {
-    width: 90%;
-    font-size: 32px;
-    animation: fadeSlideDown 0.5s linear;
-}
-
+#about-left > div { width: 90%; font-size: 32px; animation: fadeSlideDown 0.5s linear; }
 #about-left span { font-size: 16px; color: forestgreen; }
+#about-left p { animation: fadeSlideLeft 0.5s linear; }
 
 #about-right-1 {
     height: 50%;
@@ -615,6 +611,11 @@ input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 @keyframes fadeSlideLeft {
     0% { opacity: 0; transform: translateX(-5%);}
     100% { opacity: 1; transform: translateX(0%);}
+}
+
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(10%);}
+    100% { opacity: 1; transform: translateY(0%);}
 }
 
 @keyframes fadeSlideDown {
