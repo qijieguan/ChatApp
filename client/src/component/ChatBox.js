@@ -15,9 +15,7 @@ const ChatBox = () => {
 
     useEffect(() => {
         if (!sessionStorage.getItem('select')) {
-            axios.post('/texts/', {
-                user_id: JSON.parse(sessionStorage.getItem('user'))._id
-            })
+            axios.post('/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
             .then((response) => { setChatSet(response.data) }); 
         } 
         else {
