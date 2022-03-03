@@ -9,20 +9,20 @@ const Login = () => {
 
     const modalStyles = {
         content : {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItem: 'center',
-        justifyContent: 'space-around',
-        top : '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        width: '35%',
-        height: '35%',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)', 
-        zIndex: '4'
-        }
+            display: 'flex',
+            flexDirection: 'column',
+            alignItem: 'center',
+            justifyContent: 'space-around',
+            top : '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            width: '35%',
+            height: '35%',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)', 
+        },
+        overlay: { zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));
@@ -88,18 +88,11 @@ const Login = () => {
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />
-                <button style={authBtnStyle} onClick={authentication}>Click to Authenticate</button> 
+                <button id="auth-btn" onClick={authentication}>Click to Authenticate</button> 
             </Modal>
 
         </div>
     );
-}
-
-const authBtnStyle = {
-    height: '75px',
-    width: '80%',
-    color: 'white',
-    background: 'orange'
 }
 
 export default Login;

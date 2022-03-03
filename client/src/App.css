@@ -15,19 +15,9 @@
     box-sizing: border-box;
 }
 
-.App { 
-    min-height: 700px; 
-    background: rgb(226, 226, 226);
-    overflow: hidden;
-}
+.App { min-height: 700px; background: rgb(226, 226, 226); overflow: hidden; }
 
-#App-header {
-    position: relative;
-    display: flex;
-    height: 60px;
-    width: 100%;
-    background: white;
-}
+#App-header { position: relative; display: flex; height: 60px; width: 100%; background: white; }
 
 #App-header h1 {
     margin: 0 auto 0 5%;
@@ -44,16 +34,20 @@
     background: white;
     border-radius: 50px;
     box-shadow: none;
-}
 
-#about-btn { margin-right: 75px; }
-#logout-btn { color: darkred; }
+}
 
 #App-header button:hover { box-shadow: 0 0 5px black; }
 
-#login-btn:hover { color: limegreen; border: 2px solid limegreen; }
+#about-btn { margin-right: 75px; }
 #about-btn:hover { color: white; background: teal; }
+#logout-btn { color: darkred; }
+#login-btn:hover { color: limegreen; border: 2px solid limegreen; }
 #logout-btn:hover { color: white; background: darkred; }
+
+#header-left { display: flex; justify-content: flex-end; height: 100%; }
+#header-right { display: flex; }
+#header-right div { color: gray; word-break: break-all; margin: 0 15px }
 
 #home-left { 
     position: absolute;
@@ -91,14 +85,12 @@
 }
 
 #login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
-
 #login input { height: 35px; width: 100%; box-shadow: 0 0 3px; border-radius: 3px;}
-
 #login input:focus { outline-color: rgb(36, 36, 141); }
 
 #sign-in-btn { height: 35px; width: 80%; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px black;}
-
 #sign-in-btn:hover { box-shadow: 0 0 5px 2px black; }
+#auth-btn { height: 75px; width: 80%; color: white; background: orange; }
 
 #register {
     display: flex;
@@ -128,9 +120,7 @@
 #register-msg { font-size: 20px; color: 'green' }
 
 #input-container { margin-bottom: 50px; display: flex; width: 100%; }
-
 #input-image { display: flex; flex-direction: column; width: 30%; box-shadow: 0 -1px 5px black; }
-
 #preview-image { height: 300px; width: 100%; object-fit: cover; border-bottom: 1px solid gray; }
 
 #file { 
@@ -142,7 +132,6 @@
 }
 
 #input-credentials { width: 500px; }
-
 .input-dot::after { content: " *"; color: red; }
 
 #about {
@@ -158,7 +147,7 @@
 #about-left {
     padding-top: 20px;
     text-align: center;
-    height: 400px;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -166,7 +155,7 @@
 
 #about-left > div { width: 90%; font-size: 32px; animation: fadeSlideDown 0.5s linear; }
 #about-left span { font-size: 16px; color: forestgreen; }
-#about-left p { animation: fadeSlideLeft 0.5s linear; }
+#about-left p { margin-left: 3%; width: 90%; font-size: 16px; animation: fadeSlideLeft 0.5s linear; }
 
 #about-right-1 {
     height: 50%;
@@ -222,7 +211,6 @@
 }
 
 #chat-set { width: 100%; }
-
 #chat { display: flex; justify-content: flex-start; height: 75px; border-bottom: 1px solid gray; }
 
 #chat img { 
@@ -235,7 +223,6 @@
 }
 
 #chat h1 { font-size: 24px; font-family: 'Lobster', cursive; }
-
 #chat:hover { background: limegreen; }
 
 #text-format {
@@ -253,9 +240,7 @@
 }
 
 #text-content { margin: 8px 0 0 8px; }
-
 #text-made-by { margin: auto 10px 0 0; text-align: right; color: green; font-size: 12px; }
-
 #private-chat { margin-top: 40px; min-height: 500px; width: 80%; overflow-y: scroll; }
 
 #private-chat-header {
@@ -271,7 +256,6 @@
 }
 
 #back-btn { display: flex; margin-left: 10px; }
-
 #back-btn:hover { background: lawngreen; box-shadow: 0 0 5px 1px forestgreen; }
 
 #private-chat-header img { 
@@ -284,7 +268,6 @@
 }
 
 #text-input { margin: 50px 0 30px 5%; height: 100px; width: 100%;}
-
 #text-input input { height: 100%; width: 75%; box-shadow: 0 0 5px; outline-color: limegreen;}
 
 #text-input button {  
@@ -296,13 +279,7 @@
     border-radius: 40px;
 }
 
-#side-panel {
-    position: absolute;
-    margin-top: 50px;
-    right: 0;
-    animation: translateXLeft 0.2s linear;
-    z-index: 3;
-}
+#side-panel { position: fixed; margin-top: 50px; right: 0; animation: translateXLeft 0.2s linear; z-index: 3; }
 
 #side-li {
     margin-left: auto;
@@ -319,15 +296,10 @@
 }
 
 #side-li * { pointer-events: none; }
-
 #side-li:hover { height: 100px; width: 105px; box-shadow: 0 2px 5px black; }
-
 #side-icon { font-size: 24px; }
-
 #side-li div { color: white; }
-
 #side-li:hover .side-icon { font-size: 32px; }
-
 #side-li:hover div { font-size: 16px; }
 
 #user-icon {margin-left: 20px; height: 45px; width: 45px; border-radius: 30px; box-shadow: 0 0 5px; }
@@ -366,9 +338,7 @@
 }
 
 #user * { transition: 0.5s all; transition-delay: 0.5s; }
-
 #user:hover { height: 500px; width: 300px; z-index: 2;}
-
 #user-image { position: relative; height: 100%; width: 100%; object-fit: cover; border-radius: 50px; }
 
 #user-name {
@@ -383,9 +353,7 @@
 }
 
 #user-add-1 *, #user-add-2 * { font-size: 26px; }
-
 #user:hover #user-name { font-size: 30px; }
-
 #user:hover #user-add-1 *, #user:hover #user-add-2 * { font-size: 32px; }
 
 #user-add-1::after, #user-add-2::after {
@@ -466,13 +434,9 @@
 }
 
 #friend-container:hover { min-width: 200px; z-index: 2; overflow: unset; }
-
 #friend-profile { position: absolute; height: 95%; width: 75px; object-fit: auto; border-radius: 40px; }
-
 #friend-detail {  position: absolute; right: 30px; height: 100%; opacity: 0; transition: 0.5s all; }
-
 #friend-container:hover #friend-detail { opacity: 1; }
-
 #friend-name { display: block; font-size: 16px; height: 65%; color: limegreen; }
 
 #chat-icon, #unfriend-icon {
@@ -541,11 +505,33 @@ input {
 }
 
 input::placeholder { color: gray; }
-
 input:focus { color: black; outline-color: orange; outline-offset: 1px; }
 
 ::-webkit-scrollbar { display: none; }
 
+@media (max-width: 700px) {
+    #App-header h1 { display: flex; margin: 0; font-size: 20px; }
+    #App-header h6 { color: red; }
+    #about-btn { margin-right: 0; }
+    #home-left { 
+        margin: 10% 0 0 15%;
+        height: 450px;  
+        width: 70%; 
+        box-shadow: 0 0 5px;
+        border-radius: 5px; 
+        z-index: 3;  
+    }
+    #login { margin-bottom: 0; }
+    #auth-btn { margin-right: 5%; width: 90%; font-size: 14px; }
+    #home-right { width: 100%; }
+    #about-left > div { font-size: 20px; }
+    #about-left p { font-size: 14px; }
+    #friend > h1, #search > h1 { font-size: 40px; }
+    #user-container { height: 200px; width: 150px; }
+    #user-name { font-size: 16px; }
+    #side-panel { opacity: 0.6;  }
+    #side-panel:hover { opacity: 1; }
+}
 
 @keyframes translateXLeft {
     0% { transform: translateX(100%); }
