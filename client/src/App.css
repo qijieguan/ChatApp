@@ -15,17 +15,10 @@
     box-sizing: border-box;
 }
 
-.App { min-height: 700px; background: rgb(226, 226, 226); overflow: hidden; }
+.App { min-height: 700px; background: rgb(226, 226, 226); }
 
 #App-header { position: relative; display: flex; height: 60px; width: 100%; background: white; }
-
-#App-header h1 {
-    margin: 0 auto 0 5%;
-    font-family: 'Courgette', cursive;
-    font-size: 32px;
-    width: 24%;
-    color: black;
-}
+#App-header h1 { margin: 0 auto 0 5%; font-family: 'Courgette', cursive; font-size: 32px; width: 24%; color: black; }
 
 #App-header button { 
     font-family: 'Roboto', sans-serif; 
@@ -34,7 +27,6 @@
     background: white;
     border-radius: 50px;
     box-shadow: none;
-
 }
 
 #App-header button:hover { box-shadow: 0 0 5px black; }
@@ -69,11 +61,6 @@
     background-position: center;
 }
 
-@keyframes scale {
-    0% {transform: scale(0);}
-    100% {transform: scale(1);}
-}
-
 #login {
     margin-bottom: 200px;
     display: flex;
@@ -92,47 +79,41 @@
 #sign-in-btn:hover { box-shadow: 0 0 5px 2px black; }
 #auth-btn { height: 75px; width: 80%; color: white; background: orange; }
 
-#register {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 15%;
+#register-form {
+    display: grid;
+    grid-template-columns: 80%;
+    width: 100%;
     min-height: 700px;
-    width: 70%;
-    background: linear-gradient(45deg, purple, gold);
+    background: white;
     box-shadow: 0 0 5px black;
-    border-radius: 5px;
-    animation: scale 0.5s linear;
 }
 
 #register-link > button { height: 40px; font-size: 14px; color: white; background: green; }
 
 #register-label {
-    text-align: center;
+    margin-top: 50px;
+    width: 60%;
     font-family: fantasy;
-    font-size: 32px;
+    font-size: 36px;
     letter-spacing: 1px;
-    color: transparent;
-    background: linear-gradient(45deg, green, red);
-    background-clip: text;
+    color: limegreen;
+    border-bottom: 2px solid lime;
 }
 
 #register-msg { font-size: 20px; color: 'green' }
+#input-image { margin: 50px auto 75px 0; width: 25%; box-shadow: 0 0 5px black; }
+#input-image input { border: 0; box-shadow: unset;}
+#preview-image { height: 250px; width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
+#file { text-indent: 10px; line-height: 50px; width: 100%; background: white; box-shadow: 0 2px 3px black; }
 
-#input-container { margin-bottom: 50px; display: flex; width: 100%; }
-#input-image { display: flex; flex-direction: column; width: 30%; box-shadow: 0 -1px 5px black; }
-#preview-image { height: 300px; width: 100%; object-fit: cover; border-bottom: 1px solid gray; }
+#line { height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
 
-#file { 
-    text-indent: 10px;
-    line-height: 50px;
-    width: 100%; 
-    background: white;
-    box-shadow: 0 2px 3px black; 
-}
-
-#input-credentials { width: 500px; }
+#register-form > input { margin-bottom: 30px; border-radius: 5px; box-shadow: 0 0 3px; width: 100%;}
+#register-form > input:focus { outline-color: green; }
+.input-dot { font-size: 16px; }
 .input-dot::after { content: " *"; color: red; }
+
+#register-btn { margin: 50px 0 50px 12.5%; height: 60px; width: 75%; font-size: 16px; color: white; background: limegreen; }
 
 #about {
     margin: 0 0 20px 10%;
@@ -179,8 +160,6 @@
     background-size: contain;
     background-repeat: no-repeat; 
 }
-
-#register-btn { height: 50px; width: 85%; color: white; background: linear-gradient(45deg, orange, red); }
 
 #dashboard { display: flex; align-items: unset; min-height: 900px; }
 
@@ -471,6 +450,7 @@
 
 button {
     position: relative;
+    display: flex;
     margin-right: 10px;
     font-size: 16px;
     border: 0;
@@ -499,19 +479,18 @@ input {
     text-indent: 3px;
     width: 85%;
     color: black;
-    border: 0;
-    border-radius: 0 3px 3px 0;
-    box-shadow: 1px 0 5px black;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    box-shadow: 0 0 3px gray;
 }
 
 input::placeholder { color: gray; }
-input:focus { color: black; outline-color: orange; outline-offset: 1px; }
-
-::-webkit-scrollbar { display: none; }
+input:focus { color: black; outline-color: green; outline-offset: 1px; }
 
 @media (max-width: 700px) {
     #App-header h1 { display: flex; margin: 0; font-size: 20px; }
     #App-header h6 { color: red; }
+    #login-btn, #logout-btn, #about-btn { font-size: 14px; height: 35px; width: 50px; }
     #about-btn { margin-right: 0; }
     #home-left { 
         margin: 10% 0 0 15%;
@@ -523,6 +502,12 @@ input:focus { color: black; outline-color: orange; outline-offset: 1px; }
     }
     #login { margin-bottom: 0; }
     #auth-btn { margin-right: 5%; width: 90%; font-size: 14px; }
+    #register-label { text-align: center; font-size: 30px; width: 80%; }
+    #input-image { min-height: 150px ; width: 70%; margin: 30px auto 50px auto;}
+    #line { margin: 25px 0 50px 0; }
+    #register-form > input { height: 40px; width: 80%; margin: 0 auto 20px auto; }
+    #register-form > input::placeholder { font-size: 14px; }
+    .input-dot { font-size: 14px; width: 80%; margin: auto; }
     #home-right { width: 100%; }
     #about-left > div { font-size: 20px; }
     #about-left p { font-size: 14px; }

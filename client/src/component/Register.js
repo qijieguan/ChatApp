@@ -63,37 +63,29 @@ const Register = () => {
     };
 
     return(
-        <form id="register" onSubmit={handleSubmit}>
-            <h1 id="register-label">Registeration</h1>
-            <h3 id="register-msg">{message}</h3>
-            <div id="input-container">
-                <div id="input-image">
-                    <img src={url ? url : defaultURL} id="preview-image" alt=""/>
-                    <input type="file" id="file" accept='images/*' onChange={previewFile} required/>
-                </div>
-                <div id="input-credentials">
-                    <div style={customStyle}>
-                        <h1 className='input-dot'>First Name</h1>
-                        <input name="firstname" id="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
-                    </div>
-                    <div style={customStyle}>
-                        <h1 className='input-dot'>Last Name</h1>
-                        <input name="lastname" id="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
-                    </div>
-                    <h1 className='input-dot'>Username</h1>
-                    <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
-                    <h1 className='input-dot'>Password</h1>
-                    <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
-                </div>
+        <form id="register-form" onSubmit={handleSubmit}>
+            <h1 id="register-label">Register Your Account</h1>
+            <h3 id="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
+      
+            <div id="input-image">
+                <img src={url ? url : defaultURL} id="preview-image" alt=""/>
+                <input type="file" id="file" accept='images/*' onChange={previewFile} required/>
             </div>
+            <div id='line'/>
+            <h1 className='input-dot'>First Name</h1>
+            <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
+            <h1 className='input-dot'>Last Name</h1>
+            <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
+            <h1 className='input-dot'>Username</h1>
+            <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
+            <h1 className='input-dot'>Password</h1>
+            <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
+          
             <button id="register-btn" type='submit'>Create New Account</button>
         </form>
     );
 }
 
-const customStyle = {
-    display: 'inline-block', 
-    width: '46%'
-}
+
 
 export default Register;
