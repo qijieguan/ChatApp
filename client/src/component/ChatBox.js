@@ -62,7 +62,7 @@ const ChatBox = () => {
                 <>
                     <div id="private-chat-header">
                         <button id="back-btn" onClick={goBack}>
-                            <MdArrowBack size={36} color='limegreen'/>
+                            <MdArrowBack size={36} color='teal'/>
                         </button>
                         To:<img src={user.image_url} alt=""/>
                         {user.firstname + " " + user.lastname}
@@ -75,7 +75,7 @@ const ChatBox = () => {
                     </div>
                 </>
             }
-            <div id='text-input' style={{display: sessionStorage.getItem('select') ? 'block' : 'none'}}>
+            <div id='text-input' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
                 <input name='text' value={textInp} onChange={handleChange}/>
                 <button onClick={handleSubmit}>Send</button>
             </div>

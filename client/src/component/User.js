@@ -24,9 +24,7 @@ const User = ({ user }) => {
 
     return (
         <div id="user-container">
-            <div id='user' 
-                style={{boxShadow: JSON.parse(sessionStorage.getItem('user'))._id === user._id ? '0 0 10px 5px green' : '' }}
-            >
+            <div id='user'>
                 <img id="user-image" src={user.image_url} alt=""/>
                 <h1 id="user-name">
                     {user.firstname} {user.lastname} 

@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './component/Header.js';
-import Side from "./component/SideNav.js";
 import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Login from './component/Login.js';
@@ -24,7 +23,6 @@ function App() {
       <Provider store={store}>
         <Router>
             <Header/>
-            <Side/>
             <Switch>
               <Route path="/" exact component={Home}/>
               <Route path="/Register" exact component={Register}/>

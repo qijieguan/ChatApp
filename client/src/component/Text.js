@@ -11,7 +11,7 @@ const Text = ({ friend, text }) => {
 
     const getStyle = () => {
         if ((JSON.parse(sessionStorage.getItem('user'))._id === text.user_id)) {
-            return {background: 'lime', marginLeft: 'auto', marginRight: '3px'}
+            return {background: 'rgb(0, 179, 179)', marginLeft: 'auto', marginRight: '3px'}
         }
     }
 

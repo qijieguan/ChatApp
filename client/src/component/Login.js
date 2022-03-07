@@ -90,7 +90,6 @@ const Login = () => {
                 />
                 <button id="auth-btn" onClick={authentication}>Click to Authenticate</button> 
             </Modal>
-
         </div>
     );
 }

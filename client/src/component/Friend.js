@@ -4,6 +4,7 @@ import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
 import Extend from './FriendExtend.js';
 import { FcVoicePresentation } from 'react-icons/fc';
+import SideNav from './SideNav.js';
 
 const Friend = () => {
 
@@ -16,19 +17,22 @@ const Friend = () => {
     }, [friend_ids])
 
     return (
-        <div id="friend">
-           {friends.length ?
-                <>
-                    <h1 style={{color: 'limegreen'}}> 
-                        My Friends 
-                        <FcVoicePresentation size={80} style={{margin: '0 0 10px 10px'}}/>
-                    </h1>
-                    {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
-                </>
-                :
-                <h1>Add other users as friends!</h1>
-           }
-        </div>
+        <>
+            <SideNav/>
+            <div id="friend">
+            {friends.length ?
+                    <>
+                        <h1 style={{marginBottom: '50px'}}> 
+                            My Friends 
+                            <FcVoicePresentation size={80} style={{margin: '0 0 10px 10px'}}/>
+                        </h1>
+                        {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
+                    </>
+                    :
+                    <h1>Add other users as friends!</h1>
+            }
+            </div>
+        </>
     );
 }
 
