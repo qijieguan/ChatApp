@@ -1,3 +1,4 @@
+import './styles/home.css';
 import Login from "./Login.js";
 
 const Home = () => { 

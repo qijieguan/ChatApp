@@ -1,3 +1,4 @@
+import './styles/home.css';
 import SideNav from './SideNav.js';
 
 const About = () => {

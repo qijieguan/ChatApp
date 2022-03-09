@@ -1,0 +1,80 @@
+#friend {
+    display: inline-block;
+    margin-bottom: 50px;
+    min-height: 700px;
+    width: 60%;
+    background: white;
+    border: 2px solid teal;
+    box-shadow: 0 0 5px gray;
+    border-radius: 5px;
+}
+
+#friend > h1, #search > h1 {
+    display: flex; 
+    justify-content: flex-start;
+    margin-left: 5%;
+    font-size: 50px;
+    font-family: 'Lobster', cursive;
+    letter-spacing: '1px';
+    color: teal;
+    animation: fadeSlideLeft 0.5s linear;
+}
+
+#friend-extend {
+    display: inline-grid;
+    grid-template-columns: 20% 100px 20%;
+    grid-template-rows: 10% 100px auto;
+    margin-left: 8%;
+    margin-bottom: 8%;
+    width: 22%;
+    background: rgb(238, 238, 238);
+    border: 1px solid teal;
+}
+
+#unfriend-icon { position: relative;; grid-column: 1 / 2; margin: 5px auto auto 10px; color: gray; }
+#unfriend-icon:hover { color: #b22222; }
+#chat-icon { position: relative; grid-column: 3 / 4; margin: 5px 10px auto auto; color: gray; }
+#chat-icon:hover { color: teal; }
+#chat-icon::after, #unfriend-icon::after {
+    display: none;
+    position: absolute;
+    text-align: center;
+    padding: 3px;
+    top: 0;
+    right: 0;
+    transform: translate3d(90%, -95%, 0);
+    width: 100px;
+    background: white;
+    border-radius: 10px 10px 10px 0;
+    box-shadow: 0 0 3px black;
+}
+
+#chat-icon:hover::after { content: 'Private Chat'; display: block; color: teal; }
+#unfriend-icon:hover::after { content: 'Unfriend'; display: block; color: firebrick; }
+
+#friend-profile { 
+    grid-column: 2 / 3; 
+    height: 100%; 
+    width: 100%; 
+    object-fit: auto; 
+    border-radius: 50px; 
+    box-shadow: 0 0 3px black;
+    border: 2px solid teal;
+}
+#friend-name { grid-column: 1 / 4; text-align: center; margin: auto; color: teal; }
+
+@media (max-width: 1000px) {
+    #friend-extend { 
+        grid-template-columns: 20% 75px 20%;
+        grid-template-rows: 10% 75px auto; 
+        width: 30%; 
+    }
+}
+
+@media (max-width: 700px) {
+    #friend > h1, #search > h1 { font-size: 40px; }
+    #user-container { height: 200px; width: 150px; }
+    #friend { width: 70%; }
+    #friend-extend { width: 42%; margin-left: 5%;}
+}
+

@@ -1,3 +1,4 @@
+import './styles/nav.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -41,7 +42,7 @@ const Header = () => {
     return (
         <header id="App-header" style={{display: !sessionStorage.getItem("isLogged") ? 'flex' : 'none'}}>
             <h1>CHAT APP <AiOutlineWechat size={40} style={{margin: '0 0 8px 8px'}}/></h1>
-            <div id="header-buttons">
+            <div id="header-btns">
                 <Link to='/'><button id="login-btn">Login</button></Link>
                 <Link to='/About'><button id="about-btn">About</button></Link>
             </div>

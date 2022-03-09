@@ -1,3 +1,4 @@
+import './styles/nav.css';
 import { AiFillHome, AiFillRead, AiOutlineWechat } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';

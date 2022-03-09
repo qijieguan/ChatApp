@@ -1,0 +1,81 @@
+.App { padding-top: 50px; min-height: 700px; background: rgb(226, 226, 226); }
+
+#home-left { 
+    position: absolute;
+    display: flex; 
+    background: white; 
+    width: 30%; 
+    height: 700px; 
+    border-right: 1px solid rgb(241, 241, 241);
+    z-index: 2;
+}
+
+#home-right { 
+    position: absolute;
+    right: 0;
+    display: flex; 
+    width: 80%;  
+    height: 700px;
+    background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png");
+    background-size: cover;
+    background-position: right;
+}
+
+#about {
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 50px;
+    width: 60%;
+    background: white;
+    border: 1px solid rgb(221, 221, 221);
+}
+
+#about-left {
+    padding-top: 20px;
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#about-left > div { width: 90%; font-size: 32px; animation: fadeSlideDown 0.5s linear; }
+#about-left span { font-size: 16px; color: rgb(236, 187, 97); }
+#about-left p { margin-left: 3%; width: 90%; font-size: 16px; animation: fadeSlideLeft 0.5s linear; }
+
+#about-right-1 {
+    height: 50%;
+    background: url("https://www.mindinventory.com/blog/wp-content/uploads/2021/06/mern-stack.png");
+}
+
+#about-right-2 {
+    height: 100%;
+    background: url("https://thumbs.dreamstime.com/b/searching-friends-social-network-24575314.jpg");
+}
+
+#about-right-3 {
+    height: 80%;
+    background: url("https://cdn.pixabay.com/photo/2020/10/01/16/53/game-controller-5619105_960_720.jpg");
+}
+
+#about-right-1, #about-right-2, #about-right-3 { 
+    display: flex;
+    margin-left: 5%; 
+    width: 90%;
+    background-size: contain;
+    background-repeat: no-repeat; 
+}
+
+@media (max-width: 700px) {
+    #home-left { 
+        margin: 10% 0 0 15%;
+        height: 450px;  
+        width: 70%; 
+        box-shadow: 0 0 5px;
+        border-radius: 5px; 
+        z-index: 3;  
+    }
+    #home-right { width: 100%; }
+    #about-left > div { font-size: 20px; }
+    #about-left p { font-size: 14px; }
+}

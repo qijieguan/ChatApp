@@ -1,3 +1,4 @@
+import './styles/friend.css';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import uuid from 'react-uuid';

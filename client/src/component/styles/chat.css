@@ -1,0 +1,100 @@
+#chat-container {
+    display: inline-flex;
+    flex-direction: column;
+    align-content: unset;
+    justify-content: unset;
+    margin: 30px 0 0 10%;
+    height: 800px;
+    width: 40%;
+    background: white;
+    border: 1px solid gray;
+    border-radius: 10px;
+    animation: slideUp 0.5s linear;
+}
+
+#chat-label {
+    position: relative;
+    display: flex;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    color: white;
+    background: teal;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 1px 5px black;
+}
+
+#chat-set { width: 100%; }
+#chat { display: flex; justify-content: flex-start; height: 75px; border-bottom: 1px solid gray; }
+
+#chat img { 
+    margin: 0 30px; 
+    height: 60px; 
+    width: 60px; 
+    object-fit: cover; 
+    border-radius: 10px; 
+    box-shadow: 0 0 3px;
+}
+
+#chat h1 { font-size: 24px; font-family: 'Lobster', cursive; }
+#chat:hover { background: rgb(18, 190, 190); }
+
+#private-chat-header {
+    display: flex;
+    justify-content: unset;
+    padding: 5px 0;
+    width: 100%;
+    border-bottom: 1px solid rgb(207, 207, 207);
+    box-shadow: 0 0 5px grey;
+}
+#private-chat-header span { display: flex; margin: 0 10px; font-size: 18px; color: gray; }
+
+#back-btn { display: flex; margin-left: 10px; height: 40px; width: 45px; }
+#back-btn:hover { background: rgb(0, 179, 179); box-shadow: 0 0 3px 1px darkslategray; }
+#private-chat-header img { 
+    margin: 0 10px 0 15px; 
+    height: 60px; 
+    width: 60px; 
+    object-fit: cover; 
+    border-radius: 50px; 
+    box-shadow: 0 0 3px black;
+}
+
+#private-chat { margin-top: 40px; min-height: 500px; width: 80%; overflow-y: auto; }
+#private-chat::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+#text-format {
+    margin: 18px 0 3px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: unset;
+    max-width: 80%;
+    min-height: 100px;
+    max-height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 0 0 5px;
+}
+#text-content { margin: 8px 0 0 8px; }
+#text-made-by { margin: auto 10px 0 0; text-align: right; color: darkslategray; font-size: 12px; }
+
+#text-input { justify-content: space-evenly; margin: 50px 0 30px 5%; height: 100px; width: 100%;}
+#text-input input { height: 100%; width: 70%; box-shadow: 0 0 5px; outline-color: teal;}
+#text-input button {  
+    height: 80%;
+    width: 15%;
+    color: white;
+    background: teal;
+    border-radius: 40px;
+}
+
+@media (max-width: 700px) {
+    #chat-container { width: 70%; margin: 30px 0 0 0; } 
+    #text-content { font-size: 12px;margin-right: 0; margin-left: 5px; }
+    #private-chat-header { font-size: 16px; }
+    #back-btn { height: 30px; width: 35px; }
+}

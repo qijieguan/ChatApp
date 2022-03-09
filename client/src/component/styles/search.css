@@ -1,0 +1,92 @@
+#search {
+    display: inline-block;
+    min-height: 600px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    width: 60%;
+    background: white;
+    border: 2px solid teal;
+    border-radius: 3px;
+    box-shadow: 0 0 5px gray;
+}
+
+#user-container {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 5% 0 0 6%;
+    height: 300px;
+    width: 25%;
+    border-radius: 50px;
+}
+
+#user {
+    position: absolute;
+    justify-content: center;
+    background: white;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 5px;
+    border-radius: 50px;
+    z-index: 1;
+    transition: 0.5s all;
+    transition-delay: 0.5s;
+}
+
+#user * { transition: 0.5s all; transition-delay: 0.5s; }
+#user:hover { height: 500px; width: 300px; z-index: 2;}
+#user-image { position: relative; height: 100%; width: 100%; object-fit: cover; border-radius: 50px; }
+
+#user-name {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    font-size: 18px;
+    min-height: 50px;
+    width: 100%;
+    color: white;
+    word-break: break-all;
+}
+
+#user-add-1 *, #user-add-2 * { font-size: 26px; }
+#user:hover #user-name { font-size: 30px; }
+#user:hover #user-add-1 *, #user:hover #user-add-2 * { font-size: 32px; }
+
+#user-add-1::after, #user-add-2::after {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(75%, -85%, 0);
+    text-align: center;
+    padding: 10px 3px;
+    width: 150px;
+    background: white;
+    border-radius: 12px 5px 12px 5px;
+    box-shadow: 0 0 3px;
+    opacity: 0;
+    transition: 2s all;
+    transition-delay: 1s;
+}
+
+#user-add-1:hover::after { 
+    content: 'Add User';
+    display: block; 
+    color: orange;
+    background: rgb(255, 235, 198);
+    opacity: 1;
+}
+
+#user-add-2:hover::after { 
+    content: 'Current Friend';
+    display: block; 
+    color: limegreen;
+    background: rgb(198, 255, 198);
+    opacity: 1;
+}
+
+@media (max-width: 700px) {
+    #search { width: 70%; }
+    #user-container { margin: 5% 0 0 3%; width: 45%; height: 200px;}
+    #user-name { font-size: 14px; }
+}

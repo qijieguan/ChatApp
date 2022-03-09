@@ -1,3 +1,4 @@
+import './styles/chat.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import uuid from 'react-uuid';

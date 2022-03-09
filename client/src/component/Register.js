@@ -1,3 +1,4 @@
+import './styles/form.css';
 import { useState } from 'react';
 import axios from 'axios';
 

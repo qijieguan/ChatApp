@@ -1,3 +1,4 @@
+import './styles/search.css';
 import { useState, useEffect } from "react";
 import User from './User.js';
 import uuid from 'react-uuid';
