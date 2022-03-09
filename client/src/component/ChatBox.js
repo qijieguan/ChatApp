@@ -30,6 +30,11 @@ const ChatBox = () => {
         }  
     }, [update])
 
+    const scrollBottom = () => {
+        let element = document.getElementById("private-chat")
+        if (element) { element.scrollTop = element.scrollHeight }
+    }
+
     const getSelect = (id) => { sessionStorage.setItem('select', id); setUpdate(!update); }
 
     const handleChange = (event) => { setText(event.target.value); }
@@ -64,10 +69,12 @@ const ChatBox = () => {
                         <button id="back-btn" onClick={goBack}>
                             <MdArrowBack size={36} color='teal'/>
                         </button>
-                        To:<img src={user.image_url} alt=""/>
-                        {user.firstname + " " + user.lastname}
+                        <span>
+                            Messaging:<img src={user.image_url} alt=""/>
+                            {user.firstname + " " + user.lastname}
+                        </span>
                     </div>
-                    <div id="private-chat">
+                    <div id="private-chat" onLoad={scrollBottom()}>
                         {textSet && textSet.length?
                             textSet.map(text => <Text key={uuid()} friend={user} text={text}/>)
                             :''
