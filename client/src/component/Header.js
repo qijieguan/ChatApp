@@ -12,7 +12,11 @@ const Header = () => {
         window.scrollTo(0,0);
         toggleRipple(); 
         let element = document.getElementById(location.pathname);
-        if (element) { element.style.color = 'teal'; }
+        if (element) {
+            element.style.color = 'teal'; 
+            element.style.borderLeft = '3px solid teal';
+            element.style.pointerEvents = 'none';
+        }
     }, [location]);
 
     const toggleRipple = () => {
@@ -40,13 +44,23 @@ const Header = () => {
     }
 
     return (
-        <header id="App-header" style={{display: !sessionStorage.getItem("isLogged") ? 'flex' : 'none'}}>
-            <h1>CHAT APP <AiOutlineWechat size={40} style={{margin: '0 0 8px 8px'}}/></h1>
-            <div id="header-btns">
-                <Link to='/'><button id="login-btn">Login</button></Link>
-                <Link to='/About'><button id="about-btn">About</button></Link>
-            </div>
-        </header>
+        <> 
+            {!sessionStorage.getItem("isLogged") ?
+                <header id="App-header">
+                    <h1>CHAT APP <AiOutlineWechat size={40} style={{margin: '0 0 8px 8px'}}/></h1>
+                    <div id="header-btns">
+                        <Link to='/'><button id="login-btn">Login</button></Link>
+                        <Link to='/About'><button id="about-btn">About</button></Link>
+                    </div>
+                </header>
+                :
+                <div id='header-alt'>
+                    <img id="header-img" alt=""/>
+                    <h1> Chill <span>n'</span> Chat <span>Freely</span></h1>
+                    <div id='header-overlay'/>
+                </div>
+            }
+        </>
     );
 }
 

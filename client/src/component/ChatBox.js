@@ -26,10 +26,10 @@ const ChatBox = () => {
                 axios.post('/texts/select/', {
                     user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                     friend_id: response.data._id
-                }).then((response) => setTextSet(response.data.text));
+                }).then((response) => {setTextSet(response.data.text); scrollBottom();});
             });
         }  
-    }, [update])
+    }, [update]);
 
     const scrollBottom = () => {
         let element = document.getElementById("private-chat")
@@ -75,7 +75,7 @@ const ChatBox = () => {
                             {user.firstname + " " + user.lastname}
                         </span>
                     </div>
-                    <div id="private-chat" onLoad={scrollBottom()}>
+                    <div id="private-chat">
                         {textSet && textSet.length?
                             textSet.map(text => <Text key={uuid()} friend={user} text={text}/>)
                             :''

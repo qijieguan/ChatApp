@@ -87,6 +87,6 @@
 
 @media (max-width: 700px) {
     #search { width: 70%; }
-    #user-container { margin: 5% 0 0 3%; width: 45%; height: 200px;}
+    #user-container { margin: 5% 0 0 3%; }
     #user-name { font-size: 14px; }
 }

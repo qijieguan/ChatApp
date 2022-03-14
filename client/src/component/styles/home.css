@@ -1,4 +1,4 @@
-.App { padding-top: 50px; min-height: 700px; background: rgb(226, 226, 226); }
+.App { min-height: 700px; background: white; }
 
 #home-left { 
     position: absolute;
