@@ -17,7 +17,7 @@
     width: 80%;  
     height: 700px;
     background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png");
-    background-size: cover;
+    background-size: auto;
     background-position: right;
 }
 
@@ -68,12 +68,11 @@
 
 @media (max-width: 700px) {
     #home-left { 
-        margin: 10% 0 0 15%;
+        margin: 20% 0 0 15%;
         height: 450px;  
         width: 70%; 
         box-shadow: 0 0 5px;
         border-radius: 5px; 
-        z-index: 3;  
     }
     #home-right { width: 100%; }
     #about-left > div { font-size: 20px; }
