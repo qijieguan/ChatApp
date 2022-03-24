@@ -67,9 +67,7 @@ const ChatBox = () => {
                 : 
                 <>
                     <div id="private-chat-header">
-                        <button id="back-btn" onClick={goBack}>
-                            <MdArrowBack size={36} color='teal'/>
-                        </button>
+                        <button id="back-btn" onClick={goBack}><MdArrowBack size={36} color='teal'/></button>
                         <span>
                             Messaging:<img src={user.image_url} alt=""/>
                             {user.firstname + " " + user.lastname}

@@ -14,7 +14,7 @@
 
 #sign-in-btn { height: 35px; width: 80%; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px black;}
 #sign-in-btn:hover { box-shadow: 0 0 5px 2px black; }
-#auth-btn { height: 75px; width: 80%; color: white; background: orange; }
+#auth-btn { height: 75px; width: 80%; color: white; background: greenyellow; }
 
 #register-form {
     display: grid;

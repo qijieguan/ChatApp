@@ -25,7 +25,15 @@
 }
 
 #chat-set { width: 100%; }
-#chat { display: flex; justify-content: flex-start; height: 75px; border-bottom: 1px solid gray; }
+#chat-boundary { position: relative; height: 75px; border-bottom: 1px solid rgb(197, 197, 197); } 
+#chat { 
+    position: absolute; 
+    display: flex; 
+    justify-content: flex-start; 
+    height: 75px; 
+    width: 100%;
+    transition: all 0.3s ease-in; 
+}
 
 #chat img { 
     margin: 0 30px; 
@@ -37,7 +45,13 @@
 }
 
 #chat h1 { font-size: 24px; font-family: 'Lobster', cursive; }
-#chat:hover { background: rgb(18, 190, 190); }
+#chat:hover { 
+    height: 90px;
+    background: rgb(18, 190, 190); 
+    box-shadow: 0 0 5px;
+    border-bottom-color: rgb(18, 190, 190); 
+    z-index: 3;
+}
 
 #private-chat-header {
     display: flex;

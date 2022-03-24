@@ -6,11 +6,7 @@ const About = () => {
         <div style={{display: !sessionStorage.getItem('isLogged') ? 'flex' : ''}}>
             <SideNav/>  
             <div id='about' 
-                style={
-                    !sessionStorage.getItem('isLogged') ? 
-                        {width: '80%', marginTop: '50px'} 
-                        : {width: '60%'}
-                    }
+                style={ !sessionStorage.getItem('isLogged') ? {width: '80%', marginTop: '50px'} : {width: '60%'}}
             >
                 <div id='about-left' style={{color: 'white', background: 'teal'}}>
                     <div>How was this application built?</div>

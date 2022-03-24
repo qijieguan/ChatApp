@@ -32,13 +32,11 @@ const User = ({ user }) => {
                         <>
                             {!status ? 
                                 <div id='user-add-1'>
-                                    <MdPersonAdd color='orange' onClick={handleAdd}/>
+                                    <MdPersonAdd color='rgb(26, 160, 160)' onClick={handleAdd}/>
                                 </div>
-                                :
-                                <div id='user-add-2'> <FiCheckCircle color="limegreen"/> </div>
+                                : <div id='user-add-2'> <FiCheckCircle color="limegreen"/> </div>
                             }
-                        </>
-                        :''
+                        </> :''
                     }
                 </h1>
             </div>

@@ -10,17 +10,13 @@ const Search = () => {
 
     const [users, setUsers] = useState("");
 
-    useEffect(() => {
-        axios.get('/users/').then((response) => { setUsers(response.data); });
-    }, []);
+    useEffect(() => { axios.get('/users/').then((response) => { setUsers(response.data); }); }, []);
 
     return(
         <>
             <SideNav/>
             <div id="search">
-                <h1> All Users
-                    <FcGlobe size={60} style={{marginLeft: '10px'}}/>
-                </h1>
+                <h1>All Users <FcGlobe size={60} style={{marginLeft: '10px'}}/></h1>
                 {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
             </div>
         </>

@@ -16,9 +16,7 @@ const SideNav = () => {
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
-            axios.post('/friends/', { 
-                user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
-            })
+            axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); });
             setUser(JSON.parse(sessionStorage.getItem('user'))); 
         }
@@ -26,8 +24,8 @@ const SideNav = () => {
 
     const handleClick = (event) => {
         let elements = document.querySelectorAll('.side-li:not(#logout)');
-        elements.forEach(el => { el.style.color = 'black'; });
-        event.currentTarget.style.color = 'teal';
+        elements.forEach(el => { el.classList.remove('active') });
+        event.currentTarget.classList.add('active');
     }
 
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }

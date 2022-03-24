@@ -12,11 +12,7 @@ const Header = () => {
         window.scrollTo(0,0);
         toggleRipple(); 
         let element = document.getElementById(location.pathname);
-        if (element) {
-            element.style.color = 'teal'; 
-            element.style.borderLeft = '3px solid teal';
-            element.style.pointerEvents = 'none';
-        }
+        if (element) { element.classList.add('active'); }
     }, [location]);
 
     const toggleRipple = () => {
