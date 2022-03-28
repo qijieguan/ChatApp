@@ -34,7 +34,7 @@ const SideNav = () => {
         <div id="side-panel" style={{display: sessionStorage.getItem('isLogged') ? 'inline-flex' : 'none'}}>
             <div id="side-logo">
                 <h1>Chat App</h1>
-                <AiOutlineWechat id="logo-icon" style={{marginLeft: '5px'}} size={36}/>
+                <AiOutlineWechat id="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
             </div>
             <Link to='/Dashboard' className="side-li" id="/Dashboard" onClick={handleClick}>
                 <h1>Dashboard</h1>
@@ -46,13 +46,13 @@ const SideNav = () => {
             </Link>
             <Link to="/Search" className="side-li" id="/Search" onClick={handleClick}>
                 <h1>Search</h1>
-                <BsSearch size={22} id="side-icon"/>
+                <BsSearch id="side-icon"/>
             </Link>
             <Link to="/About" className="side-li" id="/About" onClick={handleClick}>
                 <h1>Miscellaneous</h1>
                 <AiFillRead id="side-icon"/>
             </Link>
-
+            <div id="side-divider"/>
             <div className="side-li" id="logout" onClick={logout}>
                 <h1>Log Out</h1>
                 <BiLogIn size={30}/>

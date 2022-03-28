@@ -1,65 +1,63 @@
 #login {
-    margin-bottom: 100px;
+    margin-bottom: clamp(0rem, 2.5vw, 7rem);
     display: flex;
     flex-direction: column;
-    height: 400px;
-    width: 100%;
+    min-height: 26rem;
     color: white;
     animation: fadeSlideUp 0.4s linear;
 }
-
-#login-label { font-size: 20px; letter-spacing: 1px; color: grey; }
-#login input { height: 35px; width: 100%; box-shadow: 0 0 3px; border-radius: 3px;}
+#login * { margin: 0 auto; }
+#login-label { margin-bottom: 20px; text-align: center; width: 100%; font-size: 1.25rem; color: rgb(36, 36, 141); }
+#login input { width: 60%; box-shadow: 0 0 3px; border-radius: 3px;}
 #login input:focus { outline-color: rgb(36, 36, 141); }
-
-#sign-in-btn { height: 35px; width: 80%; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px black;}
-#sign-in-btn:hover { box-shadow: 0 0 5px 2px black; }
-#auth-btn { height: 75px; width: 80%; color: white; background: greenyellow; }
+#sign-in-btn { font-size: clamp(0.875rem, 2.5vw, 1rem); width: 60%; min-height: 40px; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px grey;}
+#login button:hover { box-shadow: 0 0 5px navy; }
+#auth-btn { 
+    min-height: 4.5rem;
+    max-height: 5rem; 
+    min-width: 70%; 
+    max-height: 90%;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: white; 
+    background: rgb(32, 184, 184); }
 
 #register-form {
     display: grid;
     grid-template-columns: 80%;
     width: 100%;
-    min-height: 700px;
     background: white;
     box-shadow: 0 0 5px black;
 }
 
-#register-link > button { height: 40px; font-size: 14px; color: white; background: green; }
+#register-link > button { margin: 0 auto; font-size: clamp(0.875rem, 2.5vw, 1rem); min-height: 2.5rem; color: white; background: green; }
+#register-link > button:hover { box-shadow: 0 0 5px 1px rgb(5, 61, 5); }
 
 #register-label {
-    margin-top: 100px;
-    width: 60%;
+    margin-top: 6.125rem;
+    width: 70%;
+    font-size: clamp(1rem, 5vw, 2rem);
     font-family: fantasy;
-    font-size: 36px;
     letter-spacing: 1px;
     color: limegreen;
     border-bottom: 2px solid lime;
 }
 
-#register-msg { font-size: 20px; color: 'green' }
-#input-image { margin: 50px auto 75px 0; width: 25%; box-shadow: 0 0 5px black; }
+#register-msg { color: 'green' }
+#input-image { margin: 50px 0 75px 0; width: max(16rem, 25%); box-shadow: 0 0 5px black; }
 #input-image input { border: 0; box-shadow: unset;}
-#preview-image { height: 250px; width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
-#file { text-indent: 10px; line-height: 50px; width: 100%; background: white; box-shadow: 0 2px 3px black; }
+#preview-image { width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
+#file { text-indent: 10px; line-height: 3.3rem; width: 100%; background: white; box-shadow: 0 2px 3px black; }
 
-#line { height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
-
-#register-form > input { margin-bottom: 30px; border-radius: 5px; box-shadow: 0 0 3px; width: 100%;}
-#register-form > input:focus { outline-color: green; }
-.input-dot { font-size: 16px; }
-.input-dot::after { content: " *"; color: red; }
-
-#register-btn { margin: 80px 0 50px 12.5%; height: 60px; width: 75%; font-size: 16px; color: white; background: limegreen; }
-
-@media (max-width: 700px) { 
-    #login { margin-bottom: 0; }
-    #auth-btn { margin-right: 5%; width: 90%; font-size: 14px; }
-    #register-label { text-align: center; font-size: 30px; width: 80%; }
-    #input-image { min-height: 150px ; width: 70%; margin: 30px auto 50px auto;}
-    #line { margin: 25px 0 50px 0; }
-    #register-form > input { height: 40px; width: 80%; margin: 0 auto 20px auto; }
-    #register-form > input::placeholder { font-size: 14px; }
-    .input-dot { font-size: 14px; width: 80%; margin: auto; }
-    #register-btn { margin: 40px 0 50px 12.5%; }
+#line { min-height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
+#register-form > input { 
+    margin: 0 0 clamp(1rem, 5vw, 2rem) 5%; 
+    border-radius: 5px; 
+    box-shadow: 0 0 3px; 
+    min-height: 3.1rem; 
+    width: 90%; 
+    border: 1px solid rgb(209, 245, 209);
 }
+#register-form > input:focus { outline-color: green; }
+.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: green;}
+.input-label::after { content: " *"; color: red; }
+#register-btn { margin: 80px 0 50px 12.5%; min-height: 60px; width: 75%; color: white; background: limegreen; }

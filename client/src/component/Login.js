@@ -73,7 +73,7 @@ const Login = () => {
     }
 
     return(
-        <div>
+        <div style={{width: '100%'}}>
             <form id="login" onSubmit={handleSubmit}>
                 <h1 id="login-label">Enter Your Credentials</h1>
                 <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>

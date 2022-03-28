@@ -1,28 +1,38 @@
 #App-header { 
     position: fixed;
     display: flex; 
-    height: 60px; 
+    min-height: 4rem; 
     width: 100%; 
     background: white;
     border-bottom: 1px solid rgb(241, 241, 241); 
     z-index: 3;
 }
 
-#App-header h1 { display: flex; justify-content: center; margin: 0 auto 0 10px; font-family: 'Courgette', cursive; font-size: 30px; width: 30%; color: black; }
+#App-header > h1 { 
+    display: flex; 
+    justify-content: flex-start; 
+    margin: 0 auto 0 75px; 
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-family: 'Lobster', cursive;
+    width: 40%; 
+    color: rgb(32, 184, 184); 
+}
+#App-header > h1 * { font-size: clamp(2.5rem, 2.5vw, 3rem) } 
 #header-btns { display: flex; justify-content: flex-end; height: 100%; }
 
 #App-header button { 
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     font-family: 'Roboto', sans-serif; 
-    padding: 8px 0; 
-    width: 100px; 
+    padding: 0.5rem 0; 
+    width: 6rem; 
     background: white;
     border-radius: 50px;
     box-shadow: none;
 }
 
 #App-header button:hover { box-shadow: 0 0 5px black; }
-#about-btn { margin-right: 75px; }
-#about-btn:hover { color: white; background: teal; }
+#about-btn { margin-right: clamp(3rem, 5vw, 4rem); }
+#about-btn:hover { color: white; background: rgb(32, 184, 184); }
 #login-btn:hover { color: limegreen; border: 2px solid limegreen; }
 
 #header-alt { position: relative; margin-bottom: 50px; height: 150px; }
@@ -34,30 +44,34 @@
     background-size: cover;
 }
 
-#header-overlay { position: absolute; height: 100%; width: 100%; top: 0; background: black; opacity: 0.4; }
+#header-overlay { position: absolute; height: 100%; width: 100%; top: 0; background: teal; opacity: 0.4; }
 
 #header-alt > h1 { 
     position: absolute;
-    margin: 0 auto 0 10%;
+    margin: auto;
     text-align: left;
-    top: 20%;
-    left: 0;
-    right: 0;
-    font-size: 50px;
+    top: 12%;
+    left: 20%;
+    font-size: clamp(3rem, 5vw, 3.5rem);
     font-family: 'Lobster', cursive;
-    text-shadow: 0 0 4px black;
+    text-shadow: 2px 2px 4px navy;
     color: aqua;
     z-index: 1;
     opacity: 1;
 }
-#header-alt > h1 > span { font-size: 50px; font-family: 'Lobster', cursive; color: greenyellow; }
+#header-alt > h1 > span { 
+    font-size: clamp(3rem, 5vw, 4rem); 
+    text-shadow: 0 0 3px green; 
+    font-family: 'Lobster', cursive; 
+    color: greenyellow; 
+}
 
 #side-panel { 
     vertical-align: top;
     display: inline-flex;
+    justify-content: space-between;
     flex-direction: column;
     margin: 30px 5% 0 40px;
-    height: 525px;
     width: 18%;
     background: white;
     box-shadow: 0 0 3px grey;
@@ -68,41 +82,34 @@
 #side-logo { 
     display: flex;
     justify-content: center;
-    height: 50px; 
     width: 100%; 
     color: white; 
     background: teal;
     box-shadow: 0 0 2px black;
 }
+#side-logo > h1 { font-size: clamp(1rem, 2.5vw, 1.5rem); color: rgb(55, 243, 243); }
 
-#side-logo > h1 { font-size: 18px; }
 .side-li { padding-left: 20px; display: flex; justify-content: flex-start; width: 80%; color: black; margin: 30px 0 0 10%; }
 .side-li:not(#logout):hover { padding: 5px; color: teal; border: 2px solid teal; }
-.active { 
-    color: teal; 
-    border-left: 3px solid teal; 
-    pointer-events: none; 
-}
-#side-icon { margin-left: 7px; font-size: 24px; }
-#logout { color: darkred; margin-top: auto; cursor: pointer; }
+.active { color: teal; border-left: 3px solid teal; pointer-events: none; }
+#side-icon { font-size: 1.5rem; margin-left: 7px; }
+#side-divider { min-height: 2px; width: 80%; background: rgb(225, 238, 238); margin-top: 50px; }
+#logout { color: darkred; cursor: pointer; }
 #side-user { 
     display: flex; 
-    margin-top: 35px; 
+    margin-top: 2rem; 
     padding: 5px 0; 
     width: 100%; 
     background: darkslategrey; 
     box-shadow: 0 0 4px black;
 }
-#side-user img { margin-left: 5px; height: 45px; width: 45px; border-radius: 10px; box-shadow: 0 0 5px; }
-#side-user h1 { margin: auto; color: rgb(18, 189, 189); }
+#side-user img { margin-left: 5px; height: 3rem; width: 3rem; border-radius: 10px; box-shadow: 0 0 5px; }
+#side-user h1 { margin: auto; color: rgb(55, 243, 243); }
 
 @media (max-width: 700px) {
-    #App-header h1 { display: flex; margin: 0; font-size: 20px; }
-    #login-btn, #about-btn { font-size: 14px; height: 35px; width: 50px; }
-    #about-btn { margin-right: 0; }
-    #header-alt > h1 { margin: 0 auto 0 10%}
+    #App-header > h1 { display: flex; margin: 0; }
+    #login-btn, #about-btn { height: 2.2rem; width: 3rem; }
     #side-panel { margin: 30px 3.5% 0 20px; }
-    #side-logo { font-size: 16px; }
     .side-li { padding-left: 5px; margin: 30px 0 0 20%; }
     #side-logo > h1 { display: none; }
     .side-li > h1, #side-user > h1 { display: none; } 

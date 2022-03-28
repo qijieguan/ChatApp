@@ -43,7 +43,7 @@ const Header = () => {
         <> 
             {!sessionStorage.getItem("isLogged") ?
                 <header id="App-header">
-                    <h1>CHAT APP <AiOutlineWechat size={40} style={{margin: '0 0 8px 8px'}}/></h1>
+                    <h1>CHAT APP <AiOutlineWechat style={{margin: '0 0 5px 8px'}}/></h1>
                     <div id="header-btns">
                         <Link to='/'><button id="login-btn">Login</button></Link>
                         <Link to='/About'><button id="about-btn">About</button></Link>

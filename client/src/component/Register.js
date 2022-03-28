@@ -73,13 +73,13 @@ const Register = () => {
                 <input type="file" id="file" accept='images/*' onChange={previewFile} required/>
             </div>
             <div id='line'/>
-            <h1 className='input-dot'>First Name</h1>
+            <h1 className='input-label'>First Name</h1>
             <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
-            <h1 className='input-dot'>Last Name</h1>
+            <h1 className='input-label'>Last Name</h1>
             <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
-            <h1 className='input-dot'>Username</h1>
+            <h1 className='input-label'>Username</h1>
             <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
-            <h1 className='input-dot'>Password</h1>
+            <h1 className='input-label'>Password</h1>
             <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
           
             <button id="register-btn" type='submit'>Create New Account</button>

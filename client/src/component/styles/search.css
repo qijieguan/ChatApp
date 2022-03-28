@@ -1,9 +1,10 @@
 #search {
     display: inline-block;
-    min-height: 600px;
+    min-height: 45rem;
     padding-bottom: 100px;
     margin: 30px 0 50px 0;
-    width: 60%;
+    min-width: 70%;
+    max-width: 80%;
     background: white;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 3px;
@@ -14,9 +15,9 @@
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    margin: 5% 0 0 6%;
-    height: 200px;
-    width: 25%;
+    margin: 2rem 0 0 clamp(1.5rem, 5vw, 4%);
+    min-height: 12rem;
+    width: max(8rem, 20%);
     border-radius: 30px;
 }
 
@@ -35,21 +36,15 @@
 #user * { transition: 0.5s all; transition-delay: 0.5s; }
 #user:hover { height: 500px; width: 300px; z-index: 2;}
 #user-image { position: relative; height: 100%; width: 100%; object-fit: cover; border-radius: 30px; }
-
-#user-name {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    font-size: 18px;
-    min-height: 50px;
-    width: 100%;
-    color: white;
-    word-break: break-all;
+#user-name { 
+    position: absolute; 
+    bottom: 0; 
+    display: flex; 
+    width: 100%; 
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    color: white; 
+    word-break: break-all; 
 }
-
-#user-add-1 *, #user-add-2 * { font-size: 26px; }
-#user:hover #user-name { font-size: 30px; }
-#user:hover #user-add-1 *, #user:hover #user-add-2 * { font-size: 32px; }
 
 #user-add-1::after, #user-add-2::after {
     display: none;
@@ -58,8 +53,8 @@
     right: 0;
     transform: translate3d(75%, -85%, 0);
     text-align: center;
-    padding: 10px 3px;
-    width: 150px;
+    padding: 5px 3px;
+    width: 9rem;
     background: white;
     border-radius: 12px 5px 12px 5px;
     box-shadow: 0 0 3px;
@@ -82,10 +77,4 @@
     color: green;
     background: greenyellow;
     opacity: 1;
-}
-
-@media (max-width: 700px) {
-    #search { width: 70%; }
-    #user-container { margin: 5% 0 0 3%; }
-    #user-name { font-size: 14px; }
 }
