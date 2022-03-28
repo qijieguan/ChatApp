@@ -66,15 +66,15 @@
 #user-add-1:hover::after { 
     content: 'Add User';
     display: block; 
-    color: teal;
-    background: rgb(55, 194, 194);
+    color: black;
+    background: yellow;
     opacity: 1;
 }
 
 #user-add-2:hover::after { 
     content: 'Current Friend';
     display: block; 
-    color: green;
-    background: greenyellow;
+    color: black;
+    background: limegreen;
     opacity: 1;
 }
