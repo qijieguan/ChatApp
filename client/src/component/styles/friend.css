@@ -22,6 +22,7 @@
 }
 
 #friend-extend {
+    position: relative;
     display: inline-grid;
     grid-template-columns: 20% minmax(75px, 100px) 20%;
     grid-template-rows: 10% minmax(75px, 100px) auto;
@@ -31,24 +32,35 @@
     border-radius: 10px;
     box-shadow: 0 0 1px grey;
 }
-#friend-extend:hover { box-shadow: 0 0 5px gray; }
+#friend-extend:hover { box-shadow: 0 0 5px teal; border: 1px solid teal; }
 
-#unfriend-icon { position: relative; grid-column: 1 / 2; margin: 5px auto auto 10px; color: gray; }
+#animated-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    background: rgb(55, 243, 243);
+    border-radius: 0 100px 100px 100px;
+    transition: all 0.3s ease-in;
+}
+
+#friend-extend:hover #animated-overlay { height: 100%; width: 100%;; border-radius: 10px; }
+#unfriend-icon { position: relative; grid-column: 1 / 2; margin: 10px auto auto 10px; color: gray; }
 #unfriend-icon:hover { color: #b22222; }
-#chat-icon { position: relative; grid-column: 3 / 4; margin: 5px 10px auto auto; color: gray; }
+#chat-icon { position: relative; grid-column: 3 / 4; margin: 10px 10px auto auto; color: gray; }
 #chat-icon:hover { color: teal; }
 #chat-icon::after, #unfriend-icon::after {
     display: none;
     position: absolute;
+    transform: translate3d(12%, -190%, 0);
     text-align: center;
-    padding: 3px;
-    top: 0;
-    right: 0;
-    transform: translate3d(90%, -95%, 0);
+    padding: 2px 5px;
     width: 6rem;
     background: white;
     border-radius: 10px 10px 10px 0;
     box-shadow: 0 0 3px black;
+    z-index: 3;
 }
 
 #chat-icon:hover::after { font-size: clamp(0.75rem, 2.5vw, 0.875rem); content: 'Private Chat'; display: block; color: teal; }
@@ -62,8 +74,9 @@
     border-radius: 50px; 
     box-shadow: 0 0 3px black;
     border: 2px solid teal;
+    z-index: 2;
 }
-#friend-name { grid-column: 1 / 4; text-align: center; margin: auto; color: teal; }
+#friend-name { grid-column: 1 / 4; text-align: center; margin: auto; color: teal; z-index: 2; }
 
 
 

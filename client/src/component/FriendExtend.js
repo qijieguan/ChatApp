@@ -23,6 +23,7 @@ const Extend = ({ friend }) => {
 
     return (
         <div id="friend-extend">
+            <div id="animated-overlay"/>
             <div id='unfriend-icon'><RiCloseCircleFill size={22} onClick={handleUnfriend}/></div>
             <div id='chat-icon'><BsFillChatDotsFill size={20} onClick={handleChat}/></div>
             <img src={friend.image_url} id="friend-profile" alt=""/>

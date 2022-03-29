@@ -28,12 +28,13 @@
     background: white;
     border-radius: 50px;
     box-shadow: none;
+    transition: all 0.2s ease-in;
 }
 
 #App-header button:hover { box-shadow: 0 0 5px black; }
 #about-btn { margin-right: clamp(3rem, 5vw, 4rem); }
 #about-btn:hover { color: white; background: rgb(32, 184, 184); }
-#login-btn:hover { color: limegreen; border: 2px solid limegreen; }
+#login-btn:hover { color: white; background: rgb(23, 23, 179); }
 
 #header-alt { position: relative; margin-bottom: 50px; height: 150px; }
 
@@ -89,7 +90,16 @@
 }
 #side-logo > h1 { font-size: clamp(1rem, 2.5vw, 1.5rem); color: rgb(55, 243, 243); }
 
-.side-li { padding-left: 20px; display: flex; justify-content: flex-start; width: 80%; color: black; margin: 30px 0 0 10%; }
+.side-li { 
+    padding-left: 20px; 
+    display: flex; 
+    justify-content: flex-start; 
+    width: 80%; 
+    color: black; 
+    margin: 30px 0 0 10%; 
+    transition: all 0.2s ease-in; 
+    border-color: teal;
+}
 .side-li:not(#logout):hover { padding: 5px; color: teal; border: 2px solid teal; }
 .active { color: teal; border-left: 3px solid teal; pointer-events: none; }
 #side-icon { font-size: 1.5rem; margin-left: 7px; }

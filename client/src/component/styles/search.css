@@ -51,20 +51,20 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate3d(75%, -85%, 0);
+    transform: translate3d(65%, -80%, 0);
     text-align: center;
-    padding: 5px 3px;
+    padding: 3px;
     width: 9rem;
     background: white;
-    border-radius: 12px 5px 12px 5px;
-    box-shadow: 0 0 3px;
+    border-radius: 12px 12px 12px 0;
+    box-shadow: 0 0 3px black;
     opacity: 0;
     transition: 2s all;
     transition-delay: 1s;
 }
 
 #user-add-1:hover::after { 
-    content: 'Add User';
+    content: 'Add Person';
     display: block; 
     color: black;
     background: yellow;
@@ -72,9 +72,9 @@
 }
 
 #user-add-2:hover::after { 
-    content: 'Current Friend';
+    content: 'Friends';
     display: block; 
-    color: black;
+    color: yellow;
     background: limegreen;
     opacity: 1;
 }
