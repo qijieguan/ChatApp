@@ -23,7 +23,7 @@ const SideNav = () => {
     }, [dispatch]);
 
     const handleClick = (event) => {
-        let elements = document.querySelectorAll('.side-li:not(#logout)');
+        let elements = document.querySelectorAll('.side-li:not(.logout)');
         elements.forEach(el => { el.classList.remove('active') });
         event.currentTarget.classList.add('active');
     }
@@ -31,33 +31,31 @@ const SideNav = () => {
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
 
     return (
-        <div id="side-panel" style={{display: sessionStorage.getItem('isLogged') ? 'inline-flex' : 'none'}}>
-            <div id="side-logo">
-                <h1>Chat App</h1>
-                <AiOutlineWechat id="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
+        <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? 'inline-flex' : 'none'}}>
+            <div className="side-logo flex">
+                <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
             </div>
-            <Link to='/Dashboard' className="side-li" id="/Dashboard" onClick={handleClick}>
+            <Link to='/Dashboard' className="side-li flex" id="/Dashboard" onClick={handleClick}>
                 <h1>Dashboard</h1>
-                <AiFillHome id="side-icon"/>
+                <AiFillHome className="side-icon"/>
             </Link>
-            <Link to='/Friend' className="side-li" id="/Friend" onClick={handleClick}>
+            <Link to='/Friend' className="side-li flex" id="/Friend" onClick={handleClick}>
                 <h1>Friends</h1>
-                <FaUserFriends id="side-icon"/>
+                <FaUserFriends className="side-icon"/>
             </Link>
-            <Link to="/Search" className="side-li" id="/Search" onClick={handleClick}>
+            <Link to="/Search" className="side-li flex" id="/Search" onClick={handleClick}>
                 <h1>Search</h1>
-                <BsSearch id="side-icon"/>
+                <BsSearch className="side-icon"/>
             </Link>
-            <Link to="/About" className="side-li" id="/About" onClick={handleClick}>
+            <Link to="/About" className="side-li flex" id="/About" onClick={handleClick}>
                 <h1>Miscellaneous</h1>
-                <AiFillRead id="side-icon"/>
+                <AiFillRead className="side-icon"/>
             </Link>
-            <div id="side-divider"/>
-            <div className="side-li" id="logout" onClick={logout}>
+            <div className="side-li flex logout" onClick={logout}>
                 <h1>Log Out</h1>
                 <BiLogIn size={30}/>
             </div>
-            <div id="side-user">
+            <div className="side-user flex">
                 <img src={user.image_url} alt=""/>
                 <h1>{user.firstname} {user.lastname}</h1>
             </div>       

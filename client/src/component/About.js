@@ -3,12 +3,10 @@ import SideNav from './SideNav.js';
 
 const About = () => {
     return (
-        <div style={{display: !sessionStorage.getItem('isLogged') ? 'flex' : ''}}>
+        <div className='about-wrapper flex'>
             <SideNav/>  
-            <div id='about' 
-                style={ !sessionStorage.getItem('isLogged') ? {width: '80%', marginTop: '50px'} : {width: '60%'}}
-            >
-                <div id='about-left' style={{color: 'white', background: 'teal'}}>
+            <div className='about'>
+                <div className='about-left flex' style={{color: 'white', background: 'teal'}}>
                     <div>How was this application built?</div>
                     <p>
                         The app is currently being developed using the <span>MERN</span> stack. 
@@ -17,8 +15,8 @@ const About = () => {
                         to <span>MongoDB</span>.
                     </p>
                 </div>
-                <div id='about-right-1'/>
-                <div id='about-left' style={{color: 'teal', background: 'white'}}>
+                <div className='about-right-1 flex'/>
+                <div className='about-left flex' style={{color: 'teal', background: 'white'}}>
                     <div>What is the goal of this application?</div>
                     <p>
                         The app is an experimental project to recreate basic
@@ -28,8 +26,8 @@ const About = () => {
                         between users.
                     </p>
                 </div>
-                <div id='about-right-2'/>
-                <div id='about-left' style={{color: 'white', background: 'teal'}}>
+                <div className='about-right-2 flex'/>
+                <div className='about-left flex' style={{color: 'white', background: 'teal'}}>
                     <div>Who am I?</div>
                     <p>
                         I am a <span>self-taught web developer</span>. My goal is 
@@ -37,7 +35,7 @@ const About = () => {
                         <span> trending web technologies </span> and <span>ideas</span> to build websites.
                     </p>
                 </div>
-                <div id='about-right-3'/>
+                <div className='about-right-3 flex'/>
             </div>
         </div>
     );

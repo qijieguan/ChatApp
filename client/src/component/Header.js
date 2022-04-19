@@ -9,7 +9,7 @@ const Header = () => {
     const location = useLocation();
 
     useEffect(() => { 
-        window.scrollTo(0,0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         toggleRipple(); 
         let element = document.getElementById(location.pathname);
         if (element) { element.classList.add('active'); }
@@ -42,18 +42,20 @@ const Header = () => {
     return (
         <> 
             {!sessionStorage.getItem("isLogged") ?
-                <header id="App-header">
+                <header className="App-header flex">
                     <h1>CHAT APP <AiOutlineWechat style={{margin: '0 0 5px 8px'}}/></h1>
-                    <div id="header-btns">
-                        <Link to='/'><button id="login-btn">Login</button></Link>
-                        <Link to='/About'><button id="about-btn">About</button></Link>
+                    <div className="header-btns">
+                        <Link to='/'><button className="login-btn">Login</button></Link>
+                        <Link to='/About'><button className="about-btn">About</button></Link>
                     </div>
                 </header>
                 :
-                <div id='header-alt'>
-                    <img id="header-img" alt=""/>
-                    <h1> Chill <span>n'</span> Chat <span>Freely</span></h1>
-                    <div id='header-overlay'/>
+                <div className='header-alt flex'>
+                    <div className='header-alt-text'>
+                        <div> Discover and Form New<span> Connections </span>In Your Life</div>
+                        <div>Feel Free to<span> Message </span>Your Friends<span></span></div>
+                    </div>
+                    <div className="overlay"/>
                 </div>
             }
         </>

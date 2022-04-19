@@ -39,7 +39,7 @@ const Register = () => {
             }).then((response) => { 
                 axios.post('/friends/init/', { user_id: response.data._id });
                 setMessage("User is added!");
-                document.getElementById("register-msg").style.display = 'block'; 
+                document.querySelector(".register-msg").style.display = 'block'; 
             });
         });
     };
@@ -60,19 +60,19 @@ const Register = () => {
         setFname("");
         setLname("");
         setFiles([]);
-        document.getElementById("file").value="";
+        document.querySelector(".file").value="";
     };
 
     return(
-        <form id="register-form" onSubmit={handleSubmit}>
-            <h1 id="register-label">Register Your Account</h1>
-            <h3 id="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
+        <form className="register-form grid" onSubmit={handleSubmit}>
+            <h1 className="register-label">Register Your Account</h1>
+            <h3 className="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
       
-            <div id="input-image">
-                <img src={url ? url : defaultURL} id="preview-image" alt=""/>
-                <input type="file" id="file" accept='images/*' onChange={previewFile} required/>
+            <div className="input-image">
+                <img src={url ? url : defaultURL} className="preview-image" alt=""/>
+                <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
             </div>
-            <div id='line'/>
+            <div className='line'/>
             <h1 className='input-label'>First Name</h1>
             <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
             <h1 className='input-label'>Last Name</h1>
@@ -82,7 +82,7 @@ const Register = () => {
             <h1 className='input-label'>Password</h1>
             <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
           
-            <button id="register-btn" type='submit'>Create New Account</button>
+            <button className="register-btn" type='submit'>Create New Account</button>
         </form>
     );
 }

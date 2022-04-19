@@ -3,7 +3,7 @@ import SideNav from './SideNav.js';
 
 const DashBoard = () => { 
     return ( 
-        <div id="dashboard">
+        <div className="dashboard flex">
             <SideNav/>
             <ChatBox/>
         </div> 

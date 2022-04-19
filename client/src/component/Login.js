@@ -18,7 +18,7 @@ const Login = () => {
             left: '50%',
             right: 'auto',
             bottom: 'auto',
-            width: '35%',
+            width: 'max(20rem, 35%)',
             height: '35%',
             marginRight: '-50%',
             transform: 'translate(-50%, -50%)', 
@@ -63,33 +63,33 @@ const Login = () => {
             if (response.data !== "Invalid Username/Password combinations!") { 
                 setToken(response.data); 
                 setModal(true);
-                document.getElementById("login-msg").style.display = 'none';
+                document.querySelector(".login-msg").style.display = 'none';
             }
             else { 
                 setMessage(response.data); 
-                document.getElementById("login-msg").style.display = 'block';
+                document.querySelector(".login-msg").style.display = 'block';
             }
         });
     }
 
     return(
         <div style={{width: '100%'}}>
-            <form id="login" onSubmit={handleSubmit}>
-                <h1 id="login-label">Enter Your Credentials</h1>
-                <h3 id="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
+            <form className="login flex" onSubmit={handleSubmit}>
+                <h1 className="login-label">Enter Your Credentials</h1>
+                <h3 className="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
                 <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
-                <button type="submit" id="sign-in-btn">Sign In</button>
+                <button type="submit" className="sign-in-btn">Sign In</button>
                 <h1 style={{color: 'gray'}}>or</h1>
-                <Link to='/Register' id="register-link"><button>Create a New Account</button></Link>
+                <Link to='/Register' className="register-link"><button>Create a New Account</button></Link>
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
-                <AiFillCloseSquare id="close-btn" style={{alignSelf: 'flex-end', color: 'red'}}
+                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'red'}}
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />
-                <button id="auth-btn" onClick={authentication}>Click to Authenticate</button> 
+                <button className="auth-btn" onClick={authentication}>Click to Authenticate</button> 
             </Modal>
         </div>
     );

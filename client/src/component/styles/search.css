@@ -1,29 +1,33 @@
-#search {
-    display: inline-block;
+.search {
     min-height: 45rem;
     padding-bottom: 100px;
-    margin: 30px 0 50px 0;
-    min-width: 70%;
-    max-width: 80%;
+    margin: 30px 0 50px 5%;
+    width: 90%;
     background: white;
     border: 1px solid rgb(192, 192, 192);
     border-radius: 3px;
     box-shadow: 0 0 3px gray;
 }
 
-#user-container {
+.search > h1 {
+    margin-left: 2vw;
+    font-size: clamp(3rem, 5vw, 3.5rem);
+    color: teal;
+    animation: fadeSlideLeft 0.5s ease-in;
+}
+
+.user-container {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    margin: 2rem 0 0 clamp(1.5rem, 5vw, 4%);
+    margin: 2rem 0 0 clamp(1rem, 2.5vw, 4%);
     min-height: 12rem;
-    width: max(8rem, 20%);
+    width: max(7.75rem, 20%);
     border-radius: 30px;
 }
 
-#user {
+.user {
     position: absolute;
-    justify-content: center;
     height: 100%;
     width: 100%;
     box-shadow: 0 0 2px;
@@ -33,20 +37,27 @@
     transition-delay: 0.5s;
 }
 
-#user * { transition: 0.5s all; transition-delay: 0.5s; }
-#user:hover { height: 500px; width: 300px; z-index: 2;}
-#user-image { position: relative; height: 100%; width: 100%; object-fit: cover; border-radius: 30px; }
-#user-name { 
+.user * { transition: 0.5s all; transition-delay: 0.5s; }
+.user:hover { height: 30rem; width: 20rem; z-index: 2;}
+.user-image { 
+    position: relative; 
+    height: 100%; 
+    width: 100%; 
+    object-fit: cover; 
+    object-position: center;
+    border-radius: 2rem; 
+}
+.user-name { 
+    justify-content: space-around;
     position: absolute; 
     bottom: 0; 
-    display: flex; 
     width: 100%; 
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     color: white; 
     word-break: break-all; 
 }
 
-#user-add-1::after, #user-add-2::after {
+.user-add-1::after, .user-add-2::after {
     display: none;
     position: absolute;
     top: 0;
@@ -63,7 +74,7 @@
     transition-delay: 1s;
 }
 
-#user-add-1:hover::after { 
+.user-add-1:hover::after { 
     content: 'Add Person';
     display: block; 
     color: black;
@@ -71,7 +82,7 @@
     opacity: 1;
 }
 
-#user-add-2:hover::after { 
+.user-add-2:hover::after { 
     content: 'Friends';
     display: block; 
     color: yellow;

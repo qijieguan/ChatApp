@@ -16,9 +16,9 @@ const Text = ({ friend, text }) => {
     }
 
     return (
-        <div id="text-format" style={getStyle()}>
-            <div id='text-content'>{text.content}</div>
-            <div id='text-made-by'>{made_by}</div>
+        <div className="text-format flex" style={getStyle()}>
+            <div className='text-content'>{text.content}</div>
+            <div className='text-made-by'>{made_by}</div>
         </div>
     );
 }

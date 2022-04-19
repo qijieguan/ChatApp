@@ -1,20 +1,17 @@
-.App { background: white; }
+.App { background: rgb(247, 247, 247); }
 
-#home-left { 
+.home-left { 
     position: absolute;
-    display: flex; 
-    background: white; 
     width: 30%; 
     height: 100%;
+    background: white; 
     border-right: 1px solid rgb(241, 241, 241);
     z-index: 2;
 }
 
-#home-right { 
-    position: fixed;
-    margin-top: 4rem;
-    right: 0;
-    display: flex; 
+.home-right { 
+    position: absolute;
+    right: 0; 
     width: 70%;
     height: 100%;
     background: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_960_720.png");
@@ -22,57 +19,60 @@
     background-position: right;
 }
 
-#about {
+.about-wrapper { 
+    flex-direction: column;
+    justify-content: space-around;
+}
+.about {
     display: inline-grid;
     grid-template-columns: 50% 50%;
-    margin: 30px 0 50px 0;
-    width: 60%;
+    margin: 2.5rem 0 3.5rem 0;
+    width: 90%;
     background: white;
     border: 1px solid rgb(221, 221, 221);
 }
 
-#about-left {
-    display: flex;
+.about-left {
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
     min-height: 26rem;
 }
 
-#about-left > div { font-size: clamp(1.25rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s linear; }
-#about-left span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: rgb(236, 187, 97); }
-#about-left p { font-size: clamp(0.9rem, 2.5vw, 1rem);; margin-left: 3%; width: 90%; animation: fadeSlideLeft 0.5s linear; }
+.about-left > div { font-size: clamp(1.25rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s ease-in; }
+.about-left span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: rgb(236, 187, 97); }
+.about-left p { font-size: clamp(0.9rem, 2.5vw, 1rem);; margin-left: 3%; width: 90%; animation: fadeSlideLeft 0.5s ease-in; }
 
-#about-right-1 {
+.about-right-1 {
     min-height: 50%;
     background: url("https://www.mindinventory.com/blog/wp-content/uploads/2021/06/mern-stack.png");
 }
 
-#about-right-2 {
+.about-right-2 {
     min-height: 100%;
     background: url("https://thumbs.dreamstime.com/b/searching-friends-social-network-24575314.jpg");
 }
 
-#about-right-3 {
+.about-right-3 {
     min-height: 80%;
     background: url("https://cdn.pixabay.com/photo/2020/10/01/16/53/game-controller-5619105_960_720.jpg");
 }
 
-#about-right-1, #about-right-2, #about-right-3 { 
-    display: flex;
+.about-right-1, .about-right-2, .about-right-3 { 
     margin-left: 5%; 
     width: 90%;
     background-size: contain;
     background-repeat: no-repeat; 
+    background-position: center;
 }
 
-@media (max-width: 700px) {
-    #home-left { 
-        margin: 6rem 0 0 15%;
-        height: 30rem;
+@media (max-width: 50rem) {
+    .home-left { 
+        margin: 2rem 0 0 15%;
+        height: 28rem;
         width: 70%; 
         box-shadow: 0 0 5px;
         border-radius: 5px; 
     }
-    #home-right { width: 100%; background-position: center; }
+    .home-right { width: 100%; background-position: center; }
 }

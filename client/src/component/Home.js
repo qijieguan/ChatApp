@@ -3,9 +3,9 @@ import Login from "./Login.js";
 
 const Home = () => { 
     return ( 
-        <div id="home">
-            <div id="home-left"><Login/></div>
-            <div id="home-right"></div>
+        <div className="home">
+            <div className="home-left flex"><Login/></div>
+            <div className="home-right flex"></div>
         </div> 
     ); }
 

@@ -1,38 +1,37 @@
-#login {
-    margin-bottom: clamp(0rem, 2.5vw, 7rem);
-    display: flex;
+.login {
+    margin-bottom: clamp(0.1rem, 7.5vw, 10rem);
     flex-direction: column;
-    min-height: 26rem;
+    row-gap: 1.75rem;
     color: white;
-    animation: fadeSlideUp 0.4s linear;
+    animation: fadeSlideUp 0.4s ease-in;
 }
-#login * { margin: 0 auto; }
-#login-label { margin-bottom: 20px; text-align: center; width: 100%; font-size: 1.25rem; color: rgb(36, 36, 141); }
-#login input { width: 60%; box-shadow: 0 0 3px; border-radius: 3px;}
-#login input:focus { outline-color: rgb(36, 36, 141); }
-#sign-in-btn { font-size: clamp(0.875rem, 2.5vw, 1rem); width: 60%; min-height: 40px; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px grey;}
-#login button:hover { box-shadow: 0 0 5px navy; }
-#auth-btn { 
+.login * { margin: 0 auto; }
+.login-label { text-align: center; width: 100%; font-size: 1.25rem; color: rgb(36, 36, 141); }
+.login input { width: 60%; box-shadow: 0 0 3px; border-radius: 3px;}
+.login input:focus { outline-color: rgb(36, 36, 141); }
+.sign-in-btn { font-size: clamp(0.875rem, 2.5vw, 1rem); width: 60%; min-height: 40px; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px grey;}
+.login button:hover { box-shadow: 0 0 5px navy; }
+.auth-btn { 
     min-height: 4.5rem;
     max-height: 5rem; 
     min-width: 70%; 
     max-height: 90%;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     color: white; 
-    background: rgb(32, 184, 184); }
+    background: rgb(36, 36, 141); }
 
-#register-form {
-    display: grid;
+.register-form {
     grid-template-columns: 80%;
+    justify-content: space-around;
     width: 100%;
     background: white;
     box-shadow: 0 0 5px black;
 }
 
-#register-link > button { margin: 0 auto; font-size: clamp(0.875rem, 2.5vw, 1rem); min-height: 2.5rem; color: white; background: green; }
-#register-link > button:hover { box-shadow: 0 0 5px 1px rgb(5, 61, 5); }
+.register-link > button { margin: 0 auto; font-size: clamp(0.875rem, 2.5vw, 1rem); min-height: 2.5rem; color: white; background: green; }
+.register-link > button:hover { box-shadow: 0 0 5px 1px rgb(5, 61, 5); }
 
-#register-label {
+.register-label {
     margin-top: 6.125rem;
     width: 70%;
     font-size: clamp(1rem, 5vw, 2rem);
@@ -42,14 +41,14 @@
     border-bottom: 2px solid lime;
 }
 
-#register-msg { color: 'green' }
-#input-image { margin: 50px 0 75px 0; width: max(16rem, 25%); box-shadow: 0 0 5px black; }
-#input-image input { border: 0; box-shadow: unset;}
-#preview-image { width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
-#file { text-indent: 10px; line-height: 3.3rem; width: 100%; background: white; box-shadow: 0 2px 3px black; }
+.register-msg { color: 'green' }
+.input-image { margin: 50px 0 75px 0; width: max(16rem, 25%); box-shadow: 0 0 5px black; }
+.input-image input { border: 0; box-shadow: unset;}
+.preview-image { width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
+.file { text-indent: 10px; line-height: 3.3rem; width: 100%; background: white; box-shadow: 0 2px 3px black; }
 
-#line { min-height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
-#register-form > input { 
+.line { min-height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
+.register-form > input { 
     margin: 0 0 clamp(1rem, 5vw, 2rem) 5%; 
     border-radius: 5px; 
     box-shadow: 0 0 3px; 
@@ -57,7 +56,7 @@
     width: 90%; 
     border: 1px solid rgb(209, 245, 209);
 }
-#register-form > input:focus { outline-color: green; }
+.register-form > input:focus { outline-color: green; }
 .input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: green;}
 .input-label::after { content: " *"; color: red; }
-#register-btn { margin: 80px 0 50px 12.5%; min-height: 60px; width: 75%; color: white; background: limegreen; }
+.register-btn { margin: 80px 0 50px 12.5%; min-height: 60px; width: 75%; color: white; background: limegreen; }

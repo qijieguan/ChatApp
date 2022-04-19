@@ -2,25 +2,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vidaloka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap');
 
 
 * {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    height: auto;
-    width: auto;
-    align-items: center;
-    justify-content: space-around;
     line-height: 1.5;
     box-sizing: border-box;
 }
 
-#dashboard { min-height: 900px; }
+.dashboard { min-height: 50rem; flex-direction: column; justify-content: space-around; }
+
+.flex { display: flex; align-items: center; }
+.grid { display: grid; }
 
 button {
     position: relative;
-    display: flex;
     margin-right: 10px;
     border: 0;
     border-radius: 3px; 
@@ -35,9 +34,9 @@ button:hover { box-shadow: 0 0 3px black; }
     pointer-events: none;
 }
 
-.rippleSmall { animation: rippleSmall 1s linear; }
-.rippleMedium { animation: rippleMedium 1s linear; }
-.rippleLarge { animation: rippleLarge 1s linear; }
+.rippleSmall { animation: rippleSmall 1s ease-in; }
+.rippleMedium { animation: rippleMedium 1s ease-in; }
+.rippleLarge { animation: rippleLarge 1s ease-in; }
 
 a { text-decoration: none; }
 
@@ -53,6 +52,15 @@ input {
 
 input::placeholder { color: gray; }
 input:focus { color: black; outline-color: green; outline-offset: 1px; }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 0.5;
+}
     
 @keyframes borderSwap {
     0% { box-shadow: 0 0 5px 2px; }

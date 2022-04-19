@@ -23,18 +23,18 @@ const User = ({ user }) => {
     }
 
     return (
-        <div id="user-container">
-            <div id='user'>
-                <img id="user-image" src={user.image_url} alt=""/>
-                <h1 id="user-name">
+        <div className="user-container">
+            <div className='user'>
+                <img className="user-image" src={user.image_url} alt=""/>
+                <h1 className="user-name flex">
                     {user.firstname} {user.lastname} 
                     {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 
                         <>
                             {!status ? 
-                                <div id='user-add-1'>
+                                <div className='user-add-1'>
                                     <MdPersonAdd color='yellow' size={26} onClick={handleAdd}/>
                                 </div>
-                                : <div id='user-add-2'><FiCheckCircle color="limegreen" size={24}/></div>
+                                : <div className='user-add-2'><FiCheckCircle color="limegreen" size={24}/></div>
                             }
                         </> :''
                     }

@@ -16,14 +16,14 @@ const ChatBox = () => {
 
     useEffect(() => {
         if (!sessionStorage.getItem('select')) {
-            axios.post('/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
+            axios.post('/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
             .then((response) => { setChatSet(response.data) }); 
         } 
         else {
             axios.post('/users/select/', {user_id: sessionStorage.getItem('select')})
             .then((response) => { 
                 setUser(response.data);
-                axios.post('/texts/select/', {
+                axios.post('/select/', {
                     user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                     friend_id: response.data._id
                 }).then((response) => {setTextSet(response.data.text); scrollBottom();});
@@ -32,8 +32,8 @@ const ChatBox = () => {
     }, [update]);
 
     const scrollBottom = () => {
-        let element = document.getElementById("private-chat")
-        if (element) { element.scrollTop = element.scrollHeight }
+        let element = document.querySelector(".private-chat")
+        if (element) { element.scrollTop = element.scrollHeight; }
     }
 
     const getSelect = (id) => { sessionStorage.setItem('select', id); setUpdate(!update); }
@@ -43,7 +43,7 @@ const ChatBox = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!textInp) {return;}
-        await axios.post('/texts/add/', {
+        await axios.post('/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: textInp
@@ -55,10 +55,10 @@ const ChatBox = () => {
     const goBack = () => { sessionStorage.removeItem('select');  setUpdate(!update); }
 
     return (
-        <div id="chat-container">
-            <div id='chat-label'>Chat Log</div>
+        <div className="chat-container">
+            <div className='chat-label flex'>Chat Log</div>
             {!sessionStorage.getItem('select') ?
-                <div id='chat-set'>
+                <div className='chat-set'>
                     {chatSet && chatSet.length ?
                         chatSet.map(chat => <Chat key={uuid()} chat={chat} getSelect={getSelect}/>)
                         :''
@@ -66,14 +66,14 @@ const ChatBox = () => {
                 </div>
                 : 
                 <>
-                    <div id="private-chat-header">
-                        <button id="back-btn" onClick={goBack}><MdArrowBack size={36} color='teal'/></button>
-                        <span>
+                    <div className="private-chat-header flex">
+                        <button className="back-btn" onClick={goBack}><MdArrowBack size={36} color='teal'/></button>
+                        <span className='flex'>
                             Messaging:<img src={user.image_url} alt=""/>
                             {user.firstname + " " + user.lastname}
                         </span>
                     </div>
-                    <div id="private-chat">
+                    <div className="private-chat">
                         {textSet && textSet.length?
                             textSet.map(text => <Text key={uuid()} friend={user} text={text}/>)
                             :''
@@ -81,7 +81,7 @@ const ChatBox = () => {
                     </div>
                 </>
             }
-            <div id='text-input' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
+            <div className='text-input' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
                 <input name='text' value={textInp} onChange={handleChange}/>
                 <button onClick={handleSubmit}>Send</button>
             </div>

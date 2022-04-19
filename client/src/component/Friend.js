@@ -20,12 +20,12 @@ const Friend = () => {
     return (
         <>
             <SideNav/>
-            <div id="friend">
+            <div className="friend">
             {friends.length ?
                 <>
-                    <h1 style={{marginBottom: '50px'}}> 
+                    <h1 className="flex" style={{marginBottom: '50px'}}> 
+                        <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
                         My Friends 
-                        <FcVoicePresentation size={80} style={{margin: '0 0 10px 10px'}}/>
                     </h1>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
                 </>
