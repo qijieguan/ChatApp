@@ -22,13 +22,13 @@ const Friend = () => {
             <SideNav/>
             <div className="friend">
             {friends.length ?
-                <>
-                    <h1 className="flex" style={{marginBottom: '50px'}}> 
+                <div className='friend-wrapper grid'>
+                    <h1 className="flex" style={{margin: '3rem 0'}}> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
                         My Friends 
                     </h1>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
-                </>
+                </div>
                 :
                 <h1>Add other users as friends!</h1>
             }

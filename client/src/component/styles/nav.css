@@ -1,5 +1,6 @@
 .App-header { 
-    min-height: 4rem; 
+    height: 4rem; 
+    justify-content: space-around;
     width: 100%; 
     background: white;
     border-bottom: 1px solid rgb(241, 241, 241); 
@@ -7,7 +8,8 @@
 }
 
 .App-header > h1 { 
-    margin: 0 auto 0 5rem; 
+    justify-content: flex-start;
+    margin-left: 1.5rem;
     font-size: clamp(1.5rem, 2.5vw, 2rem);
     font-family: 'Lobster', cursive;
     width: 40%; 
@@ -93,8 +95,7 @@
 .side-user h1 { margin: auto; font-size: clamp(0.75rem, 2.5vw, 1rem); color: rgb(55, 243, 243); }
 
 @media (max-width: 50rem) {
-    .App-header > h1 { margin: 0; }
-    .login-btn, .about-btn { height: 2.2rem; width: 3rem; }
+    .login-btn, .about-btn { height: 2.2rem; width: 2.5rem; }
     .side-li { padding-left: 0; }
     .side-logo > h1 { display: none; }
     .side-li > h1, .side-user > h1 { display: none; } 

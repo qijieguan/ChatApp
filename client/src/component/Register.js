@@ -82,7 +82,7 @@ const Register = () => {
             <h1 className='input-label'>Password</h1>
             <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
           
-            <button className="register-btn" type='submit'>Create New Account</button>
+            <button className="register-btn" type='submit'>CREATE NEW ACCOUNT</button>
         </form>
     );
 }

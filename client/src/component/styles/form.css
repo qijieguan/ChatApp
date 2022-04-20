@@ -25,7 +25,6 @@
     justify-content: space-around;
     width: 100%;
     background: white;
-    box-shadow: 0 0 5px black;
 }
 
 .register-link > button { margin: 0 auto; font-size: clamp(0.875rem, 2.5vw, 1rem); min-height: 2.5rem; color: white; background: green; }
@@ -59,4 +58,12 @@
 .register-form > input:focus { outline-color: green; }
 .input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: green;}
 .input-label::after { content: " *"; color: red; }
-.register-btn { margin: 80px 0 50px 12.5%; min-height: 60px; width: 75%; color: white; background: limegreen; }
+.register-btn { 
+    margin: 5rem 0 3rem 12.5%;
+    padding: clamp(1rem, 2.5vw, 1.25rem) 0;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    letter-spacing: 0.125rem; 
+    width: 75%; 
+    color: white; 
+    background: limegreen; 
+}

@@ -20,9 +20,9 @@ const About = () => {
                     <div>What is the goal of this application?</div>
                     <p>
                         The app is an experimental project to recreate basic
-                        features of a social media appliaction. It includes user 
-                        <span> (un)friending functionality </span>. The key feature is 
-                        <span> maintaining</span> and <span>displaying chat log </span> 
+                        functions of a messanging appliaction. It includes user 
+                        <span> (un)friending functionality</span>. The key feature is 
+                        <span> maintaining</span> and <span>displaying message log </span> 
                         between users.
                     </p>
                 </div>
