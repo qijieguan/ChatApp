@@ -25,23 +25,23 @@
 .friend-extend {
     position: relative;
     border: 1px solid rgb(212, 212, 212);
-    border-radius: 10px;
+    border-radius: 0.5rem;
     box-shadow: 0 0 1px grey;
 }
 .friend-extend:hover { box-shadow: 0 0 5px teal; border: 1px solid teal; }
 
 .animated-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0 0;
+    margin: auto;
     height: 0;
     width: 0;
     background: rgb(55, 243, 243);
-    border-radius: 0 100px 100px 100px;
+    border-radius: 10rem;
     transition: all 0.3s ease-in;
 }
 
-.friend-extend:hover .animated-overlay { height: 100%; width: 100%;; border-radius: 10px; }
+.friend-extend:hover .animated-overlay { height: 100%; width: 100%; border-radius: 0.5rem; }
 .unfriend-icon * { font-size: clamp(1.5rem, 2.5vw, 2.125rem); }
 .unfriend-icon { position: relative; grid-column: 1 / 2; margin: 10px auto auto 10px; color: gray; }
 .unfriend-icon:hover { color: #b22222; }
@@ -51,22 +51,23 @@
 .chat-icon::after, .unfriend-icon::after {
     display: none;
     position: absolute;
-    transform: translate3d(12%, -190%, 0);
+    transform: translate3d(15%, -195%, 0);
+    padding: 0.25rem clamp(0.25rem, 2.5vw, 1rem);
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     text-align: center;
-    padding: 2px 5px;
     width: 6rem;
     background: white;
-    border-radius: 10px 10px 10px 0;
+    border-radius: 0.5rem 0.5rem 0.5rem 0;
     box-shadow: 0 0 3px black;
     z-index: 3;
 }
 
-.chat-icon:hover::after { font-size: clamp(0.75rem, 2.5vw, 0.875rem); content: 'Message'; display: block; color: teal; }
-.unfriend-icon:hover::after { font-size: clamp(0.75rem, 2.5vw, 0.875rem); content: 'Unfriend'; display: block; color: firebrick; }
+.chat-icon:hover::after { content: 'Message'; display: block; color: teal; }
+.unfriend-icon:hover::after { content: 'Unfriend'; display: block; color: firebrick; }
 
 .friend-profile { 
     grid-column: 2 / 3; 
-    height: 100%; 
+    max-height: 15rem; 
     width: 100%; 
     object-fit: auto; 
     border-radius: 3rem; 

@@ -24,13 +24,12 @@
     justify-content: space-around;
 }
 .about {
-    display: inline-grid;
     grid-template-columns: 50% 50%;
     margin: 5rem 0 3.5rem 0;
     width: 90%;
     background: white;
-    border: 1px solid rgb(221, 221, 221);
     border-radius: 0.25rem;
+    box-shadow: 0 0 5px grey;
 }
 
 .about-left {

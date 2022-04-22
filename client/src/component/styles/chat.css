@@ -1,10 +1,9 @@
 .chat-container {
-    display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 3rem;
-    min-height: 38rem;
+    margin: 1rem 0;
+    min-height: 40rem;
     width: max(28rem, 60%);
     background: white;
     border: 1px solid gray;

@@ -5,7 +5,7 @@ const About = () => {
     return (
         <div className='about-wrapper flex'>
             <SideNav/>  
-            <div className='about'>
+            <div className='about grid'>
                 <div className='about-left flex' style={{color: 'white', background: 'teal'}}>
                     <div>How was this application built?</div>
                     <p>

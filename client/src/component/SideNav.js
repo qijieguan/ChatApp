@@ -31,35 +31,35 @@ const SideNav = () => {
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
 
     return (
-        <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? 'inline-flex' : 'none'}}>
+        <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
             <div className="side-logo flex">
                 <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
             </div>
             <Link to='/Dashboard' className="side-li flex" id="/Dashboard" onClick={handleClick}>
-                <h1>Dashboard</h1>
+                <div>DASHBOARD</div>
                 <AiFillHome className="side-icon"/>
             </Link>
             <Link to='/Friend' className="side-li flex" id="/Friend" onClick={handleClick}>
-                <h1>Friends</h1>
+                <div>FRIENDS</div>
                 <FaUserFriends className="side-icon"/>
             </Link>
             <Link to="/Search" className="side-li flex" id="/Search" onClick={handleClick}>
-                <h1>Search</h1>
+                <div>SEARCH</div>
                 <BsSearch className="side-icon"/>
             </Link>
             <Link to="/About" className="side-li flex" id="/About" onClick={handleClick}>
-                <h1>Miscellaneous</h1>
+                <div>ABOUT</div>
                 <AiFillRead className="side-icon"/>
             </Link>
             <div className="side-li flex logout" onClick={logout}>
-                <h1>Log Out</h1>
+                <div>LOG OUT</div>
                 <BiLogIn size={30}/>
-            </div>
+            </div>    
             <div className="side-user flex">
                 <img src={user.image_url} alt=""/>
-                <h1>{user.firstname} {user.lastname}</h1>
-            </div>       
-        </div>
+                <div>{user.firstname} {user.lastname}</div>
+            </div> 
+    </div>
     );
 }
 
