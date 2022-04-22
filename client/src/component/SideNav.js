@@ -16,7 +16,7 @@ const SideNav = () => {
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
-            axios.post('http://localhost:3001/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
+            axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); });
             setUser(JSON.parse(sessionStorage.getItem('user'))); 
         }
