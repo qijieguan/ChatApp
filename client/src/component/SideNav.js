@@ -17,10 +17,10 @@ const SideNav = () => {
     const modalStyles = {
         content : {
             inset : '50% auto auto 50%',
+            maxHeight: '90vh',
             width: 'max(25rem, 40%)',
-            Height: '50%',
             paddingBottom: '3rem',
-            transform: 'translate(-50%, -40%)', 
+            transform: 'translate(-50%, -50%)', 
         },
         overlay: { zIndex: '4' }
     };

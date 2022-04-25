@@ -1,5 +1,6 @@
 import { MdPersonAdd } from 'react-icons/md';
 import { FiCheckCircle } from 'react-icons/fi';
+import { AiFillRead } from 'react-icons/ai';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFriend } from './actions/index.js';
@@ -22,9 +23,19 @@ const User = ({ user }) => {
         }).then((response) => { dispatch(addFriend(response.data)); setStatus(true)});
     }
 
+    const handleEnter = () => { document.getElementById(user._id).classList.add('focus'); }
+    const handleLeave = () => { document.getElementById(user._id).classList.remove('focus'); }
+
     return (
         <div className="user-container">
             <div className='user'>
+                <div className='user-bio-icon' 
+                    style={{display: user.bio_content ? '' : 'none'}}
+                    onMouseEnter={handleEnter} 
+                    onMouseLeave={handleLeave}
+                >
+                    <AiFillRead size={26} color="orange"/>
+                </div>
                 <img className="user-image" src={user.image_url} alt=""/>
                 <h1 className="user-name flex">
                     {user.firstname} {user.lastname} 
@@ -39,6 +50,7 @@ const User = ({ user }) => {
                         </> :''
                     }
                 </h1>
+                <div className='user-bio' id={user._id}>{user.bio_content}</div>
             </div>
         </div>
     );

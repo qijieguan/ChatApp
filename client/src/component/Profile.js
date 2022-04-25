@@ -15,7 +15,7 @@ const Profile = ({ user, closeModal }) => {
         await axios.post('/users/edit_bio/', {user_id: user._id, bio_content: bio});
         user.bio_content = bio;
         sessionStorage.setItem("user", JSON.stringify(user));
-        setIsEdit(false);
+        window.location.reload();
     }
 
     return(

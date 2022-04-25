@@ -18,7 +18,8 @@
 .friend-wrapper > h1 {
     grid-column: 1 / 4;
     font-size: clamp(3rem, 5vw, 3.5rem);
-    color: teal;
+    letter-spacing: 0.125rem;
+    color: rgb(55, 243, 243);
     animation: fadeSlideLeft 0.5s ease-in;
 }
 
@@ -39,7 +40,7 @@
     width: 0;
     background: rgb(55, 243, 243);
     border-radius: 10rem;
-    transition: all 0.3s ease-in;
+    transition: all 0.5s ease-in;
 }
 
 .friend-extend:hover .animated-overlay { height: 100%; width: 100%; border-radius: 0.5rem; }
@@ -81,9 +82,41 @@
     text-align: center; 
     margin: 1rem auto;
     font-size: clamp(1rem, 2.5vw, 1.375rem); 
+    font-weight: bold;
     color: teal; 
     z-index: 2; 
 }
+
+.friend-bio {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    row-gap: 3rem;
+    left: 0;
+    height: 100%;
+    width: 75%;
+    background: yellow;
+    box-shadow: 0 3px 5px gray;
+    border-radius: 0.5rem 0 0 0.5rem;
+    z-index: 4;
+}
+.friend-bio > h1 { border-bottom: 2px solid; width: 90%; }
+.friend-bio > span { width: 90%; font-size: clamp(0.875rem, 2.5vw, 1rem); }
+.friend-bio.focus { display: flex; animation: slideRight 0.3s ease-in; }
+
+@keyframes slideRight {
+    0%  { opacity: 0; width: 0; }
+    100% { opacity: 1;; width: 75%; }
+}
+
+.friend-bio-icon {
+    grid-column: 3 / 4;
+    margin: auto 10px 10px auto;
+    font-size: clamp(1.375rem, 2.5vw, 2rem);
+    color: gray;
+    z-index: 3;
+}
+.friend-bio-icon:hover { color: black; }
 
 @media (max-width: 50rem) {
     .friend-wrapper { grid-template-columns: 45% 45% }

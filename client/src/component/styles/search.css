@@ -18,7 +18,8 @@
 .search-wrapper > h1 {
     grid-column: 1 / 5;
     font-size: clamp(3rem, 5vw, 3.5rem);
-    color: teal;
+    letter-spacing: 0.125rem;
+    color: orange;
     animation: fadeSlideLeft 0.5s ease-in;
 }
 
@@ -29,7 +30,7 @@
     height: 100%;
     width: 100%;
     box-shadow: 0 0 2px;
-    border-radius: 30px;
+    border-radius: 2rem;
     z-index: 1;
     transition: 0.5s all ease-in;
 }
@@ -53,14 +54,36 @@
     color: white; 
     word-break: break-all; 
 }
+
+.user-bio-icon { 
+    justify-content: space-around;
+    position: absolute;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    inset: 0 0 auto auto;
+    background: black;
+    border-radius: 0 1.5rem;
+    z-index: 2;
+}
+
+.user-bio {
+    display: none;
+    position: absolute;
+    padding: 0.25rem 0.5rem;
+    bottom: 0;
+    background: white;
+    border-radius: 0 0 1.5rem 1.5rem;
+    z-index: 2;
+}
+
+.user-bio.focus { display: block; }
+
 .user:hover .user-name { font-size: 1rem; }
 .user:hover .user-image { animation: animateImage 3s; }
 
 .user-add-1::after, .user-add-2::after {
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
+    inset: 0 0 auto auto;
     padding: clamp(0.25rem, 1vw, 0.375rem) 0.75rem;
     margin-left: clamp(0.5rem, 2.5vw, 1rem);
     transform: translate3d(65%, -90%, 0);

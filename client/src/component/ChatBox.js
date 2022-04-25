@@ -58,10 +58,11 @@ const ChatBox = () => {
         <div className="chat-container">
             <div className='chat-label flex'>Chat Log</div>
             {!sessionStorage.getItem('select') ?
-                <div className='chat-set'>
+                <div className='chat-set flex'>
                     {chatSet && chatSet.length ?
                         chatSet.map(chat => <Chat key={uuid()} chat={chat} getSelect={getSelect}/>)
-                        :''
+                        :
+                        <h1 className='chat-default'>No Chat Log Exists</h1>
                     }
                 </div>
                 : 

@@ -21,7 +21,13 @@
     border-radius: 10px 10px 0 0;
     box-shadow: 0 1px 5px black;
 }
-.chat-set { width: 100%; }
+.chat-set { flex-direction: column; width: 100%; }
+.chat-default { 
+    margin-top: 30%;
+    font-size: clamp(2rem, 3vw, 4rem); 
+    font-style: italic;
+    color: teal;
+}
 .chat-wrapper { position: relative; min-height: 5rem; width: 100%; border-bottom: 1px solid rgb(197, 197, 197); } 
 .chat { position: absolute; height: 100%; width: 100%; transition: all 0.3s ease-in; }
 .chat img { 
