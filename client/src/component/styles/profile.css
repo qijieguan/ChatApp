@@ -1,0 +1,49 @@
+.profile { flex-direction: column; row-gap: 3.5rem; }
+
+.exit-btn {
+    padding-right: 0.125rem;
+    margin-left: auto;
+    font-size: clamp(0.75rem, 2.5vw, 0.875rem);
+    font-weight: bold;
+    color: red;
+    border-bottom: 2px solid red;
+}
+.profile-image {
+    margin: auto;
+    max-height: 10rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem grey;
+}
+.profile-line { position: relative; justify-content: space-around; width: 100%; border-radius: 0.5rem; }
+.p-line { width: 100%; height: 0.125rem; background: rgb(206, 206, 206); }
+.profile-name { 
+    position: absolute;
+    padding: 0.5rem 0;
+    text-align: center;
+    width: max(30%, 5rem);
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    color: purple; 
+    background: white;
+    border: 2px solid rgb(206, 206, 206);
+    border-radius: 5rem;
+}
+
+.bio-label { color: grey; }
+
+.bio-body {
+    flex-direction: column;
+    padding: 0.5rem;
+    min-height: 10rem;
+    width: 100%;
+    font-size: 0.875rem;
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: 0.5rem;
+}
+
+.edit-btn { margin: auto 0 0 auto; color: white; background: blue; }
+.edit-btn:hover { color: orange; box-shadow: 0 0 5px navy; }
+
+.profile-bio { width: 90%; }
+.profile-bio > textarea { min-height: 10rem; width: 100%; color: indigo; word-wrap: break-word; }
+.profile-bio > button { float: right; margin: 1rem 0 0 0; color: white; background: lime; }

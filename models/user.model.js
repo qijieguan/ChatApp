@@ -33,11 +33,17 @@ const userSchema = new Schema({
         required: true,
         trim: true,
         minlength: 3
+    },
+    bio_content: {
+       type: String, 
+       trim: true
     }
 },
 {
     timestamps: true,   
-});
+},
+{ strict: false }
+);
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

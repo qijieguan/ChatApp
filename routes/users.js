@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 const jwt = require('jsonwebtoken');
 
-
 router.route('/').get((req, res) => {
     User.find()
     .then(users => res.json(users))
@@ -34,12 +33,13 @@ router.route('/register').post((req, res) => {
     const image_url = req.body.image_url;
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
+    const bio_content = "";
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) { console.log(err) }
         else {
             password = hash;
-            const newUser = new User({username, password, image_url, firstname, lastname});
+            const newUser = new User({username, password, image_url, firstname, lastname, bio_content});
             newUser.save()
             .then(user => res.json(user))
             .catch(err => res.status(400).json("Error " + err));     
@@ -87,6 +87,15 @@ router.route('/load').post((req, res) => {
 
     User.find({username: username})
     .then(user => {res.json(user[0])})
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+router.route('/edit_bio').post((req, res) => {
+    const user_id = req.body.user_id;
+    const bio_content = req.body.bio_content;
+
+    User.findOneAndUpdate({_id: user_id}, {$set: {bio_content: bio_content}})
+    .then(res.json("Bio is updated!"))
     .catch(err => res.status(400).json("Error " + err));
 });
 

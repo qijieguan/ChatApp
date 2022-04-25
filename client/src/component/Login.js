@@ -20,7 +20,6 @@ const Login = () => {
             bottom: 'auto',
             width: 'max(20rem, 35%)',
             height: '35%',
-            marginRight: '-50%',
             transform: 'translate(-50%, -50%)', 
         },
         overlay: { zIndex: '4' }

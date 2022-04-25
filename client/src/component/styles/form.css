@@ -9,7 +9,15 @@
 .login-label { margin-top: 1rem; text-align: center; width: 100%; font-size: 1.25rem; color: rgb(36, 36, 141); }
 .login input { width: 60%; box-shadow: 0 0 3px; border-radius: 3px;}
 .login input:focus { outline-color: rgb(36, 36, 141); }
-.sign-in-btn { font-size: clamp(0.875rem, 2.5vw, 1rem); width: 60%; min-height: 40px; background: rgb(36, 36, 141); color: white; box-shadow: 0 0 3px grey;}
+.sign-in-btn { 
+    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+    letter-spacing: 0.125rem;
+    width: 60%; 
+    min-height: 40px; 
+    background: rgb(36, 36, 141); 
+    color: white; 
+    box-shadow: 0 0 3px grey;
+}
 .login button:hover { box-shadow: 0 0 5px navy; }
 .auth-btn { 
     min-height: 4.5rem;
@@ -17,8 +25,10 @@
     min-width: 70%; 
     max-height: 90%;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
+    letter-spacing: 0.125rem;
     color: white; 
-    background: rgb(36, 36, 141); }
+    background: rgb(36, 36, 141); 
+}
 
 .register-form {
     grid-template-columns: 80%;
@@ -27,7 +37,15 @@
     background: white;
 }
 
-.register-link > button { margin: 0 auto; font-size: clamp(0.875rem, 2.5vw, 1rem); min-height: 2.5rem; color: white; background: green; }
+.register-link > button { 
+    margin: 0 auto; 
+    padding: 0 0.5rem;
+    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+    letter-spacing: 0.05rem;
+    min-height: 2.5rem; 
+    color: white; 
+    background: green; 
+}
 .register-link > button:hover { box-shadow: 0 0 5px 1px rgb(5, 61, 5); }
 
 .register-label {

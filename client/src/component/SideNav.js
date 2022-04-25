@@ -3,15 +3,32 @@ import { AiFillHome, AiFillRead, AiOutlineWechat } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
+import { BsThreeDotsVertical, BsFilePersonFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
+import Modal from 'react-modal';
+import Profile from './Profile.js';
 import axios from 'axios';
 
 const SideNav = () => {
 
+    const modalStyles = {
+        content : {
+            inset : '50% auto auto 50%',
+            width: 'max(25rem, 40%)',
+            Height: '50%',
+            paddingBottom: '3rem',
+            transform: 'translate(-50%, -40%)', 
+        },
+        overlay: { zIndex: '4' }
+    };
+
+    Modal.setAppElement(document.getElementById('root'));
+
     const [user, setUser] = useState([]);
+    const [modal, setModal] = useState(false);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -29,6 +46,8 @@ const SideNav = () => {
     }
 
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
+
+    const closeModal = () => { setModal(false); }
 
     return (
         <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
@@ -58,7 +77,15 @@ const SideNav = () => {
             <div className="side-user flex">
                 <img src={user.image_url} alt=""/>
                 <div>{user.firstname} {user.lastname}</div>
+                <BsThreeDotsVertical size={30} color="indigo"/>
+                <div className='drop-li flex' onClick={() => setModal(true)}>
+                    <BsFilePersonFill className='person-icon'/>
+                    <div>Profile Info</div>
+                </div>
             </div> 
+            <Modal isOpen={modal} style={modalStyles}>
+                <Profile user={user} closeModal={closeModal}/>
+            </Modal>
     </div>
     );
 }
