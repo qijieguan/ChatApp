@@ -75,11 +75,11 @@ const Login = () => {
         <div style={{width: '100%'}}>
             <form className="login flex" onSubmit={handleSubmit}>
                 <h1 className="login-label">Enter Your Credentials</h1>
-                <h3 className="login-msg" style={{display: 'none', color: 'red'}}>{message}</h3>
+                <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
                 <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 <button type="submit" className="sign-in-btn">Sign In</button>
-                <h1 style={{color: 'gray'}}>or</h1>
+                <div style={{color: 'gray'}}>or</div>
                 <Link to='/Register' className="register-link"><button>Create a New Account</button></Link>
             </form>
             
