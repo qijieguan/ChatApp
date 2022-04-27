@@ -37,13 +37,17 @@ const userSchema = new Schema({
     bio_content: {
        type: String, 
        trim: true
-    }
+    },
+    photo_album: {
+        type: Array,
+        required: true,
+        trim: true,
+        minlength: 1
+    },
 },
 {
     timestamps: true,   
-},
-{ strict: false }
-);
+});
 
 const User = mongoose.model('User', userSchema);
 module.exports = User;

@@ -8,27 +8,12 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
-import Modal from 'react-modal';
-import Profile from './Profile.js';
 import axios from 'axios';
 
 const SideNav = () => {
 
-    const modalStyles = {
-        content : {
-            inset : '50% auto auto 50%',
-            maxHeight: '90vh',
-            width: 'max(25rem, 40%)',
-            paddingBottom: '3rem',
-            transform: 'translate(-50%, -50%)', 
-        },
-        overlay: { zIndex: '4' }
-    };
-
-    Modal.setAppElement(document.getElementById('root'));
-
     const [user, setUser] = useState([]);
-    const [modal, setModal] = useState(false);
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -46,8 +31,6 @@ const SideNav = () => {
     }
 
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
-
-    const closeModal = () => { setModal(false); }
 
     return (
         <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
@@ -77,15 +60,12 @@ const SideNav = () => {
             <div className="side-user flex">
                 <img src={user.image_url} alt=""/>
                 <div>{user.firstname} {user.lastname}</div>
-                <BsThreeDotsVertical size={30} color="indigo"/>
-                <div className='drop-li flex' onClick={() => setModal(true)}>
+                <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.5rem'}}/>
+                <Link to='/Profile' className='drop-li flex'>
                     <BsFilePersonFill className='person-icon'/>
                     <div>Profile Info</div>
-                </div>
+                </Link>
             </div> 
-            <Modal isOpen={modal} style={modalStyles}>
-                <Profile user={user} closeModal={closeModal}/>
-            </Modal>
     </div>
     );
 }

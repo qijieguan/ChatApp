@@ -3,6 +3,7 @@
     justify-content: flex-start;
     align-items: center;
     margin: 1rem 0;
+    padding-bottom: 2rem;
     min-height: 40rem;
     width: max(28rem, 60%);
     background: white;
@@ -84,6 +85,6 @@
 .text-content { font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: 8px 0 0 8px; }
 .text-made-by { font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: auto 10px 0 0; text-align: right; color: darkslategray; }
 
-.text-input { justify-content: space-evenly; margin: 50px 0 30px 5%; height: 75px; width: 100%;}
-.text-input input { height: 100%; width: 70%; box-shadow: 0 0 5px; outline-color: teal;}
-.text-input button { height: 80%; width: 15%; color: white; background: teal; border-radius: 40px; }
+.text-input { justify-content: center; align-items: center; gap: 1rem; height: 4rem; width: 100%;}
+.text-input input { height: 90%; width: 70%; box-shadow: 0 0 5px; outline-color: teal;}
+.text-input button { height: 80%; width: 15%; color: white; background: teal; border-radius: 3rem; }

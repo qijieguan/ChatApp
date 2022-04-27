@@ -34,12 +34,13 @@ router.route('/register').post((req, res) => {
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const bio_content = "";
+    const photo_album = [image_url];
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) { console.log(err) }
         else {
             password = hash;
-            const newUser = new User({username, password, image_url, firstname, lastname, bio_content});
+            const newUser = new User({username, password, image_url, firstname, lastname, bio_content, photo_album});
             newUser.save()
             .then(user => res.json(user))
             .catch(err => res.status(400).json("Error " + err));     
@@ -96,6 +97,15 @@ router.route('/edit_bio').post((req, res) => {
 
     User.findOneAndUpdate({_id: user_id}, {$set: {bio_content: bio_content}})
     .then(res.json("Bio is updated!"))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+router.route('/upload_photo').post((req, res) => {
+    const user_id = req.body.user_id;
+    const url = req.body.url;
+
+    User.findOneAndUpdate({_id: user_id}, {$push : {photo_album: url}})
+    .then(() => res.json())
     .catch(err => res.status(400).json("Error " + err));
 });
 

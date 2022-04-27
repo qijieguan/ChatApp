@@ -12,7 +12,7 @@ const ChatBox = () => {
     const [textInp, setText] = useState("");
     const [textSet, setTextSet] = useState([]);
     const [chatSet, setChatSet] = useState([]);
-    const [update, setUpdate] = useState(false);
+    const [reload, setReload] = useState(false);
 
     useEffect(() => {
         if (!sessionStorage.getItem('select')) {
@@ -29,14 +29,14 @@ const ChatBox = () => {
                 }).then((response) => {setTextSet(response.data.text); scrollBottom();});
             });
         }  
-    }, [update]);
+    }, [reload]);
 
     const scrollBottom = () => {
         let element = document.querySelector(".private-chat")
         if (element) { element.scrollTop = element.scrollHeight; }
     }
 
-    const getSelect = (id) => { sessionStorage.setItem('select', id); setUpdate(!update); }
+    const getSelect = (id) => { sessionStorage.setItem('select', id); setReload(!reload); }
 
     const handleChange = (event) => { setText(event.target.value); }
 
@@ -48,11 +48,11 @@ const ChatBox = () => {
             friend_id: user._id,
             content: textInp
         });
-        setUpdate(!update);
         setText("");
+        setReload(!reload);
     }
 
-    const goBack = () => { sessionStorage.removeItem('select');  setUpdate(!update); }
+    const goBack = () => { sessionStorage.removeItem('select');  setReload(!reload); }
 
     return (
         <div className="chat-container">
@@ -83,7 +83,7 @@ const ChatBox = () => {
                 </>
             }
             <div className='text-input' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
-                <input name='text' value={textInp} onChange={handleChange}/>
+                <input name='text' placeholder='Type message here...' value={textInp} onChange={handleChange}/>
                 <button onClick={handleSubmit}>Send</button>
             </div>
         </div>

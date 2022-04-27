@@ -83,7 +83,7 @@
 
 .side-user { position: relative; margin: 0 0.5rem 0 auto; padding: 0.25rem 1rem; background: #5518ab; box-shadow: 0 0 4px black; }
 .side-user img { 
-    margin-right: 0.25rem; 
+    margin-right: 0.5rem; 
     height: 3rem; 
     width: 3rem; 
     border-radius: 10px; 

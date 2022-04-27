@@ -10,8 +10,8 @@ const textSchema = new Schema({
         minlength: 2
     },
     text: [{
-        user_id: { type: String },
-        content: { type: String }
+        user_id: { type: String, trim: true },
+        content: { type: String, trim: true }
     }]
 },
 {
