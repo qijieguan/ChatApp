@@ -29,7 +29,7 @@
     transition: all 0.2s ease-in;
 }
 
-.App-header button:hover { box-shadow: 0 0 5px black; }
+.App-header button:hover { box-shadow: 0 0 5px black; font-weight: bold; }
 .about-btn { margin-right: clamp(1rem, 5vw, 4rem); }
 .about-btn:hover { color: white; background: rgb(32, 184, 184); }
 .login-btn:hover { color: white; background: rgb(23, 23, 179); }
@@ -93,7 +93,8 @@
 .side-user > div { 
     padding-left: 0.25rem;
     font-size: clamp(0.75rem, 2.5vw, 1rem); 
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.05rem;
     color: rgb(55, 243, 243); 
 }
 .drop-li {

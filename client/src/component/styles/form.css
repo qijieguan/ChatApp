@@ -1,7 +1,7 @@
 .login {
     margin-bottom: clamp(0.1rem, 10vw, 10rem);
     flex-direction: column;
-    row-gap: 2rem;
+    row-gap: clamp(1.5rem, 2.5vw, 2rem);
     color: white;
     animation: fadeSlideUp 0.4s ease-in;
 }

@@ -25,6 +25,8 @@ const Profile = () => {
         setReload(!reload);
     }
 
+    const callReload = () => { setReload(!reload); }
+
     return(
         <>
             <SideNav/>
@@ -35,7 +37,8 @@ const Profile = () => {
                         <div className='p-line'/>
                         <div className='profile-name'>{user.firstname} {user.lastname}</div>
                     </div>
-                    <div className='profile-bio'>
+                    
+                    <form className='profile-bio'>
                         <h1 className='bio-label'>Personal Bio</h1>
                         <h1 className='bio-body flex' style={{display: !isEdit ? '' : 'none'}}>
                             <div className='bio-content'>
@@ -57,9 +60,9 @@ const Profile = () => {
                                 <button className='submit-button' onClick={handleSubmit}>SUBMIT</button>
                             </div> : ''
                         }
-                    </div>
+                    </form>
                 </div>
-                <Album user={user}/>
+                <Album user={user} callReload={callReload}/>
             </div>
         </>
     )

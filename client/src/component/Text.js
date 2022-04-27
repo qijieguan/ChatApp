@@ -1,11 +1,9 @@
 const Text = ({ friend, text }) => {
 
-    var made_by = 'default';
+    var made_by = 'You';
 
-    const handleMadeBy = () => {
-        if (text.user_id === friend._id) { made_by = friend.firstname; }
-        else { made_by = JSON.parse(sessionStorage.getItem('user')).firstname; }
-    }
+    const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }
+}
 
     handleMadeBy();
 

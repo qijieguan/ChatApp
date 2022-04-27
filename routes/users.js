@@ -109,4 +109,13 @@ router.route('/upload_photo').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
+router.route('/change_photo').post((req, res) => {
+    const user_id = req.body.user_id;
+    const url = req.body.url;
+
+    User.findOneAndUpdate({_id: user_id}, {$set : {image_url: url}})
+    .then(() => res.json())
+    .catch(err => res.status(400).json("Error " + err));
+});
+
 module.exports = router;
