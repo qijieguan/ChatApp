@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
-const Album = ({ user, callReload }) => {
+const Album = () => {
 
+    var user = JSON.parse(sessionStorage.getItem('user'))
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
     const [src, setSRC] = useState("");
@@ -62,7 +63,6 @@ const Album = ({ user, callReload }) => {
         sessionStorage.setItem('user', JSON.stringify(user));
         setSRC("");
         window.location.reload();
-        //return callReload();
     }
 
     return (

@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const Profile = () => {
 
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    var user = JSON.parse(sessionStorage.getItem('user'));
     const [bio, setBio] = useState(user.bio_content);
     const [isEdit, setIsEdit] = useState(false);
     const [reload, setReload] = useState(false);
@@ -25,8 +25,6 @@ const Profile = () => {
         setReload(!reload);
     }
 
-    const callReload = () => { setReload(!reload); }
-
     return(
         <>
             <SideNav/>
@@ -38,7 +36,7 @@ const Profile = () => {
                         <div className='profile-name'>{user.firstname} {user.lastname}</div>
                     </div>
                     
-                    <form className='profile-bio'>
+                    <div className='profile-bio'>
                         <h1 className='bio-label'>Personal Bio</h1>
                         <h1 className='bio-body flex' style={{display: !isEdit ? '' : 'none'}}>
                             <div className='bio-content'>
@@ -60,9 +58,9 @@ const Profile = () => {
                                 <button className='submit-button' onClick={handleSubmit}>SUBMIT</button>
                             </div> : ''
                         }
-                    </form>
+                    </div>
                 </div>
-                <Album user={user} callReload={callReload}/>
+                <Album/>
             </div>
         </>
     )
