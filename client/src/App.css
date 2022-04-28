@@ -15,7 +15,7 @@
 .dashboard { min-height: 50rem; flex-direction: column; justify-content: space-around; }
 
 .flex { display: flex; align-items: center; }
-.grid { display: grid; }
+.grid { display: grid; justify-content: space-around; }
 
 button {
     position: relative;
@@ -29,7 +29,10 @@ button {
 button:hover { box-shadow: 0 0 5px black; }
 
 .ripples { 
-    position: absolute; background: #fff; transform: translate(-50%, -50%); border-radius: 50%;
+    position: absolute; 
+    background: #fff; 
+    transform: translate(-50%, -50%); 
+    border-radius: 50%;
     pointer-events: none;
 }
 
@@ -51,14 +54,7 @@ input {
 input::placeholder { color: gray; }
 input:focus { outline-color: green; outline-offset: 1px; }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    background: black;
-    opacity: 0.5;
-}
+.overlay { position: absolute; top: 0; height: 100%; width: 100%; background: black; opacity: 0.5; }
     
 @keyframes animateImage {
     0% { object-position: left; }

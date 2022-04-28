@@ -42,7 +42,7 @@ const Header = () => {
     return (
         <> 
             {!sessionStorage.getItem("isLogged") ?
-                <header className="App-header flex">
+                <header className="app-header flex">
                     <h1 className='flex'>CHAT APP <AiOutlineWechat style={{margin:'0 0 0.5rem 0.25rem'}}/></h1>
                     <div className="header-btns flex">
                         <Link to='/'><button className="login-btn">Login</button></Link>

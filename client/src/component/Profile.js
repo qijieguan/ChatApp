@@ -1,5 +1,5 @@
 import './styles/profile.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AiTwotoneEdit } from 'react-icons/ai';
 import SideNav from './SideNav.js';
 import Album from './Album.js';
@@ -10,9 +10,7 @@ const Profile = () => {
     var user = JSON.parse(sessionStorage.getItem('user'));
     const [bio, setBio] = useState(user.bio_content);
     const [isEdit, setIsEdit] = useState(false);
-    const [reload, setReload] = useState(false);
-
-    useEffect(() => {}, [reload]);
+    const [render, setRender] = useState(false);
 
     const handleChange = (e) => { setBio(e.target.value); }
 
@@ -22,8 +20,10 @@ const Profile = () => {
         user.bio_content = bio;
         sessionStorage.setItem("user", JSON.stringify(user));
         setIsEdit(false);
-        setReload(!reload);
+        setRender(!render);
     }
+    
+    const callRender = () => { setRender(!render) }
 
     return(
         <>
@@ -60,7 +60,7 @@ const Profile = () => {
                         }
                     </div>
                 </div>
-                <Album/>
+                <Album callRender={callRender}/>
             </div>
         </>
     )

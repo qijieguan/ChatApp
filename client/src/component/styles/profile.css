@@ -91,7 +91,6 @@
     grid-template-columns: 45% 45%;
     row-gap: 2rem;
     width: 100%;
-    justify-content: space-around;
 }
 
 .photo-wrapper { position: relative; display: block; width: fit-content; }

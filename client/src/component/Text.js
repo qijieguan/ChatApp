@@ -2,8 +2,7 @@ const Text = ({ friend, text }) => {
 
     var made_by = 'You';
 
-    const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }
-}
+    const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }}
 
     handleMadeBy();
 

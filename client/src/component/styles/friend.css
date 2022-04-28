@@ -9,12 +9,7 @@
     box-shadow: 0 0 3px gray;
 }
 
-.friend-wrapper {
-    grid-template-columns: 28% 28% 28%;
-    row-gap: 3rem;
-    justify-content: space-around;
-}
-
+.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3rem; }
 .friend-wrapper > h1 {
     grid-column: 1 / 4;
     font-size: clamp(3rem, 5vw, 3.5rem);

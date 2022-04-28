@@ -25,7 +25,6 @@ const Extend = ({ friend }) => {
     const handleEnter = () => { document.getElementById(friend._id).classList.add('focus'); }
     const handleLeave = () => { document.getElementById(friend._id).classList.remove('focus'); }
 
-
     return (
         <div className="friend-extend grid">
             <div className="animated-overlay"/>

@@ -5,22 +5,21 @@ import { FaUserFriends } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
 import { BsThreeDotsVertical, BsFilePersonFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
 import axios from 'axios';
 
 const SideNav = () => {
 
-    const [user, setUser] = useState([]);
-
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
             axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
-            .then((response) => { dispatch(setFriends(response.data)); });
-            setUser(JSON.parse(sessionStorage.getItem('user'))); 
+            .then((response) => { dispatch(setFriends(response.data)); }); 
         }
     }, [dispatch]);
 

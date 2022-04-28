@@ -12,7 +12,7 @@ const ChatBox = () => {
     const [textInp, setText] = useState("");
     const [textSet, setTextSet] = useState([]);
     const [chatSet, setChatSet] = useState([]);
-    const [reload, setReload] = useState(false);
+    const [render, setRender] = useState(false);
 
     useEffect(() => {
         if (!sessionStorage.getItem('select')) {
@@ -29,14 +29,14 @@ const ChatBox = () => {
                 }).then((response) => {setTextSet(response.data.text); scrollBottom();});
             });
         }  
-    }, [reload]);
+    }, [render]);
 
     const scrollBottom = () => {
         let element = document.querySelector(".private-chat")
         if (element) { element.scrollTop = element.scrollHeight; }
     }
 
-    const getSelect = (id) => { sessionStorage.setItem('select', id); setReload(!reload); }
+    const getSelect = (id) => { sessionStorage.setItem('select', id); setRender(!render); }
 
     const handleChange = (event) => { setText(event.target.value); }
 
@@ -49,10 +49,10 @@ const ChatBox = () => {
             content: textInp
         });
         setText("");
-        setReload(!reload);
+        setRender(!render);
     }
 
-    const goBack = () => { sessionStorage.removeItem('select');  setReload(!reload); }
+    const goBack = () => { sessionStorage.removeItem('select');  setRender(!render); }
 
     return (
         <div className="chat-container">

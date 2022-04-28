@@ -9,12 +9,7 @@
     box-shadow: 0 0 3px gray;
 }
 
-.search-wrapper {
-    grid-template-columns: 22% 22% 22% 22%;
-    row-gap: 3rem;
-    justify-content: space-around;
-}
-
+.search-wrapper { grid-template-columns: 22% 22% 22% 22%; row-gap: 3rem; }
 .search-wrapper > h1 {
     grid-column: 1 / 5;
     font-size: clamp(3rem, 5vw, 3.5rem);

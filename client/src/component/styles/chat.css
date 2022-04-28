@@ -34,7 +34,7 @@
 .chat img { 
     margin: 0 2rem; 
     max-height: 3.9rem; 
-    width: 4.5rem; 
+    max-width: 4.5rem; 
     object-fit: cover; 
     border-radius: 10px; 
     box-shadow: 0 0 3px;
@@ -65,7 +65,7 @@
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
-.private-chat { margin: 4rem 0 0 10%; height: 30rem; width: 80%; overflow-y: auto; }
+.private-chat { margin: 4rem 0 4rem 10%; height: 30rem; width: 80%; overflow-y: auto; }
 .private-chat::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */

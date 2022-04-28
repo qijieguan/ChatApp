@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
-const Album = () => {
+const Album = ({ callRender }) => {
 
     var user = JSON.parse(sessionStorage.getItem('user'))
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
     const [src, setSRC] = useState("");
-    const [reload, setReload] = useState(false);
+    const [render, setRender] = useState(false);
 
-    useEffect(() => {}, [reload]);
 
     const readFiles = (files) => {
         if (!files) { return }
@@ -43,7 +42,7 @@ const Album = () => {
         setURL("");
         setFiles("");
         document.querySelector(".file").value="";
-        setReload(!reload);
+        setRender(!render);
     }
 
     const handleClick = (e) => {
@@ -62,7 +61,7 @@ const Album = () => {
         user.image_url = src;
         sessionStorage.setItem('user', JSON.stringify(user));
         setSRC("");
-        window.location.reload();
+        return callRender();
     }
 
     return (
