@@ -29,7 +29,8 @@ const ChatBox = () => {
                 axios.post('/texts/select/', {
                     user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                     friend_id: response.data._id
-                }).then((response) => {setTextSet(response.data.text); scrollBottom();});
+                }).then((response) => { setTextSet(response.data.text); });
+                setTimeout(() => {scrollBottom();}, 250);
             });
         }  
     }, [render]);

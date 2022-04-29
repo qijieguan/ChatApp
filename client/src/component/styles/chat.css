@@ -66,7 +66,7 @@
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
-.private-chat { margin: 4rem 0 4rem 10%; height: 30rem; width: 80%; overflow-y: auto; }
+.private-chat { margin: 4rem 0 4rem 10%; height: 30rem; width: 80%; scroll-behavior: smooth; overflow-y: auto; }
 .private-chat::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
@@ -78,15 +78,16 @@
     flex-direction: column;
     font-weight: bold;
     align-items: unset;
-    max-width: 75%;
-    max-height: 21rem;
     min-height: 7rem;
+    max-height: fit-content;
+    max-width: fit-content;
     border: 1px solid gray;
     box-shadow: 0 0 5px;
     border-radius: 0.75rem;
 }
-.text-image { max-height: 18rem; align-self: flex-end; border-radius: 0.75rem; box-shadow: 0 0 5px; }
-.text-content { font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: 8px 0 0 8px; word-wrap: break-word;}
+.normal { max-width: 75% !important; }
+.text-image { max-height: 21rem; border-radius: 0.75rem; }
+.text-content { max-height: 21rem; font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: 8px 0 0 8px; word-wrap: break-word;}
 .text-made-by { 
     position: absolute;
     inset: auto 0 0 auto;
