@@ -1,6 +1,21 @@
-const Text = ({ friend, text }) => {
+import { useEffect } from "react";
+
+const Text = ({textID, friend, text }) => {
 
     var made_by = 'You';
+
+    useEffect(() => {
+        let image = document.createElement('img');
+        let el = document.getElementById(textID);
+        image.src = text.content;
+        image.onload = () => { 
+            el.childNodes[1].style.display = 'none'; 
+            el.style.background = 'white'
+            el.style.border = 'none';
+            el.style.boxShadow = 'none';
+        }
+        image.onerror = () => { el.childNodes[0].style.display = 'none'; };
+    },[textID, text.content]);
 
     const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }}
 
@@ -13,7 +28,8 @@ const Text = ({ friend, text }) => {
     }
 
     return (
-        <div className="text-format flex" style={getStyle()}>
+        <div className="text-format flex" id={textID} style={getStyle()}>
+            <img className="text-image" src={text.content} alt=""/>
             <div className='text-content'>{text.content}</div>
             <div className='text-made-by'>{made_by}</div>
         </div>

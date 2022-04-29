@@ -17,7 +17,7 @@ const Register = () => {
     const readFiles = (files) => {
         if (!files) { return }
         const reader = new FileReader();
-        reader.addEventListener("load", () => { setURL(reader.result); setFiles(files) }, false);
+        reader.addEventListener("load", () => { setURL(reader.result); setFiles(files); }, false);
         reader.readAsDataURL(files[0]); 
     }
 

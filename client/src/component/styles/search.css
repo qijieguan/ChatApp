@@ -67,6 +67,7 @@
     bottom: 0;
     background: white;
     border-radius: 0 0 1.5rem 1.5rem;
+    word-wrap: break-word;
     z-index: 2;
 }
 
