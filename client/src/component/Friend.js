@@ -15,7 +15,7 @@ const Friend = () => {
     useEffect(() => {
         axios.post('/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
-    }, [friend_ids])
+    }, [friend_ids]);
 
     return (
         <>
