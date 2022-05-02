@@ -18,10 +18,10 @@ const MessageBox = () => {
     const selectMsg = sessionStorage.getItem('select');
 
     useEffect(() => {   
-        axios.post('http://localhost:3001/users/select/', {user_id: sessionStorage.getItem('select')})
+        axios.post('/users/select/', {user_id: sessionStorage.getItem('select')})
         .then((response) => { 
             setUser(response.data);
-            axios.post('http://localhost:3001/texts/select/', {
+            axios.post('/texts/select/', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.text); });
@@ -37,7 +37,7 @@ const MessageBox = () => {
     const handleChange = (event) => { setText(event.target.value); }
 
     const postText = async (content) => {
-        await axios.post('http://localhost:3001/texts/add/', {
+        await axios.post('/texts/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: content
