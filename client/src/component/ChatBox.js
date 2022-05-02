@@ -15,7 +15,14 @@ const ChatBox = () => {
         .then((response) => { setChatSet(response.data) }); 
     }, [render]);
 
-    const getSelect = (id) => { sessionStorage.setItem('select', id); setRender(!render); }
+    const getSelect = (id) => { 
+        sessionStorage.setItem('select', id); 
+        document.querySelector('.chat-container').classList.remove('open');
+        document.querySelector('.chat-container').classList.add('close');
+        document.querySelector('.message-container').classList.add('open');
+        setTimeout(() => { document.getElementById(id).classList.add('highlight');}, 250)
+        setRender(!render); 
+    }
 
     return (
         <div className='conversation grid'>

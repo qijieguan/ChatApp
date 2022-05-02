@@ -1,8 +1,7 @@
-.conversation { width: 90%; grid-template-columns: 30% 60%; }
+.conversation { min-height: 40rem; width: 90%; grid-template-columns: 30% 60%; }
 
 .chat-container {
     margin: 3rem 0;
-    padding-bottom: rem;
     width: 100%;
     background: white;
     border: 1px solid gray;
@@ -28,6 +27,7 @@
     color: teal;
 }
 .chat-wrapper { position: relative; min-height: 5rem; width: 100%; border-bottom: 1px solid rgb(197, 197, 197); } 
+.chat-wrapper.highlight { background: rgb(55, 243, 243); pointer-events: none; }
 .chat { position: absolute; height: 100%; width: 100%; transition: all 0.3s ease-in; }
 .chat img { 
     margin: 0 2rem; 
@@ -42,10 +42,11 @@
     min-height: 5.7rem;
     background: rgb(55, 243, 243); 
     box-shadow: 0 0 5px;
-    border-bottom-color: rgb(55, 243, 243); 
     z-index: 3;
 }
 
 @media (max-width: 50rem) {
     .conversation { grid-template-columns: 90%; }
+    .chat-container.close { display: none; }
+    .chat-container.open { display: unset !important; }
 }

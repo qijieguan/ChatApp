@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.dashboard { min-height: 50rem; flex-direction: column; justify-content: space-around; }
+.dashboard { flex-direction: column; justify-content: space-around; }
 
 .flex { display: flex; align-items: center; }
 .grid { display: grid; justify-content: space-around; }

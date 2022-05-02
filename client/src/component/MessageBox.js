@@ -45,7 +45,7 @@ const MessageBox = () => {
     }
 
     const uploadText = async () => {
-        if (textInp) { postText(textInp); return; }
+        if (textInp) { postText(textInp); setRender(!render); return; }
 
         const data = new FormData();
         data.append('file', files[0]);
@@ -53,7 +53,7 @@ const MessageBox = () => {
 
         await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => { postText(json.secure_url); });
-        setRender(!render);
+        setRender(!render); 
     };
 
     const handleSubmit = (event) => {
@@ -66,7 +66,12 @@ const MessageBox = () => {
         document.querySelector(".file").value="";
     }
 
-    const goBack = () => { sessionStorage.removeItem('select'); setRender(!render); }
+    const goBack = () => { 
+        sessionStorage.removeItem('select'); 
+        document.querySelector('.chat-container').classList.add('open');
+        document.querySelector('.message-container').classList.remove('open');
+        setRender(!render); 
+    }
 
     const readFiles = (files) => {
         if (!files) { return }

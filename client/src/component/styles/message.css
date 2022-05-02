@@ -94,4 +94,6 @@
 
 @media (max-width: 50rem) { 
     .text-image { max-height: 10rem; }
+    .message-container { display: none; }
+    .message-container.open { display: flex !important; }
 }
