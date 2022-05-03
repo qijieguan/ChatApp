@@ -53,8 +53,8 @@
     border-radius: 0.75rem;
 }
 .normal { max-width: 75% !important; }
-.text-image { max-height: 21rem; border-radius: 0.75rem; }
-.text-content { font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: 8px 0 0 8px; word-wrap: break-word;}
+.text-image { display: none; max-height: 21rem; border-radius: 0.75rem; }
+.text-content { display: none; font-size: clamp(0.75rem, 2.5vw, 0.875rem); margin: 8px 0 0 8px; word-wrap: break-word;}
 .text-made-by { 
     position: absolute;
     inset: auto 0 0 auto;

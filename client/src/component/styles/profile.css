@@ -3,8 +3,9 @@
     grid-template-columns: 40% 60%;
     width: 80%;
     background: white;
-    box-shadow: 0 0 3px gray;
+    box-shadow: 0 0 3px black;
     border-radius: 1rem; 
+    overflow: hidden;
 }
 .profile-section {
     flex-direction: column;

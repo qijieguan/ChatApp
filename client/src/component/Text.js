@@ -8,8 +8,8 @@ const Text = ({textID, friend, text }) => {
         let image = document.createElement('img');
         let el = document.getElementById(textID);
         image.src = text.content;
-        image.onload = () => {  el.childNodes[1].style.display = 'none'; el.classList.remove('normal'); };
-        image.onerror = () => { el.childNodes[0].style.display = 'none'; };
+        image.onload = () => {  el.childNodes[0].style.display = 'unset'; el.classList.remove('normal'); };
+        image.onerror = () => { el.childNodes[1].style.display = 'unset'; };
     },[textID, text.content]);
 
     const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }}

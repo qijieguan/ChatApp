@@ -12,8 +12,8 @@ const MessageBox = () => {
     const [files, setFiles] = useState("");
     const [url, setURL] = useState("");
     const [textSet, setTextSet] = useState([]);
-    const [textInp, setText] = useState("");
     const [render, setRender] = useState(false);
+    var textInp = document.querySelector('.text');
 
     const selectMsg = sessionStorage.getItem('select');
 
@@ -34,8 +34,6 @@ const MessageBox = () => {
         if (element) { element.scrollTop = element.scrollHeight - element.clientHeight; }
     }
 
-    const handleChange = (event) => { setText(event.target.value); }
-
     const postText = async (content) => {
         await axios.post('/texts/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
@@ -45,7 +43,7 @@ const MessageBox = () => {
     }
 
     const uploadText = async () => {
-        if (textInp) { postText(textInp); setRender(!render); return; }
+        if (textInp.value) { postText(textInp.value); setRender(!render); return; }
 
         const data = new FormData();
         data.append('file', files[0]);
@@ -58,11 +56,12 @@ const MessageBox = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!textInp && !files) { return; }
+        if (!textInp.value && !files) { return; }
         uploadText();
         setFiles("");
         setURL("");
-        setText("");
+        textInp.value = '';
+        document.querySelector('.camera-icon').style.display = "";
         document.querySelector(".file").value="";
     }
 
@@ -84,6 +83,10 @@ const MessageBox = () => {
 
     const handleUpload = (e) => { e.currentTarget.childNodes[2].click(); }
 
+    const handleChange = (e) => {
+        if (e.target.value) { document.querySelector('.camera-icon').style.display = "none" } 
+        else { document.querySelector('.camera-icon').style.display = ""; }
+    }
 
     return (
         <div className='message-container'>
@@ -102,10 +105,10 @@ const MessageBox = () => {
             </div>
             <div className='text-input-wrapper' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
                 <div className='text-input'>
-                    <input name='text' placeholder='Type message here...' value={textInp} onChange={handleChange}/>
+                    <input name='text' className= 'text' placeholder='Type message here...' onChange={handleChange}/>
                     <div className='camera-wrapper' onClick={handleUpload}>
                         <img src={url} className='upload-preview' alt=''/>
-                        <FaCamera className='camera-icon' style={{display: textInp ? 'none' : ''}}/>
+                        <FaCamera className='camera-icon'/>
                         <input type="file" className="file" accept='images/*' onChange={previewFile}/>
                     </div>
                 </div>
