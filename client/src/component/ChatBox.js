@@ -10,9 +10,11 @@ const ChatBox = () => {
     const [chatSet, setChatSet] = useState([]);
     const [render, setRender] = useState(false);
 
-    useEffect(() => {   
+    useEffect(() => { 
         axios.post('/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
         .then((response) => { setChatSet(response.data) }); 
+        let id = sessionStorage.getItem('select');
+        if (id) { setTimeout(() => { document.getElementById(id).classList.add('highlight');}, 250); };
     }, [render]);
 
     const getSelect = (id) => { 
@@ -20,7 +22,6 @@ const ChatBox = () => {
         document.querySelector('.chat-container').classList.remove('open');
         document.querySelector('.chat-container').classList.add('close');
         document.querySelector('.message-container').classList.add('open');
-        setTimeout(() => { document.getElementById(id).classList.add('highlight');}, 250)
         setRender(!render); 
     }
 

@@ -17,7 +17,9 @@ const MessageBox = () => {
 
     const selectMsg = sessionStorage.getItem('select');
 
-    useEffect(() => {   
+    useEffect(() => {
+        setTextSet([]);   
+
         axios.post('/users/select/', {user_id: sessionStorage.getItem('select')})
         .then((response) => { 
             setUser(response.data);
@@ -66,6 +68,7 @@ const MessageBox = () => {
     }
 
     const goBack = () => { 
+        document.getElementById(selectMsg).classList.remove('highlight');
         sessionStorage.removeItem('select'); 
         document.querySelector('.chat-container').classList.add('open');
         document.querySelector('.message-container').classList.remove('open');

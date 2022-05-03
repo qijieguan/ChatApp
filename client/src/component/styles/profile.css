@@ -118,7 +118,7 @@
 .album-list > button:hover { box-shadow: 0 3px 5px black; }
 
 @media (max-width: 50rem) {
-    .profile { grid-template-columns: 100%;  margin: 5rem 0 5rem 5%; width: 90%; }
+    .profile { grid-template-columns: 100%; margin: 5rem 0 5rem 5%; width: 90%; }
     .album-section { padding: 3rem 0; border-right: 0; }
     .album-list { grid-template-columns: 45% 45%; }
 }

@@ -77,6 +77,11 @@ input:focus { outline-color: green; outline-offset: 1px; }
     100% { width: 1000px; height: 1000px; opacity: 0;}
 }
 
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 100%; }
+}
+
 @keyframes fadeSlideLeft {
     0% { opacity: 0; transform: translateX(-5%);}
     100% { opacity: 1; transform: translateX(0%);}
