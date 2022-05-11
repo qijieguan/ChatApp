@@ -5,8 +5,7 @@
     width: 90%;
     background: white;
     border: 1px solid rgb(192, 192, 192);
-    border-radius: 0.25rem;
-    box-shadow: 0 0 3px gray;
+    border-radius: 0.5rem;
 }
 
 .friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3rem; }

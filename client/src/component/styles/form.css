@@ -12,7 +12,7 @@
     font-size: clamp(1.25rem, 2.5vw, 1.375rem); 
     color: rgb(36, 36, 141); 
 }
-.login input { width: 60%; box-shadow: 0 0 3px; border-radius: 3px;}
+.login input { width: 60%; border: 1px solid rgb(192, 192, 192); border-radius: 3px;}
 .login input:focus { outline-color: rgb(36, 36, 141); }
 .sign-in-btn { 
     margin: 0;
@@ -64,7 +64,7 @@
 }
 
 .register-msg { color: 'green' }
-.input-image { margin: 3rem 0 5rem 0; width: max(16rem, 25%); box-shadow: 0 0 5px black; }
+.input-image { margin: 3rem 0 5rem 0; width: max(16rem, 25%); border: 1px solid rgb(163, 163, 163); }
 .input-image input { border: 0; box-shadow: unset;}
 .preview-image { width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
 .file { text-indent: 10px; line-height: 3.3rem; width: 100%; background: white; box-shadow: 0 2px 3px black; }
@@ -73,10 +73,9 @@
 .register-form > input { 
     margin: 0 0 clamp(1rem, 5vw, 2rem) 5%; 
     border-radius: 5px; 
-    box-shadow: 0 0 3px; 
     min-height: 3.1rem; 
     width: 90%; 
-    border: 1px solid rgb(209, 245, 209);
+    border: 1px solid rgb(135, 212, 135);
 }
 .register-form > input:focus { outline-color: green; }
 .input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: green;}

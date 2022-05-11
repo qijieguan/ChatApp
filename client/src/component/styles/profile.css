@@ -3,7 +3,7 @@
     grid-template-columns: 40% 60%;
     width: 80%;
     background: white;
-    box-shadow: 0 0 3px black;
+    border: 1px solid rgb(156, 156, 156);
     border-radius: 1rem; 
     overflow: hidden;
 }
@@ -46,7 +46,7 @@
     background: white;
     border: 1px solid rgb(221, 221, 221);
     border-radius: 0.5rem;
-    box-shadow: 0 2px 2px rgb(66, 66, 66);
+    box-shadow: 0 1px 2px rgb(66, 66, 66);
 }
 
 .edit-btn { margin: auto 0 0 auto; color: white; background: blue; }
@@ -95,7 +95,7 @@
 }
 
 .photo-wrapper { position: relative; display: block; width: fit-content; }
-.photo-wrapper > img { max-height: 15rem; max-width: 100%; border-radius: 0.25rem; box-shadow: 0 0 5px; }
+.photo-wrapper > img { max-height: 15rem; max-width: 100%; border-radius: 0.25rem; box-shadow: 0 0 3px; }
 .photo-wrapper > input { 
     position: absolute; 
     inset: 0 0.5rem auto auto; 

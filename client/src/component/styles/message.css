@@ -47,8 +47,7 @@
     min-height: 7rem;
     max-height: fit-content;
     max-width: fit-content;
-    border: 1px solid gray;
-    box-shadow: 0 0 5px;
+    box-shadow: 0 0 3px;
     border-radius: 0.75rem;
 }
 .normal { max-width: 75% !important; }

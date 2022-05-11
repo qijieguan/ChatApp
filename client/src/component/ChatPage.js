@@ -1,12 +1,12 @@
 import ChatBox from './ChatBox.js';
 import SideNav from './SideNav.js';
 
-const DashBoard = () => { 
+const ChatPage = () => { 
     return ( 
-        <div className="dashboard flex">
+        <div className="chat-page flex">
             <SideNav/>
             <ChatBox/>
         </div> 
     ); };
 
-export default DashBoard;
+export default ChatPage;

@@ -3,7 +3,7 @@ import { AiFillHome, AiFillRead, AiOutlineWechat } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
-import { BsThreeDotsVertical, BsFilePersonFill } from 'react-icons/bs';
+import { BsThreeDotsVertical, BsFilePersonFill, BsFillChatSquareTextFill } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -36,9 +36,9 @@ const SideNav = () => {
             <div className="side-logo flex">
                 <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
             </div>
-            <Link to='/Dashboard' className="side-li flex" id="/Dashboard" onClick={handleClick}>
-                <div>DASHBOARD</div>
-                <AiFillHome className="side-icon"/>
+            <Link to='/Chatpage' className="side-li flex" id="/Chatpage" onClick={handleClick}>
+                <BsFillChatSquareTextFill className="side-icon"/>
+                <div style={{marginLeft: '0.375rem'}}>CHAT</div>
             </Link>
             <Link to='/Friend' className="side-li flex" id="/Friend" onClick={handleClick}>
                 <div>FRIENDS</div>

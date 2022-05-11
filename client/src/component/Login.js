@@ -49,7 +49,7 @@ const Login = () => {
                 axios.post('/users/load/', { username: username })
                 .then((response) => { 
                     sessionStorage.setItem("user", JSON.stringify(response.data)); 
-                    window.location.href = "/Dashboard";
+                    window.location.href = "/Chatpage";
                 });
             }
         });
