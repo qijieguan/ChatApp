@@ -79,8 +79,7 @@ const Login = () => {
                 <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 <button type="submit" className="sign-in-btn">Sign In</button>
-                <div style={{color: 'gray'}}>or</div>
-                <Link to='/Register' className="register-link"><button>Create a New Account</button></Link>
+                <Link to='/Register' className="register-link">Don't have an account? Sign up here</Link>
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>

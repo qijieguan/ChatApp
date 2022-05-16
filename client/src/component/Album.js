@@ -48,9 +48,13 @@ const Album = ({ callRender }) => {
     const handleClick = (e) => {
         let checkbox = document.querySelectorAll('.checkbox');
         checkbox.forEach(el => { 
-            if (e.currentTarget.id !== el.id && el.childNodes[1].checked) { el.childNodes[1].checked = false; }}
-        );
-        e.currentTarget.childNodes[1].checked = true;
+            if (e.currentTarget.id !== el.id) { 
+                el.childNodes[1].checked = false; 
+                el.childNodes[0].classList.remove('checked');
+            }  
+        });
+        e.currentTarget.childNodes[1].checked = true; 
+        e.currentTarget.childNodes[0].classList.add('checked');
         setSRC(e.currentTarget.childNodes[0].src);
     }
 

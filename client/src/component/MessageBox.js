@@ -27,8 +27,8 @@ const MessageBox = () => {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.text); });
-            setTimeout(() => {scrollBottom();}, 500);
         });
+        setTimeout(() => {scrollBottom();}, 500);
     }, [render, selectMsg]);
 
     const scrollBottom = () => {

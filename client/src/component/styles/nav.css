@@ -8,12 +8,12 @@
 }
 
 .app-header > h1 { 
-    justify-content: flex-start;
-    margin-left: 2.5rem;
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    justify-content: center;
+    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     letter-spacing: 0.125rem; 
+    width: 50%;
     color: rgb(32, 184, 184); 
 }
 .app-header > h1 * { font-size: clamp(2.5rem, 2.5vw, 3rem) } 

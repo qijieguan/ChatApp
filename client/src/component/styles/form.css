@@ -36,22 +36,18 @@
     background: rgb(36, 36, 141); 
 }
 
-.register-form {
-    grid-template-columns: 80%;
-    width: 100%;
-    background: white;
-}
+.register-form { grid-template-columns: 80%; width: 100%; background: white; }
 
-.register-link > button { 
-    margin: 0 auto; 
-    padding: 0 0.5rem;
-    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+.register-link { 
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
     letter-spacing: 0.05rem;
+    width: 60%; 
     min-height: 2.5rem; 
-    color: white; 
-    background: green; 
+    color: rgb(123, 123, 211); 
 }
-.register-link > button:hover { box-shadow: 0 0 5px 1px rgb(5, 61, 5); }
+.register-link:hover { text-decoration: underline; }
 
 .register-label {
     margin-top: 6.125rem;

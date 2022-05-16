@@ -19,7 +19,13 @@
     border-bottom: 1px solid rgb(207, 207, 207);
     box-shadow: 0 0 5px grey;
 }
-.private-message-header span { font-size: clamp(1rem, 2.5vw, 1.25rem); font-weight: bold; margin: 0 10px; color: gray; }
+.private-message-header span { 
+    font-size: clamp(1rem, 2.5vw, 1.25rem); 
+    font-weight: bold;
+    font-family: 'Lobster', cursive; 
+    letter-spacing: 0.0625rem;
+    margin: 0 10px; 
+}
 .back-btn { margin-left: 0.75rem; }
 .back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 .back-btn:hover { background: rgb(55, 243, 243); box-shadow: 0 0 3px 1px darkslategray; }
@@ -31,7 +37,12 @@
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
-.private-message { margin: 4rem 0 4rem 10%; height: 30rem; width: 80%; scroll-behavior: smooth; overflow-y: auto; }
+.private-message { 
+    margin: 4rem 0 4rem 10%; 
+    height: 30rem; width: 80%; 
+    scroll-behavior: smooth; 
+    overflow-y: auto; 
+}
 .private-message::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */

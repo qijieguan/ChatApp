@@ -13,7 +13,7 @@
     grid-column: 1 / 4;
     font-size: clamp(3rem, 5vw, 3.5rem);
     letter-spacing: 0.125rem;
-    color: rgb(55, 243, 243);
+    color: turquoise;
     animation: fadeSlideLeft 0.5s ease-in;
 }
 
