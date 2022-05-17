@@ -1,5 +1,5 @@
 import './styles/nav.css';
-import { AiFillRead, AiOutlineWechat } from 'react-icons/ai';
+import { AiOutlineWechat } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
@@ -41,16 +41,12 @@ const SideNav = () => {
                 <div style={{marginLeft: '0.375rem'}}>CHAT</div>
             </Link>
             <Link to='/Friend' className="side-li flex" id="/Friend" onClick={handleClick}>
-                <div>FRIENDS</div>
+                <div>CONNECTIONS</div>
                 <FaUserFriends className="side-icon"/>
             </Link>
             <Link to="/Search" className="side-li flex" id="/Search" onClick={handleClick}>
-                <div>SEARCH</div>
+                <div>PEOPLE</div>
                 <BsSearch className="side-icon"/>
-            </Link>
-            <Link to="/About" className="side-li flex" id="/About" onClick={handleClick}>
-                <div>ABOUT</div>
-                <AiFillRead className="side-icon"/>
             </Link>
             <div className="side-li flex logout" onClick={logout}>
                 <div>LOG OUT</div>

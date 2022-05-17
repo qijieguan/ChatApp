@@ -11,7 +11,7 @@
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; row-gap: 3rem; }
 .search-wrapper > h1 {
     grid-column: 1 / 5;
-    font-size: clamp(3rem, 5vw, 3.5rem);
+    font-size: clamp(2.75rem, 5vw, 3.5rem);
     letter-spacing: 0.125rem;
     color: orange;
     animation: fadeSlideLeft 0.5s ease-in;
@@ -88,7 +88,7 @@
     border-radius: 0.5rem 0.5rem 0.5rem 0;
     box-shadow: 0 0 3px black;
     opacity: 0;
-    transition: 2s all;
+    transition: 0.5s all;
 }
 
 .user-add-1:hover::after { 

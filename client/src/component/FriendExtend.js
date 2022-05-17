@@ -12,7 +12,7 @@ const Extend = ({ friend }) => {
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
-        window.location.href = '/Dashboard';
+        window.location.href = '/Chatpage';
     }
 
     const handleUnfriend = async () => {
@@ -27,7 +27,6 @@ const Extend = ({ friend }) => {
 
     return (
         <div className="friend-extend grid">
-            <div className="animated-overlay"/>
             <div className='unfriend-icon'><RiCloseCircleFill onClick={handleUnfriend}/></div>
             <div className='chat-icon'><BsFillChatDotsFill onClick={handleChat}/></div>
             <img src={friend.image_url} className="friend-profile" alt=""/>

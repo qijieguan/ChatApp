@@ -25,7 +25,7 @@ const Friend = () => {
                 <div className='friend-wrapper grid'>
                     <h1 className="flex" style={{margin: '3rem 0'}}> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
-                        My Friends 
+                        CONNECTIONS
                     </h1>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
                 </div>

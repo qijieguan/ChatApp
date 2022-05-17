@@ -8,59 +8,49 @@
     border-radius: 0.5rem;
 }
 
-.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3rem; }
+.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3rem; justify-content: space-evenly; }
 .friend-wrapper > h1 {
     grid-column: 1 / 4;
-    font-size: clamp(3rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     letter-spacing: 0.125rem;
-    color: turquoise;
-    animation: fadeSlideLeft 0.5s ease-in;
+    color: #5518ab;
+    animation: fadeSlideLeft 0.5s ease-in; 
 }
 
 .friend-extend {
     position: relative;
+    margin-left: 5%;
+    width: 90%;
     background: rgb(243, 243, 243);
     border: 1px solid rgb(212, 212, 212);
     border-radius: 0.5rem;
-    box-shadow: 0 0 1px grey;
+    box-shadow: 0 0 1px rgb(179, 179, 179);
 }
-.friend-extend:hover { box-shadow: 0 0 5px teal; border: 1px solid teal; }
+.friend-extend:hover { border: 3px solid #5518ab; }
 
-.animated-overlay {
-    position: absolute;
-    inset: 0 0;
-    margin: auto;
-    height: 0;
-    width: 0;
-    background: rgb(55, 243, 243);
-    border-radius: 10rem;
-    transition: all 0.5s ease-in;
-}
-
-.friend-extend:hover .animated-overlay { height: 100%; width: 100%; border-radius: 0.5rem; }
-.unfriend-icon * { font-size: clamp(1.5rem, 2.5vw, 2.125rem); }
+.unfriend-icon * { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 .unfriend-icon { position: relative; grid-column: 1 / 2; margin: 10px auto auto 10px; color: gray; }
 .unfriend-icon:hover { color: #b22222; }
-.chat-icon * { font-size: clamp(1.375rem, 2.5vw, 2rem); }
+.chat-icon * { font-size: clamp(1.375rem, 2.5vw, 1.75rem); }
 .chat-icon { position: relative; grid-column: 3 / 4; margin: 10px 10px auto auto; color: gray; }
-.chat-icon:hover { color: teal; }
+.chat-icon:hover { color: #5518ab; }
 .chat-icon::after, .unfriend-icon::after {
     display: none;
     position: absolute;
     transform: translate3d(15%, -195%, 0);
-    padding: 0.25rem clamp(0.25rem, 2.5vw, 1rem);
+    padding: 0.25rem clamp(0.25rem, 2.5vw, 0.875rem);
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     font-weight: bold;
     text-align: center;
-    width: 6rem;
+    width: 5rem;
     background: white;
     border-radius: 0.5rem 0.5rem 0.5rem 0;
     box-shadow: 0 0 3px black;
     z-index: 3;
 }
 
-.chat-icon:hover::after { content: 'Message'; display: block; color: teal; }
-.unfriend-icon:hover::after { content: 'Unfriend'; display: block; color: firebrick; }
+.chat-icon:hover::after { content: 'Message'; display: block; color: #5518ab; }
+.unfriend-icon:hover::after { content: 'Remove'; display: block; color: firebrick; }
 
 .friend-profile { 
     grid-column: 2 / 3; 
@@ -69,7 +59,7 @@
     object-fit: auto; 
     border-radius: 3rem; 
     box-shadow: 0 0 3px black;
-    border: 2px solid teal;
+    border: 1px solid #5518ab;
     z-index: 2;
 }
 .friend-name { 
@@ -78,7 +68,7 @@
     margin: 1rem auto;
     font-size: clamp(1rem, 2.5vw, 1.375rem); 
     font-weight: bold;
-    color: teal; 
+    color: #5518ab; 
     z-index: 2; 
 }
 
@@ -107,7 +97,7 @@
 .friend-bio-icon {
     grid-column: 3 / 4;
     margin: auto 10px 10px auto;
-    font-size: clamp(1.375rem, 2.5vw, 2rem);
+    font-size: clamp(1.375rem, 2.5vw, 1.875rem);
     color: gray;
     z-index: 3;
 }
