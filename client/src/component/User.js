@@ -10,6 +10,7 @@ const User = ({ user }) => {
 
     const [status, setStatus] = useState(false);
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const friends = useSelector(state => state.friends);
     const dispatch = useDispatch();
 
@@ -17,7 +18,7 @@ const User = ({ user }) => {
     }, [friends, user._id]);
 
     const handleAdd = async () => {
-        await axios.post('/friends/add/', {
+        await axios.post(baseURL +'/friends/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
             friend_id: user._id
         }).then((response) => { dispatch(addFriend(response.data)); setStatus(true)});

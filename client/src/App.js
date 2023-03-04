@@ -8,6 +8,7 @@ import Search from './component/Search.js';
 import Friend from './component/Friend.js';
 import About from './component/About.js';
 import Profile from './component/Profile';
+import Footer from './component/Footer.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
@@ -34,6 +35,7 @@ function App() {
               <Route path="/About" exact component={About}/>
               <Route path="/Profile" exact component={Profile}/>
             </Switch>
+            <Footer/>
         </Router>
       </Provider>
     </div>

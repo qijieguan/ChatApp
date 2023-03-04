@@ -2,7 +2,6 @@ import './styles/nav.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { AiOutlineWechat } from 'react-icons/ai';
 
 const Header = () => {
 
@@ -14,6 +13,10 @@ const Header = () => {
         let element = document.getElementById(location.pathname);
         if (element) { element.classList.add('active'); }
     }, [location]);
+
+    const handleScroll = () => {
+        document.getElementsByClassName('home-body-1')[0].scrollIntoView({behavior: 'smooth'})
+    }
 
     const toggleRipple = () => {
         let buttons = document.querySelectorAll("button");
@@ -42,11 +45,11 @@ const Header = () => {
     return (
         <> 
             {!sessionStorage.getItem("isLogged") ?
-                <header className="app-header flex">
-                    <h1 className='flex'>MESSAGE APP <AiOutlineWechat style={{margin:'0 0 0.375rem 0.25rem'}}/></h1>
+                <header className="app-header">
                     <div className="header-btns flex">
                         <Link to='/'><button className="login-btn">Login</button></Link>
                         <Link to='/About'><button className="about-btn">About</button></Link>
+                        <button className='start-btn' onClick={() => {handleScroll()}}>Let's Get Started</button>
                     </div>
                 </header>
                 :

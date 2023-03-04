@@ -10,8 +10,10 @@ const ChatBox = () => {
     const [chatSet, setChatSet] = useState([]);
     const [render, setRender] = useState(false);
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
     useEffect(() => { 
-        axios.post('/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
+        axios.post(baseURL +'/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
         .then((response) => { setChatSet(response.data) }); 
         let id = sessionStorage.getItem('select');
         if (id) { setTimeout(() => { document.getElementById(id).classList.add('highlight');}, 250); };

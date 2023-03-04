@@ -10,6 +10,7 @@ const Album = ({ callRender }) => {
     const [src, setSRC] = useState("");
     const [render, setRender] = useState(false);
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     const readFiles = (files) => {
         if (!files) { return }
@@ -27,7 +28,7 @@ const Album = ({ callRender }) => {
 
         await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => {
-            axios.post('/users/upload_photo', {
+            axios.post(baseURL +'/users/upload_photo', {
                 user_id: user._id,
                 url: json.secure_url
             });
@@ -61,7 +62,7 @@ const Album = ({ callRender }) => {
     const handleSwitch = async (e) => {
         e.preventDefault();
         if (!src) { return; }
-        await axios.post('/users/change_photo', { user_id: user._id, url: src });
+        await axios.post(baseURL +'/users/change_photo', { user_id: user._id, url: src });
         user.image_url = src;
         sessionStorage.setItem('user', JSON.stringify(user));
         setSRC("");

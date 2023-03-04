@@ -12,8 +12,10 @@ const Friend = () => {
     const friend_ids = useSelector(state => state.friends);
     const [friends, setFriends] = useState("");
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
     useEffect(() => {
-        axios.post('/users/', { friend_ids: friend_ids })
+        axios.post(baseURL +'/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
     }, [friend_ids]);
 

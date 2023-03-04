@@ -14,6 +14,8 @@ const Register = () => {
     const [url, setURL] = useState("");
     const [message, setMessage] = useState("");
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
     const readFiles = (files) => {
         if (!files) { return }
         const reader = new FileReader();
@@ -30,14 +32,14 @@ const Register = () => {
 
         await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
         .then(res => res.json()).then(json => {
-            axios.post('/users/register/', {
+            axios.post(baseURL +'/users/register/', {
                 username: username,
                 password: password,
                 image_url: json.secure_url,
                 firstname: fname,
                 lastname: lname
             }).then((response) => { 
-                axios.post('/friends/init/', { user_id: response.data._id });
+                axios.post(baseURL +'/friends/init/', { user_id: response.data._id });
                 setMessage("User is added!");
                 document.querySelector(".register-msg").style.display = 'block'; 
             });
@@ -68,20 +70,33 @@ const Register = () => {
             <h1 className="register-label">Register Your Account</h1>
             <h3 className="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
       
-            <div className="input-image">
+            <div className="image-input flex">
                 <img src={url ? url : defaultURL} className="preview-image" alt=""/>
                 <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
             </div>
-            <div className='line'/>
-            <h1 className='input-label'>First Name</h1>
-            <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
-            <h1 className='input-label'>Last Name</h1>
-            <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
-            <h1 className='input-label'>Username</h1>
-            <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
-            <h1 className='input-label'>Password</h1>
-            <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
-          
+
+            <div className='register-inputs grid'>
+                <div className='register-input-wrapper flex'>
+                    <h1 className='input-label'>First Name</h1>
+                    <span>Please enter your first name</span>
+                    <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
+                </div>
+                <div className='register-input-wrapper flex'>
+                    <h1 className='input-label'>Last Name</h1>
+                    <span>Please enter your last name</span>
+                    <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
+                </div>
+                <div className='register-input-wrapper flex'>
+                    <h1 className='input-label'>Username</h1>
+                    <span>Please enter your login username</span>
+                    <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
+                </div>
+                <div className='register-input-wrapper flex'>
+                    <h1 className='input-label'>Password</h1>
+                    <span>Please enter your login password</span>
+                    <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
+                </div>
+            </div>
             <button className="register-btn" type='submit'>CREATE NEW ACCOUNT</button>
         </form>
     );

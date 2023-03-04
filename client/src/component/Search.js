@@ -10,7 +10,9 @@ const Search = () => {
 
     const [users, setUsers] = useState("");
 
-    useEffect(() => { axios.get('/users/').then((response) => { setUsers(response.data); }); }, []);
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
+    useEffect(() => { axios.get(baseURL + '/users/').then((response) => { setUsers(response.data); }); }, []);
 
     return(
         <>

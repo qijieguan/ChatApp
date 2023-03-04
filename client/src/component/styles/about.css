@@ -1,0 +1,48 @@
+.about-wrapper { flex-direction: column; justify-content: space-around; background: rgb(20, 20, 20); }
+.about-section { flex-wrap: wrap; justify-content: space-around; }
+.about {
+    margin: 10vh 0;
+    padding: 3vh 2vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    row-gap: 5vh;
+    text-align: center;
+    min-height: 40vh;
+    width: 40vw;
+    color: white;
+    border-radius: 0.25rem;
+    border: 1px solid rgb(190, 190, 190);
+}
+
+.about > div:not(.about-image) { font-size: clamp(1.5rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s ease-in; }
+.about span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: rgb(236, 187, 97); }
+.about > p { font-size: clamp(0.9rem, 2.5vw, 1rem); margin: 0 auto; width: 90%; color: white; animation: fadeSlideLeft 0.5s ease-in; }
+
+.about-1 .about-image {
+    min-height: 20vh;
+    background-image: url("https://live.staticflickr.com/65535/51350239267_54560763e6_b.jpg");
+}
+
+.about-2 .about-image {
+    min-height: 40vh;
+    background-image: url("https://thumbs.dreamstime.com/b/searching-friends-social-network-24575314.jpg");
+}
+
+.about-3 .about-image {
+    min-height: 40vh;
+    background-image: url("https://cdn.pixabay.com/photo/2020/10/01/16/53/game-controller-5619105_960_720.jpg");
+}
+
+.about-image { 
+    margin: 0 auto; 
+    width: 90%;
+    background-size: contain;
+    background-repeat: no-repeat; 
+    background-position: center;
+}
+
+.linebreak { width: 100%; height: 0.3vh; background: gray; }
+
+@media (max-width: 50rem) {
+    .about { margin: 2vh 0; width: 90vw; }
+}

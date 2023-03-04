@@ -8,6 +8,8 @@ import axios from 'axios';
 
 const Extend = ({ friend }) => {
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
     const dispatch = useDispatch();
 
     const handleChat = () => { 
@@ -16,7 +18,7 @@ const Extend = ({ friend }) => {
     }
 
     const handleUnfriend = async () => {
-        await axios.post('/friends/delete/', {
+        await axios.post(baseURL +'/friends/delete/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: friend._id
         }).then((response) => { dispatch(deleteFriend(friend._id)) });

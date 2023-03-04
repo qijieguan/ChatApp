@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { AiFillCloseSquare } from 'react-icons/ai';
+import { BsFillPersonFill } from 'react-icons/bs';
+import { RiLockPasswordLine } from 'react-icons/ri';
 import { useEffect } from 'react';
 
 const Login = () => {
@@ -25,6 +27,8 @@ const Login = () => {
         overlay: { zIndex: '4' }
     };
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
     Modal.setAppElement(document.getElementById('root'));
 
     const [username, setUsername] = useState("Guest");
@@ -33,7 +37,11 @@ const Login = () => {
     const [modal, setModal] = useState(false);
     const [message, setMessage] = useState("");
 
-    useEffect(() => { if (sessionStorage.getItem('isLogged')) { window.location.href="/Dashboard" } },[]);
+    useEffect(() => { 
+        if (sessionStorage.getItem('isLogged')) { 
+            window.location.href="/Dashboard" 
+        } 
+    },[]);
 
     const handleChange = (event) => {
         if (event.target.name === "name") { setUsername(event.target.value); }
@@ -41,12 +49,12 @@ const Login = () => {
     }
 
     const authentication = async () => {
-        await axios.get('/users/auth/', { headers: { "x-access-token": token } })
+        await axios.get(baseURL + '/users/auth/', { headers: { "x-access-token": token } })
         .then((response) => {
             if (response.data.auth) {
                 sessionStorage.setItem("isLogged", true);
                 setModal(false);
-                axios.post('/users/load/', { username: username })
+                axios.post(baseURL + '/users/load/', { username: username })
                 .then((response) => { 
                     sessionStorage.setItem("user", JSON.stringify(response.data)); 
                     window.location.href = "/Chatpage";
@@ -57,7 +65,7 @@ const Login = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        await axios.post('/users/login/', { username: username, password: password, })
+        await axios.post(baseURL + '/users/login/', { username: username, password: password, })
         .then((response) => { 
             if (response.data !== "Invalid Username/Password combinations!") { 
                 setToken(response.data); 
@@ -76,8 +84,14 @@ const Login = () => {
             <form className="login flex" onSubmit={handleSubmit}>
                 <h1 className="login-label">Enter Your Credentials</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
-                <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
-                <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
+                <div className='login-name grid'>
+                    <div className='person-icon flex'><BsFillPersonFill/></div>
+                    <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
+                </div>
+                <div className='login-password grid'>
+                    <div className='password-icon flex'><RiLockPasswordLine/></div>
+                    <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
+                </div>
                 <button type="submit" className="sign-in-btn">Sign In</button>
                 <Link to='/Register' className="register-link">Don't have an account? Sign up here</Link>
             </form>

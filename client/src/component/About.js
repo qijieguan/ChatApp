@@ -1,13 +1,15 @@
-import './styles/home.css';
+import './styles/about.css';
 import SideNav from './SideNav.js';
 
 const About = () => {
     return (
         <div className='about-wrapper flex'>
             {sessionStorage.getItem("isLogged") ? <SideNav/>:''}  
-            <div className='about grid'>
-                <div className='about-left flex' style={{color: 'white', background: 'teal'}}>
-                    <div>How was this application built?</div>
+            <div className='about-section flex'>
+                <div className=' about about-1 flex'>
+                    <div>Application Technologies</div>
+                    <div className='about-image'/>
+                    <div className='linebreak'></div>
                     <p>
                         The app is currently being developed using the <span>MERN</span> stack. 
                         It uses the <span>React</span> framework to design frontend. 
@@ -15,27 +17,30 @@ const About = () => {
                         to <span>MongoDB</span>.
                     </p>
                 </div>
-                <div className='about-right-1 flex'/>
-                <div className='about-left flex' style={{color: 'teal', background: 'white'}}>
-                    <div>What is the goal of this application?</div>
+
+                <div className='about about-2 flex'>
+                    <div>Application Specifications</div>
+                    <div className='about-image'/>
+                    <div className='linebreak'></div>
                     <p>
-                        The app is an experimental project to recreate basic
+                        The app is an experimental project to recreate simple
                         functions of a messanging appliaction. It includes user 
-                        <span> (un)friending functionality</span>. The key feature is 
+                        <span> friending functionality</span>. The main function is 
                         <span> maintaining</span> and <span>displaying message log </span> 
                         between users.
                     </p>
                 </div>
-                <div className='about-right-2 flex'/>
-                <div className='about-left flex' style={{color: 'white', background: 'teal'}}>
-                    <div>Who am I?</div>
+                
+                <div className='about about-3 flex'>
+                    <div>My Purpose</div>
+                    <div className='about-image'/>
+                    <div className='linebreak'></div>
                     <p>
-                        I am a <span>self-taught web developer</span>. My goal is 
-                        to develop websites in a production environment. Enjoy discovering 
-                        <span> trending web technologies </span> and <span>ideas</span> to build websites.
+                        I am an <span>entry-level web developer</span>. My purpose is develop web applications 
+                        and prototype different web designs. Enjoy learning 
+                        <span> trending web technologies </span> and <span>designs</span> to build websites.
                     </p>
                 </div>
-                <div className='about-right-3 flex'/>
             </div>
         </div>
     );

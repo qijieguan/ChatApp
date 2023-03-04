@@ -1,30 +1,36 @@
 .login {
-    margin-bottom: clamp(0.1rem, 10vw, 10rem);
+    justify-content: center;
     flex-direction: column;
-    row-gap: clamp(1.5rem, 2.5vw, 2rem);
+    row-gap: 5vh;
     color: white;
     animation: fadeSlideUp 0.4s ease-in;
 }
-.login-label { 
-    margin-top: 2rem; 
+.login-label {  
     text-align: center; 
     width: 100%; 
-    font-size: clamp(1.25rem, 2.5vw, 1.375rem); 
-    color: rgb(36, 36, 141); 
+    color: cya;
+    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
+    font-weight: 700;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
 }
-.login input { width: 60%; border: 1px solid rgb(192, 192, 192); border-radius: 3px;}
-.login input:focus { outline-color: rgb(36, 36, 141); }
+
+.login-name, .login-password { grid-template-columns: 15% 85%; color: black; width: 80%; border: 1px solid rgb(211, 211, 211); overflow: hidden; }
+.person-icon, .password-icon { justify-content: center; width: 100%; color: white; }
+.person-icon *, .password-icon * { font-size: 1.375rem; }
+.login input { width: 100%; border: 1px solid rgb(228, 228, 228); }
 .sign-in-btn { 
-    margin: 0;
+    margin-top: 5vh;
+    padding: 2vh 0;
     font-size: clamp(0.875rem, 2.5vw, 1rem); 
     letter-spacing: 0.125rem;
-    width: 60%; 
-    min-height: 2.5rem; 
-    background: rgb(36, 36, 141); 
+    font-family: 'Lobster', cursive;
+    width: 80%; 
+    background: rgb(0, 185, 185);
     color: white; 
     box-shadow: 0 0 3px grey;
 }
-.login button:hover { box-shadow: 0 0 5px navy; }
+.login button:hover { box-shadow: 0 0 5px; }
 .auth-btn { 
     min-height: 4.5rem;
     max-height: 5rem; 
@@ -33,55 +39,80 @@
     font-size: clamp(0.875rem, 2.5vw, 1rem);
     letter-spacing: 0.125rem;
     color: white; 
-    background: rgb(36, 36, 141); 
+    background: crimson; 
 }
 
-.register-form { grid-template-columns: 80%; width: 100%; background: white; }
+.register-form { grid-template-columns: 45% 45%; font-weight: 700; width: 100%; background: rgb(34, 34, 34); }
 
 .register-link { 
     margin-top: 0.75rem;
     text-align: center;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
     letter-spacing: 0.05rem;
     width: 60%; 
     min-height: 2.5rem; 
-    color: rgb(123, 123, 211); 
+    color: gray; 
 }
 .register-link:hover { text-decoration: underline; }
 
 .register-label {
-    margin-top: 6.125rem;
+    grid-column: 1 / 3;
+    margin-top: 2.5vh;
+    padding-left: 1.5vw;
     width: 70%;
     font-size: clamp(1rem, 5vw, 2rem);
     font-family: fantasy;
     letter-spacing: 1px;
-    color: limegreen;
-    border-bottom: 2px solid lime;
+    color: cyan;
+    border-left: 5px solid cyan;
 }
 
 .register-msg { color: 'green' }
-.input-image { margin: 3rem 0 5rem 0; width: max(16rem, 25%); border: 1px solid rgb(163, 163, 163); }
-.input-image input { border: 0; box-shadow: unset;}
-.preview-image { width: 100%; object-fit: cover; object-position: center; border-bottom: 1px solid gray; }
-.file { text-indent: 10px; line-height: 3.3rem; width: 100%; background: white; box-shadow: 0 2px 3px black; }
-
-.line { min-height: 2px; background: rgb(236, 236, 236); margin: 25px 0 100px 0;}
-.register-form > input { 
-    margin: 0 0 clamp(1rem, 5vw, 2rem) 5%; 
-    border-radius: 5px; 
-    min-height: 3.1rem; 
-    width: 90%; 
-    border: 1px solid rgb(135, 212, 135);
+.image-input { grid-column: 1 / 3; margin: 5vh auto 10vh auto; width: 100%; }
+.preview-image { width: 25%; object-fit: cover; object-position: center; }
+.file { 
+    margin-left: 2.5vw; 
+    text-indent: 3vw; 
+    line-height: 3.3rem; 
+    width: fit-content; 
+    background: transparent; 
+    color: gray; 
+    border: 2px solid cyan; 
+    border-radius: 3rem;  
 }
-.register-form > input:focus { outline-color: green; }
-.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: green;}
+
+.register-inputs {
+    grid-column: 1 / 3;
+    grid-template-columns: 45% 45%;
+    padding: 10vh 2vw;
+    row-gap: 10vh;
+    min-height: 50vh;
+    width: 100%;
+    background: black;
+    border: 2px solid cyan;
+    border-radius: 0.125rem;
+}
+.register-input-wrapper { 
+    min-height: 3.1rem; 
+    flex-direction: column;
+    row-gap: 1vh;
+    align-items: flex-start;
+    width: 70%; 
+    color: cyan;
+}
+.register-input-wrapper > h1 { margin: 0; font-weight: 600; }
+.register-input-wrapper > span { color: gray; }
+.register-input-wrapper > input { width: 100%; background: rgb(177, 177, 177); border: 1px solid gray; }
+.register-input-wrapper > input:focus { box-shadow: 0 0 5px white; }
+.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: cyan; }
 .input-label::after { content: " *"; color: red; }
 .register-btn { 
+    grid-column: 1 / 3;
     margin: 5rem 0 3rem 12.5%;
     padding: clamp(1rem, 2.5vw, 1.25rem) 0;
     font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-weight: 700;
     letter-spacing: 0.125rem; 
-    width: 75%; 
-    color: white; 
-    background: limegreen; 
+    width: 75%;  
+    background: cyan 
 }

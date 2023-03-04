@@ -13,12 +13,13 @@ import axios from 'axios';
 const SideNav = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     
     const dispatch = useDispatch();
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
-            axios.post('/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
+            axios.post(baseURL +'/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
     }, [dispatch]);

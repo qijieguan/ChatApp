@@ -1,35 +1,38 @@
 .app-header { 
-    height: 4rem; 
-    justify-content: space-around;
+    row-gap: 2vh;
+    height: fit-content;
     width: 100%; 
-    background: white;
-    border-bottom: 1px solid rgb(241, 241, 241); 
-    z-index: 3;
+    color: cyan;
 }
 
-.app-header > h1 { 
-    justify-content: center;
-    font-size: clamp(1.5rem, 2.5vw, 1.75rem);
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    letter-spacing: 0.125rem; 
-    width: 50%;
-    color: rgb(32, 184, 184); 
-}
-.app-header > h1 * { font-size: clamp(2.5rem, 2.5vw, 3rem) } 
-.header-btns { margin: 0 clamp(2rem, 5vw, 5rem) 0 auto; height: 100%; }
-
-.app-header button { 
-    margin-right: clamp(0.5rem, 2.5vw, 2rem);
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+.header-btns { 
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    column-gap: 2.5vw;
     font-family: 'Roboto', sans-serif; 
+    min-height: 10vh;
     width: 100%;
-    background: white;
-    border-radius: 50px;
-    box-shadow: none;
 }
 
-.app-header button:hover { color: limegreen; }
+.header-btns button { font-size: clamp(0.75rem, 1.5vw, 1rem); }
+
+.login-btn, .about-btn { color: white; background: transparent; }
+
+.header-btns button:not(.start-btn):hover { color: cyan; text-decoration: underline; }
+
+.start-btn { 
+    margin-right: 5vw; 
+    padding: 2.5vh 1.5vw; 
+    background: white; 
+    border-radius: 2rem; 
+    border: 2px solid;
+    box-shadow: 0 0 2px gray; 
+    transition: all 0.3 ease-in;
+}
+.start-btn:hover { 
+    color: green;
+    border: 2px solid lightgreen;
+}
 
 .header-alt { 
     position: relative; 
@@ -113,9 +116,13 @@
 .drop-li:hover { color: white !important; background: #5518ab; }
 
 @media (max-width: 50rem) {
-    .login-btn, .about-btn { height: 2.2rem; width: 2.5rem; }
     .side-li { padding-left: 0; }
     .side-logo > h1 { display: none; }
     .side-li > div, .side-user > div { display: none; } 
     .side-user > img { margin: auto; }
+}
+
+@media (max-width: 25rem) {
+    .header-btns { padding: 2vh 0; justify-content: space-around; }
+    .start-btn { padding: 1vh 2.5vw; margin-right: 0; }
 }

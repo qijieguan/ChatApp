@@ -15,15 +15,16 @@ const MessageBox = () => {
     const [render, setRender] = useState(false);
     var textInp = document.querySelector('.text');
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const selectMsg = sessionStorage.getItem('select');
 
     useEffect(() => {
         setTextSet([]);   
 
-        axios.post('/users/select/', {user_id: sessionStorage.getItem('select')})
+        axios.post(baseURL +'/users/select/', {user_id: sessionStorage.getItem('select')})
         .then((response) => { 
             setUser(response.data);
-            axios.post('/texts/select/', {
+            axios.post(baseURL +'/texts/select/', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.text); });
@@ -37,7 +38,7 @@ const MessageBox = () => {
     }
 
     const postText = async (content) => {
-        await axios.post('/texts/add/', {
+        await axios.post(baseURL +'/texts/add/', {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: content

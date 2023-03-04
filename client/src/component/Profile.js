@@ -12,11 +12,12 @@ const Profile = () => {
     const [isEdit, setIsEdit] = useState(false);
     const [render, setRender] = useState(false);
 
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const handleChange = (e) => { setBio(e.target.value); }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('/users/edit_bio/', {user_id: user._id, bio_content: bio});
+        await axios.post(baseURL +'/users/edit_bio/', {user_id: user._id, bio_content: bio});
         user.bio_content = bio;
         sessionStorage.setItem("user", JSON.stringify(user));
         setIsEdit(false);
