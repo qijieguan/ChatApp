@@ -1,9 +1,10 @@
-.conversation { min-height: 40rem; width: 90%; grid-template-columns: 30% 60%; }
+.conversation { min-height: 50vh; width: 90%; grid-template-columns: 30% 60%; }
 
 .chat-container {
     margin: 3rem 0;
     width: 100%;
-    background: white;
+    color: white;
+    background: rgb(94, 94, 94);
     border: 1px solid gray;
     border-radius: 10px;
 }
@@ -13,8 +14,9 @@
     min-height: 4rem;
     width: 100%;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
-    color: white;
-    background: teal;
+    font-weight: 700;
+    color: black !important;
+    background: gold;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 1px 5px black;
 }
@@ -23,10 +25,9 @@
     margin-top: 30%;
     font-size: clamp(2rem, 3vw, 4rem); 
     font-style: italic;
-    color: teal;
 }
 .chat-wrapper { position: relative; min-height: 5rem; width: 100%; border-bottom: 1px solid rgb(197, 197, 197); } 
-.chat-wrapper.highlight { background: rgb(135, 226, 226); }
+.chat-wrapper.highlight { background: black; color: gold; }
 .chat { position: absolute; height: 100%; width: 100%; transition: all 0.3s ease-in; }
 .chat img { 
     margin: 0 2rem; 
@@ -39,8 +40,8 @@
 .chat h1 { font-size: clamp(1.25rem, 2.5vw, 1.375rem); font-family: 'Lobster', cursive; }
 .chat:hover { 
     min-height: 5.7rem;
-    background: rgb(135, 226, 226); 
-    box-shadow: 0 0 5px;
+    color: gold;
+    background: black; 
     z-index: 3;
 }
 

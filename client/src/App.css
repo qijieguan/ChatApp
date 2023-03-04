@@ -16,9 +16,9 @@
     box-sizing: border-box;
 }
 
-.App { background: black; height: 100vh; width: 100vw; overflow-x: hidden; }
+.App { background: rgb(27, 27, 27); height: 100vh; width: 100vw; overflow-x: hidden; }
 
-.chat-page { flex-direction: column; justify-content: space-around; }
+.chat-page { flex-direction: column; justify-content: space-around; background: rgb(26, 26, 26); }
 
 .flex { display: flex; align-items: center; }
 .grid { display: grid; justify-content: space-evenly; }

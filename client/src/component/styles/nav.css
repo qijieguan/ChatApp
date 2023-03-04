@@ -37,51 +37,49 @@
 .header-alt { 
     position: relative; 
     flex-direction: column;
-    justify-content: space-evenly;
-    margin-bottom: 1rem; 
-    height: 15rem;
+    justify-content: space-evenly; 
+    height: 30vh;
     font-weight: bold;
-    background: url("https://images.pexels.com/photos/219998/pexels-photo-219998.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://images.pexels.com/photos/267403/pexels-photo-267403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center; 
-    color: bisque; 
+    color: wheat; 
 }
 .header-alt-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-alt-text * { 
     font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(1.125rem, 2.5vw, 1.375rem); 
+    font-size: clamp(1.5rem, 2vw, 2rem); 
     letter-spacing: 0.125rem;
+    text-align: left;
 }
-.header-alt-text span { font-size: clamp(1.5rem, 2.5vw, 1.75rem); color: orange; }
+.header-alt-text span { color: gold; }
 
 .side-panel { 
     margin-bottom: auto;
     justify-content: space-around;
     width: 100%;
-    background: white;
-    box-shadow: 0 0 3px grey;
+    background: rgb(37, 37, 37);
+    box-shadow: 0 0 3px;
     border-radius: 3px;
     z-index: 3;
 }
 
 .side-logo { 
-    margin: 0 auto 0 0.375rem;
-    padding: 0.5rem 0.75rem; 
-    color: white; 
-    background: #5518ab;
-    box-shadow: 0 0 2px black;
+    margin: 0 auto 0 2.5vw;
+    padding: 0 0.75vw; 
+    background: black;
+    box-shadow: 0 0 2px;
+    border-radius: 3rem;
 }
 
-.side-li { margin: auto; padding: 0 1.25rem; font-weight: bold; color: black; transition: all 0.2s ease-in; }
-.side-li:hover { color: #5518ab; border: 2px solid #5518ab; }
-.side-li.active { color: #5518ab; border-left: 3px solid #5518ab; pointer-events: none; }
-.side-li > div { font-size: clamp(0.25rem, 5vw, 0.875rem); margin: 0.375rem 0; }
+.side-li { margin: auto; height: 100%; color: grey; border-bottom: 2px solid transparent; transition: all 0.2s ease-in; }
+.side-li:hover { color: gold; border-color: gold;}
+.side-li.active { color: gold; padding-left: 1vw; border-left: 3px solid; pointer-events: none; }
+.side-li > div { font-size: clamp(0.25rem, 5vw, 0.875rem); font-weight: bold; margin: 0.375rem 0; }
 .side-icon { font-size: clamp(1.375rem, 2.5vw, 1.5rem); margin-left: 0.375rem; }
 
-.logout { color: firebrick; cursor: pointer; }
 
-.side-user { position: relative; margin: 0 0.5rem 0 auto; padding: 0.25rem 1rem; background: #5518ab; box-shadow: 0 0 4px black; }
+.side-user { position: relative; margin: 0 2vw 0 auto; padding: 0.5vh 1vw; background: rgb(15, 15, 15); box-shadow: 0 0 2px; }
 .side-user img { 
     margin-right: 0.5rem; 
     height: 3rem; 
@@ -93,27 +91,29 @@
 .side-user > div { 
     padding-left: 0.25rem;
     font-size: clamp(0.75rem, 2.5vw, 1rem); 
-    font-family: 'Playfair Display', serif;
+    font-weight: 700;
     letter-spacing: 0.05rem;
-    color: rgb(55, 243, 243); 
+    color: gold 
 }
 .drop-li {
     display: none;
     position: absolute;
     inset: auto 0 0 auto;
     font-family: 'Roboto', sans-serif; 
-    padding: 0.5rem 0;
+    padding: 2vh 0;
+    row-gap: 1.5vh;
     width: 100%;
     transform: translateY(100%);
     text-align: center;
-    background: white;
-    border: 2px solid rgb(223, 223, 223);
+    background: rgb(37, 37, 37);
+    border: 2px solid black;
     border-top: 0;
 }
+.drop-li * { color: gold; }
 .person-icon { font-size: clamp(1rem, 2.5vw, 1.5rem); }
 .drop-li > div { font-size: clamp(0.75rem, 2.5vw, 0.875rem); }
-.side-user:hover .drop-li { display: block; color: #5518ab; }
-.drop-li:hover { color: white !important; background: #5518ab; }
+.side-user:hover .drop-li { display: flex; flex-direction: column; }
+.drop-li:hover { border-color: gold; }
 
 @media (max-width: 50rem) {
     .side-li { padding-left: 0; }

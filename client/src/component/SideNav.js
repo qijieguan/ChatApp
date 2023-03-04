@@ -22,7 +22,7 @@ const SideNav = () => {
             axios.post(baseURL +'/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
-    }, [dispatch]);
+    }, [dispatch, baseURL]);
 
     const handleClick = (event) => {
         let elements = document.querySelectorAll('.side-li:not(.logout)');
@@ -35,7 +35,7 @@ const SideNav = () => {
     return (
         <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
             <div className="side-logo flex">
-                <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="rgb(55, 243, 243)" size={36}/>
+                <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="gold" size={36}/>
             </div>
             <Link to='/Chatpage' className="side-li flex" id="/Chatpage" onClick={handleClick}>
                 <BsFillChatSquareTextFill className="side-icon"/>
@@ -56,7 +56,7 @@ const SideNav = () => {
             <div className="side-user flex">
                 <img src={user.image_url} alt=""/>
                 <div>{user.firstname} {user.lastname}</div>
-                <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.5rem'}}/>
+                <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.25vw'}}/>
                 <Link to='/Profile' className='drop-li flex'>
                     <BsFilePersonFill className='person-icon'/>
                     <div>Profile Info</div>

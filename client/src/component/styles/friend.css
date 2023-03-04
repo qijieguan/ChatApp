@@ -3,8 +3,7 @@
     padding-bottom: 4rem;
     min-height: 55rem;
     width: 90%;
-    background: white;
-    border: 1px solid rgb(192, 192, 192);
+    background: rgb(41, 41, 41);
     border-radius: 0.5rem;
 }
 
@@ -13,7 +12,7 @@
     grid-column: 1 / 4;
     font-size: clamp(2rem, 5vw, 3.5rem);
     letter-spacing: 0.125rem;
-    color: #5518ab;
+    color: gold;
     animation: fadeSlideLeft 0.5s ease-in; 
 }
 
@@ -21,19 +20,18 @@
     position: relative;
     margin-left: 5%;
     width: 90%;
-    background: rgb(243, 243, 243);
-    border: 1px solid rgb(212, 212, 212);
+    background: rgb(104, 104, 104);
     border-radius: 0.5rem;
     box-shadow: 0 0 1px rgb(179, 179, 179);
 }
-.friend-extend:hover { border: 3px solid #5518ab; }
+.friend-extend:hover { border: 3px solid gold; }
 
 .unfriend-icon * { font-size: clamp(1.5rem, 2.5vw, 2rem); }
 .unfriend-icon { position: relative; grid-column: 1 / 2; margin: 10px auto auto 10px; color: gray; }
 .unfriend-icon:hover { color: #b22222; }
 .chat-icon * { font-size: clamp(1.375rem, 2.5vw, 1.75rem); }
 .chat-icon { position: relative; grid-column: 3 / 4; margin: 10px 10px auto auto; color: gray; }
-.chat-icon:hover { color: #5518ab; }
+.chat-icon:hover { color: gold; }
 .chat-icon::after, .unfriend-icon::after {
     display: none;
     position: absolute;
@@ -59,7 +57,6 @@
     object-fit: auto; 
     border-radius: 3rem; 
     box-shadow: 0 0 3px black;
-    border: 1px solid #5518ab;
     z-index: 2;
 }
 .friend-name { 
@@ -68,7 +65,7 @@
     margin: 1rem auto;
     font-size: clamp(1rem, 2.5vw, 1.375rem); 
     font-weight: bold;
-    color: #5518ab; 
+    color: gold; 
     z-index: 2; 
 }
 

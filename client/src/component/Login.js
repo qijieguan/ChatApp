@@ -23,6 +23,7 @@ const Login = () => {
             width: 'max(20rem, 35%)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
+            backgroundColor: 'rgb(30,30,30)'
         },
         overlay: { zIndex: '4' }
     };
@@ -101,6 +102,7 @@ const Login = () => {
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />
+                <h1 className='auth-text'>Please authenticate to access your account</h1>
                 <button className="auth-btn" onClick={authentication}>Click to Authenticate</button> 
             </Modal>
         </div>

@@ -5,6 +5,8 @@ import { useLocation } from 'react-router-dom';
 
 const Header = () => {
 
+    const user = JSON.parse(sessionStorage.getItem('user'));
+    console.log(user);
     const location = useLocation();
 
     useEffect(() => { 
@@ -55,8 +57,10 @@ const Header = () => {
                 :
                 <div className='header-alt flex'>
                     <div className='header-alt-text'>
-                        <div> Discover and Form New<span> Connections </span>Anywhere</div>
-                        <div>Feel Free to<span> Message </span>Your Friends</div>
+                        <div> Hello, <span>{user.firstname}. </span>
+                        <br/>
+                            You are online now to world.
+                        </div>
                     </div>
                     <div className="overlay"/>
                 </div>

@@ -30,7 +30,7 @@ const MessageBox = () => {
             }).then((response) => { setTextSet(response.data.text); });
         });
         setTimeout(() => {scrollBottom();}, 500);
-    }, [render, selectMsg]);
+    }, [render, selectMsg, baseURL]);
 
     const scrollBottom = () => {
         let element = document.querySelector(".private-message")
@@ -95,7 +95,7 @@ const MessageBox = () => {
     return (
         <div className='message-container'>
             <div className="private-message-header flex">
-            <button className="back-btn flex" onClick={goBack}><MdArrowBack color='teal'/></button>
+            <button className="back-btn flex" onClick={goBack}><MdArrowBack/></button>
             <span className='flex' style={{display: user ? '' : 'none'}}>
                 Messaging:<img src={user.image_url} alt=""/>
                 {user.firstname + " " + user.lastname}
@@ -104,7 +104,7 @@ const MessageBox = () => {
             <div className="private-message">
                 {textSet && textSet.length?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
-                    :<h1>Select a Conversation to Display</h1>
+                    :<h1>Select a Chat head to Open Message Log</h1>
                 }
             </div>
             <div className='text-input-wrapper' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
