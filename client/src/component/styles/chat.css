@@ -1,12 +1,13 @@
-.conversation { min-height: 50vh; width: 90%; grid-template-columns: 30% 60%; }
+.chat-page { min-height: 50vh; width: 100%; grid-template-columns: 35% 60%; }
 
-.chat-container {
-    margin: 3rem 0;
+.chat-log {
+    margin: 5vh 0;
     width: 100%;
     color: white;
     background: rgb(94, 94, 94);
-    border: 1px solid gray;
-    border-radius: 10px;
+    box-shadow: 0 0 3px black;
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 .chat-label {
@@ -26,28 +27,25 @@
     font-size: clamp(2rem, 3vw, 4rem); 
     font-style: italic;
 }
-.chat-wrapper { position: relative; min-height: 5rem; width: 100%; border-bottom: 1px solid rgb(197, 197, 197); } 
+.chat-wrapper { width: 100%; border-bottom: 1px solid rgb(51, 51, 51); } 
 .chat-wrapper.highlight { background: black; color: gold; }
-.chat { position: absolute; height: 100%; width: 100%; transition: all 0.3s ease-in; }
+.chat { padding: 1vh 0; justify-content: flex-start; flex-wrap: wrap; height: 100%; width: 100%; transition: all 0.3s ease-in; }
 .chat img { 
-    margin: 0 2rem; 
-    max-height: 3.9rem; 
-    max-width: 4.5rem; 
+    margin: auto 2vw; 
+    height: 3.9rem; 
+    width: 4.5rem; 
     object-fit: cover; 
     border-radius: 10px; 
-    box-shadow: 0 0 3px;
 }
-.chat h1 { font-size: clamp(1.25rem, 2.5vw, 1.375rem); font-family: 'Lobster', cursive; }
+.chat h1 { font-size: clamp(1.25rem, 2.5vw, 1.375rem); margin: auto 0; word-wrap: break-word; }
 .chat:hover { 
-    min-height: 5.7rem;
     color: gold;
     background: black; 
     z-index: 3;
 }
 
 @media (max-width: 50rem) {
-    .conversation { grid-template-columns: 90%; }
-    .chat-wrapper.highlight { background: white; }
-    .chat-container.close { display: none; }
-    .chat-container.open { display: unset !important; }
+    .chat-page { grid-template-columns: 100%; width: 95%; }
+    .chat-log.close { display: none; }
+    .chat-log.open { display: unset !important; }
 }

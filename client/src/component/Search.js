@@ -4,7 +4,7 @@ import User from './User.js';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import { FcGlobe } from 'react-icons/fc';
-import SideNav from './SideNav.js';
+import Menu from './Menu.js';
 
 const Search = () => {
 
@@ -16,10 +16,10 @@ const Search = () => {
 
     return(
         <>
-            <SideNav/>
+            <Menu/>
             <div className="search">
                 <div className='search-wrapper grid'>
-                    <h1 className='flex'><FcGlobe size={80} style={{marginRight: '1rem'}}/> PEOPLE</h1>
+                    <h1 className='flex'><FcGlobe size={80} style={{marginRight: '1rem'}}/>DISCOVER NEW PEOPLE</h1>
                     {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
                 </div>
             </div>

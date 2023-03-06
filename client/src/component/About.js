@@ -1,10 +1,10 @@
 import './styles/about.css';
-import SideNav from './SideNav.js';
+import Menu from './Menu.js';
 
 const About = () => {
     return (
         <div className='about-wrapper flex'>
-            {sessionStorage.getItem("isLogged") ? <SideNav/>:''}  
+            {sessionStorage.getItem("isLogged") ? <Menu/>:''}  
             <div className='about-section flex'>
                 <div className=' about about-1 flex'>
                     <div>Application Technologies</div>

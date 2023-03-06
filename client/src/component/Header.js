@@ -1,4 +1,4 @@
-import './styles/nav.css';
+import './styles/header.css';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -6,12 +6,11 @@ import { useLocation } from 'react-router-dom';
 const Header = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
-    console.log(user);
     const location = useLocation();
 
     useEffect(() => { 
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        toggleRipple(); 
+        //toggleRipple(); 
         let element = document.getElementById(location.pathname);
         if (element) { element.classList.add('active'); }
     }, [location]);
@@ -55,11 +54,11 @@ const Header = () => {
                     </div>
                 </header>
                 :
-                <div className='header-alt flex'>
-                    <div className='header-alt-text'>
+                <div className='header-banner flex'>
+                    <div className='header-banner-text'>
                         <div> Hello, <span>{user.firstname}. </span>
                         <br/>
-                            You are online now to world.
+                            You are online now to the world.
                         </div>
                     </div>
                     <div className="overlay"/>

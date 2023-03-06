@@ -24,9 +24,6 @@ const User = ({ user }) => {
         }).then((response) => { dispatch(addFriend(response.data)); setStatus(true)});
     }
 
-    const handleEnter = () => { document.getElementById(user._id).classList.add('focus'); }
-    const handleLeave = () => { document.getElementById(user._id).classList.remove('focus'); }
-
     const calcOffset = (e) => {
         let el = document.querySelector('.search-wrapper');
         let calcOffset = el.getClientRects()[0].width - e.currentTarget.getClientRects()[0].x;
@@ -40,26 +37,26 @@ const User = ({ user }) => {
             <div className='user' onMouseEnter={calcOffset}>
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
-                    onMouseEnter={handleEnter} 
-                    onMouseLeave={handleLeave}
                 >
                     <AiFillRead size={26} color="orange"/>
                 </div>
+                <div className='user-bio flex' id={user._id}>
+                    <span>{user.bio_content}</span>
+                </div>
                 <img className="user-image" src={user.image_url} alt=""/>
                 <h1 className="user-name flex">
-                    {user.firstname} {user.lastname} 
+                    <span>{user.firstname} {user.lastname} </span>
                     {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 
                         <>
                             {!status ? 
-                                <div className='user-add-1'>
-                                    <MdPersonAdd color='yellow' size={26} onClick={handleAdd}/>
+                                <div className='user-icon-1'>
+                                    <MdPersonAdd color='cyan' size={26} onClick={handleAdd}/>
                                 </div>
-                                : <div className='user-add-2'><FiCheckCircle color="limegreen" size={24}/></div>
+                                : <div className='user-icon-2'><FiCheckCircle color="lime" size={24}/></div>
                             }
                         </> :''
                     }
                 </h1>
-                <div className='user-bio' id={user._id}>{user.bio_content}</div>
             </div>
         </div>
     );

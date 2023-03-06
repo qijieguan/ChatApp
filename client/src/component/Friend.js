@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
 import Extend from './FriendExtend.js';
 import { FcVoicePresentation } from 'react-icons/fc';
-import SideNav from './SideNav.js';
+import Menu from './Menu.js';
 
 const Friend = () => {
 
@@ -17,17 +17,17 @@ const Friend = () => {
     useEffect(() => {
         axios.post(baseURL +'/users/', { friend_ids: friend_ids })
         .then((response) => { setFriends(response.data) });
-    }, [friend_ids]);
+    }, [friend_ids, baseURL]);
 
     return (
         <>
-            <SideNav/>
+            <Menu/>
             <div className="friend">
             {friends.length ?
                 <div className='friend-wrapper grid'>
                     <h1 className="flex" style={{margin: '3rem 0'}}> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
-                        CONNECTIONS
+                        YOUR CONNECTIONS
                     </h1>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
                 </div>

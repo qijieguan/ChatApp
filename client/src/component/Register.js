@@ -1,4 +1,4 @@
-import './styles/form.css';
+import './styles/register.css';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -66,7 +66,7 @@ const Register = () => {
     };
 
     return(
-        <form className="register-form grid" onSubmit={handleSubmit}>
+        <form className="register-form flex" onSubmit={handleSubmit}>
             <h1 className="register-label">Register Your Account</h1>
             <h3 className="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
       
@@ -74,6 +74,8 @@ const Register = () => {
                 <img src={url ? url : defaultURL} className="preview-image" alt=""/>
                 <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
             </div>
+
+            <div className='linebreak'></div>
 
             <div className='register-inputs grid'>
                 <div className='register-input-wrapper flex'>

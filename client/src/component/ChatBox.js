@@ -17,19 +17,19 @@ const ChatBox = () => {
         .then((response) => { setChatSet(response.data) }); 
         let id = sessionStorage.getItem('select');
         if (id) { setTimeout(() => { document.getElementById(id).classList.add('highlight');}, 250); };
-    }, [render]);
+    }, [render, baseURL]);
 
     const getSelect = (id) => { 
         sessionStorage.setItem('select', id); 
-        document.querySelector('.chat-container').classList.remove('open');
-        document.querySelector('.chat-container').classList.add('close');
+        document.querySelector('.chat-log').classList.remove('open');
+        document.querySelector('.chat-log').classList.add('close');
         document.querySelector('.message-container').classList.add('open');
         setRender(!render); 
     }
 
     return (
-        <div className='conversation grid'>
-            <div className="chat-container">
+        <div className='chat-page grid'>
+            <div className="chat-log">
                 <div className='chat-label flex'>Chat Log</div>
                 <div className='chat-set flex'>
                     {chatSet && chatSet.length ?

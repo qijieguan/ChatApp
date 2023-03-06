@@ -1,7 +1,7 @@
 import './styles/profile.css';
 import { useState } from 'react';
 import { AiTwotoneEdit } from 'react-icons/ai';
-import SideNav from './SideNav.js';
+import Menu from './Menu.js';
 import Album from './Album.js';
 import axios from 'axios';
 
@@ -28,7 +28,7 @@ const Profile = () => {
 
     return(
         <>
-            <SideNav/>
+            <Menu/>
             <div className="profile grid">
                 <div className='profile-section flex'>
                     <img src={user.image_url} className="profile-image" alt=""/>

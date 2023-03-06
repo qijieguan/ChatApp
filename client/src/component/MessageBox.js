@@ -18,9 +18,7 @@ const MessageBox = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const selectMsg = sessionStorage.getItem('select');
 
-    useEffect(() => {
-        setTextSet([]);   
-
+    useEffect(() => {    
         axios.post(baseURL +'/users/select/', {user_id: sessionStorage.getItem('select')})
         .then((response) => { 
             setUser(response.data);
@@ -71,9 +69,9 @@ const MessageBox = () => {
     const goBack = () => { 
         document.getElementById(selectMsg).classList.remove('highlight');
         sessionStorage.removeItem('select'); 
-        document.querySelector('.chat-container').classList.add('open');
+        document.querySelector('.chat-log').classList.add('open');
         document.querySelector('.message-container').classList.remove('open');
-        setRender(!render); 
+        setTextSet([]); 
     }
 
     const readFiles = (files) => {
@@ -102,22 +100,26 @@ const MessageBox = () => {
             </span>
             </div>
             <div className="private-message">
-                {textSet && textSet.length?
+                {textSet?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :<h1>Select a Chat head to Open Message Log</h1>
                 }
             </div>
-            <div className='text-input-wrapper' style={{display: sessionStorage.getItem('select') ? 'flex' : 'none'}}>
-                <div className='text-input'>
-                    <input name='text' className= 'text' placeholder='Type message here...' onChange={handleChange}/>
-                    <div className='camera-wrapper' onClick={handleUpload}>
-                        <img src={url} className='upload-preview' alt=''/>
-                        <FaCamera className='camera-icon'/>
-                        <input type="file" className="file" accept='images/*' onChange={previewFile}/>
+            {textSet ? 
+                <div className='text-input-wrapper flex'>
+                    <div className='text-input'>
+                        <input name='text' className='text' placeholder='Type message here...' onChange={handleChange}/>
+                        <div className='camera-wrapper' onClick={handleUpload}>
+                            <img src={url} className='upload-preview' alt=''/>
+                            <FaCamera className='camera-icon'/>
+                            <input type="file" className="file" accept='images/*' onChange={previewFile}/>
+                        </div>
                     </div>
+                    <button onClick={handleSubmit}>Send</button>
                 </div>
-                <button onClick={handleSubmit}>Send</button>
-            </div>
+                :
+                ''
+            }
         </div>
     );
 };

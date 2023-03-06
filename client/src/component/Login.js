@@ -1,4 +1,4 @@
-import './styles/form.css';
+import './styles/login.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -28,9 +28,9 @@ const Login = () => {
         overlay: { zIndex: '4' }
     };
 
-    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
-
     Modal.setAppElement(document.getElementById('root'));
+
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     const [username, setUsername] = useState("Guest");
     const [password, setPassword] = useState("password");
@@ -58,7 +58,7 @@ const Login = () => {
                 axios.post(baseURL + '/users/load/', { username: username })
                 .then((response) => { 
                     sessionStorage.setItem("user", JSON.stringify(response.data)); 
-                    window.location.href = "/Chatpage";
+                    window.location.href = "/Dashboard";
                 });
             }
         });
@@ -81,7 +81,7 @@ const Login = () => {
     }
 
     return(
-        <div style={{width: '100%'}}>
+        <div>
             <form className="login flex" onSubmit={handleSubmit}>
                 <h1 className="login-label">Enter Your Credentials</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
@@ -94,11 +94,11 @@ const Login = () => {
                     <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 </div>
                 <button type="submit" className="sign-in-btn">Sign In</button>
-                <Link to='/Register' className="register-link">Don't have an account? Sign up here</Link>
+                <Link to='/Register' className="register-link">Don't have an account? <span>Create Account</span></Link>
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
-                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'red'}}
+                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'gray'}}
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />

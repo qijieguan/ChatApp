@@ -1,4 +1,4 @@
-import './styles/nav.css';
+import './styles/menu.css';
 import { AiOutlineWechat } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
 import axios from 'axios';
 
-const SideNav = () => {
+const Menu = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
@@ -25,7 +25,7 @@ const SideNav = () => {
     }, [dispatch, baseURL]);
 
     const handleClick = (event) => {
-        let elements = document.querySelectorAll('.side-li:not(.logout)');
+        let elements = document.querySelectorAll('.menu-li:not(.logout)');
         elements.forEach(el => { el.classList.remove('active') });
         event.currentTarget.classList.add('active');
     }
@@ -33,37 +33,40 @@ const SideNav = () => {
     const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
 
     return (
-        <div className="side-panel flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
-            <div className="side-logo flex">
+        <div className="menu-bar flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
+            <div className="menu-logo flex">
                 <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="gold" size={36}/>
             </div>
-            <Link to='/Chatpage' className="side-li flex" id="/Chatpage" onClick={handleClick}>
-                <BsFillChatSquareTextFill className="side-icon"/>
+            <Link to='/Dashboard' className="menu-li flex" id="/Dashboard" onClick={handleClick}>
+                <BsFillChatSquareTextFill className="menu-li-icon"/>
                 <div style={{marginLeft: '0.375rem'}}>CHAT</div>
             </Link>
-            <Link to='/Friend' className="side-li flex" id="/Friend" onClick={handleClick}>
+            <Link to='/Friend' className="menu-li flex" id="/Friend" onClick={handleClick}>
                 <div>CONNECTIONS</div>
-                <FaUserFriends className="side-icon"/>
+                <FaUserFriends className="menu-li-icon"/>
             </Link>
-            <Link to="/Search" className="side-li flex" id="/Search" onClick={handleClick}>
-                <div>PEOPLE</div>
-                <BsSearch className="side-icon"/>
+            <Link to="/Search" className="menu-li flex" id="/Search" onClick={handleClick}>
+                <div>DISCOVER</div>
+                <BsSearch className="menu-li-icon"/>
             </Link>
-            <div className="side-li flex logout" onClick={logout}>
-                <div>LOG OUT</div>
-                <BiLogIn size={30}/>
-            </div>    
-            <div className="side-user flex">
+              
+            <div className="menu-dropdown flex">
                 <img src={user.image_url} alt=""/>
-                <div>{user.firstname} {user.lastname}</div>
+                <div className='menu-user'>{user.firstname} {user.lastname}</div>
                 <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.25vw'}}/>
-                <Link to='/Profile' className='drop-li flex'>
-                    <BsFilePersonFill className='person-icon'/>
-                    <div>Profile Info</div>
-                </Link>
+                <div className='menu-links flex'>
+                    <Link to='/Profile' className='menu-link flex' style={{columnGap: '0.5vw'}}>
+                        <div>PROFILE</div>
+                        <BsFilePersonFill className='person-icon'/>
+                    </Link>
+                    <a className="menu-link flex" onClick={logout}>
+                        <div>LOG OUT</div>
+                        <BiLogIn className='logout-icon'/>
+                    </a>
+                </div>
             </div> 
-    </div>
+        </div>
     );
 }
 
-export default SideNav;
+export default Menu;

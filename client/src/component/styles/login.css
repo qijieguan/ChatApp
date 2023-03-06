@@ -1,0 +1,66 @@
+.login {
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 5vh;
+    color: white;
+    animation: fadeSlideUp 0.4s ease-in;
+}
+.login-label {  
+    text-align: center; 
+    width: 100%; 
+    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
+    font-weight: 700;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+}
+
+.login-name, .login-password { grid-template-columns: 15% 85%; color: black; width: 80%; border: 1px solid rgb(211, 211, 211); overflow: hidden; }
+.person-icon, .password-icon { justify-content: center; width: 100%; color: white; }
+.person-icon *, .password-icon * { font-size: 1.375rem; }
+.login input { width: 100%; border: 1px solid rgb(228, 228, 228); }
+.sign-in-btn { 
+    margin-top: 5vh;
+    padding: 2vh 0;
+    font-size: clamp(0.875rem, 2.5vw, 1rem); 
+    letter-spacing: 0.125rem;
+    font-family: 'Lobster', cursive;
+    width: 80%; 
+    background: rgb(0, 185, 185);
+    color: white; 
+    box-shadow: 0 0 3px grey;
+}
+.login button:hover { box-shadow: 0 0 5px; }
+
+.register-link { 
+    margin-top: 0.75rem;
+    text-align: center;
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    width: 100%; 
+    min-height: 5vh; 
+    color: gray; 
+}
+
+.register-link > span { color: cyan; }
+
+.register-link:hover { text-decoration: underline; }
+
+.auth-text { 
+    margin: 0 auto;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    color: gray;
+}
+.auth-btn { 
+    min-height: 4.5rem;
+    max-height: 5rem; 
+    min-width: 70%; 
+    max-height: 90%;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    color: gold; 
+    background: transparent;
+    border: 1px solid gold; 
+    border-radius: 0.125rem
+}
+
+.auth-btn:hover { background: gold; color: black; }

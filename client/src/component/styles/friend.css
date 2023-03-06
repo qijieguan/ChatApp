@@ -1,106 +1,104 @@
 .friend {
-    margin: 5rem 0 5rem 5%;
-    padding-bottom: 4rem;
-    min-height: 55rem;
+    margin: 2vh auto;
+    padding: 2.5vh 0;
     width: 90%;
     background: rgb(41, 41, 41);
     border-radius: 0.5rem;
+    overflow: hidden;
 }
 
-.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3rem; justify-content: space-evenly; }
+.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3vh; justify-content: space-evenly; }
 .friend-wrapper > h1 {
     grid-column: 1 / 4;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.5rem, 3vw, 3rem);
     letter-spacing: 0.125rem;
-    color: gold;
-    animation: fadeSlideLeft 0.5s ease-in; 
+    color: orange;
+    animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 
 .friend-extend {
+    align-items: flex-end;
+    flex-wrap: wrap;
     position: relative;
-    margin-left: 5%;
-    width: 90%;
-    background: rgb(104, 104, 104);
-    border-radius: 0.5rem;
-    box-shadow: 0 0 1px rgb(179, 179, 179);
-}
-.friend-extend:hover { border: 3px solid gold; }
-
-.unfriend-icon * { font-size: clamp(1.5rem, 2.5vw, 2rem); }
-.unfriend-icon { position: relative; grid-column: 1 / 2; margin: 10px auto auto 10px; color: gray; }
-.unfriend-icon:hover { color: #b22222; }
-.chat-icon * { font-size: clamp(1.375rem, 2.5vw, 1.75rem); }
-.chat-icon { position: relative; grid-column: 3 / 4; margin: 10px 10px auto auto; color: gray; }
-.chat-icon:hover { color: gold; }
-.chat-icon::after, .unfriend-icon::after {
-    display: none;
-    position: absolute;
-    transform: translate3d(15%, -195%, 0);
-    padding: 0.25rem clamp(0.25rem, 2.5vw, 0.875rem);
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
-    font-weight: bold;
-    text-align: center;
-    width: 5rem;
-    background: white;
-    border-radius: 0.5rem 0.5rem 0.5rem 0;
-    box-shadow: 0 0 3px black;
-    z-index: 3;
+    margin: 0 auto;
+    height: fit-content;
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden;
 }
 
-.chat-icon:hover::after { content: 'Message'; display: block; color: #5518ab; }
-.unfriend-icon:hover::after { content: 'Remove'; display: block; color: firebrick; }
+.friend-extend:hover { border: 2px solid gold; }
+.friend-extend:hover .friend-name { color: gold; }
 
 .friend-profile { 
-    grid-column: 2 / 3; 
-    max-height: 15rem; 
     width: 100%; 
-    object-fit: auto; 
-    border-radius: 3rem; 
+    object-fit: cover;
+    max-height: 25vh; 
     box-shadow: 0 0 3px black;
     z-index: 2;
 }
 .friend-name { 
-    grid-column: 1 / 4; 
     text-align: center; 
-    margin: 1rem auto;
+    margin: 1vh auto;
     font-size: clamp(1rem, 2.5vw, 1.375rem); 
     font-weight: bold;
-    color: gold; 
+    color: lightcyan; 
     z-index: 2; 
 }
+
+.friend-buttons { padding: 1vh 1vw 1.5vh 1vw; justify-content: flex-end; flex-wrap: wrap; width: 100%; }
+
+.unfriend-icon, .chat-icon, .friend-bio-icon { 
+    margin: auto 1vw auto 0; 
+    color: grey;  
+}
+.unfriend-icon * { font-size: clamp(1.5rem, 2vw, 1.75rem); color: red; }
+.chat-icon * { font-size: clamp(1.25rem, 1.5vw, 1.5rem); color: gold; }
+.friend-bio-icon { font-size: clamp(1.5rem, 2vw, 2rem); color: grey; }
 
 .friend-bio {
     display: none;
     position: absolute;
     flex-direction: column;
-    row-gap: 3rem;
-    left: 0;
+    padding: 0 1vw;
+    inset: 0 auto auto 0;
+    text-overflow: ellipsis;
     height: 100%;
     width: 75%;
+    color: black;
     background: yellow;
-    box-shadow: 0 3px 5px gray;
-    border-radius: 0.5rem 0 0 0.5rem;
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in 0.5s;
     z-index: 4;
 }
-.friend-bio > h1 { border-bottom: 2px solid; width: 90%; }
+
+.friend-bio-icon:hover + .friend-bio { transform: translateX(0); }
+
+.friend-bio > h1 { font-size: clamp(1rem, 1.25vw, 1.25rem); border-bottom: 2px solid; width: 90%; }
 .friend-bio > span { width: 90%; font-size: clamp(0.875rem, 2.5vw, 1rem); }
-.friend-bio.focus { display: flex; animation: slideRight 0.3s ease-in; }
+.friend-bio { display: flex; animation: slideRight 0.3s ease-in;  }
+
+.modal-text > span { color: orange; font-weight: 700; }
+.modal-btns { width: 100%; justify-content: space-between; }
+.modal-btns > button { padding: 2.5vh 0; width: 48%; font-weight: 700; background: transparent; }
+.modal-btns > button:hover { box-shadow: 0 0 3px black; }
+.cancel-btn { color: white; border: 1px solid; }
+.submit-btn { color: red; border: 1px solid; }
+
+.cancel-btn:hover { background: white; color: black; }
+.submit-btn:hover { background: red; color: white; border-color: red; }
 
 @keyframes slideRight {
     0%  { opacity: 0; width: 0; }
-    100% { opacity: 1;; width: 75%; }
+    100% { opacity: 1; width: 75%; }
 }
-
-.friend-bio-icon {
-    grid-column: 3 / 4;
-    margin: auto 10px 10px auto;
-    font-size: clamp(1.375rem, 2.5vw, 1.875rem);
-    color: gray;
-    z-index: 3;
-}
-.friend-bio-icon:hover { color: black; }
 
 @media (max-width: 50rem) {
-    .friend-wrapper { grid-template-columns: 45% 45% }
+    .friend-wrapper { grid-template-columns: 45% 45%; row-gap: 1vh; }
     .friend-wrapper > h1 { grid-column: 1 / 3; }
+}
+
+@media (max-width: 25rem) {
+    .friend-wrapper { grid-template-columns: 90%; row-gap: 1vh; }
+    .friend-wrapper > h1 { grid-column: 1 / 2; }
 }

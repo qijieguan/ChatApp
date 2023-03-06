@@ -65,7 +65,7 @@
 .features-dropdown.active { height: 100%; }
 
 @media (max-width: 50rem) {
-    .home-intro { margin: 0 auto; width: 70%; height: fit-content;}
+    .home-intro { margin: 0 auto; width: 80%; text-align: center; height: fit-content;}
     .home-login { margin: 5vh auto 10vh auto; position: relative; inset: auto; width: 90%; height: fit-content; }
     .home-background { width: 100%; background-position: center; }
     .home-body { flex-direction: column; row-gap: 5vh; }
