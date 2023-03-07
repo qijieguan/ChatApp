@@ -1,3 +1,4 @@
+import './styles/album.css';
 import { useState } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
@@ -72,12 +73,16 @@ const Album = ({ callRender }) => {
     return (
         <div className='album-section flex'>
             <div className='album-label-1'>Photo Album</div>
-            <form className='upload-box grid' onSubmit={handleUpload}>
-                <div>Upload pictures to album</div>
-                <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
-                <button type='submit'>Upload</button>
-            </form>
+            <div className='album-message'>( double click to select )</div>
+            {/*
+                <form className='upload-box grid' onSubmit={handleUpload}>
+                    <div>Upload pictures to album</div>
+                    <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
+                    <button type='submit'>Upload</button>
+                </form>
+            
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE</div>
+            */}
             <form className='album-list grid' onSubmit={handleSwitch}>
                 {user.photo_album.length ?
                     user.photo_album.map(photo => 

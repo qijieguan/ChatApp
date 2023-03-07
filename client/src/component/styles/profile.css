@@ -1,33 +1,29 @@
 .profile { 
-    margin: 7.5vh auto; 
     padding: 5vh 2vw;
-    grid-template-columns: 40% 60%;
-    width: 85%;
-    background: rgb(12, 12, 12);
-    border-radius: 0.25rem; 
+    flex-wrap: wrap;
+    row-gap: 2vh;
+    width: 100%;
     overflow: hidden;
 }
-.profile-section {
+.profile-header {
     flex-direction: column;
-    padding: 3rem 0;
-    height: fit-content;
-    border: 2px solid gold;
+    padding: 5vh 0;
     width: 100%;
+    background: rgb(19, 19, 19);
+    box-shadow: 0 0 1px;
 }
 .profile-image {
-    margin: auto;
-    max-height: 15rem;
-    max-width: 95%;
-    border-radius: 5.5rem;
-    box-shadow: 0 0 0.25rem grey;
+    margin: 0 auto;
+    height: 25vh;
+    width: 25vh;
+    object-fit: cover;
+    border-radius: 10rem;
 }
-.profile-line { margin-top: 2rem; position: relative; justify-content: space-around; width: 100%; border-radius: 0.5rem; }
-.p-line { width: 100%; height: 0.25vh; background: gold; }
 .profile-name { 
-    position: absolute;
-    padding: 0.5vh 1vw;
+    margin: 2vh 0;
+    padding: 0 1vw;
     text-align: center;
-    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: bold;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.1rem;
@@ -36,92 +32,30 @@
     border-radius: 0.75rem;
 }
 
-.bio-label { margin: 2rem 0; font-size: clamp(1rem, 2.5vw, 1.25rem); font-family: 'Playfair Display', serif; color: gold; }
+.profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
+
+.bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: gray; }
 .bio-body {
     flex-direction: column;
-    padding: 0.5rem;
-    min-height: 10rem;
-    width: 100%;
+    width: 75%;
     font-size: 0.875rem;
-    background: rgb(196, 196, 196);
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 2px rgb(66, 66, 66);
-}
-
-.edit-btn { margin: auto 0 0 auto; padding: 1vh 1vw; background: gold; border-radius: 0.25rem; box-shadow: 0 0 3px gray;}
-
-.profile-bio { width: 90%; }
-.profile-bio > textarea { min-height: 10rem; width: 100%; background: white; color: indigo; word-wrap: break-word; }
-.profile-bio > div { margin-top: 1rem ; width: 100%; justify-content: flex-end; column-gap: 1rem;}
-.cancel-button, .submit-button { letter-spacing: 0.05rem; border-radius: 0.25rem; padding: 0.375rem; }
-.submit-button { background: gold; }
-
-.album-section {
-    margin: 3rem 0 3rem 5%;
-    width: 90%;
-    text-align: center;
-    flex-direction: column;
-    align-items: flex-start;
-    row-gap: 1rem;
-}
-.album-label-1 {
-    margin-bottom: 1rem;
-    font-size: clamp(2.5rem, 3vw, 5rem);
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-    color: gold;
-}
-
-.upload-box { display: none; position: relative; grid-template-columns: 75% 25%; row-gap: 0.5rem; }
-.upload-box > div { grid-column: 1 / 3; text-align: left; font-size: clamp(0.875rem, 2.5vw, 1rem); font-weight: bold; }
-.upload-box > input { margin: 0; box-shadow: 0 0 2px; width: 100%; }
-.upload-box > button { margin-left: 1rem; }
-
-.album-label-2 {
-    margin: 2rem 0 5rem 0;
-    padding: 0.5rem 0.75rem;
-    font-weight: bold;
-    border: 1px solid gray;
-    border-radius: 0.5rem;
-    opacity: 0.3;
-}
-
-.album-list {
-    min-height: 15rem;
-    grid-template-columns: 45% 45%;
-    row-gap: 3rem;
-    width: 100%;
-}
-
-.photo-wrapper { position: relative; display: block; width: fit-content; color: gold; }
-.photo-wrapper > img { max-height: 15rem; max-width: 100%; border-radius: 0.25rem; box-shadow: 0 0 3px; }
-.checkbox > input { 
-    position: absolute; 
-    inset: 0 0.5rem auto auto; 
-    height: 1.25rem; 
-    width: 1.25rem;
-    accent-color: gold;
-    box-shadow: none; 
-    border: none;
-}
-.checked { border: 3px solid gold; }
-
-.album-list > button {
-    margin: 3rem auto 0 auto;
-    grid-column: 2 / 3;
-    padding: 3vh 3vw;
-    letter-spacing: 0.125rem;
     font-weight: 700;
-    width: 100%;
-    background: gold;
-    box-shadow: 0 0 3px black;
+    color: white;
 }
 
-.album-list > button:hover { box-shadow: 0 3px 5px black; }
+.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; background: gray; border-radius: 0.125rem; }
 
-@media (max-width: 50rem) {
-    .profile { grid-template-columns: 100%; margin: 5rem 0 5rem 5%; width: 90%; }
-    .album-section { padding: 3rem 0; border-right: 0; }
-    .album-list { grid-template-columns: 45% 45%; }
+.cancel-button, .submit-button { 
+    margin-top: 1.5vh; 
+    padding: 0.75vh 0.75vw; 
+    font-size: 0.875rem; 
+    border-radius: 0.125rem; 
+    color: grey; 
+    background: transparent;
+    border: 1px solid;
 }
+.submit-button { color: lightgreen; border: 1px solid; }
+
+.bio-edit { margin: 1vh auto; justify-content: center; column-gap: 1vw; width: 100%; }
+.bio-edit > textarea { padding: 1vh 1vw; min-height: 15vh; width: 50%; background: gray; word-wrap: break-word; }
+.bio-edit > div { column-gap: 1vw;}
