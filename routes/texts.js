@@ -50,4 +50,12 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
+router.route('/delete').post((req, res) => {
+    const friends = [req.body.user_id, req.body.friend_id];
+    Text.deleteOne({friends: {$all: friends}})
+    .then(() => res.json())
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+
 module.exports = router;

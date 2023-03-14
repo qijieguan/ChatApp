@@ -22,10 +22,10 @@ const Friend = () => {
     return (
         <>
             <Menu/>
-            <div className="friend">
+            <div className="friend flex">
             {friends.length ?
                 <div className='friend-wrapper grid'>
-                    <h1 className="flex" style={{margin: '3rem 0'}}> 
+                    <h1 className="flex"> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
                         YOUR CONNECTIONS
                     </h1>

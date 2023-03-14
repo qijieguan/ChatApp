@@ -40,7 +40,7 @@ const Extend = ({ friend }) => {
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
-        window.location.href = '/Chatpage';
+        window.location.href = '/Dashboard';
     }
 
     const handleUnfriend = async () => {

@@ -6,7 +6,7 @@ import axios from 'axios';
 import uuid from 'react-uuid';
 import Text from './Text.js';
 
-const MessageBox = () => {
+const MessageBox = ({ initChatLog }) => {
 
     const [user, setUser] = useState("");
     const [files, setFiles] = useState("");
@@ -41,6 +41,7 @@ const MessageBox = () => {
             friend_id: user._id,
             content: content
         });
+        if (!textSet) { initChatLog() }
     }
 
     const uploadText = async () => {
@@ -105,7 +106,7 @@ const MessageBox = () => {
                     :<h1>Select a Chat head to Open Message Log</h1>
                 }
             </div>
-            {textSet ? 
+            {selectMsg ? 
                 <div className='text-input-wrapper flex'>
                     <div className='text-input'>
                         <input name='text' className='text' placeholder='Type message here...' onChange={handleChange}/>

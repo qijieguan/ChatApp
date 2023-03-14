@@ -8,13 +8,13 @@ const userSchema = new Schema({
         required: true,
         unique: true,
         trim: true,
-        minlength: 3
+        minlength: 5
     },
     password: {
         type: String,
         required: true,
         trim: true,
-        minlength: 5
+        minlength: 8
     },
     image_url : {
         type: String,
@@ -26,13 +26,13 @@ const userSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 3
+        minlength: 2
     },
     lastname: {
         type: String,
         required: true,
         trim: true,
-        minlength: 3
+        minlength: 2
     },
     bio_content: {
        type: String, 

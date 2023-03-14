@@ -37,7 +37,7 @@ const Register = () => {
                 password: password,
                 image_url: json.secure_url,
                 firstname: fname,
-                lastname: lname
+                lastname: lname,
             }).then((response) => { 
                 axios.post(baseURL +'/friends/init/', { user_id: response.data._id });
                 setMessage("User is added!");
@@ -51,6 +51,7 @@ const Register = () => {
         else if (event.target.name === "lastname") { setLname(event.target.value); }
         else if (event.target.name === "username") { setUsername(event.target.value); }
         else { setPassword(event.target.value); }
+        console.log(typeof(event.target.value))
     }
 
     const handleSubmit = (event) => {
@@ -81,22 +82,22 @@ const Register = () => {
                 <div className='register-input-wrapper flex'>
                     <h1 className='input-label'>First Name</h1>
                     <span>Please enter your first name</span>
-                    <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} required/>
+                    <input name="firstname" value={fname} placeholder='Ex. Mike' onChange={handleChange} minLength="2" required/>
                 </div>
                 <div className='register-input-wrapper flex'>
                     <h1 className='input-label'>Last Name</h1>
                     <span>Please enter your last name</span>
-                    <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} required/>
+                    <input name="lastname" value={lname} placeholder='Ex. Hawk' onChange={handleChange} minLength="2" required/>
                 </div>
                 <div className='register-input-wrapper flex'>
                     <h1 className='input-label'>Username</h1>
                     <span>Please enter your login username</span>
-                    <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} required/>
+                    <input name="username" value={username} placeholder="Username/Email" onChange={handleChange} minLength="5" required/>
                 </div>
                 <div className='register-input-wrapper flex'>
                     <h1 className='input-label'>Password</h1>
                     <span>Please enter your login password</span>
-                    <input type="password" name="password" value={password} placeholder='Atleast 5 Characters' onChange={handleChange} required/>
+                    <input type="password" name="password" value={password} placeholder='Atleast 8 Characters' onChange={handleChange} minLength="8" required/>
                 </div>
             </div>
             <button className="register-btn" type='submit'>CREATE NEW ACCOUNT</button>
