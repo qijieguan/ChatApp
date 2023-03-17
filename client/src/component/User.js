@@ -24,18 +24,11 @@ const User = ({ user }) => {
         }).then((response) => { dispatch(addFriend(response.data)); setFriend(true)});
     }
 
-    const calcOffset = (e) => {
-        let el = document.querySelector('.search-wrapper');
-        let calcOffset = el.getClientRects()[0].width - e.currentTarget.getClientRects()[0].x;
-        calcOffset = calcOffset / el.getClientRects()[0].width;
-        if (calcOffset < .35) { e.currentTarget.style.right = '0'; }
-    }
-
     const friendBorder = () => { return '2px solid green'; }
 
     return (
         <div className="user-container">
-            <div className='user' onMouseEnter={calcOffset} style={{border: isFriend ? friendBorder() : 'none' }}>
+            <div className='user' style={{border: isFriend ? friendBorder() : 'none' }}>
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
                 >

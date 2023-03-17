@@ -37,7 +37,7 @@
 
 .friend:hover .friend-image { border: 2px solid gold; }
 .friend:hover .friend-name { color: gold; }
-.friend:hover .friend-preview { display: flex; }
+.friend:hover .friend-preview { transform: scale(1); }
 
 .friend-image { 
     width: 100%; 
@@ -56,7 +56,7 @@
 }
 
 .friend-preview {
-    display: none; 
+    display: flex; 
     flex-direction: column;
     flex-wrap: wrap; 
     justify-content: space-between;
@@ -67,11 +67,14 @@
     min-height: 0vh; 
     width: 40vh; 
     background: gold;
-    transform: translateX(70%);
     border-radius: 0.5rem;
     box-shadow: 0 0 3px;
+    transform: scale(0) translateX(25%);
+    transition: all 0.5s ease-in;
     z-index: 3;
 }
+
+.friend-preview.left { inset: 0 auto auto 0; transform: scale(0) translateX(-25%); }
 
 .friend-bio { margin-bottom: 4vh; padding-bottom: 2vh; border-bottom: 1px solid; }
 .friend-bio > h1 { font-size: clamp(1.5rem, 1.75vw, 1.75rem); width: 100%; }
@@ -99,10 +102,12 @@
 
 @media (max-width: 50rem) {
     .friend-wrapper { grid-template-columns: 48% 48%; row-gap: 1vh; }
-    .friend-wrapper-label { grid-column: 1 / 3; }
+    .friend-wrapper-label { grid-column: 1 / 3; width: 100%; }
 }
 
 @media (max-width: 25rem) {
     .friend-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
     .friend-wrapper-label { grid-column: 1 / 2; }
+    .friend:hover .friend-preview { transform: scale(1) translateX(0); }
+    .friend-preview { inset: 0 auto auto 0; width: 99%; }
 }

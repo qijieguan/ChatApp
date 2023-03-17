@@ -51,8 +51,16 @@ const Extend = ({ friend }) => {
         setModal(false);
     }
 
+    const calcOffset = (e) => {
+        let el = document.querySelector('.friend');
+        let calc = e.pageX / window.innerWidth;
+
+        if (calc <= 0.5) { el.querySelector('.friend-preview')?.classList.add('left'); }
+        else { el.querySelector('.friend-preview')?.classList.remove('left'); }
+    }
+
     return (
-        <div className="friend flex">
+        <div className="friend flex" onMouseEnter={calcOffset}>
             <img src={friend.image_url} className="friend-image" alt=""/>
             <div className="friend-name">{friend.firstname} {friend.lastname}</div>
          
