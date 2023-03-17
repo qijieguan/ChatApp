@@ -52,16 +52,18 @@ const Extend = ({ friend }) => {
     }
 
     return (
-        <div className="friend-extend flex">
-            <img src={friend.image_url} className="friend-profile" alt=""/>
+        <div className="friend flex">
+            <img src={friend.image_url} className="friend-image" alt=""/>
             <div className="friend-name">{friend.firstname} {friend.lastname}</div>
-            <div className='friend-buttons flex'>
-                <div className='chat-icon flex'><BsFillChatDotsFill onClick={handleChat}/></div>
-                <div className='unfriend-icon flex'><RiCloseCircleFill onClick={() => {setModal(true)}}/></div>
-                <AiFillRead className='friend-bio-icon flex'/>
+         
+            <div className='friend-preview'>
                 <div className='friend-bio' id={friend._id}>
                     <h1>Bio</h1>
                     <span>{friend.bio_content}</span>
+                </div>
+                <div className='friend-buttons flex'>
+                    <div className='chat-icon flex'><BsFillChatDotsFill onClick={handleChat}/></div>
+                    <div className='unfriend-icon flex'><RiCloseCircleFill onClick={() => {setModal(true)}}/></div>
                 </div>
 
                 <Modal isOpen={modal} style={modalStyles}>
@@ -72,6 +74,7 @@ const Extend = ({ friend }) => {
                     </div>
                 </Modal>
             </div>
+          
         </div>
     );
 } 

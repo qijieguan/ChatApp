@@ -1,4 +1,4 @@
-.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 35% 60%; }
+.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 35% 62.5%; }
 
 .chat-log {
     margin: 5vh 0;

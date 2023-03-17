@@ -22,13 +22,15 @@ const Friend = () => {
     return (
         <>
             <Menu/>
-            <div className="friend flex">
+            <div className="friend-page">
             {friends.length ?
                 <div className='friend-wrapper grid'>
-                    <h1 className="flex"> 
+                    <div className="friend-wrapper-label flex"> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
-                        YOUR CONNECTIONS
-                    </h1>
+                        <div className='friend-wrapper-text'>
+                            <span>OVERVIEW </span> <span>CONNECTIONS</span>
+                        </div>
+                    </div>
                     {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
                 </div>
                 :

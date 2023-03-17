@@ -1,7 +1,6 @@
-.friend {
-    margin: 2vh auto 25vh auto;
-    align-items: flex-start;
-    padding: 2.5vh 0;
+.friend-page {
+    margin: 2vh auto;
+    padding: 0 0 2.5vh 0;
     min-height: 100vh;
     width: 90%;
     background: rgb(41, 41, 41);
@@ -9,87 +8,79 @@
     overflow: hidden;
 }
 
-.friend > h1 {
-    margin: 0 auto;
-    text-align: center;
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    color: white;
-}
-
-.friend-wrapper { grid-template-columns: 28% 28% 28%; row-gap: 3vh; justify-content: space-evenly; }
-.friend-wrapper > h1 {
-    grid-column: 1 / 4;
-    font-size: clamp(1.5rem, 3vw, 3rem);
-    letter-spacing: 0.125rem;
-    color: orange;
+.friend-wrapper { grid-template-columns: 18% 18% 18% 18% 18%; row-gap: 3vh; justify-content: space-evenly; width: 100%; }
+.friend-wrapper-label {
+    grid-column: 1 / 6;
+    padding: 0.5vh 2vw;
+    margin: 4vh 0 7.5vh 0;
+    width: fit-content;
+    color: cyan;
+    border: 2px solid;
+    border-radius: 1.5rem;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 
-.friend-extend {
-    align-items: flex-end;
-    flex-wrap: wrap;
+.friend-wrapper-text > span { 
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    letter-spacing: 0.125rem;
+}
+
+.friend {
     position: relative;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 0 auto;
     height: fit-content;
     width: 100%;
-    border: 1px solid rgb(56, 56, 56);
-    border-radius: 2.5rem;
-    overflow: hidden;
 }
 
-.friend-extend:hover { border: 2px solid gold; }
-.friend-extend:hover .friend-name { color: gold; }
+.friend:hover .friend-image { border: 2px solid gold; }
+.friend:hover .friend-name { color: gold; }
+.friend:hover .friend-preview { display: flex; }
 
-.friend-profile { 
+.friend-image { 
     width: 100%; 
     object-fit: cover;
-    max-height: 25vh; 
+    height: 20vh;
+    width: 20vh; 
     box-shadow: 0 0 3px black;
-    z-index: 2;
+    border-radius: 5rem;
 }
 .friend-name { 
     text-align: center; 
     margin: 1vh auto;
-    font-size: clamp(1rem, 2.5vw, 1.375rem); 
-    font-weight: bold;
-    color: gold; 
+    font-size: clamp(1rem, 1.5vw, 1.5rem); 
+    color: rgb(104, 104, 104); 
     z-index: 2; 
 }
 
-.friend-buttons { padding: 1vh 1vw 1.5vh 1vw; justify-content: flex-end; flex-wrap: wrap; width: 100%; }
-
-.unfriend-icon, .chat-icon, .friend-bio-icon { 
-    margin: auto 1vw auto 0; 
-    color: grey;  
-}
-.unfriend-icon * { font-size: clamp(1.5rem, 2vw, 1.75rem); }
-.unfriend-icon:hover * { color: red; }
-.chat-icon * { font-size: clamp(1.25rem, 1.75vw, 1.5rem); }
-.chat-icon:hover * {color: royalblue;  }
-.friend-bio-icon { font-size: clamp(1.5rem, 2vw, 2rem);  }
-.friend-bio-icon:hover * { color: gold; }
-
-.friend-bio {
-    display: none;
-    position: absolute;
+.friend-preview {
+    display: none; 
     flex-direction: column;
-    padding: 0 1vw 0 2.5vw;
-    inset: 0 auto auto 0;
-    text-overflow: ellipsis;
-    height: 100%;
-    width: 75%;
-    color: black;
-    background: yellow;
-    transform: translateX(-101%);
-    transition: all 0.5s ease-in 0.5s;
-    z-index: 4;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    align-items: flex-end;
+    position: absolute;
+    inset: 0 0 auto auto;
+    padding: 1vh 2vw 1.5vh 2vw; 
+    min-height: 0vh; 
+    width: 40vh; 
+    background: gold;
+    transform: translateX(70%);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 3px;
+    z-index: 3;
 }
 
-.friend-bio-icon:hover + .friend-bio { transform: translateX(0); }
-
-.friend-bio > h1 { font-size: clamp(1rem, 1.25vw, 1.25rem); border-bottom: 2px solid; width: 90%; }
+.friend-bio { margin-bottom: 4vh; padding-bottom: 2vh; border-bottom: 1px solid; }
+.friend-bio > h1 { font-size: clamp(1.5rem, 1.75vw, 1.75rem); width: 100%; }
 .friend-bio > span { width: 90%; font-size: clamp(0.875rem, 2.5vw, 1rem); }
-.friend-bio { display: flex; animation: slideRight 0.3s ease-in;  }
+
+.unfriend-icon * { font-size: clamp(1.5rem, 2vw, 1.75rem); }
+.unfriend-icon:hover * { color: darkred; }
+.chat-icon * { margin-right: 1vw; font-size: clamp(1.25rem, 1.75vw, 1.5rem); }
+.chat-icon:hover * {color: darkcyan; }
 
 .modal-text > span { color: orange; font-weight: 700; }
 .modal-btns { width: 100%; justify-content: space-between; }
@@ -107,11 +98,11 @@
 }
 
 @media (max-width: 50rem) {
-    .friend-wrapper { grid-template-columns: 45% 45%; row-gap: 1vh; }
-    .friend-wrapper > h1 { grid-column: 1 / 3; }
+    .friend-wrapper { grid-template-columns: 48% 48%; row-gap: 1vh; }
+    .friend-wrapper-label { grid-column: 1 / 3; }
 }
 
 @media (max-width: 25rem) {
-    .friend-wrapper { grid-template-columns: 90%; row-gap: 1vh; }
-    .friend-wrapper > h1 { grid-column: 1 / 2; }
+    .friend-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
+    .friend-wrapper-label { grid-column: 1 / 2; }
 }

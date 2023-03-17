@@ -10,7 +10,7 @@ const Chat = ({ chat, getSelect, removeChat }) => {
             </div>
             <div className='trash-wrapper' onClick={() => removeChat(chat)}>
                 <BsTrash className='trash-icon'/>
-                <div className='trash-overlay flex'>Delete this Chat</div>
+                <div className='trash-overlay flex'>Delete Chat Log</div>
             </div>
         </div>
     );
