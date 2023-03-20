@@ -7,8 +7,10 @@
     background: rgb(54, 54, 54);
     box-shadow: 0 0 3px black;
     border-radius: 0.375rem;
-    overflow: hidden;
+    overflow: scroll;
 }
+
+.chat-log::-webkit-scrollbar { display: none; }
 
 .chat-label {
     justify-content: space-around;
@@ -17,6 +19,7 @@
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 700;
     background: black;
+    border-bottom: 1px solid rgb(36, 36, 36);
     box-shadow: 0 1px 3pxrgb(34, 34, 34)k;
 }
 .chat-set { flex-direction: column; width: 100%; }
@@ -28,7 +31,7 @@
 .chat-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
 .chat-wrapper.highlight { background: black; color: gold; }
 .chat-wrapper:hover { color: gold; background: black; z-index: 3; }
-.chat { padding: 1vh 0; justify-content: flex-start; flex-wrap: wrap; height: 100%; width: 100%; transition: all 0.3s ease-in; }
+.chat { padding: 1vh 0; justify-content: flex-start; height: 15vh; width: 85%; transition: all 0.3s ease-in; }
 .chat > img { 
     margin: auto 2vw; 
     height: 10vh; 
@@ -36,15 +39,19 @@
     object-fit: cover; 
     border-radius: 10px; 
 }
-.chat > h1 { font-size: clamp(1.25rem, 1.5vw, 1.375rem); margin: auto 0; word-wrap: break-word; }
 
-.trash-wrapper { padding-right: 2vw; height: 100%; overflow: hidden; }
+.chat-preview { height: 75%; overflow: hidden; }
+.chat-preview > h1 { font-size: clamp(1rem, 1.25vw, 1.25rem); margin: auto 0; word-wrap: break-word; }
+.text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
+
+.trash-wrapper { justify-content: center; height: 100%; width: 15%; }
 .trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 1; transition-delay: 0.5s; }
 .trash-overlay {
     position: absolute;
     inset: 0 0 auto auto;
     justify-content: center;
-    font-size: clamp(1.5rem, 1.5vw, 1.75rem); 
+    letter-spacing: 1px;
+    font-size: clamp(1.25rem, 1vw, 1.5rem); 
     font-weight: 700;
     height: 100%;
     width: 100%;
@@ -59,6 +66,5 @@
 
 @media (max-width: 50rem) {
     .chat-page { grid-template-columns: 100%; width: 95%; }
-    .chat-log.close { display: none; }
-    .chat-log.open { display: unset !important; }
+    .chat-log { margin: 2vh 0 4vh 0; height: 30vh; }
 }

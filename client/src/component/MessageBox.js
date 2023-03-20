@@ -25,7 +25,7 @@ const MessageBox = ({ initChatLog }) => {
             axios.post(baseURL +'/texts/select/', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
-            }).then((response) => { setTextSet(response.data.text); });
+            }).then((response) => { setTextSet(response.data.texts); });
         });
         setTimeout(() => {scrollBottom();}, 500);
     }, [render, selectMsg, baseURL]);
@@ -41,7 +41,7 @@ const MessageBox = ({ initChatLog }) => {
             friend_id: user._id,
             content: content
         });
-        if (!textSet) { initChatLog() }
+        if (!textSet) { initChatLog(); }
     }
 
     const uploadText = async () => {
@@ -68,10 +68,8 @@ const MessageBox = ({ initChatLog }) => {
     }
 
     const goBack = () => { 
-        document.getElementById(selectMsg).classList.remove('highlight');
+        document.getElementById(selectMsg)?.classList.remove('highlight');
         sessionStorage.removeItem('select'); 
-        document.querySelector('.chat-log').classList.add('open');
-        document.querySelector('.message-container').classList.remove('open');
         setTextSet([]); 
     }
 
@@ -93,12 +91,17 @@ const MessageBox = ({ initChatLog }) => {
 
     return (
         <div className='message-container'>
-            <div className="private-message-header flex">
-            <button className="back-btn flex" onClick={goBack}><MdArrowBack/></button>
-            <span className='flex' style={{display: user ? '' : 'none'}}>
-                Messaging:<img src={user.image_url} alt=""/>
-                {user.firstname + " " + user.lastname}
-            </span>
+            <div className="private-message-header">
+                {user ?
+                <div className='flex'>
+                    <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
+                    <span className='flex'>
+                        Messaging:<img src={user.image_url} alt=""/>
+                        {user.firstname + " " + user.lastname}
+                    </span>
+                </div>
+                    : ""
+                }
             </div>
             <div className="private-message">
                 {textSet?

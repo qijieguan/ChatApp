@@ -5,7 +5,6 @@
     align-items: center;
     margin: 5vh 0;
     padding-bottom: 2rem;
-    min-height: 40rem;
     width: 100%;
     color: gold;
     background: #2c2f33;
@@ -16,29 +15,35 @@
 
 .private-message-header {
     padding: 0.5rem 0;
+    min-height: 12.5vh;
     width: 100%;
     background: black;
 }
-.private-message-header span { 
+.private-message-header > div { flex-wrap: wrap; row-gap: 1vh; width: 100%; }
+.private-message-header > div > span { 
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1vh;
     font-size: clamp(1rem, 2.5vw, 1.25rem); 
     font-weight: bold; 
     letter-spacing: 0.0625rem;
     margin: 0 10px; 
 }
-.back-btn { margin-left: 0.75rem; background: gold; border-radius: 0.125rem; }
-.back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
+#back-btn { margin: 0 5vh; background: gold; border-radius: 0.125rem; }
+#back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 .private-message-header img { 
     margin: 0 0.75rem 0 1rem;
-    min-height: 4rem; 
-    width: 4rem; 
+    min-height: 10vh; 
+    width: 10vh; 
     object-fit: cover; 
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
 .private-message { 
     margin: 4rem 0 4rem 10%; 
-    height: 30rem; width: 80%; 
+    height: 75vh; 
+    width: 80%; 
     scroll-behavior: smooth; 
     overflow-y: auto; 
 }
@@ -96,7 +101,7 @@
     outline-color: gold; 
     border-radius: 2rem;
 }
-.camera-wrapper { position: absolute; right: 10%; top: 50%; transform: translate(-50%, -50%); }
+.camera-wrapper { position: absolute; top: 15%; right: 7.5%; }
 .camera-icon { 
     position: absolute; 
     font-size: clamp(1.625rem, 2.5vw, 1.75rem);
@@ -124,17 +129,18 @@
 }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; }
-    .message-container.open { display: flex !important; }
+    .message-container { margin: 0 0 5vh 0; }
+    .private-message-header { min-height: 7.5vh; }
+    .private-message { height: 60vh; }
     .text-input { height: 50%; } 
     .text-input-wrapper {  flex-direction: column; }
     .text-input-wrapper > button { margin: 2.5vh 15% 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
-    .camera-wrapper { right: 15%; top: 50%; }
+    .camera-wrapper { right: 15%; }
 }
 
 @media (max-width: 25rem) {
     .text-format { width: 80%; }
     .text-input { width: 95%; }
     .text-input-wrapper > button { margin: 2.5vh 5% 0 auto; }
-    .camera-wrapper { right: 25%; top: 50%; }
+    .camera-wrapper { right: 20%; }
 }

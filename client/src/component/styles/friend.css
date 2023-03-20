@@ -35,8 +35,8 @@
     width: 100%;
 }
 
-.friend:hover .friend-image { border: 2px solid gold; }
-.friend:hover .friend-name { color: gold; }
+.friend:hover .friend-image { border: 2px solid cyan; }
+.friend:hover .friend-name { color: cyan; }
 .friend:hover .friend-preview { transform: scale(1); }
 
 .friend-image { 
@@ -60,13 +60,14 @@
     flex-direction: column;
     flex-wrap: wrap; 
     justify-content: space-between;
-    align-items: flex-end;
+
     position: absolute;
     inset: 0 0 auto auto;
     padding: 1vh 2vw 1.5vh 2vw; 
     min-height: 0vh; 
     width: 40vh; 
-    background: gold;
+    color: cyan;
+    background: rgb(36, 36, 36);
     border-radius: 0.5rem;
     box-shadow: 0 0 3px;
     transform: scale(0) translateX(25%);

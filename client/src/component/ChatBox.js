@@ -8,6 +8,7 @@ import MessageBox from './MessageBox.js';
 const ChatBox = () => {
 
     const [chatLog, setchatLog] = useState([]);
+    const [textsPreview, setPreview] = useState([]);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
@@ -15,17 +16,15 @@ const ChatBox = () => {
 
     const getChatLog = async () => {
         await axios.post(baseURL +'/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })
-        .then((response) => { setchatLog(response.data) }); 
+        .then((response) => { 
+            setchatLog(response.data) 
+        }); 
         let id = sessionStorage.getItem('select');
         if (id) { setTimeout(() => { document.getElementById(id)?.classList.add('highlight');}, 250); };
     }
 
     const getSelect = (chat_id) => { 
-        sessionStorage.setItem('select', chat_id); 
-        document.querySelector('.chat-log').classList.remove('open');
-        document.querySelector('.chat-log').classList.add('close');
-        document.querySelector('.message-container').classList.add('open');
-        
+        sessionStorage.setItem('select', chat_id);
         getChatLog();
     }
 
@@ -35,7 +34,12 @@ const ChatBox = () => {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
             friend_id: chat._id 
         })
-        .then((response) => { if (sessionStorage.getItem('select') === chat._id) { sessionStorage.removeItem('select'); } }); 
+        .then((response) => { 
+            if (sessionStorage.getItem('select') === chat._id) { 
+                let backBtn = document.getElementById('back-btn');
+                backBtn.click();
+            } 
+        }); 
     }
 
     const initChatLog = () => { getChatLog() };

@@ -55,7 +55,7 @@ const Menu = () => {
                 <div className='menu-user'>{user.firstname} {user.lastname}</div>
                 <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.25vw'}}/>
                 <div className='menu-links flex'>
-                    <Link to='/Profile' className='menu-link flex' style={{columnGap: '0.5vw'}}>
+                    <Link to='/Profile' className='menu-link flex'>
                         <div>PROFILE</div>
                         <BsFilePersonFill className='person-icon'/>
                     </Link>

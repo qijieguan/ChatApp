@@ -1,6 +1,6 @@
 import { MdPersonAdd } from 'react-icons/md';
-import { FiCheckCircle } from 'react-icons/fi';
 import { AiFillRead } from 'react-icons/ai';
+import { HiCheckCircle } from 'react-icons/hi'
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFriend } from './actions/index.js';
@@ -46,7 +46,7 @@ const User = ({ user }) => {
                                 <div className='user-icon-1'>
                                     <MdPersonAdd color='cyan' size={26} onClick={handleAdd}/>
                                 </div>
-                                : <div className='user-icon-2'><FiCheckCircle color="lime" size={24}/></div>
+                                : <div className='user-icon-2'><HiCheckCircle color="lime" size={24}/></div>
                             }
                         </> :''
                     }

@@ -65,9 +65,10 @@
     border: 2px solid transparent;
 }
 
-.menu-link * { color: gold; }
-.person-icon { font-size: clamp(1rem, 1.75vw, 1.75rem); width: fit-content; }
-.logout-icon { font-size: clamp(1rem, 2.5vw, 2rem); width: fit-content; }
+
+.menu-link * { color: gold; margin: 0; }
+.person-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); width: fit-content; margin: 0 0.5vw; }
+.logout-icon { font-size: clamp(1.5rem, 2.5vw, 2rem); width: fit-content; }
 .menu-link > div { font-size: clamp(0.75rem, 2.5vw, 0.875rem); font-weight: 500; }
 .menu-dropdown:hover .menu-links { display: flex; flex-direction: column; }
 .menu-link:hover { border-color: gold; }
@@ -83,4 +84,5 @@
     .menu-li-icon { margin-left: 0; }
     .menu-dropdown > img { margin: auto; }
     .menu-links { width: 250%; }
+    .person-icon { margin: 0 1vw; }
 }

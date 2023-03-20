@@ -1,6 +1,5 @@
 import { RiCloseCircleFill } from 'react-icons/ri';
 import  { BsFillChatDotsFill } from 'react-icons/bs';
-import { AiFillRead } from 'react-icons/ai';
 import { deleteFriend } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -40,6 +39,7 @@ const Extend = ({ friend }) => {
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
+
         window.location.href = '/Dashboard';
     }
 
@@ -66,8 +66,12 @@ const Extend = ({ friend }) => {
          
             <div className='friend-preview'>
                 <div className='friend-bio' id={friend._id}>
-                    <h1>Bio</h1>
-                    <span>{friend.bio_content}</span>
+                    <h1>Profile</h1>
+                    {friend.bio_content ?
+                        <span>{friend.bio_content}</span>
+                        :
+                        <span>(No profile has been set for this user)</span>
+                    }
                 </div>
                 <div className='friend-buttons flex'>
                     <div className='chat-icon flex'><BsFillChatDotsFill onClick={handleChat}/></div>
