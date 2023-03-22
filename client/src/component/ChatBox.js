@@ -8,7 +8,6 @@ import MessageBox from './MessageBox.js';
 const ChatBox = () => {
 
     const [chatLog, setchatLog] = useState([]);
-    const [textsPreview, setPreview] = useState([]);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 

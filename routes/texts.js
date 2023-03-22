@@ -2,6 +2,14 @@ const router = require('express').Router();
 let Text = require('../models/text.model');
 let User = require('../models/user.model');
 
+const cloudinary = require('cloudinary').v2;
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_KEY,
+    api_secret: process.env.CLOUD_SECRET,
+});
+
 router.route('/').post((req, res) => {
     const user_id = req.body.user_id;
 
@@ -62,8 +70,29 @@ router.route('/add').post((req, res) => {
 
 router.route('/delete').post((req, res) => {
     const users = [req.body.user_id, req.body.friend_id];
-    Text.deleteOne({users: {$all: users}})
-    .then(() => res.json())
+    Text.find({users: {$all: users}})
+    .then(result => {
+        result.forEach(texts => {
+            texts.texts.forEach(text => {
+                if (text.content.includes('cloudinary')) {
+                    let parseURL = text.content.split("/");
+                    let public_id = "";
+
+                    parseURL = parseURL[parseURL.length - 1];
+                    parseURL = parseURL.split('.');
+                    public_id = parseURL[0];
+
+                    cloudinary.uploader.destroy("Upload/" + public_id, {type : 'upload', resource_type : 'image'});
+                }    
+            });
+        });
+
+      
+        Text.deleteOne({users: {$all: users}})
+        .then(() => res.json())
+        .catch(err => res.status(400).json("Error " + err));
+      
+    })
     .catch(err => res.status(400).json("Error " + err));
 });
 
