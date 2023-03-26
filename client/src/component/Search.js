@@ -12,14 +12,14 @@ const Search = () => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => { axios.get(baseURL + '/users/').then((response) => { setUsers(response.data); }); }, []);
+    useEffect(() => { axios.get(baseURL + '/users/').then((response) => { setUsers(response.data); }); }, [baseURL]);
 
     return(
         <>
             <Menu/>
             <div className="search">
                 <div className='search-wrapper grid'>
-                    <div className='search-wrapper-label flex'><FcGlobe size={80} style={{marginRight: '1rem'}}/>DISCOVER NEW PEOPLE</div>
+                    <div className='search-wrapper-label flex'><FcGlobe size={80} style={{marginRight: '1rem'}}/>SEARCH OVERVIEW</div>
                     {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
                 </div>
             </div>

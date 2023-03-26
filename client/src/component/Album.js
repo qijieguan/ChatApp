@@ -9,7 +9,6 @@ const Album = ({ callRender }) => {
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
     const [src, setSRC] = useState("");
-    const [render, setRender] = useState(false);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
@@ -25,15 +24,14 @@ const Album = ({ callRender }) => {
     const uploadImage = async () => {
         const data = new FormData();
         data.append('file', files[0]);
-        data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
-        .then(res => res.json()).then(json => {
+        await axios.post(baseURL + '/texts/upload-image', data)
+        .then((response) => {
             axios.post(baseURL +'/users/upload_photo', {
                 user_id: user._id,
-                url: json.secure_url
+                url: response.data
             });
-        });
+        });  
     };
 
     const handleUpload = async (e) => {
@@ -44,7 +42,6 @@ const Album = ({ callRender }) => {
         setURL("");
         setFiles("");
         document.querySelector(".file").value="";
-        setRender(!render);
     }
 
     const handleClick = (e) => {
@@ -80,9 +77,9 @@ const Album = ({ callRender }) => {
                     <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
                     <button type='submit'>Upload</button>
                 </form>
-            
-            <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE</div>
             */}
+            <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE</div>
+            
             <form className='album-list grid' onSubmit={handleSwitch}>
                 {user.photo_album.length ?
                     user.photo_album.map(photo => 

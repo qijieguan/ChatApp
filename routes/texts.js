@@ -1,14 +1,25 @@
 const router = require('express').Router();
+const express = require("express");
+const app = express();
+
 let Text = require('../models/text.model');
 let User = require('../models/user.model');
 
-const cloudinary = require('cloudinary').v2;
+const cloudinary = require('../utils/cloudinary');
+const fs = require('fs');
 
-cloudinary.config({
-    cloud_name: process.env.CLOUD_NAME,
-    api_key: process.env.CLOUD_KEY,
-    api_secret: process.env.CLOUD_SECRET,
-});
+const multer = require('multer')
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' +file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage }).single('file')
 
 router.route('/').post((req, res) => {
     const user_id = req.body.user_id;
@@ -42,6 +53,32 @@ router.route('/select').post((req, res) => {
 
     Text.find({users: {$all: users}})
     .then(texts => res.json(texts[0]))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+const uploadImage = (req, res, next) => {
+    upload(req, res, (err) => {
+        if (err) {
+          res.sendStatus(500);
+        }
+        req.imagePath = req.file.path;
+        next();
+    });
+};
+
+router.route('/upload-image').post(uploadImage, async (req, res) => {
+    let imageURL = '';
+
+    await cloudinary.uploader.upload(req.imagePath, {folder: 'Upload'}, (err, result) => { 
+        if (err) return err;
+        imageURL = result.secure_url;
+    })
+    .then(() => {
+        fs.unlink(req.imagePath, function (err) {
+            if (err) throw err;
+        });
+        res.json(imageURL);
+    })
     .catch(err => res.status(400).json("Error " + err));
 });
 

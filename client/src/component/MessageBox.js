@@ -18,17 +18,19 @@ const MessageBox = ({ initChatLog }) => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const selectMsg = sessionStorage.getItem('select');
 
-    useEffect(() => {    
-        axios.post(baseURL +'/users/select/', {user_id: sessionStorage.getItem('select')})
+    useEffect(() => { renderConversation(); }, [render, selectMsg, baseURL]);
+
+    const renderConversation = async () => {
+        await axios.post(baseURL +'/users/select/', {user_id: sessionStorage.getItem('select')})
         .then((response) => { 
             setUser(response.data);
             axios.post(baseURL +'/texts/select/', {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.texts); });
+            setTimeout(() => {scrollBottom();}, 500);
         });
-        setTimeout(() => {scrollBottom();}, 500);
-    }, [render, selectMsg, baseURL]);
+    }
 
     const scrollBottom = () => {
         let element = document.querySelector(".private-message")
@@ -49,11 +51,12 @@ const MessageBox = ({ initChatLog }) => {
 
         const data = new FormData();
         data.append('file', files[0]);
-        data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
-        .then(res => res.json()).then(json => { postText(json.secure_url); });
-        setRender(!render); 
+        await axios.post(baseURL + '/texts/upload-image', data)
+        .then((response) => {
+            postText(response.data);
+            setRender(!render);
+        });       
     };
 
     const handleSubmit = (event) => {

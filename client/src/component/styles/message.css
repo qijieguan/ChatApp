@@ -74,7 +74,7 @@
     display: none; 
     padding: 1.5vh 1vw; 
     font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
-    font-weight: 700; 
+    font-weight: 500; 
     word-wrap: break-word;
     min-height: 15vh; 
 }
@@ -84,7 +84,6 @@
     inset: auto 0 0 auto;
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
     letter-spacing: 0.5px;
-    font-weight: 700; 
     margin: auto 1vw 0 0 !important;  
     color: rgb(31, 31, 31);
     z-index: 1;
