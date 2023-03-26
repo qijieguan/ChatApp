@@ -23,8 +23,19 @@ const Album = ({ callRender }) => {
 
     const uploadImage = async () => {
         const data = new FormData();
-        data.append('file', files[0]);
 
+        data.append('file', files[0]);
+        data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
+
+        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
+        .then(res => res.json()).then(json => {
+            axios.post(baseURL +'/users/upload_photo', {
+                user_id: user._id,
+                url: json.secure_url
+            });
+        });
+            
+        /*
         await axios.post(baseURL + '/texts/upload-image', data)
         .then((response) => {
             axios.post(baseURL +'/users/upload_photo', {
@@ -32,6 +43,7 @@ const Album = ({ callRender }) => {
                 url: response.data
             });
         });  
+        */
     };
 
     const handleUpload = async (e) => {
