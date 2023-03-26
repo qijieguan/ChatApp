@@ -53,15 +53,16 @@ const MessageBox = ({ initChatLog }) => {
         data.append('file', files[0]);
         data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        //await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
-        //.then(res => res.json()).then(json => { postText(json.secure_url); setRender(!render); });
+        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
+        .then(res => res.json()).then(json => { postText(json.secure_url); setRender(!render); });
 
-        
+        /*
         await axios.post(baseURL + '/texts/upload-image', data)
         .then((response) => {
             postText(response.data);
             setRender(!render);
         });
+        */
                
     };
 
