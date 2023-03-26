@@ -12,6 +12,7 @@ const Album = ({ callRender }) => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
+    
     const readFiles = (files) => {
         if (!files) { return }
         const reader = new FileReader();
