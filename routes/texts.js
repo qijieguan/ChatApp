@@ -56,7 +56,7 @@ router.route('/select').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
-/*
+
 const uploadImage = (req, res, next) => {
     upload(req, res, (err) => {
         if (err) {
@@ -82,7 +82,6 @@ router.route('/upload-image').post(uploadImage, async (req, res) => {
     })
     .catch(err => res.status(400).json("Error " + err));
 });
-*/
 
 router.route('/add').post((req, res) => {
     const users = [req.body.user_id, req.body.friend_id];
