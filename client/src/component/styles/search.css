@@ -1,23 +1,21 @@
 .search {
     padding: 2.5vh 0;
-    margin: 2vh auto;
-    min-height: 100vh;
-    width: 90%;
+    min-height: 120vh;
+    width: 100%;
     background: rgb(41, 41, 41);
-    border-radius: 0.5rem;
 }
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; row-gap: 2vh; }
 .search-wrapper-label {
     grid-column: 1 / 5;
     padding: 0.5vh 2vw;
-    margin: 4vh 0 10vh 0;
+    margin: 4vh auto;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     letter-spacing: 0.125rem;
     width: fit-content;
     color: limegreen;
-    border: 2px solid;
-    border-radius: 1.5rem;
+    border: 1px solid;
+    border-radius: 0.5rem;
     animation: fadeSlideLeft 0.5s ease-in forwards;
 }
 
@@ -32,11 +30,11 @@
     border-radius: 1rem;
     z-index: 1;
     overflow: hidden;
-    transition: 0.5s all 0.5s ease-in;
+    transition: 0.5s all 1s ease-in;
 }
 
 .user * { transition: 0.5s all; }
-.user:hover { height: 25rem; width: 15rem; z-index: 2;}
+.user:hover { height: 200%; z-index: 2; }
 .user-image { 
     position: absolute;
     inset: 0 auto auto 0; 

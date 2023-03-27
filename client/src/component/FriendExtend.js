@@ -63,21 +63,24 @@ const Extend = ({ friend }) => {
         <div className="friend flex" onMouseEnter={calcOffset}>
             <img src={friend.image_url} className="friend-image" alt=""/>
             <div className="friend-name">{friend.firstname} {friend.lastname}</div>
-         
+            <div className='profile-view'>(view profile)</div>
+            
             <div className='friend-preview'>
                 <div className='friend-bio' id={friend._id}>
-                    <h1>Profile</h1>
                     {friend.bio_content ?
                         <span>{friend.bio_content}</span>
                         :
                         <span>(No profile has been set for this user)</span>
                     }
                 </div>
-                <div className='friend-buttons flex'>
-                    <div className='chat-icon flex'><BsFillChatDotsFill onClick={handleChat}/></div>
-                    <div className='unfriend-icon flex'><RiCloseCircleFill onClick={() => {setModal(true)}}/></div>
+                <div className='friend-buttons grid'>
+                    <button className='chat-button flex' onClick={handleChat}>
+                        Message
+                    </button>
+                    <button className='remove-button flex' onClick={() => {setModal(true)}}>
+                        Remove
+                    </button>
                 </div>
-
                 <Modal isOpen={modal} style={modalStyles}>
                     <h1 className='modal-text'>Are you sure you want to unfriend <span>{friend.firstname} {friend.lastname}</span>?</h1>
                     <div className='modal-btns flex'>
@@ -86,7 +89,6 @@ const Extend = ({ friend }) => {
                     </div>
                 </Modal>
             </div>
-          
         </div>
     );
 } 

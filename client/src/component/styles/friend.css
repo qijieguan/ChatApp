@@ -2,21 +2,20 @@
     margin: 2vh auto;
     padding: 0 0 2.5vh 0;
     min-height: 100vh;
-    width: 90%;
-    background: rgb(41, 41, 41);
+    width: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
 }
 
-.friend-wrapper { grid-template-columns: 18% 18% 18% 18% 18%; row-gap: 3vh; justify-content: space-evenly; width: 100%; }
+.friend-wrapper { margin: 0 auto; grid-template-columns: 18% 18% 18% 18% 18%; row-gap: 3vh; justify-content: space-evenly; width: 100%; }
 .friend-wrapper-label {
     grid-column: 1 / 6;
     padding: 0.5vh 2vw;
-    margin: 4vh 0 7.5vh 0;
+    margin: 4vh auto;
     width: fit-content;
-    color: cyan;
-    border: 2px solid;
-    border-radius: 1.5rem;
+    color: royalblue;
+    border: 1px solid;
+    border-radius: 0.5rem;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 
@@ -25,19 +24,17 @@
     letter-spacing: 0.125rem;
 }
 
-.friend {
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    height: fit-content;
-    width: 100%;
+.friend { 
+    position: relative; 
+    padding: 1vh 0; 
+    flex-direction: column; 
+    height: fit-content; 
+    background: royalblue; 
+    border-radius: 2rem;
+    border: 2px solid transparent; 
+    overflow: hidden; 
 }
-
-.friend:hover .friend-image { border: 2px solid cyan; }
-.friend:hover .friend-name { color: cyan; }
-.friend:hover .friend-preview { transform: scale(1); }
+.friend:hover { border-color: navy; }
 
 .friend-image { 
     width: 100%; 
@@ -51,38 +48,36 @@
     text-align: center; 
     margin: 1vh auto;
     font-size: clamp(1rem, 1.5vw, 1.5rem); 
-    color: rgb(104, 104, 104); 
     z-index: 2; 
 }
 
 .friend-preview {
-    display: flex; 
+    display: none; 
+    align-self: flex-end;
+    padding: 2vh 1vw 0 1vw;
     flex-direction: column;
-    flex-wrap: wrap; 
     justify-content: space-between;
-    position: absolute;
-    inset: 0 0 auto auto;
-    padding: 1vh 2vw 1.5vh 2vw; 
-    width: 40vh; 
-    color: cyan;
-    background: rgb(36, 36, 36);
+    width: 100%;
+    background: royalblue;
     border-radius: 0.5rem;
-    box-shadow: 0 0 3px;
-    transform: scale(0) translateX(25%);
     transition: all 0.5s ease-in;
     z-index: 3;
 }
+.friend-preview:hover { display: flex; }
 
-.friend-preview.left { inset: 0 auto auto 0; transform: scale(0) translateX(-25%); }
+.profile-view { text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); }
+.profile-view:hover { color: navy; }
+.profile-view:hover + .friend-preview { display: flex; }
 
-.friend-bio { margin-bottom: 4vh; padding-bottom: 2vh; border-bottom: 1px solid; }
-.friend-bio > h1 { font-size: clamp(1.5rem, 1.5vw, 1.5rem); width: 100%; }
-.friend-bio > span { width: 90%; font-size: clamp(0.875rem, 1vw, 1rem); }
 
-.unfriend-icon * { font-size: clamp(1.5rem, 2vw, 1.75rem); }
-.unfriend-icon:hover * { color: darkred; }
-.chat-icon * { margin-right: 1vw; font-size: clamp(1.25rem, 1.75vw, 1.5rem); }
-.chat-icon:hover * {color: darkcyan; }
+.friend-bio { padding: 1vh 1vw; }
+.friend-bio > span { font-size: clamp(0.875rem, 1vw, 1rem); }
+
+.friend-buttons { grid-template-columns: 45% 45%; padding: 2vh 0; }
+.friend-buttons > button { padding: 1vh 0; justify-content: center; background: rgb(201, 201, 201); }
+.chat-button, .remove-button { color: navy; font-size: clamp(0.75rem, 1vw, 1rem); border: 1px solid; }
+.chat-button:hover { background: navy; color: white; border-color: navy; }
+.remove-button:hover { background: red; color: white; border-color: red; }
 
 .modal-text > span { color: orange; font-weight: 700; }
 .modal-btns { width: 100%; justify-content: space-between; }
@@ -107,6 +102,4 @@
 @media (max-width: 25rem) {
     .friend-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
     .friend-wrapper-label { grid-column: 1 / 2; }
-    .friend:hover .friend-preview { transform: scale(1) translateX(0); }
-    .friend-preview { inset: 0 auto auto 0; width: 99%; }
 }

@@ -16,7 +16,7 @@ const FriendCount = () => {
             axios.post(baseURL +'/users/', { friend_ids: friend_ids })
             .then((response) => { setFriends(response.data) });
         }
-    }, []);
+    }, [baseURL, friend_ids]);
 
     return (
         <div className='friend-count flex'>
