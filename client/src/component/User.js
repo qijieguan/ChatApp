@@ -44,9 +44,9 @@ const User = ({ user }) => {
                         <>
                             {!isFriend ? 
                                 <div className='user-icon-1'>
-                                    <MdPersonAdd color='cyan' size={26} onClick={handleAdd}/>
+                                    <MdPersonAdd color='green' size={26} onClick={handleAdd}/>
                                 </div>
-                                : <div className='user-icon-2'><HiCheckCircle color="lime" size={24}/></div>
+                                : <div className='user-icon-2'><HiCheckCircle color="gold" size={24}/></div>
                             }
                         </> :''
                     }

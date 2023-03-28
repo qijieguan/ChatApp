@@ -43,7 +43,7 @@
     background-image: url("https://images.pexels.com/photos/267403/pexels-photo-267403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-size: cover;
     background-position: center; 
-    color: rgb(255, 238, 207); 
+    color: rgb(224, 224, 224); 
 }
 .header-banner-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-banner-text * { 

@@ -9,12 +9,13 @@
 .search-wrapper-label {
     grid-column: 1 / 5;
     padding: 0.5vh 2vw;
-    margin: 4vh auto;
+    margin: 4vh auto 10vh auto;
+    justify-content: center;
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     letter-spacing: 0.125rem;
-    width: fit-content;
-    color: limegreen;
-    border: 1px solid;
+    width: 100%;
+    color: gold;
+    border: 2px solid;
     border-radius: 0.5rem;
     animation: fadeSlideLeft 0.5s ease-in forwards;
 }
@@ -72,7 +73,7 @@
     padding: 1vh 1vw;
     bottom: 0;
     height: 100%;
-    color: white;
+    color: gold;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 40%, rgba(0, 0, 0, 0.9) 40%, rgb(41, 41, 41, 0.4) );
     transform: translateY(100%);
     transition: all 0.5s ease-in;

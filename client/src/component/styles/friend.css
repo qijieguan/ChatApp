@@ -7,14 +7,15 @@
     overflow: hidden;
 }
 
-.friend-wrapper { margin: 0 auto; grid-template-columns: 18% 18% 18% 18% 18%; row-gap: 3vh; justify-content: space-evenly; width: 100%; }
+.friend-wrapper { margin: 0 auto; grid-template-columns: 15% 15% 15% 15% 15%; row-gap: 3vh; justify-content: space-evenly; width: 100%; }
 .friend-wrapper-label {
     grid-column: 1 / 6;
     padding: 0.5vh 2vw;
-    margin: 4vh auto;
-    width: fit-content;
-    color: royalblue;
-    border: 1px solid;
+    margin: 4vh auto 10vh auto;
+    justify-content: center;
+    width: 100%;
+    color: rgb(79, 108, 180);
+    border: 2px solid;
     border-radius: 0.5rem;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
@@ -24,17 +25,27 @@
     letter-spacing: 0.125rem;
 }
 
-.friend { 
-    position: relative; 
+.friend-container {
+    position: relative;
     padding: 1vh 0; 
-    flex-direction: column; 
-    height: fit-content; 
-    background: royalblue; 
-    border-radius: 2rem;
-    border: 2px solid transparent; 
-    overflow: hidden; 
+    height: fit-content;
+    width: 100%;
+    background: rgb(47, 65, 110);
+    border-radius: 1rem; 
+    overflow: hidden;
 }
-.friend:hover { border-color: navy; }
+
+.friend-container.expand {
+    overflow: unset;
+    box-shadow: 0 0 3px;
+}
+
+.friend-container:hover { box-shadow: 0 0 3px black; }
+
+.friend { 
+    flex-direction: column; 
+    width: 100%;
+}
 
 .friend-image { 
     width: 100%; 
@@ -47,37 +58,46 @@
 .friend-name { 
     text-align: center; 
     margin: 1vh auto;
-    font-size: clamp(1rem, 1.5vw, 1.5rem); 
-    z-index: 2; 
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
 .friend-preview {
-    display: none; 
+    position: absolute;
+    inset: 0 0 auto auto;
     align-self: flex-end;
-    padding: 2vh 1vw 0 1vw;
+    padding: 1vh 1vw;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    background: royalblue;
-    border-radius: 0.5rem;
-    transition: all 0.5s ease-in;
+    color: rgb(170, 170, 170);
+    background: rgb(47, 65, 110);
+    border-radius: 1rem;
+    box-shadow: 0 0 3px black;
+    transform: translateX(102%);
     z-index: 3;
 }
-.friend-preview:hover { display: flex; }
 
-.profile-view { text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); }
+.friend-preview.left { inset: 0 auto auto 0; transform: translateX(-102%); }
+
+.profile-view { margin-bottom: 2vh; text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); color: gray; }
 .profile-view:hover { color: navy; }
-.profile-view:hover + .friend-preview { display: flex; }
-
 
 .friend-bio { padding: 1vh 1vw; }
 .friend-bio > span { font-size: clamp(0.875rem, 1vw, 1rem); }
 
-.friend-buttons { grid-template-columns: 45% 45%; padding: 2vh 0; }
-.friend-buttons > button { padding: 1vh 0; justify-content: center; background: rgb(201, 201, 201); }
-.chat-button, .remove-button { color: navy; font-size: clamp(0.75rem, 1vw, 1rem); border: 1px solid; }
-.chat-button:hover { background: navy; color: white; border-color: navy; }
-.remove-button:hover { background: red; color: white; border-color: red; }
+.friend-buttons { display: none; grid-template-columns: 45% 45%; height: 0; }
+.friend-container:hover .friend-buttons { display: grid; height: fit-content; }
+
+.friend-buttons > button { 
+    padding: 0.5vh 0.5vw; 
+    justify-content: center; 
+    font-size: clamp(0.75rem, 1vw, 0.875rem); 
+    font-weight: 300;
+    color: white; 
+    border-radius: 0.25rem; 
+}
+.chat-button { background: rgb(43, 43, 100); }
+.remove-button { background: rgb(133, 38, 38); }
 
 .modal-text > span { color: orange; font-weight: 700; }
 .modal-btns { width: 100%; justify-content: space-between; }
@@ -95,11 +115,12 @@
 }
 
 @media (max-width: 50rem) {
-    .friend-wrapper { grid-template-columns: 48% 48%; row-gap: 1vh; }
+    .friend-wrapper { grid-template-columns: 40% 40%; row-gap: 1vh; }
     .friend-wrapper-label { grid-column: 1 / 3; width: 100%; }
 }
 
 @media (max-width: 25rem) {
     .friend-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
     .friend-wrapper-label { grid-column: 1 / 2; }
+    .profile-view:hover + .friend-preview { transform: translateX(0); }
 }
