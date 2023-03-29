@@ -30,12 +30,12 @@ const Register = () => {
         data.append('file', files[0]);
         data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
-        await fetch(process.env.REACT_APP_IMAGE_URL + '/image/upload', { method: 'POST', body: data })
-        .then(res => res.json()).then(json => {
+        await axios.post(baseURL + '/texts/upload-image', data)
+        .then((response) => {
             axios.post(baseURL +'/users/register/', {
                 username: username,
                 password: password,
-                image_url: json.secure_url,
+                image_url: response.data,
                 firstname: fname,
                 lastname: lname,
             }).then((response) => { 

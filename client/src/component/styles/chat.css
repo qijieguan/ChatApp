@@ -30,8 +30,8 @@
 }
 .chat-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
 .chat-wrapper.highlight { background: rgb(0, 0, 59); color: gold; }
-.chat-wrapper:hover { color: gold; background: black; z-index: 3; }
-.chat { padding: 1vh 0; justify-content: flex-start; height: 15vh; width: 85%; transition: all 0.3s ease-in; }
+.chat-wrapper:hover { color: gold; background: rgb(0, 0, 59); z-index: 3; }
+.chat { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
 .chat > img { 
     margin: auto 2vw; 
     height: 10vh; 
@@ -51,7 +51,8 @@
     inset: 0 0 auto auto;
     justify-content: center;
     letter-spacing: 1px;
-    font-size: clamp(1.25rem, 1vw, 1.5rem); 
+    font-size: clamp(1rem, 1.25vw, 1.25rem); 
+    font-style: italic;
     font-weight: 700;
     height: 100%;
     width: 100%;

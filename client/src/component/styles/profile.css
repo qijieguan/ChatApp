@@ -54,7 +54,7 @@
     background: transparent;
     border: 1px solid;
 }
-.submit-button { color: lightgreen; border: 1px solid; }
+.submit-button { color: royalblue; border: 1px solid; }
 
 .bio-edit { margin: 1vh auto; justify-content: center; column-gap: 1vw; width: 100%; }
 .bio-edit > textarea { padding: 1vh 1vw; min-height: 15vh; width: 50%; background: gray; word-wrap: break-word; }
