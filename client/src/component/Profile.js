@@ -32,7 +32,7 @@ const Profile = () => {
             <Menu/>
             <div className="profile flex">
                 <div className='profile-header flex'>
-                    <img src={user.image_url} className="profile-image" alt=""/>
+                    <img src={user.profile_url} className="profile-image" alt=""/>
                     <div className='profile-name'>{user.firstname} {user.lastname}</div>
                     
                     <div className='profile-bio flex'>

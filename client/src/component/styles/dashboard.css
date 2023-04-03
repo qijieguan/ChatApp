@@ -1,0 +1,12 @@
+.dashboard { 
+    padding-bottom: 10vh;
+    grid-template-columns: 20% 75%;
+    column-gap: 1.5vw; 
+    justify-content: center;
+    min-height: 100vh; 
+    background: rgb(26, 26, 26); 
+}
+
+@media (max-width: 50rem) {
+    .dashboard { grid-template-columns: 95%; }
+}

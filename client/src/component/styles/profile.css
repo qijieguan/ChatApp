@@ -40,7 +40,7 @@
     width: 75%;
     font-size: 0.875rem;
     font-weight: 700;
-    color: white;
+    color: rgb(190, 190, 190);
 }
 
 .edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; background: gray; border-radius: 0.125rem; }
@@ -57,5 +57,14 @@
 .submit-button { color: royalblue; border: 1px solid; }
 
 .bio-edit { margin: 1vh auto; justify-content: center; column-gap: 1vw; width: 100%; }
-.bio-edit > textarea { padding: 1vh 1vw; min-height: 15vh; width: 50%; background: gray; word-wrap: break-word; }
+.bio-edit > textarea { 
+    padding: 1vh 1vw; 
+    min-height: 15vh; 
+    word-wrap: break-word; 
+    width: 50%; 
+    color: rgb(179, 179, 179); 
+    background: rgb(39, 39, 39);
+    border: 0;
+    outline: 0;
+}
 .bio-edit > div { column-gap: 1vw;}

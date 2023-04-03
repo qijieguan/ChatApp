@@ -18,10 +18,12 @@ mongoose.connect(uri);
 const usersRouter = require('./routes/users');
 const friendsRouter = require('./routes/friends');
 const textsRouter = require('./routes/texts');
+const postsRouter = require('./routes/posts')
 
 app.use('/users', usersRouter);
 app.use('/friends', friendsRouter);
 app.use('/texts', textsRouter);
+app.use('/posts', postsRouter);
 
 app.get('*', (req, res) => {res.sendFile(path.join(__dirname+'/client/build/index.html'));});
 

@@ -4,6 +4,8 @@ import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Login from './component/Login.js';
 import Dashboard from './component/Dashboard';
+import Post from './component/Post';
+import ChatMain from './component/ChatMain';
 import Search from './component/Search.js';
 import Friend from './component/Friend.js';
 import About from './component/About.js';
@@ -29,7 +31,9 @@ function App() {
               <Route path="/" exact component={Home}/>
               <Route path="/Register" exact component={Register}/>
               <Route path="/Login" exact component={Login}/>
-              <Route path="/Dashboard" exact component={Dashboard}/>
+              <Route path="/Dashboard/:param" exact component={Dashboard}/>
+              <Route path='/Dashboard/Post' exact component={Post}/>
+              <Route path='/Dashboard/Chat' exact component={ChatMain}/>
               <Route path="/Search" exact component={Search}/>
               <Route path="/Friend" exact component={Friend}/>
               <Route path="/About" exact component={About}/>

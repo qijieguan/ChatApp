@@ -32,7 +32,7 @@ const Login = () => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    const [username, setUsername] = useState("Guest");
+    const [username, setUsername] = useState("guest");
     const [password, setPassword] = useState("password");
     const [token, setToken] = useState("");
     const [modal, setModal] = useState(false);
@@ -40,7 +40,7 @@ const Login = () => {
 
     useEffect(() => { 
         if (sessionStorage.getItem('isLogged')) { 
-            window.location.href="/Dashboard" 
+            window.location.href="/Dashboard/Post" 
         } 
     },[]);
 
@@ -58,7 +58,7 @@ const Login = () => {
                 axios.post(baseURL + '/users/load/', { username: username })
                 .then((response) => { 
                     sessionStorage.setItem("user", JSON.stringify(response.data)); 
-                    window.location.href = "/Dashboard";
+                    window.location.href = "/Dashboard/Post";
                 });
             }
         });

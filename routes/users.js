@@ -30,17 +30,18 @@ router.route('/').post((req, res) => {
 router.route('/register').post((req, res) => {
     const username = req.body.username;
     let password = req.body.password;
-    const image_url = req.body.image_url;
+    const profile_url = req.body.profile_url;
+    const background_url = "https://res.cloudinary.com/dliw7yyw3/image/upload/v1680358335/Upload/orange-1247700_960_720_nxwb4v.jpg";
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const bio_content = "";
-    const photo_album = [image_url];
+    const photo_album = [profile_url];
 
     bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) { console.log(err) }
         else {
             password = hash;
-            const newUser = new User({username, password, image_url, firstname, lastname, bio_content, photo_album});
+            const newUser = new User({username, password, profile_url, background_url, firstname, lastname, bio_content, photo_album});
             newUser.save()
             .then(user => res.json(user))
             .catch(err => res.status(400).json("Error " + err));     
@@ -113,7 +114,7 @@ router.route('/change_photo').post((req, res) => {
     const user_id = req.body.user_id;
     const url = req.body.url;
 
-    User.findOneAndUpdate({_id: user_id}, {$set : {image_url: url}})
+    User.findOneAndUpdate({_id: user_id}, {$set : {profile_url: url}})
     .then(() => res.json())
     .catch(err => res.status(400).json("Error " + err));
 });

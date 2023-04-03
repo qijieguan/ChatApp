@@ -2,12 +2,11 @@
 .register-form { 
     grid-template-columns: 45% 45%;
     flex-wrap: wrap;
-    padding: 10vh 2vw;
-    margin: 5vh auto; 
+    padding: 10vh 5vw; 
     row-gap: 5vh;
     font-weight: 700; 
-    width: 90%; 
-    background: #23272a;
+    width: 100%; 
+    background: #2c2c2c;
     box-shadow: 0 0 3px;
 }
 
@@ -23,24 +22,22 @@
 .register-link:hover { text-decoration: underline; }
 
 .register-label {
-    margin-top: 5vh;
     width: 70%;
     font-size: clamp(1rem, 5vw, 2rem);
     font-family: fantasy;
     letter-spacing: 1px;
-    color: white;
+    color: rgb(131, 131, 131);
 }
 
 .linebreak { 
-    margin: 2vh 0 5vh 0;
+    margin-bottom: 2.5vh;
     width: 100%;
-    height: 0.5vh;
-    color: gray;
+    border: 1px solid rgb(58, 58, 58);
 }
 
 .register-msg { color: 'green' }
-.image-input { margin: 5vh auto; width: 75%; }
-.preview-image { width: 25%; object-fit: cover; object-position: center; }
+.image-input { width: 75%; }
+.preview-image { width: 25%; object-fit: cover; object-position: center; border-radius: 1rem; }
 .file { 
     margin-left: 2.5vw; 
     text-indent: 3vw; 
@@ -49,13 +46,14 @@
     background: transparent; 
     color: gray; 
     border: 2px solid gray; 
-    border-radius: 3rem;  
+    border-radius: 1rem;  
 }
 
 .register-inputs {
     grid-template-columns: 45% 45%;
+    justify-content: center;
     row-gap: 7.5vh;
-    min-height: 50vh;
+    min-height: 30vh;
     width: 100%;
 }
 .register-input-wrapper { 
@@ -65,11 +63,10 @@
     align-items: flex-start;
     width: 70%; 
 }
-.register-input-wrapper > h1 { margin: 0; font-weight: 600; }
-.register-input-wrapper > span { color: gray; }
-.register-input-wrapper > input { width: 100%; background: rgb(177, 177, 177); border: 1px solid gray; }
-.register-input-wrapper > input:focus { box-shadow: 0 0 5px white; }
-.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: white; }
+.register-input-wrapper > h1 { margin: 0; }
+.register-input-wrapper > span { font-size: 0.875rem; color: rgb(109, 109, 109); }
+.register-input-wrapper > input { width: 100%; color: rgb(179, 179, 179); background: rgb(39, 39, 39); border-radius: 0.25rem; }
+.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: rgb(131, 131, 131); }
 .input-label::after { content: " *"; color: red; }
 .register-btn { 
     margin: 15vh auto 0 auto;

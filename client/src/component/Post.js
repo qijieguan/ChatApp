@@ -1,0 +1,77 @@
+import './styles/post.css';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import uuid from 'react-uuid';
+
+const Post = () => {
+
+    const [postInp, setPostInp] = useState("");
+    const [postArr, setPostArr] = useState([]);
+    const [render, setRender] = useState(false);
+
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+    const user = JSON.parse(sessionStorage.getItem('user'))
+
+    useEffect(() => { getPosts() }, [render]);
+
+    const getPosts = async () => {  
+        await axios.post(baseURL + '/posts', {poster_id: user._id})
+        .then(response => { setPostArr(response.data); });
+    }
+
+    const handleChange = (event) => {
+        setPostInp(event.target.value);
+    };
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        await axios.post(baseURL + '/posts/add/', {
+            poster_id: user._id,
+            poster_image: user.profile_url,
+            poster_name: user.firstname + ' ' + user.lastname,
+            post: {primary_text: postInp, primary_image: '', replies: []}
+        })
+        setPostInp('');
+        setRender(!render);
+    }
+
+    return (
+        <div className='post-section'>
+            <form className='post-form flex' onSubmit={handleSubmit}>
+                <h1>Ready to post your thoughts</h1>
+                <div className='post-input'>
+                    <input
+                        type='text'
+                        name="post-input"
+                        placeholder='Write something to post...'
+                        value={postInp}
+                        onChange={handleChange}
+                    />
+                    <button className='post-image'>Image</button>
+                    <hr/>
+                    <button type='submit' className='submit'>Create Post</button>
+                </div>
+            </form>
+            {postArr.post_collection ?
+                postArr.post_collection.map(post => 
+                    <div className='post' key={uuid()}>
+                        <div className='post-header flex'>
+                            <img className='poster-image' src={postArr.poster_image} alt=""></img>
+                            <div className='poster-name'>{postArr.poster_name}</div>
+                        </div>
+                        <div className='primary-text'>{post.primary_text}</div>
+                        {post.primary_image ?
+                            <img src={post.primary_image} className='primary-image' alt=""/>
+                            :
+                            ""
+                        }
+                    </div>
+                )
+                :
+                ""
+            }
+        </div>
+    );
+}
+
+export default Post;

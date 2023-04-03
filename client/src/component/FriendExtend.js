@@ -39,7 +39,7 @@ const Extend = ({ friend }) => {
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
 
-        window.location.href = '/Dashboard';
+        window.location.href = '/Dashboard/Chat';
     }
 
     const handleUnfriend = async () => {
@@ -67,13 +67,13 @@ const Extend = ({ friend }) => {
     return (
         <div className='friend-container' id={friend._id}>
             <div className="friend flex">
-                <img src={friend.image_url} className="friend-image" alt=""/>
+                <img src={friend.profile_url} className="friend-image" alt=""/>
                 <div className="friend-name">{friend.firstname} {friend.lastname}</div>
                 <div className='profile-view'
                     onMouseEnter={(e) => toggleView(friend._id, e)}
                     onMouseLeave={(e) => toggleView(friend._id, e)}
                 >
-                    (view profile)
+                    (view bio)
                 </div>
                 
                 <div className='friend-preview'>
@@ -81,7 +81,7 @@ const Extend = ({ friend }) => {
                         {friend.bio_content ?
                             <span>{friend.bio_content}</span>
                             :
-                            <span>(No profile has been set for this user)</span>
+                            <span>*No profile bio has been set for this user*</span>
                         }
                     </div>
                 </div>
@@ -91,7 +91,7 @@ const Extend = ({ friend }) => {
                     Message
                 </button>
                 <button className='remove-button flex' onClick={() => {setModal(true)}}>
-                    Remove
+                    Unfollow
                 </button>
             </div>
             <Modal isOpen={modal} style={modalStyles}>

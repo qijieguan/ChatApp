@@ -5,7 +5,7 @@
     column-gap: 15vh;
     width: 100%; 
     background: black;
-    color: white;  
+    color: rgb(170, 170, 170);  
     font-size: 700; 
     border-top: 2px solid black;
 }

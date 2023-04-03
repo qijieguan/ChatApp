@@ -24,7 +24,7 @@ const FriendCount = () => {
             <div className='friend-headers flex'>
                 {friends.length ?
                     friends.map(friend => {
-                        return <img className='friend-header' src={friend.image_url} key={uuid()} alt=""/>
+                        return <img className='friend-header' src={friend.profile_url} key={uuid()} alt=""/>
                     })
                     
                     :

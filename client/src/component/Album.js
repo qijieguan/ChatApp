@@ -63,7 +63,7 @@ const Album = ({ callRender }) => {
         e.preventDefault();
         if (!src) { return; }
         await axios.post(baseURL +'/users/change_photo', { user_id: user._id, url: src });
-        user.image_url = src;
+        user.profile_url = src;
         sessionStorage.setItem('user', JSON.stringify(user));
         setSRC("");
         return callRender();

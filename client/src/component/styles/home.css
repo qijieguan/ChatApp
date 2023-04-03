@@ -6,8 +6,7 @@
     width: 30vw; 
     background: transparent; 
     border-radius: 0.5rem;
-    color: cyan;
-    border: 2px solid gray;
+    border: 2px solid rgb(87, 87, 87);
     z-index: 3;
 }
 
@@ -20,7 +19,7 @@
 .home-intro > h1 { 
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: cyan;
+    color: darkorange;
 }
 
 .home-intro > span { font-weight: 700; color: rgb(201, 201, 201); }
@@ -30,12 +29,12 @@
     padding: 20vh 2.5vw;
     width: 100vw;
     border-top: 1px solid black;
-    background: rgb(36, 36, 36);
+    background: rgb(17, 17, 17);
 }
 
 .home-image {
     object-fit: cover;
-    width: 60%;
+    width: 50%;
     border: none;
 }
 
@@ -44,21 +43,22 @@
 .text-label {
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: lightgreen;
+    color: darkorange;
 }
 
 
 .home-text > div { padding: 0 2vw; width: 55%; margin: 0 auto; }
 .home-text-3 > div { padding: 1vh 1vw; border: 1px solid gray; column-gap: 0.5vw; }
 
+.feature-wrapper { color: gray; }
+
 .features-dropdown { position: relative; height: 0; transition: all 0.3s ease-in; overflow: hidden; }
 .features-dropdown > li {
-    margin-top: 2vh;
-    padding: 1vh 2vw;
+    margin-top: 4vh;
+    padding: 2vh 2vw;
     text-align: center;
-    color: black;
-    background: orange;
-    border: 2px dashed rgb(54, 54, 54);
+    color: darkorange;
+    border: 1px solid;
     border-radius: 0.25rem;
 }
 

@@ -1,9 +1,10 @@
 import './styles/menu.css';
-import { AiOutlineWechat } from 'react-icons/ai';
+import { AiOutlineWechat, AiFillHome } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
 import { BiLogIn } from 'react-icons/bi';
-import { BsThreeDotsVertical, BsFilePersonFill, BsFillChatSquareTextFill } from 'react-icons/bs';
+import { BsFilePersonFill, BsFillChatSquareTextFill, } from 'react-icons/bs';
+import { MdArrowDropDown } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -35,25 +36,25 @@ const Menu = () => {
     return (
         <div className="menu-bar flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
             <div className="menu-logo flex">
-                <AiOutlineWechat className="logo-icon" style={{marginLeft: '5px'}} color="gold" size={36}/>
+                <AiOutlineWechat className="logo-icon" color="gold" size={36}/>
             </div>
-            <Link to='/Dashboard' className="menu-li flex" id="/Dashboard" onClick={handleClick}>
-                <BsFillChatSquareTextFill className="menu-li-icon"/>
-                <div style={{marginLeft: '0.375rem'}}>CHAT</div>
+            <Link to='/Dashboard/Post' className="menu-li flex" id="/Dashboard" onClick={handleClick}>
+                <AiFillHome className="menu-li-icon"/>
+                <div>Dashboard</div>
             </Link>
             <Link to='/Friend' className="menu-li flex" id="/Friend" onClick={handleClick}>
-                <div>CONNECTIONS</div>
                 <FaUserFriends className="menu-li-icon"/>
+                <div>Following</div>
             </Link>
             <Link to="/Search" className="menu-li flex" id="/Search" onClick={handleClick}>
-                <div>DISCOVER</div>
                 <BsSearch className="menu-li-icon"/>
+                <div>Find Users</div>
             </Link>
               
             <div className="menu-dropdown flex">
-                <img src={user.image_url} alt=""/>
+                <img src={user.profile_url} alt=""/>
                 <div className='menu-user'>{user.firstname} {user.lastname}</div>
-                <BsThreeDotsVertical size={30} color="white" style={{marginLeft: '0.25vw'}}/>
+                <MdArrowDropDown size={30} color="white" style={{marginLeft: '0.25vw'}}/>
                 <div className='menu-links flex'>
                     <Link to='/Profile' className='menu-link flex'>
                         <div>PROFILE</div>

@@ -1,8 +1,8 @@
 .login {
+    padding-top: 2vh;
     justify-content: center;
     flex-direction: column;
     row-gap: 5vh;
-    color: white;
     animation: fadeSlideUp 0.4s ease-in;
 }
 .login-label {  
@@ -25,11 +25,10 @@
     letter-spacing: 0.125rem;
     font-family: 'Lobster', cursive;
     width: 80%; 
-    background: rgb(0, 185, 185);
-    color: white; 
+    background: darkorange; 
     box-shadow: 0 0 3px grey;
+    border-radius: 0.25rem;
 }
-.login button:hover { box-shadow: 0 0 5px; }
 
 .register-link { 
     margin-top: 0.75rem;
@@ -40,7 +39,7 @@
     color: gray; 
 }
 
-.register-link > span { color: cyan; }
+.register-link > span { color: darkorange; }
 
 .register-link:hover { text-decoration: underline; }
 

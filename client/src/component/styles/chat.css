@@ -1,10 +1,13 @@
-.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 35% 62.5%; }
+.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 40% 57.5%; }
 
 .chat-log {
-    margin: 5vh 0;
+    margin: 2.5vh 0;
+    padding-bottom: 10vh;
     width: 100%;
+    height: fit-content;
+    min-height: 75vh;
     color: white;
-    background: rgb(31, 43, 71);
+    background: rgb(44, 44, 44);
     box-shadow: 0 0 3px black;
     border-radius: 0.375rem;
     overflow: scroll;
@@ -18,30 +21,30 @@
     width: 100%;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 700;
-    background: rgb(0, 0, 59);
+    color: gainsboro;
     border-bottom: 1px solid rgb(36, 36, 36);
-    box-shadow: 0 1px 3pxrgb(34, 34, 34)k;
 }
 .chat-set { flex-direction: column; width: 100%; }
 .chat-default { 
-    margin-top: 30%;
-    font-size: clamp(2rem, 3vw, 4rem); 
+    margin: 30% auto 0 auto;
+    text-align: center;
+    font-size: clamp(1.5rem, 2vw, 2rem); 
     font-style: italic;
 }
 .chat-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
-.chat-wrapper.highlight { background: rgb(0, 0, 59); color: gold; }
-.chat-wrapper:hover { color: gold; background: rgb(0, 0, 59); z-index: 3; }
+.chat-wrapper.highlight { background: rgb(32, 32, 32); color: gold; }
+.chat-wrapper:hover { color: gold; background: rgb(32, 32, 32); z-index: 3; }
 .chat { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
 .chat > img { 
     margin: auto 2vw; 
     height: 10vh; 
     width: 10vh;
     object-fit: cover; 
-    border-radius: 10px; 
+    border-radius: 4rem; 
 }
 
 .chat-preview { height: 75%; overflow: hidden; }
-.chat-preview > h1 { font-size: clamp(1rem, 1.25vw, 1.25rem); margin: auto 0; word-wrap: break-word; }
+.chat-preview > h1 { font-size: 0.875rem; margin: auto 0; word-wrap: break-word; }
 .text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
 
 .trash-wrapper { justify-content: center; height: 100%; width: 15%; }
@@ -58,7 +61,7 @@
     width: 100%;
     transform: translateX(101%);
     color: black;
-    background: gold;
+    background: goldenrod;
     transition: all 0.5s ease-in;
 }
 .trash-wrapper:hover .trash-overlay { transform: translateX(0); }
@@ -66,6 +69,6 @@
 
 
 @media (max-width: 50rem) {
-    .chat-page { grid-template-columns: 100%; width: 95%; }
+    .chat-page { grid-template-columns: 100%; width: 100%; }
     .chat-log { margin: 2vh 0 4vh 0; height: 30vh; }
 }

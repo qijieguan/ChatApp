@@ -1,4 +1,4 @@
-.about-wrapper { flex-direction: column; justify-content: space-around; background: rgb(20, 20, 20); }
+.about-wrapper { flex-direction: column; justify-content: space-around; background: rgb(17, 17, 17); }
 .about-section { flex-wrap: wrap; justify-content: space-around; }
 .about {
     margin: 10vh 0;
@@ -15,7 +15,7 @@
 }
 
 .about > div:not(.about-image) { font-size: clamp(1.5rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s ease-in; }
-.about span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: rgb(236, 187, 97); }
+.about span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: darkorange; }
 .about > p { font-size: clamp(0.9rem, 2.5vw, 1rem); margin: 0 auto; width: 90%; color: white; animation: fadeSlideLeft 0.5s ease-in; }
 
 .about-1 .about-image {

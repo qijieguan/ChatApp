@@ -35,7 +35,7 @@ const Register = () => {
             axios.post(baseURL +'/users/register/', {
                 username: username,
                 password: password,
-                image_url: response.data,
+                profile_url: response.data,
                 firstname: fname,
                 lastname: lname,
             }).then((response) => { 

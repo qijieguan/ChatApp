@@ -16,10 +16,14 @@ const userSchema = new Schema({
         trim: true,
         minlength: 8
     },
-    image_url : {
+    profile_url : {
         type: String,
         required: true,
-        unique: true,
+        trim: true,
+    },
+    background_url : {
+        type: String,
+        required: true,
         trim: true,
     },
     firstname: {

@@ -1,0 +1,54 @@
+
+.post-form { 
+    margin: 2.5vh auto 0 auto;
+    padding: 1.5vh 2.5vw 2.5vh 2.5vw;
+    align-items: flex-start; 
+    flex-direction: column; 
+    width: 55vw;
+    background: rgb(37, 37, 37); 
+    border-radius: 0.5rem;
+}
+.post-form > h1 { margin: 1vh 0 3vh 0; font-size: 1.25rem; color: rgb(211, 211, 211); }
+
+.post-input { flex-wrap: wrap; width: 100%; }
+.post-input > input { width: 70%; color: rgb(180, 180, 180); background: rgb(65, 65, 65); border-radius: 0.25rem; }
+
+.post-image {
+    margin-left: 4vh;
+    padding: 1.5vh 1.5vw;  
+    background: transparent;
+    font-size: 0.875rem; 
+    color: gray;
+    border: 1px solid rgb(65, 65, 65); 
+    border-radius: 2rem;
+}
+
+hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
+
+.submit { float: right; padding: 1vh 2vw; background: rgb(65, 65, 65); color: rgb(163, 163, 163); border: 0; border-radius: 0.5rem; }
+.submit:hover { color: orange; }
+
+.post-image:hover { opacity: 0.7; }
+
+.post {
+    margin: 2.5vh auto 0 auto;
+    padding: 1.5vh 2.5vw 2.5vh 2.5vw; 
+    width: 55vw;
+    background: rgb(37, 37, 37); 
+    border-radius: 0.5rem;
+}
+
+.post-header { margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
+.poster-image { height: 9vh; width: 9vh; border-radius: 3rem; }
+.poster-name { color: rgb(211, 211, 211); }
+
+.primary-text { font-size: 0.875rem; color: grey; }
+
+@media (max-width: 50rem) {
+    .post-form, .post { width: 90vw; }
+}
+
+@media (max-width: 25rem) {
+    .post-input > input { margin-bottom: 2vh; width: 100%; }
+    .post-image { margin-left: 0; }
+}

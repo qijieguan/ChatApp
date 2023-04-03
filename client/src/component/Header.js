@@ -56,9 +56,9 @@ const Header = () => {
                 :
                 <div className='header-banner flex'>
                     <div className='header-banner-text'>
-                        <div> Hello, <span>{user.firstname}. </span>
+                        <div> Welcome, <span>{user.firstname}. </span>
                         <br/>
-                            You are online now to the world.
+                            Thank you for being a part of the <span>community</span>.
                         </div>
                     </div>
                     <div className="overlay"/>

@@ -21,7 +21,7 @@ const Chat = ({ chat, getSelect, removeChat }) => {
     return (
         <div className='chat-wrapper flex' id={chat._id}>
             <div className="chat flex" onClick={() => getSelect(chat._id)}>
-                <img src={chat.image_url} alt=""/>
+                <img src={chat.profile_url} alt=""/>
                 <div className='chat-preview'>
                     <h1>{chat.firstname} {chat.lastname}</h1>
                     <div className='text-preview'>{textsPreview}</div>

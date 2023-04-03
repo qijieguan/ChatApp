@@ -99,7 +99,7 @@ const MessageBox = ({ initChatLog }) => {
                 <div className='flex'>
                     <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
                     <span className='flex'>
-                        Messaging:<img src={user.image_url} alt=""/>
+                        Messaging:<img src={user.profile_url} alt=""/>
                         {user.firstname + " " + user.lastname}
                     </span>
                 </div>
@@ -109,7 +109,7 @@ const MessageBox = ({ initChatLog }) => {
             <div className="private-message">
                 {textSet?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
-                    :<h1>Select a Chat head to Open Message Log</h1>
+                    :<h1>Select a conversation to view messages</h1>
                 }
             </div>
             {selectMsg ? 

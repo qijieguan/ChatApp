@@ -37,7 +37,7 @@ const User = ({ user }) => {
                 <div className='user-bio flex' id={user._id}>
                     <span>{user.bio_content}</span>
                 </div>
-                <img className="user-image" src={user.image_url} alt=""/>
+                <img className="user-image" src={user.profile_url} alt=""/>
                 <h1 className="user-name flex">
                     <span>{user.firstname} {user.lastname} </span>
                     {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 

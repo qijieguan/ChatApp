@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import Chat from './Chat.js';
 import MessageBox from './MessageBox.js';
 
-const ChatBox = () => {
+const ChatMain = () => {
 
     const [chatLog, setchatLog] = useState([]);
 
@@ -46,7 +46,7 @@ const ChatBox = () => {
     return (
         <div className='chat-page grid'>
             <div className="chat-log">
-                <div className='chat-label flex'>Active Conversations</div>
+                <div className='chat-label flex'>Conversations</div>
                 <div className='chat-set flex'>
                     {chatLog && chatLog.length ?
                         chatLog.map(chat => <Chat key={uuid()} chat={chat} getSelect={getSelect} removeChat={removeChat}/>)
@@ -61,4 +61,4 @@ const ChatBox = () => {
     );
 }
 
-export default ChatBox;
+export default ChatMain;

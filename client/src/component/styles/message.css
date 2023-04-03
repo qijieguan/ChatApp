@@ -3,21 +3,19 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 5vh 0;
+    margin: 2.5vh 0;
     padding-bottom: 2rem;
     width: 100%;
-    color: gold;
-    background: rgb(31, 43, 71);
+    color: gainsboro;
+    background: rgb(44, 44, 44);
     border-radius: 0.5rem;
     box-shadow: 0 0 3px black;
     overflow: hidden;
 }
 
 .private-message-header {
-    padding: 0.5rem 0;
-    min-height: 12.5vh;
     width: 100%;
-    background: rgb(0, 0, 59);
+    background: rgb(20, 20, 20);
 }
 .private-message-header > div { flex-wrap: wrap; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
@@ -29,7 +27,7 @@
     letter-spacing: 0.0625rem;
     margin: 0 10px; 
 }
-#back-btn { margin: 0 5vh; background: gold; border-radius: 0.125rem; }
+#back-btn { margin: 0 5vw 0 1.5vw; background: gray; border-radius: 0.125rem; }
 #back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 .private-message-header img { 
@@ -51,7 +49,7 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message > h1 { text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gold; }
+.private-message > h1 { text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
 
 .text-format {
     position: relative;
@@ -61,7 +59,7 @@
     align-items: unset;
     width: 65%;
     color: black;
-    background: rgb(184, 184, 184);
+    background: gainsboro;
     box-shadow: 0 0 3px black;
     border-radius: 0.5rem;
 }
@@ -96,15 +94,14 @@
     width: 100%; 
     text-indent: 2.5vw;
     color: white;
-    background: rgb(80, 80, 80); 
-    outline-color: gold; 
-    border-radius: 2rem;
+    background: rgb(80, 80, 80);  
+    border-radius: 0.75rem;
 }
 .camera-wrapper { position: absolute; top: 15%; right: 7.5%; }
 .camera-icon { 
     position: absolute; 
     font-size: clamp(1.625rem, 2.5vw, 1.75rem);
-    color: black;
+    color: rgb(20, 20, 20);
 }
 .camera-wrapper > img { 
     display: absolute;
