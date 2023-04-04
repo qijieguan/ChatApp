@@ -13,9 +13,9 @@ const SideNav = () => {
                 <div className='side-nav-name'><span>{user.firstname} </span> <span>{user.lastname}</span> </div>
             </div>
             <div className='side-nav-body flex'>
-                <Link to="/Profile">View profile</Link>
+                <Link to="/Profile">View Profile</Link>
                 <Link to="/Dashboard/Post">My Posts</Link>
-                <Link to="/Dashboard/Chat">My Conversations</Link>
+                <Link to="/Dashboard/Chat">My Messages</Link>
             </div>
         </div>
     )

@@ -52,7 +52,7 @@ const MessageBox = ({ initChatLog }) => {
         const data = new FormData();
         data.append('file', files[0]);
     
-        await axios.post(baseURL + '/texts/upload-image', data)
+        await axios.post(baseURL + '/cloud/upload-image', data)
         .then((response) => {
             postText(response.data);
             setRender(!render);

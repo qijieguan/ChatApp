@@ -1,16 +1,28 @@
 import './styles/album.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
 
 const Album = ({ callRender }) => {
 
-    var user = JSON.parse(sessionStorage.getItem('user'))
+    var user = JSON.parse(sessionStorage.getItem('user'));
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
     const [src, setSRC] = useState("");
+    const [album, setAlbum] = useState();
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
+    useEffect(() => {
+        getFullAlbum()
+    }, [])
+
+    const getFullAlbum = async() => {
+        await axios.get(baseURL + '/cloud/get-background-images')
+        .then(response => {
+            setAlbum(response.data.concat(user.photo_album));
+        })
+    }
 
     
     const readFiles = (files) => {
@@ -27,7 +39,7 @@ const Album = ({ callRender }) => {
 
         data.append('file', files[0]);
         
-        await axios.post(baseURL + '/texts/upload-image', data)
+        await axios.post(baseURL + '/cloud/upload-image', data)
         .then((response) => {
             axios.post(baseURL +'/users/upload_photo', {
                 user_id: user._id,
@@ -39,6 +51,7 @@ const Album = ({ callRender }) => {
     const handleUpload = async (e) => {
         e.preventDefault();
         await uploadImage();
+        setAlbum([...album, url]);
         user.photo_album.push(url);
         sessionStorage.setItem('user', JSON.stringify(user));
         setURL("");
@@ -83,8 +96,8 @@ const Album = ({ callRender }) => {
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE</div>
             
             <form className='album-list grid' onSubmit={handleSwitch}>
-                {user.photo_album.length ?
-                    user.photo_album.map(photo => 
+                {album ?
+                    album.map(photo => 
                         <div className='photo-wrapper checkbox' key={uuid()} id={uuid()} onClick={handleClick}>
                             <img src={photo} alt=""/>
                             <input type="radio" required/>
