@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import axios from 'axios';
 import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
-import Extend from './FriendExtend.js';
+import FriendExtend from './FriendExtend.js';
 import { FcVoicePresentation } from 'react-icons/fc';
 import Menu from './Menu.js';
 
@@ -31,7 +31,7 @@ const Friend = () => {
                             <span>CONNECTIONS OVERVIEW </span>
                         </div>
                     </div>
-                    {friends.map(friend => <Extend key={uuid()} friend={friend}/>)}
+                    {friends.map(friend => <FriendExtend key={uuid()} friend={friend}/>)}
                 </div>
                 :
                 <h1>Add other users as friends!</h1>

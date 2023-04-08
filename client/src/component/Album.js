@@ -72,11 +72,21 @@ const Album = ({ callRender }) => {
         setSRC(e.currentTarget.childNodes[0].src);
     }
 
-    const handleSwitch = async (e) => {
+    const changeProfile = async (e) => {
         e.preventDefault();
         if (!src) { return; }
-        await axios.post(baseURL +'/users/change_photo', { user_id: user._id, url: src });
+        await axios.post(baseURL +'/users/change_profile', { user_id: user._id, url: src });
         user.profile_url = src;
+        sessionStorage.setItem('user', JSON.stringify(user));
+        setSRC("");
+        return callRender();
+    }
+
+    const changeBackground = async (e) => {
+        e.preventDefault();
+        if (!src) { return; }
+        user.background_url = src;
+        await axios.post(baseURL +'/users/change_background', { user_id: user._id, url: src });
         sessionStorage.setItem('user', JSON.stringify(user));
         setSRC("");
         return callRender();
@@ -93,9 +103,9 @@ const Album = ({ callRender }) => {
                     <button type='submit'>Upload</button>
                 </form>
             */}
-            <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE</div>
+            <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE/BACKGROUND</div>
             
-            <form className='album-list grid' onSubmit={handleSwitch}>
+            <form className='album-list grid'>
                 {album ?
                     album.map(photo => 
                         <div className='photo-wrapper checkbox' key={uuid()} id={uuid()} onClick={handleClick}>
@@ -105,7 +115,8 @@ const Album = ({ callRender }) => {
                     )
                     : <h1>Photo Album is Empty</h1>
                 }
-                <button type='submit'>CHANGE</button>
+                <button className='set-profile-btn' onClick={changeProfile}>Set as profile</button>
+                <button className='set-background-btn' onClick={changeBackground}>Set as background</button>
             </form>
         </div>
     );

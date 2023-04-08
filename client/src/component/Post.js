@@ -1,7 +1,8 @@
 import './styles/post.css';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import PostCollection from './PostCollection.js';
 import uuid from 'react-uuid';
+import axios from 'axios';
 
 const Post = () => {
 
@@ -15,8 +16,8 @@ const Post = () => {
     useEffect(() => { getPosts() }, [render]);
 
     const getPosts = async () => {  
-        await axios.post(baseURL + '/posts', {poster_id: user._id})
-        .then(response => { setPostArr(response.data); });
+        await axios.post(baseURL + '/posts')
+        .then(response => { console.log(response.data); setPostArr(response.data); });
     }
 
     const handleChange = (event) => {
@@ -52,21 +53,9 @@ const Post = () => {
                     <button type='submit' className='submit'>Create Post</button>
                 </div>
             </form>
-            {postArr.post_collection ?
-                postArr.post_collection.map(post => 
-                    <div className='post' key={uuid()}>
-                        <div className='post-header flex'>
-                            <img className='poster-image' src={postArr.poster_image} alt=""></img>
-                            <div className='poster-name'>{postArr.poster_name}</div>
-                        </div>
-                        <div className='primary-text'>{post.primary_text}</div>
-                        {post.primary_image ?
-                            <img src={post.primary_image} className='primary-image' alt=""/>
-                            :
-                            ""
-                        }
-                    </div>
-                )
+            
+            {postArr.length ?
+                postArr.map(collection => <PostCollection key={uuid()} collection={collection}/>)
                 :
                 ""
             }

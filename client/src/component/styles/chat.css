@@ -6,7 +6,7 @@
     width: 100%;
     height: fit-content;
     min-height: 75vh;
-    color: white;
+    color: gainsboro;
     background: rgb(44, 44, 44);
     box-shadow: 0 0 3px black;
     border-radius: 0.375rem;
@@ -21,7 +21,7 @@
     width: 100%;
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 700;
-    color: gainsboro;
+    color: gray;
     border-bottom: 1px solid rgb(36, 36, 36);
 }
 .chat-set { flex-direction: column; width: 100%; }

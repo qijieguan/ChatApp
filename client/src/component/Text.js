@@ -12,22 +12,32 @@ const Text = ({textID, friend, text }) => {
         image.onerror = () => { el.childNodes[1].style.display = 'unset'; };
     },[textID, text.content]);
 
-    const userID = JSON.parse(sessionStorage.getItem('user'))._id;
+    const user = JSON.parse(sessionStorage.getItem('user'));
     const handleMadeBy = () => { if (text.user_id === friend._id) { made_by = friend.firstname; }}
 
     handleMadeBy();
 
-    const getStyle = () => {
-        if ((userID === text.user_id)) {
-            return {background: 'gold', color: 'black', margin: '3vh 0 3vh auto'}
+    const getStyle = (param) => {
+        if (param === '1') {
+            if ((user._id === text.user_id)) {
+                return { flexDirection: 'row-reverse' }
+            }
+        }
+        else { 
+            if ((user._id === text.user_id)) {
+                return {background: 'orange', color: 'black', margin: '3vh 0 3vh auto'}
+            }
         }
     }
 
     return (
-        <div className="text-format flex" id={textID} style={getStyle()}>
-            <img className="text-image" src={text.content} alt=""/>
-            <div className='text-content'>{text.content}</div>
+        <div className="text flex" style={getStyle('1')}>
+            <img src={user._id === text.user_id ? user.profile_url : friend.profile_url} className="texter" alt=""/>
+            <div className="text-format flex" id={textID} style={getStyle('2')}>
+                <img className="text-image" src={text.content} alt=""/>
+                <div className='text-content'>{text.content}</div>
             <div className='text-made-by'>{made_by}</div>
+        </div>
         </div>
     );
 }

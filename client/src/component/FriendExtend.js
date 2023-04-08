@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 
-const Extend = ({ friend }) => {
+const FriendExtend = ({ friend }) => {
 
     const modalStyles = {
         content : {
@@ -105,4 +105,4 @@ const Extend = ({ friend }) => {
     );
 } 
 
-export default Extend;
+export default FriendExtend;

@@ -110,11 +110,20 @@ router.route('/upload_photo').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/change_photo').post((req, res) => {
+router.route('/change_profile').post((req, res) => {
     const user_id = req.body.user_id;
     const url = req.body.url;
 
     User.findOneAndUpdate({_id: user_id}, {$set : {profile_url: url}})
+    .then(() => res.json())
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+router.route('/change_background').post((req, res) => {
+    const user_id = req.body.user_id;
+    const url = req.body.url;
+
+    User.findOneAndUpdate({_id: user_id}, {$set : {background_url: url}})
     .then(() => res.json())
     .catch(err => res.status(400).json("Error " + err));
 });

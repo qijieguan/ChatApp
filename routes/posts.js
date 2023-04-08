@@ -2,10 +2,8 @@ const router = require('express').Router();
 let Post = require('../models/post.model');
 
 router.route('/').post((req, res) => {
-    const poster_id = req.body.poster_id;
-    
     Post.find()
-    .then(result => { res.json(result[0]); })
+    .then(result => { res.json(result); })
     .catch(err => res.status(400).json("Error " + err));
 });
 

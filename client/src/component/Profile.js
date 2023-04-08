@@ -32,17 +32,20 @@ const Profile = () => {
             <Menu/>
             <div className="profile flex">
                 <div className='profile-header flex'>
-                    <img src={user.profile_url} className="profile-image" alt=""/>
-                    <div className='profile-name'>{user.firstname} {user.lastname}</div>
+                    <div className='profile-top flex'>
+                        <img src={user.profile_url} className="profile-image" alt=""/>
+                        <img src={user.background_url} className="profile-background" alt=""/>
+                        <div className='profile-name'>{user.firstname} {user.lastname}</div>
+                    </div>
                     
-                    <div className='profile-bio flex'>
+                    <div className='profile-bottom flex'>
                         <h1 className='bio-label'>Personal Bio</h1>
                         <h1 className='bio-body flex' style={{display: !isEdit ? '' : 'none'}}>
                             <div className='bio-content'>
-                                { !bio.length ? <span>Write a public bio for display</span> : bio }
+                                { !bio.length ? <span>Add a bio to display to everyone</span> : bio }
                             </div>
                             <button className='edit-btn flex' onClick={() => setIsEdit(true)}>
-                                <AiTwotoneEdit style={{marginRight: '0.25rem'}}/> Edit
+                                <AiTwotoneEdit style={{marginRight: '0.25rem'}}/> Write
                             </button>
                         </h1>
                         <div className='bio-edit flex' style={{display: isEdit ? '' : 'none'}}>

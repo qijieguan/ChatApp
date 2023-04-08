@@ -106,7 +106,7 @@ const MessageBox = ({ initChatLog }) => {
                     : ""
                 }
             </div>
-            <div className="private-message">
+            <div className="private-message-empty">
                 {textSet?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :<h1>Select a conversation to view messages</h1>
