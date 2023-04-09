@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const Post = () => {
 
-    const [postInp, setPostInp] = useState("");
+    const [textInp, setTextInp] = useState("");
     const [postArr, setPostArr] = useState([]);
     const [render, setRender] = useState(false);
 
@@ -17,11 +17,11 @@ const Post = () => {
 
     const getPosts = async () => {  
         await axios.post(baseURL + '/posts')
-        .then(response => { console.log(response.data); setPostArr(response.data); });
+        .then(response => { setPostArr(response.data); });
     }
 
     const handleChange = (event) => {
-        setPostInp(event.target.value);
+        setTextInp(event.target.value);
     };
 
     const handleSubmit = async (event) => {
@@ -30,9 +30,9 @@ const Post = () => {
             poster_id: user._id,
             poster_image: user.profile_url,
             poster_name: user.firstname + ' ' + user.lastname,
-            post: {primary_text: postInp, primary_image: '', replies: []}
+            post: {primary_text: textInp, primary_image: '', replies: []}
         })
-        setPostInp('');
+        setTextInp('');
         setRender(!render);
     }
 
@@ -45,7 +45,7 @@ const Post = () => {
                         type='text'
                         name="post-input"
                         placeholder='Write something to post...'
-                        value={postInp}
+                        value={textInp}
                         onChange={handleChange}
                     />
                     <button className='post-image'>Image</button>

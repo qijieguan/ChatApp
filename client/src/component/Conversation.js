@@ -2,7 +2,7 @@ import { BsTrash } from 'react-icons/bs';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Chat = ({ chat, getSelect, removeChat }) => {
+const Conversation = ({ chat, getSelect, removeChat }) => {
 
     const [textsPreview, setPreview] = useState([]);
 
@@ -19,10 +19,10 @@ const Chat = ({ chat, getSelect, removeChat }) => {
     getPreviewText();
 
     return (
-        <div className='chat-wrapper flex' id={chat._id}>
-            <div className="chat flex" onClick={() => getSelect(chat._id)}>
+        <div className='conversation-wrapper flex' id={chat._id}>
+            <div className="conversation flex" onClick={() => getSelect(chat._id)}>
                 <img src={chat.profile_url} alt=""/>
-                <div className='chat-preview'>
+                <div className='conversation-preview'>
                     <h1>{chat.firstname} {chat.lastname}</h1>
                     <div className='text-preview'>{textsPreview}</div>
                 </div>
@@ -35,4 +35,4 @@ const Chat = ({ chat, getSelect, removeChat }) => {
     );
 }
 
-export default Chat;
+export default Conversation;

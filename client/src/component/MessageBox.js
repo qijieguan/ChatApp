@@ -18,7 +18,10 @@ const MessageBox = ({ initChatLog }) => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const selectMsg = sessionStorage.getItem('select');
 
-    useEffect(() => { renderConversation(); }, [render, selectMsg, baseURL]);
+    useEffect(() => { 
+        setTextSet([]);
+        setTimeout(() => { renderConversation(); }, 250)
+    }, [render, selectMsg, baseURL]);
 
     const renderConversation = async () => {
         await axios.post(baseURL +'/users/select/', {user_id: sessionStorage.getItem('select')})
@@ -28,7 +31,7 @@ const MessageBox = ({ initChatLog }) => {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.texts); });
-            setTimeout(() => {scrollBottom();}, 500);
+            scrollBottom();
         });
     }
 

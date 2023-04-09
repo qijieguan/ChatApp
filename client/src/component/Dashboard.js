@@ -2,7 +2,7 @@ import './styles/dashboard.css';
 import Menu from './Menu.js';
 import SideNav from './SideNav.js';
 import Post from './Post.js';
-import ChatMain from './ChatMain.js';
+import ChatPage from './ChatPage.js';
 
 const Dashboard = () => { 
 
@@ -14,7 +14,7 @@ const Dashboard = () => {
                 {window.location.href.includes('Post') ?
                     <Post/>
                     :
-                    <ChatMain/>
+                    <ChatPage/>
                 }
             </div> 
         </div>

@@ -2,10 +2,10 @@ import './styles/chat.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import uuid from 'react-uuid';
-import Chat from './Chat.js';
+import Conversation from './Conversation.js';
 import MessageBox from './MessageBox.js';
 
-const ChatMain = () => {
+const ChatPage = () => {
 
     const [chatLog, setchatLog] = useState([]);
 
@@ -45,13 +45,13 @@ const ChatMain = () => {
 
     return (
         <div className='chat-page grid'>
-            <div className="chat-log">
-                <div className='chat-label flex'>Conversations</div>
-                <div className='chat-set flex'>
+            <div className="conversation-log">
+                <div className='conversation-label flex'>Conversations</div>
+                <div className='conversation-set flex'>
                     {chatLog && chatLog.length ?
-                        chatLog.map(chat => <Chat key={uuid()} chat={chat} getSelect={getSelect} removeChat={removeChat}/>)
+                        chatLog.map(chat => <Conversation key={uuid()} chat={chat} getSelect={getSelect} removeChat={removeChat}/>)
                         :
-                        <h1 className='chat-default'>No Chat Log Exists</h1>
+                        <h1 className='conversation-default'>No Chat Log Exists</h1>
                     }
                 </div>
             </div>
@@ -61,4 +61,4 @@ const ChatMain = () => {
     );
 }
 
-export default ChatMain;
+export default ChatPage;

@@ -1,6 +1,6 @@
 .chat-page { min-height: 75vh; width: 100%; grid-template-columns: 40% 57.5%; }
 
-.chat-log {
+.conversation-log {
     margin: 2.5vh 0;
     padding-bottom: 10vh;
     width: 100%;
@@ -13,9 +13,9 @@
     overflow: scroll;
 }
 
-.chat-log::-webkit-scrollbar { display: none; }
+.conversation-log::-webkit-scrollbar { display: none; }
 
-.chat-label {
+.conversation-label {
     justify-content: space-around;
     min-height: 4rem;
     width: 100%;
@@ -24,18 +24,18 @@
     color: gray;
     border-bottom: 1px solid rgb(36, 36, 36);
 }
-.chat-set { flex-direction: column; width: 100%; }
-.chat-default { 
+.conversation-set { flex-direction: column; width: 100%; }
+.conversation-default { 
     margin: 30% auto 0 auto;
     text-align: center;
     font-size: clamp(1.5rem, 2vw, 2rem); 
     font-style: italic;
 }
-.chat-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
-.chat-wrapper.highlight { background: rgb(32, 32, 32); color: gold; }
-.chat-wrapper:hover { color: gold; background: rgb(32, 32, 32); z-index: 3; }
-.chat { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
-.chat > img { 
+.conversation-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
+.conversation-wrapper.highlight { background: rgb(32, 32, 32); color: gold; }
+.conversation-wrapper:hover { color: gold; background: rgb(32, 32, 32); z-index: 3; }
+.conversation { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
+.conversation > img { 
     margin: auto 2vw; 
     height: 10vh; 
     width: 10vh;
@@ -43,8 +43,8 @@
     border-radius: 4rem; 
 }
 
-.chat-preview { height: 75%; overflow: hidden; }
-.chat-preview > h1 { font-size: 0.875rem; margin: auto 0; word-wrap: break-word; }
+.conversation-preview { height: 75%; overflow: hidden; }
+.conversation-preview > h1 { font-size: 0.875rem; margin: auto 0; word-wrap: break-word; }
 .text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
 
 .trash-wrapper { justify-content: center; height: 100%; width: 15%; }
@@ -70,5 +70,5 @@
 
 @media (max-width: 50rem) {
     .chat-page { grid-template-columns: 100%; width: 100%; }
-    .chat-log { margin: 2vh 0 4vh 0; height: 30vh; }
+    .conversation-log { margin: 2vh 0 4vh 0; height: 30vh; }
 }

@@ -49,13 +49,15 @@
     justify-content: center;
     row-gap: 2.5vh;
     height: 30vh;
-    background: rgb(65, 65, 65);
+    background: rgb(36, 36, 36);
     border-radius: 0 0 1rem 1rem;
 }
 
-.side-nav-body *:hover { color: gold; text-decoration: underline; }
+.side-nav-link { padding: 1vh 1.5vw; color: grey; font-size: 0.875rem; border-radius: 3rem; transition: all 0.2s ease-in; }
 
-.side-nav-body * { color: grey; font-size: 0.875rem; }
+.side-nav-link:hover, .side-nav-link.highlight { color: gold; background: black; }
+
+
 
 
 

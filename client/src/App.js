@@ -3,13 +3,13 @@ import Header from './component/Header.js';
 import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Login from './component/Login.js';
-import Dashboard from './component/Dashboard';
-import Post from './component/Post';
-import ChatMain from './component/ChatMain';
+import Dashboard from './component/Dashboard.js';
+import Post from './component/Post.js';
+import ChatPage from './component/ChatPage.js';
 import Search from './component/Search.js';
 import Friend from './component/Friend.js';
 import About from './component/About.js';
-import Profile from './component/Profile';
+import Profile from './component/Profile.js';
 import Footer from './component/Footer.js';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { createStore } from 'redux';
@@ -33,7 +33,7 @@ function App() {
               <Route path="/Login" exact component={Login}/>
               <Route path="/Dashboard/:param" exact component={Dashboard}/>
               <Route path='/Dashboard/Post' exact component={Post}/>
-              <Route path='/Dashboard/Chat' exact component={ChatMain}/>
+              <Route path='/Dashboard/Chat' exact component={ChatPage}/>
               <Route path="/Search" exact component={Search}/>
               <Route path="/Friend" exact component={Friend}/>
               <Route path="/About" exact component={About}/>

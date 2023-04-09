@@ -28,7 +28,7 @@ const Friend = () => {
                     <div className="friend-wrapper-label flex"> 
                         <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
                         <div className='friend-wrapper-text'>
-                            <span>CONNECTIONS OVERVIEW </span>
+                            <span>FOLLOWING OVERVIEW </span>
                         </div>
                     </div>
                     {friends.map(friend => <FriendExtend key={uuid()} friend={friend}/>)}
