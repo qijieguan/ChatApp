@@ -12,23 +12,31 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
-    const [message, setMessage] = useState("");
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     const readFiles = (files) => {
-        if (!files) { return }
+        if (!files) { return; }
         const reader = new FileReader();
         reader.addEventListener("load", () => { setURL(reader.result); setFiles(files); }, false);
         reader.readAsDataURL(files[0]); 
     }
 
-    const previewFile = (event) => { readFiles(event.target.files); };
+    const handleChange = (event) => {
+        if (event.target.name === "register-image-input") { readFiles(event.target.files) } 
+        else if (event.target.name === "firstname") { setFname(event.target.value); }
+        else if (event.target.name === "lastname") { setLname(event.target.value); }
+        else if (event.target.name === "username") { setUsername(event.target.value); }
+        else { setPassword(event.target.value); }
+    }
+
+    const handleUpload = () => {
+        document.getElementsByClassName('register-image-input')[0].click();
+    }
 
     const uploadImage = async () => {
         const data = new FormData();
         data.append('file', files[0]);
-        data.append('upload_preset', process.env.REACT_APP_PRESET_NAME);
 
         await axios.post(baseURL + '/cloud/upload-image', data)
         .then((response) => {
@@ -40,19 +48,10 @@ const Register = () => {
                 lastname: lname,
             }).then((response) => { 
                 axios.post(baseURL +'/friends/init/', { user_id: response.data._id });
-                setMessage("User is added!");
                 document.querySelector(".register-msg").style.display = 'block'; 
             });
         });
     };
-
-    const handleChange = (event) => {
-        if (event.target.name === "firstname") { setFname(event.target.value); }
-        else if (event.target.name === "lastname") { setLname(event.target.value); }
-        else if (event.target.name === "username") { setUsername(event.target.value); }
-        else { setPassword(event.target.value); }
-        console.log(typeof(event.target.value))
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -63,20 +62,26 @@ const Register = () => {
         setFname("");
         setLname("");
         setFiles([]);
-        document.querySelector(".file").value="";
     };
 
     return(
-        <form className="register-form flex" onSubmit={handleSubmit}>
+        <form className="register-form grid" onSubmit={handleSubmit}>
             <h1 className="register-label">Register Your Account</h1>
-            <h3 className="register-msg" style={{display: message.length ? 'block' : 'none'}}>{message}</h3>
       
             <div className="image-input flex">
-                <img src={url ? url : defaultURL} className="preview-image" alt=""/>
-                <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
+                <img src={url ? url : defaultURL} className="preview-register-image" alt=""/>
+                <input 
+                    type="file" 
+                    name="register-image-input" 
+                    className="register-image-input" 
+                    accept='images/*' 
+                    onChange={handleChange} 
+                    required
+                />
+                <div className="register-image-button" onClick={handleUpload}>Upload Image</div>
             </div>
 
-            <div className='linebreak'></div>
+            <hr className='linebreak'></hr>
 
             <div className='register-inputs grid'>
                 <div className='register-input-wrapper flex'>

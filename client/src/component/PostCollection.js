@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 const PostCollection = ({collection}) => {
     return (    
         collection.post_collection.map(post => 
-            <div className='post' key={uuid()}>
+            <div className='post flex' key={uuid()}>
                 <div className='post-header flex'>
                     <img className='poster-image' src={collection.poster_image} alt=""></img>
                     <div className='poster-name'>{collection.poster_name}</div>

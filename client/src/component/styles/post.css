@@ -10,7 +10,7 @@
 }
 .post-form > h1 { margin: 1vh 0 3vh 0; font-size: 1.25rem; color: rgb(211, 211, 211); }
 
-.post-input { flex-wrap: wrap; width: 100%; }
+.post-input { flex-wrap: wrap; column-gap: 1vw; width: 100%; }
 .post-input > input { width: 70%; color: rgb(180, 180, 180); background: rgb(65, 65, 65); border-radius: 0.25rem; }
 
 .post-image {
@@ -32,17 +32,30 @@ hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
 
 .post {
     margin: 2.5vh auto 0 auto;
-    padding: 1.5vh 2.5vw 2.5vh 2.5vw; 
+    padding: 1.5vh 2.5vw 7vh 2.5vw;
+    flex-direction: column;
     width: 65vw;
     background: rgb(36, 36, 36); 
     border-radius: 0.5rem;
+}
+
+.post-image-input { display: none; }
+.post-image-input-preview {
+    margin-top: 2vh;
+    height: 20vh;
+    width: 20vh; 
+    object-fit: cover;
+    opacity: 0.4;
+    border: 2px dotted grey;
+    border-radius: 1rem;
 }
 
 .post-header { margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
 .poster-image { height: 9vh; width: 9vh; border-radius: 3rem; }
 .poster-name { color: rgb(211, 211, 211); }
 
-.primary-text { font-size: 0.875rem; color: grey; }
+.primary-text { align-self: flex-start; margin-left: 5%; font-size: 0.875rem; color: grey; }
+.primary-image { margin: 3vh auto 0 auto; object-fit: cover; height: 50vh; width: 80%; }
 
 @media (max-width: 50rem) {
     .post-form, .post { width: 90vw; }
