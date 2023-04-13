@@ -1,0 +1,22 @@
+.photo-wrapper { position: relative; display: block; width: fit-content; color: gold; }
+.photo-wrapper > img { 
+    position: relative;
+    object-fit: cover; 
+    height: 100%; 
+    width: 100%; 
+    box-shadow: 0 0 3px black; 
+    transition: 0.2s all ease-in;
+}
+.photo-wrapper > img:hover { transform: scale(1.05); z-index: 1; }
+
+.close-button { margin: 0 0 2vh auto; font-size: clamp(1.5rem, 2vw, 2rem); color: gray; }
+.close-button:hover { opacity: 0.7; }
+
+.zoom-photo { object-fit: cover; max-height: 50vh; width: 100%; }
+
+.set-button { margin-top: 3vh; padding: 2vh 0; width: 100%; background: transparent; border: 1px solid; }
+.set-button.profile { color: darkcyan; }
+.set-button.profile:hover { color: aliceblue; background: darkcyan; border-color: transparent; }
+
+.set-button.background { color: limegreen; }
+.set-button.background:hover { color: rgb(187, 187, 187); background: limegreen; border-color: transparent; }

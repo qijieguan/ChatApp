@@ -10,37 +10,14 @@ const Header = () => {
 
     useEffect(() => { 
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        //toggleRipple(); 
-        let element = document.getElementById(location.pathname);
+        let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
+        let element = document.getElementById(pathname);
         if (element) { element.classList.add('active'); }
     }, [location]);
 
     const handleScroll = () => {
-        document.getElementsByClassName('home-body-1')[0].scrollIntoView({behavior: 'smooth'})
-    }
-
-    const toggleRipple = () => {
-        let buttons = document.querySelectorAll("button");
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                let x = e.clientX - e.target.offsetLeft;
-                let y = e.clientY - e.target.offsetTop;
-
-                let ripples = document.createElement('span');
-                ripples.classList.add("ripples");
-
-                if (this.getBoundingClientRect().width <= 200) { ripples.classList.add('rippleSmall') }
-                else if (this.getBoundingClientRect().width <= 400) { ripples.classList.add('rippleMedium') }
-                else { ripples.classList.add('rippleLarge') }
-
-                ripples.style.left = x + 'px';
-                ripples.style.top = y + 'px';
-
-                this.appendChild(ripples);
-            
-                setTimeout(() => ripples.remove(), 1000);
-            });
-        })
+        if (window.location.href.includes("About")) { window.location.href = '/' }
+        document.getElementsByClassName('home-body-1')[0]?.scrollIntoView({behavior: 'smooth'})
     }
 
     return (

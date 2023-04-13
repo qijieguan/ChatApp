@@ -1,8 +1,9 @@
 .profile { 
+    margin: 2vh auto 0 auto;
     padding: 0 2vw 5vh 2vw;
     flex-wrap: wrap;
-    row-gap: 2vh;
-    width: 100%;
+    row-gap: 1vh;
+    width: 90%;
     overflow: hidden;
 }
 .profile-header {
@@ -27,17 +28,11 @@
     z-index: 1;
 }
 
-.profile-background { 
-    position: absolute;
-    inset: 0 auto auto 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
+.profile-background { position: absolute; inset: 0 auto auto 0; height: 100%; width: 100%; object-fit: cover; }
 
 .profile-name { 
     position: relative;
-    padding: 0 1vw 0.5vh 1vw;
+    padding: 0 max(0.5rem, 1vw) 0.5vh max(0.5rem, 1vw);
     text-align: center;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: bold;
@@ -49,18 +44,12 @@
     border-radius: 0.75rem;
 }
 
-.profile-bottom { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
+.profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
 
 .bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: gray; }
-.bio-body {
-    flex-direction: column;
-    width: 75%;
-    font-size: 0.875rem;
-    font-weight: 700;
-    color: rgb(190, 190, 190);
-}
+.bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 700; color: rgb(172, 172, 172); }
 
-.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; background: gray; border-radius: 0.125rem; }
+.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; background: rgb(82, 82, 82); border-radius: 0.125rem; }
 
 .cancel-button, .submit-button { 
     margin-top: 1.5vh; 
@@ -80,8 +69,42 @@
     word-wrap: break-word; 
     width: 50%; 
     color: rgb(179, 179, 179); 
-    background: rgb(39, 39, 39);
+    background: rgb(27, 27, 27);
     border: 0;
     outline: 0;
 }
 .bio-edit > div { column-gap: 1vw;}
+
+.profile-footer { margin: 2.5vh auto; justify-content: center; column-gap: 5vh; width: 100%; color: gray; }
+.profile-footer > div {
+    justify-content: center;
+    column-gap: 1vw;
+    font-size: 1.25rem;
+    height: 12.5vh;
+    width: 25vh;
+    background: rgb(27, 27, 27);
+    border-radius: 4rem;
+}
+.profile-footer > div > h1 { font-size: 2rem; }
+
+.profile-media { margin: 0 auto; background: rgb(19, 19, 19); width: 100%; }
+
+.media-nav { justify-content: center; width: 100%; border-radius: 0.5rem; }
+.media-nav > div { padding: 2vh 0; text-align: center; width: 10vw; color: grey; border-bottom: 2px solid transparent; }
+.media-nav > div:hover { opacity: 0.7; }
+.media-nav-li.highlight { color: orange; border-bottom: 2px solid; pointer-events: none; }
+
+@media (max-width: 50rem) {
+    .profile { width: 100%; }
+    .profile-image { height: 20vh; width: 20vh; }
+    .profile-footer { column-gap: 2vw; }
+    .profile-footer > div { column-gap: 3vw; height: 10vh; width: 20vh; } 
+    .media-nav > div { width: 25vw; }
+}
+
+@media (max-width: 35rem) { .media-nav > div { width: 45vw; } } 
+
+@media (max-width: 25rem) {
+    .profile-image { height: 17.5vh; width: 17.5vh; }
+    .profile-footer { row-gap: 2vh; flex-wrap: wrap; }
+}

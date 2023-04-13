@@ -20,7 +20,7 @@ const MessageBox = ({ initChatLog }) => {
 
     useEffect(() => { 
         setTextSet([]);
-        setTimeout(() => { renderConversation(); }, 250)
+        renderConversation(); 
     }, [render, selectMsg, baseURL]);
 
     const renderConversation = async () => {
@@ -31,8 +31,8 @@ const MessageBox = ({ initChatLog }) => {
                 user_id: JSON.parse(sessionStorage.getItem('user'))._id,
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.texts); });
-            scrollBottom();
         });
+        setTimeout(() => { scrollBottom(); }, 250);
     }
 
     const scrollBottom = () => {
@@ -109,7 +109,7 @@ const MessageBox = ({ initChatLog }) => {
                     : ""
                 }
             </div>
-            <div className="private-message-empty">
+            <div className="private-message">
                 {textSet?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :<h1>Select a conversation to view messages</h1>

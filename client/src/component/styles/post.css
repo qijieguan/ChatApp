@@ -11,7 +11,7 @@
 .post-form > h1 { margin: 1vh 0 3vh 0; font-size: 1.25rem; color: rgb(211, 211, 211); }
 
 .post-input { flex-wrap: wrap; column-gap: 1vw; width: 100%; }
-.post-input > input { width: 70%; color: rgb(180, 180, 180); background: rgb(65, 65, 65); border-radius: 0.25rem; }
+.post-input > input { width: 70%; color: rgb(128, 128, 128); background: rgb(48, 48, 48); border-radius: 0.25rem; }
 
 .post-image {
     margin-left: 4vh;
@@ -25,14 +25,14 @@
 
 hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
 
-.submit { float: right; padding: 1vh 2vw; background: rgb(65, 65, 65); color: rgb(163, 163, 163); border: 0; border-radius: 0.5rem; }
+.submit { float: right; padding: 1vh 2vw; background: rgb(48, 48, 48); color: rgb(163, 163, 163); border: 0; border-radius: 0.5rem; }
 .submit:hover { color: orange; }
 
 .post-image:hover { opacity: 0.7; }
 
 .post {
     margin: 2.5vh auto 0 auto;
-    padding: 1.5vh 2.5vw 7vh 2.5vw;
+    padding: 3vh 2.5vw 5vh 2.5vw;
     flex-direction: column;
     width: 65vw;
     background: rgb(36, 36, 36); 
@@ -55,13 +55,27 @@ hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
 .poster-name { color: rgb(211, 211, 211); }
 
 .primary-text { align-self: flex-start; margin-left: 5%; font-size: 0.875rem; color: grey; }
-.primary-image { margin: 3vh auto 0 auto; object-fit: cover; height: 50vh; width: 80%; }
+.primary-image { margin: 3vh auto; object-fit: cover; height: 50vh; width: 80%; }
 
-@media (max-width: 50rem) {
-    .post-form, .post { width: 90vw; }
+.delete-wrapper { 
+    margin: 3vh 0 0 0; 
+    padding: 1vh 1vw;
+    column-gap: 1.5vw; 
+    align-self: flex-end; 
+    color: rgb(75, 75, 75); 
+    border: 2px solid transparent; 
+    border-radius: 2rem;
 }
+.delete-wrapper:hover { color: red; border-color: red; }
+.delete-wrapper:hover .delete-message { opacity: 1; }
+.delete-message { white-space: nowrap; opacity: 0; transition: 0.1s all ease-in; }
+.trash-button { font-size: 1.25rem; }
+.trash-button:hover { opacity: 0.7; }
+
+@media (max-width: 50rem) { .post-form, .post { width: 90vw; } }
 
 @media (max-width: 25rem) {
+    .post-header { column-gap: 1.5vw; }
     .post-input > input { margin-bottom: 2vh; width: 100%; }
     .post-image { margin-left: 0; }
 }

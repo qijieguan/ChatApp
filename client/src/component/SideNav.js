@@ -1,22 +1,13 @@
 import { Link } from 'react-router-dom';
 import './styles/sidenav.css';
-import { useEffect } from 'react';
 
 const SideNav = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
 
-    useEffect(() => { init(); }, [])
-
-    const init = () => {
-        let url_param = window.location.href;
-    
-        if (url_param.includes('Post')) {
-            document.querySelector('.post-nav')?.classList.add('highlight');
-        }
-        else {
-            document.querySelector('.chat-nav')?.classList.add('highlight');
-        }
+    const toggleHighlight = (event) => {
+        document.querySelector('.highlight')?.classList.remove('highlight');
+        event.target?.classList.add('highlight')
     }
 
 
@@ -28,9 +19,9 @@ const SideNav = () => {
                 <div className='side-nav-name'><span>{user.firstname} </span> <span>{user.lastname}</span> </div>
             </div>
             <div className='side-nav-body flex'>
-                <Link to="/Profile" className='profile-nav side-nav-link'>View Profile</Link>
-                <Link to="/Dashboard/Post" className='post-nav side-nav-link'>My Posts</Link>
-                <Link to="/Dashboard/Chat" className='chat-nav side-nav-link'>My Messages</Link>
+                <Link to="/Profile" onClick={toggleHighlight} className='profile-nav side-nav-link'>See your profile</Link>
+                <Link to="/Dashboard/Post" onClick={toggleHighlight} className='post-nav side-nav-link highlight'> Browse all posts</Link>
+                <Link to="/Dashboard/Chat" onClick={toggleHighlight} className='chat-nav side-nav-link'> Make new messages</Link>
             </div>
         </div>
     )

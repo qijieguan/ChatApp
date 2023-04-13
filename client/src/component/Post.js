@@ -18,7 +18,7 @@ const Post = () => {
     useEffect(() => { getPosts() }, [render]);
 
     const getPosts = async () => {  
-        await axios.post(baseURL + '/posts')
+        await axios.get(baseURL + '/posts')
         .then(response => { setPostArr(response.data); });
     }
 
@@ -75,6 +75,11 @@ const Post = () => {
         })
     }
 
+    const deletePost = async (postID) => {
+        await axios.post(baseURL + '/posts/delete/', {poster_id: user._id, post_id: postID});
+        setRender(!render);
+    }
+
     return (
         <div className='post-section'>
             <form className='post-form flex' onSubmit={handleSubmit}>
@@ -106,7 +111,7 @@ const Post = () => {
             </form>
             
             {postArr.length ?
-                postArr.map(collection => <PostCollection key={uuid()} collection={collection}/>)
+                postArr.map(collection => <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>)
                 :
                 ""
             }

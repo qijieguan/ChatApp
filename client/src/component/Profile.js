@@ -1,5 +1,5 @@
 import './styles/profile.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { AiTwotoneEdit } from 'react-icons/ai';
 import Menu from './Menu.js';
 import Album from './Album.js';
@@ -11,9 +11,25 @@ const Profile = () => {
     var user = JSON.parse(sessionStorage.getItem('user'));
     const [bio, setBio] = useState(user.bio_content);
     const [isEdit, setIsEdit] = useState(false);
+    const [followCount, setFollowCount] = useState(0);
+    const [postCount, setPostCount] = useState(0);
     const [render, setRender] = useState(false);
+    const [toggle, setToggle] = useState(false);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
+    useEffect(() => { getPostCount(); getFollowCount(); }, []);
+
+    const getPostCount = async () => {
+        await axios.post(baseURL + '/posts/count/', {poster_id: user._id})
+        .then(response => { setPostCount(response.data); });
+    }
+
+    const getFollowCount = async () => {
+        await axios.post(baseURL + '/friends/count/', {user_id: user._id})
+        .then(response => { setFollowCount(response.data); });
+    }
+
     const handleChange = (e) => { setBio(e.target.value); }
 
     const handleSubmit = async (e) => {
@@ -27,8 +43,16 @@ const Profile = () => {
     
     const callRender = () => { setRender(!render) }
 
+    const toggleSwitch = (event) => {
+
+        document.querySelector('.media-nav-li.highlight')?.classList.remove('highlight');
+        event.target?.classList.add('highlight');
+
+        setToggle(!toggle);
+    }
+
     return(
-        <>
+        <div>
             <Menu/>
             <div className="profile flex">
                 <div className='profile-header flex'>
@@ -38,7 +62,7 @@ const Profile = () => {
                         <div className='profile-name'>{user.firstname} {user.lastname}</div>
                     </div>
                     
-                    <div className='profile-bottom flex'>
+                    <div className='profile-bio flex'>
                         <h1 className='bio-label'>Personal Bio</h1>
                         <h1 className='bio-body flex' style={{display: !isEdit ? '' : 'none'}}>
                             <div className='bio-content'>
@@ -61,11 +85,31 @@ const Profile = () => {
                             }
                         </div>
                     </div>
+                    <div className='profile-footer flex'>   
+                        <div className='flex'>
+                            <span>Posts</span>
+                            <h1>{postCount}</h1>
+                        </div>
+                        <div className='flex'>
+                            <span>Following</span>
+                            <h1>{followCount}</h1>
+                        </div>
+                    </div>
                 </div>
-                <Album callRender={callRender}/>
-                <FriendCount/>
+                <div className='profile-media'>
+                    <div className='media-nav flex'>
+                        <div className='media-nav-li highlight' onClick={toggleSwitch}>Photo</div>
+                        <div className='media-nav-li' onClick={toggleSwitch}>Following</div>
+                    </div>
+                    <div className='profile'></div>
+                    {!toggle ?
+                        <Album callRender={callRender}/>
+                        :
+                        <FriendCount/>
+                    }
+                </div>
             </div>
-        </>
+        </div>
     )
 }
 

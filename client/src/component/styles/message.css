@@ -13,10 +13,7 @@
     overflow: hidden;
 }
 
-.private-message-header {
-    width: 100%;
-    background: rgb(20, 20, 20);
-}
+.private-message-header { width: 100%; background: rgb(20, 20, 20); }
 .private-message-header > div { flex-wrap: wrap; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
@@ -35,18 +32,18 @@
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
-.private-message-empty { 
+.private-message { 
     margin: 4rem 0 4rem 10%; 
     height: 75vh; 
     width: 80%; 
     scroll-behavior: smooth; 
     overflow-y: auto; 
 }
-.private-message-empty::-webkit-scrollbar {
+.private-message::-webkit-scrollbar {
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message-empty > h1 { text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+.private-message > h1 { text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
 
 .text { align-items: flex-start; column-gap: 0.5vw; }
 
@@ -65,13 +62,7 @@
 
 .text-format.image { object-fit: cover; max-width: 80%;}
 
-.texter { 
-    height: 7vh;
-    width: 7vh;
-    object-fit: cover;
-    border-radius: 3rem;
-    border: 1px solid rgb(44, 44, 44);
-}
+.texter { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; border: 1px solid rgb(44, 44, 44); }
 .text-image { display: none; border-radius: 0.5rem; }
 
 .text-content { 
@@ -93,21 +84,17 @@
 }
 
 .text-input-wrapper { justify-content: center; gap: 1vw; width: 100%; }
-.text-input { position: relative; height: 100%; width: 70%; }
+.text-input { padding-right: 3vw; position: relative; height: 100%; width: 70%; background: rgb(61, 61, 61); border-radius: 0.75rem; }
 .text-input > input { 
     height: 100%; 
     width: 100%; 
-    text-indent: 2.5vw;
-    color: white;
-    background: rgb(80, 80, 80);  
+    text-indent: 1.5vw;
+    color: rgb(168, 168, 168); 
+    background: rgb(61, 61, 61);
     border-radius: 0.75rem;
 }
-.camera-wrapper { position: absolute; top: 15%; right: 7.5%; }
-.camera-icon { 
-    position: absolute; 
-    font-size: clamp(1.625rem, 2.5vw, 1.75rem);
-    color: rgb(20, 20, 20);
-}
+.camera-wrapper { position: absolute; top: 10%; right: max(2rem, 9%); }
+.camera-icon { position: absolute; font-size: clamp(1.625rem, 2.5vw, 1.75rem); color: rgb(20, 20, 20); }
 .camera-wrapper > img { 
     display: absolute;
     top: 0;
@@ -132,16 +119,13 @@
 @media (max-width: 50rem) { 
     .message-container { margin: 0 0 5vh 0; }
     .private-message-header { min-height: 7.5vh; }
-    .private-message-empty { height: 60vh; }
-    .text-input { height: 50%; } 
+    .private-message { height: 60vh; }
     .text-input-wrapper {  flex-direction: column; }
     .text-input-wrapper > button { margin: 2.5vh 15% 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
-    .camera-wrapper { right: 15%; }
 }
 
 @media (max-width: 25rem) {
     .text-format { width: 80%; }
     .text-input { width: 95%; }
     .text-input-wrapper > button { margin: 2.5vh 5% 0 auto; }
-    .camera-wrapper { right: 20%; }
 }

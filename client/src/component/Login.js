@@ -23,9 +23,10 @@ const Login = () => {
             width: 'max(20rem, 35%)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
-            backgroundColor: 'rgb(30,30,30)'
+            backgroundColor: 'rgb(30,30,30)',
+            border: '1px solid black',
         },
-        overlay: { zIndex: '4' }
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));
@@ -40,7 +41,7 @@ const Login = () => {
 
     useEffect(() => { 
         if (sessionStorage.getItem('isLogged')) { 
-            window.location.href="/Dashboard/Post" 
+            window.location.href="/Dashboard/Post";
         } 
     },[]);
 

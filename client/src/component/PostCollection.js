@@ -1,6 +1,10 @@
+import { BsTrash } from 'react-icons/bs';
 import uuid from 'react-uuid';
 
-const PostCollection = ({collection}) => {
+const PostCollection = ({collection, deletePost}) => {
+
+    const user = JSON.parse(sessionStorage.getItem('user'));
+
     return (    
         collection.post_collection.map(post => 
             <div className='post flex' key={uuid()}>
@@ -13,6 +17,14 @@ const PostCollection = ({collection}) => {
                     <img src={post.primary_image} className='primary-image' alt=""/>
                     :
                     ""
+                }
+                {user._id === collection.poster_id ?
+                    <div className='delete-wrapper flex'>
+                        <div className='delete-message'>Delete Post</div>
+                        <BsTrash className='trash-button' onClick={() => {return deletePost(post._id);}}/>
+                    </div>
+                    :
+                    ''
                 }
             </div>
         )   

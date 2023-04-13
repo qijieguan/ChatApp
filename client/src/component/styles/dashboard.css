@@ -7,6 +7,6 @@
     background: rgb(26, 26, 26); 
 }
 
-@media (max-width: 50rem) {
+@media (max-width: 60rem) {
     .dashboard { grid-template-columns: 95%; }
 }

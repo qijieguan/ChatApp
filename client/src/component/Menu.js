@@ -26,8 +26,8 @@ const Menu = () => {
     }, [dispatch, baseURL]);
 
     const handleClick = (event) => {
-        let elements = document.querySelectorAll('.menu-li:not(.logout)');
-        elements.forEach(el => { el.classList.remove('active') });
+        document.querySelector('.menu-li.active:not(.logout)');
+    
         event.currentTarget.classList.add('active');
     }
 

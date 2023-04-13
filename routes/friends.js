@@ -1,6 +1,17 @@
 const router = require('express').Router();
 let Friend = require('../models/friend.model');
 
+
+
+router.route('/init').post((req, res) => {
+    const user_id = req.body.user_id;
+    const friends = [];
+    const newFriend = new Friend({user_id, friends});
+    newFriend.save()
+    .then(() => res.json("Friend Container is Initialized"))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
 router.route('/').post((req, res) => {
     const user_id = req.body.user_id;
     
@@ -9,12 +20,11 @@ router.route('/').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/init').post((req, res) => {
+router.route('/count').post((req, res) => {
     const user_id = req.body.user_id;
-    const friends = [];
-    const newFriend = new Friend({user_id, friends});
-    newFriend.save()
-    .then(() => res.json("Friend Container is Initialized"))
+
+    Friend.find({user_id: user_id})
+    .then(result => { res.json(result[0].friends.length)})
     .catch(err => res.status(400).json("Error " + err));
 });
 

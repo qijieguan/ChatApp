@@ -21,10 +21,11 @@ const FriendExtend = ({ friend }) => {
             width: 'max(20rem, 35%)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
-            color: 'white',
-            backgroundColor: 'rgb(30,30,30)'
+            color: 'gray',
+            backgroundColor: 'rgb(30,30,30)',
+            border: '1px solid black',
         },
-        overlay: { zIndex: '4' }
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));

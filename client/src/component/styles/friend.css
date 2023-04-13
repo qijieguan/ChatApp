@@ -18,10 +18,7 @@
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 
-.friend-wrapper-text > span { 
-    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
-    letter-spacing: 0.125rem;
-}
+.friend-wrapper-text > span { font-size: clamp(1.5rem, 2.5vw, 2.5rem); letter-spacing: 0.125rem; }
 
 .friend-container {
     position: relative;
@@ -32,18 +29,10 @@
     border-radius: 1rem; 
     overflow: hidden;
 }
-
-.friend-container.expand {
-    overflow: unset;
-    box-shadow: 0 0 3px;
-}
-
+.friend-container.expand { overflow: unset; box-shadow: 0 0 3px; }
 .friend-container:hover { box-shadow: 0 0 3px black; }
 
-.friend { 
-    flex-direction: column; 
-    width: 100%;
-}
+.friend { flex-direction: column; width: 100%; }
 
 .friend-image { 
     width: 100%; 
@@ -99,11 +88,11 @@
 .modal-btns { width: 100%; justify-content: space-between; }
 .modal-btns > button { padding: 2.5vh 0; width: 48%; font-weight: 700; background: transparent; }
 .modal-btns > button:hover { box-shadow: 0 0 3px black; }
-.cancel-btn { color: white; border: 1px solid; }
-.submit-btn { color: red; border: 1px solid; }
+.cancel-btn { color: gray; border: 1px solid; }
+.submit-btn { color: darkred; border: 1px solid; }
 
-.cancel-btn:hover { background: white; color: black; }
-.submit-btn:hover { background: red; color: white; border-color: red; }
+.cancel-btn:hover { background: gray; color: black; }
+.submit-btn:hover { background: darkred; color: gainsboro; border-color: darkred; }
 
 @keyframes slideRight {
     0%  { opacity: 0; width: 0; }

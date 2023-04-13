@@ -42,7 +42,7 @@
 }
 .header-banner-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-banner-text * { 
-    font-size: clamp(1.5rem, 2vw, 2rem); 
+    font-size: clamp(1rem, 2vw, 2rem); 
     letter-spacing: 0.125rem;
     text-align: left;
 }
@@ -50,6 +50,7 @@
 
 
 @media (max-width: 25rem) {
+    .header-banner-text * { text-align: center; }
     .header-btns { padding: 2vh 0; justify-content: space-around; }
     .start-btn { padding: 1vh 2.5vw; margin-right: 0; }
 }

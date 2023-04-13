@@ -48,8 +48,9 @@
 .text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
 
 .trash-wrapper { justify-content: center; height: 100%; width: 15%; }
-.trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 1; transition-delay: 0.5s; }
+.trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 1; }
 .trash-overlay {
+    display: none;
     position: absolute;
     inset: 0 0 auto auto;
     justify-content: center;
@@ -59,16 +60,19 @@
     font-weight: 700;
     height: 100%;
     width: 100%;
-    transform: translateX(101%);
     color: black;
     background: goldenrod;
-    transition: all 0.5s ease-in;
 }
-.trash-wrapper:hover .trash-overlay { transform: translateX(0); }
+.trash-wrapper:hover .trash-overlay { display: flex; }
 .trash-wrapper:hover .trash-icon { color: black }
 
 
 @media (max-width: 50rem) {
     .chat-page { grid-template-columns: 100%; width: 100%; }
     .conversation-log { margin: 2vh 0 4vh 0; height: 30vh; }
+    .conversation-preview > h1 { padding: 0 max(0.5vw, 0.5rem); }
+}
+
+@media (max-width: 25rem) {
+    .conversation-preview > h1 { font-size: 0.75rem; }
 }

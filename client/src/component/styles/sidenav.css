@@ -1,24 +1,6 @@
-.side-nav {
-    margin-top: 3vh;
-    width: 100%;
-    border-radius: 1rem;
-    overflow: hidden;
-}
-
-.side-nav-image { 
-    position: relative;
-    height: 20vh;
-    width: 100%;
-}
-
-.side-nav-bg {
-    position: absolute;
-    inset: 0 auto auto 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
+.side-nav { margin-top: 3vh; width: 100%; border-radius: 1rem; overflow: hidden; }
+.side-nav-image { position: relative; height: 20vh; width: 100%; }
+.side-nav-bg { position: absolute; inset: 0 auto auto 0; height: 100%; width: 100%; object-fit: cover; }
 .side-nav-profile {
     position: absolute;
     top: 35%;
@@ -53,7 +35,7 @@
     border-radius: 0 0 1rem 1rem;
 }
 
-.side-nav-link { padding: 1vh 1.5vw; color: grey; font-size: 0.875rem; border-radius: 3rem; transition: all 0.2s ease-in; }
+.side-nav-link { text-align: center; padding: 1vh 1.5vw; width: fit-content; color: grey; background: transparent; font-size: 0.875rem; border-radius: 3rem; transition: all 0.2s ease-in; }
 
 .side-nav-link:hover, .side-nav-link.highlight { color: gold; background: black; }
 
