@@ -33,7 +33,6 @@ const FriendExtend = ({ friend }) => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     const [modal, setModal] = useState(false);
-    const [offset, setOffset] = useState({height: 0, width: 0});
 
     const dispatch = useDispatch();
 
@@ -55,13 +54,14 @@ const FriendExtend = ({ friend }) => {
         let el = document.getElementById(friendID);
         let calc = e.pageX / window.innerWidth;
 
-        console.log(calc);
         if (calc >= 0.5) { el.querySelector('.friend-preview')?.classList.add('left'); }
         else { el.querySelector('.friend-preview')?.classList.remove('left'); }
     }
 
     const toggleView = (friendID, e) => {
         document.getElementById(friendID)?.classList.toggle('expand');
+        document.getElementById(friendID).querySelector('.friend-preview')?.classList.toggle('expand');
+        
         calcOffset(friendID, e);
     }
 

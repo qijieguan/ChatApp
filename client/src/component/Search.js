@@ -19,7 +19,12 @@ const Search = () => {
             <Menu/>
             <div className="search">
                 <div className='search-wrapper grid'>
-                    <div className='search-wrapper-label flex'><FcGlobe size={80} style={{marginRight: '1rem'}}/>SEARCH OVERVIEW</div>
+                    <div className='search-wrapper-label flex'>
+                        <div>
+                            <FcGlobe className='search-wrapper-icon' size={60} style={{marginRight: '1rem'}}/>
+                        </div>
+                        <span className='search-wrapper-text'>SEARCH OVERVIEW</span>
+                    </div>
                     {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
                 </div>
             </div>

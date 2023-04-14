@@ -48,39 +48,38 @@
 .text { align-items: flex-start; column-gap: 0.5vw; }
 
 .text-format {
-    margin: 3vh auto 3vh 0;
+    margin: 2vh auto 3vh 0;
     position: relative;
     flex-direction: column;
     font-weight: bold;
     align-items: unset;
     width: 65%;
     color: rgb(143, 143, 143);
-    background: rgb(48, 48, 48);
-    border: 1px solid rgb(31, 31, 31);
-    border-radius: 0.5rem;
 }
 
 .text-format.image { object-fit: cover; max-width: 80%;}
 
 .texter { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; border: 1px solid rgb(44, 44, 44); }
-.text-image { display: none; border-radius: 0.5rem; }
+.text-image { border-radius: 0.5rem; }
 
 .text-content { 
-    display: none; 
     padding: 1.5vh 1vw 3vh 1vw; 
     font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
     font-weight: 500; 
     word-wrap: break-word;
     min-height: 15vh; 
+    background: rgb(48, 48, 48);
+    border: 1px solid rgb(31, 31, 31);
+    border-radius: 0.5rem;
 }
 
 .text-made-by { 
-    position: absolute;
-    inset: auto 0 0 auto;
+    margin: 0 0 0.5vh 0.5vw;
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
     letter-spacing: 0.5px;
-    margin: auto 1vw 0 0 !important;  
-    z-index: 1;
+    font-weight: 700;
+    color: rgb(179, 179, 179);
+    text-transform: uppercase;
 }
 
 .text-input-wrapper { justify-content: center; gap: 1vw; width: 100%; }

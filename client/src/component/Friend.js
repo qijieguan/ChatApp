@@ -26,10 +26,8 @@ const Friend = () => {
             {friends.length ?
                 <div className='friend-wrapper grid'>
                     <div className="friend-wrapper-label flex"> 
-                        <FcVoicePresentation size={80} style={{marginRight: '1rem'}}/>
-                        <div className='friend-wrapper-text'>
-                            <span>FOLLOWING OVERVIEW </span>
-                        </div>
+                        <FcVoicePresentation className='friend-wrapper-icon' size={60} style={{marginRight: '1rem'}}/>
+                        <span className='friend-wrapper-text'>FOLLOWING OVERVIEW </span>
                     </div>
                     {friends.map(friend => <FriendExtend key={uuid()} friend={friend}/>)}
                 </div>
