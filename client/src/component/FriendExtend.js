@@ -2,7 +2,7 @@ import { deleteFriend } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Modal from 'react-modal';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const FriendExtend = ({ friend }) => {
@@ -35,6 +35,8 @@ const FriendExtend = ({ friend }) => {
     const [modal, setModal] = useState(false);
 
     const dispatch = useDispatch();
+
+    useEffect(() => {}, [friend._id]);
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
