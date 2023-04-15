@@ -72,7 +72,7 @@
 .friend-bio { padding: 1vh 1vw; }
 .friend-bio > span { font-size: clamp(0.875rem, 1vw, 1rem); }
 
-.friend-buttons { display: none; margin-top: 5vh; grid-template-columns: 40% 40%; transition: all 1s ease-in; }
+.friend-buttons { display: none; margin-top: 2.5vh; grid-template-columns: 40% 40%; transition: all 1s ease-in; }
 .friend-container:hover .friend-buttons { display: grid; }
 
 .friend-buttons > button { 

@@ -56,16 +56,22 @@ const FriendExtend = ({ friend }) => {
         let el = document.getElementById(friendID);
         let calc = e.pageX / window.innerWidth;
 
+        if (window.innerWidth <= 480) {
+            el.querySelector('.friend-preview')?.classList.remove('left'); 
+            return;
+        }
+
         if (calc >= 0.5) { el.querySelector('.friend-preview')?.classList.add('left'); }
         else { el.querySelector('.friend-preview')?.classList.remove('left'); }
     }
 
     const toggleView = (friendID, e) => {
-        document.getElementById(friendID)?.classList.toggle('expand');
-        document.getElementById(friendID).querySelector('.friend-preview')?.classList.toggle('expand');
         
+        document.getElementById(friendID).querySelector('.friend-preview')?.classList.toggle('expand');
+       
         calcOffset(friendID, e);
     }
+
 
     return (
         <div className='friend-container' id={friend._id}>
