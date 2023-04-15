@@ -53,7 +53,7 @@
     border: 2px solid black;
     border-top: 0;
     transform: translateY(100%);
-    z-index: 2;
+    z-index: 3;
 }
 
 .menu-link {

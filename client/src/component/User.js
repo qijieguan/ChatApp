@@ -14,7 +14,10 @@ const User = ({ user }) => {
     const friends = useSelector(state => state.friends);
     const dispatch = useDispatch();
 
-    useEffect(() => { friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); } });
+    useEffect(() => { 
+        friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); 
+        
+    } });
     }, [friends, user._id]);
 
     const handleAdd = async () => {
@@ -26,15 +29,33 @@ const User = ({ user }) => {
 
     const friendBorder = () => { return '2px solid green'; }
 
+    const zoomIn = (userID) => {
+        document.getElementById(userID)?.classList.add('active')
+    }    
+
+    const zoomOut = (userID) => {
+        document.getElementById(userID).classList.remove('active'); 
+    }
+
+    const zoomInverse = (userID) => {
+        let element = document.getElementById(userID);
+        if (element?.classList.contains('active')) { zoomOut(userID) }
+        else { zoomIn(userID) }
+    }
+ 
     return (
         <div className="user-container">
-            <div className='user' style={{border: isFriend ? friendBorder() : 'none' }}>
+            <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
+                onMouseOver={() => zoomIn(user._id)}
+                onMouseLeave={() => zoomOut(user._id)}
+                onClick={() => zoomInverse(user._id)}
+            >
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
                 >
                     <AiFillRead size={26} color="orange"/>
                 </div>
-                <div className='user-bio flex' id={user._id}>
+                <div className='user-bio flex'>
                     <span>{user.bio_content}</span>
                 </div>
                 <img className="user-image" src={user.profile_url} alt=""/>
@@ -44,7 +65,7 @@ const User = ({ user }) => {
                         <>
                             {!isFriend ? 
                                 <div className='user-icon-1'>
-                                    <MdPersonAdd color='green' size={26} onClick={handleAdd}/>
+                                    <MdPersonAdd color='yellowgreen' size={26} onClick={handleAdd}/>
                                 </div>
                                 : <div className='user-icon-2'><HiCheckCircle color="gold" size={24}/></div>
                             }

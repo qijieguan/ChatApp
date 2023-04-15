@@ -35,7 +35,7 @@
 }
 
 .user * { transition: 0.5s all; }
-.user:hover { height: 200%; border-radius: 2rem; z-index: 2; }
+.user.active { height: 200%; border-radius: 2rem; z-index: 2; }
 .user-image { 
     position: absolute;
     inset: 0 auto auto 0; 

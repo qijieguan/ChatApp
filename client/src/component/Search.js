@@ -14,10 +14,14 @@ const Search = () => {
 
     useEffect(() => { axios.get(baseURL + '/users/').then((response) => { setUsers(response.data); }); }, [baseURL]);
 
+    const handleScroll = (e) => {
+        console.log('scroll')
+    }
+
     return(
         <>
             <Menu/>
-            <div className="search">
+            <div className="search" onScroll={(e) => handleScroll()}>
                 <div className='search-wrapper grid'>
                     <div className='search-wrapper-label flex'>
                         <div>

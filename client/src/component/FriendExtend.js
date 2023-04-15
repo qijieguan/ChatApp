@@ -88,7 +88,7 @@ const FriendExtend = ({ friend }) => {
                 </div>
 
                 <div className='profile-view'
-                    onMouseEnter={(e) => openView(friend._id, e)}
+                    onMouseOver={(e) => openView(friend._id, e)}
                     onMouseLeave={(e) => closeView(friend._id, e)}
                 >
                     (view bio)
