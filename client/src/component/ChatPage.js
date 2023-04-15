@@ -13,7 +13,9 @@ const ChatPage = () => {
 
     useEffect(() => { 
         if (sessionStorage.getItem('select')) {
-            document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
+            setTimeout(() => {
+                document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
+            }, 375);
         }
         getChatLog(); 
     }, [baseURL]);
