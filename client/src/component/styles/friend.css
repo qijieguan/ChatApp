@@ -117,8 +117,7 @@
     .friend-wrapper-label { grid-column: 1 / 2; }
     .friend-wrapper-icon { display: none; }
     .friend-preview, .friend-container { border-radius: 0; }
-    .friend-preview { inset: 0 0 auto auto; transform: scale(0) translateY(100%); }
-    .friend-preview.expand, .friend-preview.expand.left { transform: scale(1) translateY(0); inset: 0 0 auto auto; }
-    .profile-view:hover + .friend-preview { transform: scale(1) translateY(0); }
+    .friend-preview { inset: 0 auto auto 0; transform: scale(0) translateY(100%); }
+    .friend-preview.expand { inset: 0 auto auto 0 !important; transform: scale(1) translateY(0) !important; }
     .friend-bio { padding: 1vh 2vw; }
 }

@@ -56,31 +56,29 @@ const FriendExtend = ({ friend }) => {
         let el = document.getElementById(friendID);
         let calc = e.pageX / window.innerWidth;
 
-        if (window.innerWidth <= 480) {
-            el.querySelector('.friend-preview')?.classList.remove('left'); 
-            return;
-        }
-
         if (calc >= 0.5) { el.querySelector('.friend-preview')?.classList.add('left'); }
         else { el.querySelector('.friend-preview')?.classList.remove('left'); }
     }
 
-    const toggleView = (friendID, e) => {
-        
-        document.getElementById(friendID).querySelector('.friend-preview')?.classList.toggle('expand');
+    const openView = (friendID, e) => {
+        document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.add('expand');
        
         calcOffset(friendID, e);
     }
 
+    const closeView = (friendID, e) => {
+        document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.remove('expand', 'left');
+    }
+
 
     return (
-        <div className='friend-container' id={friend._id}>
-            <div className="friend flex">
+        <div className='friend-container'>
+            <div className="friend flex" id={friend._id}>
                 <img src={friend.profile_url} className="friend-image" alt=""/>
                 <div className="friend-name">{friend.firstname} {friend.lastname}</div>
                 <div className='profile-view'
-                    onMouseEnter={(e) => toggleView(friend._id, e)}
-                    onMouseLeave={(e) => toggleView(friend._id, e)}
+                    onMouseEnter={(e) => openView(friend._id, e)}
+                    onMouseLeave={(e) => closeView(friend._id, e)}
                 >
                     (view bio)
                 </div>
