@@ -36,8 +36,6 @@ const FriendExtend = ({ friend }) => {
 
     const dispatch = useDispatch();
 
-    window.location.reload();
-
     useEffect(() => { }, [friend._id]);
 
     const handleChat = () => { 

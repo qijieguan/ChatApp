@@ -14,7 +14,7 @@ const ChatPage = () => {
     useEffect(() => { 
         if (sessionStorage.getItem('select')) {
             setTimeout(() => {
-                document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
+                document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
             }, 500);
         }
         getChatLog(); 
@@ -32,7 +32,7 @@ const ChatPage = () => {
     const getSelect = (chat_id) => { 
         sessionStorage.setItem('select', chat_id);
         getChatLog();
-        document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
+        document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }
 
     const removeChat = async (chat) => {
