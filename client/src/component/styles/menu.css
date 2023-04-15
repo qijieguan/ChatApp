@@ -83,6 +83,6 @@
     .menu-bar { justify-content: center; }
     .menu-li { padding-left: 0; }
     .menu-li-icon { margin-left: 0; }
-    .menu-links { width: 250%; }
+    .menu-links { inset: auto -10% 0 auto; width: 150%; }
     .person-icon { margin: 0 1vw; }
 }

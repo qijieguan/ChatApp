@@ -77,6 +77,7 @@ const MessageBox = ({ initChatLog }) => {
         document.getElementById(selectMsg)?.classList.remove('highlight');
         sessionStorage.removeItem('select'); 
         setTextSet([]); 
+        document.querySelector('.chat-page')?.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth'});
     }
 
     const readFiles = (files) => {

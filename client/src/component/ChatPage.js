@@ -25,6 +25,7 @@ const ChatPage = () => {
     const getSelect = (chat_id) => { 
         sessionStorage.setItem('select', chat_id);
         getChatLog();
+        document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
     }
 
     const removeChat = async (chat) => {
