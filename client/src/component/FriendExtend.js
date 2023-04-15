@@ -36,7 +36,7 @@ const FriendExtend = ({ friend }) => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {}, [friend._id]);
+    useEffect(() => { window.location.reload(); }, [friend._id]);
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);

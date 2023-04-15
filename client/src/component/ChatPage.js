@@ -12,10 +12,11 @@ const ChatPage = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(() => { 
+        window.location.reload();
         if (sessionStorage.getItem('select')) {
             setTimeout(() => {
                 document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
-            }, 375);
+            }, 500);
         }
         getChatLog(); 
     }, [baseURL]);
