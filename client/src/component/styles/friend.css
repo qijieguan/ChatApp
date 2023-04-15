@@ -67,7 +67,7 @@
 .friend-preview.expand.left { inset: 0 auto auto 0; transform: scale(1) translateX(-100%); opacity: 1; }
 
 .profile-view { margin-bottom: 2vh; text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); color: gray; }
-.profile-view:hover { color: gold; }
+.friend-preview.expand + .profile-view { color: gold; }
 
 .friend-bio { padding: 1vh 1vw; }
 .friend-bio > span { font-size: clamp(0.875rem, 1vw, 1rem); }
@@ -120,4 +120,5 @@
     .friend-preview { inset: 0 auto auto 0; transform: scale(0) translateY(100%); }
     .friend-preview.expand { inset: 0 auto auto 0 !important; transform: scale(1) translateY(0) !important; }
     .friend-bio { padding: 1vh 2vw; }
+    .profile-view { margin-bottom: 4vh; }
 }

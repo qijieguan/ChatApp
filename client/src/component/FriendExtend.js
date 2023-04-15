@@ -76,12 +76,6 @@ const FriendExtend = ({ friend }) => {
             <div className="friend flex" id={friend._id}>
                 <img src={friend.profile_url} className="friend-image" alt=""/>
                 <div className="friend-name">{friend.firstname} {friend.lastname}</div>
-                <div className='profile-view'
-                    onMouseEnter={(e) => openView(friend._id, e)}
-                    onMouseLeave={(e) => closeView(friend._id, e)}
-                >
-                    (view bio)
-                </div>
                 
                 <div className='friend-preview'>
                     <div className='friend-bio'>
@@ -91,6 +85,13 @@ const FriendExtend = ({ friend }) => {
                             <span>*No profile bio has been set for this user*</span>
                         }
                     </div>
+                </div>
+
+                <div className='profile-view'
+                    onMouseEnter={(e) => openView(friend._id, e)}
+                    onMouseLeave={(e) => closeView(friend._id, e)}
+                >
+                    (view bio)
                 </div>
             </div>
             <div className='friend-buttons grid'>

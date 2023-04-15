@@ -20,7 +20,7 @@ const MessageBox = ({ initChatLog }) => {
 
     useEffect(() => { 
         setTextSet([]);
-        renderConversation(); 
+        setTimeout(() => {renderConversation(); });
     }, [render, selectMsg, baseURL]);
 
     const renderConversation = async () => {
@@ -98,13 +98,13 @@ const MessageBox = ({ initChatLog }) => {
 
     return (
         <div className='message-container'>
-            <div className="private-message-header">
+            <div className="private-message-header flex">
                 {user ?
                 <div className='flex'>
                     <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
                     <span className='flex'>
                         Messaging:<img src={user.profile_url} alt=""/>
-                        {user.firstname + " " + user.lastname}
+                        <span className='recipient'>{user.firstname + " " + user.lastname}</span>
                     </span>
                 </div>
                     : ""

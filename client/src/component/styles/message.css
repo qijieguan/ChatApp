@@ -32,6 +32,7 @@
     border-radius: 3.25rem; 
     box-shadow: 0 0 3px black;
 }
+
 .private-message { 
     margin: 1rem 0 5rem 10%;
     height: 65vh; 
@@ -43,7 +44,7 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message > h1 { text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+.private-message > h1 { margin-top: 10vh; text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
 
 .text { align-items: flex-start; column-gap: 0.5vw; }
 
@@ -117,13 +118,14 @@
 
 @media (max-width: 50rem) { 
     .message-container { margin: 0 0 5vh 0; }
-    .private-message-header { min-height: 7.5vh; }
+    .private-message-header { min-height: 7.5vh; padding: 1vh 2vw; }
     .private-message { height: 60vh; }
     .text-input-wrapper {  flex-direction: column; }
     .text-input-wrapper > button { margin: 2.5vh 15% 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
 }
 
 @media (max-width: 25rem) {
+    .recipient { margin: 1vh 0; font-weight: 700; }
     .text-format { width: 80%; }
     .text-input { width: 95%; }
     .text-input-wrapper > button { margin: 2.5vh 5% 0 auto; }

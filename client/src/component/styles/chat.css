@@ -48,9 +48,8 @@
 .text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
 
 .trash-wrapper { justify-content: center; height: 100%; width: 15%; }
-.trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 1; }
+.trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 2; }
 .trash-overlay {
-    display: none;
     position: absolute;
     inset: 0 0 auto auto;
     justify-content: center;
@@ -62,8 +61,11 @@
     width: 100%;
     color: black;
     background: goldenrod;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.2s ease-in;
 }
-.trash-wrapper:hover .trash-overlay { display: flex; }
+.trash-wrapper:hover .trash-overlay { z-index: 1; opacity: 1; }
 .trash-wrapper:hover .trash-icon { color: black }
 
 

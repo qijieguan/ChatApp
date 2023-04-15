@@ -27,8 +27,8 @@ const Conversation = ({ chat, getSelect, removeChat }) => {
                     <div className='text-preview'>{textsPreview}</div>
                 </div>
             </div>
-            <div className='trash-wrapper flex' onClick={() => removeChat(chat)}>
-                <BsTrash className='trash-icon'/>
+            <div className='trash-wrapper flex'>
+                <BsTrash className='trash-icon' onClick={() => removeChat(chat)}/>
                 <div className='trash-overlay flex'>REMOVE CONVERSATION?</div>
             </div>
         </div>
