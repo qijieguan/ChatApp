@@ -11,7 +11,12 @@ const ChatPage = () => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => { getChatLog(); }, [baseURL]);
+    useEffect(() => { 
+        if (sessionStorage.getItem('select')) {
+            document.querySelector('.message-container')?.scrollIntoView({ block: 'start', inline:'nearest', behavior: 'smooth' });
+        }
+        getChatLog(); 
+    }, [baseURL]);
 
     const getChatLog = async () => {
         await axios.post(baseURL +'/texts/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id })

@@ -61,11 +61,11 @@
     box-shadow: 0 0 3px black;
     z-index: 3;
     opacity: 0;
-    transform: scale(0) translateX(102%);
+    transform: scale(0) translateX(100%);
     transition: all 0.5s ease-in;
 }
 .friend-preview.expand:not(.left) { transform: scale(1) translateX(102%); opacity: 1; }
-.friend-preview.expand.left { inset: 0 auto auto 0; transform: scale(1) translateX(-102%); opacity: 1; }
+.friend-preview.expand.left { inset: 0 auto auto 0; transform: scale(1) translateX(-100%); opacity: 1; }
 
 .profile-view { margin-bottom: 2vh; text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); color: gray; }
 .profile-view:hover { color: gold; }
@@ -113,12 +113,13 @@
     .friend-wrapper-label { grid-column: 1 / 3; margin: 2.5vh auto 7.5vh auto; }
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 30rem) {
     .friend-wrapper { grid-template-columns: 95%; }
     .friend-wrapper-label { grid-column: 1 / 2; }
     .friend-wrapper-icon { display: none; }
     .friend-preview, .friend-container { border-radius: 0; }
-    .friend-preview { inset: 0 0 auto auto; transform: scale(0) translateY(101%); }
-    .friend-preview.expand { transform: scale(1) translateY(0) !important; inset: 0 0 auto auto !important; }
+    .friend-preview { inset: 0 0 auto auto; transform: scale(0) translateY(100%); }
+    .friend-preview.expand, .friend-preview.expand.left { transform: unset; inset: unset; }
     .profile-view:hover + .friend-preview { transform: scale(1) translateY(0); }
+    .friend-bio { padding: 1vh 2vw; }
 }
