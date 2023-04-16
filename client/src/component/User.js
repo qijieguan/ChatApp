@@ -15,9 +15,10 @@ const User = ({ user }) => {
     const dispatch = useDispatch();
 
     useEffect(() => { 
-        friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); 
-        
-    } });
+        friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); } });
+        document.getElementById(user._id).addEventListener('click', (e) => {
+            zoomInverse(e, user._id);
+        })
     }, [friends, user._id]);
 
     const handleAdd = async () => {
@@ -29,29 +30,31 @@ const User = ({ user }) => {
 
     const friendBorder = () => { return '2px solid green'; }
 
-    const zoomIn = (e,userID) => {
-        let element = document.getElementById(userID);
+    const zoomIn = (e, userID) => {
+        
+        let element = document.getElementById(userID)
         element?.classList.add('active');
 
         element.querySelector('.user-bio-icon')?.classList.add('shift');
     }    
 
     const zoomOut = (e, userID) => {
-        let element = document.getElementById(userID);
+  
+        let element = document.getElementById(userID)
         element?.classList.remove('active');
-
-        element.querySelector('.user-bio-icon')?.classList.remove('shift'); 
+        
+        element.querySelector('.user-bio-icon')?.classList.remove('shift');
     }
 
     const zoomInverse = (e, userID) => {
         let element = document.getElementById(userID);
         if (element?.classList.contains('active')) { zoomOut(e, userID) }
-        else { zoomIn(e, userID) }    
+        else { zoomIn(e, userID) } 
     }
  
     const readBio = (e, userID) => {
         e.stopPropagation();
-        zoomIn(e, userID);
+        zoomIn(userID);
     }   
 
     return (
@@ -59,7 +62,6 @@ const User = ({ user }) => {
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
                 onMouseOver={(e) => zoomIn(e, user._id)}
                 onMouseLeave={(e) => zoomOut(e, user._id)}
-                onClick={(e) => zoomInverse(e, user._id)}
             >
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
