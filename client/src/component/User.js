@@ -43,6 +43,11 @@ const User = ({ user }) => {
         else { zoomIn(userID) }
     }
  
+    const readBio = (e, userID) => {
+        e.stopPropagation();
+        zoomIn(userID);
+    }   
+
     return (
         <div className="user-container">
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
@@ -53,7 +58,9 @@ const User = ({ user }) => {
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
                 >
-                    <AiFillRead size={26} color="orange"/>
+                    <AiFillRead size={26} color="orange"
+                        onClick={(e) => readBio(e, user._id) }
+                    />
                 </div>
                 <div className='user-bio flex'>
                     <span>{user.bio_content}</span>
