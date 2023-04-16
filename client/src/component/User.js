@@ -37,7 +37,7 @@ const User = ({ user }) => {
         document.getElementById(userID).classList.remove('active'); 
     }
 
-    const zoomInverse = (userID) => {
+    const zoomInverse = (e, userID) => {
         let element = document.getElementById(userID);
         if (element?.classList.contains('active')) { zoomOut(userID) }
         else { zoomIn(userID) }
@@ -48,7 +48,7 @@ const User = ({ user }) => {
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
                 onMouseOver={() => zoomIn(user._id)}
                 onMouseLeave={() => zoomOut(user._id)}
-                onClick={() => zoomInverse(user._id)}
+                onClick={(e) => zoomInverse(e, user._id)}
             >
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
