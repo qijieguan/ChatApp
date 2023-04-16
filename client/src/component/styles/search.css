@@ -59,12 +59,15 @@
 
 .user-bio-icon { 
     position: absolute;
-    padding: 0.5rem 0.5rem 0 0.5rem;
+    padding: 0.5vh 0.5vh 0 1vh;
     inset: 0 0 auto auto;
     background: black;
     border-radius: 0 0 0 1.5rem;
     z-index: 2;
+    transition: 0.5s all 1s ease-in;
 }
+
+.user-bio-icon.shift, .user-bio-icon:hover { padding: 1vh 1.5vh 0 1vh; }
 
 .user-bio {
     position: absolute;
@@ -100,5 +103,5 @@
     .search-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
     .search-wrapper-label { grid-column: 1 / 2; }
     .search-wrapper-icon { display: none; }
-    .user-bio { padding: 1vh 2vw; }
+    .user-name,.user-bio { padding: 1vh 2vw; }
 }
