@@ -16,9 +16,6 @@ const User = ({ user }) => {
 
     useEffect(() => { 
         friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); } });
-        document.getElementById(user._id).addEventListener('click', (e) => {
-            zoomInverse(e, user._id);
-        })
     }, [friends, user._id]);
 
     const handleAdd = async () => {
@@ -31,7 +28,6 @@ const User = ({ user }) => {
     const friendBorder = () => { return '2px solid green'; }
 
     const zoomIn = (e, userID) => {
-        
         let element = document.getElementById(userID)
         element?.classList.add('active');
 
@@ -39,17 +35,10 @@ const User = ({ user }) => {
     }    
 
     const zoomOut = (e, userID) => {
-  
         let element = document.getElementById(userID)
         element?.classList.remove('active');
         
         element.querySelector('.user-bio-icon')?.classList.remove('shift');
-    }
-
-    const zoomInverse = (e, userID) => {
-        let element = document.getElementById(userID);
-        if (element?.classList.contains('active')) { zoomOut(e, userID) }
-        else { zoomIn(e, userID) } 
     }
  
     const readBio = (e, userID) => {
@@ -60,7 +49,8 @@ const User = ({ user }) => {
     return (
         <div className="user-container">
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
-                onMouseOver={(e) => zoomIn(e, user._id)}
+                onClick={(e) => zoomOut(e, user._id)} 
+                onMouseMove={(e) => zoomIn(e, user._id)}
                 onMouseLeave={(e) => zoomOut(e, user._id)}
             >
                 <div className='user-bio-icon' 
