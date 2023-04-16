@@ -67,7 +67,8 @@
     transition: 0.5s all 1s ease-in;
 }
 
-.user-bio-icon.shift, .user-bio-icon:hover { padding: 1vh 1.5vh 0 1vh; }
+.user-bio-icon.shift { padding: 1vh 1.5vh 0 1vh; }
+.user-bio-icon.shift + .user-bio { transform: translateY(0); }
 
 .user-bio {
     position: absolute;
@@ -82,8 +83,6 @@
     transition: all 0.5s ease-in;
     z-index: 1;
 }
-
-.user-bio-icon:hover + .user-bio { transform: translateY(0); }
 
 .user:hover .user-name { font-size: 1rem; }
 .user:hover .user-image { animation: animateImage 3s; }

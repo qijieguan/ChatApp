@@ -35,28 +35,56 @@ const User = ({ user }) => {
     const friendBorder = () => { return '2px solid green'; }
 
     const zoomIn = (e, userID) => {
-        document.getElementById(userID)?.classList.add('active');
+        let element = document.getElementById(userID);
+        element?.classList.add('active');
     }    
 
     const zoomOut = (e, userID) => {
-        document.getElementById(userID)?.classList.remove('active');
+        let element = document.getElementById(userID);
+        element?.classList.remove('active');
     }
 
-    const zoomInverse = (e, userID) => {
+    const toggleZoom = (e, userID) => {
         let element = document.getElementById(userID);
+        
         if (element?.classList.contains('active')) { zoomOut(e, userID) }
         else { zoomIn(e, userID) } 
+    }
+
+    const openBio = (e, userID) => {
+        e.stopPropagation();
+        let element = document.getElementById(userID)
+
+        element?.classList.add('active');
+        element?.querySelector('.user-bio-icon')?.classList.add('shift');
+    }
+
+    const closeBio = (e, userID) => {
+        let element = document.getElementById(userID).querySelector('.user-bio-icon');
+        element?.classList.remove('shift');
+    }
+
+    const toggleBio = (e, userID) => {
+        e.stopPropagation();
+
+        let element = document.getElementById(userID).querySelector('.user-bio-icon');
+        if (element?.classList.contains('shift')) {
+            element?.classList.remove('shift')
+        }
+        else { openBio(e, userID); }
     }
 
     return (
         <div className="user-container">
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
-                onClick={(e) => { zoomInverse(e, user._id) }} 
-                onMouseEnter={(e) => { if (!isMobile) { zoomIn(e, user._id) } }}
-                onMouseLeave={(e) => { zoomOut(e, user._id) }}
+                onClick={(e) => { toggleZoom(e, user._id); }} 
+                onMouseEnter={(e) => { if (!isMobile) { zoomIn(e, user._id); } }}
+                onMouseLeave={(e) => { zoomOut(e, user._id); }}
             >
                 <div className='user-bio-icon' 
-                    style={{display: user.bio_content ? '' : 'none'}}
+                    onClick={(e) => { toggleBio(e, user._id) } }
+                    onMouseEnter={(e) => { if (!isMobile) { openBio(e, user._id); } }}
+                    onMouseLeave={(e) => { closeBio(e, user._id); }}
                 >
                     <AiFillRead size={26} color="orange"/>
                 </div>
