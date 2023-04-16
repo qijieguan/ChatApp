@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 const User = ({ user }) => {
 
     const [isFriend, setFriend] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const friends = useSelector(state => state.friends);
@@ -16,6 +17,11 @@ const User = ({ user }) => {
 
     useEffect(() => { 
         friends.forEach(friend_id => { if (friend_id === user._id) { setFriend(true); } });
+
+        document.getElementById(user._id)?.addEventListener('touchstart' , (event) => {
+            setIsMobile(true);
+        });
+        
     }, [friends, user._id]);
 
     const handleAdd = async () => {
@@ -57,9 +63,9 @@ const User = ({ user }) => {
     return (
         <div className="user-container">
             <div className='user' id={user._id} style={{border: isFriend ? friendBorder() : 'none' }}
-                onClick={(e) => zoomInverse(e, user._id)} 
-                onMouseEnter={(e) => zoomIn(e, user._id)}
-                onMouseLeave={(e) => zoomOut(e, user._id)}
+                onClick={(e) => { zoomInverse(e, user._id) }} 
+                onMouseEnter={(e) => { if (!isMobile) { zoomIn(e, user._id) } }}
+                onMouseLeave={(e) => { zoomOut(e, user._id) }}
             >
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
