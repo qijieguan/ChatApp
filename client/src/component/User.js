@@ -71,7 +71,7 @@ const User = ({ user }) => {
                     style={{display: user.bio_content ? '' : 'none'}}
                 >
                     <AiFillRead size={26} color="orange"
-                        onClick={(e) => readBio(e, user._id) }
+                        onMouseEnter={(e) => readBio(e, user._id) }
                     />
                 </div>
                 <div className='user-bio flex'>
