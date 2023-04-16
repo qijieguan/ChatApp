@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { addFriend } from './actions/index.js';
 import { useEffect, useState } from 'react';
+import { useId } from 'react';
 
 const User = ({ user }) => {
 
@@ -34,19 +35,11 @@ const User = ({ user }) => {
     const friendBorder = () => { return '2px solid green'; }
 
     const zoomIn = (e, userID) => {
-        
-        let element = document.getElementById(userID)
-        element?.classList.add('active');
-
-        element.querySelector('.user-bio-icon')?.classList.add('shift');
+        document.getElementById(userID)?.classList.add('active');
     }    
 
     const zoomOut = (e, userID) => {
-  
-        let element = document.getElementById(userID)
-        element?.classList.remove('active');
-        
-        element.querySelector('.user-bio-icon')?.classList.remove('shift');
+        document.getElementById(userID)?.classList.remove('active');
     }
 
     const zoomInverse = (e, userID) => {
@@ -54,11 +47,6 @@ const User = ({ user }) => {
         if (element?.classList.contains('active')) { zoomOut(e, userID) }
         else { zoomIn(e, userID) } 
     }
- 
-    const readBio = (e, userID) => {
-        e.stopPropagation();
-        zoomIn(userID);
-    }   
 
     return (
         <div className="user-container">
@@ -70,9 +58,7 @@ const User = ({ user }) => {
                 <div className='user-bio-icon' 
                     style={{display: user.bio_content ? '' : 'none'}}
                 >
-                    <AiFillRead size={26} color="orange"
-                        onMouseEnter={(e) => readBio(e, user._id) }
-                    />
+                    <AiFillRead size={26} color="orange"/>
                 </div>
                 <div className='user-bio flex'>
                     <span>{user.bio_content}</span>
