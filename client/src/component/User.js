@@ -81,7 +81,7 @@ const User = ({ user }) => {
                 onMouseEnter={(e) => { if (!isMobile) { zoomIn(e, user._id); } }}
                 onMouseLeave={(e) => { zoomOut(e, user._id); }}
             >
-                <div className='user-bio-icon' 
+                <div className='user-bio-icon' style={{display: user.bio_content ? '' : 'none'}}
                     onClick={(e) => { toggleBio(e, user._id) } }
                     onMouseEnter={(e) => { if (!isMobile) { openBio(e, user._id); } }}
                     onMouseLeave={(e) => { closeBio(e, user._id); }}
