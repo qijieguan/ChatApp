@@ -50,6 +50,7 @@ const User = ({ user }) => {
     }
  
     const readBio = (e, userID) => {
+        e.stopPropagation();
         zoomIn(e, userID);
     }   
 
