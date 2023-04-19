@@ -39,6 +39,9 @@
 
 .side-nav-link:hover, .side-nav-link.highlight { color: gold; background: black; }
 
+@media (max-width: 25rem) {
+    .side-nav-link { padding: 1vh 2vw; }
+}
 
 
 

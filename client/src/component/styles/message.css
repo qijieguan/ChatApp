@@ -14,11 +14,10 @@
 }
 
 .private-message-header { width: 100%; background: rgb(20, 20, 20); }
-.private-message-header > div { flex-wrap: wrap; row-gap: 1vh; width: 100%; }
+.private-message-header > div { padding: 0 1vw; flex-wrap: wrap; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 1vh; 
     letter-spacing: 0.0625rem;
 }
 #back-btn { margin: 0 5vw 0 1.5vw; background: gray; border-radius: 0.125rem; }
@@ -61,7 +60,7 @@
 .text-format.image { object-fit: cover; max-width: 80%;}
 
 .texter { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; border: 1px solid rgb(44, 44, 44); }
-.text-image { border-radius: 0.5rem; }
+.text-image { height: 25vh; border-radius: 0.5rem; }
 
 .text-content { 
     padding: 1.5vh 1vw 3vh 1vw; 
@@ -83,8 +82,15 @@
     text-transform: uppercase;
 }
 
-.text-input-wrapper { justify-content: center; gap: 1vw; width: 100%; }
-.text-input { padding-right: 3vw; position: relative; height: 100%; width: 70%; background: rgb(61, 61, 61); border-radius: 0.75rem; }
+.text-input-wrapper { padding: 0 2vw; grid-template-columns: 80% 17.5%; gap: 1vw; width: 100%; }
+.text-input { 
+    padding-right: 2vw; 
+    position: relative; 
+    height: 100%; 
+    width: 100%; 
+    background: rgb(61, 61, 61); 
+    border-radius: 0.75rem; 
+}
 .text-input > input { 
     height: 100%; 
     width: 100%; 
@@ -106,6 +112,7 @@
 }
 .camera-wrapper > input { display: none; }
 .text-input-wrapper > button { 
+    text-align: center;
     padding: 1vh 2vw;
     letter-spacing: 0.05rem; 
     font-weight: bold; 
@@ -119,14 +126,16 @@
 @media (max-width: 50rem) { 
     .message-container { display: none; margin: 2vh 0 5vh 0; }
     .message-container.focus { display: unset; }
-    .private-message { height: 60vh; }
-    .text-input-wrapper {  flex-direction: column; }
-    .text-input-wrapper > button { margin: 2.5vh 15% 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
+    .private-message { height: 50vh; }
+    .text-input-wrapper { grid-template-columns: 100%; }
+    .text-input-wrapper > button { margin: 5vh 0 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
 }
 
 @media (max-width: 25rem) {
+    #back-btn { margin: 1vh 5vw 0 1.5vw; }
     .recipient { margin: 1vh 0; font-weight: 700; }
-    .text-format { width: 80%; }
+    .private-message {  margin: 1rem auto 5rem auto; width: 97.5%; }
+    .text-format { width: 100%; }
+    .text-content { padding: 1.5vh 1vw 3vh 2vw; } 
     .text-input { width: 95%; }
-    .text-input-wrapper > button { margin: 2.5vh 5% 0 auto; }
 }

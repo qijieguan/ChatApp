@@ -53,7 +53,7 @@
     max-height: 5rem; 
     min-width: 70%; 
     max-height: 90%;
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-size: clamp(0.75rem, 2.5vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
     color: orange; 

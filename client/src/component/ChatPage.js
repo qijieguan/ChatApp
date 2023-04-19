@@ -20,6 +20,16 @@ const ChatPage = () => {
             document.querySelector('.conversation-log')?.classList.remove('focus');
             document.querySelector('.message-container')?.classList.add('focus');
         }
+        else {
+            setTimeout(() => {
+                document.querySelector('.conversation-log')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            }, 500);
+        }
+        
+        if (window.location.href.includes('Chat')) {
+            document.querySelector('.chat-nav')?.classList.add('highlight');
+        }
+       
         getChatLog(); 
     }, [baseURL]);
 
@@ -55,7 +65,7 @@ const ChatPage = () => {
         }); 
     }
 
-    const initChatLog = () => { getChatLog() };
+    const renderChatLog = () => { getChatLog() };
 
     return (
         <div className='chat-page grid'>
@@ -71,7 +81,7 @@ const ChatPage = () => {
                     }
                 </div>
             </div>
-            <MessageBox initChatLog={initChatLog}/>     
+            <MessageBox renderChatLog={renderChatLog}/>     
         </div>
                     
     );

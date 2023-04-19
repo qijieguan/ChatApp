@@ -15,7 +15,7 @@ const Post = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const user = JSON.parse(sessionStorage.getItem('user'))
 
-    useEffect(() => { getPosts() }, [render]);
+    useEffect(() => { getPosts(); }, [render]);
 
     const getPosts = async () => {  
         await axios.get(baseURL + '/posts')

@@ -6,21 +6,20 @@ import axios from 'axios';
 import uuid from 'react-uuid';
 import Text from './Text.js';
 
-const MessageBox = ({ initChatLog }) => {
+const MessageBox = ({ renderChatLog }) => {
 
     const [user, setUser] = useState("");
     const [files, setFiles] = useState("");
     const [url, setURL] = useState("");
     const [textSet, setTextSet] = useState([]);
     const [render, setRender] = useState(false);
-    var textInp = document.querySelector('.text');
+    const [textInp, setTextInp] = useState("");
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const selectMsg = sessionStorage.getItem('select');
 
     useEffect(() => { 
-        setTextSet([]);
-        setTimeout(() => {renderConversation(); });
+        setTimeout(() => { renderConversation(); }, 250);
     }, [render, selectMsg, baseURL]);
 
     const renderConversation = async () => {
@@ -45,12 +44,12 @@ const MessageBox = ({ initChatLog }) => {
             user_id: JSON.parse(sessionStorage.getItem('user'))._id,
             friend_id: user._id,
             content: content
-        });
-        if (!textSet) { initChatLog(); }
+        })
+        renderChatLog(); 
     }
 
     const uploadText = async () => {
-        if (textInp.value) { postText(textInp.value); setRender(!render); return; }
+        if (textInp.length) { postText(textInp); setRender(!render); return; }
 
         const data = new FormData();
         data.append('file', files[0]);
@@ -64,13 +63,14 @@ const MessageBox = ({ initChatLog }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (!textInp.value && !files) { return; }
+        if (!textInp.length && !files) { return; }
         uploadText();
         setFiles("");
         setURL("");
-        textInp.value = '';
+        setTextInp("");
         document.querySelector('.camera-icon').style.display = "";
         document.querySelector(".file").value="";
+        renderConversation();
     }
 
     const goBack = () => { 
@@ -80,11 +80,11 @@ const MessageBox = ({ initChatLog }) => {
 
         document.querySelector('.conversation-log')?.classList.add('focus');
         document.querySelector('.message-container')?.classList.remove('focus');
-        document.querySelector('.chat-page')?.scrollIntoView({ block: 'start', behavior: 'smooth'});
+        document.querySelector('.conversation-log')?.scrollIntoView({ block: 'start', behavior: 'smooth'});
     }
 
     const readFiles = (files) => {
-        if (!files) { return }
+        if (!files) { return; }
         const reader = new FileReader();
         reader.addEventListener("load", () => { setURL(reader.result); setFiles(files); }, false);
         reader.readAsDataURL(files[0]); 
@@ -95,8 +95,9 @@ const MessageBox = ({ initChatLog }) => {
     const handleUpload = (e) => { e.currentTarget.childNodes[2].click(); }
 
     const handleChange = (e) => {
-        if (e.target.value) { document.querySelector('.camera-icon').style.display = "none" } 
+        if (e.target.value) { document.querySelector('.camera-icon').style.display = "none"; } 
         else { document.querySelector('.camera-icon').style.display = ""; }
+        setTextInp(e.target.value)
     }
 
     return (
@@ -120,16 +121,20 @@ const MessageBox = ({ initChatLog }) => {
                 }
             </div>
             {selectMsg ? 
-                <div className='text-input-wrapper flex'>
+                <div className='text-input-wrapper grid'>
                     <div className='text-input'>
-                        <input name='text' className='text' placeholder='Type message here...' onChange={handleChange}/>
+                        <input name='text' className='text' 
+                            value={textInp}
+                            placeholder='Type message here...' 
+                            onChange={handleChange}
+                        />
                         <div className='camera-wrapper' onClick={handleUpload}>
                             <img src={url} className='upload-preview' alt=''/>
                             <FaCamera className='camera-icon'/>
                             <input type="file" className="file" accept='images/*' onChange={previewFile}/>
                         </div>
                     </div>
-                    <button onClick={handleSubmit}>Send</button>
+                    <button className='flex' onClick={handleSubmit}>Send</button>
                 </div>
                 :
                 ''

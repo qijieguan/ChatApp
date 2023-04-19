@@ -7,7 +7,11 @@ const SideNav = () => {
 
     const toggleHighlight = (event) => {
         document.querySelector('.highlight')?.classList.remove('highlight');
-        event.target?.classList.add('highlight')
+        event.target?.classList.add('highlight');
+
+        setTimeout(() => {
+            document.querySelector('.post-section')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }, 500);
     }
 
 
@@ -20,7 +24,7 @@ const SideNav = () => {
             </div>
             <div className='side-nav-body flex'>
                 <Link to="/Profile" onClick={toggleHighlight} className='profile-nav side-nav-link'>See your profile</Link>
-                <Link to="/Dashboard/Post" onClick={toggleHighlight} className='post-nav side-nav-link highlight'> Browse all posts</Link>
+                <Link to="/Dashboard/Post" onClick={toggleHighlight} className='post-nav side-nav-link'> Browse all posts</Link>
                 <Link to="/Dashboard/Chat" onClick={toggleHighlight} className='chat-nav side-nav-link'> Make new messages</Link>
             </div>
         </div>

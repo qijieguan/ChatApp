@@ -31,8 +31,11 @@ const Text = ({textID, friend, text }) => {
             <img src={user._id === text.user_id ? user.profile_url : friend.profile_url} className="texter" alt=""/>
             <div className="text-format flex" id={textID} style={pickStyle('2')}>
                 <div className='text-made-by' style={pickStyle('2')}>{made_by}</div>
-                <img className="text-image" src={text.content} alt=""/>
-                <div className='text-content' style={pickStyle('3')}>{text.content}</div>  
+                {text.content.includes('cloudinary') ?
+                    <img className="text-image" src={text.content} alt=""/>
+                    :
+                    <div className='text-content' style={pickStyle('3')}>{text.content}</div>  
+                }
             </div>
         </div>
     );

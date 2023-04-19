@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const cloudinary = require('../utils/cloudinary');
 
 let Text = require('../models/text.model');
 let User = require('../models/user.model');
@@ -71,7 +72,6 @@ router.route('/delete').post((req, res) => {
                 if (text.content.includes('cloudinary')) {
                     let parseURL = text.content.split("/");
                     let public_id = "";
-
                     parseURL = parseURL[parseURL.length - 1];
                     parseURL = parseURL.split('.');
                     public_id = parseURL[0];

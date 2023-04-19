@@ -1,6 +1,6 @@
 .menu-bar { 
     padding: 1vh 2vw;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     column-gap: 10vw;
     row-gap: 2vh;
