@@ -16,6 +16,9 @@ const ChatPage = () => {
             setTimeout(() => {
                 document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
             }, 500);
+
+            document.querySelector('.conversation-log')?.classList.remove('focus');
+            document.querySelector('.message-container')?.classList.add('focus');
         }
         getChatLog(); 
     }, [baseURL]);
@@ -32,6 +35,9 @@ const ChatPage = () => {
     const getSelect = (chat_id) => { 
         sessionStorage.setItem('select', chat_id);
         getChatLog();
+
+        document.querySelector('.conversation-log')?.classList.remove('focus');
+        document.querySelector('.message-container')?.classList.add('focus');
         document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
     }
 
@@ -53,11 +59,13 @@ const ChatPage = () => {
 
     return (
         <div className='chat-page grid'>
-            <div className="conversation-log">
+            <div className="conversation-log focus">
                 <div className='conversation-label flex'>Conversations</div>
                 <div className='conversation-set flex'>
                     {chatLog && chatLog.length ?
-                        chatLog.map(chat => <Conversation key={uuid()} chat={chat} getSelect={getSelect} removeChat={removeChat}/>)
+                        chatLog.map(chat => 
+                            <Conversation key={uuid()} chat={chat} getSelect={getSelect} removeChat={removeChat}/>
+                        )
                         :
                         <h1 className='conversation-default'>No Chat Log Exists</h1>
                     }

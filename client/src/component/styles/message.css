@@ -117,8 +117,8 @@
 }
 
 @media (max-width: 50rem) { 
-    .message-container { margin: 0 0 5vh 0; }
-    .private-message-header { min-height: 7.5vh; padding: 1vh 2vw; }
+    .message-container { display: none; margin: 2vh 0 5vh 0; }
+    .message-container.focus { display: unset; }
     .private-message { height: 60vh; }
     .text-input-wrapper {  flex-direction: column; }
     .text-input-wrapper > button { margin: 2.5vh 15% 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }

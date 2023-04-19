@@ -77,6 +77,9 @@ const MessageBox = ({ initChatLog }) => {
         document.getElementById(selectMsg)?.classList.remove('highlight');
         sessionStorage.removeItem('select'); 
         setTextSet([]); 
+
+        document.querySelector('.conversation-log')?.classList.add('focus');
+        document.querySelector('.message-container')?.classList.remove('focus');
         document.querySelector('.chat-page')?.scrollIntoView({ block: 'start', behavior: 'smooth'});
     }
 

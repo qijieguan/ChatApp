@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom'
 
 const FriendExtend = ({ friend }) => {
 
@@ -34,6 +34,8 @@ const FriendExtend = ({ friend }) => {
 
     const [modal, setModal] = useState(false);
 
+    
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     useEffect(() => { }, [friend._id]);
@@ -41,7 +43,7 @@ const FriendExtend = ({ friend }) => {
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
 
-        window.location.href = '/Dashboard/Chat';
+        navigate('/Dashboard/Chat', {replace: true});
     }
 
     const handleUnfriend = async () => {

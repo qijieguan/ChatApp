@@ -73,6 +73,8 @@
     .chat-page { grid-template-columns: 100%; width: 100%; }
     .conversation-log { margin: 2vh 0 4vh 0; height: 30vh; }
     .conversation-preview > h1 { padding: 0 max(0.5vw, 0.5rem); }
+
+    .conversation-log:not(.focus) { display: none; }
 }
 
 @media (max-width: 25rem) {

@@ -11,7 +11,7 @@ import Friend from './component/Friend.js';
 import About from './component/About.js';
 import Profile from './component/Profile.js';
 import Footer from './component/Footer.js';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { createStore } from 'redux';
 import allReducers from './component/reducers';
 import { Provider } from 'react-redux';
@@ -27,18 +27,19 @@ function App() {
       <Provider store={store}>
         <Router>
             <Header/>
-            <Switch>
-              <Route path="/" exact component={Home}/>
-              <Route path="/Register" exact component={Register}/>
-              <Route path="/Login" exact component={Login}/>
-              <Route path="/Dashboard/:param" exact component={Dashboard}/>
-              <Route path='/Dashboard/Post' exact component={Post}/>
-              <Route path='/Dashboard/Chat' exact component={ChatPage}/>
-              <Route path="/Search" exact component={Search}/>
-              <Route path="/Friend" exact component={Friend}/>
-              <Route path="/About" exact component={About}/>
-              <Route path="/Profile" exact component={Profile}/>
-            </Switch>
+            <Routes>
+              <Route path="/" element={<Home/>} exact/>
+              <Route path="/Register" element={<Register/>} exact/>
+              <Route path="/Login" element={<Login/>} exact/>
+              <Route path="/Dashboard/Post" element={<Dashboard/>} exact/>
+              <Route path="/Dashboard/Chat" element={<Dashboard/>} exact/>
+              <Route path='/Dashboard/Post' element={<Post/>} exact/>
+              <Route path='/Dashboard/Chat' element={<ChatPage/>} exact/>
+              <Route path="/Search" element={<Search/>} exact/>
+              <Route path="/Friend" element={<Friend/>} exact/>
+              <Route path="/About" element={<About/>} exact/>
+              <Route path="/Profile" element={<Profile/>} exact/>
+            </Routes>
             <Footer/>
         </Router>
       </Provider>
