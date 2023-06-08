@@ -7,8 +7,8 @@
     height: fit-content;
     min-height: 75vh;
     color: gainsboro;
-    background: rgb(33, 33, 33);
-    box-shadow: 0 0 3px black;
+    background: rgb(214, 214, 214);
+    box-shadow: 0 0 3px rgb(173, 173, 173);
     border-radius: 0.375rem;
     overflow: scroll;
 }
@@ -22,7 +22,7 @@
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 700;
     color: gray;
-    border-bottom: 1px solid rgb(11, 11, 11);
+    border-bottom: 1px solid rgb(165, 165, 165);
 }
 .conversation-set { flex-direction: column; width: 100%; }
 .conversation-default { 
@@ -31,9 +31,9 @@
     font-size: clamp(1.5rem, 2vw, 2rem); 
     font-style: italic;
 }
-.conversation-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(11, 11, 11); } 
-.conversation-wrapper.highlight { background: rgb(32, 32, 32); color: gold; }
-.conversation-wrapper:hover { color: gold; background: rgb(32, 32, 32); z-index: 3; }
+.conversation-wrapper { position: relative; width: 100%; color: rgb(48, 48, 48); border-bottom: 1px solid rgb(165, 165, 165); } 
+.conversation-wrapper.highlight { color: rgb(48, 48, 48); background: rgb(153, 153, 153); }
+.conversation-wrapper:hover { color: rgb(48, 48, 48); background: rgb(153, 153, 153); z-index: 3; }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
 .conversation > img { 
     margin: auto 2vw; 
@@ -45,7 +45,7 @@
 
 .conversation-preview { height: 75%; overflow: hidden; }
 .conversation-preview > h1 { font-size: 0.875rem; margin: auto 0; word-wrap: break-word; }
-.text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: gray; word-wrap: break-word; }
+.text-preview { font-size: clamp(0.75rem, 1vw, 0.875rem); color: grey; word-wrap: break-word; }
 
 .trash-wrapper { justify-content: center; height: 100%; width: 15%; }
 .trash-icon { position: relative; font-size: clamp(1.5rem, 1.5vw, 1.75rem); color: gray; z-index: 2; }
@@ -59,14 +59,14 @@
     font-weight: 700;
     height: 100%;
     width: 100%;
-    color: black;
-    background: goldenrod;
+    color: rgb(216, 216, 216);
+    background: green;
     opacity: 0;
     z-index: -1;
     transition: all 0.2s ease-in;
 }
 .trash-wrapper:hover .trash-overlay { z-index: 1; opacity: 1; }
-.trash-wrapper:hover .trash-icon { color: black }
+.trash-wrapper:hover .trash-icon { color: rgb(196, 196, 196) }
 
 
 @media (max-width: 50rem) {

@@ -6,21 +6,21 @@
     margin: 2.5vh 0;
     padding-bottom: 2rem;
     width: 100%;
-    color: gainsboro;
-    background: rgb(33, 33, 33);
+    color: rgb(68, 68, 68);
+    background: rgb(214, 214, 214);
+    box-shadow: 0 0 3px rgb(173, 173, 173);
     border-radius: 0.5rem;
-    box-shadow: 0 0 3px black;
     overflow: hidden;
 }
 
-.private-message-header { width: 100%; background: rgb(20, 20, 20); }
+.private-message-header { width: 100%; background: rgb(189, 189, 189);}
 .private-message-header > div { padding: 0 1vw; flex-wrap: wrap; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
     justify-content: center;
     letter-spacing: 0.0625rem;
 }
-#back-btn { margin: 0 5vw 0 1.5vw; background: gray; border-radius: 0.125rem; }
+#back-btn { margin: 0 5vw 0 1.5vw; background: rgb(167, 167, 167); border-radius: 0.25rem; }
 #back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 .private-message-header img { 
@@ -68,8 +68,9 @@
     font-weight: 500; 
     word-wrap: break-word;
     min-height: 15vh; 
-    background: rgb(48, 48, 48);
-    border: 1px solid rgb(31, 31, 31);
+    color: rgb(80, 80, 80);
+    background: rgb(204, 204, 204);
+    box-shadow: 0 0 3px grey;
     border-radius: 0.5rem;
 }
 
@@ -78,7 +79,7 @@
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
     letter-spacing: 0.5px;
     font-weight: 700;
-    color: rgb(179, 179, 179);
+    color: rgb(97, 97, 97);
     text-transform: uppercase;
 }
 
@@ -88,15 +89,15 @@
     position: relative; 
     height: 100%; 
     width: 100%; 
-    background: rgb(61, 61, 61); 
+    background: rgb(185, 185, 185);
     border-radius: 0.75rem; 
 }
 .text-input > input { 
     height: 100%; 
     width: 100%; 
     text-indent: 1.5vw;
-    color: rgb(168, 168, 168); 
-    background: rgb(61, 61, 61);
+    color: rgb(129, 129, 129); 
+    background: rgb(185, 185, 185);
     border-radius: 0.75rem;
 }
 .camera-wrapper { position: absolute; top: 10%; right: max(2rem, 9%); }

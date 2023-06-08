@@ -103,19 +103,18 @@ const MessageBox = ({ renderChatLog }) => {
     return (
         <div className='message-container'>
             <div className="private-message-header flex">
-                {user ?
-                <div className='flex'>
-                    <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
-                    <span className='flex'>
-                        Messaging:<img src={user.profile_url} alt=""/>
-                        <span className='recipient'>{user.firstname + " " + user.lastname}</span>
-                    </span>
-                </div>
-                    : ""
+                {user &&
+                    <div className='flex'>
+                        <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
+                        <span className='flex'>
+                            Messaging:<img src={user.profile_url} alt=""/>
+                            <span className='recipient'>{user.firstname + " " + user.lastname}</span>
+                        </span>
+                    </div>
                 }
             </div>
             <div className="private-message">
-                {textSet?
+                {textSet ?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :<h1>Select a conversation to view messages</h1>
                 }
