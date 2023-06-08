@@ -7,7 +7,7 @@
     height: fit-content;
     min-height: 75vh;
     color: gainsboro;
-    background: rgb(44, 44, 44);
+    background: rgb(33, 33, 33);
     box-shadow: 0 0 3px black;
     border-radius: 0.375rem;
     overflow: scroll;
@@ -22,7 +22,7 @@
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: 700;
     color: gray;
-    border-bottom: 1px solid rgb(36, 36, 36);
+    border-bottom: 1px solid rgb(11, 11, 11);
 }
 .conversation-set { flex-direction: column; width: 100%; }
 .conversation-default { 
@@ -31,7 +31,7 @@
     font-size: clamp(1.5rem, 2vw, 2rem); 
     font-style: italic;
 }
-.conversation-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(31, 31, 31); } 
+.conversation-wrapper { position: relative; width: 100%; border-bottom: 1px solid rgb(11, 11, 11); } 
 .conversation-wrapper.highlight { background: rgb(32, 32, 32); color: gold; }
 .conversation-wrapper:hover { color: gold; background: rgb(32, 32, 32); z-index: 3; }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }

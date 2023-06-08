@@ -54,30 +54,25 @@ const FriendExtend = ({ friend }) => {
         setModal(false);
     }
 
-    const calcOffset = (friendID, e) => {
-        let el = document.getElementById(friendID);
-        let calc = e.pageX / window.innerWidth;
-
-        if (calc >= 0.5) { el.querySelector('.friend-preview')?.classList.add('left'); }
-        else { el.querySelector('.friend-preview')?.classList.remove('left'); }
-    }
-
     const openView = (friendID, e) => {
         document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.add('expand');
-       
-        calcOffset(friendID, e);
     }
 
     const closeView = (friendID, e) => {
-        document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.remove('expand', 'left');
+        document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.remove('expand');
     }
 
 
     return (
         <div className='friend-container'>
             <div className="friend flex" id={friend._id}>
-                <img src={friend.profile_url} className="friend-image" alt=""/>
-                <div className="friend-name">{friend.firstname} {friend.lastname}</div>
+                <div className='friend-header flex'>
+                    <img src={friend.background_url} className="friend-bg" alt=""/>
+                    <div className='friend-image flex'>
+                        <img src={friend.profile_url} alt=""/>
+                        <div className="friend-name">{friend.firstname} {friend.lastname}</div>
+                    </div>
+                </div>
                 
                 <div className='friend-preview'>
                     <div className='friend-bio'>

@@ -2,16 +2,17 @@
     min-height: 30vh; 
     padding: 5vh 5vw;
     flex-wrap: wrap; 
-    column-gap: 15vh;
+    justify-content: center;
+    column-gap: 15vw;
+    row-gap: 5vh;
     width: 100%; 
-    background: black;
-    color: rgb(170, 170, 170);  
-    font-size: 700; 
-    border-top: 2px solid black;
+    background: rgb(214, 214, 214);
+    color: rgb(80, 80, 80);  
+    border-top: 1px solid rgb(177, 177, 177);
 }
 
 .hour, .contact { margin-bottom: auto; }
-.hour > h1, .contact > h1 { font-size: clamp(1.25rem, 1.5vw, 1.5rem); font-weight: 700; color: gold; }
+.hour > h1, .contact > h1 { font-size: clamp(1.25rem, 1.5vw, 1.5rem); font-weight: 700; color: rgb(61, 61, 61); }
 
 ul { padding: 0; margin: 0; }
 li { list-style: none; }

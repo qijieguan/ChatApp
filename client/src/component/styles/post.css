@@ -5,13 +5,13 @@
     align-items: flex-start; 
     flex-direction: column; 
     width: 65vw;
-    background: rgb(37, 37, 37); 
+    background: rgb(214, 214, 214);
     border-radius: 0.5rem;
 }
-.post-form > h1 { margin: 1vh 0 3vh 0; font-size: 1.25rem; color: rgb(211, 211, 211); }
+.post-form > h1 { margin: 1vh 0 3vh 0; font-size: 1.25rem; color: rgb(102, 102, 102); }
 
 .post-input { flex-wrap: wrap; column-gap: 1vw; width: 100%; }
-.post-input > input { width: 70%; color: rgb(128, 128, 128); background: rgb(48, 48, 48); border-radius: 0.25rem; }
+.post-input > input { width: 70%; border-radius: 0.5rem; background: rgb(238, 238, 238); }
 
 .post-image {
     margin-left: 4vh;
@@ -19,23 +19,32 @@
     background: transparent;
     font-size: 0.875rem; 
     color: gray;
-    border: 1px solid rgb(65, 65, 65); 
+    border: 1px solid; 
     border-radius: 2rem;
 }
 
-hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
+hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(196, 196, 196); }
 
-.submit { float: right; padding: 1vh 2vw; background: rgb(48, 48, 48); color: rgb(163, 163, 163); border: 0; border-radius: 0.5rem; }
+.submit { float: right; padding: 1vh 2vw; background: rgb(102, 102, 102); color: rgb(231, 231, 231); border: 0; border-radius: 0.5rem; }
 .submit:hover { color: orange; }
 
 .post-image:hover { opacity: 0.7; }
 
-.post {
-    margin: 2.5vh auto 0 auto;
-    padding: 3vh 2.5vw 5vh 2.5vw;
+.post-collection {
+    margin: 2.5vh auto;
+    padding: 0 2.5vw;
     flex-direction: column;
     width: 65vw;
-    background: rgb(36, 36, 36); 
+    background: rgb(214, 214, 214);
+    border-radius: 0.75rem;
+}
+
+.post {
+    margin: 2.5vh auto;
+    padding: 3vh 0 5vh 0;
+    flex-direction: column;
+    width: 100%;
+    background: rgb(231, 231, 231); 
     border-radius: 0.5rem;
 }
 
@@ -50,16 +59,16 @@ hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
     border-radius: 1rem;
 }
 
-.post-header { margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
+.post-header { padding: 0 2.5vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
 .poster-image { height: 9vh; width: 9vh; border-radius: 3rem; }
-.poster-name { color: rgb(211, 211, 211); }
+.poster-name { color: rgb(102, 102, 102); }
 
 .primary-text { align-self: flex-start; margin-left: 5%; font-size: 0.875rem; color: grey; }
-.primary-image { margin: 3vh auto; object-fit: cover; height: 50vh; width: 80%; }
+.primary-image { margin: 3vh auto 0 auto; object-fit: cover; height: 50vh; width: 100%; }
 
 .delete-wrapper { 
     margin: 3vh 0 0 0; 
-    padding: 1vh 1vw;
+    padding: 1vh 2vw;
     column-gap: 1.5vw; 
     align-self: flex-end; 
     color: rgb(75, 75, 75); 
@@ -72,7 +81,7 @@ hr { margin: 4vh 0; width: 100%; border: 0.5px solid rgb(68, 68, 68); }
 .trash-button { font-size: 1.25rem; }
 .trash-button:hover { opacity: 0.7; }
 
-@media (max-width: 50rem) { .post-form, .post { width: 90vw; } }
+@media (max-width: 65rem) { .post-form, .post-collection { width: 90vw; } }
 
 @media (max-width: 25rem) {
     .post-header { column-gap: 1.5vw; }

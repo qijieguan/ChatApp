@@ -23,10 +23,10 @@ const Login = () => {
             width: 'max(20rem, 35%)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
-            backgroundColor: 'rgb(30,30,30)',
-            border: '1px solid black',
+            backgroundColor: 'rgb(230, 230, 230)',
+            border: '1px solid rgb(180, 180, 180)',
         },
-        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+        overlay: { backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));
@@ -87,11 +87,11 @@ const Login = () => {
                 <h1 className="login-label">Enter Your Credentials</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
                 <div className='login-name grid'>
-                    <div className='person-icon flex'><BsFillPersonFill/></div>
+                    <div className='login-icon flex'><BsFillPersonFill/></div>
                     <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 </div>
                 <div className='login-password grid'>
-                    <div className='password-icon flex'><RiLockPasswordLine/></div>
+                    <div className='login-icon flex'><RiLockPasswordLine/></div>
                     <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 </div>
                 <button type="submit" className="sign-in-btn">Sign In</button>
@@ -99,7 +99,7 @@ const Login = () => {
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
-                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'gray'}}
+                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'black'}}
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />

@@ -1,10 +1,39 @@
 import './styles/home.css';
 import Login from "./Login.js";
 import { AiFillCaretDown } from 'react-icons/ai';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 const Home = () => { 
 
     var clickSwitch = false;
+
+    useEffect(() => {
+        if (!sessionStorage.getItem('visited')) {
+            guestSignIn();
+        }   
+    }, []);
+
+    
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+
+    const guestSignIn = async () => {
+        await axios.post(baseURL + '/users/login/', { username: 'guest', password: 'password', })
+        .then(async (response) => { 
+            await axios.get(baseURL + '/users/auth/', { headers: { "x-access-token": response.data } })
+            .then(async (response) => {
+                if (response.data.auth) {
+                    sessionStorage.setItem("isLogged", true);
+                    axios.post(baseURL + '/users/load/', { username: 'guest' })
+                    .then((response) => { 
+                        sessionStorage.setItem("user", JSON.stringify(response.data)); 
+                        sessionStorage.setItem('visited', true);
+                        window.location.href = "/Dashboard/Post";
+                    });
+                }
+            });
+        });
+    }
 
     const handleClick = () => {
         clickSwitch = !clickSwitch;

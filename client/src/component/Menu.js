@@ -1,9 +1,8 @@
 import './styles/menu.css';
-import { AiOutlineWechat, AiFillHome } from 'react-icons/ai';
+import { AiFillHome } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
 import { FaUserFriends } from 'react-icons/fa';
-import { BiLogIn } from 'react-icons/bi';
-import { BsFilePersonFill, BsFillChatSquareTextFill, } from 'react-icons/bs';
+import { BsFilePersonFill } from 'react-icons/bs';
 import { MdArrowDropDown } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -31,13 +30,8 @@ const Menu = () => {
         event.currentTarget.classList.add('active');
     }
 
-    const logout = () => { sessionStorage.clear(); window.location.href = '/'; }
-
     return (
         <div className="menu-bar flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
-            <div className="menu-logo flex">
-                <AiOutlineWechat className="logo-icon" color="gold" size={36}/>
-            </div>
             <Link to='/Dashboard/Post' className="menu-li flex" id="/Dashboard" onClick={handleClick}>
                 <AiFillHome className="menu-li-icon"/>
                 <div>Dashboard</div>
@@ -52,18 +46,14 @@ const Menu = () => {
             </Link>
               
             <div className="menu-dropdown flex">
+                <div className='menu-user'>{user.firstname} {user.lastname.substring(0, 1)}</div>
                 <img src={user.profile_url} alt=""/>
-                <div className='menu-user'>{user.firstname} {user.lastname}</div>
-                <MdArrowDropDown size={30} color="white" style={{marginLeft: '0.25vw'}}/>
+                <MdArrowDropDown size={30} color="rgb(107, 107, 107)" className='dropdown-icon' style={{marginLeft: '0.25vw'}}/>
                 <div className='menu-links flex'>
                     <Link to='/Profile' className='menu-link flex'>
                         <div>PROFILE</div>
                         <BsFilePersonFill className='person-icon'/>
                     </Link>
-                    <a className="menu-link flex" onClick={logout}>
-                        <div>LOG OUT</div>
-                        <BiLogIn className='logout-icon'/>
-                    </a>
                 </div>
             </div> 
         </div>

@@ -21,10 +21,10 @@ const Photo = ({photo, photoID, render}) => {
             maxHeight: '100%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',
-            backgroundColor: 'rgb(30,30,30)',
-            border: '1px solid black',
+            backgroundColor: 'rgb(230, 230, 230)',
+            border: '1px solid rgb(180, 180, 180)',
         },
-        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+        overlay: {  backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));

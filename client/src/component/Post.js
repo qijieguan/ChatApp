@@ -100,21 +100,19 @@ const Post = () => {
                         accept='images/*'
                         onChange={handleChange}
                     />
-                    {imageInp ?
+                    {imageInp &&
                         <img className='image-input-preview' src={imageInp} alt=""/>
-                        :
-                        ""
                     }
                     <hr/>
                     <button type='submit' className='submit'>Create Post</button>
                 </div>
             </form>
             
-            {postArr.length ?
-                postArr.map(collection => <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>)
-                :
-                ""
-            }
+            <div className='post-collection flex'>
+                {postArr.length &&
+                    postArr.map(collection => <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>)
+                }
+            </div>
         </div>
     );
 }

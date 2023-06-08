@@ -2,7 +2,7 @@
     row-gap: 2vh;
     height: fit-content;
     width: 100%; 
-    background: darkorange;
+    background: green;
 }
 
 .header-btns { 
@@ -13,7 +13,7 @@
     width: 100%;
 }
 
-.header-btns button { font-size: clamp(0.75rem, 1.5vw, 1rem); }
+.header-btns button { font-size: clamp(0.75rem, 1.5vw, 1rem); color: white; }
 
 .login-btn, .about-btn { background: transparent; }
 
@@ -28,14 +28,13 @@
     transition: all 0.3 ease-in;
 }
 
-
 .header-banner { 
     position: relative; 
     flex-direction: column;
     justify-content: space-evenly; 
-    height: 30vh;
+    height: 20vh;
     font-weight: bold;
-    background-image: url("https://images.pexels.com/photos/267403/pexels-photo-267403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-image: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png");
     background-size: cover;
     background-position: center; 
     color: rgb(224, 224, 224); 
@@ -44,9 +43,9 @@
 .header-banner-text * { 
     font-size: clamp(1rem, 2vw, 2rem); 
     letter-spacing: 0.125rem;
-    text-align: left;
+    text-transform: uppercase;
 }
-.header-banner-text span { color: gold; }
+.header-banner-text span { color: white; }
 
 
 @media (max-width: 25rem) {

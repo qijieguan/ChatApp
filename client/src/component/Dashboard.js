@@ -8,14 +8,16 @@ const Dashboard = () => {
 
     return ( 
         <div>
-            <Menu/>
             <div className="dashboard grid">
                 <SideNav/>
-                {window.location.href.includes('Post') ?
-                    <Post/>
-                    :
-                    <ChatPage/>
-                }
+                <div>
+                    <Menu/>
+                    {window.location.href.includes('Post') ?
+                        <Post/>
+                        :
+                        <ChatPage/>
+                    }
+                </div>
             </div> 
         </div>
     ); };

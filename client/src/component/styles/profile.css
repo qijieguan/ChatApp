@@ -11,7 +11,7 @@
     flex-direction: column;
     row-gap: 2vh;
     width: 100%;
-    background: rgb(19, 19, 19);
+    background: rgb(223, 223, 223);
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -35,28 +35,28 @@
     padding: 0 max(0.5rem, 1vw) 0.5vh max(0.5rem, 1vw);
     text-align: center;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: bold;
+    font-weight: 700;
     font-family: 'Playfair Display', serif;
     width: fit-content;
     letter-spacing: 0.1rem;
-    color: gold; 
-    background: black;
-    border-radius: 0.75rem;
+    color: rgb(73, 73, 73); 
+    background: rgb(218, 218, 218);
+    border-radius: 0.5rem;
 }
 
 .profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
 
-.bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: gray; }
+.bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: rgb(94, 94, 94); }
 .bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 700; color: rgb(172, 172, 172); }
 
-.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; background: rgb(82, 82, 82); border-radius: 0.125rem; }
+.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; color: rgb(73, 73, 73); background: rgb(190, 190, 190); border-radius: 0.125rem; }
 
 .cancel-button, .submit-button { 
     margin-top: 1.5vh; 
     padding: 0.75vh 0.75vw; 
     font-size: 0.875rem; 
     border-radius: 0.125rem; 
-    color: grey; 
+    color: rgb(73, 73, 73); 
     background: transparent;
     border: 1px solid;
 }
@@ -69,7 +69,7 @@
     word-wrap: break-word; 
     width: 50%; 
     color: rgb(179, 179, 179); 
-    background: rgb(27, 27, 27);
+    background: rgb(201, 201, 201);
     border: 0;
     outline: 0;
 }
@@ -82,17 +82,17 @@
     font-size: 1.25rem;
     height: 12.5vh;
     width: 25vh;
-    background: rgb(27, 27, 27);
+    background: rgb(190, 190, 190);
     border-radius: 4rem;
 }
 .profile-footer > div > h1 { font-size: 2rem; }
 
-.profile-media { margin: 0 auto; background: rgb(19, 19, 19); width: 100%; }
+.profile-media { margin: 0 auto; background: rgb(218, 218, 218); width: 100%; }
 
 .media-nav { justify-content: center; width: 100%; border-radius: 0.5rem; }
-.media-nav > div { padding: 2vh 0; text-align: center; width: 10vw; color: grey; border-bottom: 2px solid transparent; }
+.media-nav > div { padding: 3vh 0; text-align: center; width: 10vw; color: grey; border-bottom: 2px solid transparent; }
 .media-nav > div:hover { opacity: 0.7; }
-.media-nav-li.highlight { color: orange; border-bottom: 2px solid; pointer-events: none; }
+.media-nav-li.highlight { color: green; border-bottom: 2px solid; pointer-events: none; }
 
 @media (max-width: 50rem) {
     .profile { width: 100%; }

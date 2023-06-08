@@ -6,16 +6,21 @@
     row-gap: 2vh;
     width: 100%;
     height: fit-content;
-    background: rgb(20, 20, 20);
-    box-shadow: 0 0 3px;
+    background: rgb(214, 214, 214);
+    box-shadow: 1px 1px 3px grey;
     border-radius: 3px;
     z-index: 3;
 }
 
 .menu-li { height: 100%; color: grey; border-bottom: 2px solid transparent; transition: all 0.2s ease-in; }
-.menu-li:hover { color: gold; }
-.menu-li.active { color: gold; pointer-events: none; }
-.menu-li > div { margin-left: 0.5vw; font-size: clamp(0.75rem, 5vw, 0.875rem); font-weight: bold; }
+.menu-li:hover { color: green; }
+.menu-li.active { color: green; pointer-events: none; }
+.menu-li > div { 
+    margin-left: 0.5vw; 
+    font-size: clamp(0.75rem, 5vw, 0.875rem); 
+    font-weight: bold; 
+    letter-spacing: 0.5px;
+}
 .menu-li-icon { font-size: clamp(1.375rem, 2.5vw, 1.5rem); }
 
 
@@ -23,34 +28,27 @@
     position: relative; 
     padding: 0.25vw 0 0.25vw 0.25vw;
     height: 100%; 
-    background: rgb(44, 44, 44); 
-    box-shadow: 0 0 2px;
-    border-radius: 4rem; 
 }
 .menu-dropdown img {
-    margin-right: 1vw; 
     height: 7vh; 
     width: 7vh; 
     object-fit: cover;
-    border-radius: 10px; 
-    box-shadow: 0 0 3px; 
     border-radius: 4rem;
 }
 
 .menu-user { 
-    padding-left: 0.25rem;
+    padding-right: 1rem;
     font-size: clamp(0.75rem, 1.5vw, 1rem); 
-    color: gold;
+    color: rgb(107, 107, 107);
 }
-
 
 .menu-links {
     display: none;
     position: absolute;
     inset: auto 0 0 auto;
     width: 125%;
-    background: rgb(37, 37, 37);
-    border: 2px solid black;
+    background: rgb(214, 214, 214);
+    border: 1px solid grey;
     border-top: 0;
     transform: translateY(100%);
     z-index: 3;
@@ -71,8 +69,7 @@
 .person-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); width: fit-content; margin: 0 0.5vw; }
 .logout-icon { font-size: clamp(1.5rem, 2.5vw, 2rem); width: fit-content; }
 .menu-link > div { font-size: clamp(0.75rem, 2.5vw, 0.875rem); font-weight: 500; }
-.menu-dropdown:hover .menu-links { display: flex; flex-direction: column; }
-.menu-link:hover * { color: gold; }
+.menu-dropdown:hover > .menu-links, .menu-links:hover { display: flex; flex-direction: column; }
 
 @media (max-width: 50rem) {
     .menu-bar { padding: 1vh 5vw; }

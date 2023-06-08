@@ -77,11 +77,11 @@ const Profile = () => {
                                 value={bio}
                                 onChange={handleChange}
                             />
-                            {isEdit ?
+                            {isEdit &&
                                 <div className='flex'>
                                     <button className='cancel-button' onClick={()=>{setIsEdit(false)}}>CANCEL</button>
                                     <button className='submit-button' onClick={handleSubmit}>SUBMIT</button>
-                                </div> : ''
+                                </div> 
                             }
                         </div>
                     </div>
@@ -101,7 +101,6 @@ const Profile = () => {
                         <div className='media-nav-li highlight' onClick={toggleSwitch}>Photo</div>
                         <div className='media-nav-li' onClick={toggleSwitch}>Following</div>
                     </div>
-                    <div className='profile'></div>
                     {!toggle ?
                         <Album callRender={callRender}/>
                         :

@@ -11,14 +11,13 @@
 /* font-family: 'Lobster', cursive; */
 
 * {
-    font-family: "Poppins", sans-serif;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.5;
     box-sizing: border-box;
 }
 
-.App { background: rgb(27, 27, 27); height: 100vh; width: 100vw; overflow-x: hidden; }
+.App { background: rgb(233, 233, 233); height: 100vh; width: 100vw; overflow-x: hidden; }
 
 .flex { display: flex; align-items: center; }
 .grid { display: grid; justify-content: space-evenly; }
@@ -51,7 +50,11 @@ input {
     border: 0; 
 }
 
-.overlay { position: absolute; top: 0; height: 100%; width: 100%; background: black; opacity: 0.5; }
+textarea {
+    font-family: 'Raleway', sans-serif;
+}
+
+.overlay { position: absolute; top: 0; height: 100%; width: 100%; background: rgb(99, 99, 99); opacity: 0.5; }
     
 @keyframes animateImage {
     0% { object-position: left; }

@@ -1,12 +1,12 @@
-.home { position: relative; color: white; background: black; overflow: hidden; }
+.home { position: relative; overflow: hidden; }
 .home-login { 
     position: absolute;
     padding: 2vh 2vw 7.5vh 2vw;
     inset: 2.5% auto auto 15%;
     width: 30vw; 
-    background: transparent; 
+    background: rgb(230, 230, 230);
+    box-shadow: 0 0 3px grey;
     border-radius: 0.5rem;
-    border: 2px solid rgb(87, 87, 87);
     z-index: 3;
 }
 
@@ -19,17 +19,17 @@
 .home-intro > h1 { 
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: darkorange;
+    color: green;
 }
 
-.home-intro > span { font-weight: 700; color: rgb(201, 201, 201); }
+.home-intro > span { font-weight: 700; color: grey; }
 
 .home-body {
     justify-content: center;
     padding: 20vh 2.5vw;
     width: 100vw;
-    border-top: 1px solid black;
-    background: rgb(17, 17, 17);
+    border-top: 1px solid rgb(180, 180, 180);
+    background: rgb(230, 230, 230);
 }
 
 .home-image {
@@ -43,7 +43,7 @@
 .text-label {
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: darkorange;
+    color: green;
 }
 
 
@@ -57,7 +57,7 @@
     margin-top: 4vh;
     padding: 2vh 2vw;
     text-align: center;
-    color: darkorange;
+    color: gray;
     border: 1px solid;
     border-radius: 0.25rem;
 }
