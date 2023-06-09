@@ -1,0 +1,119 @@
+.comment-section {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+}
+
+.comment-input {
+    margin: 5vh 0;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.comment-input > img {
+    margin-right: 1vw;
+    object-fit: cover;
+    height: 7.5vh;
+    width: 7.5vh;
+    border-radius: 5rem;
+    box-shadow: 0 0 1px;
+}
+
+.comment-input > input {
+    height: 6.5vh;
+    width: 70%;
+    background: rgb(206, 206, 206);
+    border-radius: 5rem 0 0 5rem;
+}
+
+.comment-camera {
+    padding: 0 2.5vw;
+    height: 6.5vh;
+    background: rgb(206, 206, 206);
+}
+
+.comment-camera-icon {
+    font-size: 1.5rem;
+    color: rgb(102, 102, 102);
+}
+
+.comment-send {
+    justify-content: center;
+    padding-right: 0.5vw;
+    height: 6.5vh;
+    color: rgb(102, 102, 102);
+    background: rgb(206, 206, 206);
+    border-radius: 0 5rem 5rem 0;
+}
+
+.comment-send-wrapper {
+    justify-content: center;
+    padding: 0 2.5vw;
+    height: 80%;
+    background: rgb(156, 156, 156);
+    border-radius: 4rem;
+}
+
+.comment-send-wrapper:hover { opacity: 0.7; }
+
+.comment-send-icon {
+    font-size: 1.25rem;
+    color: rgb(68, 68, 68);
+}
+
+.comment-label {
+    margin: 2.5vh 0;
+    align-self: flex-start;
+    column-gap: 0.5vw;
+    color: rgb(102, 102, 102);
+}
+
+.comment-down-icon {
+    font-size: 1.25rem;
+}
+
+.comment-collection {
+    flex-direction: column;
+    row-gap: 1vh;
+    width: 100%;
+    color: grey;
+}
+
+.comment {
+    padding: 0 2vw;
+    column-gap: 1vw;
+    min-height: 15vh;
+    width: 100%;
+    background: rgb(224, 224, 224);
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 0.5rem;
+}
+
+.comment-profile {
+    object-fit: cover;
+    height: 7.5vh;
+    width: 7.5vh;
+    box-shadow: 0 0 1px;
+    border-radius: 3rem;
+}
+
+.comment-name {
+    margin-right: 1vw;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgb(51, 51, 51);
+}
+
+.comment-content {
+    color: grey
+}
+
+.comment-empty { margin: 0 auto; justify-content: center; column-gap: 0.5vw; }
+
+.comment-empty > span {
+    text-transform: capitalize;
+}
+
+.cat-icon {
+    font-size: 1.5rem;
+}

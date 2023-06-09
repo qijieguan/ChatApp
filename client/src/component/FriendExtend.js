@@ -34,7 +34,6 @@ const FriendExtend = ({ friend }) => {
 
     const [modal, setModal] = useState(false);
 
-    
     const navigate = useNavigate();
     const dispatch = useDispatch();
 

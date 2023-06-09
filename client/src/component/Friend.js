@@ -1,10 +1,12 @@
 import './styles/friend.css';
-import { useSelector } from 'react-redux';
+import { FcVoicePresentation } from 'react-icons/fc';
+
 import axios from 'axios';
 import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import FriendExtend from './FriendExtend.js';
-import { FcVoicePresentation } from 'react-icons/fc';
 import Menu from './Menu.js';
 
 const Friend = () => {

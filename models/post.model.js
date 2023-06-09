@@ -9,10 +9,15 @@ const postSchema = new Schema({
     post_collection: [{ 
         primary_text: { type: String, trim: true },
         primary_image: { type: String, trim: true },
-        replies: [{
-            user_id: { type: String, trim: true },
+        comments: [{
+            user_profile: { type: String, trim: true },
             user_name: { type: String, trim: true },
-            reply: { type: String, trim: true }
+            comment: { type: String, trim: true },
+            replies: [{ 
+                user_profile: { type: String, trim: true },
+                user_name: { type: String, trim: true },
+                reply: { type: String, trim: true },
+            }],
         }] 
     }]        
 },

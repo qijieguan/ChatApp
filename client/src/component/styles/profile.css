@@ -72,6 +72,7 @@
     background: rgb(201, 201, 201);
     border: 0;
     outline: 0;
+    border-radius: 0.25rem;
 }
 .bio-edit > div { column-gap: 1vw;}
 

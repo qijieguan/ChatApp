@@ -1,6 +1,8 @@
 const router = require('express').Router();
 let Post = require('../models/post.model');
 
+const mongoose = require("mongoose");
+
 router.route('/').get((req, res) => {
     Post.find()
     .then(result => { res.json(result); })
@@ -48,10 +50,24 @@ router.route('/delete').post((req, res) => {
     const poster_id = req.body.poster_id;
     const post_id = req.body.post_id;
 
-    Post.updateMany({poster_id: poster_id}, {$pull: {post_collection: {_id: post_id}}})
+    Post.findOneAndUpdate({poster_id: poster_id}, {$pull: {post_collection: {_id: post_id}}})
     .then(result => res.json())
     .catch(err => res.status(400).json("Error " + err));  
 });
+
+router.route('/comment').post((req, res) => {
+    const poster_id = req.body.poster_id;
+    const post_id = req.body.post_id;
+    const comment = req.body.comment;
+
+    Post.updateOne(
+        {'poster_id': poster_id, 'post_collection._id': post_id},
+        {$push: {'post_collection.$.comments': comment}}
+    )
+    .then(result => { res.json(result) })
+    .catch(err => res.status(400).json("Error " + err));  
+});
+
 
 
 module.exports = router;

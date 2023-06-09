@@ -13,7 +13,7 @@ const Post = () => {
     const [render, setRender] = useState(false);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
-    const user = JSON.parse(sessionStorage.getItem('user'))
+    const user = JSON.parse(sessionStorage.getItem('user'));
 
     useEffect(() => { getPosts(); }, [render]);
 
@@ -30,16 +30,16 @@ const Post = () => {
     }
 
     const handleUpload = () => {
-        //document.getElementsByClassName('post-image-input')[0].click();
+        document.getElementsByClassName('post-image-input')[0].click();
     }
 
     const handleChange = (event) => {
         if (event.target.name === 'post-text-input') {
             setTextInp(event.target.value);
         }
-        //else {
-        //    readFiles(event.target.files); 
-        //}
+        else {
+            readFiles(event.target.files); 
+        }
     };
 
     const handleSubmit = async (event) => {
@@ -71,7 +71,11 @@ const Post = () => {
             poster_id: user._id,
             poster_image: user.profile_url,
             poster_name: user.firstname + ' ' + user.lastname,
-            post: {primary_text: textInp, primary_image: image_url, replies: []}
+            post: {
+                primary_text: textInp, 
+                primary_image: image_url, 
+                comments: []
+            }
         })
     }
 
@@ -88,7 +92,7 @@ const Post = () => {
                     <input
                         type='text'
                         name="post-text-input"
-                        placeholder='Write something to post...'
+                        placeholder="What's on your mind?"
                         value={textInp}
                         onChange={handleChange}
                     />
@@ -101,7 +105,7 @@ const Post = () => {
                         onChange={handleChange}
                     />
                     {imageInp &&
-                        <img className='image-input-preview' src={imageInp} alt=""/>
+                        <img className='post-image-input-preview' src={imageInp} alt=""/>
                     }
                     <hr/>
                     <button type='submit' className='submit'>Create Post</button>
@@ -110,7 +114,9 @@ const Post = () => {
             
             <div className='post-collection flex'>
                 {postArr.length &&
-                    postArr.map(collection => <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>)
+                    postArr.map(collection => 
+                        <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>
+                    )
                 }
             </div>
         </div>

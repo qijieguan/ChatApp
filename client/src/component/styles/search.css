@@ -16,7 +16,8 @@
 
 .search-wrapper-text { 
     font-size: clamp(1.25rem, 2vw, 2rem); 
-    font-weight: bold;
+    font-family: 'Roboto', sans-serif;  
+    font-weight: 700;
     font-style: oblique;
     letter-spacing: 0.125rem; 
 }

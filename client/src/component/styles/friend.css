@@ -17,7 +17,8 @@
 
 .friend-wrapper-text { 
     font-size: clamp(1.25rem, 2vw, 2rem); 
-    font-weight: bold;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;  
     font-style: oblique;
     letter-spacing: 0.125rem; 
 }
@@ -60,7 +61,7 @@
     border: 3px solid white;
 }
 
-.friend-name { margin-left: 2vw; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); }
+.friend-name { margin-left: 2vw; font-weight: 700; font-family: 'Roboto', sans-serif; font-size: clamp(1rem, 1.5vw, 1.5rem); }
 
 .friend-preview {
     position: absolute;
