@@ -95,8 +95,6 @@ const MessageBox = ({ renderChatLog }) => {
     const handleUpload = (e) => { e.currentTarget.childNodes[2].click(); }
 
     const handleChange = (e) => {
-        if (e.target.value) { document.querySelector('.camera-icon').style.display = "none"; } 
-        else { document.querySelector('.camera-icon').style.display = ""; }
         setTextInp(e.target.value)
     }
 
@@ -119,15 +117,15 @@ const MessageBox = ({ renderChatLog }) => {
                     :<h1>Select a conversation to view messages</h1>
                 }
             </div>
-            {selectMsg ? 
+            {selectMsg && 
                 <div className='text-input-wrapper grid'>
-                    <div className='text-input'>
+                    <div className='text-input flex'>
                         <input name='text' className='text' 
                             value={textInp}
                             placeholder='Type message here...' 
                             onChange={handleChange}
                         />
-                        <div className='camera-wrapper' onClick={handleUpload}>
+                        <div className='camera-wrapper flex' onClick={handleUpload}>
                             <img src={url} className='upload-preview' alt=''/>
                             <FaCamera className='camera-icon'/>
                             <input type="file" className="file" accept='images/*' onChange={previewFile}/>
@@ -135,8 +133,6 @@ const MessageBox = ({ renderChatLog }) => {
                     </div>
                     <button className='flex' onClick={handleSubmit}>Send</button>
                 </div>
-                :
-                ''
             }
         </div>
     );

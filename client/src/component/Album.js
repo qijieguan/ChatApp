@@ -15,7 +15,7 @@ const Album = ({ callRender }) => {
 
 
     useEffect(() => {
-        getFullAlbum()
+        getFullAlbum();
     }, [])
 
     const getFullAlbum = async() => {
@@ -69,13 +69,13 @@ const Album = ({ callRender }) => {
         <div className='album-section flex'>
             <div className='album-label-1'>Photo Album</div>
             <div className='album-message'>( click to select )</div>
-            {/*
-                <form className='upload-box grid' onSubmit={handleUpload}>
-                    <div>Upload pictures to album</div>
-                    <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
-                    <button type='submit'>Upload</button>
-                </form>
-            */}
+            
+            <form className='upload-box grid' onSubmit={handleUpload}>
+                <div>Upload pictures to album</div>
+                <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
+                <button type='submit'>Upload</button>
+            </form>
+            
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE/BACKGROUND</div>
             
             <form className='album-list grid'>

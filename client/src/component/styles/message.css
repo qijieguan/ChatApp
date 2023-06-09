@@ -85,6 +85,7 @@
 
 .text-input-wrapper { padding: 0 2vw; grid-template-columns: 80% 17.5%; gap: 1vw; width: 100%; }
 .text-input { 
+    justify-content: space-between;
     padding-right: 2vw; 
     position: relative; 
     height: 100%; 
@@ -94,20 +95,22 @@
 }
 .text-input > input { 
     height: 100%; 
-    width: 100%; 
+    width: 85%; 
     text-indent: 1.5vw;
-    color: rgb(129, 129, 129); 
+    color: rgb(56, 56, 56); 
     background: rgb(185, 185, 185);
     border-radius: 0.75rem;
 }
-.camera-wrapper { position: absolute; top: 10%; right: max(2rem, 9%); }
-.camera-icon { position: absolute; font-size: clamp(1.625rem, 2.5vw, 1.75rem); color: rgb(20, 20, 20); }
+.camera-wrapper { position: relative; pointer-events: none; opacity: 0.3; }
+
+.camera-wrapper { background: rgb(185, 185, 185); }
+.camera-icon { margin: auto 0 auto auto; font-size: clamp(1.625rem, 2.5vw, 1.75rem); color: rgb(70, 70, 70); }
 .camera-wrapper > img { 
     display: absolute;
     top: 0;
     transform: translate3d(30%, -125%, 0);
     max-height: 20rem; 
-    max-width: 20rem; 
+    max-width: 75%; 
     border-radius: 0.25rem; 
     opacity: 0.5;
 }

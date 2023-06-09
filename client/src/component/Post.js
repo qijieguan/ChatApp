@@ -30,16 +30,16 @@ const Post = () => {
     }
 
     const handleUpload = () => {
-        //document.getElementsByClassName('post-image-input')[0].click();
+        document.getElementsByClassName('post-image-input')[0].click();
     }
 
     const handleChange = (event) => {
         if (event.target.name === 'post-text-input') {
             setTextInp(event.target.value);
         }
-        //else {
-        //    readFiles(event.target.files); 
-        //}
+        else {
+            readFiles(event.target.files); 
+        }
     };
 
     const handleSubmit = async (event) => {
