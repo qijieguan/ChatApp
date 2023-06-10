@@ -6,7 +6,7 @@ import { AiOutlineSend } from 'react-icons/ai';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Comment = ({ comments, postID, posterID }) => {
+const Comment = ({ comments, postID, posterID, increment }) => {
 
     const [commentArr, setCommentArr] = useState(comments);
     const [commentInp, setCommentInp] = useState("");
@@ -31,7 +31,7 @@ const Comment = ({ comments, postID, posterID }) => {
             replies: []
         }
 
-        await axios.post(baseURL +'/posts/comment', {
+        await axios.post(baseURL +'/posts/post-comment', {
             poster_id: posterID,
             post_id: postID,
             comment: comment
@@ -41,6 +41,7 @@ const Comment = ({ comments, postID, posterID }) => {
 
         setCommentArr([...commentArr, comment]);
         setCommentInp('');
+        increment();
     }
 
     return (

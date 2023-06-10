@@ -55,7 +55,7 @@ router.route('/delete').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));  
 });
 
-router.route('/comment').post((req, res) => {
+router.route('/post-comment').post((req, res) => {
     const poster_id = req.body.poster_id;
     const post_id = req.body.post_id;
     const comment = req.body.comment;
@@ -63,6 +63,19 @@ router.route('/comment').post((req, res) => {
     Post.updateOne(
         {'poster_id': poster_id, 'post_collection._id': post_id},
         {$push: {'post_collection.$.comments': comment}}
+    )
+    .then(result => { res.json(result) })
+    .catch(err => res.status(400).json("Error " + err));  
+});
+
+router.route('/update-likes').post((req, res) => {
+    const poster_id = req.body.poster_id;
+    const post_id = req.body.post_id;
+    const likes = req.body.likes;
+
+    Post.updateOne(
+        {'poster_id': poster_id, 'post_collection._id': post_id},
+        {$set: {'post_collection.$.likes': likes}}
     )
     .then(result => { res.json(result) })
     .catch(err => res.status(400).json("Error " + err));  

@@ -49,12 +49,20 @@
 .bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: rgb(94, 94, 94); }
 .bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 700; color: rgb(172, 172, 172); }
 
-.edit-btn { margin-top: 4vh; padding: 0.5vh 2vw; color: rgb(73, 73, 73); background: rgb(190, 190, 190); border-radius: 0.125rem; }
+.edit-btn { 
+    margin-top: 4vh; 
+    padding: 0.5vh 2vw; 
+    font-weight: 500;
+    color: rgb(73, 73, 73); 
+    background: rgb(190, 190, 190); 
+    border-radius: 0.125rem; 
+}
 
 .cancel-button, .submit-button { 
     margin-top: 1.5vh; 
     padding: 0.75vh 0.75vw; 
     font-size: 0.875rem; 
+    font-weight: 500;
     border-radius: 0.125rem; 
     color: rgb(73, 73, 73); 
     background: transparent;
@@ -74,13 +82,14 @@
     outline: 0;
     border-radius: 0.25rem;
 }
-.bio-edit > div { column-gap: 1vw;}
+.bio-edit > div { column-gap: 1vw; }
 
 .profile-footer { margin: 2.5vh auto; justify-content: center; column-gap: 5vh; width: 100%; color: gray; }
 .profile-footer > div {
     justify-content: center;
     column-gap: 1vw;
     font-size: 1.25rem;
+    font-weight: 500;
     height: 12.5vh;
     width: 25vh;
     background: rgb(190, 190, 190);
@@ -91,8 +100,15 @@
 .profile-media { margin: 0 auto; background: rgb(218, 218, 218); width: 100%; }
 
 .media-nav { justify-content: center; width: 100%; border-radius: 0.5rem; }
-.media-nav > div { padding: 3vh 0; text-align: center; width: 10vw; color: grey; border-bottom: 2px solid transparent; }
-.media-nav > div:hover { opacity: 0.7; }
+.media-nav-li { 
+    padding: 3vh 0; 
+    text-align: center; 
+    font-weight: 700;
+    width: 10vw; 
+    color: grey; 
+    border-bottom: 2px solid transparent; 
+}
+.media-nav-li:hover { opacity: 0.7; }
 .media-nav-li.highlight { color: green; border-bottom: 2px solid; pointer-events: none; }
 
 @media (max-width: 50rem) {
@@ -100,7 +116,7 @@
     .profile-image { height: 20vh; width: 20vh; }
     .profile-footer { column-gap: 2vw; }
     .profile-footer > div { column-gap: 3vw; height: 10vh; width: 20vh; } 
-    .media-nav > div { width: 25vw; }
+    .media-nav-li { width: 25vw; }
 }
 
 @media (max-width: 35rem) { .media-nav > div { width: 45vw; } } 

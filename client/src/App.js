@@ -4,7 +4,7 @@ import Home from './component/Home.js';
 import Register from './component/Register.js';
 import Login from './component/Login.js';
 import Dashboard from './component/Dashboard.js';
-import Post from './component/Post.js';
+import PostSection from './component/PostSection.js';
 import ChatPage from './component/ChatPage.js';
 import Search from './component/Search.js';
 import Friend from './component/Friend.js';
@@ -33,7 +33,7 @@ function App() {
               <Route path="/Login" element={<Login/>} exact/>
               <Route path="/Dashboard/Post" element={<Dashboard/>} exact/>
               <Route path="/Dashboard/Chat" element={<Dashboard/>} exact/>
-              <Route path='/Dashboard/Post' element={<Post/>} exact/>
+              <Route path='/Dashboard/Post' element={<PostSection/>} exact/>
               <Route path='/Dashboard/Chat' element={<ChatPage/>} exact/>
               <Route path="/Search" element={<Search/>} exact/>
               <Route path="/Friend" element={<Friend/>} exact/>

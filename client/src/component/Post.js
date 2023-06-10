@@ -1,126 +1,101 @@
 import './styles/post.css';
+
+import { BsTrash, BsFillShareFill } from 'react-icons/bs';
+import { BiCommentMinus } from 'react-icons/bi';
+import { AiFillLike } from 'react-icons/ai';
+
 import { useState, useEffect } from 'react';
-import PostCollection from './PostCollection.js';
-import uuid from 'react-uuid';
 import axios from 'axios';
 
-const Post = () => {
+import Comment from './Comment.js';
 
-    const [textInp, setTextInp] = useState("");
-    const [imageInp, setImageInp] = useState("");
-    const [files, setFiles] = useState("");
-    const [postArr, setPostArr] = useState([]);
-    const [render, setRender] = useState(false);
+const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_text, deletePost}) => {
 
-    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const user = JSON.parse(sessionStorage.getItem('user'));
 
-    useEffect(() => { getPosts(); }, [render]);
+    const [likes, setLikes] = useState(post.likes);
+    const [commentCount, setComment] = useState(post.comments.length);
 
-    const getPosts = async () => {  
-        await axios.get(baseURL + '/posts')
-        .then(response => { setPostArr(response.data); });
-    }
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    const readFiles = (files) => {
-        if (!files) { return }
-        const reader = new FileReader();
-        reader.addEventListener("load", () => { setImageInp(reader.result); setFiles(files); }, false);
-        reader.readAsDataURL(files[0]); 
-    }
+    useEffect(async () => {
+        let match = likes.filter(id => id === user._id);
 
-    const handleUpload = () => {
-        document.getElementsByClassName('post-image-input')[0].click();
-    }
-
-    const handleChange = (event) => {
-        if (event.target.name === 'post-text-input') {
-            setTextInp(event.target.value);
+        if (match.length > 0) {
+            document.getElementById(post._id)?.querySelector('.post-footer>.post-like')?.classList.add('active');
         }
         else {
-            readFiles(event.target.files); 
+            document.getElementById(post._id)?.querySelector('.post-footer>.post-like')?.classList.remove('active');
         }
-    };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+        await axios.post(baseURL + '/posts/update-likes/', { 
+            poster_id: poster_id,
+            post_id: post._id,
+            likes: likes 
+        });
 
-        if (!files.length && !textInp.length) { return; }
+    }, [post._id, likes]);
 
-        if (files) {
-            const data = new FormData();
-            data.append('file', files[0]);
-        
-            await axios.post(baseURL + '/cloud/upload-image', data)
-            .then(async (response) => {
-                await postApiRequest(response.data);
-            });   
+    const toggleLike = (event) => {
+        if (!event.currentTarget.className.includes('active')) {
+            setLikes([...likes, user._id]);
         }
         else {
-            await postApiRequest('');
-        }   
-
-        setTextInp('');
-        setImageInp('');
-        setFiles('');
-        setRender(!render);
+            setLikes(likes.filter(id => id !== user._id));
+        }
     }
 
-    const postApiRequest = async (image_url) => {
-        await axios.post(baseURL + '/posts/add/', {
-            poster_id: user._id,
-            poster_image: user.profile_url,
-            poster_name: user.firstname + ' ' + user.lastname,
-            post: {
-                primary_text: textInp, 
-                primary_image: image_url, 
-                comments: []
-            }
-        })
-    }
-
-    const deletePost = async (postID) => {
-        await axios.post(baseURL + '/posts/delete/', {poster_id: user._id, post_id: postID});
-        setRender(!render);
+    const increment = () => {
+        setComment(commentCount + 1);
     }
 
     return (
-        <div className='post-section'>
-            <form className='post-form flex' onSubmit={handleSubmit}>
-                <h1>Ready to post your thoughts</h1>
-                <div className='post-input'>
-                    <input
-                        type='text'
-                        name="post-text-input"
-                        placeholder="What's on your mind?"
-                        value={textInp}
-                        onChange={handleChange}
-                    />
-                    <button className='post-image' onClick={handleUpload}>Image</button>
-                    <input
-                        type='file'
-                        name="post-image-input"
-                        className="post-image-input"
-                        accept='images/*'
-                        onChange={handleChange}
-                    />
-                    {imageInp &&
-                        <img className='post-image-input-preview' src={imageInp} alt=""/>
-                    }
-                    <hr/>
-                    <button type='submit' className='submit'>Create Post</button>
-                </div>
-            </form>
-            
-            <div className='post-collection flex'>
-                {postArr.length &&
-                    postArr.map(collection => 
-                        <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>
-                    )
-                }
+        <div className='post flex' id={post._id}>
+            <div className='post-header flex'>
+                <img className='poster-image' src={poster_profile} alt=""></img>
+                <div className='poster-name'>{poster_name}</div>
             </div>
+            <div className='primary-text'>{post_text}</div>
+            {post.primary_image &&
+                <img src={post_image} className='primary-image' alt=""/>
+            }
+            {user._id === poster_id &&
+                <div className='delete-wrapper flex'>
+                    <div className='delete-message'>Delete Post</div>
+                    <BsTrash className='trash-button' onClick={() => {return deletePost(post._id);}}/>
+                </div>
+            }
+            <div className='post-footer flex'>
+                <div className='post-like flex' onClick={toggleLike}>
+                    <AiFillLike className='post-icon'/>
+                    <span>Like</span>
+                    {likes.length > 0 &&
+                        <div className='like-count count flex'>{likes.length}</div>
+                    }
+                </div>
+
+                <div className='post-comment flex'>
+                    <BiCommentMinus className='post-icon'/>
+                    <span>Comment</span>
+                    {commentCount > 0 &&
+                        <div className='comment-count count flex'>{commentCount}</div>
+                    }
+                </div>
+
+                <div className='post-share flex'>
+                    <BsFillShareFill className='post-icon'/>
+                    <span>Share</span>
+                </div>
+            </div>
+
+            <Comment 
+                comments={post.comments} 
+                postID={post._id}
+                posterID={poster_id}
+                increment={increment}
+            />
         </div>
-    );
+    )
 }
 
 export default Post;

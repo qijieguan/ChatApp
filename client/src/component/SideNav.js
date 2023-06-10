@@ -14,6 +14,8 @@ const SideNav = () => {
         setTimeout(() => {
             document.querySelector('.post-section')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
         }, 500);
+
+        sessionStorage.removeItem('select'); 
     }
 
     const logout = () => { 

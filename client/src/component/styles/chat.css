@@ -32,8 +32,8 @@
     font-style: italic;
 }
 .conversation-wrapper { position: relative; width: 100%; color: rgb(48, 48, 48); border-bottom: 1px solid rgb(165, 165, 165); } 
-.conversation-wrapper.highlight { color: rgb(48, 48, 48); background: rgb(153, 153, 153); }
-.conversation-wrapper:hover { color: rgb(48, 48, 48); background: rgb(153, 153, 153); z-index: 3; }
+.conversation-wrapper.highlight { color: rgb(48, 48, 48); background: rgb(187, 187, 187); }
+.conversation-wrapper:hover { color: rgb(48, 48, 48); background: rgb(187, 187, 187); z-index: 3; }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 12.5vh; width: 85%; transition: all 0.3s ease-in; }
 .conversation > img { 
     margin: auto 2vw; 

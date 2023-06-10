@@ -122,7 +122,7 @@
     font-weight: bold; 
     font-family: 'Lobster', cursive;
     font-size: clamp(1rem, 1.5vw, 1.25rem);
-    background: gold; 
+    background: grey; 
     border-radius: 3rem; 
     box-shadow: 0 0 3px; 
 }
