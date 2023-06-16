@@ -46,20 +46,22 @@ const Comment = ({ comments, postID, posterID, increment }) => {
 
     return (
         <div className='comment-section flex'>
-            <div className='comment-input flex'>
+            <div className='comment-input-wrapper flex'>
                 <img src={user.profile_url} alt=""/>
-                <input
-                    placeholder="What's on your mind?"
-                    value={commentInp}
-                    onChange={handleChange}
-                />
-                <div className='comment-camera flex'>
-                    <AiOutlineCamera className='comment-camera-icon'/>
-                </div>
+                <div className='comment-input flex'>
+                    <input
+                        placeholder="What's on your mind?"
+                        value={commentInp}
+                        onChange={handleChange}
+                    />
+                    <div className='comment-camera flex'>
+                        <AiOutlineCamera className='comment-camera-icon'/>
+                    </div>
 
-                <div className='comment-send flex'>
-                    <div className='comment-send-wrapper flex' onClick={handleClick}>
-                        <AiOutlineSend className='comment-send-icon'/>
+                    <div className='comment-send flex'>
+                        <div className='comment-send-wrapper flex' onClick={handleClick}>
+                            <AiOutlineSend className='comment-send-icon'/>
+                        </div>
                     </div>
                 </div>
             </div>

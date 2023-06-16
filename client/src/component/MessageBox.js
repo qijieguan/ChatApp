@@ -1,8 +1,11 @@
 import './styles/message.css';
-import { useState, useEffect } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { FaCamera } from 'react-icons/fa';
+import { AiOutlineSend } from 'react-icons/ai';
+
 import axios from 'axios';
+import { useState, useEffect } from 'react';
+
 import uuid from 'react-uuid';
 import Text from './Text.js';
 
@@ -105,7 +108,8 @@ const MessageBox = ({ renderChatLog }) => {
                     <div className='flex'>
                         <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
                         <span className='flex'>
-                            Messaging:<img src={user.profile_url} alt=""/>
+                            <span>Messaging:</span>
+                            <img src={user.profile_url} alt=""/>
                             <span className='recipient'>{user.firstname + " " + user.lastname}</span>
                         </span>
                     </div>
@@ -118,7 +122,7 @@ const MessageBox = ({ renderChatLog }) => {
                 }
             </div>
             {selectMsg && 
-                <div className='text-input-wrapper grid'>
+                <div className='text-input-wrapper'>
                     <div className='text-input flex'>
                         <input name='text' className='text' 
                             value={textInp}
@@ -130,8 +134,10 @@ const MessageBox = ({ renderChatLog }) => {
                             <FaCamera className='camera-icon'/>
                             <input type="file" className="file" accept='images/*' onChange={previewFile}/>
                         </div>
+                        <div className='send-button flex' onClick={handleSubmit}>
+                            <AiOutlineSend className='send-icon'/>
+                        </div>
                     </div>
-                    <button className='flex' onClick={handleSubmit}>Send</button>
                 </div>
             }
         </div>

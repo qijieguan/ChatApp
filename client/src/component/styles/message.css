@@ -3,25 +3,33 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 2.5vh 0;
+    margin: 5vh auto;
     padding-bottom: 2rem;
-    width: 100%;
+    width: 90%;
     color: rgb(68, 68, 68);
     background: rgb(214, 214, 214);
-    box-shadow: 0 0 3px rgb(173, 173, 173);
+    box-shadow: 0 0 3px gray;
     border-radius: 0.5rem;
     overflow: hidden;
 }
 
-.private-message-header { width: 100%; background: rgb(189, 189, 189);}
-.private-message-header > div { padding: 0 1vw; flex-wrap: wrap; row-gap: 1vh; width: 100%; }
+.private-message-header { width: 100%; background: rgb(187, 187, 187);}
+.private-message-header > div { padding: 1vh 1vw; flex-wrap: wrap; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
     justify-content: center;
+    font-weight: 500;
     letter-spacing: 0.0625rem;
+    color: rgb(70, 70, 70);
 }
-#back-btn { margin: 0 5vw 0 1.5vw; background: rgb(167, 167, 167); border-radius: 0.25rem; }
+.private-message-header > div > span > span:last-child {
+    font-size: 1.25rem;
+}
+
+#back-btn { margin: 0 5vw 0 1.5vw; color: rgb(99, 99, 99); background: rgb(167, 167, 167); box-shadow: 0 0 1px; border-radius: 0.25rem; }
 #back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
+
+#back-btn:hover { opacity: 0.7; }
 
 .private-message-header img { 
     margin: 0 0.75rem 0 1rem;
@@ -29,7 +37,7 @@
     width: 10vh; 
     object-fit: cover; 
     border-radius: 3.25rem; 
-    box-shadow: 0 0 3px black;
+    box-shadow: 0 0 2px black;
 }
 
 .private-message { 
@@ -83,11 +91,9 @@
     text-transform: uppercase;
 }
 
-.text-input-wrapper { padding: 0 2vw; grid-template-columns: 80% 17.5%; gap: 1vw; width: 100%; }
+.text-input-wrapper { padding: 0 2vw; gap: 0.25vw; height: 3.5rem; width: 100%; }
 .text-input { 
     justify-content: space-between;
-    padding-right: 2vw; 
-    position: relative; 
     height: 100%; 
     width: 100%; 
     background: rgb(185, 185, 185);
@@ -95,36 +101,47 @@
 }
 .text-input > input { 
     height: 100%; 
-    width: 85%; 
+    width: 70%; 
+    font-size: 1rem;
+    font-weight: 500;
     text-indent: 1.5vw;
     color: rgb(56, 56, 56); 
     background: rgb(185, 185, 185);
     border-radius: 0.75rem;
 }
-.camera-wrapper { position: relative; pointer-events: none; opacity: 0.3; }
+.camera-wrapper { position: relative; justify-content: center; pointer-events: none; opacity: 0.3; }
 
-.camera-wrapper { background: rgb(185, 185, 185); }
-.camera-icon { margin: auto 0 auto auto; font-size: clamp(1.625rem, 2.5vw, 1.75rem); color: rgb(70, 70, 70); }
+.camera-wrapper { max-width: 10%; background: rgb(185, 185, 185); }
+.camera-icon { font-size: clamp(1.625rem, 2vw, 1.75rem); color: rgb(70, 70, 70); }
 .camera-wrapper > img { 
     display: absolute;
     top: 0;
     transform: translate3d(30%, -125%, 0);
     max-height: 20rem; 
-    max-width: 75%; 
+    max-width: 15%; 
     border-radius: 0.25rem; 
     opacity: 0.5;
 }
 .camera-wrapper > input { display: none; }
-.text-input-wrapper > button { 
-    text-align: center;
-    padding: 1vh 2vw;
-    letter-spacing: 0.05rem; 
-    font-weight: bold; 
-    font-family: 'Lobster', cursive;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    background: grey; 
-    border-radius: 3rem; 
-    box-shadow: 0 0 3px; 
+
+.send-button {
+    justify-content: center;
+    padding: auto 10vw;
+    margin-right: 0.25vw;
+    height: 90%;
+    width: 12.5%;
+    background: rgb(102, 102, 102);
+    border-radius: 0.75rem; 
+    box-shadow: 0 0 1px;
+}
+
+.send-button:hover {
+    opacity: 0.7;
+}
+
+.send-button > .send-icon {
+    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
+    color: rgb(184, 184, 184); 
 }
 
 @media (max-width: 50rem) { 
@@ -132,7 +149,6 @@
     .message-container.focus { display: unset; }
     .private-message { height: 50vh; }
     .text-input-wrapper { grid-template-columns: 100%; }
-    .text-input-wrapper > button { margin: 5vh 0 0 auto; padding: 1.5vh 5vw; height: fit-content; width: fit-content; }
 }
 
 @media (max-width: 25rem) {

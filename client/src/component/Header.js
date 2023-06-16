@@ -9,10 +9,6 @@ const Header = () => {
     const location = useLocation();
 
     useEffect(() => { 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
-        let element = document.getElementById(pathname);
-        if (element) { element.classList.add('active'); }
     }, [location]);
 
     const handleScroll = () => {

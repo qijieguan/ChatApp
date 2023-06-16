@@ -1,11 +1,11 @@
 .dashboard { 
     padding-bottom: 10vh;
-    grid-template-columns: 25% 75%;
-    justify-content: center;
+    grid-template-columns: 22.5% 77.5%;
+    justify-content: space-between;
     min-height: 100vh; 
     background: rgb(230, 230, 230); 
 }
 
 @media (max-width: 60rem) {
-    .dashboard { grid-template-columns: 95%; }
+    .dashboard { grid-template-columns: 95%; justify-content: center; }
 }

@@ -25,12 +25,12 @@
 
 .friend-container {
     height: fit-content;
-    box-shadow: 0 0 3px;
+    box-shadow: 2px 2px 2px gray;
     border-radius: 0.25rem; 
     overflow: hidden;
     transition: all 0.1s ease-in;
 }
-.friend-container:hover { border-radius: 1rem; }
+.friend-container:hover { border-radius: 0.5rem; box-shadow: 2px 2px 3px; }
 
 .friend { position: relative; flex-direction: column; justify-content: space-between; height: 100%; width: 100%; }
 
@@ -100,9 +100,9 @@
     padding: 0.5vh 0; 
     justify-content: center; 
     font-size: clamp(0.875rem, 1vw, 1rem); 
-    font-weight: 500;
-    background: transparent;
-    border: 1px solid;
+    letter-spacing: 1px;
+    color: white;
+    background: black;
     border-radius: 3rem; 
 }
 

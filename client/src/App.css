@@ -45,6 +45,7 @@ input {
     text-indent: 1rem;
     min-height: 5vh;
     font-size: 0.875rem;
+    font-weight: 500;
     font-family: 'Raleway', sans-serif;
     color: rgb(48, 48, 48);
     outline: 0; 
@@ -54,6 +55,7 @@ input {
 textarea {
     text-indent: 1rem;
     font-size: 0.875rem;
+    font-weight: 500;
     font-family: 'Raleway', sans-serif;
     color: rgb(48, 48, 48);
 }

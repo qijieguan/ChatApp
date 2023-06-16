@@ -47,15 +47,16 @@
 .profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
 
 .bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: rgb(94, 94, 94); }
-.bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 700; color: rgb(172, 172, 172); }
+.bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 500; color: rgb(153, 153, 153); }
 
 .edit-btn { 
     margin-top: 4vh; 
     padding: 0.5vh 2vw; 
     font-weight: 500;
-    color: rgb(73, 73, 73); 
-    background: rgb(190, 190, 190); 
-    border-radius: 0.125rem; 
+    color: rgb(223, 223, 223); 
+    background: royalblue;
+    box-shadow: 0 0 2px gray; 
+    border-radius: 0.25rem; 
 }
 
 .cancel-button, .submit-button { 
@@ -76,7 +77,7 @@
     min-height: 15vh; 
     word-wrap: break-word; 
     width: 50%; 
-    color: rgb(179, 179, 179); 
+    color: rgb(73, 73, 73); 
     background: rgb(201, 201, 201);
     border: 0;
     outline: 0;
@@ -84,7 +85,7 @@
 }
 .bio-edit > div { column-gap: 1vw; }
 
-.profile-footer { margin: 2.5vh auto; justify-content: center; column-gap: 5vh; width: 100%; color: gray; }
+.profile-footer { margin: 2.5vh auto; justify-content: center; column-gap: 5vh; width: 100%; color: rgb(73, 73, 73); }
 .profile-footer > div {
     justify-content: center;
     column-gap: 1vw;
@@ -93,6 +94,7 @@
     height: 12.5vh;
     width: 25vh;
     background: rgb(190, 190, 190);
+    box-shadow: 0 0 2px gray; 
     border-radius: 4rem;
 }
 .profile-footer > div > h1 { font-size: 2rem; }
@@ -104,6 +106,7 @@
     padding: 3vh 0; 
     text-align: center; 
     font-weight: 700;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
     width: 10vw; 
     color: grey; 
     border-bottom: 2px solid transparent; 

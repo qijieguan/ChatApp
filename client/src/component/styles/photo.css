@@ -4,10 +4,10 @@
     object-fit: cover; 
     height: 100%; 
     width: 100%; 
-    box-shadow: 0 0 3px; 
+    box-shadow: 1px 1px 3px black; 
     transition: 0.2s all ease-in;
 }
-.photo-wrapper > img:hover { transform: scale(1.05); z-index: 1; }
+.photo-wrapper > img:hover { transform: scale(1.05); box-shadow: 3px 3px 5px black;  z-index: 1; }
 
 .close-button { margin: 0 0 2vh auto; font-size: clamp(1.5rem, 2vw, 2rem); color: gray; }
 .close-button:hover { opacity: 0.7; }

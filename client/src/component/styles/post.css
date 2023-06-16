@@ -43,7 +43,9 @@
 .post-footer {
     padding: 2.5vh 0;
     justify-content: center;
+    flex-wrap: wrap;
     column-gap: 12.5vw;
+    row-gap: 2vh;
     width: 90%;
     border: 1px solid rgb(201, 201, 201);
     border-left: 0;
@@ -78,4 +80,9 @@
     background: rgb(194, 194, 194);
     border-radius: 1rem;
     box-shadow: 0 0 1px;
+}
+
+@media (max-width: 25rem) {
+    .post-header { column-gap: 2vw; }
+    .post-footer { justify-content: flex-start; }
 }

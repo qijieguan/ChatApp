@@ -4,14 +4,13 @@
     width: 90%;
 }
 
-.comment-input {
+.comment-input-wrapper {
+    gap: 1vh;
     margin: 3vh 0 1vh 0;
-    justify-content: flex-start;
     width: 100%;
 }
 
-.comment-input > img {
-    margin-right: 1vw;
+.comment-input-wrapper > img {
     object-fit: cover;
     height: 7.5vh;
     width: 7.5vh;
@@ -19,8 +18,13 @@
     box-shadow: 0 0 1px;
 }
 
-.comment-input > input {
+.comment-input {
     height: 6.5vh;
+    width: 100%;
+}
+
+.comment-input > input {
+    height: 100%;
     width: 70%;
     background: rgb(206, 206, 206);
     border-radius: 5rem 0 0 5rem;
@@ -116,4 +120,10 @@
 
 .cat-icon {
     font-size: 1.5rem;
+}
+
+@media (max-width: 25rem) {
+    .comment-input-wrapper {
+        flex-wrap: wrap;
+    }
 }

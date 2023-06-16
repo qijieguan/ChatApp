@@ -87,7 +87,7 @@ const FriendExtend = ({ friend }) => {
                     onMouseOver={(e) => openView(friend._id, e)}
                     onMouseLeave={(e) => closeView(friend._id, e)}
                 >
-                    (view bio)
+                    (View Bio)
                 </div>
             </div>
             <div className='friend-buttons grid'>

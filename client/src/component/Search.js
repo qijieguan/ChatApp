@@ -23,7 +23,7 @@ const Search = () => {
                         <div>
                             <FcGlobe className='search-wrapper-icon' size={60} style={{marginRight: '1rem'}}/>
                         </div>
-                        <span className='search-wrapper-text'>SEARCH OVERVIEW</span>
+                        <span className='search-wrapper-text'>DISCOVER NEW PEOPLE</span>
                     </div>
                     {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
                 </div>

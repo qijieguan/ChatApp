@@ -1,0 +1,32 @@
+{
+    "communities": [
+        {
+            "name": "Wings For Sharing",
+            "profile_url": "https://images.pexels.com/photos/7788315/pexels-photo-7788315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "A community for sharing wing delicacy and cultures. Share your best wing experiences and places across the world!",
+            "members": [],
+            "posts": []
+        },
+        {
+            "name": "Japanese Lifestyles and Culture",
+            "profile_url": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "A place for sharing views and attractions of Japan. Share vivid perspectives of what living in Japan is like!",
+            "members": [],
+            "posts": []
+        },
+        {
+            "name": "Web Development",
+            "profile_url": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "description": "A community of new and seasoned web developers. Debate and solve web-related problems respectfully. Let's all become better web developers together!",
+            "members": [],
+            "posts": []
+        },
+        {
+            "name": "Retro Gaming",
+            "profile_url": "https://c0.wallpaperflare.com/preview/87/678/343/gray-sony-ps2-console.jpg",
+            "description": "A community for sharing your retro gaming experiences. Connect us with nostagia and past memories of games in the 2000s.",
+            "members": [],
+            "posts": []
+        }
+    ]
+}

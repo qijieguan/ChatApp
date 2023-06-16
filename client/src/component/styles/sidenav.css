@@ -17,34 +17,77 @@
 
 .side-nav-body {  
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     row-gap: 2.5vh;
-    height: 50vh;
+    min-height: 40vh;
     background: rgb(233, 233, 233);
 }
 
 .side-nav-link { 
-    text-align: center; 
-    padding: 3vh 1.5vw; 
+    padding: 2vh 1.5vw; 
+    column-gap: 0.5vw;
     width: 90%; 
-    color: grey; 
+    color: rgb(77, 77, 77); 
     background: transparent; 
     font-size: 0.875rem; 
-    text-transform: uppercase;
+    font-weight: 500;
     border-radius: 0.5rem; 
     transition: all 0.2s ease-in; 
 }
 
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
 
-.side-nav-link:not(.logout-nav).highlight { color: white; background: grey; pointer-events: none; }
+.side-nav-link:not(.logout-nav).highlight { font-weight: 700; color: white; background: gray; pointer-events: none; }
 
-.logout-nav { justify-content: center; color: red; }
+.home-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); }
+.people-icon { font-size: clamp(1.75rem, 2vw, 2rem); }
+
+.logout-nav { column-gap: 0; color: red; }
 
 .logout-nav > span { font-weight: 500; }
 
+.side-nav-communities {
+    color: grey;
+}
+
+.side-nav-communities > h1 { padding: 0.5vh 2vw; }
+
+.community-collection {
+    padding: 3vh 2vw;
+    min-height: 30vh;
+    flex-wrap: wrap;
+    gap: 1vh;
+    width: 100%;
+    background: rgb(233, 233, 233);
+}
+
+.side-community { gap: 1vh; width: 100%; }
+
+.side-community-profile { 
+    height: 8.5vh; 
+    width: 8.5vh; 
+    object-fit: cover; 
+    border-radius: 3rem; 
+    border: 1px solid rgb(177, 177, 177); 
+}
+
+.side-community-detail { 
+    align-items: flex-start;
+    flex-direction: column;
+    width: 55%;
+}
+
+.side-community-name { font-weight: 500; font-size: clamp(0.875rem, 1vw, 1rem); color: rgb(77, 77, 77); }
+.side-community-members { font-size: 0.875rem; }
+
+@media (max-width: 60rem) {
+    .side-nav { box-shadow: none; border: 1px solid grey; border-bottom: 0; }
+    .side-community { justify-content: center; width: 45%; }
+}
+
 @media (max-width: 25rem) {
     .side-nav-link { padding: 1vh 2vw; }
+    .side-community { width: 100%; }
 }
 
 
