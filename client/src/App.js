@@ -8,6 +8,7 @@ import PostSection from "./component/PostSection.js";
 import ChatPage from "./component/ChatPage.js";
 import Search from "./component/Search.js";
 import Community from "./component/Community.js";
+import CommunityPage from './component/CommunityPage.js';
 import Friend from "./component/Friend.js";
 import About from "./component/About.js";
 import Profile from "./component/Profile.js";
@@ -36,6 +37,7 @@ function App() {
               <Route path="/Dashboard/Post" element={<PostSection/>} exact/>
               <Route path="/Dashboard/Chat" element={<ChatPage/>} exact/>
               <Route path="/Dashboard/Community" element={<Community/>} exact/>
+              <Route path="/Dashboard/Community/:param" element={<CommunityPage/>} exact/>
               <Route path="/Search" element={<Search/>} exact/>
               <Route path="/Friend" element={<Friend/>} exact/>
               <Route path="/About" element={<About/>} exact/>

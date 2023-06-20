@@ -6,7 +6,7 @@
     row-gap: 5vh;
     font-weight: 700; 
     width: 100%; 
-    background: rgb(230, 230, 230);
+    background: white;
     box-shadow: 0 0 3px;
 }
 
@@ -71,7 +71,7 @@
 }
 .register-input-wrapper > h1 { margin: 0; }
 .register-input-wrapper > span { font-size: 0.875rem; color: rgb(109, 109, 109); }
-.register-input-wrapper > input { width: 100%; color: rgb(179, 179, 179); background: rgb(245, 245, 245); border-radius: 0.25rem; }
+.register-input-wrapper > input { width: 100%; color: rgb(179, 179, 179); background: rgb(236, 236, 236); border-radius: 0.25rem; }
 .input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: rgb(131, 131, 131); }
 .input-label::after { content: " *"; color: red; }
 .register-btn { 

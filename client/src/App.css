@@ -60,7 +60,7 @@ textarea {
     color: rgb(48, 48, 48);
 }
 
-.overlay { position: absolute; top: 0; height: 100%; width: 100%; background: rgb(99, 99, 99); opacity: 0.5; }
+.overlay { position: absolute; top: 0; height: 100%; width: 100%; background: rgb(124, 124, 124); opacity: 0.5; }
     
 @keyframes animateImage {
     0% { object-position: left; }

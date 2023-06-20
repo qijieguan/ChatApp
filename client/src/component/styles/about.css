@@ -1,5 +1,5 @@
-.about-wrapper { flex-direction: column; justify-content: space-around; background: rgb(230, 230, 230); }
-.about-section { flex-wrap: wrap; justify-content: space-around; }
+.about-wrapper { flex-direction: column; justify-content: space-around; }
+.about-section { flex-wrap: wrap; justify-content: space-around; background: white; }
 .about {
     margin: 10vh 0;
     padding: 3vh 2vw;

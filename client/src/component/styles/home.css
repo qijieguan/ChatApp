@@ -1,10 +1,10 @@
-.home { position: relative; overflow: hidden; }
+.home { position: relative; overflow: hidden; background: white; }
 .home-login { 
     position: absolute;
     padding: 2vh 2vw 7.5vh 2vw;
     inset: 2.5% auto auto 15%;
     width: 30vw; 
-    background: rgb(230, 230, 230);
+    background: rgb(252, 252, 252);
     box-shadow: 0 0 3px grey;
     border-radius: 0.5rem;
     z-index: 3;
@@ -29,7 +29,7 @@
     padding: 20vh 2.5vw;
     width: 100vw;
     border-top: 1px solid rgb(180, 180, 180);
-    background: rgb(230, 230, 230);
+    background: white;
 }
 
 .home-image {

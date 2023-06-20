@@ -8,7 +8,7 @@ import uuid from 'react-uuid';
 
 import Data from './JSON/communities.json';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const SideNav = () => {
 
@@ -18,6 +18,7 @@ const SideNav = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
 
+    const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
@@ -30,16 +31,17 @@ const SideNav = () => {
 
         setTimeout(() => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
-
-            if (clicked) {
-                document.getElementsByClassName(param + '-section')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
-            }
+            document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
         });
     }, [location, clicked]);
 
     const logout = () => { 
         sessionStorage.removeItem('user'); 
         sessionStorage.removeItem('isLogged');
+    }
+
+    const handleClick = (community) => {
+        navigate('/Dashboard/Community/' + community.name, {state: {community}}, {replace: true});
     }
 
     return (
@@ -70,7 +72,7 @@ const SideNav = () => {
                 <div className='community-collection flex'>
                     {communities.length &&
                         communities.map(community => 
-                            <div className='side-community flex' key={uuid()}>
+                            <div className='side-community flex' key={uuid()} onClick={() => {handleClick(community)}}>
                                 <img className='side-community-profile' src={community.profile_url} alt=""/>
                                 <div className='side-community-detail flex'>
                                     <span className='side-community-name'>{community.name}</span>

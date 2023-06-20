@@ -26,7 +26,7 @@
 .community > img {
     margin-right: auto;
     height: 100%;
-    width: 25%;
+    width: 28%;
     object-fit: cover;
 }
 
@@ -35,7 +35,7 @@
     flex-direction: column;
     padding: 2vw;
     height: 100%;
-    width: 75%;
+    width: 72%;
 }
 
 .community-name {

@@ -1,3 +1,5 @@
+import { AiFillEye } from 'react-icons/ai';
+
 import { deleteFriend } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
@@ -65,12 +67,14 @@ const FriendExtend = ({ friend }) => {
     return (
         <div className='friend-container'>
             <div className="friend flex" id={friend._id}>
-                <div className='friend-header flex'>
+                <div className='friend-header-wrapper flex'>
                     <img src={friend.background_url} className="friend-bg" alt=""/>
                     <div className='friend-image flex'>
                         <img src={friend.profile_url} alt=""/>
                         <div className="friend-name">{friend.firstname} {friend.lastname}</div>
                     </div>
+
+                    <div className='friend-header-overlay'/>
                 </div>
                 
                 <div className='friend-preview'>
@@ -83,18 +87,19 @@ const FriendExtend = ({ friend }) => {
                     </div>
                 </div>
 
-                <div className='profile-view'
+                <div className='profile-view flex'
                     onMouseOver={(e) => openView(friend._id, e)}
                     onMouseLeave={(e) => closeView(friend._id, e)}
-                >
-                    (View Bio)
+                >   
+                    <AiFillEye className='eye-icon'/>
+                    <span>View Bio</span>
                 </div>
             </div>
             <div className='friend-buttons grid'>
                 <button className='chat-button flex' onClick={handleChat}>
                     Message
                 </button>
-                <button className='remove-button flex' onClick={() => {setModal(true)}}>
+                <button className='unfollow-button flex' onClick={() => {setModal(true)}}>
                     Unfollow
                 </button>
             </div>

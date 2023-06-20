@@ -2,7 +2,7 @@
     padding: 5vh 0;
     min-height: 120vh;
     width: 100%;
-    background: rgb(223, 223, 223);
+    background: white;
 }
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ;row-gap: 2vh; }

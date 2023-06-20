@@ -1,0 +1,153 @@
+.community-page {
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10vh;
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+}
+
+.community-page-banner {
+    position: relative;
+    margin-bottom: 10vh;
+    height: 40vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.community-page-banner > img {
+    margin: 0 5%;
+    height: 100%;
+    width: 90%;
+    object-fit: cover;
+}
+
+.community-page-exit {
+    position: absolute;
+    inset: 5% auto auto 7%;
+    z-index: 1;
+}
+
+.community-page-exit > .back-btn {
+    font-size: 2rem;
+    color: white;
+}
+
+.community-page-exit > span {
+    font-size: 1rem;
+    color: white;
+}
+
+.community-page-exit:hover { opacity: 0.7; }
+
+.community-page-label {
+    position: absolute;
+    inset: auto auto 10% 10%;
+    flex-wrap: wrap;
+    gap: 2vw;
+    z-index: 1;
+}
+
+.community-page-profile {
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+    border: 3px solid white;
+    border-radius: 10rem;
+}
+
+.community-page-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.community-page-members {
+    align-self: flex-end;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.community-page-overlay {
+    position: absolute;
+    inset: 0 auto auto 0;
+    margin: 0 5%;
+    height: 100%;
+    width: 90%;
+    box-shadow: 50px -100px 100px rgb(43, 43, 43) inset;
+}
+
+.community-page-posts {
+    flex-direction: column;
+    row-gap: 10vh;
+    justify-content: center;
+}
+
+.community-page-post {
+    padding-bottom: 7.5vh;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 5vh;
+    width: 75%;
+    border: 1px solid rgb(196, 196, 196);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.community-page-post-header {
+    padding: 2vh 2vw 0 2vw;
+    gap: 2vw;
+}
+
+.community-page-post-header > img {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 4rem;
+}
+
+.community-page-post-header > span {
+    font-weight: 700;
+    color: rgb(131, 131, 131);
+}
+
+.community-page-post > span {
+    align-self: center;
+    padding: 0 2vw;
+    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+    width: 90%;
+}
+
+.community-page-post > img {
+    margin: 0 auto;
+    max-height: 70vh;
+    max-width: 90%;
+    object-fit: cover;
+}
+
+.community-page-empty {
+    min-height: 50vh;
+    column-gap: 1vw;
+    color: rgb(160, 160, 160);
+}
+
+.community-page-empty > span {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.community-page-empty > .cat-icon {
+    font-size: clamp(2.75rem, 2.5vw, 3.5rem);
+}
+
+@media (max-width: 50rem) {
+    .community-page-banner { margin-bottom: 5vh; }
+    .community-page-posts { row-gap: 3vh; }
+    .community-page-post { width: 90%; }
+}
+
+@media (max-width: 25rem) {
+    .community-page-profile {
+        height: 11vh;
+        width: 11vh;
+    }
+}

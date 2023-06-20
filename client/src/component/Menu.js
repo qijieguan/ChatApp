@@ -96,7 +96,7 @@ const Menu = () => {
 
             <Link to="/Dashboard/Chat">
                 <div className="message-icon flex">
-                    <BsFillChatDotsFill color='rgb(233, 233, 233)'/>
+                    <BsFillChatDotsFill color='rgb(100, 100, 100)'/>
                 </div>
             </Link>
               

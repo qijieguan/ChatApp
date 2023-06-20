@@ -108,9 +108,8 @@ const PostSection = () => {
                     {imageInp &&
                         <img className='post-image-input-preview' src={imageInp} alt=""/>
                     }
-                    <hr/>
-                    <button type='submit' className='submit'>Create Post</button>
                 </div>
+                <button type='submit' className='submit'>Create Post</button>
             </form>
             
             <div className='post-collection flex'>

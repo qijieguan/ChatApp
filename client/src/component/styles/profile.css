@@ -1,9 +1,9 @@
 .profile { 
-    margin: 2vh auto 0 auto;
-    padding: 0 2vw 5vh 2vw;
+    padding: 5vh 5vw ;
     flex-wrap: wrap;
     row-gap: 1vh;
-    width: 90%;
+    width: 100%;
+    background: white;
     overflow: hidden;
 }
 .profile-header {
@@ -11,7 +11,7 @@
     flex-direction: column;
     row-gap: 2vh;
     width: 100%;
-    background: rgb(223, 223, 223);
+    background: rgb(235, 235, 235);
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -99,7 +99,7 @@
 }
 .profile-footer > div > h1 { font-size: 2rem; }
 
-.profile-media { margin: 0 auto; background: rgb(218, 218, 218); width: 100%; }
+.profile-media { margin: 0 auto; background: rgb(245, 245, 245); width: 100%; }
 
 .media-nav { justify-content: center; width: 100%; border-radius: 0.5rem; }
 .media-nav-li { 
@@ -115,7 +115,6 @@
 .media-nav-li.highlight { color: green; border-bottom: 2px solid; pointer-events: none; }
 
 @media (max-width: 50rem) {
-    .profile { width: 100%; }
     .profile-image { height: 20vh; width: 20vh; }
     .profile-footer { column-gap: 2vw; }
     .profile-footer > div { column-gap: 3vw; height: 10vh; width: 20vh; } 

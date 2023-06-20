@@ -103,7 +103,7 @@ const MessageBox = ({ renderChatLog }) => {
 
     return (
         <div className='message-container'>
-            <div className="private-message-header flex">
+            <div className="private-message-header">
                 {user &&
                     <div className='flex'>
                         <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>

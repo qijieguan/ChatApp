@@ -2,31 +2,59 @@
     "communities": [
         {
             "name": "Wings For Sharing",
-            "profile_url": "https://images.pexels.com/photos/7788315/pexels-photo-7788315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "profile_url": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "banner_url": "https://images.pexels.com/photos/7788315/pexels-photo-7788315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "description": "A community for sharing wing delicacy and cultures. Share your best wing experiences and places across the world!",
             "members": [],
-            "posts": []
+            "posts": [
+                {
+                    "post_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for the first timers.",
+                    "post_image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/9148Shops_stores_in_the_Philippines_09.jpg"
+                },
+                {
+                    "post_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for the first timers.",
+                    "post_image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/9148Shops_stores_in_the_Philippines_09.jpg"
+                }
+            ]
         },
         {
             "name": "Japanese Lifestyles and Culture",
             "profile_url": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "banner_url": "https://images.pexels.com/photos/1571746/pexels-photo-1571746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "description": "A place for sharing views and attractions of Japan. Share vivid perspectives of what living in Japan is like!",
             "members": [],
-            "posts": []
+            "posts": [
+                {
+                    "post_text": "Izu-ei is one of the best places for unagi dishes. The restaurant has been in business since the Edo-period and preserves 'Edo-mae' style unagi. Their 'Tare' sauce is simple so that you can enjoy the tastes of the eel.",
+                    "post_image": "https://jw-webmagazine.com/wp-content/uploads/2019/10/izuei.jpg"
+                }
+            ]
         },
         {
             "name": "Web Development",
-            "profile_url": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "profile_url": "https://images.pexels.com/photos/461064/pexels-photo-461064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "banner_url": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "description": "A community of new and seasoned web developers. Debate and solve web-related problems respectfully. Let's all become better web developers together!",
             "members": [],
-            "posts": []
+            "posts": [
+                {
+                    "post_text": "MERN stack is very popular for web development. React makes it easy to build frontend interfaces and provides great reusability for codes and components.",
+                    "post_image": "https://miro.medium.com/v2/resize:fit:678/1*l2tlJsFNg2tH6QizegKkqA.png"
+                }
+            ]
         },
         {
             "name": "Retro Gaming",
             "profile_url": "https://c0.wallpaperflare.com/preview/87/678/343/gray-sony-ps2-console.jpg",
+            "banner_url": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "description": "A community for sharing your retro gaming experiences. Connect us with nostagia and past memories of games in the 2000s.",
             "members": [],
-            "posts": []
+            "posts": [
+                {
+                    "post_text": "Modern game graphics have greatly improved since the Ps2 era. Ps2 games were great for its large library of games and archaic feel of the 2000s.",
+                    "post_image": "https://preview.redd.it/best-graphics-v0-y4su8dms0yea1.jpg?auto=webp&s=9c7c29836ff0a66351407f850ea629ec8bec2fd8"
+                }
+            ]
         }
     ]
 }

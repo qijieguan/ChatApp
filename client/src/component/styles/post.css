@@ -3,7 +3,7 @@
     padding: 3vh 0 5vh 0;
     flex-direction: column;
     width: 100%;
-    background: rgb(231, 231, 231); 
+    border: 1px solid rgb(192, 192, 192);
     border-radius: 0.5rem;
 }
 
@@ -20,9 +20,9 @@
 
 .post-header { padding: 0 2.5vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 9vh; width: 9vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; color: rgb(58, 58, 58); }
+.poster-name { font-weight: 500; color: rgb(107, 107, 107); }
 
-.primary-text { align-self: flex-start; margin-left: 5%; font-size: 0.875rem; color: rgb(58, 58, 58); }
+.primary-text { align-self: flex-start; padding: 0 3vw; color: rgb(58, 58, 58); }
 .primary-image { margin: 3vh auto 0 auto; object-fit: cover; height: 50vh; width: 100%; }
 
 .delete-wrapper { 
@@ -46,11 +46,10 @@
     flex-wrap: wrap;
     column-gap: 12.5vw;
     row-gap: 2vh;
-    width: 90%;
+    width: 100%;
     border: 1px solid rgb(201, 201, 201);
     border-left: 0;
     border-right: 0;
-    border-bottom-width: 2px;
 }
 
 .post-footer > div {
