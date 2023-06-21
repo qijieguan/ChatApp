@@ -2,29 +2,31 @@ import './styles/community-page.css';
 import { MdArrowBack } from 'react-icons/md';
 import { FaCat } from 'react-icons/fa';
 
+import { useState, useEffect } from 'react';
 import  { Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import uuid from 'react-uuid';
-
-import Menu from './Menu.js';
 
 const CommunityPage = () => {
 
-    const { state } = useLocation();
-    const { community } = state;
+    const location = useLocation();
+    
+    const [community, setCommunity] = useState(null);
 
     useEffect(() => {
-        setTimeout(() => {
-            document.getElementsByClassName('community-page')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
-        }, 250);
-    }, [community]);
+        if (location.state) {
+            setCommunity(location.state.community);
+        }
+        else {
+            setCommunity(null);
+        }
+    }, [location])
 
     return (
-        <div className="community-page">
-            <Menu/>
+        <>{community &&
+            <div className="community-page">
             <h1 className='community-page-banner'>
                 <img src={community.banner_url} alt=""/>
-                <Link to="/Dashboard/Post">
+                <Link to="/Dashboard/Community">
                     <div className='community-page-exit flex'>
                         <MdArrowBack className='back-btn'/>
                         <span>Go Back</span>
@@ -32,8 +34,11 @@ const CommunityPage = () => {
                 </Link>
                 <div className='community-page-label flex'>
                     <img src={community.profile_url} className="community-page-profile" alt=""/>
-                    <span className='community-page-name'>R/ {community.name}</span>
-                    <span className='community-page-members'>members: {community.members.length}</span>
+                    <div className='community-page-info flex'>
+                        <span className='community-page-name'>R/ {community.name}</span>
+                        <span className='community-page-members'>members: {community.members.length}</span>
+                    </div>
+                    <button className='community-page-join'>Join</button>
                 </div>
                 <div className='community-page-overlay'/>
             </h1>
@@ -62,6 +67,9 @@ const CommunityPage = () => {
                 }
             </div>
         </div>
+        }
+        </>
+        
     )
 }
 

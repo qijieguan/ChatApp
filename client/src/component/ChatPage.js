@@ -13,17 +13,10 @@ const ChatPage = () => {
 
     useEffect(() => { 
         if (sessionStorage.getItem('select')) {
-            setTimeout(() => {
-                document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-            }, 500);
+        
 
             document.querySelector('.conversation-log')?.classList.remove('focus');
             document.querySelector('.message-container')?.classList.add('focus');
-        }
-        else {
-            setTimeout(() => {
-                document.querySelector('.conversation-log')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-            }, 500);
         }
         
         if (window.location.href.includes('Chat')) {

@@ -7,18 +7,15 @@ import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 
 import Data from './JSON/communities.json';
-import { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const SideNav = () => {
 
     const communities = Data.communities;
 
-    const [clicked, setClicked] = useState(false);
-
     const user = JSON.parse(sessionStorage.getItem('user'));
 
-    const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
@@ -33,15 +30,11 @@ const SideNav = () => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
             document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
         });
-    }, [location, clicked]);
+    }, [location]);
 
     const logout = () => { 
         sessionStorage.removeItem('user'); 
         sessionStorage.removeItem('isLogged');
-    }
-
-    const handleClick = (community) => {
-        navigate('/Dashboard/Community/' + community.name, {state: {community}}, {replace: true});
     }
 
     return (
@@ -51,12 +44,12 @@ const SideNav = () => {
                 <div className='side-nav-name'>{user.firstname} {user.lastname}</div>
             </div>
             <div className='side-nav-body flex'>
-                <Link to="/Dashboard/Post" onClick={() => {setClicked(true)}} className='post-nav side-nav-link flex'>
+                <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
                     <AiFillHome className='home-icon'/>
                    <span>Home</span> 
                 </Link>
 
-                <Link to="/Dashboard/Community" onClick={() => {setClicked(true)}} className='community-nav side-nav-link flex'>
+                <Link to="/Dashboard/Community" className='community-nav side-nav-link flex'>
                     <IoIosPeople className='people-icon'/>
                     <span>Community</span> 
                 </Link>
@@ -72,13 +65,17 @@ const SideNav = () => {
                 <div className='community-collection flex'>
                     {communities.length &&
                         communities.map(community => 
-                            <div className='side-community flex' key={uuid()} onClick={() => {handleClick(community)}}>
+                            <Link 
+                                to={{pathname: "/Dashboard/Community/" + community.name}} 
+                                state={{community: community}} key={uuid()}
+                                className='side-community flex'
+                            >
                                 <img className='side-community-profile' src={community.profile_url} alt=""/>
                                 <div className='side-community-detail flex'>
                                     <span className='side-community-name'>{community.name}</span>
                                     <span className='side-community-members'>members: {community.members.length}</span>
-                                </div>
-                            </div>
+                                </div>   
+                            </Link>
                         )
                     }
                 </div>

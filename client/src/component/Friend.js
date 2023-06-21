@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import FriendExtend from './FriendExtend.js';
-import Menu from './Menu.js';
 
 const Friend = () => {
 
@@ -23,7 +22,6 @@ const Friend = () => {
 
     return (
         <>
-            <Menu/>
             <div className="friend-page">
             {friends.length ?
                 <div className='friend-wrapper grid'>

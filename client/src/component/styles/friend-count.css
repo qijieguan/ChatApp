@@ -5,10 +5,7 @@
     align-items: flex-start;
     text-align: center;
     width: 100%;
-    min-height: 75vh;
-    background: rgb(19, 19, 19);
-    box-shadow: 0 0 1px;
-    border-radius: 0.5rem;
+    min-height: 50vh;
 }
 
 .friend-count-label {
@@ -16,12 +13,12 @@
     padding-left: 1.5vw;
     font-weight: 700;
     font-family: 'Playfair Display', serif;
-    color: gold;
+    color: royalblue;
     border-left: 3px solid;
 }
 
 .friend-headers { margin-top: 2vh; flex-wrap: wrap; column-gap: 1vw; row-gap: 1vw; }
-.friend-headers > h1 { color: white; }
+.friend-headers > h1 { color: grey; }
 
 .friend-header {
     height: 15vh;

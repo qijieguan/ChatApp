@@ -33,10 +33,11 @@ function App() {
               <Route path="/" element={<Home/>} exact/>
               <Route path="/Register" element={<Register/>} exact/>
               <Route path="/Login" element={<Login/>} exact/>
-              <Route path="/Dashboard/Post?/Chat?/Community?" element={<Dashboard/>} exact/>
+              <Route path="/Dashboard?/Post?/Chat?/Community?/Friend?/Search?/Profile?" element={<Dashboard/>} exact/>
               <Route path="/Dashboard/Post" element={<PostSection/>} exact/>
               <Route path="/Dashboard/Chat" element={<ChatPage/>} exact/>
               <Route path="/Dashboard/Community" element={<Community/>} exact/>
+              <Route path="/Dashboard/Community/:param" element={<Dashboard/>} exact/>
               <Route path="/Dashboard/Community/:param" element={<CommunityPage/>} exact/>
               <Route path="/Search" element={<Search/>} exact/>
               <Route path="/Friend" element={<Friend/>} exact/>

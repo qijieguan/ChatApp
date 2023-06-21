@@ -1,7 +1,7 @@
 import './styles/profile.css';
 import { useState, useEffect } from 'react';
 import { AiTwotoneEdit } from 'react-icons/ai';
-import Menu from './Menu.js';
+
 import Album from './Album.js';
 import FriendCount from './FriendCount.js';
 import axios from 'axios';
@@ -53,7 +53,6 @@ const Profile = () => {
 
     return(
         <div>
-            <Menu/>
             <div className="profile flex">
                 <div className='profile-header flex'>
                     <div className='profile-top flex'>

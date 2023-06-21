@@ -83,7 +83,7 @@ const MessageBox = ({ renderChatLog }) => {
 
         document.querySelector('.conversation-log')?.classList.add('focus');
         document.querySelector('.message-container')?.classList.remove('focus');
-        document.querySelector('.conversation-log')?.scrollIntoView({ block: 'start', behavior: 'smooth'});
+        document.querySelector('.menu-bar')?.scrollIntoView({ block: 'start', behavior: 'smooth'});
     }
 
     const readFiles = (files) => {

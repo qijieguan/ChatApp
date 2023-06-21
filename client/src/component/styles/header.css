@@ -2,7 +2,7 @@
     row-gap: 2vh;
     height: fit-content;
     width: 100%; 
-    background: green;
+    background: royalblue;
 }
 
 .header-btns { 
@@ -11,6 +11,7 @@
     column-gap: 2.5vw;
     min-height: 8vh;
     width: 100%;
+    box-shadow: 0 0 1px rgb(185, 185, 185);
 }
 
 .header-btns button { font-size: clamp(0.75rem, 1.5vw, 1rem); color: white; }
@@ -37,7 +38,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png");
     background-size: cover;
     background-position: center; 
-    color: rgb(224, 224, 224); 
+    color: rgb(233, 233, 233); 
 }
 .header-banner-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-banner-text * { 
@@ -45,7 +46,7 @@
     letter-spacing: 0.125rem;
     text-transform: uppercase;
 }
-.header-banner-text span { color: white; }
+.header-banner-text span { color: rgb(177, 196, 255); }
 
 
 @media (max-width: 25rem) {

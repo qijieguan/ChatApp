@@ -27,23 +27,17 @@ const Menu = () => {
             axios.post(baseURL +'/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
-
-        let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
-        let element = document.getElementById(pathname);
-            
-        element?.classList.add('active'); 
         
     }, [dispatch, baseURL, location]);
 
     const handleClick = (event) => {
-        document.querySelector('.menu-li.active:not(.logout)');
-    
+        document.querySelector('.menu-li.active')?.classList.remove('active');
         event.currentTarget.classList.add('active');
     }
 
     return (
-        <div className="menu-bar flex" style={{display: sessionStorage.getItem('isLogged') ? '' : 'none'}}>
-            <h1 className='menu-label'>
+        <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
+            <div className='menu-label'>
                 {window.location.href.includes('Post') &&
                     <div className='menu-label-wrapper flex'>
                         <AiFillHome className="menu-li-icon"/>
@@ -80,7 +74,7 @@ const Menu = () => {
                         <span>Community</span>
                     </div>
                 }
-            </h1>
+            </div>
 
             <div className='menu-li-wrapper flex'>
                 <Link to='/Dashboard/Post' className="menu-li" id="/Dashboard" onClick={handleClick} >

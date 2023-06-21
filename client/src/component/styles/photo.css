@@ -1,4 +1,4 @@
-.photo-wrapper { position: relative; display: block; width: fit-content; color: green; }
+.photo-wrapper { position: relative; display: block; width: fit-content; color: royalblue; }
 .photo-wrapper > img { 
     position: relative;
     object-fit: cover; 
@@ -14,5 +14,5 @@
 
 .zoom-photo { object-fit: cover; max-height: 50vh; width: 100%; }
 
-.set-button { margin-top: 3vh; padding: 2vh 0; width: 100%; color: rgb(139, 139, 139); background: rgb(216, 216, 216); border: 1px solid; }
+.set-button { margin-top: 3vh; padding: 2vh 0; width: 100%; color: rgb(139, 139, 139); background: rgb(240, 240, 240); border: 1px solid; }
 .set-button:hover { opacity: 0.7; }

@@ -4,7 +4,7 @@ import User from './User.js';
 import uuid from 'react-uuid';
 import axios from 'axios';
 import { FcGlobe } from 'react-icons/fc';
-import Menu from './Menu.js';
+
 
 const Search = () => {
 
@@ -16,7 +16,6 @@ const Search = () => {
 
     return(
         <>
-            <Menu/>
             <div className="search">
                 <div className='search-wrapper grid'>
                     <div className='search-wrapper-label flex'>

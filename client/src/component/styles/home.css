@@ -19,7 +19,7 @@
 .home-intro > h1 { 
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: green;
+    color: royalblue;
 }
 
 .home-intro > span { font-weight: 700; color: grey; }
@@ -43,21 +43,21 @@
 .text-label {
     font-size: clamp(2rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: green;
+    color: royalblue;
 }
 
 
 .home-text > div { padding: 0 2vw; width: 55%; margin: 0 auto; }
-.home-text-3 > div { padding: 1vh 1vw; border: 1px solid gray; column-gap: 0.5vw; }
+.home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
 
-.feature-wrapper { color: gray; }
+.feature-wrapper { color: royalblue; }
 
 .features-dropdown { position: relative; height: 0; transition: all 0.3s ease-in; overflow: hidden; }
 .features-dropdown > li {
     margin-top: 4vh;
     padding: 2vh 2vw;
     text-align: center;
-    color: gray;
+    color: royalblue;
     border: 1px solid;
     border-radius: 0.25rem;
 }

@@ -21,7 +21,7 @@ const Photo = ({photo, photoID, render}) => {
             maxHeight: '100%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',
-            backgroundColor: 'rgb(230, 230, 230)',
+            backgroundColor: 'white',
             border: '1px solid rgb(180, 180, 180)',
         },
         overlay: {  backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }

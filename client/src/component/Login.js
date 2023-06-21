@@ -23,7 +23,8 @@ const Login = () => {
             width: 'max(20rem, 35%)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
-            backgroundColor: 'rgb(230, 230, 230)',
+            color: 'rgb(77, 77, 77)',
+            backgroundColor: 'white',
             border: '1px solid rgb(180, 180, 180)',
         },
         overlay: { backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
@@ -95,7 +96,10 @@ const Login = () => {
                     <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 </div>
                 <button type="submit" className="sign-in-btn">Sign In</button>
-                <Link to='/Register' className="register-link">Don't have an account? <span>Create Account</span></Link>
+                <Link to='/Register' className="register-link">
+                    <span>Don't have an account? </span>
+                    <span>Create Account</span>
+                </Link>
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
