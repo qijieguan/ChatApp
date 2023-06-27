@@ -1,7 +1,5 @@
 .community-page {
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 10vh;
+    padding: 2vh 0 10vh 0;
     min-height: 100vh;
     width: 100%;
     background: white;
@@ -9,7 +7,6 @@
 
 .community-page-banner {
     position: relative;
-    margin-bottom: 10vh;
     height: 40vh;
     width: 100%;
     overflow: hidden;
@@ -29,12 +26,12 @@
 }
 
 .community-page-exit > .back-btn {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 2vw, 2rem);
     color: white;
 }
 
 .community-page-exit > span {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     color: white;
 }
 
@@ -65,27 +62,69 @@
 
 .community-page-name {
     color: white;
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
     font-weight: bold;
 }
 
 .community-page-members {
     align-self: flex-end;
     color: white;
-    font-size: 1.125rem;
+    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
     font-weight: 700;
+}
+
+.community-page-buttons {
+    margin: 0 0 0 auto;
+    flex-direction: column;
+    row-gap: 2vh;
 }
 
 .community-page-join {
     padding: 1vh 1.5vw;
-    margin-left: auto;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: clamp(0.75rem, 1vw, 1rem);
     letter-spacing: 1px;
-    color: rgb(235, 235, 235);
+    color: white;
     background: royalblue;
     box-shadow: 0 0 3px rgb(65, 65, 65);
     border-radius: 3rem;
+}
+
+.community-page-join::after {
+    content: 'Join'
+}
+
+.community-page-join.joined {
+    color: white;
+    background: limegreen;
+}
+
+.community-page-join.joined::after {
+    content: 'Joined';
+}
+
+.community-page-info-button {
+    justify-content: center;
+    column-gap: 1vh;
+    color: rgb(214, 214, 214);
+    border-bottom: 2px solid transparent;
+}
+
+.circle-icon {
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    color: rgb(214, 214, 214);
+}
+
+.community-page-info-button > span {
+    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+}
+
+.community-page-info-button:hover {
+    border-color: rgb(235, 235, 235);
+}
+
+.community-page-info-button:hover * { 
+    color: rgb(235, 235, 235);
 }
 
 .community-page-join:hover { opacity: 0.7; }
@@ -98,6 +137,21 @@
     width: 90%;
     box-shadow: 50px -100px 100px rgb(43, 43, 43) inset;
 }
+
+.community-page-description {
+    margin: 0 auto 8vh auto;
+    justify-content: center;
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    width: 90%;
+    color: rgb(65, 65, 65);
+    background: rgb(243, 243, 243);
+    border-radius: 0 0 0.5rem 0.5rem;
+    transition: all 0.4s ease-in;
+}
+
+.community-page-description:hover {
+    background: white;
+} 
 
 .community-page-posts {
     flex-direction: column;
@@ -161,9 +215,15 @@
 }
 
 @media (max-width: 50rem) {
-    .community-page-banner { margin-bottom: 5vh; }
+    .community-page-exit { inset: 5% 7% auto auto; }
+    .community-page-banner > img, .community-page-overlay { margin: 0; width: 100%; }
+    .community-page-label { width: 100%; }
+    .community-page-buttons { margin: 0 auto; }
+    .community-page-join { padding: 1vh 7.5vw; }
+    .community-page-info-button { border-bottom: 1px solid transparent; }
+    .community-page-description { margin: 0 auto 5vh auto; width: 100%; }
     .community-page-posts { row-gap: 3vh; }
-    .community-page-post { width: 90%; }
+    .community-page-post { width: 100%; }
 }
 
 @media (max-width: 25rem) {

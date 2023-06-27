@@ -1,4 +1,4 @@
-.side-nav { position: relative;; height: fit-content; width: 100%; box-shadow: 0 0 3px; overflow: hidden; z-index: 2; }
+.side-nav { position: relative; height: fit-content; width: 100%; box-shadow: 0 0 3px; overflow: hidden; z-index: 2; }
 .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: 25vh; width: 100%; background: rgb(240, 240, 240); }
 .side-nav-profile {
     height: 10vh; 
@@ -9,7 +9,7 @@
 }
 
 .side-nav-name {
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem);
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
     font-weight: bold;
     text-align: center;
     color: royalblue;
@@ -23,15 +23,18 @@
 }
 
 .side-nav-link { 
-    padding: 2vh 1.5vw; 
+    padding: 1.5vh 1.5vw; 
     column-gap: 0.5vw;
-    width: 90%; 
+    width: 95%; 
     color: rgb(77, 77, 77); 
     background: transparent; 
-    font-size: 0.875rem; 
     font-weight: 500;
     border-radius: 0.5rem; 
     transition: all 0.2s ease-in; 
+}
+
+.side-nav-link > span {
+    font-size: clamp(0.875rem, 1vw, 1rem); 
 }
 
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
@@ -58,6 +61,17 @@
     width: 100%;
 }
 
+.community-collection-empty {
+    padding: 3vh 0;
+    justify-content: center;
+    gap: 1vh;
+    width: 100%;
+}
+
+.community-collection-empty > span {
+    font-size: clamp(1rem, 1.125vw, 1.125rem);
+}
+
 .side-community { gap: 1vh; width: 100%; }
 
 .side-community:hover > .side-community-detail {
@@ -82,7 +96,7 @@
 .side-community-members { font-size: 0.875rem; }
 
 @media (max-width: 60rem) {
-    .side-nav { box-shadow: none; border: 1px solid grey; border-bottom: 0; }
+    .side-nav { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
     .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: fit-content; }
     .side-nav-body { row-gap: 3vh; }
     .side-nav-link { padding: 0.5vh 2vw;}

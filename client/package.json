@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "config-overrides-path": "node_modules/react-app-rewired/config-overrides.js",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
@@ -13,7 +14,7 @@
     "react-modal": "^3.14.4",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.10.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-uuid": "^1.0.2",
     "web-vitals": "^2.1.4"
   },

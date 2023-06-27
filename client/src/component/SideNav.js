@@ -2,21 +2,34 @@ import './styles/sidenav.css';
 import { BiLogIn } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import { IoIosPeople } from 'react-icons/io';
+import { FaCat } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
+import axios from 'axios';
 
 import Data from './JSON/communities.json';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setCommunities } from './actions/index.js';
 
 const SideNav = () => {
 
-    const communities = Data.communities;
+    //const communities = Data.communities;
+    //<button onClick={init}>init button</button>
 
     const user = JSON.parse(sessionStorage.getItem('user'));
 
     const location = useLocation();
+
+    const communities = useSelector(state => state.communities);
+    const dispatch = useDispatch();
+
+    //const [communities, setCommunities] = useState([]);
+
+    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(() => {
         document.querySelector('.highlight')?.classList.remove('highlight');
@@ -25,16 +38,31 @@ const SideNav = () => {
         if (location.pathname.includes('Post')) { param = 'post' }
         else if (location.pathname.includes('Community')) { param = 'community' }
 
-
         setTimeout(() => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
             document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
         });
+
+        getCommunities()
     }, [location]);
+
+    const getCommunities = async () => {
+        await axios.post(baseURL + '/communities/get/', { member_id: user._id })
+        .then((response) => { 
+            //setCommunities(response.data);
+            dispatch((setCommunities(response.data)));
+        });
+    }
 
     const logout = () => { 
         sessionStorage.removeItem('user'); 
         sessionStorage.removeItem('isLogged');
+    }
+
+    const init = async () => {
+        console.log(communities)
+        await axios.post(baseURL + '/communities/init/', { communities: communities })
+        .then((response) => { console.log(response.data) });
     }
 
     return (
@@ -63,11 +91,11 @@ const SideNav = () => {
             <div className='side-nav-communities'>
                 <h1>My Communities</h1>
                 <div className='community-collection flex'>
-                    {communities.length &&
+                    {communities.length > 0 ?
                         communities.map(community => 
                             <Link 
                                 to={{pathname: "/Dashboard/Community/" + community.name}} 
-                                state={{community: community}} key={uuid()}
+                                state={{communityID: community._id}} key={uuid()}
                                 className='side-community flex'
                             >
                                 <img className='side-community-profile' src={community.profile_url} alt=""/>
@@ -77,6 +105,11 @@ const SideNav = () => {
                                 </div>   
                             </Link>
                         )
+                        :
+                        <div className='community-collection-empty flex'>
+                            <FaCat className='cat-icon'/>
+                            <span>Wow. Much Empty</span>
+                        </div>
                     }
                 </div>
             </div>

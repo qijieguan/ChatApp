@@ -20,8 +20,6 @@ const Dashboard = () => {
     const [pathname, setPathname] = useState(null);
 
     useEffect(() => {
-        console.log(location.pathname)
-
         let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
         let element = document.getElementById(pathname);
             
@@ -29,7 +27,6 @@ const Dashboard = () => {
         element?.classList.add('active'); 
         
         setPathname(location.pathname);
-
 
         document.querySelector('.highlight')?.classList.remove('highlight');
         let param = '';

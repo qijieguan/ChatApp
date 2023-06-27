@@ -8,8 +8,11 @@
             "members": [],
             "posts": [
                 {
-                    "post_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for the first timers.",
-                    "post_image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/9148Shops_stores_in_the_Philippines_09.jpg"
+                    "poster_id": "",
+                    "poster_name": "Wings For Sharing",
+                    "poster_image": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for the first timers.",
+                    "primary_image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/9148Shops_stores_in_the_Philippines_09.jpg"
                 }
             ]
         },
@@ -21,8 +24,11 @@
             "members": [],
             "posts": [
                 {
-                    "post_text": "Izu-ei is one of the best places for unagi dishes. The restaurant has been in business since the Edo-period and preserves 'Edo-mae' style unagi. Their 'Tare' sauce is simple so that you can enjoy the tastes of the eel.",
-                    "post_image": "https://jw-webmagazine.com/wp-content/uploads/2019/10/izuei.jpg"
+                    "poster_id": "",
+                    "poster_name": "Japanese Lifestyles and Culture",
+                    "poster_image": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Izu-ei is one of the best places for unagi dishes. The restaurant has been in business since the Edo-period and preserves 'Edo-mae' style unagi. Their 'Tare' sauce is simple so that you can enjoy the tastes of the eel.",
+                    "primary_image": "https://jw-webmagazine.com/wp-content/uploads/2019/10/izuei.jpg"
                 }
             ]
         },
@@ -34,8 +40,11 @@
             "members": [],
             "posts": [
                 {
-                    "post_text": "MERN stack is very popular for web development. React makes it easy to build frontend interfaces and provides great reusability for codes and components.",
-                    "post_image": "https://miro.medium.com/v2/resize:fit:678/1*l2tlJsFNg2tH6QizegKkqA.png"
+                    "poster_id": "",
+                    "poster_name": "Web Development",
+                    "poster_image": "https://images.pexels.com/photos/461064/pexels-photo-461064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "MERN stack is very popular for web development. React makes it easy to build frontend interfaces and provides great reusability for codes and components.",
+                    "primary_image": "https://miro.medium.com/v2/resize:fit:678/1*l2tlJsFNg2tH6QizegKkqA.png"
                 }
             ]
         },
@@ -47,8 +56,11 @@
             "members": [],
             "posts": [
                 {
-                    "post_text": "Modern game graphics have greatly improved since the Ps2 era. Ps2 games were great for its large library of games and archaic feel of the 2000s.",
-                    "post_image": "https://preview.redd.it/best-graphics-v0-y4su8dms0yea1.jpg?auto=webp&s=9c7c29836ff0a66351407f850ea629ec8bec2fd8"
+                    "poster_id": "",
+                    "poster_name": "Retro Gaming",
+                    "poster_image": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Modern game graphics have greatly improved since the Ps2 era. Ps2 games were great for its large library of games and archaic feel of the 2000s.",
+                    "primary_image": "https://preview.redd.it/best-graphics-v0-y4su8dms0yea1.jpg?auto=webp&s=9c7c29836ff0a66351407f850ea629ec8bec2fd8"
                 }
             ]
         }

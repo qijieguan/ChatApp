@@ -63,7 +63,17 @@
     border-radius: 0.25rem;
 }
 
+.join-button::after {
+    content: "Join Community";
+}
+
 .join-button:hover { font-weight: 500; color: rgb(240, 240, 240); background: rgb(27, 27, 27); border: 0; box-shadow: 1px 1px 3px black; }
+
+.join-button.joined {
+    color: green;
+    border: 2px solid green;
+    pointer-events: none;
+}
 
 @media (max-width: 25rem) {
     .community-section { row-gap: 5vh; }

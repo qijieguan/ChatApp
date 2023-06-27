@@ -26,3 +26,10 @@ export const setPrivate = id => {
     }
 }
 
+export const setCommunities = id => {
+    return {
+        type: 'SET_COMMUNITIES',
+        payload: id
+    }
+}
+
