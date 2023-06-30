@@ -1,4 +1,5 @@
 .menu-bar { 
+    position: relative;
     padding: 2vh 1vw;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -6,12 +7,11 @@
     row-gap: 1vh;
     width: 100%;
     height: fit-content;
-    background: rgb(247, 247, 247);
+    background: rgb(250, 250, 250);
     box-shadow: 1px 1px 3px grey;
 }
 
 .menu-label-wrapper {
-    justify-content: center;
     gap: 1vh;
     color: rgb(99, 99, 99);
 }
@@ -25,10 +25,8 @@
 
 .menu-li-wrapper {
     padding: 1vh 0.5vw;
-    justify-content: space-between;
-    flex-wrap: wrap;
     gap: 3vh;
-    background: rgb(230, 230, 230);
+    background: rgb(233, 233, 233);
     border-radius: 0.5rem;
 }
 
@@ -40,10 +38,10 @@
     border-radius: 0.5rem;
     transition: all 0.2s ease-in; 
 }
-.menu-li:hover { background: rgb(199, 199, 199); box-shadow: 0 0 2px; }
-.menu-li.active { background: rgb(199, 199, 199); box-shadow: 0 0 2px; }
+.menu-li:hover { background: rgb(209, 209, 209); box-shadow: 0 0 2px; }
+.menu-li.active { background: rgb(209, 209, 209); box-shadow: 0 0 2px; }
 .menu-li > div { 
-    font-size: clamp(0.75rem, 5vw, 0.875rem); 
+    font-size: clamp(0.75rem, 1vw, 0.875rem); 
     font-weight: bold; 
     letter-spacing: 0.5px;
 }
@@ -80,9 +78,9 @@
     display: none;
     position: absolute;
     inset: auto 0 0 auto;
-    width: 125%;
+    width: 100%;
     background: rgb(247, 247, 247);
-    border: 1px solid grey;
+    border: 1px solid rgb(209, 209, 209);
     border-top: 0;
     transform: translateY(100%);
     z-index: 3;
@@ -106,17 +104,20 @@
 .menu-link > div { font-size: clamp(0.75rem, 2.5vw, 0.875rem); font-weight: 500; }
 .menu-dropdown:hover > .menu-links, .menu-links:hover { display: flex; flex-direction: column; }
 
-@media (max-width: 60rem) {
-    .menu-bar { border: 1px solid grey; border-top: 0; }
+@media (max-width: 75rem) {
+    .menu-li-wrapper { padding: 1vh 1vw;  }
 }
 
-@media (max-width: 75rem) {
-    .menu-li-wrapper { padding: 1vh 1vw; gap: 1vh; justify-content: space-evenly; }
+@media (max-width: 60rem) {
+    .menu-bar { column-gap: 1vw; border: 1px solid grey; border-top: 0; }
+    .menu-li-wrapper { gap: 1vh; background: transparent; }
+    .menu-li { padding: 1vh 4vw; }
 }
 
 @media (max-width: 50rem) {
     .menu-bar { padding: 1vh 5vw; }
     .menu-label-wrapper { display: none; }
+    .menu-li-wrapper { flex-wrap: wrap; }
     .menu-dropdown { margin: 0 0 0 auto; }
 }
 

@@ -223,7 +223,7 @@
     .community-page-info-button { border-bottom: 1px solid transparent; }
     .community-page-description { margin: 0 auto 5vh auto; width: 100%; }
     .community-page-posts { row-gap: 3vh; }
-    .community-page-post { width: 100%; }
+    .community-page-post { width: 95%; }
 }
 
 @media (max-width: 25rem) {

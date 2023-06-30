@@ -22,7 +22,7 @@
 .poster-image { object-fit: cover; height: 9vh; width: 9vh; border-radius: 3rem; }
 .poster-name { font-weight: 500; color: rgb(107, 107, 107); }
 
-.primary-text { align-self: flex-start; padding: 0 3vw; color: rgb(58, 58, 58); }
+.primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.875rem, 1.125vw, 1.125rem); color: rgb(58, 58, 58); }
 .primary-image { margin: 3vh auto 0 auto; object-fit: cover; height: 50vh; width: 100%; }
 
 .delete-wrapper { 
@@ -41,7 +41,7 @@
 .trash-button:hover { opacity: 0.7; }
 
 .post-footer {
-    padding: 2.5vh 0;
+    padding: 2.5vh 3vw;
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 12.5vw;
@@ -58,6 +58,8 @@
 }
 
 .post-footer > div:hover { opacity: 0.7; }
+
+.post-footer > div > span { font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
 
 .post-like.active {
     color: royalblue;
@@ -81,7 +83,12 @@
     box-shadow: 0 0 1px;
 }
 
+@media (max-width: 60rem) {
+    .post-footer > div { column-gap: 2vw; }
+}
+
 @media (max-width: 25rem) {
     .post-header { column-gap: 2vw; }
     .post-footer { justify-content: flex-start; }
+    .like-count, .comment-count { padding: 0 3vw; }
 }

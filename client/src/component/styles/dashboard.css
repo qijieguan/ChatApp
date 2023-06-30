@@ -7,5 +7,5 @@
 }
 
 @media (max-width: 60rem) {
-    .dashboard { grid-template-columns: 95%; justify-content: center; }
+    .dashboard { grid-template-columns: 100%; justify-content: center; }
 }

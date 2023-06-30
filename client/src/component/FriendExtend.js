@@ -24,7 +24,7 @@ const FriendExtend = ({ friend }) => {
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',
-            backgroundColor: 'rgb(30,30,30)',
+            backgroundColor: 'white',
             border: '1px solid black',
         },
         overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }

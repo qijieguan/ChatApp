@@ -8,6 +8,7 @@
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ;row-gap: 2vh; }
 .search-wrapper-label {
     grid-column: 1 / 5;
+    text-align: center;
     justify-content: center;
     margin: 2.5vh auto 5vh auto;
     width: 100%;
@@ -79,7 +80,9 @@
     bottom: 0;
     font-weight: 500;
     height: 100%;
-    background: yellow;
+    width: 100%;
+    color: white;
+    background: yellowgreen;
     transform: translateY(100%);
     transition: all 0.5s ease-in;
     z-index: 1;
@@ -96,7 +99,7 @@
 
 @media (max-width: 35rem) {
     .search-wrapper { grid-template-columns: 48% 48%; }
-    .search-wrapper-label { grid-column: 1 / 3; margin: 2.5vh auto 7.5vh auto; }
+    .search-wrapper-label { grid-column: 1 / 3; margin: 2.5vh auto; }
 }
 
 @media (max-width: 25rem) {

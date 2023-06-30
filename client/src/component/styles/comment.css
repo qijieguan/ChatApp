@@ -85,13 +85,14 @@
 }
 
 .comment {
-    padding: 0 2vw;
+    padding: 2vh 2vw;
     column-gap: 1vw;
-    min-height: 12.5vh;
+    font-weight: 500;
+    min-height: 10vh;
     width: 100%;
-    background: rgb(247, 247, 247);
+    background: royalblue;
     border: 1px solid rgb(201, 201, 201);
-    border-radius: 0.5rem;
+    border-radius: 5rem;
 }
 
 .comment-profile {
@@ -104,14 +105,13 @@
 
 .comment-name {
     margin-right: 1vw;
-    font-size: 1rem;
-    font-weight: 500;
-    color: rgb(107, 107, 107);
+    font-size: 0.875rem;
+    color: rgb(233, 233, 233);
 }
 
 .comment-content {
     font-size: 0.875rem;
-    color: rgb(58, 58, 58);
+    color: white;
 }
 
 .comment-empty { margin: 0 auto; justify-content: center; column-gap: 0.5vw; }

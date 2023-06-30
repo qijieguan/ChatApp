@@ -10,8 +10,7 @@
     width: 100%; 
     font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
     font-weight: 700;
-    font-family: 'Lobster', cursive;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     color: royalblue;
 }
 
@@ -20,19 +19,19 @@
     color: black; 
     height: 7.5vh;
     width: 80%; 
+    background: rgb(250, 250, 250);
     border: 1px solid rgb(211, 211, 211); 
     border-radius: 3rem;
     overflow: hidden; 
 }
 .login-icon { justify-content: center; width: 100%; color: white; }
 .login-icon * { font-size: 1.375rem; color: royalblue; }
-.login input { width: 100%; background: rgb(243, 243, 243); border: 1px solid rgb(228, 228, 228); }
+.login input { width: 100%; background: rgb(250, 250, 250); border: 1px solid rgb(228, 228, 228); }
 .sign-in-btn { 
     margin-top: 5vh;
     padding: 2vh 0;
     font-size: clamp(0.875rem, 2.5vw, 1rem); 
     letter-spacing: 0.125rem;
-    font-family: 'Lobster', cursive;
     width: 80%; 
     color: white;
     background: royalblue; 

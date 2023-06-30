@@ -70,8 +70,8 @@
 .join-button:hover { font-weight: 500; color: rgb(240, 240, 240); background: rgb(27, 27, 27); border: 0; box-shadow: 1px 1px 3px black; }
 
 .join-button.joined {
-    color: green;
-    border: 2px solid green;
+    color: royalblue;
+    border: 2px solid royalblue;
     pointer-events: none;
 }
 

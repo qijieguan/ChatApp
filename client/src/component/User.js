@@ -78,7 +78,7 @@ const User = ({ user }) => {
                 onMouseEnter={(e) => { if (!isMobile) { zoomIn(e, user._id); } }}
                 onMouseLeave={(e) => { zoomOut(e, user._id); }}
             >
-                <div className='user-bio-icon' style={{display: user.bio_content ? '' : 'none'}}
+                <div className='user-bio-icon'
                     onClick={(e) => { toggleBio(e, user._id) } }
                     onMouseEnter={(e) => { if (!isMobile) { openBio(e, user._id); } }}
                     onMouseLeave={(e) => { closeBio(e, user._id); }}
@@ -86,20 +86,25 @@ const User = ({ user }) => {
                     <AiFillRead size={26} color="orange"/>
                 </div>
                 <div className='user-bio flex'>
-                    <span>{user.bio_content}</span>
+                    <span>
+                        {user.bio_content ?
+                            user.bio_content :
+                            <span>Wow. Much Empty</span>
+                        }
+                    </span>
                 </div>
                 <img className="user-image" src={user.profile_url} alt=""/>
                 <h1 className="user-name flex">
                     <span>{user.firstname} {user.lastname} </span>
-                    {JSON.parse(sessionStorage.getItem('user'))._id !== user._id ? 
+                    {JSON.parse(sessionStorage.getItem('user'))._id !== user._id &&
                         <>
                             {!isFriend ? 
                                 <div className='user-icon-1 flex'>
-                                    <MdPersonAdd color='rgb(180, 180, 180)' size={26} onClick={handleAdd}/>
+                                    <MdPersonAdd color='rgb(230, 230, 230)' size={26} onClick={handleAdd}/>
                                 </div>
                                 : <div className='user-icon-2 flex'><BsFillPatchCheckFill color="yellowgreen" size={24}/></div>
                             }
-                        </> :''
+                        </> 
                     }
                 </h1>
             </div>

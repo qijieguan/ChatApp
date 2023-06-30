@@ -39,7 +39,7 @@ const MessageBox = ({ renderChatLog }) => {
 
     const scrollBottom = () => {
         let element = document.querySelector(".private-message")
-        if (element) { element.scrollTop = element.scrollHeight - element.clientHeight; }
+        if (element) { element.scrollTo(0, element.clientHeight); }
     }
 
     const postText = async (content) => {
@@ -120,6 +120,12 @@ const MessageBox = ({ renderChatLog }) => {
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :<h1>Select a conversation to view messages</h1>
                 }
+
+                <div className='end-message grid flex'>
+                    <hr/>
+                    <span>End of Message</span>
+                    <hr/>
+                </div>
             </div>
             {selectMsg && 
                 <div className='text-input-wrapper'>

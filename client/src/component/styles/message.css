@@ -6,30 +6,30 @@
     padding-bottom: 2rem;
     width: 90%;
     color: rgb(68, 68, 68);
-    background: rgb(243, 243, 243);
     box-shadow: 0 0 3px gray;
     border-radius: 0.5rem;
     overflow: hidden;
 }
 
-.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; }
+.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: royalblue; }
 .private-message-header > div { padding: 1vh 0; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
     font-weight: 500;
-    color: rgb(70, 70, 70);
+    color: white;
 }
+.private-message-header > div > span > span { margin: 0 0.5rem; }
 .private-message-header > div > span > span:last-child {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
-#back-btn { margin: 0 5vw 0 1.5vw; color: rgb(99, 99, 99); background: transparent; }
+#back-btn { margin: 0 5vw 0 1.5vw; color: white; background: transparent; }
 #back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 #back-btn:hover { opacity: 0.7; }
 
 .private-message-header img { 
-    margin: 0 0.75rem 0 1rem;
+    margin: 0 0.75rem;
     min-height: 10vh; 
     width: 10vh; 
     object-fit: cover; 
@@ -38,7 +38,7 @@
 }
 
 .private-message { 
-    margin: 1rem 0 5rem 10%;
+    margin: 3vh 0 7.5vh 10%;
     height: 65vh; 
     width: 80%; 
     scroll-behavior: smooth; 
@@ -49,6 +49,26 @@
     background: transparent; /* make scrollbar transparent */
 }
 .private-message > h1 { margin-top: 10vh; text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+
+.end-message {
+    grid-template-columns: 35% auto 35%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.end-message > hr {
+    height: 1px;
+    width: 100%;
+    background: rgb(180, 180, 180);
+    border: 0;
+}
+
+.end-message > span {
+    text-align: center;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-weight: 500;
+    color: rgb(180, 180, 180);
+}
 
 .text { align-items: flex-start; column-gap: 0.5vw; }
 
@@ -74,7 +94,7 @@
     word-wrap: break-word;
     min-height: 15vh; 
     color: rgb(80, 80, 80);
-    background: rgb(230, 230, 230);
+    background: rgb(240, 240, 240);
     box-shadow: 0 0 3px grey;
     border-radius: 0.5rem;
 }
@@ -84,31 +104,30 @@
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
     letter-spacing: 0.5px;
     font-weight: 700;
-    color: rgb(97, 97, 97);
+    color: grey;
     text-transform: uppercase;
 }
 
-.text-input-wrapper { padding: 0 2vw; gap: 0.25vw; height: 3.5rem; width: 100%; }
+.text-input-wrapper { padding: 0 2vw; gap: 0.25vw; height: 7.5vh; width: 100%; }
 .text-input { 
     justify-content: space-between;
     height: 100%; 
     width: 100%; 
-    background: rgb(185, 185, 185);
+    border: 1px solid rgb(194, 194, 194);
     border-radius: 0.75rem; 
 }
 .text-input > input { 
     height: 100%; 
-    width: 70%; 
-    font-size: 1rem;
+    width: 65%; 
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
     font-weight: 500;
     text-indent: 1.5vw;
     color: rgb(56, 56, 56); 
-    background: rgb(185, 185, 185);
     border-radius: 0.75rem;
 }
 .camera-wrapper { position: relative; justify-content: center; pointer-events: none; opacity: 0.3; }
 
-.camera-wrapper { max-width: 10%; background: rgb(185, 185, 185); }
+.camera-wrapper { max-width: 10%; }
 .camera-icon { font-size: clamp(1.625rem, 2vw, 1.75rem); color: rgb(70, 70, 70); }
 .camera-wrapper > img { 
     display: absolute;
@@ -126,8 +145,8 @@
     padding: auto 10vw;
     margin-right: 0.25vw;
     height: 90%;
-    width: 12.5%;
-    background: rgb(102, 102, 102);
+    width: 17.5%;
+    background: rgb(194, 194, 194);
     border-radius: 0.75rem; 
     box-shadow: 0 0 1px;
 }
@@ -137,22 +156,22 @@
 }
 
 .send-button > .send-icon {
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
-    color: rgb(184, 184, 184); 
+    font-size: clamp(1.5rem, 1.75vw, 1.75rem);  
 }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; margin: 2vh auto 5vh auto; width: 100%; }
+    .message-container { display: none; margin: 2vh auto 5vh auto; width: 95%; }
     .message-container.focus { display: unset; }
     .private-message { height: 50vh; }
+    .end-message > span { font-weight: 300; }
     .text-input-wrapper { grid-template-columns: 100%; }
 }
 
 @media (max-width: 25rem) {
     #back-btn { margin: 1vh 5vw 0 1.5vw; }
     .recipient { margin: 1vh 0; font-weight: 700; }
-    .private-message {  margin: 1rem auto 5rem auto; width: 97.5%; }
+    .private-message {  margin: 3.5vh auto; width: 97.5%; }
     .text-format { width: 100%; }
     .text-content { padding: 1.5vh 1vw 3vh 2vw; } 
-    .text-input { width: 95%; }
+    .text-input { width: 100%; padding: 0 1vw; }
 }

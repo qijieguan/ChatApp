@@ -1,7 +1,7 @@
 import './styles/sidenav.css';
 import { BiLogIn } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
-import { IoIosPeople } from 'react-icons/io';
+import { IoIosPeople, IoIosArrowUp } from 'react-icons/io';
 import { FaCat } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
@@ -65,6 +65,10 @@ const SideNav = () => {
         .then((response) => { console.log(response.data) });
     }
 
+    const toggleCommunityTab = (e) => {
+        e.target?.classList.toggle('dropdown');
+    }
+
     return (
         <div className='side-nav'>
             <div className='side-nav-header flex'>
@@ -89,7 +93,10 @@ const SideNav = () => {
             </div>
 
             <div className='side-nav-communities'>
-                <h1>My Communities</h1>
+                <div className='side-nav-communities-label flex' onClick={toggleCommunityTab}>
+                    <span>My Communities</span>
+                    <IoIosArrowUp className='arrow-up-icon'/>
+                </div>
                 <div className='community-collection flex'>
                     {communities.length > 0 ?
                         communities.map(community => 

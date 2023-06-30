@@ -22,7 +22,7 @@ const Text = ({textID, friend, text }) => {
         if ((user._id === text.user_id)) {
             if (param === '1') { return { flexDirection: 'row-reverse' } }
             else if (param === '2')  { return { marginLeft: 'auto', marginRight: '0' } }
-            else { return { backgroundColor: 'green', color: 'white' } }
+            else { return { backgroundColor: 'royalblue', color: 'white' } }
         }
     }
 
