@@ -9,10 +9,20 @@
 }
 .photo-wrapper > img:hover { transform: scale(1.05); box-shadow: 3px 3px 5px black;  z-index: 1; }
 
-.close-button { margin: 0 0 2vh auto; font-size: clamp(1.5rem, 2vw, 2rem); color: gray; }
+.close-button { margin: 0 0 2vh auto; font-size: clamp(1.5rem, 2vw, 2rem); color: red; }
 .close-button:hover { opacity: 0.7; }
 
 .zoom-photo { object-fit: cover; max-height: 50vh; width: 100%; }
 
-.set-button { margin-top: 3vh; padding: 2vh 0; width: 100%; color: rgb(139, 139, 139); background: rgb(240, 240, 240); border: 1px solid; }
+.set-button { 
+    margin-top: 3vh; 
+    padding: 2vh 0;
+    width: 100%; 
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    color: rgb(139, 139, 139); 
+    background: rgb(240, 240, 240); 
+    border: 1px solid rgb(240, 240, 240); 
+    border-radius: 2rem;
+}
 .set-button:hover { opacity: 0.7; }
+

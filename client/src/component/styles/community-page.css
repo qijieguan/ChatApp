@@ -1,27 +1,35 @@
 .community-page {
+    margin: 0 auto;
     padding: 2vh 0 10vh 0;
     min-height: 100vh;
-    width: 100%;
+    width: 95%;
     background: white;
 }
 
 .community-page-banner {
     position: relative;
-    height: 40vh;
     width: 100%;
+    border: 1px solid rgb(180, 180, 180);
     overflow: hidden;
 }
 
-.community-page-banner > img {
-    margin: 0 5%;
+.community-page-banner-top {
+    position: relative;
+    min-height: 17.5vh;
+    width: 100%;
+}
+
+.community-page-banner-top > img {
+    position: absolute;
+    inset: 0 auto auto 0;
     height: 100%;
-    width: 90%;
+    width: 100%;
     object-fit: cover;
 }
 
 .community-page-exit {
     position: absolute;
-    inset: 5% auto auto 7%;
+    inset: 7.5% auto auto 2.5%;
     z-index: 1;
 }
 
@@ -37,16 +45,20 @@
 
 .community-page-exit:hover { opacity: 0.7; }
 
-.community-page-label {
-    position: absolute;
-    inset: auto auto 10% 10%;
+.community-page-banner-down {
+    position: relative;
     flex-wrap: wrap;
-    gap: 2vw;
-    width: 80%;
-    z-index: 1;
+    justify-content: space-evenly;
+    min-height: 17.5vh;
+    width: 100%;
+    color: rgb(131, 131, 131);
 }
 
 .community-page-profile {
+    padding: 0.25vh;
+    position: absolute;
+    inset: 0 auto auto 2.5%;
+    transform: translateY(-50%);
     height: 15vh;
     width: 15vh;
     object-fit: cover;
@@ -54,35 +66,41 @@
     border-radius: 10rem;
 }
 
-.community-page-info {
+
+.community-page-label {
     flex-direction: column;
 }
 
-.community-page-info > span { margin-right: auto; }
+.community-page-info {
+    padding: auto 2.5vw;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: fit-content;
+}
 
 .community-page-name {
-    color: white;
-    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+    font-size: clamp(1rem, 1.75vw, 1.75rem);
     font-weight: bold;
+    color: rgb(92, 92, 92);
 }
 
 .community-page-members {
-    align-self: flex-end;
-    color: white;
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
     font-weight: 700;
+    color: rgb(160, 160, 160);
 }
 
 .community-page-buttons {
-    margin: 0 0 0 auto;
-    flex-direction: column;
-    row-gap: 2vh;
+    justify-content: center;
+    column-gap: 2vw;
+    row-gap: 1vh;
 }
 
 .community-page-join {
     padding: 1vh 1.5vw;
     font-weight: 500;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-size: clamp(0.675rem, 1vw, 1rem);
     letter-spacing: 1px;
     color: white;
     background: royalblue;
@@ -95,7 +113,6 @@
 }
 
 .community-page-join.joined {
-    color: white;
     background: limegreen;
 }
 
@@ -105,48 +122,30 @@
 
 .community-page-info-button {
     justify-content: center;
-    column-gap: 1vh;
-    color: rgb(214, 214, 214);
+    column-gap: 0.5vh;
     border-bottom: 2px solid transparent;
 }
 
 .circle-icon {
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
-    color: rgb(214, 214, 214);
 }
 
 .community-page-info-button > span {
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
 }
 
 .community-page-info-button:hover {
-    border-color: rgb(235, 235, 235);
-}
-
-.community-page-info-button:hover * { 
-    color: rgb(235, 235, 235);
-}
+    border-color: grey;
+} 
 
 .community-page-join:hover { opacity: 0.7; }
-
-.community-page-overlay {
-    position: absolute;
-    inset: 0 auto auto 0;
-    margin: 0 5%;
-    height: 100%;
-    width: 90%;
-    box-shadow: 50px -100px 100px rgb(43, 43, 43) inset;
-}
 
 .community-page-description {
     margin: 0 auto 8vh auto;
     justify-content: center;
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    width: 90%;
-    color: rgb(65, 65, 65);
-    background: rgb(243, 243, 243);
-    border-radius: 0 0 0.5rem 0.5rem;
-    transition: all 0.4s ease-in;
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    width: 100%;
+    color: gray;
 }
 
 .community-page-description:hover {
@@ -163,8 +162,8 @@
     padding-bottom: 7.5vh;
     align-items: flex-start;
     flex-direction: column;
-    row-gap: 5vh;
-    width: 75%;
+    row-gap: 2vh;
+    width: 80%;
     border: 1px solid rgb(196, 196, 196);
     border-radius: 0.5rem;
     overflow: hidden;
@@ -172,7 +171,7 @@
 
 .community-page-post-header {
     padding: 2vh 2vw 0 2vw;
-    gap: 2vw;
+    gap: 1vw;
 }
 
 .community-page-post-header > img {
@@ -183,13 +182,14 @@
 
 .community-page-post-header > span {
     font-weight: 700;
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
     color: rgb(131, 131, 131);
 }
 
 .community-page-post > span {
     align-self: center;
-    padding: 0 2vw;
-    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
+    padding: 0 1vw;
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
     width: 90%;
 }
 
@@ -216,19 +216,27 @@
 
 @media (max-width: 50rem) {
     .community-page-exit { inset: 5% 7% auto auto; }
-    .community-page-banner > img, .community-page-overlay { margin: 0; width: 100%; }
-    .community-page-label { width: 100%; }
-    .community-page-buttons { margin: 0 auto; }
-    .community-page-join { padding: 1vh 7.5vw; }
+    .community-page-profile { height: 11vh; width: 11vh; }
+    .community-page-buttons { width: 100%; }
     .community-page-info-button { border-bottom: 1px solid transparent; }
-    .community-page-description { margin: 0 auto 5vh auto; width: 100%; }
+    .community-page-description { margin: 0 auto 3vh auto; }
     .community-page-posts { row-gap: 3vh; }
-    .community-page-post { width: 95%; }
+    .community-page-post { width: 100%; }
+    .community-page-post > span { padding: 0 0.25vw; }
 }
 
 @media (max-width: 25rem) {
-    .community-page-profile {
-        height: 11vh;
-        width: 11vh;
-    }
+    .community-page-banner-top { min-height: 5vh; }
+    .community-page-banner-down { min-height: 15vh; }
+    .community-page-profile { inset: 0 auto auto 2.5%; height: 8.5vh; width: 8.5vh;  }
+    .community-page-label { margin-top: 3%; }
+    .community-page-name { font-size: 0.75rem; }
+    .community-page-join { padding: 0.5vh 1.5vw; }
+    .community-page-post-header { gap: 2vw; }
+    .community-page-post-header > img { height: 7.5vh; width: 7.5vh; }
+}
+
+@media (max-width: 15rem) {
+    .community-page-banner-top { min-height: 7.5vh; }
+    .community-page-label { margin-top: 20%; }
 }

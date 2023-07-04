@@ -17,7 +17,7 @@ const Photo = ({photo, photoID, render}) => {
             right: 'auto',
             bottom: 'auto',
             textAlign: 'center',
-            width: 'max(20rem, 50%)',
+            width: 'min(90vw, 40rem)',
             maxHeight: '100%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',

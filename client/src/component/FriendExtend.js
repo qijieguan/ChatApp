@@ -20,7 +20,7 @@ const FriendExtend = ({ friend }) => {
             right: 'auto',
             bottom: 'auto',
             textAlign: 'center',
-            width: 'max(20rem, 35%)',
+            width: 'min(90vw, 40rem)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',
@@ -56,6 +56,7 @@ const FriendExtend = ({ friend }) => {
     }
 
     const openView = (friendID, e) => {
+        console.log(e.target)
         document.getElementById(friendID)?.querySelector('.friend-preview')?.classList.add('expand');
     }
 

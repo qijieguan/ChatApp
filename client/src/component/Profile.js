@@ -52,27 +52,39 @@ const Profile = () => {
     }
 
     return(
-        <div>
-            <div className="profile flex">
-                <div className='profile-header flex'>
-                    <div className='profile-top flex'>
+        <div className="profile flex">
+            <div className='profile-banner flex'>
+                <div className='profile-top flex'>
+                    <img src={user.background_url} className="profile-background" alt=""/>
+                </div>
+
+                <div className='profile-bottom flex'>
+                    <div className='profile-label flex'>
                         <img src={user.profile_url} className="profile-image" alt=""/>
-                        <img src={user.background_url} className="profile-background" alt=""/>
-                        <div className='profile-name'>{user.firstname} {user.lastname}</div>
+                        <div className='profile-name'>{user.firstname + " " + user.lastname}</div>
+
+                        <div className='profile-footer flex'>   
+                            <div className='flex'>
+                                <span>Posts</span>
+                                <h1>{postCount}</h1>
+                            </div>
+                            <div className='flex'>
+                                <span>Following</span>
+                                <h1>{followCount}</h1>
+                            </div>
+                        </div>
                     </div>
-                    
                     <div className='profile-bio flex'>
-                        <h1 className='bio-label'>Personal Bio</h1>
-                        <h1 className='bio-body flex' style={{display: !isEdit ? '' : 'none'}}>
+                        <h1 className='bio-body flex' style={{display: isEdit && 'none'}}>
                             <div className='bio-content'>
-                                { !bio.length ? <span>Add a bio to display to everyone</span> : bio }
+                                { !bio.length ? <span>Tell a little bit about yourself to everyone</span> : bio }
                             </div>
                             <button className='edit-btn flex' onClick={() => setIsEdit(true)}>
                                 <AiTwotoneEdit style={{marginRight: '0.25rem'}}/> Write
                             </button>
                         </h1>
-                        <div className='bio-edit flex' style={{display: isEdit ? '' : 'none'}}>
-                            <textarea placeholder='Add/Edit your profile here...' 
+                        <div className='bio-edit flex' style={{display: !isEdit && 'none'}}>
+                            <textarea placeholder='Type your thoughts here...' 
                                 value={bio}
                                 onChange={handleChange}
                             />
@@ -84,30 +96,20 @@ const Profile = () => {
                             }
                         </div>
                     </div>
-                    <div className='profile-footer flex'>   
-                        <div className='flex'>
-                            <span>Posts</span>
-                            <h1>{postCount}</h1>
-                        </div>
-                        <div className='flex'>
-                            <span>Following</span>
-                            <h1>{followCount}</h1>
-                        </div>
-                    </div>
-                </div>
-                <div className='profile-media'>
-                    <div className='media-nav flex'>
-                        <div className='media-nav-li highlight' onClick={toggleSwitch}>Photo</div>
-                        <div className='media-nav-li' onClick={toggleSwitch}>Following</div>
-                    </div>
-                    {!toggle ?
-                        <Album callRender={callRender}/>
-                        :
-                        <FriendCount/>
-                    }
                 </div>
             </div>
-        </div>
+            <div className='profile-media'>
+                <div className='media-nav flex'>
+                    <div className='media-nav-li highlight' onClick={toggleSwitch}>Photo</div>
+                    <div className='media-nav-li' onClick={toggleSwitch}>Following</div>
+                </div>
+                {!toggle ?
+                    <Album callRender={callRender}/>
+                    :
+                    <FriendCount/>
+                }
+            </div>
+        </div> 
     )
 }
 

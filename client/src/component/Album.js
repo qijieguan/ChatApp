@@ -70,7 +70,7 @@ const Album = ({ callRender }) => {
             <div className='album-label-1'>Photo Album</div>
             <div className='album-message'>( click to select )</div>
             
-            <form className='upload-box grid' onSubmit={handleUpload}>
+            <form className='upload-box flex' onSubmit={handleUpload}>
                 <div>Upload pictures to album</div>
                 <input type="file" className="file" accept='images/*' onChange={previewFile} required/>
                 <button type='submit'>Upload</button>

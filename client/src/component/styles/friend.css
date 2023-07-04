@@ -11,13 +11,13 @@
     grid-column: 1 / 5;
     text-align: center;
     justify-content: center;
-    margin: 2.5vh auto;
+    margin: 1.5vh auto;
     width: 100%;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 
 .friend-wrapper-text { 
-    font-size: clamp(1.25rem, 2vw, 2rem); 
+    font-size: clamp(1rem, 2vw, 2rem); 
     font-weight: 700;
     font-family: 'Roboto', sans-serif;  
     font-style: oblique;
@@ -33,12 +33,12 @@
 }
 .friend-container:hover { box-shadow: 2px 2px 3px; }
 
-.friend { position: relative; flex-direction: column; justify-content: space-between; height: 30vh; width: 100%; overflow: hidden; }
+.friend { position: relative; flex-direction: column; justify-content: space-between; width: 100%; overflow: hidden; }
 
 .friend-header-wrapper {
     position: relative;
     flex-direction: column;
-    height: 80%;
+    min-height: 20vh;
     width: 100%;
     border-radius: 0 0 0.75rem 0.75rem;
     border-bottom: 1px solid rgb(190, 190, 190);
@@ -46,6 +46,8 @@
 }
 
 .friend-bg {
+    position: absolute;
+    inset: 0 auto auto 0;
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -104,23 +106,25 @@
 }
 
 .profile-view {
+    position: relative;
     justify-content: center; 
-    margin: 1vh 0; 
+    margin: 1vh 0 0 0; 
     column-gap: 0.25vw;
     text-align: center; 
     color: rgb(95, 95, 95);
     border-bottom: 2px solid transparent;
+    z-index: 2;
 }
 
 .profile-view:hover { color: black; border-color: black; }
 
 .eye-icon {
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem); 
 }
 
 .profile-view > span { 
     font-weight: 500;
-    font-size: clamp(0.875rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem); 
 }
 
 .friend-preview.expand {
@@ -128,13 +132,13 @@
 }
 
 .friend-bio { padding: 1vh 1vw; max-height: 100%; }
-.friend-bio > span { font-size: clamp(0.875rem, 1vw, 1rem); font-weight: 500; }
+.friend-bio > span { font-size: clamp(0.75rem, 1vw, 1rem); font-weight: 500; }
 
-.friend-buttons { margin: 1vh 0; position: relative; display: grid; grid-template-columns: 40% 40%; }
+.friend-buttons { position: relative; display: grid; grid-template-columns: 40% 40%; min-height: 5vh; }
 
 .friend-buttons > button {  
     justify-content: center; 
-    font-size: clamp(0.875rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem); 
     letter-spacing: 1px;
     color: rgb(22, 22, 22);
     background: transparent;
@@ -145,9 +149,10 @@
     opacity: 0.7;
 }
 
-.modal-text > span { color: royalblue; font-weight: 700; }
+.modal-text { font-size: clamp(0.875rem, 1vw, 1rem); }
+.modal-text > span { color: royalblue; font-weight: 700; font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
 .modal-btns { width: 100%; justify-content: space-between; }
-.modal-btns > button { padding: 2.5vh 0; width: 48%; font-weight: 700; background: transparent; }
+.modal-btns > button { padding: 1.5vh 0; width: 48%; font-weight: 700; font-size: clamp(0.75rem, 1.125vw, 1.125rem); background: transparent; }
 .modal-btns > button:hover { box-shadow: 0 0 3px black; }
 .cancel-btn { color: grey; border: 1px solid; }
 .submit-btn { color: red; border: 1px solid; }
@@ -171,10 +176,12 @@
 }
 
 @media (max-width: 30rem) {
-    .friend-wrapper { grid-template-columns: 95%; }
+    .friend-header-wrapper { min-height: 15vh;  }
+    .friend-wrapper { grid-template-columns: 97.5%; }
     .friend-wrapper-label { grid-column: 1 / 2; }
     .friend-wrapper-icon { display: none; }
     .friend-preview, .friend-container { border-radius: 0; }
+    .friend-image > img { height: 8vh; width: 8vh; }
     .friend-bio { padding: 1vh 2vw; }
     .friend-buttons { grid-template-columns: 47.5% 47.5%; }
 }

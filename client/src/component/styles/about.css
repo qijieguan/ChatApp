@@ -14,8 +14,8 @@
     border: 1px solid rgb(190, 190, 190);
 }
 
-.about > div:not(.about-image) { font-size: clamp(1.5rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s ease-in; }
-.about span { font-size: clamp(0.9rem, 2.5vw, 1rem); color: green; }
+.about > div:not(.about-image) { font-size: clamp(1.25rem, 2.5vw, 2.5rem); width: 90%; animation: fadeSlideDown 0.5s ease-in; }
+.about span { font-size: clamp(0.875rem, 1.5vw, 1rem); color: green; }
 .about > p { 
     font-size: clamp(0.9rem, 2.5vw, 1rem); 
     margin: 0 auto; 
@@ -51,4 +51,5 @@
 
 @media (max-width: 50rem) {
     .about { margin: 2vh 0; width: 90vw; }
+    .about-image { min-height: 15vh !important; }
 }

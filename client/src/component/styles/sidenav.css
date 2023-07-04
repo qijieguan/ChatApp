@@ -1,4 +1,4 @@
-.side-nav { position: relative; height: fit-content; width: 100%; box-shadow: 0 0 3px; overflow: hidden; z-index: 2; }
+.side-nav { position: relative; height: fit-content; width: 100%; box-shadow: 0 0 2px rgb(184, 184, 184); overflow: hidden; z-index: 2; }
 .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: 25vh; width: 100%; background: royalblue; }
 .side-nav-profile {
     height: 10vh; 
@@ -9,7 +9,7 @@
 }
 
 .side-nav-name {
-    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
+    font-size: clamp(0.875rem, 1.75vw, 1.75rem);
     font-weight: bold;
     text-align: center;
     color: white;
@@ -19,7 +19,7 @@
     padding: 2.5vh 0;
     flex-direction: column;
     justify-content: space-evenly;
-    row-gap: 2.5vh;
+    row-gap: 1.5vh;
 }
 
 .side-nav-link { 
@@ -41,8 +41,8 @@
 
 .side-nav-link:not(.logout-nav).highlight { font-weight: 700; color: rgb(77, 77, 77); background: rgb(218, 218, 218); }
 
-.home-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); }
-.people-icon { font-size: clamp(1.75rem, 2vw, 2rem); }
+.home-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); }
+.people-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
 
 .logout-nav { column-gap: 0; color: red; }
 
@@ -112,13 +112,13 @@
     width: 55%;
 }
 
-.side-community-name { font-weight: 500; font-size: clamp(0.875rem, 1vw, 1rem); color: rgb(77, 77, 77); }
-.side-community-members { font-size: 0.875rem; color: grey; }
+.side-community-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(77, 77, 77); }
+.side-community-members { font-size: clamp(0.75rem, 1vw, 1rem); color: grey; }
 
 @media (max-width: 60rem) {
     .side-nav { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
     .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: fit-content; }
-    .side-nav-body { padding: 1.5vh 0; row-gap: 3vh; }
+    .side-nav-body { padding: 1.5vh 0; }
     .side-nav-link { padding: 0.5vh 2vw;}
     .side-community { justify-content: center; width: 45%; }
     .side-nav-communities-label { justify-content: center; }
@@ -131,6 +131,7 @@
 
 @media (max-width: 25rem) {
     .side-community { width: 100%; }
+    .side-community-profile { height: 7.5vh; width: 7.5vh; }
 }
 
 

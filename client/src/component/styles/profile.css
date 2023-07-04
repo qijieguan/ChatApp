@@ -1,5 +1,4 @@
 .profile { 
-    padding: 5vh 0;
     flex-wrap: wrap;
     row-gap: 1vh;
     width: 100%;
@@ -7,51 +6,65 @@
     box-shadow: 0 0 1px;
     overflow: hidden;
 }
-.profile-header {
-    padding-bottom: 3vh;
+.profile-banner {
     flex-direction: column;
     row-gap: 2vh;
     width: 100%;
-    border-radius: 0.5rem;
-    overflow: hidden;
 }
 
-.profile-top { padding: 2.5vh 0; position: relative; flex-direction: column; row-gap: 2vh; width: 100%; }
-
-.profile-image {
-    position: relative;
-    height: 25vh;
-    width: 25vh;
-    object-fit: cover;
-    border-radius: 10rem;
-    box-shadow: 0 0 3px;
-    z-index: 1;
-}
+.profile-top { position: relative; flex-direction: column; row-gap: 2vh; min-height: 20vh; width: 100%; }
 
 .profile-background { position: absolute; inset: 0 auto auto 0; height: 100%; width: 100%; object-fit: cover; }
 
-.profile-name { 
+.profile-bottom {
+    padding: 0 5%;
     position: relative;
-    padding: 0 max(0.5rem, 1vw) 0.5vh max(0.5rem, 1vw);
-    text-align: center;
-    font-size: clamp(1rem, 1.5vw, 1.25rem);
-    font-weight: 700;
-    font-family: 'Playfair Display', serif;
-    width: fit-content;
-    letter-spacing: 0.1rem;
-    color: rgb(73, 73, 73); 
-    background: rgb(218, 218, 218);
-    border-radius: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 10vw;
+    min-height: 20vh; 
+    width: 100%;
 }
 
-.profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 100%; }
+.profile-label { padding-top: 5%; row-gap: 2.5vh; flex-direction: column; align-items: flex-start; }
 
-.bio-label { margin: 0; padding: 0; text-align: center; font-size: clamp(1.5rem, 2vw, 2rem); font-family: 'Playfair Display', serif; width: 100%; color: rgb(94, 94, 94); }
-.bio-body { flex-direction: column; width: 75%; font-size: 0.875rem; font-weight: 500; color: rgb(153, 153, 153); }
+.profile-image {
+    position: absolute;
+    inset: 0 auto auto 5%;
+    padding: 0.5vh;
+    height: 20vh;
+    width: 20vh;
+    object-fit: cover;
+    border: 1px solid white;
+    border-radius: 10rem;
+    box-shadow: 0 0 3px;
+    transform: translateY(-75%);
+    z-index: 1;
+}
+
+.profile-name { 
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    color: rgb(73, 73, 73); 
+}
+
+.profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 60%; overflow: hidden; }
+
+.bio-body { flex-direction: column; font-weight: 500; color: grey; }
+
+.bio-content, .bio-content > span { 
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    height: 100%;
+    width: 100%;
+}
+
+.bio-content > span { color: rgb(185, 185, 185); }
 
 .edit-btn { 
-    margin-top: 4vh; 
+    margin-top: 2vh; 
     padding: 0.5vh 2vw; 
+    font-size: clamp(0.875rem, 1vw, 1rem);
     font-weight: 500;
     color: rgb(238, 238, 238); 
     background: royalblue;
@@ -59,54 +72,52 @@
     border-radius: 0.25rem; 
 }
 
-.cancel-button, .submit-button { 
-    margin-top: 1.5vh; 
-    padding: 0.75vh 0.75vw; 
-    font-size: 0.875rem; 
-    font-weight: 500;
-    border-radius: 0.125rem; 
-    color: rgb(73, 73, 73); 
-    background: transparent;
-    border: 1px solid;
-}
 .submit-button { color: royalblue; border: 1px solid; }
 
-.bio-edit { margin: 1vh auto; justify-content: center; column-gap: 1vw; width: 100%; }
+.bio-edit { margin: 1vh auto; justify-content: center; flex-direction: column; width: 100%; }
 .bio-edit > textarea { 
     padding: 1vh 1vw; 
     min-height: 15vh; 
-    word-wrap: break-word; 
-    width: 50%; 
-    color: rgb(73, 73, 73); 
-    background: rgb(228, 228, 228);
-    border: 0;
+    word-wrap: break-word;
+    width: 100%;  
+    color: rgb(97, 97, 97); 
+    background: rgb(248, 248, 248);
     outline: 0;
     border-radius: 0.25rem;
 }
-.bio-edit > div { column-gap: 1vw; }
+.bio-edit > div { column-gap: 1vw; color: rgb(73, 73, 73); }
 
-.profile-footer { margin: 2.5vh auto; justify-content: center; column-gap: 5vh; width: 100%; color: rgb(73, 73, 73); }
+.cancel-button, .submit-button { 
+    margin-top: 1.5vh; 
+    padding: 0.5vh 0.5vw; 
+    font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
+    font-weight: 500;
+    border-radius: 0.125rem; 
+    background: transparent;
+    border: 1px solid;
+}
+.cancel-button:hover, .submit-button:hover {
+    opacity: 0.7;
+}
+
+.profile-footer { column-gap: 2vw; width: 100%; color: rgb(73, 73, 73); }
 .profile-footer > div {
     justify-content: center;
     column-gap: 1vw;
-    font-size: 1.25rem;
     font-weight: 500;
-    height: 12.5vh;
-    width: 25vh;
-    background: rgb(231, 231, 231);
-    box-shadow: 0 0 2px gray; 
-    border-radius: 4rem;
+    color: rgb(153, 153, 153);
 }
-.profile-footer > div > h1 { font-size: 2rem; }
+.profile-footer > div > span { font-size: clamp(0.75rem, 1vw, 1rem); }
+.profile-footer > div > h1 { margin: 0; font-size: clamp(1rem, 1.5vh, 1.5rem); }
 
 .profile-media { margin: 0 auto; width: 100%; }
 
 .media-nav { justify-content: center; width: 100%; box-shadow: 0 0 1px; }
 .media-nav-li { 
-    padding: 3vh 0; 
+    padding: 2vh 0; 
     text-align: center; 
     font-weight: 700;
-    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     width: 10vw; 
     color: grey; 
     border-bottom: 2px solid transparent; 
@@ -115,15 +126,20 @@
 .media-nav-li.highlight { color: royalblue; border-bottom: 2px solid; pointer-events: none; }
 
 @media (max-width: 50rem) {
-    .profile-image { height: 20vh; width: 20vh; }
-    .profile-footer { column-gap: 2vw; }
-    .profile-footer > div { column-gap: 3vw; height: 10vh; width: 20vh; } 
+    .profile-image { height: 15vh; width: 15vh; }
+    .profile-label { padding-top: 7.5%; row-gap: 1vh; width: 100%; }
+    .profile-bio { width: 100%; }
     .media-nav-li { width: 25vw; }
 }
 
 @media (max-width: 35rem) { .media-nav > div { width: 45vw; } } 
 
 @media (max-width: 25rem) {
-    .profile-image { height: 17.5vh; width: 17.5vh; }
-    .profile-footer { row-gap: 2vh; flex-wrap: wrap; }
+    .profile-label { padding-top: 15%; }
+    .profile-footer { row-gap: 1vh; flex-wrap: wrap; }
+}
+
+@media (max-width: 15rem) {
+    .profile-label { padding-top: 20%; }
+    .profile-image { height: 12.5vh; width: 12.5vh; }
 }

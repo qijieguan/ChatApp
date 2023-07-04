@@ -59,7 +59,9 @@ const Community = () => {
             {communities.length > 0 &&
                 communities.map(community => 
                     <div className="community flex" key={uuid()} onClick={() => {handleClick(community)}}>
-                        <img className="community-image" src={community.profile_url} alt=""/>
+                        <div className="community-image">
+                            <img src={community.profile_url} alt=""/>
+                        </div>
                         <div className="community-detail flex">
                             <span className="community-name">{community.name}</span>
                             <p className="community-description">{community.description}</p>

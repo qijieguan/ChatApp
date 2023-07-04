@@ -20,7 +20,7 @@ const Login = () => {
             left: '50%',
             right: 'auto',
             bottom: 'auto',
-            width: 'max(20rem, 35%)',
+            width: 'min(90vw, 40rem)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'rgb(77, 77, 77)',
@@ -47,7 +47,9 @@ const Login = () => {
     },[]);
 
     const handleChange = (event) => {
-        if (event.target.name === "name") { setUsername(event.target.value); }
+        console.log(event.target)
+
+        if (event.target.name === "username") { setUsername(event.target.value); }
         else { setPassword(event.target.value) }
     }
 
@@ -82,23 +84,34 @@ const Login = () => {
         });
     }
 
+    const highlight = (param) => {
+        if (param.length) {
+            return 'highlight'
+        }
+        else {
+            return '';
+        }
+    }
+
     return(
         <div>
             <form className="login flex" onSubmit={handleSubmit}>
                 <h1 className="login-label">Enter Your Credentials</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
-                <div className='login-name grid'>
+                <div className={'login-username grid ' + highlight(username)}>
+                    <input type="text" name="username" className='login-username-input' value={username} onChange={handleChange} required/>
+                    <div className='username-placeholder flex'>Username</div>
                     <div className='login-icon flex'><BsFillPersonFill/></div>
-                    <input type="text" name="name" placeholder="username" value={username} onChange={handleChange} required/>
                 </div>
-                <div className='login-password grid'>
+                <div className={'login-password grid ' + highlight(password)}>
+                    <input type="password" name="password" className='login-password-input' value={password} onChange={handleChange} required/>
+                    <div className='password-placeholder flex'>Password</div>
                     <div className='login-icon flex'><RiLockPasswordLine/></div>
-                    <input type="password" name="pass" placeholder="password" value={password} onChange={handleChange} required/>
                 </div>
                 <button type="submit" className="sign-in-btn">Sign In</button>
                 <Link to='/Register' className="register-link">
                     <span>Don't have an account? </span>
-                    <span>Create Account</span>
+                    <span>Sign up here</span>
                 </Link>
             </form>
             

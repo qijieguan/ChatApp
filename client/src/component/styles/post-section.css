@@ -1,6 +1,7 @@
 .post-section {
     margin-top: 3vh;
     flex-direction: column;
+    row-gap: 2vh;
     width: 100%;
 }
 
@@ -9,19 +10,20 @@
     align-items: flex-start; 
     flex-direction: column; 
     width: 90%;
-    border: 1px solid rgb(192, 192, 192);
+    border: 1px solid rgb(226, 226, 226);
     border-radius: 0.5rem;
 }
-.post-form > h1 { margin: 1vh 0 3vh 0; font-size: clamp(0.875rem, 1.25vw, 1.25rem); color: rgb(124, 124, 124); }
+.post-form > h1 { margin: 1vh 0 3vh 0; font-size: clamp(0.875rem, 1.25vw, 1.25rem); color: rgb(158, 158, 158); }
 
 .post-input { flex-wrap: wrap; padding-bottom: 3vh; column-gap: 1vw; width: 100%; border-bottom: 1px solid rgb(197, 197, 197); }
-.post-input > input { width: 70%; border-radius: 3rem; border: 1px solid rgb(180, 180, 180); }
+.post-input > input { width: 70%; border-radius: 3rem; border: 1px solid rgb(205, 205, 205); }
+.post-input > input::placeholder { color: rgb(205, 205, 205); }
 
 .post-image {
     margin-left: 3vh;
     padding: 1.5vh 1.5vw;  
     background: transparent;
-    font-size: 0.875rem; 
+    font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
     color: gray;
     border: 1px solid; 
     border-radius: 2rem;
@@ -32,7 +34,7 @@
 .submit { 
     margin: 2vh 0 0 auto;
     padding: 1vh 1.5vw;  
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
     color: gray; 
     background: transparent;
     border: 1px solid;
@@ -43,18 +45,19 @@
 .post-image:hover { opacity: 0.7; }
 
 .post-collection {
-    
     flex-direction: column;
     width: 90%;
+    row-gap: 2vh;
 }
 
 @media (max-width: 60rem) {
-    .post-form { width: 95%; }
+    .post-form { width: 97.5%; }
     .post-form > h1 { margin: 1vh auto 3vh auto; }
-    .post-collection { width: 95%; }
+    .post-collection { width: 97.5%; }
 }
 
 @media (max-width: 50rem) {
+    .post-collection { width: 97.5%; }
     .post-input > input { margin-bottom: 2vh; width: 100%; }
     .post-image { margin-left: 0; }
 }

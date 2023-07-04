@@ -6,7 +6,7 @@
     padding-bottom: 2rem;
     width: 90%;
     color: rgb(68, 68, 68);
-    box-shadow: 0 0 3px gray;
+    box-shadow: 0 0 2px gray;
     border-radius: 0.5rem;
     overflow: hidden;
 }
@@ -160,7 +160,7 @@
 }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; margin: 2vh auto 5vh auto; width: 95%; }
+    .message-container { display: none; margin: 2vh auto 5vh auto; width: 97.5%; }
     .message-container.focus { display: unset; }
     .private-message { height: 50vh; }
     .end-message > span { font-weight: 300; }

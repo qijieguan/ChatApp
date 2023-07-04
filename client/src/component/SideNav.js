@@ -66,7 +66,7 @@ const SideNav = () => {
     }
 
     const toggleCommunityTab = (e) => {
-        e.target?.classList.toggle('dropdown');
+        e.currentTarget?.classList.toggle('dropdown');
     }
 
     return (

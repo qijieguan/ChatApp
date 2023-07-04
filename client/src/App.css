@@ -22,7 +22,6 @@
 .grid { display: grid; justify-content: space-evenly; }
 
 button {
-    font-family: 'Roboto', sans-serif; 
     border: 0;
     box-shadow: 0;
 }
@@ -42,22 +41,18 @@ button {
 a { text-decoration: none; }
 
 input {
-    text-indent: 1rem;
+    text-indent: 0.5vw;
     min-height: 5vh;
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    color: rgb(48, 48, 48);
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: grey;
     outline: 0; 
     border: 0; 
 }
 
 textarea {
-    text-indent: 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    font-family: 'Raleway', sans-serif;
-    color: rgb(48, 48, 48);
+    text-indent: 0.5vw;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: grey;
 }
 
 .overlay { position: absolute; top: 0; height: 100%; width: 100%; background: rgb(124, 124, 124); opacity: 0.7; }

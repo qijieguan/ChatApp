@@ -27,6 +27,7 @@ const CommunityPage = () => {
         if (location.state) {
             getCommunityData();
         }
+        setShow(false);
     }, [location]);
 
     const getCommunityData = async () => {
@@ -74,43 +75,51 @@ const CommunityPage = () => {
     return (
         <div>{community &&
             <div className="community-page">
-                <div className='community-page-banner'>
-                    <img src={community.banner_url} alt=""/>
-                    <Link to="/Dashboard/Community">
-                        <div className='community-page-exit flex'>
-                            <MdArrowBack className='back-btn'/>
-                            <span>Go Back</span>
-                        </div>
-                    </Link>
-                    <div className='community-page-label flex'>
-                        <img src={community.profile_url} className="community-page-profile" alt=""/>
-                        <div className='community-page-info flex'>
-                            <span className='community-page-name'>R/ {community.name}</span>
-                            <span className='community-page-members'>members: {community.members.length}</span>
-                        </div>
-                        <div className='community-page-buttons flex'>
-                            <button className={
-                                "community-page-join " 
-                                + checkIsJoined(community)
-                            }
-                                onClick={() => {join_leave_community(community._id)}}
-                            />
-                            <div className='community-page-info-button flex' onClick={() => {setShow(!show)}}>
-                                <AiOutlinePlusCircle className='circle-icon'/>
-                                <span>See community info</span>
+                <div className='community-page-banner'
+                    style={{ borderBottom: show && '0' }}
+                >
+                    <div className='community-page-banner-top'>
+                        <img src={community.banner_url} alt=""/>
+                        <Link to="/Dashboard/Community">
+                            <div className='community-page-exit flex'>
+                                <MdArrowBack className='back-btn'/>
+                                <span>Go Back</span>
                             </div>
-                        </div>
+                        </Link>
                     </div>
-                    <div className='community-page-overlay'/>
+                    <div className='community-page-banner-down flex'>
+                            <div className='community-page-label'>
+                                <img src={community.profile_url} className="community-page-profile" alt=""/>
+                                <div className='community-page-info flex'>
+                                    <span className='community-page-name'>R/ {community.name}</span>
+                                    <span className='community-page-members'>members: {community.members.length}</span>
+                                </div>
+                            </div>
+                            <div className='community-page-buttons flex'>
+                                <button className={
+                                    "community-page-join " 
+                                    + checkIsJoined(community)
+                                }
+                                    onClick={() => {join_leave_community(community._id)}}
+                                />
+                                <div className='community-page-info-button flex' onClick={() => {setShow(!show)}}>
+                                    <AiOutlinePlusCircle className='circle-icon'/>
+                                    <span>see community info</span>
+                                </div>
+                            </div>
+                        
+                    </div>
                 </div>
 
                 <div className='community-page-description flex'
-                    style={{padding: show && '2.5vh 2vw', border: show && '1px solid rgb(180, 180, 180)'}}
+                    style={{
+                        padding: show && '2vh 1vw 2vh 2vw', 
+                        border: show && '1px solid rgb(180, 180, 180)', 
+                        borderTop: show && '0'
+                    }}
                     onClick={() => {setShow(!show)}}
                 >
-                    {show &&
-                        community.description
-                    }
+                    {show && community.description }
                 </div>
 
                 <div className='community-page-posts flex'>

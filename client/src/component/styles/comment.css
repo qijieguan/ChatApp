@@ -70,7 +70,7 @@
     align-self: flex-start;
     column-gap: 0.5vw;
     font-weight: 500;
-    color: rgb(102, 102, 102);
+    color: rgb(158, 158, 158);
 }
 
 .comment-down-icon {
@@ -85,7 +85,8 @@
 }
 
 .comment {
-    padding: 2vh 2vw;
+    flex-wrap: wrap;
+    padding: 2vh 1vw 2vh 2vw;
     column-gap: 1vw;
     font-weight: 500;
     min-height: 10vh;
@@ -103,14 +104,16 @@
     border-radius: 3rem;
 }
 
+.comment-text { padding: 0 2vw; }
+
 .comment-name {
-    margin-right: 1vw;
-    font-size: 0.875rem;
+    margin-right: 0.5vw;
+    font-size: clamp(0.75rem, 1vw, 1rem);
     color: rgb(233, 233, 233);
 }
 
 .comment-content {
-    font-size: 0.875rem;
+    font-size: clamp(0.75rem, 1vw, 1rem);
     color: white;
 }
 
@@ -125,7 +128,6 @@
 }
 
 @media (max-width: 25rem) {
-    .comment-input-wrapper {
-        flex-wrap: wrap;
-    }
+    .comment { padding: 1vh 0.25vw 1vh 1vw; justify-content: center; border-radius: 1rem; }
+    .comment-input-wrapper { flex-wrap: wrap; }
 }

@@ -8,30 +8,55 @@
 .login-label {  
     text-align: center; 
     width: 100%; 
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem); 
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem); 
     font-weight: 700;
     letter-spacing: 1px;
     color: royalblue;
 }
 
-.login-name, .login-password { 
-    grid-template-columns: 15% 85%; 
-    color: black; 
+.login-username, .login-password { 
+    position: relative;
+    grid-template-columns: 85% 15%; 
+    color: grey; 
     height: 7.5vh;
     width: 80%; 
-    background: rgb(250, 250, 250);
-    border: 1px solid rgb(211, 211, 211); 
-    border-radius: 3rem;
-    overflow: hidden; 
+    border-bottom: 1px solid rgb(211, 211, 211); 
+    transition: all 0.4s ease-in;
 }
-.login-icon { justify-content: center; width: 100%; color: white; }
-.login-icon * { font-size: 1.375rem; color: royalblue; }
-.login input { width: 100%; background: rgb(250, 250, 250); border: 1px solid rgb(228, 228, 228); }
+.login-username.highlight, .login-username:has(.login-username-input:focus), .login-password.highlight, .login-password:has(.login-password-input:focus) {
+    border-bottom: 2px solid royalblue;
+    color: royalblue;
+}
+
+.username-placeholder, .password-placeholder {
+    position: absolute;
+    height: 100%;
+    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    inset: 50% auto auto 0.5vw;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: all 0.4s ease-in;
+}
+
+.login-username.highlight > .username-placeholder, .login-password.highlight > .password-placeholder {
+    font-size: 0.875rem;
+    transform: translateY(-100%);
+}
+
+.login-username-input:focus + .username-placeholder, .login-password-input:focus + .password-placeholder {
+    font-size: 0.875rem;
+    transform: translateY(-100%);
+    color: royalblue;
+}
+
+
+.login-icon { justify-content: center; width: 100%;  }
+.login-icon * { font-size: 1.375rem; }
+.login input { height: 100%; width: 100%; }
 .sign-in-btn { 
     margin-top: 5vh;
     padding: 2vh 0;
-    font-size: clamp(0.875rem, 2.5vw, 1rem); 
-    letter-spacing: 0.125rem;
+    font-size: clamp(0.875rem, 1vw, 1rem); 
     width: 80%; 
     color: white;
     background: royalblue; 
@@ -46,21 +71,21 @@
     color: grey;
 }
 
-.register-link > span {  font-size: 1rem; }
+.register-link > span { font-size: 0.875rem; }
 .register-link > span:last-child { color: royalblue; }
 
 .register-link:hover { text-decoration: underline; text-underline-position: below; }
 
 .auth-text { 
     margin: 0 auto;
-    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
 }
 .auth-btn { 
-    min-height: 4.5rem;
-    max-height: 5rem; 
+    min-height: 5vh;
+    max-height: 10vh; 
     min-width: 70%; 
     max-height: 90%;
-    font-size: clamp(0.75rem, 2.5vw, 1rem);
+    font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
     color: royalblue; 
