@@ -9,6 +9,7 @@
     justify-content: flex-end;
     flex-wrap: wrap;
     column-gap: 2.5vw;
+    row-gap: 1vh;
     min-height: 8vh;
     width: 100%;
     box-shadow: 0 0 1px rgb(185, 185, 185);
@@ -48,9 +49,11 @@
 }
 .header-banner-text span { color: rgb(177, 196, 255); }
 
+@media (max-width: 35rem) {
+    .header-banner { display: none; }
+}
 
 @media (max-width: 25rem) {
-    .header-banner-text * { text-align: center; }
     .header-btns { padding: 2vh 0; justify-content: space-around; }
     .start-btn { padding: 1vh 2.5vw; margin-right: 0; }
 }

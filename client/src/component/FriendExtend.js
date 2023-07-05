@@ -20,7 +20,7 @@ const FriendExtend = ({ friend }) => {
             right: 'auto',
             bottom: 'auto',
             textAlign: 'center',
-            width: 'min(90vw, 40rem)',
+            width: 'min(95vw, 40rem)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'gray',

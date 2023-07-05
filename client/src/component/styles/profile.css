@@ -45,7 +45,6 @@
 .profile-name { 
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: 700;
-    font-family: 'Playfair Display', serif;
     color: rgb(73, 73, 73); 
 }
 

@@ -20,7 +20,7 @@ const Login = () => {
             left: '50%',
             right: 'auto',
             bottom: 'auto',
-            width: 'min(90vw, 40rem)',
+            width: 'min(95vw, 40rem)',
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'rgb(77, 77, 77)',

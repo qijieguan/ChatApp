@@ -21,42 +21,55 @@
     color: royalblue;
 }
 
-.home-intro > span { font-size: clamp(0.875rem, 1.25vw, 1.25rem); font-weight: 700; color: grey; }
+.home-intro > span { font-size: clamp(0.875rem, 1.25vw, 1.25rem); font-weight: 500; color: grey; }
 
 .home-body {
+    padding: 10vh 2.5vw;
+    min-height: 60vh;
     justify-content: center;
-    padding: 20vh 2.5vw;
-    width: 100vw;
-    border-top: 1px solid rgb(180, 180, 180);
+    column-gap: 5vw;
+    width: 95%;
+    border-top: 1px solid rgb(230, 230, 230);
     background: white;
 }
 
 .home-image {
     object-fit: cover;
-    width: 50%;
+    max-height: 75vh;
+    max-width: 50%;
     border: none;
 }
 
-.home-text { justify-content: center; flex-direction: column; width: 75%; }
+.home-text { align-items: flex-start; flex-direction: column; max-width: 50%; }
 
 .text-label {
-    font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    font-size: clamp(1.25rem, 2vw, 2rem);
     font-weight: 700;
     color: royalblue;
 }
 
 
-.home-text > div { padding: 0 2vw; width: 55%; margin: 0 auto; font-size: clamp(0.875rem, 1.25vw, 1.25rem); }
+.home-text > div { padding: 0 2vw; width: 55%; font-size: clamp(0.875rem, 1.25vw, 1.25rem); }
 .home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
 
-.feature-wrapper { color: royalblue; }
+.feature-wrapper { justify-content: center; color: gray; }
+.feature-wrapper > span { font-size: clamp(0.875rem, 1.25vw, 1.25rem); }
 
-.features-dropdown { position: relative; height: 0; transition: all 0.3s ease-in; overflow: hidden; }
+.features-dropdown { 
+    padding: 0;
+    position: relative; 
+    column-gap: 2vw;
+    row-gap: 1vh; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    height: 0; 
+    transition: all 0.3s ease-in; overflow: hidden; 
+}
 .features-dropdown > li {
     margin-top: 4vh;
     padding: 2vh 2vw;
     text-align: center;
-    font-size: clamp(0.875rem, 1.25vw, 1.25rem);;
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
     color: royalblue;
     border: 1px solid;
     border-radius: 0.25rem;
@@ -73,9 +86,10 @@
     .home-login { margin: 5vh auto 10vh auto; position: relative; inset: auto; width: 75%; height: fit-content; }
     .home-background { width: 100%; background-position: center; }
     .home-body { flex-direction: column; row-gap: 5vh; }
-    .home-text { width: 90%; }
-    .home-text > div { width: 60%; }
-    .home-text-1 > div { width: 55%; }
+    .home-text { max-width: 100%; }
+    .home-image { max-height: 50vh; max-width: 100%; }
+    .home-text > div { width: 95%; }
+    .home-text-1 > div { width: 95%; }
     .home-body-2 { flex-direction: column-reverse !important; }
 }
 

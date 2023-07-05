@@ -81,11 +81,11 @@
     font-size: clamp(0.75rem, 1.25vw, 1.25rem);
 }
 .auth-btn { 
-    min-height: 5vh;
-    max-height: 10vh; 
+    min-height: 10vh;
+    max-height: 15vh; 
     min-width: 70%; 
-    max-height: 90%;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    max-width: 100%;
+    font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
     color: royalblue; 

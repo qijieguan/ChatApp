@@ -80,10 +80,10 @@ const Home = () => {
                 <div className='home-text home-text-3 flex'>
                     <h1 className='text-label'>3. Ready to Network the World</h1>
                     <div className='feature-wrapper flex' onClick={() => {handleClick()} }>
-                        Features
+                        <span>Features</span>
                         <AiFillCaretDown className='arrow-down'/>
                     </div>
-                    <ul className='features-dropdown'>
+                    <ul className='features-dropdown flex'>
                         <li>Find and follow new users</li>
                         <li>Private messaging inside chatbox</li>
                         <li>Customize personal profile</li>

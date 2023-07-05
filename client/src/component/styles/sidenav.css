@@ -10,7 +10,6 @@
 
 .side-nav-name {
     font-size: clamp(0.875rem, 1.75vw, 1.75rem);
-    font-weight: bold;
     text-align: center;
     color: white;
 }
@@ -34,7 +33,7 @@
 }
 
 .side-nav-link > span {
-    font-size: clamp(0.875rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem); 
 }
 
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
@@ -43,6 +42,7 @@
 
 .home-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); }
 .people-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
+.logout-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
 
 .logout-nav { column-gap: 0; color: red; }
 
@@ -58,7 +58,7 @@
     font-weight: 500;
     background: rgb(245, 245, 245); 
 }
-.side-nav-communities-label > span { font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
+.side-nav-communities-label > span { font-size: clamp(0.75rem, 1.125vw, 1.125rem); }
 
 .arrow-up-icon {
     display: none;

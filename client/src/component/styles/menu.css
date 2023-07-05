@@ -40,8 +40,8 @@
 .menu-li:hover { background: rgb(221, 221, 221); box-shadow: 0 0 2px; }
 .menu-li.active { background: rgb(221, 221, 221); box-shadow: 0 0 2px; }
 .menu-li > div { 
-    font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
-    font-weight: bold; 
+    font-size: clamp(0.625rem, 0.875vw, 0.875rem); 
+    font-weight: 500; 
     letter-spacing: 0.5px;
 }
 
@@ -58,6 +58,7 @@
 .menu-dropdown { 
     position: relative; 
     padding: 0.25vw 0 0.25vw 0.25vw;
+    column-gap: 1vw;
     height: 100%; 
 }
 .menu-dropdown img {
@@ -68,8 +69,8 @@
 }
 
 .menu-user { 
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
-    padding-right: 2.5vw;
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    padding-right: 1vw;
     font-weight: 500;
     color: rgb(95, 95, 95);
 }
@@ -79,9 +80,8 @@
     position: absolute;
     inset: auto 0 0 auto;
     width: 100%;
-    background: rgb(247, 247, 247);
     border: 1px solid rgb(209, 209, 209);
-    border-top: 0;
+    background: white;
     transform: translateY(100%);
     z-index: 3;
 }
@@ -90,7 +90,6 @@
     justify-content: center;
     margin: auto;
     padding: 4vh 0;
-    font-family: 'Roboto', sans-serif; 
     height: 100%;
     width: 100%;
     border: 2px solid transparent;
@@ -100,8 +99,7 @@
 
 .menu-link * { color: gray; margin: 0; }
 .person-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); width: fit-content; margin: 0 0.5vw; }
-.logout-icon { font-size: clamp(1.5rem, 2.5vw, 2rem); width: fit-content; }
-.menu-link > div { font-size: clamp(0.75rem, 2.5vw, 0.875rem); font-weight: 500; }
+.menu-link > div { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 500; }
 .menu-dropdown:hover > .menu-links, .menu-links:hover { display: flex; flex-direction: column; }
 
 @media (max-width: 75rem) {
@@ -115,14 +113,13 @@
 }
 
 @media (max-width: 50rem) {
-    .menu-bar { padding: 1vh 5vw; }
+    .menu-bar { padding: 1vh 5vw; column-gap: 2vw; }
     .menu-label-wrapper { display: none; }
-    .menu-li-wrapper { flex-wrap: wrap; }
-    .menu-dropdown { margin: 0 0 0 auto; }
+    .menu-li-wrapper { flex-wrap: wrap; padding: 0 0.5vw; }
 }
 
 @media (max-width: 40rem) {
-    .menu-bar { row-gap: 0.5vh; justify-content: center; }
+    .menu-bar { row-gap: 0.5vh; }
     .menu-li-wrapper { gap: 0.75vh; }
     .menu-links { inset: auto -10% 0 auto; width: 150%; }
     .person-icon { margin: 0 1vw; }
