@@ -42,7 +42,7 @@ const Dashboard = () => {
     return ( 
         <div>
             <div className="dashboard grid">
-                <SideNav/>
+                <SideNav param={"default"}/>
                 <div>
                     <Menu/>
                     {pathname === '/Dashboard/Post' &&

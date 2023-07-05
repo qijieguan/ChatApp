@@ -8,4 +8,5 @@
 
 @media (max-width: 60rem) {
     .dashboard { grid-template-columns: 100%; justify-content: center; }
+    .default-side-nav { display: none; }
 }

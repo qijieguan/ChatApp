@@ -41,7 +41,9 @@ const ChatPage = () => {
 
         document.querySelector('.conversation-log')?.classList.remove('focus');
         document.querySelector('.message-container')?.classList.add('focus');
-        document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        if (document.querySelector('.menu').offsetWidth > 960) {
+            document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
+        }
     }
 
     const removeChat = async (chat) => {

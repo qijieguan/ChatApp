@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 
-.App { background: rgb(233, 233, 233); height: 100vh; width: 100vw; overflow-x: hidden; }
+.App { background: rgb(233, 233, 233); min-height: 100vh; width: 100%; overflow: hidden; }
 
 .flex { display: flex; align-items: center; }
 .grid { display: grid; justify-content: space-evenly; }

@@ -1,4 +1,13 @@
 .side-nav { position: relative; height: fit-content; width: 100%; box-shadow: 0 0 2px rgb(184, 184, 184); overflow: hidden; z-index: 2; }
+.side-nav.menu {
+    position: absolute;
+    inset: auto auto 0 0;
+    background: white;
+    transform: translateY(100%);
+    box-shadow: 0 5px 3px grey;
+    border-radius: 0 0 2rem 2rem;
+}
+
 .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: 25vh; width: 100%; background: royalblue; }
 .side-nav-profile {
     height: 10vh; 
@@ -60,13 +69,18 @@
 }
 .side-nav-communities-label > span { font-size: clamp(0.75rem, 1.125vw, 1.125rem); }
 
-.arrow-up-icon {
+.arrow-back-icon {
     display: none;
-    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+    font-size: clamp(1.125rem, 1.25vw, 1.25rem);
+    color: rgb(172, 172, 172);
     transition: 0.4s transform ease-in;
 }
-.side-nav-communities-label.dropdown > .arrow-up-icon {
-    transform: rotate(180Deg);
+.side-nav-communities-label.dropdown > .arrow-back-icon {
+    transform: rotate(-90Deg);
+}
+
+.side-nav-communities-label {
+    pointer-events: none;
 }
 
 .side-nav-communities-label:not(.dropdown) + .community-collection {
@@ -77,6 +91,7 @@
 }
 
 .community-collection {
+    padding: 1vh 1vw;
     flex-wrap: wrap;
     row-gap: 1.5vh;
 }
@@ -116,16 +131,17 @@
 .side-community-members { font-size: clamp(0.75rem, 1vw, 1rem); color: grey; }
 
 @media (max-width: 60rem) {
-    .side-nav { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
+    .side-nav:not(.menu) { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
+    .side-nav.default { display: none; }
     .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: fit-content; }
     .side-nav-body { padding: 1.5vh 0; }
     .side-nav-link { padding: 0.5vh 2vw;}
     .side-community { justify-content: center; width: 45%; }
-    .side-nav-communities-label { justify-content: center; }
+    .side-nav-communities-label { justify-content: center; pointer-events: unset; }
     .side-nav-communities-label:not(.dropdown) + .community-collection { padding: 0 2vw; height: 0; }
     .side-nav-communities-label.dropdown + .community-collection { padding: 3vh 2vw; }
     .side-nav-communities-label:hover * { color: rgb(177, 177, 177); }
-    .arrow-up-icon { display: unset; }  
+    .arrow-back-icon { display: unset; }  
     
 }
 

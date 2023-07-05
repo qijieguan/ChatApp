@@ -1,7 +1,7 @@
 import './styles/sidenav.css';
 import { BiLogIn } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
-import { IoIosPeople, IoIosArrowUp } from 'react-icons/io';
+import { IoIosPeople, IoIosArrowBack } from 'react-icons/io';
 import { FaCat } from 'react-icons/fa';
 
 import { Link } from 'react-router-dom';
@@ -15,8 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCommunities } from './actions/index.js';
 
-const SideNav = () => {
-
+const SideNav = (param, setShow) => {
     //const communities = Data.communities;
     //<button onClick={init}>init button</button>
 
@@ -70,7 +69,7 @@ const SideNav = () => {
     }
 
     return (
-        <div className='side-nav'>
+        <div className={'side-nav ' + param.param}>
             <div className='side-nav-header flex'>
                 <img className='side-nav-profile' src={user.profile_url} alt=""/>
                 <div className='side-nav-name'>{user.firstname} {user.lastname}</div>
@@ -95,7 +94,7 @@ const SideNav = () => {
             <div className='side-nav-communities'>
                 <div className='side-nav-communities-label flex' onClick={toggleCommunityTab}>
                     <span>My Communities</span>
-                    <IoIosArrowUp className='arrow-up-icon'/>
+                    <IoIosArrowBack className='arrow-back-icon'/>
                 </div>
                 <div className='community-collection flex'>
                     {communities.length > 0 ?

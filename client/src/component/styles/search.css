@@ -95,11 +95,12 @@
 
 
 @media (max-width: 50rem) {
+    .search { padding: 2.5vh 0; }
     .search-wrapper { grid-template-columns: 30% 30% 30%; }
     .search-wrapper-label { grid-column: 1 / 4; }
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 30rem) {
     .search-wrapper { grid-template-columns: 48% 48%; }
     .search-wrapper-label { grid-column: 1 / 3; margin: 2.5vh auto; }
     .user.active { border-radius: 1rem; }
