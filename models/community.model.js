@@ -15,6 +15,10 @@ const communitySchema = new Schema({
         type: String,
         trim: true,
     },
+    background_url: {
+        type: String,
+        trim: true,
+    },
     description: {
         type: String,
         trim: true,

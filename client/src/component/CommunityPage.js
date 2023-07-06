@@ -27,6 +27,7 @@ const CommunityPage = () => {
         if (location.state) {
             getCommunityData();
         }
+
         setShow(false);
     }, [location]);
 
@@ -72,9 +73,17 @@ const CommunityPage = () => {
         }
     }
 
+    const calcHeight = (e) => {
+        e.target.style.marginBottom = "-" + (e.target.offsetHeight * 0.95) + 'px'
+    }
+
     return (
         <div>{community &&
-            <div className="community-page">
+            <div className="community-page flex">
+                <div className='community-bg' onLoad={calcHeight}>
+                    <img src={community.background_url} alt=""/>
+                </div>
+
                 <div className='community-page-banner'
                     style={{ borderBottom: show && '0' }}
                 >

@@ -51,9 +51,11 @@ const Menu = () => {
         let menubar = document.querySelector('.menu-bar');
         if (menu.offsetWidth <= 960) {
             menu.style.height = menubar.offsetHeight + 'px';
+            setTimeout(() => {window.scroll({top: 0, behavior: 'smooth'});});
         }
-
-        setTimeout(() => {window.scroll({top: 0, behavior: 'smooth'});});
+        else {
+            setTimeout(() => {menu.scroll({top: 0, behavior: 'smooth'});});
+        }
     }
 
     const handleClick = (event) => {

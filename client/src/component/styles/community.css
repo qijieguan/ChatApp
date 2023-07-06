@@ -1,5 +1,5 @@
 .community-section {
-    margin: 5vh auto 10vh auto;
+    margin: 7vh auto 10vh auto;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
@@ -13,14 +13,9 @@
     margin: 0 auto;
     align-items: flex-start;
     height: 30vh;
-    width: 80%;
-    box-shadow: 0 0 2px rgb(27, 27, 27);
+    width: 90%;
     border-radius: 0.25rem;
     overflow: hidden;
-}
-
-.community:hover {
-    box-shadow: 3px 3px 5px rgb(27, 27, 27);
 }
 
 .community-image {
