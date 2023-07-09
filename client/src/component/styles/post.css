@@ -1,10 +1,9 @@
 .post {
     margin: 0 auto;
-    padding: 3vh 0;
+    padding: 3vh 0 0 0;
     flex-direction: column;
     width: 100%;
-    border: 1px solid rgb(226, 226, 226);
-    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px gray;
 }
 
 .post-image-input { display: none; }
@@ -20,9 +19,9 @@
 
 .post-header { padding: 0 2.5vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 9vh; width: 9vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1.25vw, 1.25rem); color: rgb(107, 107, 107); }
+.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1.125vw, 1.125rem); color: rgb(107, 107, 107); }
 
-.primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.75rem, 1.125vw, 1.125rem); color: rgb(58, 58, 58); }
+.primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
 .primary-image { margin: 3vh auto 0 auto; object-fit: cover; max-height: 50vh; width: 100%; }
 
 .delete-wrapper { 
@@ -41,7 +40,6 @@
 .trash-button:hover { opacity: 0.7; }
 
 .post-footer {
-    margin-top: 3vh;
     padding: 2.5vh 3vw;
     justify-content: center;
     flex-wrap: wrap;
@@ -53,14 +51,14 @@
     border-right: 0;
 }
 
-.post-footer > div {
+.action {
     column-gap: 0.75vw;
     color: rgb(102, 102, 102);
 }
 
-.post-footer > div:hover { opacity: 0.7; }
+.action:hover { opacity: 0.7; }
 
-.post-footer > div > span { font-size: clamp(0.75rem, 1.125vw, 1.125rem); }
+.action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .post-like.active {
     color: royalblue;
@@ -80,21 +78,21 @@
     padding: 0.25vh 1vw;
     font-weight: 500;
     font-size: clamp(0.625rem, 0.875vw, 0.875rem);
-    background: rgb(194, 194, 194);
+    background: rgb(211, 211, 211);
     border-radius: 1rem;
     box-shadow: 0 0 1px;
 }
 
 @media (max-width: 60rem) {
-    .post-footer > div { column-gap: 2vw; }
+    .action { column-gap: 1vw; }
 }
 
 @media (max-width: 25rem) {
-    .post { padding: 1.5vh 0; }
-    .poster-image { height: 7.5vh; width: 7.5vh; }
+    .post { padding: 1.5vh 0 0 0; }
+    .poster-image { height: 6.5vh; width: 6.5vh;  }
     .post-header { column-gap: 2vw; }
     .delete-wrapper { margin: 0.5vh 1vw; padding: 0.5vh 2vw; }
-    .post-footer > div > span { display: none; }
+    .action > span { display: none; }
     .like-count, .comment-count { padding: 0 3vw; }
     .post-footer { margin-top: 0.5vh; justify-content: flex-start; }
     .trash-button { font-size: 1rem; }

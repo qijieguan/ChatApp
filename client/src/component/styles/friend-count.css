@@ -9,7 +9,7 @@
 }
 
 .friend-count-label {
-    font-size: clamp(1.125rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
     padding-left: 1.5vw;
     font-weight: 700;
     color: royalblue;

@@ -35,27 +35,24 @@ const Menu = () => {
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
         
-        window.addEventListener('resize', (e) => {
-            handleResize();
-        });
+        window.addEventListener('resize', (e) => { handleResize(); });
 
         handleResize();
 
-        setShowMenu(false);
-        setShowSearch(false);
-        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
     }, [dispatch, baseURL, location]);
 
     const handleResize = () => {
         let menu = document.querySelector('.menu');
         let menubar = document.querySelector('.menu-bar');
-        if (menu.offsetWidth <= 960) {
-            menu.style.height = menubar.offsetHeight + 'px';
+        if (menu?.offsetWidth <= 960) {
+            menu.style.height = menubar?.offsetHeight + 'px';
             setTimeout(() => {window.scroll({top: 0, behavior: 'smooth'});});
         }
-        else {
-            setTimeout(() => {menu.scroll({top: 0, behavior: 'smooth'});});
-        }
+        else { setTimeout(() => {menu?.scroll({top: 0, behavior: 'smooth'});}); }
+
+        setShowMenu(false);
+        setShowSearch(false);
+        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
     }
 
     const handleClick = (event) => {
@@ -63,18 +60,16 @@ const Menu = () => {
         event.currentTarget.classList.add('active');
     }
 
-    const closeMenu = () => { setShowMenu(false); }
-
     const handleOpenSearch = () => {
         document.querySelector('.menu-li-wrapper')?.classList.toggle('show');
         setShowSearch(!showSearch);
-        closeMenu();
+        setShowMenu(false);
     }
 
     return (
         <div className='menu'>
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-                <div className='menu-side-nav' onClick={() => {setShowMenu(!ShowMenu)}}>
+                <div className='menu-side-nav flex' onClick={() => {setShowMenu(!ShowMenu)}}>
                     <RiMenu2Fill className='menu-icon'/>
                 </div>
 

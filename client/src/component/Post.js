@@ -6,12 +6,12 @@ import { AiFillLike } from 'react-icons/ai';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
-import Comment from './Comment.js';
+import { useNavigate } from 'react-router-dom';
 
 const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_text, deletePost}) => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
+    const navigate = useNavigate();
 
     const [likes, setLikes] = useState(post.likes);
     const [commentCount, setComment] = useState(post.comments.length);
@@ -45,8 +45,12 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
         }
     }
 
-    const increment = () => {
-        setComment(commentCount + 1);
+    const handleClick = (poster_name, poster_profile, post) => {
+        navigate(
+            "/Dashboard/Post/" + post._id + "/Comment",
+            {state: { poster_name: poster_name, poster_profile: poster_profile, post: post}},
+            {replace: true}
+        );
     }
 
     return (
@@ -66,7 +70,7 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                 </div>
             }
             <div className='post-footer flex'>
-                <div className='post-like flex' onClick={toggleLike}>
+                <div className='post-like action flex' onClick={toggleLike}>
                     <AiFillLike className='post-icon'/>
                     <span>Like</span>
                     {likes.length > 0 &&
@@ -74,7 +78,9 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                     }
                 </div>
 
-                <div className='post-comment flex'>
+                <div 
+                    onClick={() => {handleClick(poster_name, poster_profile, post)}}
+                    className='post-comment action flex'>
                     <BiCommentMinus className='post-icon'/>
                     <span>Comment</span>
                     {commentCount > 0 &&
@@ -82,18 +88,13 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                     }
                 </div>
 
-                <div className='post-share flex'>
+                <div className='post-share action flex'>
                     <BsFillShareFill className='post-icon'/>
                     <span>Share</span>
                 </div>
             </div>
 
-            <Comment 
-                comments={post.comments} 
-                postID={post._id}
-                posterID={poster_id}
-                increment={increment}
-            />
+            
         </div>
     )
 }

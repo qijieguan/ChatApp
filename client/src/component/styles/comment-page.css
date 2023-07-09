@@ -1,0 +1,196 @@
+.comment-page {
+    justify-content: center;
+    flex-direction: column;
+    height: fit-content;
+    width: 100%;
+}
+
+.comment-nav {
+    margin-bottom: 2vh;
+    position: sticky;
+    left: 0;
+    padding: 2vh 2vw;
+    width: 100%;
+    background: crimson;
+    box-shadow: 0 2px 3px rgb(180, 180, 180);
+}
+
+.comment-nav-link { column-gap: 0.5vw; color: white; }
+
+.comment-nav-link:hover * { opacity: 0.9; text-decoration: underline; }
+
+.comment-nav-icon {
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+}
+
+.comment-nav-text {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.primary-post {
+    flex-direction: column;
+    padding: 2vh 2vw;
+    min-height: 30vh;
+    width: 90%;
+    row-gap: 1vh;
+    box-shadow: 0 1px 3px gray;
+    background: white;
+}
+
+.primary-user {
+    column-gap: 1vw;
+    width: 100%;
+}
+
+.primary-user > img {
+    height: 7.5vh;
+    width: 7.5vh;
+    object-fit: cover;
+    border-radius: 4rem;
+    box-shadow: 0 0 1px;
+}
+
+.comment-input-wrapper {
+    gap: 1vh;
+    margin: 5vh 0 1vh 0;
+    width: 90%;
+}
+
+.comment-input-wrapper > img {
+    object-fit: cover;
+    height: 7.5vh;
+    width: 7.5vh;
+    box-shadow: 0 0 1px grey;
+    border-radius: 0.25rem;
+}
+
+.comment-input {
+    height: 6.5vh;
+    width: 100%;
+}
+
+.comment-input > input {
+    height: 100%;
+    width: 100%;
+    color: black;
+    background: rgb(231, 231, 231);
+    border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.comment-input > input::placeholder {
+    color: black;
+}
+
+.comment-camera {
+    padding: 0 2vw;
+    height: 6.5vh;
+    background: rgb(231, 231, 231);
+}
+
+.comment-camera-icon {
+    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+    color: crimson;
+}
+
+.comment-send {
+    justify-content: center;
+    padding-right: 0.5vw;
+    height: 6.5vh;
+    color: rgb(102, 102, 102);
+    background: rgb(231, 231, 231);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.comment-send-wrapper {
+    justify-content: center;
+    padding: 0 2.5vw;
+    height: 80%;
+    background: crimson;
+    border-radius: 0.5rem;
+}
+
+.comment-send-wrapper:hover { opacity: 0.7; }
+
+.comment-send-icon {
+    font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+    color: white;
+}
+
+.comment-label {
+    margin: 5vh 0 2.5vh 0;
+    column-gap: 1vw;
+    font-weight: 500;
+    width: 90%;
+    color: gray;
+}
+
+.comment-label > span { font-size: clamp(0.75rem, 1vw, 1rem); }
+
+.comment-down-icon { font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
+
+.comment-collection {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    row-gap: 0.5vh;
+    color: grey;
+    background: white;
+    box-shadow: 0 1px 3px gray;
+}
+
+.comment {
+    padding: 2vh 0.5vw 2vh 1.5vw;
+    column-gap: 1vw;
+    font-weight: 500;
+    min-height: 7.5vh;
+    width: fit-content;
+    color: black;
+    overflow: hidden;
+}
+
+.comment-profile > img {
+    object-fit: cover;
+    height: 7.5vh;
+    width: 7.5vh;
+    box-shadow: 0 0 1px;
+}
+
+.comment-name {
+    margin-left: 1vw;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-weight: 500;
+}
+
+.comment-content {
+    font-size: clamp(0.75rem, 1vw, 1rem);
+}
+
+.comment-empty { margin: 0 auto; justify-content: center; column-gap: 0.5vw; }
+
+.comment-empty > span {
+    text-transform: capitalize;
+}
+
+.cat-icon {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 50rem) {
+    .comment { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 25rem) {
+    .primary-post { width: 97.5%; }
+    .comment-label { width: 97.5%; }
+    .comment-collection { width: 97.5%; }
+    .comment { padding: 1vh 0.25vw 1vh 1vw; }
+    .comment-profile { height: 6vh; width: 6vh; } 
+    .comment-profile > img { height: 6vh; width: 6vh; }
+    .comment-input-wrapper { margin: 5vh 0 2.5vh 0; flex-wrap: wrap; width: 97.5%; }
+    .comment-input-wrapper > img { height: 6vh; width: 6vh; }
+    .comment-input { flex-wrap: wrap; }
+    .comment-input > input { width: 100%; }
+    .comment-input, .comment-camera, .comment-send { height: 5vh; }
+    .comment-camera, .comment-send, .comment-send-wrapper { background: transparent; }
+    .comment-send-icon { color: red; }
+}

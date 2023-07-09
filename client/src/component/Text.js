@@ -20,8 +20,8 @@ const Text = ({textID, friend, text }) => {
 
     const pickStyle = (param) => {
         if ((user._id === text.user_id)) {
-            if (param === '1') { return { flexDirection: 'row-reverse' } }
-            else if (param === '2')  { return { marginLeft: 'auto', marginRight: '0' } }
+            if (param === '1') { return { flexDirection: 'row-reverse', alignSelf: 'flex-end' } }
+            else if (param === '2')  { return { marginLeft: 'auto', marginRight: '0'} }
             else { return { backgroundColor: 'royalblue', color: 'white' } }
         }
     }

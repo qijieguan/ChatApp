@@ -9,17 +9,6 @@
     background: white;
 }
 
-.register-link { 
-    margin-top: 0.75rem;
-    text-align: center;
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    letter-spacing: 0.05rem;
-    width: 60%; 
-    min-height: 2.5rem; 
-    color: gray; 
-}
-.register-link:hover { text-decoration: underline; }
-
 .register-label {
     text-align: right;
     grid-column: 1 / 2;

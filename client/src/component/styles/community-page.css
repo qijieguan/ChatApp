@@ -27,7 +27,7 @@
 .community-page-banner {
     position: relative;
     width: 95%;
-    border: 1px solid rgb(180, 180, 180);
+    box-shadow: 0 1px 3px gray;
     background: white;
     overflow: hidden;
     z-index: 2;
@@ -100,13 +100,13 @@
 }
 
 .community-page-name {
-    font-size: clamp(0.875rem, 1.75vw, 1.75rem);
+    font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     font-weight: bold;
     color: rgb(92, 92, 92);
 }
 
 .community-page-members {
-    font-size: clamp(0.625rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 700;
     color: rgb(160, 160, 160);
 }
@@ -120,7 +120,7 @@
 .community-page-join {
     padding: 1vh 1.5vw;
     font-weight: 500;
-    font-size: clamp(0.675rem, 1vw, 1rem);
+    font-size: clamp(0.625rem, 1vw, 1rem);
     color: white;
     background: royalblue;
     box-shadow: 0 0 3px rgb(65, 65, 65);
@@ -161,10 +161,10 @@
 
 .community-page-description {
     position: relative;
-    margin: 0 auto 8vh auto;
+    margin: 0 auto 5vh auto;
     justify-content: center;
-    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
-    width: 100%;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    width: 95%;
     color: gray;
     background: white;
     z-index: 2;
@@ -172,7 +172,7 @@
 
 .community-page-posts {
     flex-direction: column;
-    row-gap: 10vh;
+    row-gap: 1vh;
     justify-content: center;
 }
 
@@ -182,10 +182,9 @@
     align-items: flex-start;
     flex-direction: column;
     row-gap: 2vh;
-    width: 80%;
-    border: 1px solid rgb(196, 196, 196);
+    width: 90%;
+    box-shadow: 0 1px 3px gray;
     background: white;
-    border-radius: 0.5rem;
     overflow: hidden;
     z-index: 2;
 }
@@ -202,15 +201,15 @@
 }
 
 .community-page-post-header > span {
-    font-weight: 700;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    font-weight: 500;
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
     color: rgb(131, 131, 131);
 }
 
 .community-page-post > span {
     align-self: center;
     padding: 0 1vw;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    font-size: clamp(0.75rem, 1vw, 1rem);
     width: 90%;
 }
 
@@ -237,23 +236,26 @@
 
 @media (max-width: 50rem) {
     .community-page-banner { width: 97.5% }
+    .community-page-banner-down { min-height: 17.5vh; }
     .community-page-exit { inset: 5% 7% auto auto; }
     .community-page-profile { height: 11vh; width: 11vh; }
     .community-page-name { font-weight: 700; }
     .community-page-members { font-weight: 500; }
     .community-page-buttons { width: 100%; }
     .community-page-info-button { border-bottom: 1px solid transparent; }
-    .community-page-description { margin: 0 auto 3vh auto; }
+    .community-page-description { margin: 0 auto 3vh auto; width: 97.5%; }
     .community-page-posts { row-gap: 3vh; }
     .community-page-post { width: 97.5%; }
     .community-page-post > span { padding: 0 0.25vw; }
 }
 
 @media (max-width: 25rem) {
+    .community-page-banner { width: 100% }
     .community-page-profile { inset: 0 auto auto 2.5%; height: 8.5vh; width: 8.5vh;  }
     .community-page-label { margin-top: 3%; }
     .community-page-name { font-size: 0.75rem; }
     .community-page-join { padding: 0.5vh 1.5vw; }
+    .community-page-description { width: 100%; }
     .community-page-post-header { gap: 2vw; }
     .community-page-post-header > img { height: 7.5vh; width: 7.5vh; }
 }

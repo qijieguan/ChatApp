@@ -27,7 +27,6 @@ const CommunityPage = () => {
         if (location.state) {
             getCommunityData();
         }
-
         setShow(false);
     }, [location]);
 
@@ -74,7 +73,7 @@ const CommunityPage = () => {
     }
 
     const calcHeight = (e) => {
-        e.target.style.marginBottom = "-" + (e.target.offsetHeight * 0.95) + 'px'
+        e.target.style.marginBottom = "-" + (e.target.offsetHeight * 0.975) + 'px'
     }
 
     return (

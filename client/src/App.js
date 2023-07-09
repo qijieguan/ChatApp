@@ -5,6 +5,7 @@ import Register from "./component/Register.js";
 import Login from "./component/Login.js";
 import Dashboard from "./component/Dashboard.js";
 import PostSection from "./component/PostSection.js";
+import CommentPage from "./component/CommentPage.js";
 import ChatPage from "./component/ChatPage.js";
 import Search from "./component/Search.js";
 import Community from "./component/Community.js";
@@ -35,6 +36,8 @@ function App() {
               <Route path="/Login" element={<Login/>} exact/>
               <Route path="/Dashboard?/Post?/Chat?/Community?/Friend?/Search?/Profile?" element={<Dashboard/>} exact/>
               <Route path="/Dashboard/Post" element={<PostSection/>} exact/>
+              <Route path="/Dashboard/Post/:param/Comment" element={<Dashboard/>} exact/>
+              <Route path="/Dashboard/Post/:param/Comment" element={<CommentPage/>} exact/>
               <Route path="/Dashboard/Chat" element={<ChatPage/>} exact/>
               <Route path="/Dashboard/Community" element={<Community/>} exact/>
               <Route path="/Dashboard/Community/:param" element={<Dashboard/>} exact/>

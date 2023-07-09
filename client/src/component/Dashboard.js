@@ -2,6 +2,7 @@ import './styles/dashboard.css';
 import Menu from './Menu.js';
 import SideNav from './SideNav.js';
 import PostSection from './PostSection.js';
+import CommentSection from './CommentPage.js';
 import ChatPage from './ChatPage.js';
 import Community from './Community.js';
 import CommunityPage from './CommunityPage.js';
@@ -22,7 +23,8 @@ const Dashboard = () => {
     useEffect(() => {
         let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
         let element = document.getElementById(pathname);
-            
+        
+    
         document.getElementsByClassName('active')[0]?.classList.remove('active');
         element?.classList.add('active'); 
         
@@ -47,6 +49,10 @@ const Dashboard = () => {
                     <Menu/>
                     {pathname === '/Dashboard/Post' &&
                         <PostSection/>
+                    }
+
+                    {pathname && pathname.includes('/Comment') &&
+                        <CommentSection/>
                     }
 
                     {pathname === '/Dashboard/Chat' &&

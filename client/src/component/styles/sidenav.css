@@ -1,4 +1,12 @@
-.side-nav { position: relative; height: fit-content; width: 100%; box-shadow: 0 0 2px rgb(184, 184, 184); overflow: hidden; z-index: 2; }
+.side-nav { 
+    position: relative; 
+    height: fit-content; 
+    width: 100%; 
+    box-shadow: 0 0 2px rgb(184, 184, 184); 
+    background: white;
+    overflow: hidden; 
+    z-index: 2; 
+}
 .side-nav.menu {
     position: absolute;
     inset: auto auto 0 0;
@@ -8,7 +16,7 @@
     border-radius: 0 0 2rem 2rem;
 }
 
-.side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: 25vh; width: 100%; background: royalblue; }
+.side-nav-header { padding: 1vh 1vw; column-gap: 2vw; row-gap: 1vh; min-height: 25vh; width: 100%; background: royalblue; }
 .side-nav-profile {
     height: 10vh; 
     width: 10vh;
@@ -133,7 +141,7 @@
 @media (max-width: 60rem) {
     .side-nav:not(.menu) { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
     .side-nav.default { display: none; }
-    .side-nav-header { padding: 2.5vh 1vw; gap: 2vh; height: fit-content; }
+    .side-nav-header { min-height: fit-content; }
     .side-nav-body { padding: 1.5vh 0; }
     .side-nav-link { padding: 0.5vh 2vw;}
     .side-community { justify-content: center; width: 45%; }
@@ -146,6 +154,7 @@
 }
 
 @media (max-width: 25rem) {
+    .side-nav-profile { height: 8vh; width: 8vh; }
     .side-community { width: 100%; }
     .side-community-profile { height: 7.5vh; width: 7.5vh; }
 }

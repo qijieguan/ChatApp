@@ -1,8 +1,7 @@
 .search {
-    padding: 5vh 0;
+    padding: 2.5vh 0;
     min-height: 120vh;
     width: 100%;
-    background: white;
 }
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ;row-gap: 2vh; }
@@ -16,7 +15,7 @@
 }
 
 .search-wrapper-text { 
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(0.875rem, 2vw, 2rem);
     font-weight: 700;
     font-style: oblique;
     letter-spacing: 0.125rem; 

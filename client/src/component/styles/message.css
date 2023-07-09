@@ -2,12 +2,12 @@
 .message-container { 
     flex-direction: column;
     align-items: center;
-    margin: 5vh auto;
+    margin: 2.5vh auto 0 auto;
     padding-bottom: 2rem;
-    width: 90%;
+    width: 95%;
     color: rgb(68, 68, 68);
-    box-shadow: 0 0 2px gray;
-    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 1px 3px gray;
     overflow: hidden;
 }
 
@@ -18,19 +18,16 @@
     font-weight: 500;
     color: white;
 }
-.private-message-header > div > span > span { margin: 0 0.5rem; }
-.private-message-header > div > span > span:last-child {
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-}
+.private-message-header > div > span > span { margin: 0 0.5vw; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
 
-#back-btn { margin: 0 5vw 0 1.5vw; color: white; background: transparent; }
+#back-btn { margin: 0 1.5vw; color: white; background: transparent; }
 #back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 #back-btn:hover { opacity: 0.7; }
 
 .private-message-header img { 
-    margin: 0 0.75rem;
-    min-height: 10vh; 
+    margin: 0 1vw;
+    height: 10vh; 
     width: 10vh; 
     object-fit: cover; 
     border-radius: 3.25rem; 
@@ -38,9 +35,11 @@
 }
 
 .private-message { 
-    margin: 3vh 0 7.5vh 10%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3vh 0 7.5vh 5%;
     height: 65vh; 
-    width: 80%; 
+    width: 90%; 
     scroll-behavior: smooth; 
     overflow-y: auto; 
 }
@@ -48,7 +47,7 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message > h1 { margin-top: 10vh; text-align: center; font-weight: 700; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+.private-message > h1 { margin-top: 10vh; text-align: center; font-weight: 500; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
 
 .end-message {
     grid-template-columns: 35% auto 35%;
@@ -59,18 +58,18 @@
 .end-message > hr {
     height: 1px;
     width: 100%;
-    background: rgb(180, 180, 180);
+    background: rgb(212, 212, 212);
     border: 0;
 }
 
 .end-message > span {
     text-align: center;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 500;
     color: rgb(180, 180, 180);
 }
 
-.text { align-items: flex-start; column-gap: 0.5vw; }
+.text { align-items: flex-start; column-gap: 0.5vw; width: 100%; }
 
 .text-format {
     margin: 2vh auto 3vh 0;
@@ -89,7 +88,7 @@
 
 .text-content { 
     padding: 1.5vh 1vw 3vh 1vw; 
-    font-size: clamp(0.75rem, 2.5vw, 0.875rem); 
+    font-size: clamp(0.625rem, 1vw, 1rem); 
     font-weight: 500; 
     word-wrap: break-word;
     min-height: 15vh; 
@@ -102,33 +101,29 @@
 .text-made-by { 
     margin: 0 0 0.5vh 0.5vw;
     font-size: clamp(0.75rem, 2.5vw, 0.875rem);
-    letter-spacing: 0.5px;
-    font-weight: 700;
+    font-weight: 500;
     color: grey;
-    text-transform: uppercase;
+    text-transform: capitalize;
 }
 
-.text-input-wrapper { padding: 0 2vw; gap: 0.25vw; height: 7.5vh; width: 100%; }
-.text-input { 
-    justify-content: space-between;
-    height: 100%; 
-    width: 100%; 
-    border: 1px solid rgb(194, 194, 194);
-    border-radius: 0.75rem; 
+.text-input-wrapper { padding: 0 2vw; min-height: 5vh; width: 100%; }
+.text-input {
+    column-gap: 1vw;
+    height: 100%;  
+    width: 100%;
+    border-bottom: 1px solid rgb(170, 170, 170);
 }
 .text-input > input { 
     height: 100%; 
-    width: 65%; 
-    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    width: 75%; 
+    font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 500;
     text-indent: 1.5vw;
-    color: rgb(56, 56, 56); 
-    border-radius: 0.75rem;
+    color: rgb(0, 0, 0); 
 }
-.camera-wrapper { position: relative; justify-content: center; pointer-events: none; opacity: 0.3; }
+.camera-wrapper { position: relative; margin-left: auto; justify-content: flex-end; pointer-events: none; width: 10%; }
 
-.camera-wrapper { max-width: 10%; }
-.camera-icon { font-size: clamp(1.625rem, 2vw, 1.75rem); color: rgb(70, 70, 70); }
+.camera-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 .camera-wrapper > img { 
     display: absolute;
     top: 0;
@@ -144,11 +139,9 @@
     justify-content: center;
     padding: auto 10vw;
     margin-right: 0.25vw;
+    font-size: clamp(1.75rem, 2vw, 2rem);
     height: 90%;
-    width: 17.5%;
-    background: rgb(194, 194, 194);
-    border-radius: 0.75rem; 
-    box-shadow: 0 0 1px;
+    width: 10%;
 }
 
 .send-button:hover {
@@ -157,21 +150,22 @@
 
 .send-button > .send-icon {
     font-size: clamp(1.5rem, 1.75vw, 1.75rem);  
+    color: rgb(68, 68, 68);
 }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; margin: 2vh auto 5vh auto; width: 97.5%; }
+    .message-container { display: none; margin: 2vh auto; width: 97.5%; }
     .message-container.focus { display: unset; }
+    .private-message-header img { height: 8vh; width: 8vh; }
     .private-message { height: 50vh; }
     .end-message > span { font-weight: 300; }
-    .text-input-wrapper { grid-template-columns: 100%; }
 }
 
 @media (max-width: 25rem) {
-    #back-btn { margin: 1vh 5vw 0 1.5vw; }
-    .recipient { margin: 1vh 0; font-weight: 700; }
-    .private-message {  margin: 3.5vh auto; width: 97.5%; }
+    .message-container { width: 99%; }
+    .recipient { margin: 1vh 0; }
+    .private-message { margin: 3.5vh auto; width: 97.5%; margin: 3vh 0 7.5vh 1.25%; }
     .text-format { width: 100%; }
+    .texter { height: 6vh; width: 6vh; }
     .text-content { padding: 1.5vh 1vw 3vh 2vw; } 
-    .text-input { width: 100%; padding: 0 1vw; }
 }

@@ -39,7 +39,9 @@ const SideNav = (param, setShow) => {
 
         setTimeout(() => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
-            document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
+            if (!sessionStorage.getItem('scroll_to_post')) {
+                document.getElementsByClassName('menu')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
+            }
         });
 
         getCommunities()

@@ -24,7 +24,7 @@ const Photo = ({photo, photoID, render}) => {
             backgroundColor: 'white',
             border: '1px solid rgb(180, 180, 180)',
         },
-        overlay: {  backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
+        overlay: {  backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));

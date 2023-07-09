@@ -9,6 +9,7 @@ const Header = () => {
     const location = useLocation();
 
     useEffect(() => { 
+        document.querySelector('.App')?.scrollIntoView({top: 0, behavior: 'smooth'});
     }, [location]);
 
     const handleScroll = () => {
@@ -27,7 +28,7 @@ const Header = () => {
                     </div>
                 </header>
                 :
-                <div className='header-banner flex'>
+                <header className='header-banner flex'>
                     <div className='header-banner-text'>
                         <div> Welcome, <span>{user.firstname}. </span>
                         <br/>
@@ -35,7 +36,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="overlay"/>
-                </div>
+                </header>
             }
         </>
     );

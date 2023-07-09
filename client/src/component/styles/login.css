@@ -1,17 +1,16 @@
 .login {
-    padding-top: 2vh;
-    justify-content: center;
+    padding: 2vh 0;
     flex-direction: column;
     row-gap: 5vh;
     animation: fadeSlideUp 0.4s ease-in;
 }
 .login-label {  
-    text-align: center; 
-    width: 100%; 
-    font-size: clamp(1.25rem, 1.75vw, 1.75rem); 
+    text-align: center;
+    font-size: clamp(0.875rem, 1.5vw, 1.5rem); 
     font-weight: 700;
     letter-spacing: 1px;
     color: royalblue;
+    width: 100%; 
 }
 
 .login-username, .login-password { 
@@ -31,7 +30,7 @@
 .username-placeholder, .password-placeholder {
     position: absolute;
     height: 100%;
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.75rem, 1vw, 1rem);
     inset: 50% auto auto 0.5vw;
     transform: translateY(-50%);
     z-index: 3;
@@ -39,12 +38,10 @@
 }
 
 .login-username.highlight > .username-placeholder, .login-password.highlight > .password-placeholder {
-    font-size: 0.875rem;
     transform: translateY(-100%);
 }
 
 .login-username-input:focus + .username-placeholder, .login-password-input:focus + .password-placeholder {
-    font-size: 0.875rem;
     transform: translateY(-100%);
     color: royalblue;
 }
@@ -56,7 +53,7 @@
 .sign-in-btn { 
     margin-top: 5vh;
     padding: 2vh 0;
-    font-size: clamp(0.875rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem); 
     width: 80%; 
     color: white;
     background: royalblue; 
@@ -64,14 +61,13 @@
 }
 
 .register-link { 
-    margin-top: 0.75rem;
+    margin-top: 2vh;
     text-align: center;
     width: 100%; 
-    min-height: 5vh; 
     color: grey;
 }
 
-.register-link > span { font-size: 0.875rem; }
+.register-link > span { font-size: clamp(0.75rem, 1vw, 1rem);  }
 .register-link > span:last-child { color: royalblue; }
 
 .register-link:hover { text-decoration: underline; text-underline-position: below; }
@@ -95,3 +91,9 @@
 }
 
 .auth-btn:hover { opacity: 0.4; }
+
+@media (max-width: 25rem) {
+    .login { padding: 1vh 0; row-gap: 3vh; }
+    .login-username, .login-password { width: 95%; } 
+    .sign-in-btn, .register-link { margin-top: 0; }
+}

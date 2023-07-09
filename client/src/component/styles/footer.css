@@ -7,14 +7,14 @@
     column-gap: 15vw;
     row-gap: 5vh;
     width: 100%; 
-    background: rgb(214, 214, 214);
-    color: rgb(80, 80, 80);  
+    background: royalblue;
+    color: white;  
     border-top: 1px solid rgb(177, 177, 177);
     z-index: 2;
 }
 
 .hour, .contact { margin-bottom: auto; }
-.hour > h1, .contact > h1 { font-size: clamp(0.875rem, 1.5vw, 1.5rem); font-weight: 700; color: rgb(61, 61, 61); }
+.hour > h1, .contact > h1 { font-size: clamp(0.875rem, 1.5vw, 1.5rem); font-weight: 500; }
 
 .hour > li, .contact > ul > li { font-size: clamp(0.875rem, 1vw, 1rem); }
 

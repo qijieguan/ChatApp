@@ -1,8 +1,11 @@
 .app-header { 
+    position: sticky;
+    inset: 0 auto auto 0;
     row-gap: 2vh;
-    height: fit-content;
-    width: 100%; 
+    min-height: 8vh;
+    width: 100%;
     background: royalblue;
+    z-index: 4;
 }
 
 .header-btns { 
@@ -47,7 +50,7 @@
     letter-spacing: 0.125rem;
     text-transform: uppercase;
 }
-.header-banner-text span { color: rgb(177, 196, 255); }
+.header-banner-text span { color: rgb(150, 176, 255); }
 
 @media (max-width: 60rem) {
     .header-banner { display: none; }

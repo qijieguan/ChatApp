@@ -1,8 +1,12 @@
 import './styles/post-section.css';
+import { AiOutlineSend } from 'react-icons/ai';
+
 import { useState, useEffect } from 'react';
 import PostCollection from './PostCollection.js';
 import uuid from 'react-uuid';
 import axios from 'axios';
+
+import { useLocation } from 'react-router-dom';
 
 const PostSection = () => {
 
@@ -15,7 +19,32 @@ const PostSection = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
     const user = JSON.parse(sessionStorage.getItem('user'));
 
-    useEffect(() => { getPosts(); }, [render]);
+    const location = useLocation();
+    
+    window.addEventListener('load', (e) => {
+        e.preventDefault();
+        setTimeout(() => {
+            sessionStorage.removeItem('load_post');
+            document.querySelector('.menu')?.scrollIntoView({block: 'start'});
+        }, 250)
+    });
+
+    useEffect(() => {
+        getPosts();
+
+        if (sessionStorage.getItem('scroll_to_post')) {
+            let postID = JSON.parse(sessionStorage.getItem('scroll_to_post'));
+
+            setTimeout(() => {
+                let post = document.getElementById(postID);
+                console.log(postID)
+                let position = post.getBoundingClientRect();
+                window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
+                sessionStorage.removeItem('scroll_to_post');
+            }, 250);
+        }
+
+    }, [render, location]);
 
     const getPosts = async () => {  
         await axios.get(baseURL + '/posts')
@@ -109,7 +138,10 @@ const PostSection = () => {
                         <img className='post-image-input-preview' src={imageInp} alt=""/>
                     }
                 </div>
-                <button type='submit' className='submit'>Create Post</button>
+                <button type='submit' className='submit flex'>
+                    <AiOutlineSend/>
+                    <span>Create post</span>
+                </button>
             </form>
             
             <div className='post-collection flex'>

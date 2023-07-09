@@ -96,7 +96,7 @@ const Login = () => {
     return(
         <div>
             <form className="login flex" onSubmit={handleSubmit}>
-                <h1 className="login-label">Enter Your Credentials</h1>
+                <h1 className="login-label">Login Credentials</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
                 <div className={'login-username grid ' + highlight(username)}>
                     <input type="text" name="username" className='login-username-input' value={username} onChange={handleChange} required/>
@@ -108,7 +108,7 @@ const Login = () => {
                     <div className='password-placeholder flex'>Password</div>
                     <div className='login-icon flex'><RiLockPasswordLine/></div>
                 </div>
-                <button type="submit" className="sign-in-btn">Sign In</button>
+                <button type="submit" className="sign-in-btn">Login</button>
                 <Link to='/Register' className="register-link">
                     <span>Don't have an account? </span>
                     <span>Sign up here</span>
