@@ -47,8 +47,6 @@ const Login = () => {
     },[]);
 
     const handleChange = (event) => {
-        console.log(event.target)
-
         if (event.target.name === "username") { setUsername(event.target.value); }
         else { setPassword(event.target.value) }
     }

@@ -45,10 +45,10 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
         }
     }
 
-    const handleClick = (poster_name, poster_profile, post) => {
+    const handleClick = (poster_id, poster_name, poster_profile, post) => {
         navigate(
             "/Dashboard/Post/" + post._id + "/Comment",
-            {state: { poster_name: poster_name, poster_profile: poster_profile, post: post}},
+            {state: {poster_id: poster_id, poster_name: poster_name, poster_profile: poster_profile, post: post}},
             {replace: true}
         );
     }
@@ -79,7 +79,7 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                 </div>
 
                 <div 
-                    onClick={() => {handleClick(poster_name, poster_profile, post)}}
+                    onClick={() => {handleClick(poster_id, poster_name, poster_profile, post)}}
                     className='post-comment action flex'>
                     <BiCommentMinus className='post-icon'/>
                     <span>Comment</span>

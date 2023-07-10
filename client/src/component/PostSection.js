@@ -37,8 +37,8 @@ const PostSection = () => {
 
             setTimeout(() => {
                 let post = document.getElementById(postID);
-                console.log(postID)
                 let position = post.getBoundingClientRect();
+                
                 window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
                 sessionStorage.removeItem('scroll_to_post');
             }, 250);

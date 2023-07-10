@@ -131,11 +131,8 @@
 .comment-collection {
     flex-direction: column;
     align-items: flex-start;
+    row-gap: 1vh;
     width: 90%;
-    row-gap: 0.5vh;
-    color: grey;
-    background: white;
-    box-shadow: 0 1px 3px gray;
 }
 
 .comment {
@@ -143,8 +140,9 @@
     column-gap: 1vw;
     font-weight: 500;
     min-height: 7.5vh;
-    width: fit-content;
-    color: black;
+    width: 100%;
+    background: white;
+    box-shadow: 0 1px 3px gray;
     overflow: hidden;
 }
 
@@ -180,11 +178,10 @@
 }
 
 @media (max-width: 25rem) {
-    .primary-post { width: 97.5%; }
-    .comment-label { width: 97.5%; }
-    .comment-collection { width: 97.5%; }
+    .primary-post { width: 100%; }
+    .comment-label { width: 100%; }
+    .comment-collection { width: 100%; }
     .comment { padding: 1vh 0.25vw 1vh 1vw; }
-    .comment-profile { height: 6vh; width: 6vh; } 
     .comment-profile > img { height: 6vh; width: 6vh; }
     .comment-input-wrapper { margin: 5vh 0 2.5vh 0; flex-wrap: wrap; width: 97.5%; }
     .comment-input-wrapper > img { height: 6vh; width: 6vh; }

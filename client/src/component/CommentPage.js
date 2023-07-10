@@ -5,18 +5,18 @@ import { FaCat } from 'react-icons/fa';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const CommentPage = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
 
+    const [posterID, setPosterID] = useState("");
     const [poster_name, setName] = useState("");
     const [poster_profile, setProfile] = useState("");
     const [post, setPost] = useState("");
     const [postID, setPostID] = useState("");
-    const [posterID, setPosterID] = useState("");
 
     const [commentArr, setCommentArr] = useState([]);
     const [commentInp, setCommentInp] = useState("");
@@ -27,16 +27,15 @@ const CommentPage = () => {
 
     useEffect(() => {  
         if (location.state && location.state.post) {
+            setPosterID(location.state.poster_id);
             setName(location.state.poster_name);
             setProfile(location.state.poster_profile);
             setPost(location.state.post);
             setPostID(location.state.post._id);
-            setPosterID(location.state.post.poster_id);
             setCommentArr(location.state.post.comments);
         } 
         
         handleResize();
-        console.log('refresh')
 
         window.addEventListener('resize', () => {
             handleResize();
@@ -44,21 +43,15 @@ const CommentPage = () => {
     },[location]);
 
     const handleResize = () => {
-        let app = document.querySelector('.App');
-        let menu = document.querySelector('.menu');
-        let comment_nav = document.querySelector('.comment-nav');
+        let app = document?.querySelector('.App');
+        let menu = document?.querySelector('.menu');
+        let comment_nav = document?.querySelector('.comment-nav');
         
-        if (app.offsetWidth <= 960) {
-            comment_nav.style.top = menu.offsetHeight + 'px';
-        }
-        else {
-            comment_nav.style.top = '0';
-        }
+        if (app.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu.offsetHeight + 'px'; }
+        if (app.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
     }
 
-    const handleChange = (event) => {
-        setCommentInp(event.target.value);
-    }
+    const handleChange = (event) => { setCommentInp(event.target.value); }
     
     const handleClick = async (event) => {
         event.preventDefault();
@@ -72,7 +65,7 @@ const CommentPage = () => {
             replies: []
         }
 
-        await axios.post(baseURL +'/posts/post-comment', {
+        await axios.post(baseURL +'/posts/post-comment/', {
             poster_id: posterID,
             post_id: postID,
             comment: comment
@@ -84,9 +77,7 @@ const CommentPage = () => {
     }
 
     const handleNav = () => {
-        console.log(postID)
-
-        if (postID.length) {
+        if (post && postID.length) {
             sessionStorage.setItem('scroll_to_post', JSON.stringify(postID));
 
             navigate(
