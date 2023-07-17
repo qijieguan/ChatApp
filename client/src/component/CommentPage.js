@@ -112,7 +112,8 @@ const CommentPage = () => {
         else { result = [...likes, user._id]; }
 
         let updatedPost = location.state.post;
-        post.likes = result;
+        updatedPost.likes = result;
+        
         setLikes(result);
         highlightLikes(result);
 
@@ -130,7 +131,7 @@ const CommentPage = () => {
             poster_id: location.state.poster_id,
             poster_name: location.state.poster_name, 
             poster_profile: location.state.poster_profile, 
-            post: updatedPost,
+            post: location.state.post,
             route: location.state.route
         }});
     }
