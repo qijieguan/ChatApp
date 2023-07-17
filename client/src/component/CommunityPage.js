@@ -43,21 +43,16 @@ const CommunityPage = () => {
             community_id : location.state.communityID,
         })
         .then((response) => { setCommunity(response.data); });
-
-        await axios.post(baseURL + '/communities/get/', {
-            member_id : user._id,
-        })
-        .then((response) => { dispatch((setCommunities(response.data))); });
     }
 
     const join_leave_community = async (communityID) => {
     
         if (checkIsJoined(community) === 'joined') {
-            axios.post(baseURL + '/communities/leave/', {
+            await axios.post(baseURL + '/communities/leave/', {
                 community_id : communityID,
                 member_id: user._id
             })
-            .then((response) => { getCommunityData(); })
+          
         }
         else {
             let member = {
@@ -69,9 +64,15 @@ const CommunityPage = () => {
             await axios.post(baseURL + '/communities/join/', {
                 community_id : communityID,
                 member: member
-            })
-            .then((response) => { getCommunityData(); });
+            });
         }
+        
+        getCommunityData();
+        
+        await axios.post(baseURL + '/communities/get/', { member_id : user._id,})
+        .then((response) => { 
+            dispatch((setCommunities(response.data))); 
+        });
     }
 
     const checkIsJoined = (community) => {
