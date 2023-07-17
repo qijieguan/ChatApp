@@ -53,5 +53,31 @@ router.route('/leave').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
+router.route('/community-post/update-likes').post((req, res) => {
+    const community_id = req.body.community_id;
+    const post_id = req.body.post_id;
+    const likes = req.body.likes;
+    
+    Community.updateOne(
+        {'_id': community_id, 'posts._id': post_id}, 
+        {$set: {'posts.$.likes' : likes}},
+    )
+    .then(result => res.json(result))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
+router.route('/community-post/post-comment').post((req, res) => {
+    const community_id = req.body.community_id;
+    const post_id = req.body.post_id;
+    const comment = req.body.comment;
+    
+    Community.findOneAndUpdate(
+        {'_id': community_id, 'posts._id': post_id}, 
+        {$push: {'posts.$.comments' : comment}},
+    )
+    .then(result => res.json("Comment posted successfully!"))
+    .catch(err => res.status(400).json("Error " + err));
+});
+
 
 module.exports = router;

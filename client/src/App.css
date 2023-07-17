@@ -34,7 +34,8 @@ a { text-decoration: none; }
 input {
     text-indent: 0.5vw;
     min-height: 5vh;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    font-weight: 500;
     color: grey;
     outline: 0; 
     border: 0; 
@@ -42,7 +43,8 @@ input {
 
 textarea {
     text-indent: 0.5vw;
-    font-size: clamp(0.75rem, 1vw, 1rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    font-weight: 500;
     color: grey;
 }
 

@@ -37,6 +37,7 @@ const communitySchema = new Schema({
             poster_name: { type: String, trim: true },
             primary_text: { type: String, trim: true },
             primary_image: { type: String, trim: true },
+            likes: [{ type: String, trim: true }],
             comments: [{
                 user_profile: { type: String, trim: true },
                 user_name: { type: String, trim: true },

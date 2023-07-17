@@ -37,9 +37,9 @@ const Dashboard = () => {
 
         setTimeout(() => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
-            document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start', behavior: 'smooth'});
+            document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start'});
         });
-    }, [location])
+    }, [location]);
 
     return ( 
         <div>

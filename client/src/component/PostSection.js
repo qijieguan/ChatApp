@@ -32,22 +32,21 @@ const PostSection = () => {
     useEffect(() => {
         getPosts();
 
-        if (sessionStorage.getItem('scroll_to_post')) {
-            let postID = JSON.parse(sessionStorage.getItem('scroll_to_post'));
-
+        if (location.state && location.state.postID) {
             setTimeout(() => {
-                let post = document.getElementById(postID);
-                let position = post.getBoundingClientRect();
+                let post = document.getElementById(location.state.postID);
+                let position = post?.getBoundingClientRect();
                 
-                window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
-                sessionStorage.removeItem('scroll_to_post');
+                if (post && position) {
+                    window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
+                }
             }, 250);
         }
 
     }, [render, location]);
 
     const getPosts = async () => {  
-        await axios.get(baseURL + '/posts')
+        await axios.get(baseURL + '/posts/user-post')
         .then(response => { setPostArr(response.data); });
     }
 
@@ -63,12 +62,8 @@ const PostSection = () => {
     }
 
     const handleChange = (event) => {
-        if (event.target.name === 'post-text-input') {
-            setTextInp(event.target.value);
-        }
-        else {
-            readFiles(event.target.files); 
-        }
+        if (event.target.name === 'post-text-input') { setTextInp(event.target.value); }
+        else { readFiles(event.target.files); }
     };
 
     const handleSubmit = async (event) => {
@@ -81,13 +76,9 @@ const PostSection = () => {
             data.append('file', files[0]);
         
             await axios.post(baseURL + '/cloud/upload-image', data)
-            .then(async (response) => {
-                await postApiRequest(response.data);
-            });   
+            .then(async (response) => { await postApiRequest(response.data); });   
         }
-        else {
-            await postApiRequest('');
-        }   
+        else { await postApiRequest(''); }   
 
         setTextInp('');
         setImageInp('');
@@ -96,7 +87,7 @@ const PostSection = () => {
     }
 
     const postApiRequest = async (image_url) => {
-        await axios.post(baseURL + '/posts/add/', {
+        await axios.post(baseURL + '/posts/user-post/add/', {
             poster_id: user._id,
             poster_image: user.profile_url,
             poster_name: user.firstname + ' ' + user.lastname,
@@ -110,7 +101,7 @@ const PostSection = () => {
     }
 
     const deletePost = async (postID) => {
-        await axios.post(baseURL + '/posts/delete/', {poster_id: user._id, post_id: postID});
+        await axios.post(baseURL + '/posts/user-post/delete/', {poster_id: user._id, post_id: postID});
         setRender(!render);
     }
 

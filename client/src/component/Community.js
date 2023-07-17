@@ -19,9 +19,7 @@ const Community = () => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => {
-        getCommunities();
-    }, []);
+    useEffect(() => { getCommunities(); }, []);
 
     const getCommunities = async() => {
         await axios.get(baseURL + '/communities/')
@@ -39,19 +37,14 @@ const Community = () => {
             member_profile: user.profile_url
         }
 
-        await axios.post(baseURL + '/communities/join/', {
-            community_id : communityID,
-            member: member
-        })
+        await axios.post(baseURL + '/communities/join/', { community_id : communityID, member: member })
         .then((response) => { 
             //console.log(response.data) 
         });
     }
 
     const checkIsJoined = (community) => {
-        if (community.members.filter(member => member.member_id === user._id).length > 0) {
-            return 'joined';
-        }
+        if (community.members.filter(member => member.member_id === user._id).length > 0) { return 'joined'; }
     }
 
     return (

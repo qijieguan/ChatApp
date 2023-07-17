@@ -93,9 +93,9 @@
     word-wrap: break-word;
     min-height: 15vh; 
     color: rgb(80, 80, 80);
-    background: rgb(240, 240, 240);
-    box-shadow: 0 0 3px grey;
-    border-radius: 0.5rem;
+    background: white;
+    box-shadow: 0 1px 3px grey;
+    border-radius: 0.25rem;
 }
 
 .text-made-by { 
@@ -116,7 +116,6 @@
 .text-input > input { 
     height: 100%; 
     width: 75%; 
-    font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 500;
     text-indent: 1.5vw;
     color: rgb(0, 0, 0); 
@@ -164,8 +163,8 @@
 @media (max-width: 25rem) {
     .message-container { width: 99%; }
     .recipient { margin: 1vh 0; }
-    .private-message { margin: 3.5vh auto; width: 97.5%; margin: 3vh 0 7.5vh 1.25%; }
+    .private-message { width: 97.5%; margin: 3vh 0 7.5vh 1.25%; }
     .text-format { width: 100%; }
     .texter { height: 6vh; width: 6vh; }
-    .text-content { padding: 1.5vh 1vw 3vh 2vw; } 
+    .text-content { margin-right: 0.5vw; padding: 1.5vh 1vw 3vh 2vw; } 
 }

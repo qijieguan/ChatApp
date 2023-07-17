@@ -59,6 +59,7 @@
     background: royalblue; 
     border-radius: 3rem;
 }
+.sign-in-btn:hover { opacity: 0.7; }
 
 .register-link { 
     margin-top: 2vh;

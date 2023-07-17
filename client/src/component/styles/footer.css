@@ -1,11 +1,10 @@
 .footer {
     position: relative;
     min-height: 30vh; 
-    padding: 5vh 5vw;
+    padding: 2.5vh 5vw;
     flex-wrap: wrap; 
-    justify-content: center;
     column-gap: 15vw;
-    row-gap: 5vh;
+    row-gap: 2.5vh;
     width: 100%; 
     background: royalblue;
     color: white;  
@@ -14,9 +13,9 @@
 }
 
 .hour, .contact { margin-bottom: auto; }
-.hour > h1, .contact > h1 { font-size: clamp(0.875rem, 1.5vw, 1.5rem); font-weight: 500; }
+.hour > h1, .contact > h1 { font-size: clamp(0.825rem, 1.5vw, 1.5rem); font-weight: 500; }
 
-.hour > li, .contact > ul > li { font-size: clamp(0.875rem, 1vw, 1rem); }
+.hour > li, .contact > ul > li { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .contact > ul { padding: 0; margin: 0; }
 li { list-style: none; }

@@ -42,7 +42,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png");
     background-size: cover;
     background-position: center; 
-    color: rgb(233, 233, 233); 
+    color: rgb(245, 245, 245); 
 }
 .header-banner-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-banner-text * { 
@@ -50,7 +50,7 @@
     letter-spacing: 0.125rem;
     text-transform: uppercase;
 }
-.header-banner-text span { color: rgb(150, 176, 255); }
+.header-banner-text span { font-weight: 500; color: white; }
 
 @media (max-width: 60rem) {
     .header-banner { display: none; }

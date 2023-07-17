@@ -18,14 +18,14 @@
 }
 
 .post-header { padding: 0 2.5vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
-.poster-image { object-fit: cover; height: 9vh; width: 9vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1.125vw, 1.125rem); color: rgb(107, 107, 107); }
+.poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
+.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(107, 107, 107); }
 
 .primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
 .primary-image { margin: 3vh auto 0 auto; object-fit: cover; max-height: 50vh; width: 100%; }
 
 .delete-wrapper { 
-    margin: 2vh 1vw 0 1vw; 
+    margin: 2vh 1vw 1vh 1vw; 
     padding: 1vh 2vw;
     column-gap: 1vw; 
     align-self: flex-end; 
@@ -33,11 +33,11 @@
     border: 2px solid transparent; 
     border-radius: 2rem;
 }
-.delete-wrapper:hover { color: red; border-color: red; }
+.delete-wrapper:hover { border-color: red; }
+.delete-wrapper:hover * { color: red; }
 .delete-wrapper:hover .delete-message { opacity: 1; }
 .delete-message { font-size: clamp(0.75rem, 1vw, 1rem); white-space: nowrap; opacity: 0; transition: 0.1s all ease-in; }
-.trash-button { font-size: 1.25rem; }
-.trash-button:hover { opacity: 0.7; }
+.trash-button { font-size: clamp(1.375rem, 1.625vw, 1.625rem); color: rgb(180, 180, 180); transition: 0.1s all ease-in; }
 
 .post-footer {
     padding: 2.5vh 3vw;
@@ -51,27 +51,17 @@
     border-right: 0;
 }
 
-.action {
-    column-gap: 0.75vw;
-    color: rgb(102, 102, 102);
-}
+.action { column-gap: 0.75vw; color: rgb(102, 102, 102); }
 
 .action:hover { opacity: 0.7; }
 
 .action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.post-like.active {
-    color: royalblue;
-}
+.post-like.active { color: royalblue; }
 
-.post-like.active > .like-count {
-    color: rgb(231, 231, 231);    
-    background: royalblue;
-}
+.post-like.active > .like-count { color: rgb(231, 231, 231); background: royalblue; }
 
-.post-icon {
-    font-size: clamp(1rem, 1.25vw, 1.25rem);
-}
+.post-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
 
 .like-count, .comment-count {
     justify-content: center;
@@ -84,12 +74,13 @@
 }
 
 @media (max-width: 60rem) {
+    .poster-image { height: 6vh; width: 6vh; }
     .action { column-gap: 1vw; }
 }
 
 @media (max-width: 25rem) {
     .post { padding: 1.5vh 0 0 0; }
-    .poster-image { height: 6.5vh; width: 6.5vh;  }
+    .poster-image { height: 5.5vh; width: 5.5vh;  }
     .post-header { column-gap: 2vw; }
     .delete-wrapper { margin: 0.5vh 1vw; padding: 0.5vh 2vw; }
     .action > span { display: none; }

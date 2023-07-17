@@ -58,7 +58,7 @@
 .join-button {
     height: 20%;
     width: 95%;
-    font-size: clamp(0.625rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.625rem, 1vw, 1rem);
     color: grey;
     background: transparent;
     border: 1px solid rgb(156, 156, 156);
@@ -78,8 +78,9 @@
 
 .join-button.joined {
     content: 'Joined';
-    color: royalblue;
-    border: 2px solid royalblue;
+    color: green;
+    width: fit-content;
+    border: 1px solid;
     pointer-events: none;
 }
 

@@ -34,21 +34,18 @@ const Menu = () => {
             axios.post(baseURL +'/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
-        
-        window.addEventListener('resize', (e) => { handleResize(); });
-
-        handleResize();
-
     }, [dispatch, baseURL, location]);
+
+    window.addEventListener('resize', (e) => { handleResize(); });
 
     const handleResize = () => {
         let menu = document.querySelector('.menu');
         let menubar = document.querySelector('.menu-bar');
         if (menu?.offsetWidth <= 960) {
             menu.style.height = menubar?.offsetHeight + 'px';
-            setTimeout(() => {window.scroll({top: 0, behavior: 'smooth'});});
+            setTimeout(() => {window.scroll({top: 0});});
         }
-        else { setTimeout(() => {menu?.scroll({top: 0, behavior: 'smooth'});}); }
+        else { setTimeout(() => {menu?.scroll({top: 0});}); }
 
         setShowMenu(false);
         setShowSearch(false);
@@ -76,13 +73,13 @@ const Menu = () => {
                 { ShowMenu && <SideNav param={'menu'}/> }
 
                 <div className='menu-label'>
-                    {window.location.href.includes('Post') &&
+                    {window.location.href.includes('Dashboard/Post') &&
                         <div className='menu-label-wrapper flex'>
                             <AiFillHome className="menu-li-icon"/>
                             <span>Home</span>
                         </div>
                     }
-                    {window.location.href.includes('Chat') &&
+                    {window.location.href.includes('Dashboard/Chat') &&
                         <div className='menu-label-wrapper flex'>
                             <BsFillChatDotsFill className="menu-li-icon"/>
                             <span>Chat</span>
@@ -106,7 +103,7 @@ const Menu = () => {
                             <span>Profile</span>
                         </div>
                     }
-                    {window.location.href.includes('Community') &&
+                    {window.location.href.includes('Dashboard/Community') &&
                         <div className='menu-label-wrapper flex'>
                             <IoIosPeople className="menu-li-icon community-icon"/>
                             <span>Community</span>

@@ -9,12 +9,14 @@ const Header = () => {
     const location = useLocation();
 
     useEffect(() => { 
-        document.querySelector('.App')?.scrollIntoView({top: 0, behavior: 'smooth'});
+        document.querySelector('.App')?.scrollIntoView({top: 0});
     }, [location]);
 
     const handleScroll = () => {
-        if (window.location.href.includes("About")) { window.location.href = '/' }
-        document.getElementsByClassName('home-body-1')[0]?.scrollIntoView({behavior: 'smooth'})
+        if (window.location.href.includes("About") || window.location.href.includes("Register") ) {
+            window.location.href = '/' 
+        }
+        document.getElementsByClassName('home-body-1')[0]?.scrollIntoView();
     }
 
     return (

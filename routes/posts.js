@@ -3,13 +3,13 @@ let Post = require('../models/post.model');
 
 const mongoose = require("mongoose");
 
-router.route('/').get((req, res) => {
+router.route('/user-post').get((req, res) => {
     Post.find()
     .then(result => { res.json(result); })
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/count').post((req, res) => {
+router.route('/user-post/count').post((req, res) => {
     const poster_id = req.body.poster_id;
 
     Post.find({poster_id: poster_id})
@@ -17,7 +17,7 @@ router.route('/count').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/user-post/add').post((req, res) => {
     const poster_id = req.body.poster_id;
     const poster_image = req.body.poster_image;
     const poster_name = req.body.poster_name;
@@ -46,7 +46,7 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));  
 });
 
-router.route('/delete').post((req, res) => {
+router.route('/user-post/delete').post((req, res) => {
     const poster_id = req.body.poster_id;
     const post_id = req.body.post_id;
 
@@ -55,7 +55,20 @@ router.route('/delete').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));  
 });
 
-router.route('/post-comment').post((req, res) => {
+router.route('/user-post/update-likes').post((req, res) => {
+    const poster_id = req.body.poster_id;
+    const post_id = req.body.post_id;
+    const likes = req.body.likes;
+
+    Post.updateOne(
+        {'poster_id': poster_id, 'post_collection._id': post_id},
+        {$set: {'post_collection.$.likes': likes}},
+    )
+    .then(result => { res.json(result) })
+    .catch(err => res.status(400).json("Error " + err));  
+});
+
+router.route('/user-post/post-comment').post((req, res) => {
     const poster_id = req.body.poster_id;
     const post_id = req.body.post_id;
     const comment = req.body.comment;
@@ -64,23 +77,9 @@ router.route('/post-comment').post((req, res) => {
         {'poster_id': poster_id, 'post_collection._id': post_id},
         {$push: {'post_collection.$.comments': comment}}
     )
-    .then(result => { res.json(result) })
+    .then(result => { res.json("Comment posted successfully!") })
     .catch(err => res.status(400).json("Error " + err));  
 });
-
-router.route('/update-likes').post((req, res) => {
-    const poster_id = req.body.poster_id;
-    const post_id = req.body.post_id;
-    const likes = req.body.likes;
-
-    Post.updateOne(
-        {'poster_id': poster_id, 'post_collection._id': post_id},
-        {$set: {'post_collection.$.likes': likes}}
-    )
-    .then(result => { res.json(result) })
-    .catch(err => res.status(400).json("Error " + err));  
-});
-
 
 
 module.exports = router;

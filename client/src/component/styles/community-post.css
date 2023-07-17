@@ -1,0 +1,74 @@
+.community-page-post-wrapper { width: 90%; }
+
+.community-page-post {
+    position: relative;
+    padding-bottom: 3vh;
+    align-items: flex-start;
+    flex-direction: column;
+    row-gap: 2vh;
+    width: 100%;
+    box-shadow: 0 1px 3px gray;
+    background: white;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.community-page-post-header { padding: 2vh 2vw 0 2vw; gap: 1vw; }
+
+.community-page-post-header > img { height: 7vh; width: 7vh; border-radius: 4rem; object-fit: cover; }
+
+.community-page-post-header > span {
+    font-weight: 500;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    color: rgb(131, 131, 131);
+}
+
+.community-page-post > span {
+    align-self: center;
+    padding: 0 1vw;
+    font-size: clamp(0.75rem, 1vw, 1rem);
+    width: 90%;
+}
+
+.community-page-post > img { margin: 0 auto; max-height: 70vh; max-width: 90%; object-fit: cover; }
+
+.community-page-footer {
+    padding-top: 3vh;
+    justify-content: space-around;
+    width: 100%;
+    border-top: 1px solid rgb(223, 223, 223);
+}
+
+.community-page-footer > div { column-gap: 0.5vw; }
+
+.community-page-likes.active * { color: royalblue; }
+.community-page-likes.active > .like-count { color: rgb(231, 231, 231); background: royalblue; }
+
+.community-page-footer > div > span {
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    color: grey;
+}
+
+.community-page-icon { 
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    color: grey; 
+}
+
+.community-page-empty { min-height: 50vh; column-gap: 1vw; color: rgb(160, 160, 160); }
+
+.community-page-empty > span { font-size: clamp(1.5rem, 2vw, 2rem);}
+
+.community-page-empty > .cat-icon { font-size: clamp(2.75rem, 2.5vw, 3.5rem); }
+
+@media (max-width: 50rem) {
+    .community-page-post-wrapper { width: 97.5%; }
+    .community-page-post > span { padding: 0 0.25vw; }
+    .community-page-footer > div { column-gap: 1vw; }
+}
+
+@media (max-width: 25rem) {
+    .community-page-post-header { gap: 2vw; }
+    .community-page-post-header > img { height: 7.5vh; width: 7.5vh; }
+    .community-page-footer { justify-content: space-between; padding: 3vh 10vw 0 10vw; }
+    .community-page-footer > div > span { display: none; }
+}

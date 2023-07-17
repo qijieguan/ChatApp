@@ -11,6 +11,8 @@ import axios from 'axios';
 import { setCommunities } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 
+import CommunityPost from './CommunityPost.js';
+
 const CommunityPage = () => {
     
     const [community, setCommunity] = useState(null);
@@ -24,8 +26,14 @@ const CommunityPage = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(() => {
-        if (location.state) {
+        if (location.state) { 
             getCommunityData();
+            
+            if (location.state.postID) {
+                setTimeout(() => {
+                    document.getElementById(location.state.postID)?.scrollIntoView({block: 'start'});
+                }, 250);
+            }
         }
         setShow(false);
     }, [location]);
@@ -67,9 +75,7 @@ const CommunityPage = () => {
     }
 
     const checkIsJoined = (community) => {
-        if (community.members.filter(member => member.member_id === user._id).length > 0) {   
-            return 'joined';
-        }
+        if (community.members.filter(member => member.member_id === user._id).length > 0) { return 'joined'; }
     }
 
     const calcHeight = (e) => {
@@ -96,33 +102,32 @@ const CommunityPage = () => {
                         </Link>
                     </div>
                     <div className='community-page-banner-down flex'>
-                            <div className='community-page-label'>
-                                <img src={community.profile_url} className="community-page-profile" alt=""/>
-                                <div className='community-page-info flex'>
-                                    <span className='community-page-name'>R/ {community.name}</span>
-                                    <span className='community-page-members'>members: {community.members.length}</span>
-                                </div>
+                        <div className='community-page-label'>
+                            <img src={community.profile_url} className="community-page-profile" alt=""/>
+                            <div className='community-page-info flex'>
+                                <span className='community-page-name'>R/ {community.name}</span>
+                                <span className='community-page-members'>members: {community.members.length}</span>
                             </div>
-                            <div className='community-page-buttons flex'>
-                                <button className={
-                                    "community-page-join " 
-                                    + checkIsJoined(community)
-                                }
-                                    onClick={() => {join_leave_community(community._id)}}
-                                />
-                                <div className='community-page-info-button flex' onClick={() => {setShow(!show)}}>
-                                    <AiOutlinePlusCircle className='circle-icon'/>
-                                    <span>see community info</span>
-                                </div>
+                        </div>
+                        <div className='community-page-buttons flex'>
+                            <button className={
+                                "community-page-join " 
+                                + checkIsJoined(community)
+                            }
+                                onClick={() => {join_leave_community(community._id)}}
+                            />
+                            <div className='community-page-info-button flex' onClick={() => {setShow(!show)}}>
+                                <AiOutlinePlusCircle className='circle-icon'/>
+                                <span>see community info</span>
                             </div>
-                        
+                        </div>
                     </div>
                 </div>
 
                 <div className='community-page-description flex'
                     style={{
                         padding: show && '2vh 1vw 2vh 2vw', 
-                        border: show && '1px solid rgb(180, 180, 180)', 
+                        border: show && '1px solid rgb(200, 200, 200)', 
                         borderTop: show && '0'
                     }}
                     onClick={() => {setShow(!show)}}
@@ -130,17 +135,17 @@ const CommunityPage = () => {
                     {show && community.description }
                 </div>
 
+                <CommunityPost/>
+
                 <div className='community-page-posts flex'>
                     {community.posts.length > 0 ? 
                         community.posts.map(post => 
-                            <div className='community-page-post flex' key={uuid()}>
-                                <div className='community-page-post-header flex'>
-                                    <img src={post.poster_image} alt=""/>
-                                    <span>{post.poster_name}</span>
-                                </div>
-                                    <span>{post.primary_text}</span>
-                                    <img src={post.primary_image} alt=""/>   
-                            </div>    
+                            <CommunityPost 
+                                communityID={community._id}
+                                communityName={community.name}
+                                communityProfile={community.profile_url}
+                                post={post} 
+                            key={uuid()}/>
                         )
                         :
                         <div className='community-page-empty flex'>

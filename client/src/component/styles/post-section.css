@@ -2,8 +2,6 @@
     padding-top: 2.5vh;
     flex-direction: column;
     row-gap: 2vh;
-    height: 100%;
-    width: 100%;
 }
 
 .post-form { 

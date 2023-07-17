@@ -5,15 +5,29 @@
             "profile_url": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "banner_url": "https://images.pexels.com/photos/7788315/pexels-photo-7788315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "background_url": "https://p0.pxfuel.com/preview/865/288/849/wings-chicken-fried-sauce.jpg",
-            "description": "A community for sharing wing delicacy and cultures. Share your best wing experiences and places across the world!",
+            "description": "A community for sharing wing delicacies and cultures. Share your best wing experiences and spots across the world!",
             "members": [],
             "posts": [
                 {
                     "poster_id": "",
                     "poster_name": "Wings For Sharing",
                     "poster_image": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    "primary_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for the first timers.",
-                    "primary_image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/9148Shops_stores_in_the_Philippines_09.jpg"
+                    "primary_text": "Bonchon is one of the most highly rated chicken wing restaurants in California. Great for eating korean-style chicken wings for first timers.",
+                    "primary_image": "https://williamsonsource.com/wp-content/uploads/2022/03/Untitled-design-59.png"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Wings For Sharing",
+                    "poster_image": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Wing Ferno is a destination that will satisfy your cravings -- from marinated wings to chicken tenders. The place offers sauce varieties and flavor options to find your best wing experience. You can find each location in Gardena, Orange County, and Long Beach in California.",
+                    "primary_image": "https://res.cloudinary.com/hungryram19/image/upload/v1647302153/kenny-hunyh/wingferno/bone-in-wingferno.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Wings For Sharing",
+                    "poster_image": "https://images.pexels.com/photos/16108119/pexels-photo-16108119/free-photo-of-korean-fried-chicken-wings-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "bb.q Chicken is a wing shop that specializes in fried chicken and korean wings. There are many flavored wing options and their Ddeok-Bokki dishes are also very flavorful.",
+                    "primary_image": "https://d1ralsognjng37.cloudfront.net/a3cdb68a-081f-440a-a022-ff9dbc831d05.jpeg"
                 }
             ]
         },
@@ -22,15 +36,29 @@
             "profile_url": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "banner_url": "https://images.pexels.com/photos/1571746/pexels-photo-1571746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
             "background_url": "https://images.pexels.com/photos/1440476/pexels-photo-1440476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            "description": "A place for sharing views and attractions of Japan. Share vivid perspectives of what living in Japan is like!",
+            "description": "A place for sharing views and attractions in Japan. Share vivid perspectives of what living in Japan is like!",
             "members": [],
             "posts": [
                 {
                     "poster_id": "",
                     "poster_name": "Japanese Lifestyles and Culture",
                     "poster_image": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Akihabara is a famous shopping district that comprises of electronics shops and stores dedicated to Japan Otaku culture. Recently, a huge Yodobashi electronics store was added next to the station.",
+                    "primary_image": "https://www.japan-guide.com/g18/3003_01.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Japanese Lifestyles and Culture",
+                    "poster_image": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     "primary_text": "Izu-ei is one of the best places for unagi dishes. The restaurant has been in business since the Edo-period and preserves 'Edo-mae' style unagi. Their 'Tare' sauce is simple so that you can enjoy the tastes of the eel.",
-                    "primary_image": "https://jw-webmagazine.com/wp-content/uploads/2019/10/izuei.jpg"
+                    "primary_image": "https://japanjourneys.jp/wp-content/uploads/2019/12/unagi-retouched-11-of-15-1024x681.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Japanese Lifestyles and Culture",
+                    "poster_image": "https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Menya Nukaji is among one of the most popular ramen hotspots in Tokyo. This hotspot specializes in gyokai tonkatsu broth made from simmering chicken, pork, and seafood. For ¥1,280, you will be getting a bowl with chashu pork, bamboo shoots, and a flavoured egg with green onions.",
+                    "primary_image": "https://media.timeout.com/images/105591139/image.jpg"
                 }
             ]
         },
@@ -46,8 +74,22 @@
                     "poster_id": "",
                     "poster_name": "Web Development",
                     "poster_image": "https://images.pexels.com/photos/461064/pexels-photo-461064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                    "primary_text": "MERN stack is very popular for web development. React makes it easy to build frontend interfaces and provides great reusability for codes and components.",
+                    "primary_text": "W3Schools is a free website for learning coding online. It offers different courses that simplify web development for beginners. W3Schools also offers free HTML templates to demostrate coding materials.",
+                    "primary_image": "https://www.techworm.net/wp-content/uploads/2022/11/downloadw3schoolscover.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Web Development",
+                    "poster_image": "https://images.pexels.com/photos/461064/pexels-photo-461064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "MERN is very popular stack for web development. Mostly, React makes it easy to build frontend interfaces and provides great reusability for codes and components.",
                     "primary_image": "https://miro.medium.com/v2/resize:fit:678/1*l2tlJsFNg2tH6QizegKkqA.png"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Web Development",
+                    "poster_image": "https://images.pexels.com/photos/461064/pexels-photo-461064.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Stackoverflow is a question-and-answer website for computer programming topics. It is a hub for programmers providing solutions for intermediate and advanced-level programming topics.",
+                    "primary_image": "https://mms.businesswire.com/media/20210623005665/en/887084/23/logo-stackoverflow-2.jpg"
                 }
             ]
         },
@@ -63,9 +105,31 @@
                     "poster_id": "",
                     "poster_name": "Retro Gaming",
                     "poster_image": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "PCSX2 is a free and open-source Playstation 2 emulator for Windows, Linux and macOS. It supports a wide range of PS2 video games with high compatibility and functionality.",
+                    "primary_image": "https://emutori.com/wp-content/uploads/2021/08/PCSX2-emulator-PS2-for-PC.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Retro Gaming",
+                    "poster_image": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "Retrotink 5x Pro is an advanced video scaler for retro consoles. It offers crucial features such as adaptive deinterlacing which creates sharp images from game content on a modern Tv.",
+                    "primary_image": "https://hackinformer.com/wp-content/uploads/2021/05/6F07FF46-CCCD-483F-A712-9B9498B24368.jpeg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Retro Gaming",
+                    "poster_image": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+                    "primary_text": "HD Retrovision is a premium YPbPr Component Cable for the PS2 and PS3. It is the recommended cable that many PS2 owners use to connect their gaming system to a modern TV.",
+                    "primary_image": "https://m.media-amazon.com/images/I/81dDOqHBSCL.jpg"
+                },
+                {
+                    "poster_id": "",
+                    "poster_name": "Retro Gaming",
+                    "poster_image": "https://images.pexels.com/photos/4219882/pexels-photo-4219882.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
                     "primary_text": "Modern game graphics have greatly improved since the Ps2 era. Ps2 games were great for its large library of games and archaic feel of the 2000s.",
                     "primary_image": "https://preview.redd.it/best-graphics-v0-y4su8dms0yea1.jpg?auto=webp&s=9c7c29836ff0a66351407f850ea629ec8bec2fd8"
                 }
+                
             ]
         }
     ]
