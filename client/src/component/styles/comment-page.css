@@ -6,11 +6,11 @@
 }
 
 .comment-nav {
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
     position: sticky;
-    left: 0;
-    padding: 2vh 2vw;
-    width: 100%;
+    left: 5%;
+    padding: 1.5vh 2vw;
+    width: 95%;
     background: rgb(160, 160, 160);
     box-shadow: 0 2px 3px rgb(180, 180, 180);
 }

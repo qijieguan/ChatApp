@@ -69,28 +69,30 @@ const SideNav = (param, setShow) => {
 
     return (
         <div className={'side-nav ' + param.param}>
-            <div className='side-nav-header flex'>
-                <img className='side-nav-profile' src={user.profile_url} alt=""/>
-                <div className='side-nav-name'>{user.firstname} {user.lastname}</div>
+            <div className={'side-nav-main ' + param.param}>
+                <div className='side-nav-header flex'>
+                    <img className='side-nav-profile' src={user.profile_url} alt=""/>
+                    <div className='side-nav-name'>{user.firstname} {user.lastname}</div>
+                </div>
+                <div className={'side-nav-body flex ' + param.param}>
+                    <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
+                        <AiFillHome className='home-icon'/>
+                    <span>Home</span> 
+                    </Link>
+
+                    <Link to="/Dashboard/Community" className='community-nav side-nav-link flex'>
+                        <IoIosPeople className='people-icon'/>
+                        <span>Community</span> 
+                    </Link>
+
+                    <Link to="/" onClick={logout} className='logout-nav side-nav-link flex'>
+                        <span>Log out</span>
+                        <BiLogIn className='logout-icon' onClick={logout}/>
+                    </Link>
+                </div>
             </div>
-            <div className='side-nav-body flex'>
-                <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
-                    <AiFillHome className='home-icon'/>
-                   <span>Home</span> 
-                </Link>
 
-                <Link to="/Dashboard/Community" className='community-nav side-nav-link flex'>
-                    <IoIosPeople className='people-icon'/>
-                    <span>Community</span> 
-                </Link>
-
-                <Link to="/" onClick={logout} className='logout-nav side-nav-link flex'>
-                    <span>Log out</span>
-                    <BiLogIn className='logout-icon' onClick={logout}/>
-                </Link>
-            </div>
-
-            <div className='side-nav-communities'>
+            <div className={'side-nav-communities ' + param.param}>
                 <div className='side-nav-communities-label flex' onClick={toggleCommunityTab}>
                     <span>My Communities</span>
                     <IoIosArrowBack className='arrow-back-icon'/>

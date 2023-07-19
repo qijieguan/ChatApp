@@ -64,6 +64,7 @@ const ChatPage = () => {
 
     return (
         <div className='chat-page grid'>
+            <MessageBox renderChatLog={renderChatLog}/>     
             <div className="conversation-log focus">
                 <div className='conversation-label flex'>Conversations</div>
                 <div className='conversation-set flex'>
@@ -76,7 +77,6 @@ const ChatPage = () => {
                     }
                 </div>
             </div>
-            <MessageBox renderChatLog={renderChatLog}/>     
         </div>
                     
     );

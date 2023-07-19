@@ -8,6 +8,7 @@
     color: rgb(68, 68, 68);
     background: white;
     box-shadow: 0 1px 3px gray;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 
@@ -47,7 +48,7 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message > h1 { margin-top: 10vh; text-align: center; font-weight: 500; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+.private-message > h1 { margin-top: 25%; text-align: center; font-weight: 500; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
 
 .end-message {
     grid-template-columns: 35% auto 35%;

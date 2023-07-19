@@ -1,5 +1,5 @@
 .post-section {
-    padding-top: 2.5vh;
+    padding-top: 3vh;
     flex-direction: column;
     row-gap: 2vh;
 }
@@ -9,8 +9,9 @@
     align-items: flex-start; 
     flex-direction: column; 
     width: 90%;
-    box-shadow: 0 1px 3px gray;
     background: white;
+    box-shadow: 0 0 3px gray;
+    border-radius: 0.5rem;
 }
 .post-form > h1 { margin: 1vh 0 3vh 0; font-weight: 500; font-size: clamp(0.875rem, 2vw, 1.25rem); color: royalblue; }
 
@@ -64,4 +65,8 @@
     .post-input > input { margin-bottom: 2vh; width: 100%; }
     .post-image { margin-left: 0; }
     .submit { padding: 1vh 5vw; }  
+}
+
+@media (max-width: 25rem) {
+    .post-form { border-radius: 0; }
 }
