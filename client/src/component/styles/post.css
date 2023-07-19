@@ -57,9 +57,9 @@
 
 .action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.post-like.active { color: royalblue; }
+.post-like.active { color: navy; }
 
-.post-like.active > .like-count { color: rgb(231, 231, 231); background: royalblue; }
+.post-like.active > .like-count { color: rgb(231, 231, 231); background: navy; }
 
 .post-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
 

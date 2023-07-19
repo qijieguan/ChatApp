@@ -9,7 +9,7 @@ router.route('/user-post').get((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
-router.route('/user-post/count').post((req, res) => {
+router.route('/count').post((req, res) => {
     const poster_id = req.body.poster_id;
 
     Post.find({poster_id: poster_id})

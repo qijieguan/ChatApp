@@ -13,11 +13,11 @@
     box-shadow: 0 0 3px gray;
     border-radius: 0.5rem;
 }
-.post-form > h1 { margin: 1vh 0 3vh 0; font-weight: 500; font-size: clamp(0.875rem, 2vw, 1.25rem); color: royalblue; }
+.post-form > h1 { margin: 1vh 0 3vh 0; font-weight: 500; font-size: clamp(0.875rem, 2vw, 1.25rem); color: navy; }
 
 .post-input { flex-wrap: wrap; padding-bottom: 3vh; column-gap: 1vw; width: 100%; }
-.post-input > input { width: 70%; color: royalblue;  border-bottom: 1px solid; }
-.post-input > input::placeholder { color: royalblue; }
+.post-input > input { width: 70%; color: navy;  border-bottom: 1px solid; }
+.post-input > input::placeholder { color: navy; }
 
 .post-image {
     margin-left: 3vh;
@@ -36,13 +36,13 @@
     margin: 0 0 0 auto;
     padding: 1vh 1vw;  
     column-gap: 0.5vw;
-    color: royalblue;
+    color: navy;
     background: white;
     border: 1px solid;
     border-radius: 3rem; 
 }
 .submit > span { font-size: clamp(0.75rem, 1vw, 1rem); }
-.submit:hover { color: white; background: royalblue; }
+.submit:hover { color: white; background: navy; }
 
 .post-image:hover { opacity: 0.7; }
 

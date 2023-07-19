@@ -11,6 +11,7 @@
 }
 
 .home-intro {
+    text-align: center;
     margin: 12.5% 15% 0 auto;
     height: 75vh;
     width: 30%;
@@ -20,7 +21,7 @@
     margin: 0;
     font-size: clamp(1rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: royalblue;
+    color: navy;
 }
 
 .home-intro > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); font-weight: 500; color: grey; }
@@ -42,16 +43,18 @@
     border: none;
 }
 
-.home-text { align-items: flex-start; flex-direction: column; max-width: 50%; }
+.home-text { flex-direction: column; max-width: 50%; }
 
 .text-label {
+    margin: 0 auto 2vh auto;
+    text-align: center;
     font-size: clamp(1.125rem, 2.5vw, 2.5rem);
     font-weight: 700;
-    color: royalblue;
+    color: navy;
 }
 
 
-.home-text > div { padding: 0 2vw; width: 55%; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
+.home-text > div { text-align: center; padding: 0 0.5vw 0 2vw; width: 80%; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
 .home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
 
 .feature-wrapper { justify-content: center; color: gray; }
@@ -72,7 +75,7 @@
     padding: 2vh 2vw;
     text-align: center;
     font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    color: royalblue;
+    color: navy;
     border: 1px solid;
     border-radius: 0.25rem;
 }
@@ -84,11 +87,11 @@
 }
 
 @media (max-width: 50rem) {
-    .home-intro { margin: 3vh auto 2.5vh auto; width: 90%; text-align: center; height: fit-content;}
+    .home-intro { margin: 3vh auto 2.5vh auto; width: 90%; height: fit-content;}
     .home-login { inset: 2.5% auto auto 0; position: relative; margin: 2.5vh auto 5vh auto; width: 75%; height: fit-content; }
     .home-background { width: 100%; background-position: center; }
     .home-body { padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; }
-    .home-text { max-width: 100%; }
+    .home-text {  max-width: 100%; align-items: flex-start; }
     .home-image { max-height: 50vh; max-width: 100%; }
     .home-text > div { width: 95%; }
     .home-text-1 > div { width: 95%; }

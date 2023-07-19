@@ -9,7 +9,7 @@
     font-size: clamp(0.875rem, 1.5vw, 1.5rem); 
     font-weight: 700;
     letter-spacing: 1px;
-    color: royalblue;
+    color: navy;
     width: 100%; 
 }
 
@@ -23,8 +23,8 @@
     transition: all 0.4s ease-in;
 }
 .login-username.highlight, .login-username:has(.login-username-input:focus), .login-password.highlight, .login-password:has(.login-password-input:focus) {
-    border-bottom: 2px solid royalblue;
-    color: royalblue;
+    border-bottom: 2px solid navy;
+    color: navy;
 }
 
 .username-placeholder, .password-placeholder {
@@ -43,7 +43,7 @@
 
 .login-username-input:focus + .username-placeholder, .login-password-input:focus + .password-placeholder {
     transform: translateY(-100%);
-    color: royalblue;
+    color: navy;
 }
 
 
@@ -56,7 +56,7 @@
     font-size: clamp(0.75rem, 1vw, 1rem); 
     width: 80%; 
     color: white;
-    background: royalblue; 
+    background: navy; 
     border-radius: 3rem;
 }
 .sign-in-btn:hover { opacity: 0.7; }
@@ -69,7 +69,7 @@
 }
 
 .register-link > span { font-size: clamp(0.75rem, 1vw, 1rem);  }
-.register-link > span:last-child { color: royalblue; }
+.register-link > span:last-child { color: navy; }
 
 .register-link:hover { text-decoration: underline; text-underline-position: below; }
 
@@ -85,7 +85,7 @@
     font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
-    color: royalblue; 
+    color: navy; 
     background: transparent;
     border: 1px solid; 
     border-radius: 0.125rem

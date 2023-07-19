@@ -6,13 +6,13 @@
     padding-bottom: 2rem;
     width: 95%;
     color: rgb(68, 68, 68);
-    background: white;
+    background: rgb(251, 251, 255);
     box-shadow: 0 1px 3px gray;
     border-radius: 0.5rem;
     overflow: hidden;
 }
 
-.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: royalblue; }
+.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: navy; }
 .private-message-header > div { padding: 1vh 0; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
@@ -117,8 +117,8 @@
 .text-input > input { 
     height: 100%; 
     width: 75%; 
-    font-weight: 500;
-    text-indent: 1.5vw;
+    font-weight: 700;
+    text-indent: 0.5vw;
     color: rgb(0, 0, 0); 
 }
 .camera-wrapper { position: relative; margin-left: auto; justify-content: flex-end; pointer-events: none; width: 10%; }

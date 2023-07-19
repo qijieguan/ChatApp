@@ -24,7 +24,7 @@
     border-top: 1px solid rgb(214, 214, 214);
 }
 
-.register-msg { color: 'royalblue' }
+.register-msg { color: 'navy' }
 .image-input { margin: 0 auto; flex-direction: column; row-gap: 4vh; width: 75%; }
 .preview-register-image { height: 30vh; width: 30vh; object-fit: cover; object-position: center; border-radius: 0.5rem; }
 .register-image-input { 
@@ -33,7 +33,7 @@
 .register-image-button {
     padding: 2vh 2vw;
     font-size: clamp(0.75rem, 1vw, 1rem);
-    color: royalblue;
+    color: navy;
     background: transparent;
     border: 2px solid;
     border-radius: 2rem;

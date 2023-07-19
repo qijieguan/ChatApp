@@ -1,5 +1,5 @@
 .side-nav { 
-    margin: 3vh 0 0 auto;
+    margin: 3vh 0 0 0;
     position: relative; 
     height: fit-content; 
     width: 97.5%; 
@@ -28,7 +28,7 @@
     row-gap: 1vh; 
     min-height: 12.5vh; 
     width: 100%; 
-    background: royalblue; 
+    background: navy; 
 }
 
 .side-nav-profile {
@@ -70,7 +70,7 @@
 
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
 
-.side-nav-link:not(.logout-nav).highlight { font-weight: 700; color: rgb(77, 77, 77); background: rgb(218, 218, 218); }
+.side-nav-link:not(.logout-nav).highlight { font-weight: 700; color: navy; background: rgb(240, 240, 240); }
 
 .home-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); }
 .people-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
@@ -96,7 +96,7 @@
     padding: 2vh 2vw; 
     margin-bottom: 2vh;
     font-weight: 500;
-    background: rgb(245, 245, 245); 
+    color: navy;
     box-shadow: 0 1px 2px rgb(177, 177, 177);
 }
 .side-nav-communities-label > span { font-size: clamp(0.75rem, 1vw, 1rem); }

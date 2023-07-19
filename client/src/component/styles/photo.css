@@ -1,4 +1,4 @@
-.photo-wrapper { position: relative; display: block; width: fit-content; color: royalblue; }
+.photo-wrapper { position: relative; display: block; width: fit-content; color: navy; }
 .photo-wrapper > img { 
     position: relative;
     object-fit: cover; 
@@ -19,10 +19,13 @@
     padding: 2vh 0;
     width: 100%; 
     font-size: clamp(0.75rem, 1.125vw, 1.125rem);
-    color: rgb(139, 139, 139); 
+    color: white; 
     background: rgb(240, 240, 240); 
-    border: 1px solid rgb(240, 240, 240); 
+    box-shadow: 0 0 1px;
     border-radius: 2rem;
 }
 .set-button:hover { opacity: 0.7; }
+
+.set-button.profile { background: green; }
+.set-button.background { background: navy; }
 
