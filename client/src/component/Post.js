@@ -53,7 +53,7 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                 poster_id: poster_id, 
                 poster_name: poster_name,
                 poster_profile: poster_profile, 
-                post: post,
+                post_id: post._id,
                 route: 'posts/user-post'
             }},
             {replace: true}

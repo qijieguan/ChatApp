@@ -53,6 +53,16 @@ router.route('/leave').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));
 });
 
+router.route('/community-post/get-data').post((req, res) => {
+    const post_id = req.body.post_id;
+    Community.find(
+        {'posts._id': post_id}, 
+        {'posts.$': 1}
+    )
+    .then(result => {res.json(result[0].posts[0]);})
+    .catch(err => res.status(400).json("Error " + err));
+});
+
 router.route('/community-post/update-likes').post((req, res) => {
     const community_id = req.body.community_id;
     const post_id = req.body.post_id;

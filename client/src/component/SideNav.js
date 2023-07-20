@@ -15,7 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCommunities } from './actions/index.js';
 
-const SideNav = (param, setShow) => {
+const SideNav = (param) => {
     //const communities = Data.communities;
     //<button onClick={init}>init button</button>
 

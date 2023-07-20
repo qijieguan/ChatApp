@@ -28,7 +28,7 @@ const CommentPage = () => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(() => {  
-        if (location.state && location.state.post) { 
+        if (location.state && location.state.post_id) { 
             setAllStates(); 
         } 
     },[location]);
@@ -46,9 +46,9 @@ const CommentPage = () => {
 
     const highlightLikes = (likesArr) => {
         let match = likesArr.filter(id => id === user._id);
-        let post_id = location.state.post._id;
+        let post_id = location.state.post_id;
 
-        if (match.length > 0) {
+        if (match.length > 0 && post_id) {
             document.getElementById(post_id)?.querySelector('.post-footer>.post-like')?.classList.add('active');
         }
         else {
@@ -60,12 +60,21 @@ const CommentPage = () => {
         setPosterID(location.state.poster_id);
         setName(location.state.poster_name);
         setProfile(location.state.poster_profile);
-        setPost(location.state.post);
-        setPostID(location.state.post._id);
-        setLikes(location.state.post.likes);
-        setCommentArr(location.state.post.comments);
+        setPostID(location.state.post_id);
 
-        setTimeout(() => { highlightLikes(location.state.post.likes); });
+        getPostData();
+    }
+
+    const getPostData = async () => {
+        await axios.post(baseURL + '/' + location.state.route + '/get-data/', {
+            post_id: location.state.post_id,
+        })
+        .then((response) => {
+            setPost(response.data);
+            setCommentArr(response.data.comments);
+            setLikes(response.data.likes);
+            setTimeout(() => { highlightLikes(response.data.likes); });
+        });
     }
 
     const handleChange = (event) => { setCommentInp(event.target.value); }
@@ -111,7 +120,7 @@ const CommentPage = () => {
         if (match.length > 0) { result = likes.filter(id => id !== user._id); }
         else { result = [...likes, user._id]; }
 
-        let updatedPost = location.state.post;
+        let updatedPost = post;
         updatedPost.likes = result;
         
         setLikes(result);
@@ -123,17 +132,6 @@ const CommentPage = () => {
             post_id: postID,
             likes: result
         });
-        
-        navigate({} , 
-        {state:{
-            community_id: location.state.community_id,
-            community_name: location.state.community_name,
-            poster_id: location.state.poster_id,
-            poster_name: location.state.poster_name, 
-            poster_profile: location.state.poster_profile, 
-            post: location.state.post,
-            route: location.state.route
-        }});
     }
 
     return (

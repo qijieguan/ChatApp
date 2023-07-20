@@ -2,7 +2,7 @@
 .message-container { 
     flex-direction: column;
     align-items: center;
-    margin: 2.5vh auto 0 auto;
+    margin: 3vh auto 0 auto;
     padding-bottom: 2rem;
     width: 95%;
     color: rgb(68, 68, 68);
@@ -41,6 +41,7 @@
     margin: 3vh 0 7.5vh 5%;
     height: 65vh; 
     width: 90%; 
+    background: rgb(251, 251, 255);
     scroll-behavior: smooth; 
     overflow-y: auto; 
 }

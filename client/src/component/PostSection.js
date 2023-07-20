@@ -1,5 +1,5 @@
 import './styles/post-section.css';
-import { AiOutlineSend } from 'react-icons/ai';
+import { AiOutlineSend, AiOutlineCamera } from 'react-icons/ai';
 
 import { useState, useEffect } from 'react';
 import PostCollection from './PostCollection.js';
@@ -117,7 +117,11 @@ const PostSection = () => {
                         value={textInp}
                         onChange={handleChange}
                     />
-                    <button className='post-image' onClick={handleUpload}>Image</button>
+                </div>
+                {imageInp &&
+                    <img className='post-image-input-preview' src={imageInp} alt=""/>
+                }
+                <div className='post-image-wrapper flex'>
                     <input
                         type='file'
                         name="post-image-input"
@@ -125,9 +129,7 @@ const PostSection = () => {
                         accept='images/*'
                         onChange={handleChange}
                     />
-                    {imageInp &&
-                        <img className='post-image-input-preview' src={imageInp} alt=""/>
-                    }
+                    <AiOutlineCamera className='post-image-icon' onClick={handleUpload}/>
                 </div>
                 <button type='submit' className='submit flex'>
                     <AiOutlineSend/>

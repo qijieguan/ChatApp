@@ -55,6 +55,17 @@ router.route('/user-post/delete').post((req, res) => {
     .catch(err => res.status(400).json("Error " + err));  
 });
 
+router.route('/user-post/get-data').post((req, res) => {
+    const post_id = req.body.post_id;
+
+    Post.find(
+        {'post_collection._id': post_id},
+        {'post_collection.$': 1}
+    )
+    .then(result => { res.json(result[0].post_collection[0]); })
+    .catch(err => res.status(400).json("Error " + err));  
+});
+
 router.route('/user-post/update-likes').post((req, res) => {
     const poster_id = req.body.poster_id;
     const post_id = req.body.post_id;

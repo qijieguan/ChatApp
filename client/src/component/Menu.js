@@ -6,6 +6,7 @@ import { BsFilePersonFill, BsFillChatDotsFill } from 'react-icons/bs';
 import { MdArrowDropDown } from 'react-icons/md';
 import { IoIosPeople } from 'react-icons/io';
 import { RiMenu2Fill } from 'react-icons/ri';
+import { BiCommentMinus } from 'react-icons/bi';
 
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -34,9 +35,19 @@ const Menu = () => {
             axios.post(baseURL +'/friends/', { user_id: JSON.parse(sessionStorage.getItem('user'))._id, })
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
+
+        clearDropDowns();
+        document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start'});
+
     }, [dispatch, baseURL, location]);
 
     window.addEventListener('resize', (e) => { handleResize(); });
+
+    const clearDropDowns = () => {
+        setShowMenu(false);
+        setShowSearch(false);
+        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
+    }
 
     const handleResize = () => {
         let menu = document.querySelector('.menu');
@@ -47,9 +58,7 @@ const Menu = () => {
         }
         else { setTimeout(() => {menu?.scroll({top: 0});}); }
 
-        setShowMenu(false);
-        setShowSearch(false);
-        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
+        clearDropDowns();
     }
 
     const handleClick = (event) => {
@@ -60,13 +69,20 @@ const Menu = () => {
     const handleOpenSearch = () => {
         document.querySelector('.menu-li-wrapper')?.classList.toggle('show');
         setShowSearch(!showSearch);
-        setShowMenu(false);
+        closeMenu();
+    }
+
+    const closeMenu = () => { setShowMenu(false); }
+
+    const closeSearch = () => { 
+        setShowSearch(false); 
+        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
     }
 
     return (
         <div className='menu'>
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-                <div className='menu-side-nav flex' onClick={() => {setShowMenu(!ShowMenu)}}>
+                <div className='menu-side-nav flex' onClick={() => {setShowMenu(!ShowMenu); closeSearch();}}>
                     <RiMenu2Fill className='menu-icon'/>
                 </div>
 
@@ -109,6 +125,12 @@ const Menu = () => {
                             <span>Community</span>
                         </div>
                     }
+                    {window.location.href.includes('/Comment') &&
+                        <div className='menu-label-wrapper flex'>
+                            <BiCommentMinus className='menu-li-icon'/>
+                            <span>Comment</span>
+                        </div>
+                    }
                 </div>
 
                 <div className='menu-li-search flex' onClick={handleOpenSearch}>
@@ -131,7 +153,7 @@ const Menu = () => {
 
                 </div>
 
-                <Link to="/Dashboard/Chat" onClick={() => {setShowSearch(false)}}>
+                <Link to="/Dashboard/Chat">
                     <div className="message-icon flex">
                         <BsFillChatDotsFill color='rgb(100, 100, 100)'/>
                     </div>

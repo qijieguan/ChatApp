@@ -1,13 +1,13 @@
 .chat-page { min-height: 75vh; width: 100%; grid-template-columns: 60% 37.5%; justify-content: space-evenly; }
 
 .conversation-log {
-    margin: 2.5vh 0 0 auto;
+    margin: 3vh 0 0 auto;
     padding-bottom: 10vh;
     width: 97.5%;
     height: fit-content;
     min-height: 75vh;
     color: gainsboro;
-    background: white;
+    background: rgb(251, 251, 255);
     box-shadow: 0 1px 3px gray;
     border-radius: 0.5rem;
     overflow: scroll;

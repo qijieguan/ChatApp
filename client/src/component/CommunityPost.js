@@ -59,7 +59,7 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
                 poster_id: communityID,
                 poster_name: communityName, 
                 poster_profile: communityProfile, 
-                post: post,
+                post_id: post._id,
                 route: 'communities/community-post'
             }},
             {replace: true}

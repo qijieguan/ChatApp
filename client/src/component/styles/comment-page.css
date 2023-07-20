@@ -56,7 +56,6 @@
 .comment-input-wrapper {
     margin: 2.5vh 0 10vh 0;
     padding: 2vh 2vw 3vh 2vw;
-    flex-wrap: wrap;
     gap: 1vh;
     width: 90%;
     box-shadow: 0 1px 2px grey;
@@ -69,7 +68,6 @@
     font-size: clamp(0.75rem, 1vw, 1rem);
     text-transform: uppercase;
     color: gray;
-    width: 100%;
 }
 
 .comment-input-wrapper > img {
@@ -93,7 +91,7 @@
     border-bottom: 2px solid gray;
 }
 
-.comment-input > input::placeholder { color: gray; font-size: clamp(0.625rem, 1vw, 1rem); }
+.comment-input > input::placeholder { color: gray; font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .comment-camera { padding: 0 2vw; height: 6.5vh; border-bottom: 2px solid gray; }
 
@@ -125,7 +123,7 @@
     padding: 4vh 1.5vw 4vh 2.5vw;
     gap: 1vw;
     min-height: 7.5vh;
-    width: 100%;
+    width: 97.5%;
     box-shadow: 0 0 2px rgb(180, 180, 180);
     background: white;
     overflow: hidden;
@@ -163,20 +161,22 @@
     .comment-nav { margin-top: 0; left: 0; width: 100%; }
 }
 
-@media (max-width: 50rem) { .comment { padding: 2.5vh 1.5vw 2.5vh 2.5vw; flex-direction: column; align-items: flex-start; } }
+@media (max-width: 50rem) { 
+    .comment-input-wrapper { flex-wrap: wrap; }
+    .comment { padding: 2.5vh 1.5vw 2.5vh 2.5vw; flex-direction: column; align-items: flex-start; } 
+}
 
 @media (max-width: 25rem) {
     .primary-post { width: 100%; box-shadow: none; }
     .primary-user { column-gap: 3vw; }
     .comment-hr { display: none; }
     .comment-collection { width: 100%; }
-    .comment { padding: 1vh 0.25vw 1vh 3vw; width: 97.5%; }
+    .comment { padding: 1vh 0.25vw 1vh 3vw; border-radius: 0; width: 100%; }
     .comment-input-wrapper { margin: 2.5vh 0 5vh 0; width: 100%; border-radius: 0; box-shadow: none; border-bottom: 0; }
     .comment-input-wrapper > img { height: 6vh; width: 6vh; }
-    .comment-input { flex-direction: column; width: 100%; }
+    .comment-input { align-items: flex-end; flex-direction: column; width: 97.5%; }
+    .comment-input > input { width: 100%; }
     .comment-name { margin-left: 3vw; }
-    .comment-input > input { text-indent: 5vw; width: 100%; border-radius: 1rem; border: 1px solid gray; }
-    .comment-input-icons { align-self: flex-end; }
     .comment-input, .comment-camera, .comment-send { height: 5vh; border: 0; border-radius: 0; }
     .comment-camera, .comment-send, .comment-send-wrapper { background: transparent; }
     .comment-send-icon { color: gray; }
