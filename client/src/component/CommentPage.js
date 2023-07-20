@@ -33,17 +33,6 @@ const CommentPage = () => {
         } 
     },[location]);
 
-    window.addEventListener('resize', () => { handleResize(); });
-
-    const handleResize = () => {
-        let app = document?.querySelector('.App');
-        let menu = document?.querySelector('.menu');
-        let comment_nav = document?.querySelector('.comment-nav');
-        
-        if (app.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu.offsetHeight + 'px'; }
-        if (app.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
-    }
-
     const highlightLikes = (likesArr) => {
         let match = likesArr.filter(id => id === user._id);
         let post_id = location.state.post_id;
@@ -135,7 +124,7 @@ const CommentPage = () => {
     }
 
     return (
-        <div className='comment-page flex' onLoad={handleResize}>
+        <div className='comment-page flex'>
             <div className='comment-nav flex'>
                 <div to="/Dashboard/Post" className='comment-nav-link flex' onClick={() => {handleNav(postID)}}>
                     <AiOutlineArrowLeft className='comment-nav-icon'/>

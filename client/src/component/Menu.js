@@ -37,11 +37,14 @@ const Menu = () => {
         }
 
         clearDropDowns();
-        document.getElementsByClassName('menu-bar')[0]?.scrollIntoView({block: 'start'});
+        setTimeout(() => { handleResize(); }, 250);
 
     }, [dispatch, baseURL, location]);
 
-    window.addEventListener('resize', (e) => { handleResize(); });
+    window.addEventListener('load', () => {
+        setTimeout(() => { document.querySelector('.menu')?.scrollIntoView({block: 'start'}); }, 125);
+    });
+    window.addEventListener('resize', (e) => { setTimeout( () => {handleResize();}, 125) });
 
     const clearDropDowns = () => {
         setShowMenu(false);
@@ -51,12 +54,14 @@ const Menu = () => {
 
     const handleResize = () => {
         let menu = document.querySelector('.menu');
-        let menubar = document.querySelector('.menu-bar');
+        let menu_bar = document.querySelector('.menu-bar');
         if (menu?.offsetWidth <= 960) {
-            menu.style.height = menubar?.offsetHeight + 'px';
-            setTimeout(() => {window.scroll({top: 0});});
+            menu.style.height = menu_bar?.offsetHeight + 'px';
         }
-        else { setTimeout(() => {menu?.scroll({top: 0});}); }
+
+        let comment_nav = document?.querySelector('.comment-nav');
+        if (menu_bar.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
+        if (menu_bar.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
 
         clearDropDowns();
     }
@@ -80,7 +85,7 @@ const Menu = () => {
     }
 
     return (
-        <div className='menu'>
+        <div className='menu' >
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
                 <div className='menu-side-nav flex' onClick={() => {setShowMenu(!ShowMenu); closeSearch();}}>
                     <RiMenu2Fill className='menu-icon'/>
@@ -89,37 +94,37 @@ const Menu = () => {
                 { ShowMenu && <SideNav param={'menu'}/> }
 
                 <div className='menu-label'>
-                    {window.location.href.includes('Dashboard/Post') &&
+                    {window.location.href.includes('Dashboard/Post/') &&
                         <div className='menu-label-wrapper flex'>
                             <AiFillHome className="menu-li-icon"/>
                             <span>Home</span>
                         </div>
                     }
-                    {window.location.href.includes('Dashboard/Chat') &&
+                    {window.location.href.includes('/Dashboard/Chat/') &&
                         <div className='menu-label-wrapper flex'>
                             <BsFillChatDotsFill className="menu-li-icon"/>
                             <span>Chat</span>
                         </div>
                     }
-                    {window.location.href.includes('Friend') &&
+                    {window.location.href.includes('/Friend') &&
                         <div className='menu-label-wrapper flex'>
                             <FaUserFriends className="menu-li-icon"/>
                             <span>Friends</span>
                         </div>
                     }
-                    {window.location.href.includes('Search') &&
+                    {window.location.href.includes('/Search') &&
                         <div className='menu-label-wrapper flex'>
                             <BsSearch className="menu-li-icon"/>
                             <span>Discover</span>
                         </div>
                     }
-                    {window.location.href.includes('Profile') &&
+                    {window.location.href.includes('/Profile') &&
                         <div className='menu-label-wrapper flex'>
                             <BsFilePersonFill className="menu-li-icon"/>
                             <span>Profile</span>
                         </div>
                     }
-                    {window.location.href.includes('Dashboard/Community') &&
+                    {window.location.href.includes('/Dashboard/Community/') &&
                         <div className='menu-label-wrapper flex'>
                             <IoIosPeople className="menu-li-icon community-icon"/>
                             <span>Community</span>
@@ -165,7 +170,7 @@ const Menu = () => {
                     <MdArrowDropDown size={30} color="rgb(107, 107, 107)" className='dropdown-icon' style={{marginLeft: '0.25vw'}}/>
                     <div className='menu-links flex'>
                         <Link to='/Profile' className='menu-link flex'>
-                            <div>PROFILE</div>
+                            <div>Profile</div>
                             <BsFilePersonFill className='person-icon'/>
                         </Link>
                     </div>

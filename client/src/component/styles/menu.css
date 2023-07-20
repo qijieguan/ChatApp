@@ -84,8 +84,8 @@
     column-gap: 1vw;
 }
 .menu-dropdown img {
-    height: 7vh; 
-    width: 7vh; 
+    height: 6.5vh; 
+    width: 6.5vh; 
     object-fit: cover;
     border-radius: 4rem;
 }
@@ -102,7 +102,7 @@
     inset: auto 0 0 auto;
     width: 100%;
     border: 1px solid rgb(209, 209, 209);
-    background: rgb(240, 240, 255);
+    background: white;
     transform: translateY(100%);
     z-index: 3;
 }
@@ -149,7 +149,7 @@
 
 @media (max-width: 40rem) {
     .menu-bar { row-gap: 0.5vh; }
-    .menu-links { inset: auto 0 0 auto; width: 100%; border-radius: 0.5rem; }
+    .menu-links { inset: auto 0 0 auto; width: 100%; border-radius: 0.25rem; }
     .person-icon { margin: 0 1vw; }
 }
 

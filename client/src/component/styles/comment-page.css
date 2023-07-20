@@ -29,7 +29,7 @@
     min-height: 30vh;
     width: 95%;
     row-gap: 1vh;
-    background: white;
+    background: rgb(239, 239, 255);
     box-shadow: 1px 1px 2px gray;
 }
 
@@ -58,9 +58,10 @@
     padding: 2vh 2vw 3vh 2vw;
     gap: 1vh;
     width: 90%;
-    box-shadow: 0 1px 2px grey;
+    background: rgb(239, 239, 255);
+    border-bottom: 1px solid rgb(199, 199, 199);
+    box-shadow: 0 1px 2px rgb(223, 223, 223);
     border-radius: 0.5rem;
-    background: white;
 }
 
 .comment-label {
@@ -117,17 +118,18 @@
 
 .comment-send-icon { font-size: clamp(1.25rem, 1.5vw, 1.5rem); color: white; }
 
-.comment-collection { flex-direction: column; row-gap: 1vh; width: 95%; }
+.comment-collection { flex-direction: column; row-gap: 0.25vh; width: 95%; }
 
 .comment {
     padding: 4vh 1.5vw 4vh 2.5vw;
     gap: 1vw;
     min-height: 7.5vh;
     width: 97.5%;
-    box-shadow: 0 0 2px rgb(180, 180, 180);
     background: white;
-    overflow: hidden;
+    border-bottom: 1px solid rgb(199, 199, 199);
+    box-shadow: 0 1px 2px rgb(223, 223, 223);
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 .comment-profile > img {
@@ -162,7 +164,8 @@
 }
 
 @media (max-width: 50rem) { 
-    .comment-input-wrapper { flex-wrap: wrap; }
+    .comment-input-wrapper { flex-wrap: wrap; margin: 2.5vh 0 5vh 0; }
+    .comment-input-wrapper > img { height: 6vh; width: 6vh; }
     .comment { padding: 2.5vh 1.5vw 2.5vh 2.5vw; flex-direction: column; align-items: flex-start; } 
 }
 
@@ -172,9 +175,8 @@
     .comment-hr { display: none; }
     .comment-collection { width: 100%; }
     .comment { padding: 1vh 0.25vw 1vh 3vw; border-radius: 0; width: 100%; }
-    .comment-input-wrapper { margin: 2.5vh 0 5vh 0; width: 100%; border-radius: 0; box-shadow: none; border-bottom: 0; }
-    .comment-input-wrapper > img { height: 6vh; width: 6vh; }
-    .comment-input { align-items: flex-end; flex-direction: column; width: 97.5%; }
+    .comment-input-wrapper {  padding: 1vh 1.5vw 2.5vh 1.5vw; margin: 2.5vh 0 5vh 0; width: 97.5%; border-radius: 1rem; }
+    .comment-input { align-items: flex-end; flex-direction: column; width: 99%; }
     .comment-input > input { width: 100%; }
     .comment-name { margin-left: 3vw; }
     .comment-input, .comment-camera, .comment-send { height: 5vh; border: 0; border-radius: 0; }

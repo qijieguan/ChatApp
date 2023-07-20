@@ -20,14 +20,6 @@ const PostSection = () => {
     const user = JSON.parse(sessionStorage.getItem('user'));
 
     const location = useLocation();
-    
-    window.addEventListener('load', (e) => {
-        e.preventDefault();
-        setTimeout(() => {
-            sessionStorage.removeItem('load_post');
-            document.querySelector('.menu')?.scrollIntoView({block: 'start'});
-        }, 250)
-    });
 
     useEffect(() => {
         getPosts();
@@ -36,11 +28,9 @@ const PostSection = () => {
             setTimeout(() => {
                 let post = document.getElementById(location.state.postID);
                 let position = post?.getBoundingClientRect();
-                
-                if (post && position) {
-                    window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
-                }
-            }, 250);
+
+                window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
+            }, 125);
         }
 
     }, [render, location]);

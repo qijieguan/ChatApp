@@ -90,7 +90,7 @@
 
 .text-content { 
     padding: 1.5vh 1vw 3vh 1vw; 
-    font-size: clamp(0.625rem, 1vw, 1rem); 
+    font-size: clamp(0.75rem, 1vw, 1rem); 
     font-weight: 500; 
     word-wrap: break-word;
     min-height: 15vh; 
