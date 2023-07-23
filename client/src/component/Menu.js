@@ -27,7 +27,7 @@ const Menu = () => {
 
     const dispatch = useDispatch();
 
-    const [ShowMenu, setShowMenu] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
 
     useEffect(() => {
@@ -48,7 +48,7 @@ const Menu = () => {
 
     const clearDropDowns = () => {
         closeMenu();
-        setShowSearch(false);
+        closeSearch();
     }
 
     const handleResize = () => {
@@ -80,7 +80,7 @@ const Menu = () => {
         let overlay = document.querySelector('.dashboard-overlay');
         overlay?.classList.toggle('active');
 
-        if (!ShowMenu) { 
+        if (!showMenu) { 
             menu_side_wrapper?.classList.add('expand'); 
             setShowMenu(true); 
         }

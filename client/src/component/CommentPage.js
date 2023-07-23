@@ -30,6 +30,7 @@ const CommentPage = () => {
     useEffect(() => {  
         if (location.state && location.state.post_id) { 
             setAllStates(); 
+            console.log(location.state.community_name)
         } 
     },[location]);
 
@@ -97,7 +98,11 @@ const CommentPage = () => {
         }
         else {
             navigate("/Dashboard/Community/" + location.state.community_name, 
-                {state: {communityID: location.state.community_id, postID: post._id}}, 
+                {state: {
+                    communityID: location.state.community_id, 
+                    communityName: location.state.community_name, 
+                    postID: post._id
+                }}, 
             {replace: true});
         }
     }
@@ -128,7 +133,13 @@ const CommentPage = () => {
             <div className='comment-nav flex'>
                 <div to="/Dashboard/Post" className='comment-nav-link flex' onClick={() => {handleNav(postID)}}>
                     <AiOutlineArrowLeft className='comment-nav-icon'/>
-                    <span className='comment-nav-text'>Close comment view</span>
+                    <div className='comment-nav-text'>
+                        {location.state && location.state.community_name ?
+                            <span>R/ {location.state.community_name}</span>
+                            :
+                            <span>Go Back</span>
+                        }
+                    </div>
                 </div>
             </div>
             

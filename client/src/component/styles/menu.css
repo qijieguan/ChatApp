@@ -133,6 +133,7 @@
 }
 
 @media (max-width: 25rem) {
+    .menu-icon { margin-left: 0; }
     .menu-side-wrapper.expand { width: 80vw !important; }
     .menu-label-wrapper { display: none; }
     .menu-li-search { margin-left: 0; }

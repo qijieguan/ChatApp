@@ -1,8 +1,4 @@
-.post-section {
-    padding-top: 3vh;
-    flex-direction: column;
-    row-gap: 2vh;
-}
+.post-section { margin: 3vh 0 5vh 0; flex-direction: column; row-gap: 2vh; }
 
 .post-form { 
     padding: 1vh 2.5vw;
@@ -24,7 +20,7 @@
     padding: 0.5vh 1vw;  
     background: rgb(237, 237, 255);
     font-size: clamp(0.625rem, 0.875vw, 0.875rem); 
-    box-shadow: 0 0 2px gray; 
+    border: 1px solid navy;
     border-radius: 3rem;
     pointer-events: none;
 }
@@ -36,7 +32,7 @@
 .submit { 
     justify-content: center;
     padding: 1vh 1vw;  
-    column-gap: 0.5vw;
+    column-gap: 0.25vw;
     color: navy;
     background: transparent;
     border: 1px solid;
@@ -45,9 +41,10 @@
 .submit > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 .submit:hover { color: white; background: navy; }
 
-.post-collection { flex-direction: column; row-gap: 2vh; width: 90%; background: white; }
+.post-collection { flex-direction: column; row-gap: 2vh; width: 90%; }
 
 @media (max-width: 60rem) {
+    .post-section { margin: 2vh 0 5vh 0; }
     .post-form { width: 97.5%; }
     .post-form > h1 { margin: 1vh 0; }
     .post-input { padding-bottom: 0.5vh; }

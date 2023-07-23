@@ -28,19 +28,18 @@ const CommunityPage = () => {
     useEffect(() => {
         if (location.state) { 
             getCommunityData();
-            
+
             if (location.state.postID) {
-                setTimeout(() => {
-                    document.getElementById(location.state.postID)?.scrollIntoView({block: 'start'});
-                }, 250);
+                setTimeout(() => { document.getElementById(location.state.postID)?.scrollIntoView({block: 'start'}); }, 250);
             }
         }
         setShow(false);
     }, [location]);
 
     const getCommunityData = async () => {
-        await axios.post(baseURL + '/communities/view/', {
+        await axios.post(baseURL + '/communities/view/', { 
             community_id : location.state.communityID,
+            community_name: location.state.communityName
         })
         .then((response) => { setCommunity(response.data); });
     }
@@ -70,9 +69,7 @@ const CommunityPage = () => {
         getCommunityData();
         
         await axios.post(baseURL + '/communities/get/', { member_id : user._id,})
-        .then((response) => { 
-            dispatch((setCommunities(response.data))); 
-        });
+        .then((response) => { dispatch((setCommunities(response.data))); });
     }
 
     const checkIsJoined = (community) => {

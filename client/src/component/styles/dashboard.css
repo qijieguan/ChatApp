@@ -1,11 +1,11 @@
 .dashboard { 
     position: relative;
-    padding-bottom: 10vh;
+    padding: 0 0 10vh 0;
     grid-template-columns: 20% 75%;
     justify-content: center;
     column-gap: 1vw;
-    min-height: 100vh; 
-    background: rgb(198, 198, 255);
+    min-height: 75vh; 
+    background: rgb(243, 243, 243);
 }
 
 .dashboard-overlay {
@@ -18,9 +18,7 @@
     opacity: 0.7;
     z-index: 3;
 }
-.dashboard-overlay.active {
-    display: block;
-}
+.dashboard-overlay.active { display: block; }
 
 @media (max-width: 70rem) {
     .dashboard { grid-template-columns: 22.5% 75%; }

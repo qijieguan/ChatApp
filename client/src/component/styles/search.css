@@ -1,8 +1,4 @@
-.search {
-    padding: 2.5vh 0;
-    min-height: 120vh;
-    width: 100%;
-}
+.search { margin: 0 0 10vh 0; min-height: 120vh; width: 100%; }
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ;row-gap: 2vh; }
 .search-wrapper-label {
@@ -94,7 +90,6 @@
 
 
 @media (max-width: 50rem) {
-    .search { padding: 2.5vh 0; }
     .search-wrapper { grid-template-columns: 30% 30% 30%; }
     .search-wrapper-label { grid-column: 1 / 4; }
 }

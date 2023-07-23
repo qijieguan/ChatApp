@@ -1,15 +1,15 @@
-.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 60% 37.5%; justify-content: space-evenly; }
+.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 55% 37.5%; justify-content: space-evenly; }
 
 .conversation-log {
     margin: 3vh 0 0 auto;
-    padding-bottom: 10vh;
+    padding-bottom: 5vh;
     width: 97.5%;
     height: fit-content;
     min-height: 75vh;
     color: gainsboro;
     background: rgb(251, 251, 255);
     box-shadow: 0 1px 3px gray;
-    border-radius: 0.5rem;
+    border-radius: 0.75rem;
     overflow: scroll;
 }
 
@@ -69,7 +69,7 @@
 
 @media (max-width: 50rem) {
     .chat-page { grid-template-columns: 100%; width: 100%; }
-    .conversation-log { margin: 2vh auto 4vh auto; height: 30vh; width: 97.5%; }
+    .conversation-log { margin: 2vh auto; height: 30vh; width: 97.5%; }
     .conversation-log:not(.focus) { display: none; }
 }
 

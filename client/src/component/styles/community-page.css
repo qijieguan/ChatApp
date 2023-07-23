@@ -23,28 +23,18 @@
 .community-page-banner {
     position: relative;
     width: 95%;
-    box-shadow: 0 1px 3px rgb(184, 184, 184);
     background: white;
+    box-shadow: 0 1px 3px rgb(184, 184, 184);
     overflow: hidden;
     z-index: 2;
 }
 
 .community-page-banner-top { position: relative; min-height: 17.5vh; width: 100%; }
-
-.community-page-banner-top > img {
-    position: absolute;
-    inset: 0 auto auto 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
+.community-page-banner-top > img { position: absolute; inset: 0 auto auto 0; height: 100%; width: 100%; object-fit: cover; }
 
 .community-page-exit { position: absolute; inset: 7.5% auto auto 2.5%; z-index: 1; }
-
 .community-page-exit > .back-btn { font-size: clamp(1.25rem, 2vw, 2rem); color: white; }
-
 .community-page-exit > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); color: white; }
-
 .community-page-exit:hover { opacity: 0.7; }
 
 .community-page-banner-down {
@@ -102,9 +92,7 @@
 }
 
 .community-page-join::after { content: 'Join' }
-
 .community-page-join.joined { background: limegreen; }
-
 .community-page-join.joined::after { content: 'Joined'; }
 
 .community-page-info-button {
@@ -116,7 +104,6 @@
 .circle-icon { font-size: clamp(1.25rem, 1.5vw, 1.5rem); }
 
 .community-page-info-button > span { font-size: clamp(0.625rem, 1vw, 1rem); }
-
 .community-page-info-button:hover { border-color: grey; } 
 
 .community-page-join:hover { opacity: 0.7; }

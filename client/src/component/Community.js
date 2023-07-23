@@ -27,7 +27,9 @@ const Community = () => {
     }
 
     const handleClick = (community) => {
-        navigate('/Dashboard/Community/' + community.name, {state: {communityID: community._id}}, {replace: true});
+        navigate('/Dashboard/Community/' + community.name, {
+            state: {communityID: community._id, communityName: community.name}
+        }, {replace: true});
     }
 
     const joinCommunity = async (communityID) => {

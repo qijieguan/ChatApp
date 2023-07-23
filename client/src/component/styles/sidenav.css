@@ -5,6 +5,7 @@
     position: absolute;
     inset: 0 auto auto 0;
     margin: 0;
+    min-height: 80vh;
     width: 100%;
     background: navy;
     box-shadow: 0 5px 3px navy;
@@ -12,7 +13,7 @@
 .side-nav.menu * { color: white; }
 
 .side-nav-main.default {
-    margin: 3vh auto 0 auto;
+    margin: 3vh auto;
     width: 99%;
     box-shadow: 0 0 2px gray; 
     border-radius: 0.75rem;
@@ -85,7 +86,7 @@
 .side-community { row-gap: 1vh; column-gap: 1vw; width: 100%; }
 .side-community:hover > .side-community-detail { opacity: 0.7; }
 
-.side-community-profile { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 1px; }
+.side-community-profile { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 2px; }
 
 .side-community-detail { align-items: flex-start; flex-direction: column; max-width: 72.5%; }
 
