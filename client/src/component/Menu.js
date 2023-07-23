@@ -47,21 +47,19 @@ const Menu = () => {
     window.addEventListener('resize', (e) => { setTimeout( () => {handleResize();}, 125) });
 
     const clearDropDowns = () => {
-        setShowMenu(false);
+        closeMenu();
         setShowSearch(false);
-        document.querySelector('.menu-li-wrapper')?.classList.remove('show');
     }
 
     const handleResize = () => {
         let menu = document.querySelector('.menu');
         let menu_bar = document.querySelector('.menu-bar');
-        if (menu?.offsetWidth <= 960) {
-            menu.style.height = menu_bar?.offsetHeight + 'px';
-        }
+       
+        if (menu?.offsetWidth <= 960) { menu.style.height = menu_bar?.offsetHeight + 'px'; }
 
         let comment_nav = document?.querySelector('.comment-nav');
-        if (menu_bar.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
-        if (menu_bar.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
+        if (menu_bar?.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
+        if (menu_bar?.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
 
         clearDropDowns();
     }
@@ -71,13 +69,34 @@ const Menu = () => {
         event.currentTarget.classList.add('active');
     }
 
-    const handleOpenSearch = () => {
+    const handleToggleSearch = () => {
         document.querySelector('.menu-li-wrapper')?.classList.toggle('show');
         setShowSearch(!showSearch);
         closeMenu();
     }
 
-    const closeMenu = () => { setShowMenu(false); }
+    const handleToggleMenu = () => {
+        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
+        let overlay = document.querySelector('.dashboard-overlay');
+        overlay?.classList.toggle('active');
+
+        if (!ShowMenu) { 
+            menu_side_wrapper?.classList.add('expand'); 
+            setShowMenu(true); 
+        }
+        else { closeMenu(); }
+
+        closeSearch();
+    }
+
+    const closeMenu = () => { 
+        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
+        let overlay = document.querySelector('.dashboard-overlay');
+       
+        menu_side_wrapper?.classList.remove('expand');
+        overlay?.classList.remove('active');
+        setShowMenu(false); 
+    }
 
     const closeSearch = () => { 
         setShowSearch(false); 
@@ -85,22 +104,26 @@ const Menu = () => {
     }
 
     return (
-        <div className='menu' >
+        <div className='menu flex' >
+            
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-                <div className='menu-side-nav flex' onClick={() => {setShowMenu(!ShowMenu); closeSearch();}}>
+
+                <div className='menu-side-wrapper flex'>
+                    <SideNav param={'menu'}/> 
+                </div>
+
+                <div className='menu-side-nav flex' onClick={handleToggleMenu}>
                     <RiMenu2Fill className='menu-icon'/>
                 </div>
 
-                { ShowMenu && <SideNav param={'menu'}/> }
-
                 <div className='menu-label'>
-                    {window.location.href.includes('Dashboard/Post/') &&
+                    {window.location.href.includes('Dashboard/Post') &&
                         <div className='menu-label-wrapper flex'>
                             <AiFillHome className="menu-li-icon"/>
                             <span>Home</span>
                         </div>
                     }
-                    {window.location.href.includes('/Dashboard/Chat/') &&
+                    {window.location.href.includes('/Chat') &&
                         <div className='menu-label-wrapper flex'>
                             <BsFillChatDotsFill className="menu-li-icon"/>
                             <span>Chat</span>
@@ -124,7 +147,7 @@ const Menu = () => {
                             <span>Profile</span>
                         </div>
                     }
-                    {window.location.href.includes('/Dashboard/Community/') &&
+                    {window.location.href.includes('Dashboard/Community') && !window.location.href.includes('Post') &&
                         <div className='menu-label-wrapper flex'>
                             <IoIosPeople className="menu-li-icon community-icon"/>
                             <span>Community</span>
@@ -138,7 +161,7 @@ const Menu = () => {
                     }
                 </div>
 
-                <div className='menu-li-search flex' onClick={handleOpenSearch}>
+                <div className='menu-li-search flex' onClick={handleToggleSearch}>
                     <AiOutlineSearch color='rgb(100, 100, 100)'/>
                 </div>
 

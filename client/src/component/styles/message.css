@@ -49,20 +49,23 @@
     width: 0px;
     background: transparent; /* make scrollbar transparent */
 }
-.private-message > h1 { margin-top: 25%; text-align: center; font-weight: 500; font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray; }
+.private-message-empty { 
+    flex-direction: column;
+    margin-top: 25%;
+    row-gap: 1vh;
+    text-align: center; 
+    font-weight: 500; 
+    color: gray; 
+}
+.private-message-empty > span { font-size: clamp(1rem, 1.5vw, 1.5rem); }
+.private-message-empty > .cat-icon { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
 
 .end-message {
     grid-template-columns: 35% auto 35%;
     justify-content: space-between;
     width: 100%;
 }
-
-.end-message > hr {
-    height: 1px;
-    width: 100%;
-    background: rgb(212, 212, 212);
-    border: 0;
-}
+.end-message > hr { height: 1px; width: 100%; background: rgb(212, 212, 212); border: 0; }
 
 .end-message > span {
     text-align: center;
@@ -109,21 +112,10 @@
 }
 
 .text-input-wrapper { padding: 0 2vw; min-height: 5vh; width: 100%; }
-.text-input {
-    column-gap: 1vw;
-    height: 100%;  
-    width: 100%;
-    border-bottom: 1px solid rgb(170, 170, 170);
-}
-.text-input > input { 
-    height: 100%; 
-    width: 75%; 
-    font-weight: 700;
-    text-indent: 0.5vw;
-    color: rgb(0, 0, 0); 
-}
-.camera-wrapper { position: relative; margin-left: auto; justify-content: flex-end; pointer-events: none; width: 10%; }
+.text-input { column-gap: 1vw; height: 100%; width: 100%; border-bottom: 1px solid rgb(170, 170, 170); }
+.text-input > input { height: 100%; width: 75%; font-weight: 700; text-indent: 0.5vw; color: rgb(0, 0, 0); }
 
+.camera-wrapper { position: relative; margin-left: auto; justify-content: flex-end; pointer-events: none; width: 10%; }
 .camera-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 .camera-wrapper > img { 
     display: absolute;
@@ -145,14 +137,9 @@
     width: 10%;
 }
 
-.send-button:hover {
-    opacity: 0.7;
-}
+.send-button:hover { opacity: 0.7; }
 
-.send-button > .send-icon {
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem);  
-    color: rgb(68, 68, 68);
-}
+.send-button > .send-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 
 @media (max-width: 50rem) { 
     .message-container { display: none; margin: 2vh auto; width: 97.5%; }

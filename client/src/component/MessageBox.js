@@ -1,6 +1,6 @@
 import './styles/message.css';
 import { MdArrowBack } from 'react-icons/md';
-import { FaCamera } from 'react-icons/fa';
+import { FaCamera, FaCat } from 'react-icons/fa';
 import { AiOutlineSend } from 'react-icons/ai';
 
 import axios from 'axios';
@@ -118,7 +118,11 @@ const MessageBox = ({ renderChatLog }) => {
             <div className="private-message flex">
                 {textSet ?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
-                    :<h1>Select a conversation to view messages</h1>
+                    :
+                    <div className='private-message-empty flex'>
+                        <span>Select a conversation to view messages</span>
+                        <FaCat className='cat-icon'/>
+                    </div>
                 }
 
                 <div className='end-message grid flex'>

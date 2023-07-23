@@ -63,10 +63,6 @@ const SideNav = (param) => {
         .then((response) => { console.log(response.data) });
     }
 
-    const toggleCommunityTab = (e) => {
-        e.currentTarget?.classList.toggle('dropdown');
-    }
-
     return (
         <div className={'side-nav ' + param.param}>
             <div className={'side-nav-main ' + param.param}>
@@ -93,9 +89,8 @@ const SideNav = (param) => {
             </div>
 
             <div className={'side-nav-communities ' + param.param}>
-                <div className='side-nav-communities-label flex' onClick={toggleCommunityTab}>
+                <div className='side-nav-communities-label flex'>
                     <span>My Communities</span>
-                    <IoIosArrowBack className='arrow-back-icon'/>
                 </div>
                 <div className='community-collection flex'>
                     {communities.length > 0 ?

@@ -1,35 +1,25 @@
-.side-nav { 
-    margin: 3vh 0 0 0;
-    position: relative; 
-    height: fit-content; 
-    width: 97.5%; 
-    z-index: 2; 
-}
+.side-nav { position: relative; width: 97.5%; z-index: 2; overflow: hidden; }
 
 .side-nav.menu {
+    padding-top: 1vh;
     position: absolute;
-    inset: auto auto 0 0;
-    background: white;
-    transform: translateY(100%);
-    box-shadow: 0 5px 3px rgb(184, 184, 184);
-    border-radius: 0 0 1rem 1rem;
-    overflow: hidden;
+    inset: 0 auto auto 0;
+    margin: 0;
+    width: 100%;
+    background: navy;
+    box-shadow: 0 5px 3px navy;
 }
+.side-nav.menu * { color: white; }
 
 .side-nav-main.default {
+    margin: 3vh auto 0 auto;
+    width: 99%;
     box-shadow: 0 0 2px gray; 
     border-radius: 0.75rem;
     overflow: hidden;
 }
 
-.side-nav-header { 
-    padding: 1vh 1vw; 
-    column-gap: 0.5vw; 
-    row-gap: 1vh; 
-    min-height: 12.5vh; 
-    width: 100%; 
-    background: navy; 
-}
+.side-nav-header { padding: 1vh 1vw; column-gap: 0.5vw; row-gap: 1vh; min-height: 12.5vh; background: navy; }
 
 .side-nav-profile {
     margin: 0 0.25vw 0 0.5vw;
@@ -40,21 +30,12 @@
     border-radius: 3rem;
 }
 
-.side-nav-name {
-    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
-    text-align: center;
-    color: white;
-}
+.side-nav-name { font-size: clamp(0.75rem, 1.125vw, 1.125rem); text-align: center; color: white; }
 
-.side-nav-body {  
-    padding: 1.5vh 1vw;
-    flex-wrap: wrap;
-    row-gap: 0.5vh;
-    background: white;
-}
+.side-nav-body { padding: 1.5vh 1vw; flex-wrap: wrap; background: white; row-gap: 0.5vh; }
 
 .side-nav-link { 
-    padding: 1.5vh 1.5vw; 
+    padding: 1.5vh 1.5vw 1.5vh 25%; 
     column-gap: 0.5vw;
     width: 99%; 
     color: rgb(77, 77, 77); 
@@ -63,17 +44,11 @@
     border-radius: 0.25rem; 
     transition: all 0.2s ease-in; 
 }
-
-.side-nav-link > span {
-    font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
-}
-
+.side-nav-link > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); }
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
-
 .side-nav-link:not(.logout-nav).highlight { 
     font-weight: 700; 
-    color: navy; 
-    background: rgb(240, 240, 240); 
+    background: royalblue;
     box-shadow: 0 0 2px gray; 
 }
 
@@ -82,96 +57,56 @@
 .logout-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
 
 .logout-nav { column-gap: 0; color: red; }
-
 .logout-nav > span { font-weight: 500; }
 
-.side-nav-communities { 
-    background: white;
-    overflow: hidden;
-}
-
 .side-nav-communities.default { 
-    margin-top: 5vh;
+    margin: 6vh auto 0 auto;
+    width: 99%;
     box-shadow: 0 0 2px gray; 
-    border-radius: 0.75rem;     
+    border-radius: 0.75rem;  
+    overflow: hidden;   
 }
 
 .side-nav-communities-label { 
-    justify-content: center;
     margin: 0;
+    padding: 2vh 1vw 2vh 3vw; 
     column-gap: 1vw; 
-    padding: 2vh 2vw; 
-    margin-bottom: 2vh;
+    color: white;
+    background: navy;
     font-weight: 500;
-    color: navy;
-    box-shadow: 0 1px 2px rgb(177, 177, 177);
+    box-shadow: 0 0 2px rgb(177, 177, 177);
 }
 .side-nav-communities-label > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.arrow-back-icon {
-    display: none;
-    font-size: clamp(1.125rem, 1.25vw, 1.25rem);
-    color: rgb(172, 172, 172);
-    transition: 0.1s transform ease-in;
-}
-.side-nav-communities-label.dropdown > .arrow-back-icon { transform: rotate(-90Deg); }
-
-.side-nav-communities-label { pointer-events: none; }
-
-.side-nav-communities-label:not(.dropdown) + .community-collection {
-    padding: 1vh 2vw 3.5vh 2vw;
-    flex-wrap: wrap;
-    gap: 1vh;
-    width: 100%;
-}
-
-.community-collection { padding: 1vh 1vw; flex-wrap: wrap; row-gap: 1.5vh; background: white; }
-
+.community-collection { padding: 3vh 1vw 4vh 2vw; flex-direction: column; row-gap: 1.5vh; background: white; }
 .community-collection-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
+.community-collection-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
-.community-collection-empty > span {
-    font-size: clamp(1rem, 1.125vw, 1.125rem);
-}
-
-.side-community { gap: 1vh; width: 100%; }
-
+.side-community { row-gap: 1vh; column-gap: 1vw; width: 100%; }
 .side-community:hover > .side-community-detail { opacity: 0.7; }
 
-.side-community-profile { 
-    height: 7vh; 
-    width: 7vh; 
-    object-fit: cover; 
-    border-radius: 3rem; 
-    border: 1px solid rgb(177, 177, 177); 
-}
+.side-community-profile { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 1px; }
 
-.side-community-detail { flex-direction: column; width: 55%; }
+.side-community-detail { align-items: flex-start; flex-direction: column; max-width: 72.5%; }
 
-.side-community-name { text-align: center; font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: rgb(77, 77, 77); }
+.side-community-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: rgb(77, 77, 77); }
 .side-community-members { font-size: clamp(0.625rem, 0.875vw, 0.875rem); color: grey; }
 
-@media (max-width: 70rem) { .side-nav { margin: 2.5vh auto 0 auto; }}
+@media (max-width: 70rem) { .side-nav { margin: 0 auto; }}
 
 @media (max-width: 60rem) {
-    .side-nav { width: 100%; }
-    .side-nav:not(.menu) { box-shadow: none; border: 1px solid rgb(201, 201, 201); border-bottom: 0; }
     .side-nav.default { display: none; }
     .side-nav-header { min-height: fit-content; column-gap: 2vw; }
     .side-nav-profile { height: 6vh; width: 6vh; }
-    .side-nav-body { padding: 1.5vh 2vw; }
-    .side-nav-link { padding: 0.5vh 2vw; column-gap: 1.5vw; }
-    .side-community { justify-content: center; width: 45%; }
-    .side-nav-communities-label { pointer-events: unset; box-shadow: 0 0 3px; }
-    .side-nav-communities-label:not(.dropdown) + .community-collection { padding: 0 2vw; height: 0; }
-    .side-nav-communities-label.dropdown + .community-collection { padding: 3vh 2vw; }
-    .side-nav-communities-label:hover * { color: rgb(177, 177, 177); }
-    .arrow-back-icon { display: unset; }  
+    .side-nav-body { padding: 1.5vh 2vw; background: navy; }
+    .side-nav-link { padding: 1vh 2vw; column-gap: 1.5vw; }
+    .community-collection { background: navy; }
 }
 
 @media (max-width: 25rem) {
     .side-nav-profile { height: 7vh; width: 7vh; }
     .side-community { width: 100%; }
-    .side-community-profile { height: 7.5vh; width: 7.5vh; }
+    .side-community-profile { height: 6vh; width: 6vh; }
 }
 
 

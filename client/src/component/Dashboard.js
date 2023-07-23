@@ -45,6 +45,7 @@ const Dashboard = () => {
             <Menu/>
             <div className="dashboard grid">
                 <SideNav param={"default"}/>
+                <div className='dashboard-overlay'/>
                 <div>
                     {pathname === '/Dashboard/Post' &&
                         <PostSection/>
