@@ -1,14 +1,14 @@
-.about-section { padding: 0 0 10vh 0; grid-template-columns: 45% 45%; justify-content: center; background: white; }
+.about-section { padding: 20vh 0 10vh 0; grid-template-columns: 45% 45%; row-gap: 20vh; justify-content: center; background: white; }
 .about {
-    margin: 5vh auto 0 auto;
-    padding: 3vh 2vw 2vh 1vw;
+    margin: 0 auto;
+    padding: 2vh 0 0 0;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
     min-height: 40vh;
     width: 90%;
     background: white;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     border: 1px solid rgb(190, 190, 190);
 }
 
@@ -20,35 +20,44 @@
     padding: 5vh 0;
     width: 90%; 
     color: gray; 
-    border-top: 1px solid grey;
     animation: fadeSlideLeft 0.5s ease-in; 
 }
 
 .about-1 .about-image {
-    min-height: 15vh;
     background-image: url("https://live.staticflickr.com/65535/51350239267_54560763e6_b.jpg");
 }
 
 .about-2 .about-image {
-    min-height: 40vh;
     background-image: url("https://thumbs.dreamstime.com/b/searching-friends-social-network-24575314.jpg");
 }
 
 .about-3 .about-image {
-    min-height: 40vh;
     background-image: url("https://cdn.pixabay.com/photo/2020/10/01/16/53/game-controller-5619105_960_720.jpg");
 }
 
-.about-image { 
-    margin: 2vh auto; 
-    width: 90%;
-    background-size: contain;
+.about-image-wrapper {
+    position: relative;
+    height: 12.5vh;
+    width: 100%;
+}
+
+.about-image {
+    position: absolute;
+    inset: 0 auto auto 50%;
+    transform: translate3d(-50%, -65%, 0);
+    height: 20vh;
+    width: 100%;
+    background-size: cover;
     background-repeat: no-repeat; 
     background-position: center;
+    border-radius: 1rem;
+    box-shadow: 0 3px 3px gray;
 }
 
 @media (max-width: 50rem) {
-    .about-section { padding: 2vh 0; grid-template-columns: 100%; }
-    .about { margin: 2vh auto; width: 90%; }
-    .about-image { min-height: 15vh !important; width: 100%; }
+    .about-section { padding: 10vh 0 5vh 0; grid-template-columns: 100%; row-gap: 10vh; }
+    .about { width: 90%; }
+    .about-image-wrapper { height: 6.5vh; }
+    .about-image { height: 15vh; }
+    .about > p { padding: 2vh 0; }
 }

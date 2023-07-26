@@ -8,6 +8,7 @@ const Photo = ({photo, photoID, render}) => {
 
     const modalStyles = {
         content : {
+            padding: '2vh 1vw 4vh 1vw',
             display: 'flex',
             flexDirection: 'column',
             alignItem: 'center',
@@ -20,7 +21,6 @@ const Photo = ({photo, photoID, render}) => {
             width: 'min(95vw, 40rem)',
             maxHeight: '100%',
             transform: 'translate(-50%, -50%)', 
-            color: 'gray',
             backgroundColor: 'white',
             border: '1px solid rgb(180, 180, 180)',
         },

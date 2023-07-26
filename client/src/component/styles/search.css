@@ -11,7 +11,7 @@
 }
 
 .search-wrapper-text { 
-    font-size: clamp(0.875rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
     font-weight: 700;
     font-style: oblique;
     letter-spacing: 0.125rem; 

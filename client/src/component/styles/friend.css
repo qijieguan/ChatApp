@@ -5,7 +5,7 @@
     overflow: hidden;
 }
 
-.friend-wrapper { margin: 0 auto; grid-template-columns: 20% 20% 20% 20%; gap: 3vh; justify-content: center; width: 100%; }
+.friend-wrapper { margin: 1vh auto; grid-template-columns: 20% 20% 20% 20%; gap: 3vh; justify-content: center; width: 100%; }
 .friend-wrapper-label {
     grid-column: 1 / 5;
     text-align: center;
@@ -16,7 +16,7 @@
 }
 
 .friend-wrapper-text { 
-    font-size: clamp(0.875rem, 2vw, 2rem); 
+    font-size: clamp(1rem, 2vw, 2rem); 
     font-weight: 700;
     font-style: oblique;
     letter-spacing: 0.125rem; 
@@ -25,6 +25,8 @@
 .friend-container {
     height: fit-content;
     border-radius: 0.75rem;
+    background: white;
+    box-shadow: 0 1px 3px gray;
     overflow: hidden;
     transition: all 0.1s ease-in;
 }
@@ -35,11 +37,10 @@
 .friend-header-wrapper {
     position: relative;
     flex-direction: column;
-    min-height: 20vh;
+    height: 10vh;
     width: 100%;
     border-radius: 0 0 0.75rem 0.75rem;
     border-bottom: 1px solid rgb(190, 190, 190);
-    overflow: hidden;
 }
 
 .friend-bg {
@@ -50,33 +51,15 @@
     width: 100%;
 }
 
-.friend-image {
-    margin: 0 auto;
-    padding: 2vh;
-    position: absolute;
-    inset: auto auto 0 0;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 1vh;
-    z-index: 2;
-}
-
-.friend-image > img { 
-    padding: 0.25vh;
-    object-fit: cover;
-    height: 10vh;
-    width: 10vh;
-    box-shadow: 0 0 3px black;
-    border-radius: 3rem;
-    border: 3px solid white;
-}
-
 .friend-name { 
+    margin-right: 1vw;
     font-size: clamp(0.875rem, 1.25vw, 1.25rem); 
     color: white;
 }
 
 .friend-header-overlay {
+    justify-content: flex-end;
+    align-items: flex-end;
     position: absolute;
     inset: 0 auto auto 0;
     height: 100%;
@@ -86,18 +69,34 @@
 }
 
 .friend-preview {
-    position: absolute;
-    inset: 0 auto auto 0;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     color: rgb(95, 95, 95);
-    background: rgb(238, 238, 238);
-    border-radius: 0 0 0.5rem 0.5rem;
-    box-shadow: 0 0 3px;
-    opacity: 0;
     transition: all 0.5s ease-in;
     z-index: 2;
+}
+
+.friend-image {
+    position: absolute;
+    inset: 0 auto auto 0;
+    transform: translateY(-50%);
+    padding: 2vh 1vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 1vh;
+    z-index: 2;
+}
+
+.friend-image > img {
+    padding: 0.125vh;
+    object-fit: cover;
+    height: 8vh;
+    width: 8vh;
+    box-shadow: 0 0 3px black;
+    border-radius: 3rem;
+    border: 3px solid white;
 }
 
 .profile-view {
@@ -106,52 +105,82 @@
     margin: 1vh 0 0 0; 
     column-gap: 0.25vw;
     text-align: center; 
-    color: rgb(95, 95, 95);
+    color: royalblue;
     z-index: 2;
 }
 
-.profile-view:hover { color: transparent; }
+.profile-view:hover { opacity: 0.7; }
+.eye-icon { font-size: clamp(1.125rem, 1.5vw, 1.5rem); }
+.profile-view > span { font-weight: 500; font-size: clamp(0.75rem, 0.875vw, 0.875rem); }
 
-.eye-icon {
-    font-size: clamp(1.125rem, 1.5vw, 1.5rem); 
-}
-
-.profile-view > span { 
-    font-weight: 500;
-    font-size: clamp(0.625rem, 0.875vw, 0.875rem); 
-}
-
-.friend-preview.expand {
-    opacity: 1;
-}
-
-.friend-bio { padding: 1vh 1vw; max-height: 100%; }
+.friend-bio { margin-top: 2.5vh; padding: 1vh 0.5vw 1vh 1vw; height: 8vh; color: grey; overflow: hidden;}
 .friend-bio > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 500; }
 
 .friend-buttons { position: relative; display: grid; grid-template-columns: 40% 40%; min-height: 5vh; }
-
 .friend-buttons > button {  
     justify-content: center; 
-    font-size: clamp(0.75rem, 1vw, 1rem); 
-    color: rgb(22, 22, 22);
+    font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
+    color: grey;
     background: transparent;
-    border-radius: 3rem; 
 }
+.friend-buttons > button:hover { opacity: 0.7; }
 
-.friend-buttons > button:hover {
-    opacity: 0.7;
+.modal-unfriend-text { font-size: clamp(1rem, 1.25vw, 1.25rem); }
+.modal-unfriend-text > span { color: royalblue; font-weight: 700; }
+.modal-unfriend-btns { width: 100%; justify-content: space-between; }
+.modal-unfriend-btns > button { 
+    padding: 1.5vh 0; 
+    width: 48%; 
+    font-weight: 700; 
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
+    background: transparent; 
+    border-radius: 0.25rem;
 }
-
-.modal-text { font-size: clamp(0.875rem, 1vw, 1rem); }
-.modal-text > span { color: navy; font-weight: 700; font-size: clamp(0.875rem, 1.125vw, 1.125rem); }
-.modal-btns { width: 100%; justify-content: space-between; }
-.modal-btns > button { padding: 1.5vh 0; width: 48%; font-weight: 700; font-size: clamp(0.75rem, 1.125vw, 1.125rem); background: transparent; }
-.modal-btns > button:hover { box-shadow: 0 0 3px black; }
+.modal-unfriend-btns > button:hover { box-shadow: 0 0 3px black; }
 .cancel-btn { color: grey; border: 1px solid; }
 .submit-btn { color: red; border: 1px solid; }
 
-.cancel-btn:hover { background: gray; color: black; }
+.cancel-btn:hover { color: black; }
 .submit-btn:hover { background: red; color: gainsboro; border-color: darkred; }
+
+.modal-profile { padding-bottom: 2vh; flex-direction: column; background: rgb(249, 249, 255); }
+.modal-profile-bg { height: 25vh; width: 100%; object-fit: cover; }
+.modal-profile-info { position: relative; margin-bottom: 2vh; padding: 0 3vw; min-height: 50vh; }
+.modal-profile-url {
+    padding: 0.125vh;
+    position: absolute;
+    inset: 0 auto auto 2.5%;
+    transform: translateY(-50%);
+    height: 15vh;
+    width: 15vh;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 5rem;
+}
+
+.modal-profile-name {
+    margin: 7.5vh 0 2.5vh 0;
+    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-weight: 700;
+    font-style: oblique;
+    color: royalblue;
+}
+
+.modal-profile-bio { font-size: clamp(0.875rem, 1.25vw, 1.25rem); }
+
+.modal-profile-exit {
+    margin-top: auto;
+    margin-right: 3vw;
+    align-self: flex-end;
+    padding: 1vh 2vw;
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
+    color: white;
+    background: red;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1px;
+}
+
+.modal-profile-exit:hover { opacity: 0.4; }
 
 @keyframes slideRight {
     0%  { opacity: 0; width: 0; }
@@ -169,12 +198,15 @@
 }
 
 @media (max-width: 30rem) {
-    .friend-header-wrapper { min-height: 15vh;  }
+    .friend-name { margin-right: 5vw; }
     .friend-wrapper { grid-template-columns: 97.5%; }
     .friend-wrapper-label { grid-column: 1 / 2; }
     .friend-wrapper-icon { display: none; }
     .friend-preview { border-radius: 0; }
+    .friend-image { padding: 2vh 2vw; }
     .friend-image > img { height: 8vh; width: 8vh; }
     .friend-bio { padding: 1vh 2vw; }
     .friend-buttons { grid-template-columns: 47.5% 47.5%; }
+    .modal-profile-url { height: 12.5vh; width: 12.5vh; }
+    .modal-profile-info { position: relative; min-height: 25vh; }
 }
