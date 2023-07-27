@@ -58,11 +58,13 @@ const Menu = () => {
 
         let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
         let overlay = document.querySelector('.dashboard-overlay');
+        let side_nav = document.querySelector('.side-nav.default');
        
         if (menu?.offsetWidth <= 960) { 
             menu.style.height = menu_bar?.offsetHeight + 'px'; 
             menu_side_wrapper?.classList.add('show');
             overlay?.classList.add('show');
+            side_nav?.classList.remove('resize');
         }
         else { menu_side_wrapper?.classList.remove('show'); overlay?.classList.remove('show'); }
 
@@ -91,13 +93,12 @@ const Menu = () => {
 
         if (!showMenu) { 
             side_nav?.classList.add('resize');
-
             menu_side_wrapper?.classList.add('expand'); 
             overlay.classList.add('active');
         
             setShowMenu(true); 
         }
-        else { closeMenu(); }
+        else { closeMenu(); side_nav?.classList.remove('resize'); }
 
         closeSearch();
     }
@@ -105,9 +106,6 @@ const Menu = () => {
     const closeMenu = () => { 
         let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
         let overlay = document.querySelector('.dashboard-overlay');
-        let side_nav = document.querySelector('.side-nav.default');
-       
-        side_nav?.classList.remove('resize');
 
         menu_side_wrapper?.classList.remove('expand');
         overlay?.classList.remove('active');
@@ -122,9 +120,7 @@ const Menu = () => {
 
     return (
         <div className='menu flex' >
-            
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-
                 <div className='menu-side-wrapper flex'>
                     <SideNav param={'menu'}/> 
                 </div>
