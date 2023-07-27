@@ -2,7 +2,7 @@
 .message-container { 
     flex-direction: column;
     align-items: center;
-    margin: 3vh auto 0 auto;
+    margin: 3vh 0 0 0;
     padding-bottom: 2rem;
     width: 95%;
     color: rgb(68, 68, 68);
@@ -142,7 +142,7 @@
 .send-button > .send-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; margin: 2vh auto; width: 97.5%; }
+    .message-container { display: none; margin: 2vh 0; width: 97.5%; }
     .message-container.focus { display: unset; }
     .private-message-header img { height: 8vh; width: 8vh; }
     .private-message { height: 50vh; }
@@ -150,7 +150,6 @@
 }
 
 @media (max-width: 25rem) {
-    .message-container { width: 99%; }
     .recipient { margin: 1vh 0; }
     .private-message { width: 97.5%; margin: 3vh 0 7.5vh 1.25%; }
     .text-format { width: 100%; }

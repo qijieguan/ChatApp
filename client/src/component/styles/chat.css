@@ -1,7 +1,7 @@
-.chat-page { min-height: 75vh; width: 100%; grid-template-columns: 55% 37.5%; justify-content: space-evenly; }
+.chat-page { min-height: 75vh; grid-template-columns: 55% 40%;  justify-content: center; }
 
 .conversation-log {
-    margin: 3vh 0 0 auto;
+    margin: 3vh 0 0 0;
     padding-bottom: 5vh;
     width: 97.5%;
     height: fit-content;
@@ -69,12 +69,12 @@
 
 @media (max-width: 50rem) {
     .chat-page { grid-template-columns: 100%; width: 100%; }
-    .conversation-log { margin: 2vh auto; height: 30vh; width: 97.5%; }
+    .conversation-log { margin: 2vh 0; height: 30vh; width: 97.5%; }
     .conversation-log:not(.focus) { display: none; }
 }
 
 @media (max-width: 25rem) {
-    .conversation-log { width: 99%; }
+    .conversation-log { width: 97.5%; }
     .conversation-preview > h1 { font-size: 0.75rem; }
     .conversation > img { height: 7vh; width: 7vh; }
 }

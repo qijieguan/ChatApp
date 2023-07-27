@@ -1,17 +1,14 @@
 .friend-page {
     margin: 3vh 0 10vh 0;
     min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
 }
 
-.friend-wrapper { margin: 1vh auto; grid-template-columns: 20% 20% 20% 20%; gap: 3vh; justify-content: center; width: 100%; }
+.friend-wrapper { margin: 1vh auto; grid-template-columns: 20% 20% 20% 20%; gap: 3vh; justify-content: center; }
 .friend-wrapper-label {
     grid-column: 1 / 5;
     text-align: center;
     justify-content: center;
     margin: 1.5vh auto;
-    width: 100%;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
 

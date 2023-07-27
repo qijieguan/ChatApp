@@ -30,7 +30,6 @@ const CommentPage = () => {
     useEffect(() => {  
         if (location.state && location.state.post_id) { 
             setAllStates(); 
-            console.log(location.state.community_name)
         } 
     },[location]);
 

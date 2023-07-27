@@ -1,9 +1,10 @@
 .dashboard { 
     position: relative;
     padding: 0 0 10vh 0;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto minmax(50vw, 100%);
     justify-content: space-between;
     min-height: 75vh; 
+    width: 100vw;
     background: rgb(243, 243, 243);
 }
 
