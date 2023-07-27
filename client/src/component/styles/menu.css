@@ -12,8 +12,8 @@
     z-index: 4;
 }
 
-.menu-side-wrapper { align-self: flex-start; width: 0; transform: translateY(-1vh); transition: all 0.1s ease-in; }
-.menu-side-wrapper.expand { width: 35vw; }
+.menu-side-wrapper { align-self: flex-start; width: 0; transform: translate3d(-100%, -1vh, 0); transition: transform 0.1s ease-in; }
+.menu-side-wrapper.expand { width: 35vw; transform: translate3d(0, -1vh, 0); }
 
 .menu-side-nav { position: relative; display: none; z-index: 3; }
 
