@@ -28,8 +28,9 @@ const PostSection = () => {
             setTimeout(() => {
                 let post = document.getElementById(location.state.postID);
                 let position = post?.getBoundingClientRect();
-
-                window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
+                if (post && position) {
+                    window.scrollTo({left: position.left, top: (position.top + window.scrollY) - 100});
+                }
             }, 125);
         }
 

@@ -1,4 +1,22 @@
-.side-nav { position: relative; width: 97.5%; z-index: 2; overflow: hidden; }
+.side-nav { 
+    padding-bottom: 2vh;
+    position: sticky; 
+    inset: 0 auto auto 0; 
+    height: 100vh;
+    width: 100%; 
+    color: gray;
+    background: white; 
+    z-index: 2; 
+    overflow: hidden; 
+}
+
+.side-nav.default { border-right: 1px solid rgb(221, 221, 221); }
+.side-nav.default.resize { width: fit-content; }
+.side-nav.default.resize * { flex-direction: column; justify-content: center; }
+.side-nav.default.resize .side-nav-body { padding: 0; }
+.side-nav.default.resize .side-nav-link { width: 100%; } 
+.side-nav.default.resize .community-collection { padding: 0; }
+.side-nav.default.resize .text { display: none; }
 
 .side-nav.menu {
     padding-top: 1vh;
@@ -11,38 +29,33 @@
     box-shadow: 0 5px 3px navy;
 }
 .side-nav.menu * { color: white; }
+.side-nav-main.default { width: 100%; }
 
-.side-nav-main.default {
-    margin: 3vh auto;
-    width: 99%;
-    box-shadow: 0 0 2px gray; 
-    border-radius: 0.75rem;
-    overflow: hidden;
-}
-
-.side-nav-header { padding: 1vh 1vw; column-gap: 0.5vw; row-gap: 1vh; min-height: 12.5vh; background: navy; }
+.side-nav-header { padding: 5vh 0.5vw 1vh 0.5vw; column-gap: 0.5vw; row-gap: 1vh; }
 
 .side-nav-profile {
-    margin: 0 0.25vw 0 0.5vw;
-    height: 8vh; 
-    width: 8vh;
+    height: 7vh; 
+    width: 7vh;
     object-fit: cover;
     border: 2px solid white;
     border-radius: 3rem;
 }
 
-.side-nav-name { font-size: clamp(0.75rem, 1.125vw, 1.125rem); text-align: center; color: white; }
+.side-nav-name { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.side-nav-body { padding: 1.5vh 1vw; flex-wrap: wrap; background: white; row-gap: 0.5vh; }
+.side-nav-body { padding: 1.5vh 0.5vw; flex-wrap: wrap; }
 
 .side-nav-link { 
-    padding: 1.5vh 1.5vw 1.5vh 25%; 
-    column-gap: 0.5vw;
-    width: 99%; 
-    color: rgb(77, 77, 77); 
-    background: transparent; 
+    justify-content: center;
+    flex-direction: column; 
+    flex-wrap: wrap;
+    column-gap: 1vw;
+    height: 10vh;
+    width: 30%; 
     font-weight: 500;
-    border-radius: 0.25rem; 
+    color: gray;
+    background: transparent; 
+    border-radius: 0.25rem;
     transition: all 0.2s ease-in; 
 }
 .side-nav-link > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); }
@@ -60,37 +73,23 @@
 .logout-nav { column-gap: 0; color: red; }
 .logout-nav > span { font-weight: 500; }
 
-.side-nav-communities.default { 
-    margin: 6vh auto 0 auto;
-    width: 99%;
-    box-shadow: 0 0 2px gray; 
-    border-radius: 0.75rem;  
-    overflow: hidden;   
-}
+.side-nav-communities.default { width: 99%; }
 
-.side-nav-communities-label { 
-    margin: 0;
-    padding: 2vh 1vw 2vh 3vw; 
-    column-gap: 1vw; 
-    color: white;
-    background: navy;
-    font-weight: 500;
-    box-shadow: 0 0 2px rgb(177, 177, 177);
-}
+.side-nav-communities-label { padding: 2vh 1vw; font-weight: 500; width: 100%; }
 .side-nav-communities-label > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.community-collection { padding: 3vh 1vw 4vh 2vw; flex-direction: column; row-gap: 1.5vh; background: white; }
+.community-collection { padding: 3vh 1vw 4vh 0.5vw; flex-direction: column; row-gap: 1.5vh; }
 .community-collection-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
 .community-collection-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
 .side-community { row-gap: 1vh; column-gap: 1vw; width: 100%; }
 .side-community:hover > .side-community-detail { opacity: 0.7; }
 
-.side-community-profile { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 2px; }
+.side-community-profile { height: 6vh; width: 6vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 2px; }
 
-.side-community-detail { align-items: flex-start; flex-direction: column; max-width: 72.5%; }
+.side-community-detail { align-items: flex-start; flex-direction: column; max-width: 65%; }
 
-.side-community-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: rgb(77, 77, 77); }
+.side-community-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: gray; }
 .side-community-members { font-size: clamp(0.625rem, 0.875vw, 0.875rem); color: grey; }
 
 @media (max-width: 70rem) { .side-nav { margin: 0 auto; }}

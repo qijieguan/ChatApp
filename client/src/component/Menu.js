@@ -17,6 +17,7 @@ import axios from 'axios';
 import SideNav from './SideNav.js';
 
 import { useState } from 'react';
+import e from 'cors';
 
 const Menu = () => {
 
@@ -54,8 +55,16 @@ const Menu = () => {
     const handleResize = () => {
         let menu = document.querySelector('.menu');
         let menu_bar = document.querySelector('.menu-bar');
+
+        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
+        let overlay = document.querySelector('.dashboard-overlay');
        
-        if (menu?.offsetWidth <= 960) { menu.style.height = menu_bar?.offsetHeight + 'px'; }
+        if (menu?.offsetWidth <= 960) { 
+            menu.style.height = menu_bar?.offsetHeight + 'px'; 
+            menu_side_wrapper?.classList.add('show');
+            overlay?.classList.add('show');
+        }
+        else { menu_side_wrapper?.classList.remove('show'); overlay?.classList.remove('show'); }
 
         let comment_nav = document?.querySelector('.comment-nav');
         if (menu_bar?.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
@@ -78,10 +87,14 @@ const Menu = () => {
     const handleToggleMenu = () => {
         let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
         let overlay = document.querySelector('.dashboard-overlay');
-        overlay?.classList.toggle('active');
+        let side_nav = document.querySelector('.side-nav.default');
 
         if (!showMenu) { 
+            side_nav?.classList.add('resize');
+
             menu_side_wrapper?.classList.add('expand'); 
+            overlay.classList.add('active');
+        
             setShowMenu(true); 
         }
         else { closeMenu(); }
@@ -92,9 +105,13 @@ const Menu = () => {
     const closeMenu = () => { 
         let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
         let overlay = document.querySelector('.dashboard-overlay');
+        let side_nav = document.querySelector('.side-nav.default');
        
+        side_nav?.classList.remove('resize');
+
         menu_side_wrapper?.classList.remove('expand');
         overlay?.classList.remove('active');
+
         setShowMenu(false); 
     }
 

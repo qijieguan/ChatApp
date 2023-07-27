@@ -23,7 +23,6 @@ const Dashboard = () => {
     useEffect(() => {
         let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
         let element = document.getElementById(pathname);
-        
     
         document.getElementsByClassName('active')[0]?.classList.remove('active');
         element?.classList.add('active'); 

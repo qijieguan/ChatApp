@@ -68,7 +68,7 @@ const SideNav = (param) => {
             <div className={'side-nav-main ' + param.param}>
                 <div className='side-nav-header flex'>
                     <img className='side-nav-profile' src={user.profile_url} alt=""/>
-                    <div className='side-nav-name'>{user.firstname} {user.lastname}</div>
+                    <div className='side-nav-name text'>{user.firstname} {user.lastname}</div>
                 </div>
                 <div className={'side-nav-body flex ' + param.param}>
                     <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
@@ -82,15 +82,15 @@ const SideNav = (param) => {
                     </Link>
 
                     <Link to="/" onClick={logout} className='logout-nav side-nav-link flex'>
-                        <span>Log out</span>
                         <BiLogIn className='logout-icon' onClick={logout}/>
+                        <span>Sign Out</span>
                     </Link>
                 </div>
             </div>
 
             <div className={'side-nav-communities ' + param.param}>
                 <div className='side-nav-communities-label flex'>
-                    <span>My Communities</span>
+                    <span>Community</span>
                 </div>
                 <div className='community-collection flex'>
                     {communities.length > 0 ?
@@ -101,7 +101,7 @@ const SideNav = (param) => {
                                 className='side-community flex'
                             >
                                 <img className='side-community-profile' src={community.profile_url} alt=""/>
-                                <div className='side-community-detail flex'>
+                                <div className='side-community-detail text flex'>
                                     <span className='side-community-name'>{community.name}</span>
                                     <span className='side-community-members'>members: {community.members.length}</span>
                                 </div>   
