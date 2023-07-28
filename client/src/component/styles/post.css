@@ -25,7 +25,32 @@
 .poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(107, 107, 107); }
 
 .primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
-.primary-image { margin: 3vh auto 0 auto; object-fit: cover; max-height: 50vh; width: 100%; }
+
+.primary-image-wrapper { margin: 3vh auto 0 auto; position: relative; width: 95%; }
+.primary-image { object-fit: cover; max-height: 50vh; width: 100%; }
+.image-zoom-icon-wrapper {
+    padding: 2vh;
+    position: absolute;
+    inset: 5% 2.5% auto auto;
+    background: rgba(56, 56, 56, 0.7);
+    border-radius: 2rem;
+    box-shadow: 0 0 1px;
+}
+.image-zoom-icon-wrapper:hover { opacity: 0.7; }
+.image-zoom-icon { color: rgb(233, 233, 233); }
+.primary-image-zoom { height: 100%; width: 100%; overflow-x: hidden;  }
+.primary-image-zoom > img { object-fit: cover; width: 100%; }
+.primary-image-zoom > button { 
+    padding: 1vh 1vw;
+    position: absolute; 
+    inset: 5% 5% auto auto; 
+    font-size: clamp(0.875rem, 1vw, 1rem);
+    color: white; 
+    background: rgba(172, 172, 172, 0.7); 
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgb(110, 110, 110);
+}
+.primary-image-zoom > button:hover { opacity: 0.7; }
 
 .delete-wrapper { 
     margin: 2vh 1vw 1vh 1vw; 

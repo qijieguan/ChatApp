@@ -44,7 +44,7 @@
 
 .side-nav-name { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.side-nav-body { padding: 1.5vh 0.5vw; flex-wrap: wrap; }
+.side-nav-body { padding: 1vh 0.5vw; flex-wrap: wrap; }
 
 .side-nav-link { 
     justify-content: center;
@@ -99,7 +99,7 @@
     .side-nav.default { display: none; }
     .side-nav-header { min-height: fit-content; column-gap: 2vw; }
     .side-nav-profile { height: 6vh; width: 6vh; }
-    .side-nav-body { padding: 1.5vh 2vw; column-gap: 2vw; background: navy; }
+    .side-nav-body { padding: 1vh 2vw; column-gap: 2vw; background: navy; }
     .side-nav-link { padding: 1vh 2vw; column-gap: 1.5vw; width: 30%; }
     .community-collection { background: navy; }
 }

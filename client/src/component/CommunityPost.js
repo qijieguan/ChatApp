@@ -1,17 +1,42 @@
 import './styles/community-post.css';
 import { AiFillLike  } from 'react-icons/ai';
-import { BsShareFill } from 'react-icons/bs';
+import { BsShareFill, BsSearch } from 'react-icons/bs';
 import { BiCommentMinus } from 'react-icons/bi';
 
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Modal from 'react-modal';
 
 import axios from 'axios';
 
 const CommunityPost = ({communityID, communityName, communityProfile, post}) => {
 
+    const modalStyles = {
+        content : {
+            padding: '0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItem: 'center',
+            justifyContent: 'space-around',
+            top : '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            textAlign: 'center',
+            width: 'min(92.5vw, 70rem)',
+            maxHeight: '85%',
+            transform: 'translate(-50%, -50%)', 
+            backgroundColor: 'rgb(249, 249, 255)',
+            border: '1px solid black',
+        },
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+    };
+
+    Modal.setAppElement(document.getElementById('root'));
+
     const [likes, setLikes] = useState(post && post.likes);
     const [commentCount, setComment] = useState(post ? post.comments.length : []);
+    const [zoomImage, setZoomImage] = useState(false);
 
     const user = JSON.parse(sessionStorage.getItem('user'));
     const navigate = useNavigate();
@@ -75,7 +100,21 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
                         <span>{post.poster_name}</span>
                     </div>
                     <span>{post.primary_text}</span>
-                    <img src={post.primary_image} alt=""/>   
+
+                    <div className='primary-image-wrapper'>
+                        <img src={post.primary_image} className='primary-image' alt=""/>
+                        <div className='image-zoom-icon-wrapper flex' onClick={() => { setZoomImage(true); }}>
+                            <BsSearch className='image-zoom-icon'/>
+                        </div>  
+
+                        <Modal isOpen={zoomImage} style={modalStyles}>
+                            <div className='primary-image-zoom'>
+                                <img src={post.primary_image} alt=""/>
+                                <button onClick={() => { setZoomImage(false); }}>Exit View</button>
+                            </div>
+                        </Modal>
+                    </div>
+ 
                     <div className='community-page-footer flex'>
                         <div className='community-page-likes flex' onClick={toggleLike}> 
                             <AiFillLike className='community-page-icon'/>

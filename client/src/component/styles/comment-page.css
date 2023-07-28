@@ -12,7 +12,8 @@
     padding: 2vh 2vw;
     width: 95%;
     background: navy;
-    box-shadow: 0 2px 3px rgb(180, 180, 180);
+    box-shadow: 0 2px 3px rgb(43, 43, 43);
+    z-index: 1;
 }
 
 .comment-nav-link { column-gap: 0.5vw; color: white; }

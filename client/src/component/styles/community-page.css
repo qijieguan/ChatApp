@@ -121,6 +121,7 @@
 .community-page-posts { flex-direction: column; justify-content: center; row-gap: 5vh; }
 
 @media (max-width: 50rem) {
+    .community-page { padding: 0 0 2.5vh 0; }
     .community-page-banner { width: 97.5% }
     .community-page-exit { inset: 5% 7% auto auto; }
     .community-page-profile { height: 11vh; width: 11vh; }

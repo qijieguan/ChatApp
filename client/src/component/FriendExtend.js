@@ -46,7 +46,6 @@ const FriendExtend = ({ friend }) => {
         overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
     };
 
-
     Modal.setAppElement(document.getElementById('root'));
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';

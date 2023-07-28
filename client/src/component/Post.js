@@ -1,19 +1,44 @@
 import './styles/post.css';
-import { BsTrash, BsFillShareFill } from 'react-icons/bs';
+import { BsTrash, BsFillShareFill, BsSearch } from 'react-icons/bs';
 import { BiCommentMinus } from 'react-icons/bi';
 import { AiFillLike } from 'react-icons/ai';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Modal from 'react-modal';
 
 const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_text, deletePost}) => {
+
+    const modalStyles = {
+        content : {
+            padding: '0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItem: 'center',
+            justifyContent: 'center',
+            top : '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            textAlign: 'center',
+            width: 'min(92.5vw, 70rem)',
+            maxHeight: '85%',
+            transform: 'translate(-50%, -50%)', 
+            backgroundColor: 'rgb(249, 249, 255)',
+            border: '1px solid black',
+        },
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+    };
+
+    Modal.setAppElement(document.getElementById('root'));
 
     const user = JSON.parse(sessionStorage.getItem('user'));
     const navigate = useNavigate();
 
     const [likes, setLikes] = useState(post.likes);
     const [commentCount, setComment] = useState(post.comments.length);
+    const [zoomImage, setZoomImage] = useState(false);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
@@ -70,7 +95,19 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
                     </div>
                     <div className='primary-text'>{post_text}</div>
                     {post.primary_image &&
-                        <img src={post_image} className='primary-image' alt=""/>
+                        <div className='primary-image-wrapper'>
+                            <img src={post_image} className='primary-image' alt=""/>
+                            <div className='image-zoom-icon-wrapper flex' onClick={() => { setZoomImage(true); }}>
+                                <BsSearch className='image-zoom-icon'/>
+                            </div>
+
+                            <Modal isOpen={zoomImage} style={modalStyles}>
+                                <div className='primary-image-zoom'>
+                                    <img src={post_image} alt=""/>
+                                    <button onClick={() => { setZoomImage(false); }}>Exit View</button>
+                                </div>
+                            </Modal>
+                        </div>  
                     }
                     {user._id === poster_id &&
                         <div className='delete-wrapper flex' onClick={() => {return deletePost(post._id);}}>

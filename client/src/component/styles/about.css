@@ -1,11 +1,11 @@
 .about-section { padding: 20vh 0 10vh 0; grid-template-columns: 45% 45%; row-gap: 20vh; justify-content: center; background: white; }
 .about {
     margin: 0 auto;
-    padding: 2vh 0 0 0;
+    padding: 2vh 0;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    min-height: 40vh;
+    min-height: 35vh;
     width: 90%;
     background: white;
     border-radius: 0.5rem;
@@ -56,8 +56,8 @@
 
 @media (max-width: 50rem) {
     .about-section { padding: 10vh 0 5vh 0; grid-template-columns: 100%; row-gap: 10vh; }
-    .about { width: 90%; }
-    .about-image-wrapper { height: 6.5vh; }
+    .about { width: 90%; min-height: 30vh; }
+    .about-image-wrapper { height: 7.5vh; }
     .about-image { height: 15vh; }
     .about > p { padding: 2vh 0; }
 }

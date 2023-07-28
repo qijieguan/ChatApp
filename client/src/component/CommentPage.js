@@ -1,14 +1,38 @@
 import './styles/comment-page.css';
 import { AiOutlineCamera, AiOutlineSend, AiOutlineArrowLeft, AiFillLike } from 'react-icons/ai';
 import { FaCat } from 'react-icons/fa';
-import { BsFillShareFill } from 'react-icons/bs';
+import { BsFillShareFill, BsSearch } from 'react-icons/bs';
 
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import Modal from 'react-modal';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const CommentPage = () => {
+
+    const modalStyles = {
+        content : {
+            padding: '0',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItem: 'center',
+            justifyContent: 'center',
+            top : '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            textAlign: 'center',
+            width: 'min(92.5vw, 70rem)',
+            maxHeight: '85%',
+            transform: 'translate(-50%, -50%)', 
+            backgroundColor: 'rgb(249, 249, 255)',
+            border: '1px solid black',
+        },
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+    };
+
+    Modal.setAppElement(document.getElementById('root'));
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -22,6 +46,8 @@ const CommentPage = () => {
 
     const [commentArr, setCommentArr] = useState([]);
     const [commentInp, setCommentInp] = useState("");
+
+    const [zoomImage, setZoomImage] = useState(false);
 
     const user = JSON.parse(sessionStorage.getItem('user'));
 
@@ -149,7 +175,21 @@ const CommentPage = () => {
                 </div>
 
                 {post.primary_text && post.primary_text.length && <div className='primary-text'>{post.primary_text}</div>}
-                {post.primary_image && post.primary_image.length && <img className='primary-image' src={post.primary_image} alt=''/>}
+                {post.primary_image && post.primary_image.length && 
+                    <div className='primary-image-wrapper'>
+                        <img src={post.primary_image} className='primary-image' alt=""/>
+                        <div className='image-zoom-icon-wrapper flex' onClick={() => { setZoomImage(true); }}>
+                            <BsSearch className='image-zoom-icon'/>
+                        </div>
+
+                        <Modal isOpen={zoomImage} style={modalStyles}>
+                            <div className='primary-image-zoom'>
+                                <img src={post.primary_image} alt=""/>
+                                <button onClick={() => { setZoomImage(false); }}>Exit View</button>
+                            </div>
+                        </Modal>
+                    </div>  
+                }
                 <div className='post-footer flex'>
                     <div className='post-like action flex' onClick={toggleLike}>
                         <AiFillLike className='post-icon'/>
