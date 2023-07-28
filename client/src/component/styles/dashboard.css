@@ -4,7 +4,7 @@
     grid-template-columns: auto minmax(50vw, 100%);
     justify-content: space-between;
     min-height: 75vh; 
-    width: 100vw;
+    width: 100%;
     background: rgb(243, 243, 243);
 }
 
@@ -21,7 +21,7 @@
 .dashboard-overlay.show.active { display: block; }
 
 @media (max-width: 60rem) {
-    .dashboard { padding-bottom: 7.5vh; grid-template-columns: 100%; justify-content: center; }
+    .dashboard { padding-bottom: 7.5vh; grid-template-columns: 100%; }
     .default-side-nav { display: none; }
 }
 

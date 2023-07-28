@@ -1,10 +1,8 @@
-
 .message-container { 
     flex-direction: column;
-    align-items: center;
     margin: 3vh 0 0 0;
     padding-bottom: 2rem;
-    width: 95%;
+    width: 100%;
     color: rgb(68, 68, 68);
     background: rgb(251, 251, 255);
     box-shadow: 0 1px 3px gray;
@@ -142,7 +140,7 @@
 .send-button > .send-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 
 @media (max-width: 50rem) { 
-    .message-container { display: none; margin: 2vh 0; width: 97.5%; }
+    .message-container { display: none; }
     .message-container.focus { display: unset; }
     .private-message-header img { height: 8vh; width: 8vh; }
     .private-message { height: 50vh; }
@@ -151,8 +149,8 @@
 
 @media (max-width: 25rem) {
     .recipient { margin: 1vh 0; }
-    .private-message { width: 97.5%; margin: 3vh 0 7.5vh 1.25%; }
+    .private-message { margin: 3vh 1vw 7.5vh 1vw; }
     .text-format { width: 100%; }
-    .texter { height: 6vh; width: 6vh; }
+    .texter { height: 5.5vh; width: 5.5vh; }
     .text-content { margin-right: 0.5vw; padding: 1.5vh 1vw 3vh 2vw; } 
 }

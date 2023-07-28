@@ -109,7 +109,7 @@
         background: navy;
         border-radius: 0;
     }
-    .menu-li-wrapper.show.expand { display: flex; padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
+    .menu-li-wrapper.show { display: flex; transform: translateY(100%); padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
     .menu-li { padding: 1vh 4vw; }
     .menu-links { background: navy; }
 }
