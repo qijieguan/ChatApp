@@ -5,6 +5,7 @@
     min-height: 8vh;
     width: 100%;
     background: navy;
+    box-shadow: 0 1px 3px rgb(0, 0, 66);
     z-index: 4;
 }
 

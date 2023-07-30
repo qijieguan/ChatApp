@@ -3,7 +3,7 @@
     min-height: 100vh;
 }
 
-.friend-wrapper { margin: 1vh auto; grid-template-columns: 20% 20% 20% 20%; gap: 3vh; justify-content: center; }
+.friend-wrapper { margin: 1vh auto; grid-template-columns: 22% 22% 22% 22%; row-gap: 3vh; justify-content: space-evenly; }
 .friend-wrapper-label {
     grid-column: 1 / 5;
     text-align: center;

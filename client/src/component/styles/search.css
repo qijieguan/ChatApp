@@ -1,4 +1,4 @@
-.search { margin: 3vh 0 10vh 0; min-height: 120vh; }
+.search { margin: 3vh auto 10vh auto; min-height: 120vh; width: 100%; }
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ; row-gap: 2vh; }
 .search-wrapper-label {
@@ -25,12 +25,13 @@
     width: 100%;
     z-index: 1;
     border-radius: 0.5rem;
+    box-shadow: 0 0 2px;
     overflow: hidden;
-    transition: 0.5s all 1s ease-in;
+    transition: 0.3s all 1s ease-in;
 }
 
-.user * { transition: 0.5s all; }
-.user.active { height: 200%; border-radius: 2rem; z-index: 2; }
+.user * { transition: 0.3s all; }
+.user.active { height: 200%; border-radius: 2rem; z-index: 2; box-shadow: 0 0 10px; }
 .user-image { 
     position: absolute;
     inset: 0 auto auto 0; 
@@ -87,6 +88,9 @@
 
 .user:hover .user-image { animation: animateImage 3s; }
 
+@media (max-width: 60rem) {
+    .search { width: 100%; }
+}
 
 @media (max-width: 50rem) {
     .search-wrapper { grid-template-columns: 30% 30% 30%; }

@@ -65,14 +65,18 @@
 .trash-wrapper:hover .trash-overlay { z-index: 1; opacity: 1; }
 .trash-wrapper:hover .trash-icon { color: white; }
 
+@media (max-width: 60rem) {
+    .chat-page { width: 100vw; }
+}
 
-@media (max-width: 50rem) {
-    .chat-page { margin-left: 1.25%; grid-template-columns: 100%; width: 97.5%; }
-    .conversation-log { height: 30vh; }
+@media (max-width: 40rem) {
+    .chat-page { margin: 1vh 1.25% 0 1.25%; grid-template-columns: 100%; width: 97.5%; }
+    .conversation-log { margin-left: 0.5vw; height: 30vh; width: 95vw; }
     .conversation-log:not(.focus) { display: none; }
 }
 
 @media (max-width: 25rem) {
+    .conversation-log { margin-left: 0; width: 92.5vw; }
     .conversation-preview > h1 { font-size: 0.75rem; }
     .conversation > img { height: 7vh; width: 7vh; }
 }

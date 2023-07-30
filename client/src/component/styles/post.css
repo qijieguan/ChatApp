@@ -5,7 +5,7 @@
     width: 100%;
     background: white;
     box-shadow: 0 1px 3px grey;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     overflow: hidden;
 }
 
@@ -37,7 +37,7 @@
     box-shadow: 0 0 1px;
 }
 .image-zoom-icon-wrapper:hover { opacity: 0.7; }
-.image-zoom-icon { color: rgb(233, 233, 233); }
+.image-zoom-icon { font-size: clamp(0.875rem, 1vw, 1rem); color: rgb(233, 233, 233); }
 .primary-image-zoom { height: 100%; width: 100%; overflow-x: hidden;  }
 .primary-image-zoom > img { object-fit: cover; width: 100%; }
 .primary-image-zoom > button { 
@@ -107,6 +107,7 @@
 }
 
 @media (max-width: 25rem) {
+    .image-zoom-icon-wrapper { padding: 1.125vh; }
     .post { padding: 1.5vh 0 0 0; }
     .poster-image { height: 5.5vh; width: 5.5vh;  }
     .post-header { column-gap: 2vw; }

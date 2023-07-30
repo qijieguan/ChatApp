@@ -21,7 +21,6 @@
     padding-top: 1vh;
     position: absolute;
     inset: 0 auto auto 0;
-    margin: 0;
     min-height: 80vh;
     width: 100%;
     background: navy;
@@ -32,7 +31,7 @@
 
 .side-nav-main.default { width: 100%; }
 
-.side-nav-header { padding: 5vh 0.5vw 1vh 0.5vw; column-gap: 0.5vw; row-gap: 1vh; }
+.side-nav-header { padding: 4vh 0.5vw 1vh 0.5vw; column-gap: 0.5vw; row-gap: 1vh; }
 
 .side-nav-profile {
     height: 7vh; 
@@ -42,7 +41,7 @@
     border-radius: 3rem;
 }
 
-.side-nav-name { font-size: clamp(0.75rem, 1vw, 1rem); }
+.side-nav-name { font-size: clamp(0.75rem, 1vw, 1rem); text-transform: uppercase; }
 
 .side-nav-body { padding: 1vh 0.5vw; flex-wrap: wrap; }
 
@@ -52,14 +51,14 @@
     flex-wrap: wrap;
     column-gap: 1vw;
     min-height: 10vh;
-    width: 30%; 
+    width: 28%; 
     font-weight: 500;
     color: gray;
     background: transparent; 
     border-radius: 0.25rem;
     transition: all 0.2s ease-in; 
 }
-.side-nav-link > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); }
+.side-nav-link > span { font-size: clamp(0.625rem, 0.875vw, 0.875rem); }
 .side-nav-link:not(.logout-nav):hover { opacity: 0.7; }
 .side-nav-link:not(.logout-nav).highlight { 
     font-weight: 700; 
@@ -92,8 +91,6 @@
 
 .side-community-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: gray; }
 .side-community-members { font-size: clamp(0.625rem, 0.875vw, 0.875rem); color: grey; }
-
-@media (max-width: 70rem) { .side-nav { margin: 0 auto; }}
 
 @media (max-width: 60rem) {
     .side-nav.default { display: none; }

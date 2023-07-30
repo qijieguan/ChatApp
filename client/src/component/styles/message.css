@@ -139,7 +139,7 @@
 
 .send-button > .send-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 
-@media (max-width: 50rem) { 
+@media (max-width: 40rem) { 
     .message-container { display: none; }
     .message-container.focus { display: unset; }
     .private-message-header img { height: 8vh; width: 8vh; }

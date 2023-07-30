@@ -2,7 +2,6 @@
     justify-content: center;
     flex-direction: column;
     height: fit-content;
-    width: 100%;
 }
 
 .comment-nav {
@@ -65,12 +64,7 @@
     border-radius: 0.5rem;
 }
 
-.comment-label {
-    font-weight: 500;
-    font-size: clamp(0.75rem, 1vw, 1rem);
-    text-transform: uppercase;
-    color: gray;
-}
+.comment-label { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); text-transform: uppercase; color: gray; }
 
 .comment-input-wrapper > img {
     padding: 0.05vw;
@@ -141,26 +135,18 @@
     border-radius: 4rem;
 }
 
-.comment-name {
-    margin-left: 1vw;
-    font-size: clamp(0.75rem, 0.875vw, 0.875rem);
-    font-weight: 500;
-    color: grey;
-}
+.comment-name { margin-left: 1vw; font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 500; color: grey; }
 
 .comment-content { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .comment-empty { margin: 5vh auto 0 auto; justify-content: center; column-gap: 0.5vw; }
 
-.comment-empty > span {
-    text-transform: capitalize;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    color: grey;
-}
+.comment-empty > span { text-transform: capitalize; font-size: clamp(0.75rem, 1.25vw, 1.25rem); color: grey; }
 
 .cat-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); color: grey; }
 
 @media (max-width: 60rem) {
+    .comment-page { width: 100%; }
     .comment-nav { margin-top: 0; left: 0; width: 100%; }
 }
 
@@ -177,7 +163,7 @@
     .comment-hr { display: none; }
     .comment-collection { width: 100%; }
     .comment { padding: 1vh 0.25vw 1vh 3vw; border-radius: 0; width: 100%; }
-    .comment-input-wrapper { padding: 1vh 1.5vw 2.5vh 1.5vw; width: 100%; border-radius: 0; }
+    .comment-input-wrapper { padding: 1vh 1.5vw 2.5vh 1.5vw; width: 97.5%; }
     .comment-input { align-items: flex-end; flex-direction: column; width: 99%; }
     .comment-input > input { width: 100%; }
     .comment-name { margin-left: 3vw; }

@@ -41,8 +41,8 @@ const Dashboard = () => {
 
     return ( 
         <div>
-            <Menu/>
             <div className="dashboard grid">
+                <Menu/>
                 <SideNav param={"default"}/>
                 <div className='dashboard-overlay'/>
                 <div>

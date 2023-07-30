@@ -1,29 +1,17 @@
 .home { position: relative; overflow: hidden; background: white; }
 .home-login { 
-    margin: 0 auto;
     position: absolute;
-    padding: 2vh 2vw;
     inset: 2.5% auto auto 15%;
+    padding: 2vh 2vw;
+    margin: 0 auto;
     width: 30vw; 
-    box-shadow: 0 1px 3px grey;
+    box-shadow: 0 1px 8px grey;
     border-radius: 0.5rem;
     z-index: 3;
 }
 
-.home-intro {
-    text-align: center;
-    margin: 12.5% 15% 0 auto;
-    height: 75vh;
-    width: 30%;
-}
-
-.home-intro > h1 { 
-    margin: 0;
-    font-size: clamp(1rem, 2.5vw, 2.5rem);
-    font-weight: 700;
-    color: navy;
-}
-
+.home-intro { text-align: center; margin: 25vh 17.5vw 0 auto; height: 75vh; width: 30%; }
+.home-intro > h1 { margin: 0; font-size: clamp(1rem, 2.5vw, 2.5rem); font-weight: 700; color: navy; }
 .home-intro > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); font-weight: 500; color: grey; }
 
 .home-body {
@@ -36,12 +24,7 @@
     background: white;
 }
 
-.home-image {
-    object-fit: cover;
-    max-height: 75vh;
-    max-width: 50%;
-    border: none;
-}
+.home-image { object-fit: cover; max-height: 75vh; max-width: 50%; border: none; }
 
 .home-text { flex-direction: column; max-width: 50%; }
 
@@ -52,7 +35,6 @@
     font-weight: 700;
     color: navy;
 }
-
 
 .home-text > div { text-align: center; padding: 0 0.5vw 0 2vw; width: 80%; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
 .home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
@@ -87,10 +69,10 @@
 }
 
 @media (max-width: 50rem) {
-    .home-intro { margin: 3vh auto 2.5vh auto; width: 90%; height: fit-content;}
-    .home-login { inset: 2.5% auto auto 0; position: relative; margin: 2.5vh auto 5vh auto; width: 75%; height: fit-content; }
+    .home-intro { margin: 5vh auto; width: 90%; height: fit-content;}
+    .home-login { inset: 0 auto auto 0; position: relative; width: 85%; height: fit-content; }
     .home-background { width: 100%; background-position: center; }
-    .home-body { padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; }
+    .home-body { margin-top: 7.5vh; padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; }
     .home-text {  max-width: 100%; align-items: flex-start; }
     .home-image { max-height: 50vh; max-width: 100%; }
     .home-text > div { width: 95%; }
@@ -100,5 +82,5 @@
 
 @media (max-width: 25rem) {
     .home-intro { width: 100%; }
-    .home-login { padding: 2vh 0; width: 99%; box-shadow: -1px 2px 3px gray; border-radius: 0; }
+    .home-login { padding: 2vh 0; margin: 0 auto; width: 97.5%;  }
 }

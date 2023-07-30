@@ -1,13 +1,13 @@
 .post-section { margin: 3vh 0 5vh 0; flex-direction: column; row-gap: 2vh; }
 
 .post-form { 
-    padding: 1vh 2.5vw;
+    padding: 1.5vh 5vw;
     flex-wrap: wrap;
     column-gap: 1vw;
     width: 90%;
     background: rgb(241, 241, 255);
     box-shadow: 0 0 3px gray;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
 }
 .post-form > h1 { margin: 1vh 0 3vh 0; font-weight: 700; font-size: clamp(0.875rem, 1.5vw, 1.5rem); color: navy; }
 
@@ -49,7 +49,7 @@
     .post-form { width: 97.5%; }
     .post-form > h1 { margin: 1vh 0; }
     .post-input { padding-bottom: 0.5vh; }
-    .post-collection { width: 97.5%; }
+    .post-collection { width: 97.5%; row-gap: 1vh; }
 }
 
 @media (max-width: 50rem) {
@@ -60,5 +60,5 @@
 }
 
 @media (max-width: 25rem) {
-    .post-form { border-radius: 0; }
+    .post-form { border-radius: 0.5rem; }
 }

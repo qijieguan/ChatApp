@@ -38,7 +38,9 @@ const Menu = () => {
         }
 
         clearDropDowns();
-        setTimeout(() => { handleResize(); }, 250);
+        setTimeout(() => { 
+            handleResize(); 
+        }, 250);
 
     }, [dispatch, baseURL, location]);
 
@@ -55,7 +57,6 @@ const Menu = () => {
     const handleResize = () => {
         let menu = document.querySelector('.menu');
         let menu_bar = document.querySelector('.menu-bar');
-
         let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
         let overlay = document.querySelector('.dashboard-overlay');
         let side_nav = document.querySelector('.side-nav.default');
@@ -71,6 +72,8 @@ const Menu = () => {
         let comment_nav = document?.querySelector('.comment-nav');
         if (menu_bar?.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
         if (menu_bar?.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
+
+        if (side_nav !== null) { side_nav.style.top = menu.getBoundingClientRect().height + 'px'; }
 
         clearDropDowns();
     }

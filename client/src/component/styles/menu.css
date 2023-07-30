@@ -1,7 +1,6 @@
-.menu { position: relative; align-items: flex-start; }
+.menu { position: sticky; inset: 0 auto auto 0; grid-column: 1 / 3; align-items: flex-start; z-index: 4; }
 
 .menu-bar { 
-    position: relative;
     padding: 1vh 1vw 1vh 0;
     column-gap: 3vw;
     row-gap: 1vh;
@@ -9,17 +8,15 @@
     max-width: 250%;
     background: white;
     box-shadow: 0 3px 3px rgb(236, 236, 236);
-    z-index: 4;
 }
 
 .menu-side-wrapper { align-self: flex-start; width: 0; transform: translate3d(-100%, -1vh, 0); transition: transform 0.1s ease-in; }
-.menu-side-wrapper.show.expand { width: 35vw; transform: translate3d(0, -1vh, 0); }
 
 .menu-side-nav { position: relative; z-index: 3; }
 
 .menu-icon { font-size: clamp(1.25rem, 1.5vw, 1.5rem); color: rgb(100, 100, 100); }
 
-.menu-label-wrapper { gap: 1vh; color: rgb(99, 99, 99); }
+.menu-label-wrapper { gap: 1vh; color: gray; }
 
 .menu-li-icon { font-size: clamp(1.25rem, 2.125vw, 2.125rem); }
 .menu-li-icon.community-icon { font-size: clamp(2rem, 3vw, 3rem); }
@@ -63,7 +60,7 @@
 .menu-dropdown { position: relative; padding: 0.25vw 0 0.25vw 0.25vw; column-gap: 1vw; }
 .menu-dropdown img { height: 6.5vh; width: 6.5vh; object-fit: cover; border-radius: 4rem; }
 
-.menu-user { font-size: clamp(0.75rem, 1.125vw, 1.125rem); font-weight: 500; color: rgb(95, 95, 95); }
+.menu-user { text-transform: uppercase; font-size: clamp(0.75rem, 1.125vw, 1.125rem); font-weight: 500; color: rgb(95, 95, 95); }
 
 .menu-links {
     display: none;
@@ -71,7 +68,7 @@
     inset: auto 0 0 auto;
     width: 100%;
     background: white;
-    box-shadow: 0 1px 3px rgb(0, 0, 65);
+    box-shadow: 0 1px 3px grey;
     transform: translateY(100%);
     z-index: 3;
 }
@@ -89,8 +86,7 @@
         position: fixed; 
         inset: 0 auto auto 0; 
         column-gap: 1vw; 
-        box-shadow: 0 1px 3px rgb(184, 184, 184);
-        border-bottom: 1px solid grey; 
+        box-shadow: 0 1px 2px rgb(0, 0, 73); 
         background: navy;
     }
     .menu-bar * { color: white; }
@@ -110,8 +106,9 @@
         border-radius: 0;
     }
     .menu-li-wrapper.show { display: flex; transform: translateY(100%); padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
+    .menu-side-wrapper.show.expand { width: 35vw; transform: translate3d(0, -1vh, 0); }
     .menu-li { padding: 1vh 4vw; }
-    .menu-links { background: navy; }
+    .menu-links { background: navy; box-shadow: 0 1px 3px rgb(0, 0, 65); }
 }
 
 @media (max-width: 50rem) {
