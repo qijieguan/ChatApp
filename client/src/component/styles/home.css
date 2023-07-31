@@ -1,42 +1,59 @@
-.home { position: relative; overflow: hidden; background: white; }
+.home { 
+    position: relative;
+    flex-direction: column; 
+    align-items: unset; 
+    padding-bottom: 5vh;
+    background: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+    overflow: hidden; 
+}
 .home-login { 
     position: absolute;
-    inset: 2.5% auto auto 15%;
+    inset: 5% auto auto 15%;
     padding: 2vh 2vw;
-    margin: 0 auto;
+    margin: 0 auto 7.5vh auto;
     width: 30vw; 
-    box-shadow: 0 1px 8px grey;
+    background: white;
+    box-shadow: 0 1px 10px black;
     border-radius: 0.5rem;
     z-index: 3;
 }
 
-.home-intro { text-align: center; margin: 25vh 17.5vw 0 auto; height: 75vh; width: 30%; }
-.home-intro > h1 { margin: 0; font-size: clamp(1rem, 2.5vw, 2.5rem); font-weight: 700; color: navy; }
-.home-intro > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); font-weight: 500; color: grey; }
+.home-intro { text-align: center; margin: 35vh 17.5vw 0 auto; height: 70vh; width: 30%; }
+.home-intro > h1 { margin: 0; font-size: clamp(1rem, 2.5vw, 2.5rem); font-weight: 700; font-style: oblique; color: white; }
+.home-intro > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); font-weight: 500; color: white; }
 
 .home-body {
+    margin-bottom: 20vh;
     padding: 10vh 2.5vw;
     min-height: 60vh;
     justify-content: center;
     column-gap: 5vw;
-    width: 95%;
-    border-top: 1px solid rgb(230, 230, 230);
+    max-width: 75%;
     background: white;
+    box-shadow: 2px 2px 5px;
 }
+.home-body.left { border-radius: 0 1rem 1rem 0; }
+.home-body.right { border-radius: 1rem 0 0 1rem; }
 
-.home-image { object-fit: cover; max-height: 75vh; max-width: 50%; border: none; }
+.home-image { object-fit: cover; max-height: 75vh; max-width: 60%; border: none; }
 
-.home-text { flex-direction: column; max-width: 50%; }
+.home-text { flex-direction: column; max-width: 40%; }
 
 .text-label {
     margin: 0 auto 2vh auto;
     text-align: center;
-    font-size: clamp(1.125rem, 2.5vw, 2.5rem);
+    font-size: clamp(1.125rem, 2vw, 2rem);
     font-weight: 700;
-    color: navy;
+    color: royalblue;
 }
 
-.home-text > div { text-align: center; padding: 0 0.5vw 0 2vw; width: 80%; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
+.home-text > div { 
+    text-align: center; 
+    padding: 0 0.5vw 0 2vw; 
+    width: 100%; 
+    font-size: clamp(0.75rem, 1.25vw, 1.25rem); 
+    color: gray;
+}
 .home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
 
 .feature-wrapper { justify-content: center; color: gray; }
@@ -57,7 +74,7 @@
     padding: 2vh 2vw;
     text-align: center;
     font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    color: navy;
+    color: blue;
     border: 1px solid;
     border-radius: 0.25rem;
 }
@@ -65,14 +82,16 @@
 .features-dropdown.active { height: 100%; }
 
 @media (max-width: 75rem) { 
-    .home-login { width: 45vw; inset: 2.5% auto auto 5%; }
+    .home-login { width: 45vw; inset: 5% auto auto 5%; }
 }
 
 @media (max-width: 50rem) {
-    .home-intro { margin: 5vh auto; width: 90%; height: fit-content;}
+    .home { row-gap: 2vh; }
+    .home-intro { margin: 5vh auto 2.5vh auto; width: 90%; height: fit-content;}
     .home-login { inset: 0 auto auto 0; position: relative; width: 85%; height: fit-content; }
     .home-background { width: 100%; background-position: center; }
-    .home-body { margin-top: 7.5vh; padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; }
+    .home-body { margin-bottom: 0; padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; max-width: 100%; }
+    .home-body.left, .home-body.right { border-radius: 0; }
     .home-text {  max-width: 100%; align-items: flex-start; }
     .home-image { max-height: 50vh; max-width: 100%; }
     .home-text > div { width: 95%; }
@@ -81,6 +100,7 @@
 }
 
 @media (max-width: 25rem) {
+    .home { row-gap: 1vh; }
     .home-intro { width: 100%; }
-    .home-login { padding: 2vh 0; margin: 0 auto; width: 97.5%;  }
+    .home-login { padding: 2vh 0; margin: 0 auto 4vh auto; width: 97.5%;  }
 }

@@ -8,7 +8,7 @@ const About = () => {
                 <div className='about-image-wrapper'>
                     <div className='about-image'/>
                 </div>
-                <div>Application Technologies</div>
+                <div>Tech Stack</div>
                 <p>
                     The app is currently being developed using the <span>MERN</span> stack. 
                     It uses the <span>React</span> framework to design frontend. 
@@ -21,7 +21,7 @@ const About = () => {
                 <div className='about-image-wrapper'>
                     <div className='about-image'/>
                 </div>
-                <div>Application Specifications</div>
+                <div>Specifications</div>
                 <p>
                     The app is an experimental project to recreate simple
                     functions of a messanging appliaction. It includes user 
@@ -35,11 +35,11 @@ const About = () => {
                 <div className='about-image-wrapper'>
                     <div className='about-image'/>
                 </div>
-                <div>My Purpose</div>
+                <div>My Story</div>
                 <p>
-                    I am an <span>entry-level web developer</span>. My purpose is develop web applications 
-                    and prototype different web designs. Enjoy learning 
-                    <span> trending web technologies </span> and <span>designs</span> to build websites.
+                    I am an <span>entry-level web developer</span>. My dream is to gain industry experience 
+                    and grow into professional in a web developer role. I enjoy <span>exploring</span> and
+                    <span> creating</span> UI/UX designs through my projects.
                 </p>
             </div>
         </div>

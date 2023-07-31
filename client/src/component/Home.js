@@ -10,7 +10,7 @@ const Home = () => {
 
     useEffect(() => {
         if (!sessionStorage.getItem('visited')) {
-            guestSignIn();
+            //guestSignIn();
         }   
     }, []);
 
@@ -46,13 +46,13 @@ const Home = () => {
     }
 
     return ( 
-        <div className="home">
+        <div className="home flex">
             <div className='home-intro'>
                 <h1>Messaging Application</h1>
-                <span>A application allowing digital networking and communication between users</span>
+                <span>A application for digital networking and communication between users</span>
             </div>
             <div className="home-login"><Login/></div>
-            <div className='home-body home-body-1 flex'>
+            <div className='home-body left home-body-1 flex'>
                 <div className='home-text home-text-1 flex'>
                     <h1 className='text-label'>1. Create New Account</h1>
                     <div>
@@ -64,7 +64,7 @@ const Home = () => {
                 </div>
                 <img className='home-image' src="https://cdn.pixabay.com/photo/2021/03/08/12/32/facebook-6078995_960_720.png" alt=""/>
             </div>
-            <div className='home-body home-body-2 flex'>
+            <div className='home-body right home-body-2 flex' style={{marginLeft: 'auto'}}>
                 <img className='home-image' src="https://media.istockphoto.com/id/1407212383/photo/concept-of-cyber-security-in-two-step-verification-multi-factor-authentication-information.jpg?b=1&s=170667a&w=0&k=20&c=2TeTgPZk6RjJnlaD7rlLS7JENOsR1qihsID-btv_mQw=" alt=""/>
                 <div className='home-text home-text-2 flex'>
                     <h1 className='text-label'>2. Enter Login Credientials</h1>
@@ -76,7 +76,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className='home-body home-body-3 flex'>
+            <div className='home-body left home-body-3 flex'>
                 <div className='home-text home-text-3 flex'>
                     <h1 className='text-label'>3. Ready to Network the World</h1>
                     <div className='feature-wrapper flex' onClick={() => {handleClick()} }>

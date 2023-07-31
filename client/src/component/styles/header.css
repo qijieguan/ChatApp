@@ -1,13 +1,16 @@
 .app-header { 
-    position: sticky;
+    position: fixed;
     inset: 0 auto auto 0;
     row-gap: 2vh;
     min-height: 8vh;
     width: 100%;
-    background: navy;
+    background: transparent;
     box-shadow: 0 1px 3px rgb(0, 0, 66);
     z-index: 4;
+    transition: 0.1s all ease-in;
 }
+
+.app-header.dynamic { background: royalblue; }
 
 .header-btns { 
     justify-content: flex-end;
@@ -16,10 +19,9 @@
     row-gap: 1vh;
     min-height: 8vh;
     width: 100%;
-    box-shadow: 0 0 1px rgb(185, 185, 185);
 }
 
-.header-btns button { font-size: clamp(0.75rem, 1.5vw, 1rem); color: white; }
+.header-btns button { font-size: clamp(0.75rem, 1.125vw, 1.125rem); color: white; }
 
 .login-btn, .about-btn { background: transparent; }
 
@@ -57,6 +59,7 @@
 }
 
 @media (max-width: 25rem) {
-    .header-btns { padding: 2vh 0; justify-content: space-around; }
+    .app-header { padding-bottom: 0.5vh; }
+    .header-btns { padding: 0; justify-content: space-around; }
     .start-btn { padding: 1vh 2.5vw; margin-right: 0; }
 }

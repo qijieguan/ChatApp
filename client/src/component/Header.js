@@ -1,6 +1,6 @@
 import './styles/header.css';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Header = () => {
@@ -8,9 +8,23 @@ const Header = () => {
     const user = JSON.parse(sessionStorage.getItem('user'));
     const location = useLocation();
 
+    const [prevY, setPrevY] = useState(window.scrollY);
+
     useEffect(() => { 
         document.querySelector('.App')?.scrollIntoView({top: 0});
+
+        handleResize();
     }, [location]);
+
+    const handleResize = () => {
+        let header = document.querySelector('.app-header');
+        let home = document.querySelector('.home');
+        let about = document.querySelector('.about-section');
+
+        if (home !== null) {
+            home.style.paddingTop = header.getBoundingClientRect().height + 'px';
+        }
+    }
 
     const handleScroll = () => {
         if (window.location.href.includes("About") || window.location.href.includes("Register") ) {
@@ -19,10 +33,25 @@ const Header = () => {
         document.getElementsByClassName('home-body-1')[0]?.scrollIntoView();
     }
 
+    window.addEventListener('scroll', (e) => {
+        let header = document.querySelector('.app-header');
+
+        setPrevY(window.prevY)
+        
+        if (header && prevY < window.scrollY) {
+            header.classList.add('dynamic');
+        }
+        
+        if (header && window.scrollY === 0) {
+            header.classList.remove('dynamic');
+        }
+    });
+
+
     return (
         <> 
             {!sessionStorage.getItem("isLogged") ?
-                <header className="app-header">
+                <header className='app-header flex'>
                     <div className="header-btns flex">
                         <Link to='/'><button className="login-btn">Login</button></Link>
                         <Link to='/About'><button className="about-btn">About</button></Link>

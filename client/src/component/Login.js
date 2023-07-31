@@ -94,7 +94,7 @@ const Login = () => {
     return(
         <div>
             <form className="login flex" onSubmit={handleSubmit}>
-                <h1 className="login-label">Login Credentials</h1>
+                <h1 className="login-label">Enter Login</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
                 <div className={'login-username grid ' + highlight(username)}>
                     <input type="text" name="username" className='login-username-input' value={username} onChange={handleChange} required/>
