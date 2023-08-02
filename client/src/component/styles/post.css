@@ -22,7 +22,7 @@
 
 .post-header { padding: 0 2.5vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(107, 107, 107); }
+.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(131, 131, 131); }
 
 .primary-text { align-self: flex-start; padding: 0 3vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
 
@@ -85,9 +85,9 @@
 
 .action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.post-like.active { color: navy; }
+.post-like.active { color: red; }
 
-.post-like.active > .like-count { color: rgb(231, 231, 231); background: navy; }
+.post-like.active > .like-count { color: rgb(231, 231, 231); background: red; }
 
 .post-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
 

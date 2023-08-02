@@ -70,9 +70,8 @@ const Menu = () => {
         else { menu_side_wrapper?.classList.remove('show'); overlay?.classList.remove('show'); }
 
         let comment_nav = document?.querySelector('.comment-nav');
-        if (menu_bar?.offsetWidth <= 960 && comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
-        if (menu_bar?.offsetWidth > 960 && comment_nav) { comment_nav.style.top = '0'; }
-
+        if ( comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
+      
         if (side_nav !== null) { side_nav.style.top = menu.getBoundingClientRect().height + 'px'; }
 
         clearDropDowns();

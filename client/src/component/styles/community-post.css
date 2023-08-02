@@ -41,8 +41,8 @@
 
 .community-page-footer > div { column-gap: 0.5vw; }
 
-.community-page-likes.active * { color: navy; }
-.community-page-likes.active > .like-count { color: rgb(231, 231, 231); background: navy; }
+.community-page-likes.active * { color: red; }
+.community-page-likes.active > .like-count { color: rgb(231, 231, 231); background: red; }
 
 .community-page-footer > div > span {
     font-size: clamp(0.75rem, 1.125vw, 1.125rem);

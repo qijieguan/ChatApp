@@ -1,5 +1,6 @@
 import './styles/post-section.css';
-import { AiOutlineSend, AiOutlineCamera } from 'react-icons/ai';
+import { AiOutlineSend, AiOutlineCamera, AiFillCloseCircle } from 'react-icons/ai';
+import { BsPencilSquare, BsFillEmojiSmileFill } from 'react-icons/bs';
 
 import { useState, useEffect } from 'react';
 import PostCollection from './PostCollection.js';
@@ -96,36 +97,59 @@ const PostSection = () => {
         setRender(!render);
     }
 
+    const handleOpenForm = () => {
+        document.querySelector('.post-input')?.classList.toggle('expand');
+    }
+
+    const handleCloseForm = () => {
+        document.querySelector('.post-input')?.classList.remove('expand');
+    }
+
     return (
         <div className='post-section flex'>
             <form className='post-form flex' onSubmit={handleSubmit}>
-                <h1>Ready to post your thoughts</h1>
-                <div className='post-input'>
-                    <input
+                <div className='post-form-header flex'>
+                    <div className='post-form-header-text flex'> 
+                        <span>Let us hear your story, {user.firstname}! </span>
+                        <span> <BsFillEmojiSmileFill className='smile-icon'/></span>
+                    </div>
+                    <button className='post-form-header-button flex' onClick={handleOpenForm}>
+                        <BsPencilSquare className='post-form-header-icon'/>
+                        <span> Compose</span>
+                    </button>
+                </div>
+                <div className='post-input flex'>
+                    <textarea
                         type='text'
                         name="post-text-input"
                         placeholder="What's on your mind?"
                         value={textInp}
                         onChange={handleChange}
                     />
+                    {imageInp &&
+                        <img className='post-image-input-preview' src={imageInp} alt=""/>
+                    }
+                    <div className='post-image-wrapper flex'>
+                        <input
+                            type='file'
+                            name="post-image-input"
+                            className="post-image-input"
+                            accept='images/*'
+                            onChange={handleChange}
+                        />
+                        <AiOutlineCamera className='post-image-icon' onClick={handleUpload}/>
+                    </div>
+                    <div className='post-input-buttons flex'>
+                        <button className='post-input-cancel flex' onClick={handleCloseForm}>
+                            <AiFillCloseCircle className='post-input-cancel-icon'/>
+                            <span>Cancel</span>
+                        </button>
+                        <button type='submit' className='post-input-submit flex'>
+                            <AiOutlineSend className='post-input-submit-icon'/>
+                            <span>Submit</span>
+                        </button>
+                    </div>
                 </div>
-                {imageInp &&
-                    <img className='post-image-input-preview' src={imageInp} alt=""/>
-                }
-                <div className='post-image-wrapper flex'>
-                    <input
-                        type='file'
-                        name="post-image-input"
-                        className="post-image-input"
-                        accept='images/*'
-                        onChange={handleChange}
-                    />
-                    <AiOutlineCamera className='post-image-icon' onClick={handleUpload}/>
-                </div>
-                <button type='submit' className='submit flex'>
-                    <AiOutlineSend/>
-                    <span>Create post</span>
-                </button>
             </form>
             
             <div className='post-collection flex'>
