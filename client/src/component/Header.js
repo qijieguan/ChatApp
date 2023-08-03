@@ -12,18 +12,18 @@ const Header = () => {
 
     useEffect(() => { 
         document.querySelector('.App')?.scrollIntoView({top: 0});
-
+    
         handleResize();
     }, [location]);
 
     const handleResize = () => {
         let header = document.querySelector('.app-header');
         let home = document.querySelector('.home');
-        let about = document.querySelector('.about-section');
 
-        if (home !== null) {
-            home.style.paddingTop = header.getBoundingClientRect().height + 'px';
-        }
+        if (home !== null) { home.style.paddingTop = header.getBoundingClientRect().height + 'px'; }
+
+        if (location.pathname === '/Register') { header?.classList.add('orange'); }
+        else { header?.classList.remove('orange'); }
     }
 
     const handleScroll = () => {

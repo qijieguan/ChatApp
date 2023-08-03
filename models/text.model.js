@@ -2,6 +2,15 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const textObjSchema = new Schema({
+    user_id: { type: String, required: true, trim: true },
+    content: { type: String, required: true, trim: true }
+},
+{
+    timestamps: true,   
+}
+);
+
 const textSchema = new Schema({
     users: {
         type: Array,
@@ -9,10 +18,7 @@ const textSchema = new Schema({
         trim: true,
         minlength: 2
     },
-    texts: [{
-        user_id: { type: String, required: true, trim: true },
-        content: { type: String, required: true, trim: true }
-    }],
+    texts: [textObjSchema],
     preview: {
         type: String,
         trim: true

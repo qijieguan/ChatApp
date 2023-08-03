@@ -15,7 +15,8 @@ const Login = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItem: 'center',
-            justifyContent: 'space-around',
+            justifyContent: 'center',
+            rowGap: '2vh',
             top : '50%',
             left: '50%',
             right: 'auto',
@@ -24,7 +25,7 @@ const Login = () => {
             height: '35%',
             transform: 'translate(-50%, -50%)', 
             color: 'rgb(77, 77, 77)',
-            backgroundColor: 'white',
+            backgroundColor: 'rgb(100, 100, 255)',
             border: '1px solid rgb(180, 180, 180)',
         },
         overlay: { backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
@@ -114,7 +115,7 @@ const Login = () => {
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
-                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'black'}}
+                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'white'}}
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />

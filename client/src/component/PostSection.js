@@ -119,34 +119,40 @@ const PostSection = () => {
                     </button>
                 </div>
                 <div className='post-input flex'>
-                    <textarea
-                        type='text'
-                        name="post-text-input"
-                        placeholder="What's on your mind?"
-                        value={textInp}
-                        onChange={handleChange}
-                    />
+                    <div className='post-input-textarea'>
+                        <textarea
+                            type='text'
+                            name="post-text-input"
+                            placeholder="What's on your mind?"
+                            value={textInp}
+                            onChange={handleChange}
+                        />
+                        <div className='post-input-upload flex'>
+                            <div className='post-image-wrapper flex'>
+                                <input
+                                    type='file'
+                                    name="post-image-input"
+                                    className="post-image-input"
+                                    accept='images/*'
+                                    onChange={handleChange}
+                                />
+                                <AiOutlineCamera className='post-image-icon' onClick={handleUpload}/>
+                            </div>
+                        </div>
+                    </div>
+
                     {imageInp &&
                         <img className='post-image-input-preview' src={imageInp} alt=""/>
                     }
-                    <div className='post-image-wrapper flex'>
-                        <input
-                            type='file'
-                            name="post-image-input"
-                            className="post-image-input"
-                            accept='images/*'
-                            onChange={handleChange}
-                        />
-                        <AiOutlineCamera className='post-image-icon' onClick={handleUpload}/>
-                    </div>
+            
                     <div className='post-input-buttons flex'>
                         <button className='post-input-cancel flex' onClick={handleCloseForm}>
                             <AiFillCloseCircle className='post-input-cancel-icon'/>
-                            <span>Cancel</span>
+                            <span>Close</span>
                         </button>
-                        <button type='submit' className='post-input-submit flex'>
+                        <button type='submit' className='post-input-submit flex' onClick={handleCloseForm}>
                             <AiOutlineSend className='post-input-submit-icon'/>
-                            <span>Submit</span>
+                            <span>Post</span>
                         </button>
                     </div>
                 </div>

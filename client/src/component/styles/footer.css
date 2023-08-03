@@ -1,5 +1,4 @@
 .footer {
-    position: relative;
     min-height: 30vh; 
     padding: 2.5vh 5vw;
     flex-wrap: wrap; 
@@ -8,8 +7,6 @@
     width: 100%; 
     background: navy;
     color: white;  
-    border-top: 1px solid rgb(177, 177, 177);
-    z-index: 2;
 }
 
 .hour, .contact { margin-bottom: auto; }

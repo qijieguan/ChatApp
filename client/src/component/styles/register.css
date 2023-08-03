@@ -2,11 +2,11 @@
 .register-form { 
     grid-template-columns: 48% 48%;
     flex-wrap: wrap;
-    padding: 7.5vh 5vw 20vh 5vw; 
+    padding: 12.5vh 5vw 20vh 5vw; 
     row-gap: 5vh;
     font-weight: 700; 
     width: 100%; 
-    background: white;
+    background: orange;
 }
 
 .register-label {
@@ -14,8 +14,9 @@
     grid-column: 1 / 2;
     width: 80%;
     font-size: clamp(1rem, 2vw, 2rem);
+    font-weight: 500;
     letter-spacing: 1px;
-    color: rgb(131, 131, 131);
+    color: white;
 }
 
 .linebreak { 
@@ -27,21 +28,21 @@
 .register-msg { color: 'navy' }
 .image-input { margin: 0 auto; flex-direction: column; row-gap: 4vh; width: 75%; }
 .preview-register-image { height: 30vh; width: 30vh; object-fit: cover; object-position: center; border-radius: 0.5rem; }
-.register-image-input { 
-    display: none;
-}
+
+.register-image-input { display: none; }
 .register-image-button {
     padding: 2vh 2vw;
     font-size: clamp(0.75rem, 1vw, 1rem);
-    color: navy;
+    color: white;
     background: transparent;
     border: 2px solid;
     border-radius: 2rem;
 }
+.register-image-button:hover { opacity: 0.7; }
 
 .register-inputs {
     grid-column: 1 / 3;
-    grid-template-columns: 40% 40%;
+    grid-template-columns: 42.5% 42.5%;
     justify-content: center;
     margin-top: 5vh;
     row-gap: 7.5vh;
@@ -50,16 +51,16 @@
     width: 100%;
 }
 .register-input-wrapper { 
-    min-height: 3.1rem; 
+    min-height: 3vh; 
     flex-direction: column;
-    row-gap: 1vh;
+    row-gap: 0.5vh;
     align-items: flex-start;
     width: 100%; 
 }
 .register-input-wrapper > h1 { margin: 0; }
-.register-input-wrapper > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: rgb(109, 109, 109); }
+.register-input-wrapper > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: white; }
 .register-input-wrapper > input { width: 100%; background: rgb(240, 240, 240); border-radius: 0.25rem; }
-.input-label { margin: auto auto 5px auto; font-size: clamp(0.875rem, 2.5vw, 1rem); width: 90%; color: rgb(131, 131, 131); }
+.input-label { font-size: clamp(0.875rem, 2vw, 1rem); width: 100%; color: white; }
 .input-label::after { content: " *"; color: red; }
 .register-btn { 
     grid-column: 1 / 3;
@@ -69,16 +70,21 @@
     font-weight: 700;
     letter-spacing: 0.125rem; 
     width: 90%;  
-    color: gray;
+    color: white;
     border: 2px solid;
     background: transparent;
 }
 .register-btn:hover { background: gold; color: black; }
 
 @media (max-width: 50rem) {
-    .register-form { grid-template-columns: 97.5%; padding: 2vh 1vw 5vh 1vw; row-gap: 2.5vh; }
+    .register-form { grid-template-columns: 97.5%; padding: 12.5vh 1vw 5vh 1vw; row-gap: 2.5vh; }
     .register-label { text-align: center; width: 100%; } 
     .linebreak, .register-inputs, .register-btn { grid-column: 1 / 2; }
     .register-inputs { grid-template-columns: 100%; }
     .register-input-wrapper { width: 100%; padding: 0 2.5vw; }
+}
+
+@media (max-width: 25rem) {
+    .register-form { row-gap: 1vh; }
+    .register-inputs { margin-top: 0; row-gap: 5vh; }
 }

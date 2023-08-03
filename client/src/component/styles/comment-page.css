@@ -13,7 +13,7 @@
     padding: 2vh 2vw;
     width: 95%;
     background: tomato;
-    box-shadow: 0 2px 3px rgb(43, 43, 43);
+    box-shadow: 0 2px 3px rgb(141, 141, 141);
     z-index: 4;
 }
 
@@ -84,6 +84,7 @@
     height: 6.5vh;
     width: 70%;
     font-size: clamp(0.75rem, 1vw, 1rem);
+    font-weight: 700;
     background: transparent;
     color: black;
     border-bottom: 2px solid tomato;

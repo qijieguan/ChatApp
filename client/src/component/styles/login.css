@@ -61,22 +61,12 @@
 }
 .sign-in-btn:hover { opacity: 0.7; }
 
-.register-link { 
-    margin-top: 2vh;
-    text-align: center;
-    width: 100%; 
-    color: grey;
-}
-
+.register-link { margin-top: 2vh; text-align: center; width: 100%; color: grey; }
 .register-link > span { font-size: clamp(0.75rem, 1vw, 1rem);  }
 .register-link > span:last-child { color: navy; }
-
 .register-link:hover { text-decoration: underline; text-underline-position: below; }
 
-.auth-text { 
-    margin: 0 auto;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-}
+.auth-text { margin: 0 auto 2.5% auto; text-align: center; font-size: clamp(0.875rem, 1.5vw, 1.5rem); color: white; }
 .auth-btn { 
     min-height: 10vh;
     max-height: 15vh; 
@@ -85,10 +75,10 @@
     font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
-    color: navy; 
+    color: rgb(235, 235, 235); 
     background: transparent;
     border: 1px solid; 
-    border-radius: 0.125rem
+    border-radius: 0.25rem
 }
 
 .auth-btn:hover { opacity: 0.4; }

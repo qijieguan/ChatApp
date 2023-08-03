@@ -83,14 +83,14 @@
 .community-collection-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
 .community-collection-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
-.side-community { row-gap: 1vh; column-gap: 2vw; width: 100%; }
+.side-community { row-gap: 1vh; column-gap: 1.5vw; width: 100%; }
 .side-community:hover > .side-community-detail { opacity: 0.7; }
 
 .side-community-profile { height: 6vh; width: 6vh; object-fit: cover; border-radius: 3rem; box-shadow: 0 0 2px; }
 
 .side-community-detail { align-items: flex-start; flex-direction: column; max-width: 65%; }
 
-.side-community-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: gray; }
+.side-community-name { font-size: clamp(0.7rem, 0.875vw, 0.875rem); color: gray; }
 .side-community-members { font-size: clamp(0.625rem, 0.875vw, 0.875rem); color: grey; }
 
 @media (max-width: 60rem) {

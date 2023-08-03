@@ -110,8 +110,8 @@
 .eye-icon { font-size: clamp(1.125rem, 1.5vw, 1.5rem); }
 .profile-view > span { font-weight: 500; font-size: clamp(0.75rem, 0.875vw, 0.875rem); }
 
-.friend-bio { margin-top: 2.5vh; padding: 1vh 0.5vw 1vh 1vw; height: 8vh; color: grey; overflow: hidden;}
-.friend-bio > span { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 500; }
+.friend-bio { line-height: 1.25; text-align: center; margin-top: 2.5vh; padding: 1vh 0.5vw 1vh 1vw; height: 8vh; color: grey; overflow: hidden;}
+.friend-bio > span { font-size: clamp(0.625rem, 0.75vw, 0.75rem); }
 
 .friend-buttons { position: relative; display: grid; grid-template-columns: 40% 40%; min-height: 5vh; }
 .friend-buttons > button {  
