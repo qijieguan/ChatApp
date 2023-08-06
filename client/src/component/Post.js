@@ -127,7 +127,7 @@ const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp,
 
                             <Modal isOpen={zoomImage} style={modalStyles}>
                                 <div className='primary-image-zoom'>
-                                    <img src={post.post_image} alt=""/>
+                                    <img src={post.primary_image} alt=""/>
                                     <button onClick={() => { setZoomImage(false); }}>Exit View</button>
                                 </div>
                             </Modal>

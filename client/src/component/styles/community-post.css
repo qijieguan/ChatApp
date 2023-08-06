@@ -55,9 +55,7 @@
 }
 
 .community-page-empty { min-height: 50vh; column-gap: 1vw; color: rgb(160, 160, 160); }
-
 .community-page-empty > span { font-size: clamp(1.5rem, 2vw, 2rem);}
-
 .community-page-empty > .cat-icon { font-size: clamp(2.75rem, 2.5vw, 3.5rem); }
 
 @media (max-width: 50rem) {
