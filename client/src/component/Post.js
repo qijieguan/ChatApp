@@ -47,19 +47,23 @@ const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp,
     }, [likes]);
 
     const parseStringTime = () => {
-        let d = timeStamp.split('T');
-        let t = d[1].substring(0, d[1].length -8).split(":");
-        let meridiem = "am";
-        let hour = t[0];
-        let minutes = t[1];
+        if (!timeStamp) { return null; }
 
-        if (Number(t[0]) >= 12) {
-            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
-            meridiem = "pm";
-        }
-        else { meridiem = "am"; }
+        let [Y, M, D, H, m, s] = timeStamp.split(/\D/);
+        let date = new Date(Date.UTC(Y, M-1, D, H, m, s));
+    
+        let local_date = date.toLocaleString('default', { 
+            //weekday: "long",
+            year: "numeric", 
+            month: "short", 
+            day: "numeric", 
+            hour: '2-digit', 
+            minute:'2-digit' 
+        });
 
-        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+        let result = local_date.split(', ')
+        
+        return result[0] + " · " + result[2];
     }
 
     const highlightLikes = () => {

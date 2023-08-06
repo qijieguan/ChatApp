@@ -14,19 +14,23 @@ const Text = ({textID, friend, text }) => {
     },[textID, text.content]);
 
     const parseStringTime = () => {
-        let d = text.createdAt.split('T');
-        let t = d[1].substring(0, d[1].length -8).split(":");
-        let meridiem = "am";
-        let hour = t[0];
-        let minutes = t[1];
+        if (!text.createdAt) { return null }
 
-        if (Number(t[0]) >= 12) {
-            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
-            meridiem = "pm";
-        }
-        else { meridiem = "am"; }
+        let [Y, M, D, H, m, s] = text.createdAt.split(/\D/);
+        let date = new Date(Date.UTC(Y, M-1, D, H, m, s));
+    
+        let local_date = date.toLocaleString('default', { 
+            //weekday: "long",
+            year: "numeric", 
+            month: "short", 
+            day: "numeric", 
+            hour: '2-digit', 
+            minute:'2-digit' 
+        });
 
-        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+        let result = local_date.split(', ')
+        
+        return result[0] + " · " + result[2];
     }
 
     const pickStyle = (param) => {

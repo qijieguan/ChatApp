@@ -130,7 +130,7 @@
     overflow: hidden;
 }
 
-.comment > .post-time { margin-top: 1vh; }
+.comment > .post-time { margin: 0 1vw 0 auto; }
 
 .comment-profile > img {
     object-fit: cover;
@@ -175,4 +175,5 @@
     .comment-input, .comment-camera, .comment-send { height: 5vh; border: 0; border-radius: 0; }
     .comment-camera, .comment-send, .comment-send-wrapper { background: transparent; }
     .comment-send-icon { color: tomato; }
+    .comment > .post-time { margin: 1vh 1vw 0 auto;  }
 }

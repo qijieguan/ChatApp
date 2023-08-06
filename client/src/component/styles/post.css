@@ -13,7 +13,6 @@
 .poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
 .poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(131, 131, 131); }
 .post-time {
-    margin-left: auto;
     font-size: clamp(0.625rem, 0.75vw, 0.75rem);
     font-style: oblique;
     color: rgb(165, 165, 165);

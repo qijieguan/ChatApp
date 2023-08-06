@@ -50,19 +50,23 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
     }, [likes]);
 
     const parseStringTime = () => {
-        let d = post.createdAt.split('T');
-        let t = d[1].substring(0, d[1].length -8).split(":");
-        let meridiem = "am";
-        let hour = t[0];
-        let minutes = t[1];
+        if (!post.createdAt) { return null; }
+    
+        let [Y, M, D, H, m, s] = post.createdAt.split(/\D/);
+        let date = new Date(Date.UTC(Y, M-1, D, H, m, s));
+    
+        let local_date = date.toLocaleString('default', { 
+            //weekday: "long",
+            year: "numeric", 
+            month: "short", 
+            day: "numeric", 
+            hour: '2-digit', 
+            minute:'2-digit' 
+        });
 
-        if (Number(t[0]) >= 12) {
-            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
-            meridiem = "pm";
-        }
-        else { meridiem = "am"; }
-
-        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+        let result = local_date.split(', ')
+        
+        return result[0] + " · " + result[2];
     }
 
     const highlightLikes = () => {
