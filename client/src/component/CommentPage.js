@@ -195,7 +195,7 @@ const CommentPage = () => {
                 </div>
             </div>
             
-            <div className='primary-post flex' id={postID}>
+            <div className='primary-post flex'id={postID}>
                 <div className='primary-user flex'>
                     <img className='poster-image' src={poster_profile} alt=""/>
                     <h1 className='poster-name'>{poster_name}</h1>

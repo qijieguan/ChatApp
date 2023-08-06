@@ -36,7 +36,7 @@ const Text = ({textID, friend, text }) => {
     const pickStyle = (param) => {
         if ((user._id === text.user_id)) {
             if (param === '1') { return { flexDirection: 'row-reverse', alignSelf: 'flex-end' } }
-            else if (param === '2')  { return { marginLeft: 'auto', marginRight: '0'} }
+            else if (param === '2')  { return { margin: '1vh 0.5vw 3vh auto'} }
             else { return { backgroundColor: 'wheat' } }
         }
     }
