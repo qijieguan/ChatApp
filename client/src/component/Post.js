@@ -8,7 +8,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 
-const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_text, deletePost}) => {
+const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp, deletePost}) => {
 
     const modalStyles = {
         content : {
@@ -42,16 +42,35 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => { highlightLikes(); }, [likes]);
+    useEffect(() => { 
+        highlightLikes(); 
+    }, [likes]);
+
+    const parseStringTime = () => {
+        let d = timeStamp.split('T');
+        let t = d[1].substring(0, d[1].length -8).split(":");
+        let meridiem = "am";
+        let hour = t[0];
+        let minutes = t[1];
+
+        if (Number(t[0]) >= 12) {
+            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
+            meridiem = "pm";
+        }
+        else { meridiem = "am"; }
+
+        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+    }
 
     const highlightLikes = () => {
+        
         let match = likes.filter(id => id === user._id);
 
         if (match.length > 0) {
-            document.getElementById(post._id)?.querySelector('.post-footer>.post-like')?.classList.add('active');
+            document.getElementById(post_id)?.querySelector('.post-footer>.post-like')?.classList.add('active');
         }
         else {
-            document.getElementById(post._id)?.querySelector('.post-footer>.post-like')?.classList.remove('active');
+            document.getElementById(post_id)?.querySelector('.post-footer>.post-like')?.classList.remove('active');
         }
     }
 
@@ -62,8 +81,7 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
         else { result = likes.filter(id => id !== user._id); }
 
         await axios.post(baseURL + '/posts/user-post/update-likes/', { 
-            poster_id: poster_id,
-            post_id: post._id,
+            post_id: post_id,
             likes: result
         });
 
@@ -73,12 +91,13 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
 
     const viewComment = () => {
         navigate(
-            "/Dashboard/User_Post/" + post._id + "/Comment",
+            "/Dashboard/User_Post/" + post_id + "/Comment",
             {state: {
                 poster_id: poster_id, 
                 poster_name: poster_name,
                 poster_profile: poster_profile, 
-                post_id: post._id,
+                post_id: post_id,
+                timeStamp: parseStringTime(),
                 route: 'posts/user-post'
             }},
             {replace: true}
@@ -88,29 +107,30 @@ const Post = ({post, poster_id, poster_profile, poster_name, post_image, post_te
     return (
         <div style={{width: '100%'}}> 
             { post &&
-                <div className='post flex' id={post._id}>
+                <div className='post flex' id={post_id}>
                     <div className='post-header flex'>
                         <img className='poster-image' src={poster_profile} alt=""></img>
-                        <div className='poster-name'>{poster_name}</div>
+                        <div className='poster-name'>{poster_name} </div>
+                        <div className="post-time flex"> {parseStringTime()} </div>
                     </div>
-                    <div className='primary-text'>{post_text}</div>
+                    <div className='primary-text'>{post.primary_text}</div>
                     {post.primary_image &&
                         <div className='primary-image-wrapper'>
-                            <img src={post_image} className='primary-image' alt=""/>
+                            <img src={post.primary_image} className='primary-image' alt=""/>
                             <div className='image-zoom-icon-wrapper flex' onClick={() => { setZoomImage(true); }}>
                                 <BsSearch className='image-zoom-icon'/>
                             </div>
 
                             <Modal isOpen={zoomImage} style={modalStyles}>
                                 <div className='primary-image-zoom'>
-                                    <img src={post_image} alt=""/>
+                                    <img src={post.post_image} alt=""/>
                                     <button onClick={() => { setZoomImage(false); }}>Exit View</button>
                                 </div>
                             </Modal>
                         </div>  
                     }
                     {user._id === poster_id &&
-                        <div className='delete-wrapper flex' onClick={() => {return deletePost(post._id);}}>
+                        <div className='delete-wrapper flex' onClick={() => {return deletePost(post_id);}}>
                             <div className='delete-message'>Delete Post</div>
                             <BsTrash className='trash-button'/>
                         </div>

@@ -18,7 +18,7 @@
 }
 
 @media (max-width: 60rem) {
-    .dashboard { padding-bottom: 7.5vh; }
+    .dashboard { padding-bottom: 7.5vh; grid-template-columns: 1fr; }
     .dashboard-overlay.show.active { display: block; }
     .default-side-nav { display: none; }
 }

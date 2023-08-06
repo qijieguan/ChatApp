@@ -59,6 +59,23 @@ const CommentPage = () => {
         } 
     },[location]);
 
+    const parseStringTime = (timeStamp) => {
+        if (!timeStamp) { return null; }
+        let d = timeStamp.split('T');
+        let t = d[1].substring(0, d[1].length -8).split(":");
+        let meridiem = "am";
+        let hour = t[0];
+        let minutes = t[1];
+
+        if (Number(t[0]) >= 12) {
+            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
+            meridiem = "pm";
+        }
+        else { meridiem = "am"; }
+       
+        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+    }
+
     const highlightLikes = (likesArr) => {
         let match = likesArr.filter(id => id === user._id);
         let post_id = location.state.post_id;
@@ -76,7 +93,7 @@ const CommentPage = () => {
         setName(location.state.poster_name);
         setProfile(location.state.poster_profile);
         setPostID(location.state.post_id);
-
+        
         getPostData();
     }
 
@@ -85,10 +102,19 @@ const CommentPage = () => {
             post_id: location.state.post_id,
         })
         .then((response) => {
-            setPost(response.data);
-            setCommentArr(response.data.comments);
-            setLikes(response.data.likes);
-            setTimeout(() => { highlightLikes(response.data.likes); });
+            setPost(response.data.post);
+
+            if (response.data.post) { 
+                setCommentArr(response.data.post.comments.reverse()); 
+                setLikes(response.data.post.likes);
+                setTimeout(() => { highlightLikes(response.data.post.likes); });
+            }
+            else { 
+                setPost({primary_text: response.data.primary_text, primary_image: response.data.primary_image});
+                setCommentArr(response.data.comments.reverse());
+                setLikes(response.data.likes);
+                setTimeout(() => { highlightLikes(response.data.likes); });
+            }
         });
     }
 
@@ -113,20 +139,20 @@ const CommentPage = () => {
             comment: comment
         });
       
-        setCommentArr([...commentArr, comment]);
         setCommentInp('');
+        getPostData();
     }
 
     const handleNav = () => {      
         if (location.state.route.includes('user-post')) {
-            navigate("/Dashboard/Post", {state: {postID: post._id}}, {replace: true});
+            navigate("/Dashboard/Post", {state: {postID: postID}}, {replace: true});
         }
         else {
             navigate("/Dashboard/Community/" + location.state.community_name, 
                 {state: {
                     communityID: location.state.community_id, 
                     communityName: location.state.community_name, 
-                    postID: post._id
+                    postID: postID
                 }}, 
             {replace: true});
         }
@@ -138,9 +164,6 @@ const CommentPage = () => {
 
         if (match.length > 0) { result = likes.filter(id => id !== user._id); }
         else { result = [...likes, user._id]; }
-
-        let updatedPost = post;
-        updatedPost.likes = result;
         
         setLikes(result);
         highlightLikes(result);
@@ -168,14 +191,15 @@ const CommentPage = () => {
                 </div>
             </div>
             
-            <div className='primary-post flex' id={post._id}>
+            <div className='primary-post flex' id={postID}>
                 <div className='primary-user flex'>
                     <img className='poster-image' src={poster_profile} alt=""/>
                     <h1 className='poster-name'>{poster_name}</h1>
+                    <div className='post-time'>{location.state.timeStamp}</div>
                 </div>
 
-                {post.primary_text && post.primary_text.length && <div className='primary-text'>{post.primary_text}</div>}
-                {post.primary_image && post.primary_image.length && 
+                {post && post.primary_text && post.primary_text.length && <div className='primary-text'>{post.primary_text}</div>}
+                {post && post.primary_image && post.primary_image.length && 
                     <div className='primary-image-wrapper'>
                         <img src={post.primary_image} className='primary-image' alt=""/>
                         <div className='image-zoom-icon-wrapper flex' onClick={() => { setZoomImage(true); }}>
@@ -194,7 +218,7 @@ const CommentPage = () => {
                     <div className='post-like action flex' onClick={toggleLike}>
                         <AiFillLike className='post-icon'/>
                         <span>Like</span>
-                        {likes.length > 0 &&
+                        {likes && likes.length > 0 &&
                             <div className='like-count count flex'>{likes.length}</div>
                         }
                     </div>
@@ -242,6 +266,7 @@ const CommentPage = () => {
                             <div className='comment-text'>
                                 <span className='comment-content'>{comment.comment}</span>
                             </div>
+                            <div className='post-time'>{parseStringTime(comment.updatedAt)}</div>
                         </div>    
                     )
                     :

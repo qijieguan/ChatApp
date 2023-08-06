@@ -14,7 +14,7 @@
     width: 95%;
     background: tomato;
     box-shadow: 0 2px 3px rgb(141, 141, 141);
-    z-index: 4;
+    z-index: 2;
 }
 
 .comment-nav-link { column-gap: 0.5vw; color: white; }
@@ -129,6 +129,8 @@
     border-radius: 1rem;
     overflow: hidden;
 }
+
+.comment > .post-time { margin-top: 1vh; }
 
 .comment-profile > img {
     object-fit: cover;

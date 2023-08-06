@@ -38,7 +38,7 @@ const MessageBox = ({ renderChatLog }) => {
     }
 
     const scrollBottom = () => {
-        let element = document.querySelector(".private-message")
+        let element = document.querySelector(".private-message");
         if (element) { element.scrollTo(0, element.clientHeight); }
     }
 
@@ -125,7 +125,7 @@ const MessageBox = ({ renderChatLog }) => {
                     </div>
                 }
 
-                <div className='end-message grid flex'>
+                <div className='end-message grid flex' onLoad={scrollBottom}>
                     <hr/>
                     <span>End of Message</span>
                     <hr/>

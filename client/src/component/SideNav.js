@@ -70,6 +70,7 @@ const SideNav = (param) => {
                     <img className='side-nav-profile' src={user.profile_url} alt=""/>
                     <div className='side-nav-name text'>{user.firstname} {user.lastname}</div>
                 </div>
+                
                 <div className={'side-nav-body flex ' + param.param}>
                     <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
                         <AiFillHome className='home-icon'/>

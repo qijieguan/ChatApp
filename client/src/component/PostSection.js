@@ -39,7 +39,7 @@ const PostSection = () => {
 
     const getPosts = async () => {  
         await axios.get(baseURL + '/posts/user-post')
-        .then(response => { setPostArr(response.data); });
+        .then(response => { setPostArr(response.data.reverse()); });
     }
 
     const readFiles = (files) => {
@@ -93,7 +93,7 @@ const PostSection = () => {
     }
 
     const deletePost = async (postID) => {
-        await axios.post(baseURL + '/posts/user-post/delete/', {poster_id: user._id, post_id: postID});
+        await axios.post(baseURL + '/posts/user-post/delete/', {post_id: postID});
         setRender(!render);
     }
 

@@ -44,9 +44,26 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(async () => {
-        if (post) { highlightLikes(); }
+        if (post) { 
+            highlightLikes(); 
+        }
     }, [likes]);
 
+    const parseStringTime = () => {
+        let d = post.createdAt.split('T');
+        let t = d[1].substring(0, d[1].length -8).split(":");
+        let meridiem = "am";
+        let hour = t[0];
+        let minutes = t[1];
+
+        if (Number(t[0]) >= 12) {
+            if (Number(t[0]) > 12) { hour = (Number(t[0]) - 12).toString(); }
+            meridiem = "pm";
+        }
+        else { meridiem = "am"; }
+
+        return d[0] + " " + hour + ":" + minutes + " " + meridiem;
+    }
 
     const highlightLikes = () => {
         let match = likes.filter(id => id === user._id);
@@ -85,6 +102,7 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
                 poster_name: communityName, 
                 poster_profile: communityProfile, 
                 post_id: post._id,
+                timeStamp: parseStringTime(),
                 route: 'communities/community-post'
             }},
             {replace: true}
@@ -98,6 +116,7 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
                     <div className='community-page-post-header flex'>
                         <img src={post.poster_image} alt=""/>
                         <span>{post.poster_name}</span>
+                        <div className="post-time flex"> {parseStringTime()} </div>
                     </div>
                     <span>{post.primary_text}</span>
 

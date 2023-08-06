@@ -13,7 +13,7 @@
     z-index: 2;
 }
 
-.community-page-post-header { padding: 2vh 2vw 0 2vw; gap: 1vw; }
+.community-page-post-header { padding: 2vh 2vw 0 2vw; gap: 1vw; width: 100%; }
 
 .community-page-post-header > img { height: 7vh; width: 7vh; border-radius: 4rem; object-fit: cover; }
 

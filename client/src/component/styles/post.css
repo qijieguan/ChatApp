@@ -9,13 +9,18 @@
     overflow: hidden;
 }
 
-.post-header { padding: 0 2vw; margin-bottom: 2vh; column-gap: 0.75vw; width: 100%; }
+.post-header { padding: 0 2vw; margin-bottom: 2vh; flex-wrap: wrap; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
 .poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(131, 131, 131); }
-
+.post-time {
+    margin-left: auto;
+    font-size: clamp(0.625rem, 0.75vw, 0.75rem);
+    font-style: oblique;
+    color: rgb(165, 165, 165);
+}
 .primary-text { align-self: flex-start; padding: 0 2.5vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
 
-.primary-image-wrapper { margin: 3vh auto 0 auto; position: relative; width: 95%; }
+.primary-image-wrapper { margin: 1vh auto 0 auto; position: relative; width: 95%; }
 .primary-image { object-fit: cover; max-height: 50vh; width: 100%; }
 .image-zoom-icon-wrapper {
     padding: 2vh;
@@ -42,7 +47,7 @@
 .primary-image-zoom > button:hover { opacity: 0.7; }
 
 .delete-wrapper { 
-    margin: 2vh 1vw 1vh 1vw; 
+    margin: 1vh 1vw; 
     padding: 1vh 2vw;
     column-gap: 1vw; 
     align-self: flex-end; 
@@ -54,7 +59,7 @@
 .delete-wrapper:hover * { color: red; }
 .delete-wrapper:hover .delete-message { opacity: 1; }
 .delete-message { font-size: clamp(0.75rem, 1vw, 1rem); white-space: nowrap; opacity: 0; transition: 0.1s all ease-in; }
-.trash-button { font-size: clamp(1.25rem, 1.625vw, 1.625rem); color: rgb(180, 180, 180); transition: 0.1s all ease-in; }
+.trash-button { font-size: clamp(1.25rem, 1.5vw, 1.5rem); color: rgb(180, 180, 180); transition: 0.1s all ease-in; }
 
 .post-footer {
     padding: 2.5vh 3vw;
