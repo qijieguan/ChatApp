@@ -64,9 +64,9 @@ const CommunityPost = ({communityID, communityName, communityProfile, post}) => 
             minute:'2-digit' 
         });
 
-        let result = local_date.split(', ')
+        let result = local_date.split(', ');
         
-        return result[0] + " · " + result[2];
+        return result[0] + " at " + result[2];
     }
 
     const highlightLikes = () => {

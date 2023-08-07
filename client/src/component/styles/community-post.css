@@ -13,7 +13,7 @@
     z-index: 2;
 }
 
-.community-page-post-header { padding: 2vh 2vw 0 2vw; gap: 1vw; width: 100%; }
+.community-page-post-header { padding: 2vh 2vw 0 2vw; flex-wrap: wrap; gap: 1vw; width: 100%; }
 
 .community-page-post-header > img { height: 7vh; width: 7vh; border-radius: 4rem; object-fit: cover; }
 
@@ -66,7 +66,7 @@
 
 @media (max-width: 25rem) {
     .community-page-post-header { gap: 2vw; }
-    .community-page-post-header > img { height: 7.5vh; width: 7.5vh; }
+    .community-page-post-header > img { height: 5.5vh; width: 5.5vh; }
     .community-page-footer { justify-content: space-between; padding: 3vh 10vw 0 10vw; }
     .community-page-footer > div > span { display: none; }
 }

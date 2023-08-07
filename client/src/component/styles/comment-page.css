@@ -35,7 +35,7 @@
 
 .primary-post > .post-footer { border-bottom: 0; }
 
-.primary-user { margin: 2vh 0 1vh 2vw; column-gap: 1vw; width: 100%; }
+.primary-user { margin: 2vh 0 1vh 2vw; flex-wrap: wrap; column-gap: 1vw; width: 100%; }
 
 .primary-user > .poster-name { font-size: clamp(0.75rem, 1vw, 1rem); }
 
