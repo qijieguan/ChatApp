@@ -64,7 +64,7 @@ const SideNav = (param) => {
     }
 
     return (
-        <div className={'side-nav ' + param.param}>
+        <div className={'side-nav resize ' + param.param}>
             <div className={'side-nav-main ' + param.param}>
                 <div className='side-nav-header flex'>
                     <img className='side-nav-profile' src={user.profile_url} alt=""/>

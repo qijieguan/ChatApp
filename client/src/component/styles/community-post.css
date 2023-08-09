@@ -65,6 +65,7 @@
 }
 
 @media (max-width: 25rem) {
+    .community-page-post .post-time { margin: 0 auto 0 3vw !important; }
     .community-page-post-header { gap: 2vw; }
     .community-page-post-header > img { height: 5.5vh; width: 5.5vh; }
     .community-page-footer { justify-content: space-between; padding: 3vh 10vw 0 10vw; }

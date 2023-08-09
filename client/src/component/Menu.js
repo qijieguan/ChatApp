@@ -17,7 +17,6 @@ import axios from 'axios';
 import SideNav from './SideNav.js';
 
 import { useState } from 'react';
-import e from 'cors';
 
 const Menu = () => {
 
@@ -65,9 +64,15 @@ const Menu = () => {
             menu.style.height = menu_bar?.offsetHeight + 'px'; 
             menu_side_wrapper?.classList.add('show');
             overlay?.classList.add('show');
-            side_nav?.classList.remove('resize');
         }
-        else { menu_side_wrapper?.classList.remove('show'); overlay?.classList.remove('show'); }
+        else { 
+            menu_side_wrapper?.classList.remove('show'); 
+            overlay?.classList.remove('show'); 
+
+            if (!side_nav?.classList.contains('resize')) {
+                side_nav?.classList.add('resize');
+            }
+        }
 
         let comment_nav = document?.querySelector('.comment-nav');
         if ( comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
@@ -93,14 +98,17 @@ const Menu = () => {
         let overlay = document.querySelector('.dashboard-overlay');
         let side_nav = document.querySelector('.side-nav.default');
 
+        side_nav?.classList.toggle('resize');
+        
         if (!showMenu) { 
-            side_nav?.classList.add('resize');
             menu_side_wrapper?.classList.add('expand'); 
             overlay.classList.add('active');
         
             setShowMenu(true); 
         }
-        else { closeMenu(); side_nav?.classList.remove('resize'); }
+        else { 
+            closeMenu(); 
+        }
 
         closeSearch();
     }

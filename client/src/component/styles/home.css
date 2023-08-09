@@ -83,6 +83,7 @@
 
 @media (max-width: 75rem) { 
     .home-login { width: 45vw; inset: 5% auto auto 5%; }
+    .home-intro { margin: 35vh 12.5vw 0 auto; }
 }
 
 @media (max-width: 50rem) {

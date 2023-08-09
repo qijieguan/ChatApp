@@ -98,7 +98,6 @@
 @media (max-width: 25rem) {
     .image-zoom-icon-wrapper { padding: 1.125vh; }
     .post { padding: 1.5vh 0 0 0; }
-    .post-time { margin: 1vh auto 0 2vw; }
     .poster-image { height: 5.5vh; width: 5.5vh;  }
     .post-header { column-gap: 2vw; }
     .delete-wrapper { margin: 0.5vh 1vw; padding: 0.5vh 2vw; }
@@ -106,4 +105,8 @@
     .like-count, .comment-count { padding: 0 3vw; }
     .post-footer { margin-top: 0.5vh; justify-content: flex-start; }
     .trash-button { font-size: 1rem; }
+}
+
+@media (max-width: 15rem) {
+    .post-time { margin: 1vh auto 0 2vw; }
 }
