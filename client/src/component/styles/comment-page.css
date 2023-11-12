@@ -140,7 +140,7 @@
     border-radius: 4rem;
 }
 
-.comment-name { margin-left: 1vw; font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 700; color: tomato; }
+.comment-name { margin-left: 1vw; font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 700; color: gray; }
 
 .comment-content { font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(94, 94, 94); }
 

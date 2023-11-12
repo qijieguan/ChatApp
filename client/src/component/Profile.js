@@ -18,16 +18,23 @@ const Profile = () => {
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => { getPostCount(); getFollowCount(); }, []);
+    useEffect(() => { 
+        getPostCount(); 
+        getFollowCount(); 
+    }, []);
 
     const getPostCount = async () => {
         await axios.post(baseURL + '/posts/count/', {poster_id: user._id})
-        .then(response => { setPostCount(response.data); });
+        .then(response => { 
+            setPostCount(response.data.length); 
+        });
     }
 
     const getFollowCount = async () => {
         await axios.post(baseURL + '/friends/count/', {user_id: user._id})
-        .then(response => { setFollowCount(response.data); });
+        .then(response => { 
+            setFollowCount(response.data); 
+        });
     }
 
     const handleChange = (e) => { setBio(e.target.value); }
