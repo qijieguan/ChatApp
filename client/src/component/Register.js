@@ -66,7 +66,7 @@ const Register = () => {
 
     return(
         <form className="register-form grid" onSubmit={handleSubmit}>
-            <h1 className="register-label">Register Your Account</h1>
+            <h1 className="register-label">Create Your Account</h1>
       
             <div className="image-input flex">
                 <img src={url ? url : defaultURL} className="preview-register-image" alt=""/>
@@ -80,8 +80,6 @@ const Register = () => {
                 />
                 <div className="register-image-button" onClick={handleUpload}>Upload Image</div>
             </div>
-
-            <hr className='linebreak'></hr>
 
             <div className='register-inputs grid'>
                 <div className='register-input-wrapper flex'>

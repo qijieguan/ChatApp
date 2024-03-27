@@ -93,7 +93,7 @@ const Login = () => {
     }
 
     return(
-        <div>
+        <div className="login-wrapper flex">
             <form className="login flex" onSubmit={handleSubmit}>
                 <h1 className="login-label">Enter Login</h1>
                 <div className="login-msg" style={{display: 'none', color: 'red'}}>{message}</div>
@@ -107,7 +107,7 @@ const Login = () => {
                     <div className='password-placeholder flex'>Password</div>
                     <div className='login-icon flex'><RiLockPasswordLine/></div>
                 </div>
-                <button type="submit" className="sign-in-btn">Login</button>
+                <button type="submit" className="sign-in-btn">Click to Sign In</button>
                 <Link to='/Register' className="register-link">
                     <span>Don't have an account? </span>
                     <span>Sign up here</span>

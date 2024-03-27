@@ -8,50 +8,22 @@ const Header = () => {
     const user = JSON.parse(sessionStorage.getItem('user'));
     const location = useLocation();
 
-    const [prevY, setPrevY] = useState(window.scrollY);
-
     useEffect(() => { 
         document.querySelector('.App')?.scrollIntoView({top: 0});
-    
-        handleResize();
     }, [location]);
-
-    const handleResize = () => {
-        let header = document.querySelector('.app-header');
-        let home = document.querySelector('.home');
-
-        if (home !== null) { home.style.paddingTop = header.getBoundingClientRect().height + 'px'; }
-
-        if (location.pathname === '/Register') { header?.classList.add('orange'); }
-        else { header?.classList.remove('orange'); }
-    }
 
     const handleScroll = () => {
         if (window.location.href.includes("About") || window.location.href.includes("Register") ) {
             window.location.href = '/' 
         }
-        document.getElementsByClassName('home-body-1')[0]?.scrollIntoView();
+        document.getElementsByClassName('home-section-1')[0]?.scrollIntoView();
     }
-
-    window.addEventListener('scroll', (e) => {
-        let header = document.querySelector('.app-header');
-
-        setPrevY(window.prevY)
-        
-        if (header && prevY < window.scrollY) {
-            header.classList.add('dynamic');
-        }
-        
-        if (header && window.scrollY === 0) {
-            header.classList.remove('dynamic');
-        }
-    });
-
 
     return (
         <> 
             {!sessionStorage.getItem("isLogged") ?
                 <header className='app-header flex'>
+                    <label className='app-logo'>RedLove</label>
                     <div className="header-btns flex">
                         <Link to='/'><button className="login-btn">Login</button></Link>
                         <Link to='/About'><button className="about-btn">About</button></Link>

@@ -1,107 +1,158 @@
 .home { 
     position: relative;
     flex-direction: column; 
-    align-items: unset; 
-    padding-bottom: 5vh;
-    background: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
-    overflow: hidden; 
 }
-.home-login { 
+
+.home-section {
+    position: relative;
+    padding: 10vh 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.home-section-1 { padding: 0 !important; justify-content: center; column-gap: 2vw; }
+
+.home-image {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 20px 20px 20px 20px inset white, -20px -20px 20px 20px inset white;
+}
+
+.home-image-1 {
     position: absolute;
-    inset: 5% auto auto 15%;
-    padding: 2vh 2vw;
-    margin: 0 auto 7.5vh auto;
-    width: 30vw; 
-    background: white;
-    box-shadow: 0 1px 10px black;
-    border-radius: 0.5rem;
-    z-index: 3;
+    width: 75%;
+    inset: 0 0 auto auto;
+    background-image: url("https://www.sheknows.com/wp-content/uploads/2018/11/social-media-brain.jpg");
+    box-shadow: 0 !important;
+    z-index: 1;
 }
 
-.home-intro { text-align: center; margin: 35vh 17.5vw 0 auto; height: 70vh; width: 30%; }
-.home-intro > h1 { margin: 0; margin-bottom: 2vh; font-size: clamp(1rem, 2.5vw, 2.5rem); font-weight: 500; font-style: oblique; color: white; }
-.home-intro > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); font-weight: 500; color: white; }
+.home-section-2 { padding: 0; }
 
-.home-body {
-    margin-bottom: 20vh;
-    padding: 10vh 2.5vw;
-    min-height: 60vh;
+.home-section-2 .overlay {
+    padding: 2vh 2vw;
+    grid-template-columns: 45% 45%;
+    row-gap: 1vh;
     justify-content: center;
-    column-gap: 5vw;
-    max-width: 75%;
-    background: white;
-    box-shadow: 2px 2px 5px;
+    color: white;
+    background-color: rgb(255, 148, 18, 0.7);
 }
-.home-body.left { border-radius: 0 1rem 1rem 0; }
-.home-body.right { border-radius: 1rem 0 0 1rem; }
 
-.home-image { object-fit: cover; max-height: 75vh; max-width: 60%; border: none; }
+.home-section-2 .quote { width: 75%; flex-direction: column; text-align: center; font-size: clamp(0.875rem, 1vw, 1rem); }
+.home-section-2 .quote span { font-style: italic; }
+.home-section-2 .quote.top { justify-content: flex-end; }
 
-.home-text { flex-direction: column; max-width: 40%; }
+.home-section-2 .banner-text {
+    grid-column: -1 / 1;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 1px;
+    width: 90%;
+    color: white;
+    z-index: 1;
+}
 
-.text-label {
-    margin: 0 auto 2vh auto;
+.home-section-2 .banner-text h1 { 
+    margin: 0;
+    font-size: clamp(2rem, 2.5vw, 2.5rem);
+}
+
+.home-section-2 .banner-text p { 
+    flex-direction: column;
+    row-gap: 1vh;
+    padding: 0 2vw;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+}
+
+.home-section-2 .banner-text span { 
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.home-section-3 {
+    grid-template-columns: 20% 20% 20% 20%;
+    row-gap: 7.5vh;
+}
+
+.home-section-3 .overlay-1 {
+    position: absolute;
+    inset: 0 auto auto 0;
+    height: 100%;
+    width: 100%;
+    background: black;
+    border-radius: 0 0 30rem 0;
+    border: 10px solid wheat;
+    transform: translateX(-30%);
+    z-index: 1;
+}
+
+.home-section-3 .overlay-2 {
+    position: absolute;
+    inset: 0 auto auto 0;
+    height: 100%;
+    width: 100%;
+    background: wheat;
+}
+
+.card {
+    position: relative;
+    margin: auto 0;
+    flex-direction: column;
     text-align: center;
-    font-size: clamp(1.125rem, 2vw, 2rem);
-    font-weight: 700;
-    color: royalblue;
+    height: 50vh;
+    width: 100%;
+    color: wheat;
+    background: black;
+    border-radius: 1rem;
+    border: 2px solid wheat;
+    z-index: 2;
 }
 
-.home-text > div { 
-    text-align: center; 
-    padding: 0 0.5vw 0 2vw; 
-    width: 100%; 
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem); 
-    color: gray;
-}
-.home-text-3 > div { padding: 1vh 1vw; border: 1px solid; column-gap: 0.5vw; }
-
-.feature-wrapper { justify-content: center; color: gray; }
-.feature-wrapper > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
-
-.features-dropdown { 
-    padding: 0;
-    position: relative; 
-    column-gap: 2vw;
-    row-gap: 1vh; 
-    flex-wrap: wrap; 
-    justify-content: center; 
-    height: 0; 
-    transition: all 0.3s ease-in; overflow: hidden; 
-}
-.features-dropdown > li {
-    margin-top: 4vh;
-    padding: 2vh 2vw;
-    text-align: center;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
-    color: blue;
-    border: 1px solid;
-    border-radius: 0.25rem;
+.icon-wrapper {
+    padding: 2vh 2.25vh;
+    background: black;
+    border-radius: 5rem;
+    border: 2px solid wheat;
+    transform: translateY(-50%);
 }
 
-.features-dropdown.active { height: 100%; }
-
-@media (max-width: 75rem) { 
-    .home-login { width: 45vw; inset: 5% auto auto 5%; }
-    .home-intro { margin: 35vh 12.5vw 0 auto; }
+.icon {
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    color: wheat; 
 }
 
-@media (max-width: 50rem) {
-    .home { row-gap: 2vh; }
-    .home-intro { margin: 5vh auto 2.5vh auto; width: 90%; height: fit-content;}
-    .home-login { inset: 0 auto auto 0; position: relative; width: 85%; height: fit-content; }
-    .home-background { width: 100%; background-position: center; }
-    .home-body { margin-bottom: 0; padding: 5vh 2.5vw; flex-direction: column; row-gap: 5vh; max-width: 100%; }
-    .home-body.left, .home-body.right { border-radius: 0; }
-    .home-text {  max-width: 100%; align-items: flex-start; }
-    .home-image { max-height: 50vh; max-width: 100%; }
-    .home-text > div { width: 95%; }
-    .home-text-1 > div { width: 95%; }
-    .home-body-2 { flex-direction: column-reverse !important; }
+.card-title {
+    margin: 0;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
 }
 
-@media (max-width: 25rem) {
-    .home { row-gap: 1vh; }
-    .home-intro { width: 100%; }
-    .home-login { padding: 2vh 0; margin: 0 auto 4vh auto; width: 97.5%;  }
+.card-description {
+    margin-top: 5vh;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: rgb(200, 200, 200);
+    width: 80%;
+}
+
+@media (max-width: 75rem) {   
+    .home-section-3 {
+        grid-template-columns: 30% 30% 30%;
+    }
+}
+
+@media (max-width: 50rem) {   
+    .home-section-2 .banner-text { text-align: center; }
+    .home-section-3 {
+        grid-template-columns: 45% 45%;
+    }
+}
+
+@media (max-width: 25rem) {   
+    .home-section-2 .overlay, .home-section-3 {
+        grid-template-columns: 90%;
+    }
+    .home-section-2 .quote { width: 100%; }
 }

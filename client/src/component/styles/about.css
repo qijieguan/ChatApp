@@ -1,4 +1,4 @@
-.about-section { padding: 30vh 0 20vh 0; grid-template-columns: 45% 45%; row-gap: 20vh; justify-content: center;  background: linear-gradient(315deg, #7f53ac 0%, #647dee 74%); }
+.about-section { padding: 20vh 0; grid-template-columns: 45% 45%; row-gap: 15vh; justify-content: center; }
 .about {
     margin: 0 auto;
     padding: 2vh 0;
@@ -7,26 +7,22 @@
     text-align: center;
     min-height: 35vh;
     width: 90%;
-    background: white;
     border-radius: 0.5rem;
-    box-shadow: 0 2px 8px;
+    background: rgb(247, 247, 247);
 }
 
 .about > div:not(.about-image) { 
     font-size: clamp(1rem, 2vw, 2rem); 
     font-weight: 700;
-    font-style: oblique;
-    color: green; 
     width: 90%; 
     animation: fadeSlideDown 0.5s ease-in; 
 }
-.about span { font-size: clamp(0.75rem, 1.5vw, 1rem); color: green; }
+.about span { font-size: clamp(0.75rem, 1.5vw, 1rem); font-weight: bold; }
 .about > p { 
     font-size: clamp(0.75rem, 1.5vw, 1rem); 
     margin: 0 auto; 
-    padding: 5vh 0;
+    padding: 1vh 0;
     width: 90%; 
-    color: gray; 
     animation: fadeSlideLeft 0.5s ease-in; 
 }
 

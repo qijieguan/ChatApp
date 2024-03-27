@@ -1,12 +1,13 @@
 import './styles/home.css';
 import Login from "./Login.js";
-import { AiFillCaretDown } from 'react-icons/ai';
+import { FaWpforms, FaDatabase, FaRegHeart } from "react-icons/fa";
+import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import axios from 'axios';
 import { useEffect } from 'react';
 
 const Home = () => { 
 
-    var clickSwitch = false;
+    const url = "https://cdn.pixabay.com/photo/2016/07/13/11/32/photomontage-1514218_1280.jpg";
 
     useEffect(() => {
         if (!sessionStorage.getItem('visited')) {
@@ -35,62 +36,78 @@ const Home = () => {
         });
     }
 
-    const handleClick = () => {
-        clickSwitch = !clickSwitch;
-        if (clickSwitch) {
-            document.getElementsByClassName('features-dropdown')[0]?.classList.add("active");
-        }
-        else {
-            document.getElementsByClassName('features-dropdown')[0]?.classList.remove("active"); 
-        }
-    }
-
     return ( 
         <div className="home flex">
-            <div className='home-intro'>
-                <h1>Messaging Application</h1>
-                <span>A application for digital networking and communication between users</span>
-            </div>
-            <div className="home-login"><Login/></div>
-            <div className='home-body left home-body-1 flex'>
-                <div className='home-text home-text-1 flex'>
-                    <h1 className='text-label'>1. Create New Account</h1>
-                    <div>
-                        Access registration link from login form. 
-                    </div><br/>
-                    <div>
-                        Enter valid credientials to add your account to our system.
+
+            <section className='home-section home-section-1 flex'>
+                <Login/>
+                <div className='home-image home-image-1'><div className='overlay'/></div>
+            </section>
+
+            <section className='home-section home-section-2 flex'>
+                <div className='overlay grid'>
+                    <div className='quote top flex'>"How can mirrors be real if our eyes aren't real." <span>- Jaden Smith</span></div>
+                    <div className='quote top flex'>"Sir, this is a wendy's!" <span>- Wendy's employee</span></div>
+                    <div className='banner-text flex'>
+                        <h1>Meet New Faces Across the World</h1>
+                        <p className='flex'>"The journey of a thousand connections begins with one follow" <span>- Sun Tzu</span></p>
+                    </div>
+                    <div className='quote bottom flex'>"Hi everyone I’m Joe Biden’s wife." <span>- Joe Biden</span></div>
+                    <div className='quote bottom flex'>
+                        "If you don't like your job, you don't go on strike. You just go in every day and do it really half-assed - that's the American way."
+                        <span>- Homer Simpson</span>
                     </div>
                 </div>
-                <img className='home-image' src="https://cdn.pixabay.com/photo/2021/03/08/12/32/facebook-6078995_960_720.png" alt=""/>
-            </div>
-            <div className='home-body right home-body-2 flex' style={{marginLeft: 'auto'}}>
-                <img className='home-image' src="https://media.istockphoto.com/id/1407212383/photo/concept-of-cyber-security-in-two-step-verification-multi-factor-authentication-information.jpg?b=1&s=170667a&w=0&k=20&c=2TeTgPZk6RjJnlaD7rlLS7JENOsR1qihsID-btv_mQw=" alt=""/>
-                <div className='home-text home-text-2 flex'>
-                    <h1 className='text-label'>2. Enter Login Credientials</h1>
-                    <div>
-                        Sign in your new account with your username and password.
-                    </div><br/>
-                    <div>
-                        Authenticate your account to complete login. 
+                <img className='home-image home-image-2' src={url} alt=""/>
+            </section>
+
+            <section className='home-section home-section-3 grid'>
+                <div className='overlay-1'></div>
+                <div className='overlay-2'></div>
+                <div className='card flex'>
+                    <div className='icon-wrapper'>
+                        <FaWpforms className='icon'/>
                     </div>
+                    <label className='card-title'>Make a new account</label>
+                    <p className='card-description'>
+                        Enjoy a simple registration process. Fill in your full name and login credientials
+                        on the form. Unique account will be created and added to the userbase.
+                    </p>
                 </div>
-            </div>
-            <div className='home-body left home-body-3 flex'>
-                <div className='home-text home-text-3 flex'>
-                    <h1 className='text-label'>3. Ready to Network the World</h1>
-                    <div className='feature-wrapper flex' onClick={() => {handleClick()} }>
-                        <span>Features</span>
-                        <AiFillCaretDown className='arrow-down'/>
+
+                <div className='card flex'>
+                    <div className='icon-wrapper'>
+                        <IoShieldCheckmarkOutline className='icon'/>
                     </div>
-                    <ul className='features-dropdown flex'>
-                        <li>Find and follow new users</li>
-                        <li>Private messaging inside chatbox</li>
-                        <li>Customize personal profile</li>
-                    </ul>
+                    <label className='card-title'>Authentication</label>
+                    <p className='card-description'>
+                        Secure your login by using the provided authentication method.
+                        This step ensures user always authenticate their account as a safety measure.
+                    </p>
                 </div>
-                <img className='home-image' src="https://images.pexels.com/photos/2055500/pexels-photo-2055500.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""/>
-            </div>
+
+                <div className='card flex'>
+                    <div className='icon-wrapper'>
+                        <FaDatabase className='icon'/>
+                    </div>
+                    <label className='card-title'>Backup Data and Storage</label>
+                    <p className='card-description'>
+                        Dedicated storages working together to maintain userbase and media content.
+                        Service data in an instant for all activities between users and communities.
+                    </p>
+                </div>
+
+                <div className='card flex'>
+                    <div className='icon-wrapper'>
+                        <FaRegHeart className='icon'/>
+                    </div>
+                    <label className='card-title'>Key Features</label>
+                    <p className='card-description'>
+                        Grow your connections to message each other. Post your thoughts and share them publicly.
+                        Join communities to engage your interests with everyone. 
+                    </p>
+                </div>
+            </section>
         </div> 
     ); }
 
