@@ -1,5 +1,4 @@
 import './styles/sidenav.css';
-import { BiLogIn } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import { IoIosPeople, IoIosArrowBack } from 'react-icons/io';
 import { IoCloseSharp } from "react-icons/io5";
@@ -49,12 +48,6 @@ const SideNav = ({mode}) => {
         getFriends();
         getCommunities();
         
-        window.addEventListener('click', (e) => {
-            let side_nav_dynamic = document.querySelector('.side-nav.dynamic');
-            if (side_nav_dynamic?.classList.contains('active') && e?.target?.classList?.contains('side-nav')) {
-               side_nav_dynamic?.classList.remove('active');
-            }
-        });
     }, [location, friend_ids]);
 
     const getFriends = () => {
@@ -68,11 +61,6 @@ const SideNav = ({mode}) => {
             //setCommunities(response.data);
             dispatch((setCommunities(response.data)));
         });
-    }
-
-    const logout = () => { 
-        sessionStorage.removeItem('user'); 
-        sessionStorage.removeItem('isLogged');
     }
 
     const init = async () => {

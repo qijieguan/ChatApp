@@ -126,7 +126,7 @@
 .side-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
 .side-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
-.side-li { grid-template-columns: auto 77.5%; row-gap: 1vh; width: 100%; }
+.side-li { grid-template-columns: auto 77.5%; row-gap: 1vh; width: 100%; overflow: hidden; }
 .side-li:hover .side-li-name { color: rgb(211, 211, 211); }
 .side-li-profile { object-fit: cover; height: 6vh; width: 6vh; border-radius: 0.5rem; box-shadow: 0 0 2px; }
 .side-li-name { 
@@ -142,10 +142,12 @@
 
 @media (max-width: 50rem) {
     .side-nav.static { display: none; }
+    .side-nav.dynamic { width: 45vw; }
 }
 
 @media (max-width: 25rem) {
     .side-li { width: 100%; }
+    .side-nav.dynamic { width: 90vw; }
 }
 
 

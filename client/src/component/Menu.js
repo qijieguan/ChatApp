@@ -6,7 +6,7 @@ import { BsFilePersonFill, BsFillChatDotsFill } from 'react-icons/bs';
 import { MdArrowDropDown } from 'react-icons/md';
 import { IoIosPeople } from 'react-icons/io';
 import { RiMenu2Fill } from 'react-icons/ri';
-import { BiCommentMinus } from 'react-icons/bi';
+import { BiCommentMinus , BiLogIn } from 'react-icons/bi';
 
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -14,9 +14,9 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
 import axios from 'axios';
-import SideNav from './SideNav.js';
 
 import { useState } from 'react';
+import Login from './Login.js';
 
 const Menu = () => {
 
@@ -57,7 +57,26 @@ const Menu = () => {
     }
 
     const handleToggleSideNav = () => {
-        document.querySelector('.side-nav.dynamic')?.classList.toggle('active');
+        let side_nav_dynamic = document.querySelector('.side-nav.dynamic');
+        if (!side_nav_dynamic?.classList.contains('active')) {
+            window.addEventListener('click', (e) => { detectOutsideClick(e); });
+        }
+        else {
+            window.removeEventListener('click', (e) => { detectOutsideClick(e); })
+        }
+        side_nav_dynamic?.classList.toggle('active');
+    }
+
+    const detectOutsideClick = (e) => {
+        let side_nav_dynamic = document.querySelector('.side-nav.dynamic');
+        if (side_nav_dynamic?.classList.contains('active') && e?.target?.classList?.contains('side-nav')) {
+            side_nav_dynamic?.classList.remove('active');
+        }
+    }
+
+    const logout = () => { 
+        sessionStorage.removeItem('user'); 
+        sessionStorage.removeItem('isLogged');
     }
 
     return (
@@ -138,6 +157,10 @@ const Menu = () => {
                         <Link to='/Profile' className='menu-link flex'>
                             <div>Profile</div>
                             <BsFilePersonFill className='person-icon'/>
+                        </Link>
+                        <Link to='/' className='menu-link flex logout' onClick={() => {logout()}}>
+                            <div>Logout</div>
+                            <BiLogIn className='login-icon'/>
                         </Link>
                     </div>
                 </div> 
