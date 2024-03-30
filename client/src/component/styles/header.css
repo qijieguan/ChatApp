@@ -32,7 +32,6 @@
     background: orangered; 
     color: white;  
     border-right: 1px solid;
-    box-shadow: -3px 0 3px rgb(245, 245, 245);
 }
 
 .header-btns button:hover { background: white; color: orangered; }
@@ -58,10 +57,4 @@
 
 @media (max-width: 60rem) {
     .header-banner { display: none; }
-}
-
-@media (max-width: 25rem) {
-    .app-header { padding-bottom: 0.5vh; }
-    .header-btns { padding: 0; justify-content: space-around; }
-    .start-btn { padding: 1vh 2.5vw; margin-right: 0; }
 }

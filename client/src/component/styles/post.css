@@ -3,41 +3,42 @@
     padding: 2vh 0 0 0;
     flex-direction: column;
     width: 100%;
+    color: gray;
     background: white;
-    box-shadow: 0 1px 3px grey;
     border-radius: 0.5rem;
     overflow: hidden;
 }
 
-.post-header { padding: 0 2vw; margin-bottom: 2vh; flex-wrap: wrap; column-gap: 0.75vw; width: 100%; }
+.post-header { padding: 0 2vw; margin-bottom: 1vh; flex-wrap: wrap; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(131, 131, 131); }
+.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); }
 .post-time {
+    margin-left: auto;
     font-size: clamp(0.625rem, 0.875vw, 0.875rem);
     color: rgb(165, 165, 165);
 }
-.primary-text { align-self: flex-start; padding: 0 2.5vw; font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(58, 58, 58); }
+.primary-text { align-self: flex-start; padding: 2vh 2.5vw 4vh 2.5vw; font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .primary-image-wrapper { margin: 1vh auto 0 auto; position: relative; width: 95%; }
-.primary-image { object-fit: cover; max-height: 50vh; width: 100%; }
+.primary-image { object-fit: cover; max-height: 50vh; width: 100%; border-radius: 0.25rem; }
 .image-zoom-icon-wrapper {
     padding: 2vh;
     position: absolute;
     inset: 5% 2.5% auto auto;
+    color: white;
     background: rgba(56, 56, 56, 0.7);
     border-radius: 2rem;
     box-shadow: 0 0 1px;
 }
 .image-zoom-icon-wrapper:hover { opacity: 0.7; }
-.image-zoom-icon { font-size: clamp(0.875rem, 1vw, 1rem); color: rgb(233, 233, 233); }
+.image-zoom-icon { font-size: clamp(0.875rem, 1vw, 1rem); }
 .primary-image-zoom { height: 100%; width: 100%; overflow-x: hidden;  }
 .primary-image-zoom > img { object-fit: cover; width: 100%; }
 .primary-image-zoom > button { 
     padding: 1vh 1vw;
     position: absolute; 
     inset: 5% 5% auto auto; 
-    font-size: clamp(0.875rem, 1vw, 1rem);
-    color: white; 
+    font-size: clamp(0.875rem, 1vw, 1rem); 
     background: rgba(255, 165, 0, 0.7); 
     border-radius: 0.25rem;
     box-shadow: 0 1px 3px rgb(110, 110, 110);
@@ -45,7 +46,6 @@
 .primary-image-zoom > button:hover { opacity: 0.7; }
 
 .delete-wrapper { 
-    margin: 1vh 1vw; 
     padding: 1vh 2vw;
     column-gap: 1vw; 
     align-self: flex-end; 
@@ -66,17 +66,14 @@
     column-gap: 12.5vw;
     row-gap: 2vh;
     width: 100%;
-    border: 1px solid rgb(233, 233, 233);
-    border-left: 0;
-    border-right: 0;
 }
 
-.action { column-gap: 0.75vw; color: rgb(102, 102, 102); }
+.action { column-gap: 0.5vw; }
 .action:hover { opacity: 0.7; }
 .action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .post-like.active { color: red; }
-.post-like.active > .like-count { color: rgb(231, 231, 231); background: red; }
+.post-like.active > .like-count { color: white; background: red; }
 
 .post-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
 
@@ -85,7 +82,7 @@
     padding: 0.25vh 1vw;
     font-weight: 500;
     font-size: clamp(0.625rem, 0.875vw, 0.875rem);
-    background: rgb(211, 211, 211);
+    border: 1px solid;
     border-radius: 1rem;
     box-shadow: 0 0 1px;
 }

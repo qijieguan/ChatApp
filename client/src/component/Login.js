@@ -7,28 +7,32 @@ import { AiFillCloseSquare } from 'react-icons/ai';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { useEffect } from 'react';
+import { IoShieldCheckmarkOutline } from "react-icons/io5";
 
 const Login = () => {
 
     const modalStyles = {
         content : {
+            position: 'relative',
             display: 'flex',
             flexDirection: 'column',
             alignItem: 'center',
             justifyContent: 'center',
-            rowGap: '2vh',
+            rowGap: '5vh',
             top : '50%',
             left: '50%',
             right: 'auto',
             bottom: 'auto',
             width: 'min(95vw, 40rem)',
-            height: '35%',
+            height: '50%',
             transform: 'translate(-50%, -50%)', 
-            color: 'rgb(77, 77, 77)',
-            backgroundColor: 'rgb(100, 100, 255)',
-            border: '1px solid rgb(180, 180, 180)',
+            color: 'wheat',
+            backgroundColor: 'black',
+            border: '2px solid wheat',
+            borderRadius: '1rem',
+            overflow: 'auto !important',
         },
-        overlay: { backgroundColor: 'rgb(230, 230, 230, 0.7)', zIndex: '4' }
+        overlay: { backgroundColor: 'rgb(30, 30, 30, 0.7)', zIndex: '4' }
     };
 
     Modal.setAppElement(document.getElementById('root'));
@@ -115,7 +119,10 @@ const Login = () => {
             </form>
             
             <Modal isOpen={modal} style={modalStyles}>
-                <AiFillCloseSquare className="close-btn" style={{alignSelf: 'flex-end', color: 'white'}}
+                <div className='auth icon-wrapper'>
+                    <IoShieldCheckmarkOutline className='icon'/>
+                </div>
+                <AiFillCloseSquare className="auth close-btn"
                     onClick={() => {setModal(false); setToken("")} }
                     size={24}
                 />

@@ -31,7 +31,7 @@
     font-style: italic;
 }
 .conversation-wrapper { position: relative; width: 100%; color: rgb(48, 48, 48); transition: all 0.1s ease-in; } 
-.conversation-wrapper.highlight { border-left: 5px solid navy; background: rgb(232, 232, 255); }
+.conversation-wrapper.highlight { border-left: 5px solid blue; background: rgb(232, 232, 255); }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 10vh; width: 85%; transition: all 0.3s ease-in; }
 .conversation > img { 
     margin: auto 1vw auto 1.5vw; 

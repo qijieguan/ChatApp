@@ -146,10 +146,7 @@ const PostSection = () => {
                     }
             
                     <div className='post-input-buttons flex'>
-                        <button className='post-input-cancel flex' onClick={handleCloseForm}>
-                            <AiFillCloseCircle className='post-input-cancel-icon'/>
-                            <span>Close</span>
-                        </button>
+                        <button className='post-input-cancel flex' onClick={handleCloseForm}> Close </button>
                         <button type='submit' className='post-input-submit flex' onClick={handleCloseForm}>
                             <AiOutlineSend className='post-input-submit-icon'/>
                             <span>Post</span>

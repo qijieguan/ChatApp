@@ -10,7 +10,7 @@
     overflow: hidden;
 }
 
-.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: navy; }
+.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: blue; }
 .private-message-header > div { padding: 1vh 0; row-gap: 1vh; width: 100%; }
 .private-message-header > div > span { 
     flex-wrap: wrap;
@@ -79,7 +79,9 @@
     position: relative;
     margin: 1vh auto 3vh 0.5vw;
     flex-direction: column;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    line-height: 1.5;
     align-items: unset;
     width: 65%;
     color: rgb(143, 143, 143);

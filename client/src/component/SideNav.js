@@ -2,7 +2,10 @@ import './styles/sidenav.css';
 import { BiLogIn } from 'react-icons/bi';
 import { AiFillHome } from 'react-icons/ai';
 import { IoIosPeople, IoIosArrowBack } from 'react-icons/io';
+import { IoCloseSharp } from "react-icons/io5";
+import { BsThreeDots } from "react-icons/bs";
 import { FaCat } from 'react-icons/fa';
+import { RiMenu2Fill } from 'react-icons/ri';
 
 import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
@@ -15,7 +18,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCommunities } from './actions/index.js';
 
-const SideNav = (param) => {
+const SideNav = ({mode}) => {
     //const communities = Data.communities;
     //<button onClick={init}>init button</button>
 
@@ -23,10 +26,12 @@ const SideNav = (param) => {
 
     const location = useLocation();
 
+    const friend_ids = useSelector(state => state.friends);
     const communities = useSelector(state => state.communities);
     const dispatch = useDispatch();
 
     //const [communities, setCommunities] = useState([]);
+    const [friends, setFriends] = useState("");
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
@@ -41,8 +46,21 @@ const SideNav = (param) => {
             document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
         });
 
-        getCommunities()
-    }, [location]);
+        getFriends();
+        getCommunities();
+        
+        window.addEventListener('click', (e) => {
+            let side_nav_dynamic = document.querySelector('.side-nav.dynamic');
+            if (side_nav_dynamic?.classList.contains('active') && e?.target?.classList?.contains('side-nav')) {
+               side_nav_dynamic?.classList.remove('active');
+            }
+        });
+    }, [location, friend_ids]);
+
+    const getFriends = () => {
+        axios.post(baseURL +'/users/', { friend_ids: friend_ids })
+        .then((response) => { setFriends(response.data) });
+    }
 
     const getCommunities = async () => {
         await axios.post(baseURL + '/communities/get/', { member_id: user._id })
@@ -63,59 +81,68 @@ const SideNav = (param) => {
         .then((response) => { console.log(response.data) });
     }
 
+    const closeSideNav = () => {
+        document.querySelector('.side-nav.dynamic')?.classList.remove('active');
+    }
+
     return (
-        <div className={'side-nav resize ' + param.param}>
-            <div className={'side-nav-main ' + param.param}>
-                <div className='side-nav-header flex'>
-                    <img className='side-nav-profile' src={user.profile_url} alt=""/>
-                    <div className='side-nav-name text'>{user.firstname} {user.lastname}</div>
-                </div>
-                
-                <div className={'side-nav-body flex ' + param.param}>
-                    <Link to="/Dashboard/Post" className='post-nav side-nav-link flex'>
-                        <AiFillHome className='home-icon'/>
-                    <span>Home</span> 
-                    </Link>
-
-                    <Link to="/Dashboard/Community" className='community-nav side-nav-link flex'>
-                        <IoIosPeople className='people-icon'/>
-                        <span>Community</span> 
-                    </Link>
-
-                    <Link to="/" onClick={logout} className='logout-nav side-nav-link flex'>
-                        <BiLogIn className='logout-icon' onClick={logout}/>
-                        <span>Sign Out</span>
-                    </Link>
-                </div>
-            </div>
-
-            <div className={'side-nav-communities ' + param.param}>
-                <div className='side-nav-communities-label flex'>
-                    <span>Community</span>
-                </div>
-                <div className='community-collection flex'>
+        <div className={'side-nav flex ' + mode}>
+            {mode === 'dynamic' && <RiMenu2Fill className='menu-icon' onClick={() => closeSideNav()}/>}
+       
+            <section className='side-nav-communities side-nav-section flex'>
+                <label className='side-nav-communities-label side-label flex'>
+                    My Group
+                    <div className='icon-wrapper'>
+                        <BsThreeDots className='icon'/>
+                        <Link to={{pathname: "/Dashboard/Community"}}  className='side-nav-link'>View Communities</Link>
+                    </div>
+                </label>
+                <div className='community-collection side-collection flex'>
                     {communities.length > 0 ?
                         communities.map(community => 
                             <Link 
                                 to={{pathname: "/Dashboard/Community/" + community.name}} 
                                 state={{communityID: community._id}} key={uuid()}
-                                className='side-community flex'
+                                className='side-community side-li grid'
                             >
-                                <img className='side-community-profile' src={community.profile_url} alt=""/>
-                                <div className='side-community-detail text flex'>
-                                    <span className='side-community-name'>{community.name}</span>
-                                    <span className='side-community-members'>members: {community.members.length}</span>
-                                </div>   
+                                <img className='side-community-profile side-li-profile' src={community.profile_url} alt=""/>
+                                <span className='side-community-name side-li-name'>{community.name}</span>          
                             </Link>
                         )
                         :
-                        <div className='community-collection-empty flex'>
+                        <div className='community-collection-empty side-empty flex'>
                             <FaCat className='cat-icon'/>
                             <span>Wow. Much Empty</span>
                         </div>
                     }
                 </div>
-            </div>
+            </section>
+
+
+            <section className='side-nav-friends side-nav-section flex'>
+                <label className='side-nav-friends-label side-label flex'>
+                    Friends
+                    <div className='icon-wrapper'>
+                        <BsThreeDots className='icon'/>
+                        <Link to={{pathname: "/Friend"}}  className='side-nav-link'>View Friends</Link>
+                    </div>
+                </label>
+                <div className='friend-collection side-collection flex'>
+                    {friends.length > 0 ?
+                        friends.map(friend => 
+                            <div className='side-friend side-li grid' key={uuid()}>
+                                <img className='side-friend-profile side-li-profile' src={friend.profile_url} alt=""/>
+                                <span  className='side-friend-name side-li-name'>{friend.firstname + " " + friend.lastname}</span>
+                            </div>
+                        )
+                        :
+                        <div className='friend-collection-empty side-empty flex'>
+                            <FaCat className='cat-icon'/>
+                            <span>Wow. Much Empty</span>
+                        </div>
+                    }
+                </div>
+            </section>
         </div>
     )
 }

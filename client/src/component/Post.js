@@ -117,7 +117,6 @@ const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp,
                         <div className='poster-name'>{poster_name} </div>
                         <div className="post-time flex"> {parseStringTime()} </div>
                     </div>
-                    <div className='primary-text'>{post.primary_text}</div>
                     {post.primary_image &&
                         <div className='primary-image-wrapper'>
                             <img src={post.primary_image} className='primary-image' alt=""/>
@@ -133,12 +132,8 @@ const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp,
                             </Modal>
                         </div>  
                     }
-                    {user._id === poster_id &&
-                        <div className='delete-wrapper flex' onClick={() => {return deletePost(post_id);}}>
-                            <div className='delete-message'>Delete Post</div>
-                            <BsTrash className='trash-button'/>
-                        </div>
-                    }
+                    <div className='primary-text'>{post.primary_text}</div>
+    
                     <div className='post-footer flex'>
                         <div className='post-like action flex' onClick={toggleLike}>
                             <AiFillLike className='post-icon'/>
@@ -162,6 +157,13 @@ const Post = ({post, post_id, poster_id, poster_profile, poster_name, timeStamp,
                             <BsFillShareFill className='post-icon' style={{fontSize: 'clamp(0.875rem, 1vw, 1rem)'}}/>
                             <span>Share</span>
                         </div>
+
+                        {user._id === poster_id &&
+                            <div className='delete-wrapper flex' onClick={() => {return deletePost(post_id);}}>
+                                <div className='delete-message'>Delete Post</div>
+                                <BsTrash className='trash-button'/>
+                            </div>
+                        }
                     </div>
                 </div>
             }

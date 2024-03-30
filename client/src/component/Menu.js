@@ -36,51 +36,12 @@ const Menu = () => {
             .then((response) => { dispatch(setFriends(response.data)); }); 
         }
 
-        clearDropDowns();
-        setTimeout(() => { 
-            handleResize(); 
-        }, 250);
-
+        closeSearch();
     }, [dispatch, baseURL, location]);
 
     window.addEventListener('load', () => {
         setTimeout(() => { document.querySelector('.menu')?.scrollIntoView({block: 'start'}); }, 125);
     });
-    window.addEventListener('resize', (e) => { setTimeout( () => {handleResize();}, 125) });
-
-    const clearDropDowns = () => {
-        closeMenu();
-        closeSearch();
-    }
-
-    const handleResize = () => {
-        let menu = document.querySelector('.menu');
-        let menu_bar = document.querySelector('.menu-bar');
-        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
-        let overlay = document.querySelector('.dashboard-overlay');
-        let side_nav = document.querySelector('.side-nav.default');
-       
-        if (menu?.offsetWidth <= 960) { 
-            menu.style.height = menu_bar?.offsetHeight + 'px'; 
-            menu_side_wrapper?.classList.add('show');
-            overlay?.classList.add('show');
-        }
-        else { 
-            menu_side_wrapper?.classList.remove('show'); 
-            overlay?.classList.remove('show'); 
-
-            if (!side_nav?.classList.contains('resize')) {
-                side_nav?.classList.add('resize');
-            }
-        }
-
-        let comment_nav = document?.querySelector('.comment-nav');
-        if ( comment_nav) { comment_nav.style.top = menu_bar.offsetHeight + 'px'; }
-      
-        if (side_nav !== null) { side_nav.style.top = menu.getBoundingClientRect().height + 'px'; }
-
-        clearDropDowns();
-    }
 
     const handleClick = (event) => {
         document.querySelector('.menu-li.active')?.classList.remove('active');
@@ -89,100 +50,63 @@ const Menu = () => {
 
     const handleToggleSearch = () => {
         document.querySelector('.menu-li-wrapper')?.classList.toggle('show');
-        setShowSearch(!showSearch);
-        closeMenu();
-    }
-
-    const handleToggleMenu = () => {
-        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
-        let overlay = document.querySelector('.dashboard-overlay');
-        let side_nav = document.querySelector('.side-nav.default');
-
-        side_nav?.classList.toggle('resize');
-        
-        if (!showMenu) { 
-            menu_side_wrapper?.classList.add('expand'); 
-            overlay.classList.add('active');
-        
-            setShowMenu(true); 
-        }
-        else { 
-            closeMenu(); 
-        }
-
-        closeSearch();
-    }
-
-    const closeMenu = () => { 
-        let menu_side_wrapper = document.querySelector('.menu-side-wrapper');
-        let overlay = document.querySelector('.dashboard-overlay');
-
-        menu_side_wrapper?.classList.remove('expand');
-        overlay?.classList.remove('active');
-
-        setShowMenu(false); 
     }
 
     const closeSearch = () => { 
-        setShowSearch(false); 
         document.querySelector('.menu-li-wrapper')?.classList.remove('show');
+    }
+
+    const handleToggleSideNav = () => {
+        document.querySelector('.side-nav.dynamic')?.classList.toggle('active');
     }
 
     return (
         <div className='menu flex' >
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-                <div className='menu-side-wrapper flex'>
-                    <SideNav param={'menu'}/> 
-                </div>
-
-                <div className='menu-side-nav flex' onClick={handleToggleMenu}>
-                    <RiMenu2Fill className='menu-icon'/>
-                </div>
-
-                <div className='menu-label'>
-                    {window.location.href.includes('Dashboard/Post') &&
-                        <div className='menu-label-wrapper flex'>
-                            <AiFillHome className="menu-li-icon"/>
-                            <span>Home</span>
-                        </div>
-                    }
-                    {window.location.href.includes('/Chat') &&
-                        <div className='menu-label-wrapper flex'>
-                            <BsFillChatDotsFill className="menu-li-icon"/>
-                            <span>Chat</span>
-                        </div>
-                    }
-                    {window.location.href.includes('/Friend') &&
-                        <div className='menu-label-wrapper flex'>
-                            <FaUserFriends className="menu-li-icon"/>
-                            <span>Friends</span>
-                        </div>
-                    }
-                    {window.location.href.includes('/Search') &&
-                        <div className='menu-label-wrapper flex'>
-                            <BsSearch className="menu-li-icon"/>
-                            <span>Discover</span>
-                        </div>
-                    }
-                    {window.location.href.includes('/Profile') &&
-                        <div className='menu-label-wrapper flex'>
-                            <BsFilePersonFill className="menu-li-icon"/>
-                            <span>Profile</span>
-                        </div>
-                    }
-                    {window.location.href.includes('Dashboard/Community') && !window.location.href.includes('Post') &&
-                        <div className='menu-label-wrapper flex'>
-                            <IoIosPeople className="menu-li-icon community-icon"/>
-                            <span>Community</span>
-                        </div>
-                    }
-                    {window.location.href.includes('/Comment') &&
-                        <div className='menu-label-wrapper flex'>
-                            <BiCommentMinus className='menu-li-icon'/>
-                            <span>Comment</span>
-                        </div>
-                    }
-                </div>
+                <RiMenu2Fill className='menu-icon' onClick={() => {handleToggleSideNav()}}/>
+            
+                {window.location.href.includes('Dashboard/Post') &&
+                    <div className='menu-label-wrapper flex'>
+                        <AiFillHome className="menu-li-icon"/>
+                        <span>Home</span>
+                    </div>
+                }
+                {window.location.href.includes('/Chat') &&
+                    <div className='menu-label-wrapper flex'>
+                        <BsFillChatDotsFill className="menu-li-icon"/>
+                        <span>Chat</span>
+                    </div>
+                }
+                {window.location.href.includes('/Friend') &&
+                    <div className='menu-label-wrapper flex'>
+                        <FaUserFriends className="menu-li-icon"/>
+                        <span>Friends</span>
+                    </div>
+                }
+                {window.location.href.includes('/Search') &&
+                    <div className='menu-label-wrapper flex'>
+                        <BsSearch className="menu-li-icon"/>
+                        <span>Discover</span>
+                    </div>
+                }
+                {window.location.href.includes('/Profile') &&
+                    <div className='menu-label-wrapper flex'>
+                        <BsFilePersonFill className="menu-li-icon"/>
+                        <span>Profile</span>
+                    </div>
+                }
+                {window.location.href.includes('Dashboard/Community') && !window.location.href.includes('Post') &&
+                    <div className='menu-label-wrapper flex'>
+                        <IoIosPeople className="menu-li-icon community-icon"/>
+                        <span>Community</span>
+                    </div>
+                }
+                {window.location.href.includes('/Comment') &&
+                    <div className='menu-label-wrapper flex'>
+                        <BiCommentMinus className='menu-li-icon'/>
+                        <span>Comment</span>
+                    </div>
+                }
 
                 <div className='menu-li-search flex' onClick={handleToggleSearch}>
                     <AiOutlineSearch color='rgb(100, 100, 100)'/>
@@ -200,13 +124,9 @@ const Menu = () => {
                     </Link>
                 </div>
 
-                <div>
-
-                </div>
-
                 <Link to="/Dashboard/Chat">
                     <div className="message-icon flex">
-                        <BsFillChatDotsFill color='rgb(100, 100, 100)'/>
+                        <BsFillChatDotsFill/>
                     </div>
                 </Link>
                 

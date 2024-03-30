@@ -89,7 +89,18 @@
 .register-link > span:last-child { color: black; font-weight: 700; }
 .register-link:hover { text-decoration: underline; text-underline-position: below; }
 
-.auth-text { margin: 0 auto 2.5% auto; text-align: center; font-size: clamp(0.875rem, 1.5vw, 1.5rem); color: white; }
+
+.auth.icon-wrapper {
+    position: absolute;
+    inset: 0 auto auto 50%;
+    margin: 0 auto;
+    width: fit-content;
+    transform: translate3d(-50%, -50%, 0);
+}
+.auth.icon-wrapper .icon { font-size: clamp(2.5rem, 4vw, 4rem); }
+.auth.close-btn { align-self: flex-end; color: red; }
+
+.auth-text { margin: 0 auto 2.5% auto; text-align: center; font-size: clamp(0.875rem, 1.5vw, 1.5rem); }
 .auth-btn { 
     min-height: 10vh;
     max-height: 15vh; 
@@ -98,10 +109,10 @@
     font-size: clamp(0.625rem, 1vw, 1rem);
     font-weight: 700;
     letter-spacing: 0.125rem;
-    color: rgb(235, 235, 235); 
+    color: wheat; 
     background: transparent;
     border: 1px solid; 
-    border-radius: 0.25rem
+    border-radius: 0.5rem;
 }
 
 .auth-btn:hover { opacity: 0.4; }

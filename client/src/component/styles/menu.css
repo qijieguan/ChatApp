@@ -1,27 +1,25 @@
 .menu { position: sticky; inset: 0 auto auto 0; grid-column: 1 / 3; align-items: flex-start; z-index: 4; }
 
 .menu-bar { 
-    padding: 1vh 1vw 1vh 0;
+    padding: 1vh 1vw;
+    justify-content: center;
     column-gap: 3vw;
     row-gap: 1vh;
     min-width: 100%;
     max-width: 250%;
+    color: orangered; 
     background: white;
     box-shadow: 0 3px 3px rgb(236, 236, 236);
 }
 
-.menu-side-wrapper { align-self: flex-start; width: 0; transform: translate3d(-100%, -1vh, 0); transition: transform 0.1s ease-in; }
+.menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); transform: translateY(-12.5%); }
 
-.menu-side-nav { position: relative; z-index: 3; }
-
-.menu-icon { font-size: clamp(1.25rem, 1.5vw, 1.5rem); color: rgb(100, 100, 100); }
-
-.menu-label-wrapper { gap: 1vh; color: gray; }
+.menu-label-wrapper { gap: 1vh; }
 
 .menu-li-icon { font-size: clamp(1.25rem, 2.125vw, 2.125rem); }
 .menu-li-icon.community-icon { font-size: clamp(2rem, 3vw, 3rem); }
 
-.menu-label-wrapper > span { margin-top: 2px; font-size: clamp(1rem, 1.825vw, 1.825rem); letter-spacing: 1px; }
+.menu-label-wrapper > span { margin-top: 2px; font-size: clamp(1rem, 1.825vw, 1.825rem); letter-spacing: 1px; font-weight: 700; }
 
 .menu-li-search {
     margin: 0 auto;
@@ -31,7 +29,6 @@
     box-shadow: 0 0 2px rgb(221, 221, 221);
     border-radius: 3rem;
 }
-
 .menu-li-search:hover { opacity: 0.7; }
 
 .menu-li-wrapper {
@@ -39,18 +36,20 @@
     padding: 1vh 0.5vw;
     column-gap: 0.5vw;
     row-gap: 1vh;
-    background: rgb(240, 240, 255);
+    color: white;
+    background: orangered;
     box-shadow: 0 0 1px gray;
     border-radius: 0.5rem;
 }
 
-.menu-li { padding: 1vh 1.5vw; color: navy; border-radius: 0.5rem; transition: all 0.2s ease-in; }
-.menu-li:hover { color: white; background: navy; box-shadow: 0 0 2px; }
-.menu-li.active { color: white; background: navy; box-shadow: 0 0 2px; }
+.menu-li { padding: 1vh 1.5vw; color: white; transition: all 0.2s ease-in; border-radius: 0.25rem; }
+.menu-li:hover { background: rgb(255, 121, 73); box-shadow: 0 0 2px; }
+.menu-li.active { background: rgb(255, 121, 73); box-shadow: 0 0 2px; }
 .menu-li > div { font-size: clamp(0.625rem, 0.875vw, 0.875rem); font-weight: 500; letter-spacing: 0.5px; }
 
 .message-icon {
     padding: 1.375vh;
+    color: gray;
     border: 1px solid rgb(221, 221, 221);
     box-shadow: 0 0 2px rgb(221, 221, 221);
     border-radius: 3rem;
@@ -60,7 +59,13 @@
 .menu-dropdown { position: relative; padding: 0.25vw 0 0.25vw 0.25vw; column-gap: 1vw; }
 .menu-dropdown img { height: 6.5vh; width: 6.5vh; object-fit: cover; border-radius: 4rem; }
 
-.menu-user { text-transform: uppercase; font-size: clamp(0.75rem, 1.125vw, 1.125rem); font-weight: 500; color: tomato; }
+.menu-user { 
+    text-transform: uppercase; 
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
+    font-weight: 700; 
+    letter-spacing: 1px;
+    color: tomato; 
+}
 
 .menu-links {
     display: none;
@@ -81,15 +86,7 @@
 .menu-link > div { font-size: clamp(0.75rem, 1vw, 0.875rem); font-weight: 500; }
 .menu-dropdown:hover > .menu-links, .menu-links:hover { display: flex; flex-direction: column; }
 
-@media (max-width: 60rem) {
-    .menu-bar { 
-        position: fixed; 
-        inset: 0 auto auto 0; 
-        column-gap: 1vw; 
-        box-shadow: 0 1px 2px rgb(0, 0, 73); 
-        background: navy;
-    }
-    .menu-bar * { color: white; }
+@media (max-width: 50rem) {
     .menu-icon { margin: 7px 2.5vw 0 2.5vw; }
     .menu-side-nav { display: unset; }
     .menu-li-search { display: flex; margin: 0; margin-left: auto; }
@@ -102,17 +99,16 @@
         justify-content: center;
         gap: 1vh;
         width: 100%;
-        background: navy;
         border-radius: 0;
     }
     .menu-li-wrapper.show { display: flex; transform: translateY(100%); padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
     .menu-side-wrapper.show.expand { width: 35vw; transform: translate3d(0, -1vh, 0); }
     .menu-li { padding: 1vh 4vw; }
-    .menu-links { background: navy; box-shadow: 0 1px 3px rgb(0, 0, 65); }
 }
 
 @media (max-width: 50rem) {
     .menu-bar { column-gap: 2vw; justify-content: space-evenly; }
+    .menu-icon { display: block; }
     .menu-side-wrapper.show.expand { width: 45vw; }
     .menu-li-wrapper { flex-wrap: wrap; } 
     .menu-dropdown img { height: 6vh; width: 6vh; }

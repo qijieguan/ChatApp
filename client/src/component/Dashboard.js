@@ -40,47 +40,46 @@ const Dashboard = () => {
     }, [location]);
 
     return ( 
-        <div>
-            <div className="dashboard grid">
-                <Menu/>
-                <SideNav param={"default"}/>
-                <div className='dashboard-overlay'/>
-                <div>
-                    {pathname === '/Dashboard/Post' &&
-                        <PostSection/>
-                    }
+        <div className="dashboard grid">
+            <Menu/>
+            <SideNav mode={"static"}/>
+            <SideNav mode={"dynamic"}/>
+            <div className='dashboard-overlay'/>
+            <div>
+                {pathname === '/Dashboard/Post' &&
+                    <PostSection/>
+                }
 
-                    {pathname && pathname.includes('/Comment') &&
-                        <CommentSection/>
-                    }
+                {pathname && pathname.includes('/Comment') &&
+                    <CommentSection/>
+                }
 
-                    {pathname === '/Dashboard/Chat' &&
-                        <ChatPage/>
-                    }
+                {pathname === '/Dashboard/Chat' &&
+                    <ChatPage/>
+                }
 
-                    {pathname === '/Dashboard/Community' &&
-                        <Community/>
-                    }
+                {pathname === '/Dashboard/Community' &&
+                    <Community/>
+                }
 
-                    {pathname && pathname.includes('/Dashboard/Community/') &&
-                        <CommunityPage/>
-                    }
+                {pathname && pathname.includes('/Dashboard/Community/') &&
+                    <CommunityPage/>
+                }
 
-                    {pathname === '/Friend' &&
-                        <Friend/>
-                    }
+                {pathname === '/Friend' &&
+                    <Friend/>
+                }
 
-                    {pathname === '/Search' &&
-                        <Search/>
-                    }
+                {pathname === '/Search' &&
+                    <Search/>
+                }
 
-                    {pathname === '/Profile' &&
-                        <Profile/>
-                    }
+                {pathname === '/Profile' &&
+                    <Profile/>
+                }
 
-                </div>
-            </div> 
-        </div>
+            </div>
+        </div> 
     ); };
 
 export default Dashboard;

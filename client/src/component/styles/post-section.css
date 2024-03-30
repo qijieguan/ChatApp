@@ -1,18 +1,19 @@
+
 .post-section { margin: 3vh 0 5vh 0; flex-direction: column; row-gap: 2vh; }
 
-.post-form { flex-wrap: wrap; column-gap: 1vw; width: 90%; background: white; border-radius: 0.5rem; }
+.post-form { flex-wrap: wrap; column-gap: 1vw; width: 100%; background: white; border-radius: 0.5rem; }
 .post-form-header { 
     justify-content: space-around;
     flex-wrap: wrap;
     column-gap: 5vw;
     row-gap: 1vh;
     padding: 3.5vh 2.5vw;
-    font-weight: 700; 
-    color: white; 
-    background: tomato;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to right, red 20%, tomato);
     width: 100%;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 10px gray;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 3px darkred;
 }
 .post-form-header-text { justify-content: center; flex-wrap: wrap; column-gap: 0.5vw; row-gap: 1vh; }
 .post-form-header-text > span:first-child { font-size: clamp(0.875rem, 1.5vw, 1.5rem); } 
@@ -20,15 +21,17 @@
 
 .smile-icon { margin-top: 3px; font-size: clamp(1.5rem, 1.75vw, 1.75rem); }
 .post-form-header-button { 
-    padding: 0.5vh 1vw;
+    padding: 1vh 1vw;
     column-gap: 0.5vw; 
-    background: transparent;
-    border: 1px solid white;
+    color: white;
+    background: orangered;
+    border: 2px solid;
     border-radius: 0.5rem;
+    box-shadow: 0 0 3px darkred;
 }
 .post-form-header-button:hover { opacity: 0.7; }
-.post-form-header-icon { font-size: clamp(1rem, 1.5vw, 1.5rem); color: white; }
-.post-form-header-button > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); color: white; }
+.post-form-header-icon { font-size: clamp(1rem, 1.5vw, 1.5rem); }
+.post-form-header-button > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
 
 .post-input { 
     flex-wrap: wrap; 
@@ -45,15 +48,15 @@
 
 .post-input-textarea { position: relative; margin: 3vh auto 0 auto; width: 100%; }
 .post-input-textarea > textarea { 
+    padding: 1vh 0;
     min-height: 30vh;
     width: 100%; 
-    color: rgb(179, 179, 179); 
-    border: 1px solid orange;
-    box-shadow: 0 0 10px darkorange; 
-    border-radius: 0.5rem; 
+    color: gray;
+    border: 1px solid rgb(241, 241, 241);
+    border-radius: 0.25rem; 
 }
-.post-input-textarea > textarea::placeholder { color: orange; }
-.post-input-textarea > textarea:focus { color: black; outline: 0; border: 1px solid orange; }
+.post-input-textarea > textarea::placeholder { color: gray; }
+.post-input-textarea > textarea:focus { outline: 0; }
 
 .post-input-upload {
     justify-content: flex-end;
@@ -68,9 +71,9 @@
     padding: 1vh 1.5vh;  
     font-size: clamp(0.625rem, 0.875vw, 0.875rem); 
     width: fit-content;
-    background: rgb(255, 191, 72);
-    border-radius: 0.5rem;
-    box-shadow: 0 0 3px grey;
+    background: rgb(180, 180, 180);
+    border-radius: 0.25rem;
+    box-shadow: 0 0 1px grey;
 }
 .post-image-wrapper:hover { opacity: 0.7; }
 .post-image-icon { justify-content: center; font-size: clamp(1.25rem, 1.75vw, 1.75rem); color: white; }
@@ -86,17 +89,24 @@
 }
 
 .post-input-buttons { margin-left: auto; column-gap: 1vw; row-gap: 1vh; }
-.post-input-buttons > button { justify-content: center; padding: 1vh 3vw; column-gap: 0.25vw; border-radius: 0.5rem; }
-.post-input-buttons > button > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
+.post-input-buttons > button { 
+    justify-content: center;
+    padding: 0 3vw; 
+    column-gap: 0.25vw; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    height: 7vh;
+    border-radius: 0.25rem; 
+}
+.post-input-buttons > button > span { font-size: clamp(0.75rem, 1.125vw, 1.125rem); }
 .post-input-buttons > button:hover { opacity: 0.7; }
 
-.post-input-cancel { color: rgb(187, 187, 187); background: white; border: 1px solid; box-shadow: 0 0 2px grey; }
-.post-input-cancel-icon { font-size: clamp(1rem, 1.5vw, 1.5rem); }
+.post-input-cancel { color: white; background: rgb(180, 180, 180); box-shadow: 0 0 2px rgb(230, 230, 230); }
 
 .post-input-submit { color: white; background: tomato; box-shadow: 0 2px 3px gray; }
 .post-input-submit-icon { margin-bottom: 5px; font-size: clamp(1rem, 1.5vw, 1.5rem); transform: rotate(-45deg); }
 
-.post-collection { flex-direction: column; row-gap: 2vh; width: 90%; }
+.post-collection { flex-direction: column; row-gap: 2vh; width: 100%; }
 
 @media (max-width: 60rem) {
     .post-section { margin: 2vh 0 5vh 0; }
