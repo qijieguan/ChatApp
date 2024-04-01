@@ -1,7 +1,5 @@
 import './styles/sidenav.css';
-import { AiFillHome } from 'react-icons/ai';
-import { IoIosPeople, IoIosArrowBack } from 'react-icons/io';
-import { IoCloseSharp } from "react-icons/io5";
+
 import { BsThreeDots } from "react-icons/bs";
 import { FaCat } from 'react-icons/fa';
 import { RiMenu2Fill } from 'react-icons/ri';
@@ -92,6 +90,7 @@ const SideNav = ({mode}) => {
                                 to={{pathname: "/Dashboard/Community/" + community.name}} 
                                 state={{communityID: community._id}} key={uuid()}
                                 className='side-community side-li grid'
+                                onClick={() => {closeSideNav()}}
                             >
                                 <img className='side-community-profile side-li-profile' src={community.profile_url} alt=""/>
                                 <span className='side-community-name side-li-name'>{community.name}</span>          

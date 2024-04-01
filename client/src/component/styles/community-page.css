@@ -86,7 +86,7 @@
     font-size: clamp(0.625rem, 1vw, 1rem);
     color: white;
     background: navy;
-    box-shadow: 0 0 3px rgb(65, 65, 65);
+    box-shadow: 0 0 2px rgb(65, 65, 65);
     border-radius: 3rem;
 }
 

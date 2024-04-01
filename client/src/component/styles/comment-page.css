@@ -7,21 +7,18 @@
 .comment-nav {
     margin-top: 3vh;
     position: sticky;
-    top: 0;
-    left: 5%;
+    inset: 0 auto auto 5%;
     padding: 2vh 2vw;
     width: 95%;
-    background: orangered;
+    background: black;
     box-shadow: 0 2px 3px rgb(141, 141, 141);
     z-index: 2;
 }
 
 .comment-nav-link { column-gap: 0.5vw; color: white; }
-
 .comment-nav-link:hover * { opacity: 0.9; text-decoration: underline; }
 
 .comment-nav-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
-
 .comment-nav-text > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .primary-post {
@@ -30,16 +27,14 @@
     min-height: 30vh;
     width: 95%;
     row-gap: 1vh;
-    background: white;
-    box-shadow: 0 1px 2px rgb(190, 190, 190);
+    background: rgb(243, 243, 243);
+    box-shadow: 0 1px 2px rgb(228, 228, 228);
 }
 
 .primary-post > .post-footer { border-bottom: 0; }
 
 .primary-user { margin: 2vh 0 1vh 2vw; flex-wrap: wrap; column-gap: 1vw; color: gray; width: 100%; }
-
 .primary-user > .poster-name { font-size: clamp(0.75rem, 1vw, 1rem); }
-
 .primary-user > img {
     height: 5.5vh;
     width: 5.5vh;
@@ -60,92 +55,76 @@
     margin: 2.5vh 0;
     padding: 2vh 2vw 3vh 2vw;
     gap: 1vh;
-    width: 90%;
-    background: rgb(250, 250, 250);
-    box-shadow: 0 1px 2px rgb(223, 223, 223);
-    border-radius: 0.5rem;
+    width: 95%;
+    color: grey;
+    background: rgb(247, 247, 247);
 }
 
-.comment-label { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); text-transform: uppercase; color: tomato; }
+.comment-label { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); text-transform: uppercase; }
 
 .comment-input-wrapper > img {
-    padding: 0.05vw;
+    padding: 0.125vw;
     object-fit: cover;
     height: 6.5vh;
     width: 6.5vh;
-    box-shadow: 0 0 1px grey;
-    border: 2px solid tomato;
-    border-radius: 3rem;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 0.5rem;
 }
 
 .comment-input { min-height: 7.5vh; width: 90%; }
-
 .comment-input > input {
     height: 6.5vh;
     width: 70%;
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 500;
     background: transparent;
-    color: black;
-    border-bottom: 2px solid tomato;
+    border-bottom: 2px solid rgb(233, 233, 233);
 }
+.comment-input > input::placeholder { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.comment-input > input::placeholder { color: tomato; font-size: clamp(0.75rem, 1vw, 1rem); }
-
-.comment-camera { padding: 0 2vw; height: 6.5vh; border-bottom: 2px solid tomato; }
-
-.comment-camera-icon { font-size: clamp(1.375rem, 2vw, 1.5rem); color: tomato; }
+.comment-camera { padding: 0 2vw; height: 6.5vh; color: rgb(233, 233, 233); border-bottom: 2px solid; }
 
 .comment-send {
     justify-content: center;
     padding-right: 0.5vw;
     height: 6.5vh;
-    color: rgb(102, 102, 102);
-    border-bottom: 2px solid tomato;
+    border-bottom: 2px solid rgb(233, 233, 233);
 }
 
 .comment-send-wrapper {
     justify-content: center;
     padding: 0 2.5vw;
     height: 80%;
-    background: tomato;
+    background: orangered;
     border-radius: 0.5rem;
 }
-
 .comment-send-wrapper:hover { opacity: 0.7; }
-
 .comment-send-icon { font-size: clamp(1.375rem, 1.5vw, 1.5rem); color: white; }
 
-.comment-collection { flex-direction: column; row-gap: 0.25vh; width: 95%; }
+.comment-collection { flex-direction: column; row-gap: 1vh; width: 95%; }
 
 .comment {
-    padding: 4vh 1.5vw 4vh 2.5vw;
+    padding: 1.5vh 1.5vw;
     min-height: 7.5vh;
     width: 97.5%;
     column-gap: 1vw;
-    background: white;
-    border-bottom: 1px solid rgb(199, 199, 199);
-    box-shadow: 0 1px 2px rgb(223, 223, 223);
-    border-radius: 0.25rem;
+    background: rgb(240, 240, 240);
+    box-shadow: 0 1px 1px rgb(247, 247, 247);
     overflow: hidden;
 }
 
 .comment > .post-time { margin: 0 1vw 0 auto; }
 
+.comment-profile { flex-direction: column; row-gap: 1vh; }
 .comment-profile > img {
-    object-fit: cover;
-    height: 5vh;
-    width: 5vh;
-    box-shadow: 0 0 1px;
-    border-radius: 4rem;
+    height: 9vh;
+    width: 9vh;
 }
 
-.comment-name { margin-left: 1vw; font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 300; color: gray; }
-
+.comment-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 300; color: rgb(180, 180, 180); }
 .comment-content { font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(94, 94, 94); }
 
 .comment-empty { margin: 5vh auto 0 auto; justify-content: center; column-gap: 0.5vw; }
-
 .comment-empty > span { text-transform: capitalize; font-size: clamp(0.75rem, 1.25vw, 1.25rem); color: grey; }
 
 .cat-icon { font-size: clamp(1.25rem, 1.75vw, 1.75rem); color: grey; }

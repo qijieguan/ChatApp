@@ -2,6 +2,7 @@ import './styles/message.css';
 import { MdArrowBack } from 'react-icons/md';
 import { FaCamera, FaCat } from 'react-icons/fa';
 import { AiOutlineSend } from 'react-icons/ai';
+import { BsThreeDots } from "react-icons/bs";
 
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -34,7 +35,6 @@ const MessageBox = ({ renderChatLog }) => {
                 friend_id: response.data._id
             }).then((response) => { setTextSet(response.data.texts); });
         });
-        setTimeout(() => { scrollBottom(); }, 250);
     }
 
     const scrollBottom = () => {
@@ -97,24 +97,36 @@ const MessageBox = ({ renderChatLog }) => {
 
     const handleUpload = (e) => { e.currentTarget.childNodes[2].click(); }
 
-    const handleChange = (e) => {
-        setTextInp(e.target.value)
+    const handleChange = (e) => { setTextInp(e.target.value) }
+
+    const removeChat = async () => {
+        await axios.post(baseURL +'/texts/delete', { 
+            user_id: JSON.parse(sessionStorage.getItem('user'))._id, 
+            friend_id: sessionStorage.getItem('select')
+        })
+      
+        let backBtn = document.getElementById('back-btn');
+        backBtn.click();
+      
+        renderChatLog();
     }
 
     return (
         <div className='message-container'>
-            <div className="private-message-header">
-                {user &&
-                    <div className='flex'>
-                        <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
-                        <span className='flex'>
-                            <span>Messaging:</span>
-                            <img src={user.profile_url} alt=""/>
-                            <span className='recipient'>{user.firstname + " " + user.lastname}</span>
-                        </span>
+            {user &&
+                <div className="private-message-header flex">
+                    <button id="back-btn" className='flex' onClick={goBack}><MdArrowBack/></button>
+                    <div className='private-message-headshot flex'>
+                        <img src={user.profile_url} alt=""/>
+                        <span className='recipient'>{user.firstname + " " + user.lastname}</span>
                     </div>
-                }
-            </div>
+                    <button className='trash-btn'>
+                        <BsThreeDots className='trash-icon'/>
+                        <span className='trash-text' onClick={() => {removeChat()}}>Trash Conversations</span>
+                    </button>
+                </div>
+            }
+
             <div className="private-message flex">
                 {textSet ?
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)

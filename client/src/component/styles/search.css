@@ -2,15 +2,14 @@
 
 .search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vh ; row-gap: 2vh; }
 .search-wrapper-label {
-    grid-column: 1 / 5;
-    text-align: center;
+    grid-column: -1 / 1;
     justify-content: center;
-    margin: 1.5vh auto;
+    margin: 3vh auto 3vh 0;
     animation: fadeSlideLeft 0.5s ease-in forwards;
 }
 
 .search-wrapper-text { 
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(1.25rem, 2vw, 2rem); 
     font-weight: 700;
     letter-spacing: 0.125rem; 
 }
@@ -93,18 +92,15 @@
 
 @media (max-width: 50rem) {
     .search-wrapper { grid-template-columns: 30% 30% 30%; }
-    .search-wrapper-label { grid-column: 1 / 4; }
 }
 
 @media (max-width: 30rem) {
-    .search-wrapper { grid-template-columns: 48% 48%; }
-    .search-wrapper-label { grid-column: 1 / 3; margin: 2.5vh auto; }
+    .search-wrapper { margin: 2vh auto; grid-template-columns: 48% 48%; }
     .user.active { border-radius: 1rem; }
 }
 
 @media (max-width: 25rem) {
     .search-wrapper { grid-template-columns: 95%; row-gap: 1vh; }
-    .search-wrapper-label { grid-column: 1 / 2; }
     .search-wrapper-icon { display: none; }
     .user-name,.user-bio { padding: 1vh 2vw; }
     .user-bio > span, .user-bio > span > span { text-align: center; }

@@ -1,36 +1,80 @@
 .message-container { 
     flex-direction: column;
-    margin: 3vh 0 0 0;
+    margin: 10vh 0 0 0;
     padding-bottom: 2vh;
     width: 100%;
     color: rgb(68, 68, 68);
     background: rgb(251, 251, 255);
-    box-shadow: 0 1px 3px gray;
+    box-shadow: 0 1px 3px rgb(240, 240, 240);
     border-radius: 0.75rem;
-    overflow: hidden;
 }
 
-.private-message-header { padding: 0 1vw; width: 100%; box-shadow: 0 1px 2px gray; background: blue; }
-.private-message-header > div { padding: 1vh 0; row-gap: 1vh; width: 100%; }
-.private-message-header > div > span { 
-    flex-wrap: wrap;
-    font-weight: 500;
-    color: white;
+.private-message-header { 
+    position: relative;
+    padding: 4vh 2vw; 
+    justify-content: space-between;
+    width: 100%; 
+    box-shadow: 0 1px 2px gray; 
+    color: white; 
+    background: linear-gradient(to right, black 10%, rgb(50, 50, 50)); 
+    border-radius: 0.75rem 0.75rem 0 0;
 }
-.private-message-header > div > span > span { margin: 0 0.5vw; font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
 
-#back-btn { margin: 0 1.5vw; color: white; background: transparent; }
-#back-btn * { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
+#back-btn { background: transparent; color: white; }
+#back-btn * { font-size: clamp(1.5rem, 2vw, 2rem); }
 
 #back-btn:hover { opacity: 0.7; }
 
-.private-message-header img { 
+.private-message-headshot {
+    position: absolute;
+    inset: 0 auto auto 50%;
+    flex-direction: column;
+    transform: translate3d(-50%, -40%, 0);
+}
+
+.private-message-headshot img { 
     margin: 0 1vw;
-    height: 10vh; 
-    width: 10vh; 
+    height: 12.5vh; 
+    width: 12.5vh; 
     object-fit: cover; 
-    border-radius: 3.25rem; 
+    border-radius: 0.5rem; 
     box-shadow: 0 0 2px black;
+    border: 3px solid wheat;
+}
+
+.recipient {
+    margin-top: 2vh;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: wheat;
+}
+
+.trash-btn {
+    position: relative;  
+    background: transparent;
+    color: white; 
+}
+
+.trash-icon { font-size: clamp(1.25rem, 1.5vw, 1.5rem); }
+
+.trash-text {
+    display: none;
+    padding: 2vh 2vw;
+    position: absolute;
+    inset: 0 0 auto auto;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: max-content;
+    background: rgb(50, 50, 50);
+    transform: translate3d(75%, -95%, 0);
+    box-shadow: 0 0 3px black;
+    border-radius: 0.5rem;
+}
+
+.trash-icon:hover + .trash-text, .trash-text:hover {
+   display: block;
+   color: orange;
 }
 
 .private-message { 
@@ -89,7 +133,7 @@
 
 .text-format.image { object-fit: cover; max-width: 60%; }
 
-.texter { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; border: 1px solid rgb(44, 44, 44); }
+.texter { height: 7vh; width: 7vh; object-fit: cover; border-radius: 3rem; }
 .text-image { max-height: 35vh; object-fit: cover; border-radius: 0.5rem; }
 
 .text-content { 
@@ -99,8 +143,8 @@
     min-height: 15vh; 
     color: rgb(80, 80, 80);
     background: white;
-    box-shadow: 0 1px 3px grey;
-    border-radius: 0.25rem;
+    box-shadow: 0 1px 3px rgb(230, 230, 230);
+    border-radius: 0.5rem;
 }
 
 .time-format { justify-content: center; position: absolute; inset: auto 1.5% 0 auto; transform: translateY(100%); color: rgb(180, 180, 180); }
@@ -138,16 +182,20 @@
 
 .send-button > .send-icon { font-size: clamp(1.5rem, 1.75vw, 1.75rem); color: rgb(68, 68, 68); }
 
+@media (max-width: 50rem) {
+    .private-message-header { padding: 5vh 2vw; }
+    .private-message-headshot img { height: 14vh; width: 14vh; }
+}
+
 @media (max-width: 40rem) { 
     .message-container { display: none; }
     .message-container.focus { display: unset; }
-    .private-message-header img { height: 8vh; width: 8vh; }
     .private-message { height: 50vh; row-gap: 5vh; }
     .end-message > span { font-weight: 300; }
 }
 
 @media (max-width: 25rem) {
-    .recipient { margin: 1vh 0; }
+    .private-message-headshot img { height: 12vh; width: 12vh; }
     .private-message { margin: 3vh 1vw 7.5vh 1vw; row-gap: 3.5vh; }
     .text-format { width: 100%; }
     .texter { height: 5vh; width: 5vh; }

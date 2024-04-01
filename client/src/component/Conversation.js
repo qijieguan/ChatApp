@@ -1,8 +1,7 @@
-import { BsTrash } from 'react-icons/bs';
 import { useState } from 'react';
 import axios from 'axios';
 
-const Conversation = ({ chat, getSelect, removeChat }) => {
+const Conversation = ({ chat, getSelect }) => {
 
     const [textsPreview, setPreview] = useState([]);
 
@@ -26,10 +25,6 @@ const Conversation = ({ chat, getSelect, removeChat }) => {
                     <h1>{chat.firstname} {chat.lastname}</h1>
                     <div className='text-preview'>{textsPreview}</div>
                 </div>
-            </div>
-            <div className='trash-wrapper flex'>
-                <BsTrash className='trash-icon' onClick={() => removeChat(chat)}/>
-                <div className='trash-overlay flex'>Remove conversation?</div>
             </div>
         </div>
     );

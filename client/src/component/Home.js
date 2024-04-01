@@ -9,32 +9,8 @@ const Home = () => {
 
     const url = "https://cdn.pixabay.com/photo/2016/07/13/11/32/photomontage-1514218_1280.jpg";
 
-    useEffect(() => {
-        if (!sessionStorage.getItem('visited')) {
-            //guestSignIn();
-        }   
+    useEffect(() => {  
     }, []);
-
-    
-    const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
-
-    const guestSignIn = async () => {
-        await axios.post(baseURL + '/users/login/', { username: 'guest', password: 'password', })
-        .then(async (response) => { 
-            await axios.get(baseURL + '/users/auth/', { headers: { "x-access-token": response.data } })
-            .then(async (response) => {
-                if (response.data.auth) {
-                    sessionStorage.setItem("isLogged", true);
-                    axios.post(baseURL + '/users/load/', { username: 'guest' })
-                    .then((response) => { 
-                        sessionStorage.setItem("user", JSON.stringify(response.data)); 
-                        sessionStorage.setItem('visited', true);
-                        window.location.href = "/Dashboard/Post";
-                    });
-                }
-            });
-        });
-    }
 
     return ( 
         <div className="home flex">

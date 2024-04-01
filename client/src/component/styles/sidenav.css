@@ -78,6 +78,7 @@
     background: white;
     border-radius: 0.75rem;
     z-index: 2;
+    overflow: hidden;
 }
 
 .side-label { 
@@ -99,7 +100,7 @@
     transform: translateY(5%);
 }
 .side-label .side-nav-link { 
-    padding: 4vh 2vw;
+    padding: 4vh 4vw;
     position: absolute;
     inset: auto 0 0 auto;
     display: none;
@@ -110,8 +111,8 @@
     width: max-content; 
     color: grey;
     background: white;
-    transform: translate3d(80%, 50%, 0);
-    box-shadow: 1px 1px 4px rgb(129, 129, 129);
+    transform: translate3d(0%, 80%, 0);
+    box-shadow: 0 3px 3px rgb(236, 236, 236);
     border-radius: 0.25rem;
 }
 .side-label .icon-wrapper:hover .side-nav-link, .side-nav-link:hover {  
@@ -126,11 +127,11 @@
 .side-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
 .side-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
-.side-li { grid-template-columns: auto 77.5%; row-gap: 1vh; width: 100%; overflow: hidden; }
+.side-li { grid-template-columns: auto auto; gap: 1vh; width: 100%; overflow: hidden; justify-content: flex-start; }
 .side-li:hover .side-li-name { color: rgb(211, 211, 211); }
 .side-li-profile { object-fit: cover; height: 6vh; width: 6vh; border-radius: 0.5rem; box-shadow: 0 0 2px; }
 .side-li-name { 
-    margin: auto 0 auto 0.75vw; 
+    margin: auto 0; 
     font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
     font-weight: 500;
     text-overflow: clip;
