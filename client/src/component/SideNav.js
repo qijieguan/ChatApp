@@ -33,19 +33,8 @@ const SideNav = ({mode}) => {
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     useEffect(() => {
-        document.querySelector('.highlight')?.classList.remove('highlight');
-
-        let param = '';
-        if (location.pathname.includes('Post')) { param = 'post' }
-        else if (location.pathname.includes('Community')) { param = 'community' }
-
-        setTimeout(() => {
-            document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
-        });
-
         getFriends();
         getCommunities();
-        
     }, [location, friend_ids]);
 
     const getFriends = () => {
@@ -111,16 +100,19 @@ const SideNav = ({mode}) => {
                     Friends
                     <div className='icon-wrapper'>
                         <BsThreeDots className='icon'/>
-                        <Link to={{pathname: "/Friend"}}  className='side-nav-link'>View Friends</Link>
+                        <Link to={{pathname: "/Dashboard/Friend"}}  className='side-nav-link'>View Friends</Link>
                     </div>
                 </label>
                 <div className='friend-collection side-collection flex'>
                     {friends.length > 0 ?
                         friends.map(friend => 
-                            <div className='side-friend side-li grid' key={uuid()}>
+                            <Link 
+                                to={"/Dashboard/Profile/" + friend.firstname + "_" + friend.lastname}
+                                state={{user: friend}}
+                                className='side-friend side-li grid' key={uuid()}>
                                 <img className='side-friend-profile side-li-profile' src={friend.profile_url} alt=""/>
                                 <span  className='side-friend-name side-li-name'>{friend.firstname + " " + friend.lastname}</span>
-                            </div>
+                            </Link>
                         )
                         :
                         <div className='friend-collection-empty side-empty flex'>

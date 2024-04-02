@@ -42,9 +42,9 @@
 
 .community-name {
     height: 18%;
-    font-style: oblique; 
     font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .community-description {

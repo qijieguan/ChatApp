@@ -4,28 +4,27 @@ import uuid from 'react-uuid';
 import axios from 'axios';
 import Photo from './Photo.js';
 
-const Album = ({ callRender }) => {
+const Album = ({ callRender, album, userID }) => {
 
     var user = JSON.parse(sessionStorage.getItem('user'));
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
-    const [album, setAlbum] = useState();
+    const [fullAlbum, setFullAlbum] = useState();
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
 
     useEffect(() => {
         getFullAlbum();
-    }, [])
+    }, [userID])
 
     const getFullAlbum = async() => {
         await axios.get(baseURL + '/cloud/get-background-images')
         .then(response => {
-            setAlbum(response.data.concat(user.photo_album));
+            setFullAlbum(response.data.concat(album));
         })
     }
 
-    
     const readFiles = (files) => {
         if (!files) { return }
         const reader = new FileReader();
@@ -52,9 +51,9 @@ const Album = ({ callRender }) => {
     const handleUpload = async (e) => {
         e.preventDefault();
         await uploadImage();
-        setAlbum([...album, url]);
-        user.photo_album.push(url);
-        sessionStorage.setItem('user', JSON.stringify(user));
+        setFullAlbum([...fullAlbum, url]);
+        //user.photo_album.push(url);
+        //sessionStorage.setItem('user', JSON.stringify(user));
         setURL("");
         setFiles("");
         document.querySelector(".file").value="";
@@ -64,7 +63,6 @@ const Album = ({ callRender }) => {
         return callRender();
     }
 
-    
     return (
         <div className='album-section flex'>
             <div className='album-label-1'>Photo Album</div>
@@ -79,9 +77,9 @@ const Album = ({ callRender }) => {
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE/BACKGROUND</div>
             
             <form className='album-list grid'>
-                {album ?
-                    album.map(photo => 
-                        <Photo key={uuid()} photo={photo} render={render} photoID={uuid()}/>
+                {fullAlbum ?
+                    fullAlbum.map(photo => 
+                        <Photo key={uuid()} photo={photo} render={render} photoID={uuid()} userID={userID}/>
                     )
                     : <h1>Photo Album is Empty</h1>
                 }

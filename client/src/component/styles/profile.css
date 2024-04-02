@@ -2,8 +2,8 @@
     flex-wrap: wrap;
     row-gap: 1vh;
     width: 100%;
+    color: darkslategray;
     background: white;
-    box-shadow: 0 0 1px;
     overflow: hidden;
 }
 .profile-banner {
@@ -43,14 +43,13 @@
 }
 
 .profile-name { 
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: clamp(1.25rem, 1.75vw, 1.75rem);
     font-weight: 700;
-    color: rgb(73, 73, 73); 
 }
 
 .profile-bio { flex-direction: column; justify-content: center; flex-wrap: wrap; width: 60%; overflow: hidden; }
 
-.bio-body { flex-direction: column; font-weight: 500; color: grey; }
+.bio-body { flex-direction: column; font-weight: 500; }
 
 .bio-content, .bio-content > span { 
     font-size: clamp(0.75rem, 1vw, 1rem);
@@ -61,19 +60,20 @@
 .bio-content > span { color: rgb(185, 185, 185); }
 
 .edit-btn { 
-    margin-top: 2vh; 
-    padding: 0.5vh 2vw; 
+    margin-top: 5vh; 
+    padding: 1vh 2vw; 
     font-size: clamp(0.75rem, 1vw, 1rem);
     font-weight: 500;
+    letter-spacing: 1px;
     color: rgb(238, 238, 238); 
-    background: navy;
+    background: darkslategray;
     box-shadow: 0 0 2px gray; 
     border-radius: 0.25rem; 
 }
 
-.submit-button { color: navy; border: 1px solid; }
+.submit-button { letter-spacing: 1px; color: darkslategray; border: 1px solid; }
 
-.bio-edit { margin: 1vh auto; justify-content: center; flex-direction: column; width: 100%; }
+.bio-edit { margin: 1vh auto; justify-content: center; flex-direction: column; letter-spacing: 1px; width: 100%; }
 .bio-edit > textarea { 
     padding: 1vh 1vw; 
     min-height: 15vh; 
@@ -91,10 +91,13 @@
     padding: 0.5vh 0.5vw; 
     font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
     font-weight: 500;
+    letter-spacing: 1px;
     border-radius: 0.125rem; 
     background: transparent;
-    border: 1px solid;
+    border: 2px solid;
 }
+.cancel-button { color: gray; }
+
 .cancel-button:hover, .submit-button:hover {
     opacity: 0.7;
 }
@@ -102,9 +105,9 @@
 .profile-footer { column-gap: 2vw; width: 100%; color: rgb(73, 73, 73); }
 .profile-footer > div {
     justify-content: center;
-    column-gap: 1vw;
+    column-gap: 0.5vw;
     font-weight: 500;
-    color: rgb(153, 153, 153);
+    color: darkslategray;
 }
 .profile-footer > div > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 .profile-footer > div > h1 { margin: 0; font-size: clamp(0.875rem, 1.5vh, 1.5rem); }
@@ -122,7 +125,7 @@
     border-bottom: 2px solid transparent; 
 }
 .media-nav-li:hover { opacity: 0.7; }
-.media-nav-li.highlight { color: navy; border-bottom: 2px solid; pointer-events: none; }
+.media-nav-li.highlight { color: darkslategray; border-bottom: 2px solid; pointer-events: none; }
 
 @media (max-width: 50rem) {
     .profile-image { height: 15vh; width: 15vh; }

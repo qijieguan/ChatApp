@@ -5,17 +5,6 @@
     grid-template-columns: minmax(min-content, auto) 1fr;
 }
 
-.dashboard-overlay {
-    display: none;
-    position: absolute;
-    inset: 0 auto auto 0;
-    height: 100%;
-    width: 100%;
-    background: grey;
-    opacity: 0.7;
-    z-index: 3;
-}
-
 @media (max-width: 60rem) {
     .dashboard { padding-bottom: 7.5vh; grid-template-columns: 1fr; }
     .dashboard-overlay.show.active { display: block; }

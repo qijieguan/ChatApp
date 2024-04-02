@@ -15,9 +15,6 @@ import { useDispatch } from 'react-redux';
 import { setFriends } from './actions/index.js';
 import axios from 'axios';
 
-import { useState } from 'react';
-import Login from './Login.js';
-
 const Menu = () => {
 
     const user = JSON.parse(sessionStorage.getItem('user'));
@@ -26,9 +23,6 @@ const Menu = () => {
     const location = useLocation();
 
     const dispatch = useDispatch();
-
-    const [showMenu, setShowMenu] = useState(false);
-    const [showSearch, setShowSearch] = useState(false);
 
     useEffect(() => {
         if (sessionStorage.getItem("isLogged")) {
@@ -135,10 +129,10 @@ const Menu = () => {
                     <Link to='/Dashboard/Post' className="menu-li" id="/Dashboard" onClick={handleClick} >
                         <div>Explore</div>
                     </Link>
-                    <Link to='/Friend' className="menu-li" id="/Friend" onClick={handleClick}>
+                    <Link to='/Dashboard/Friend' className="menu-li" id="/Friend" onClick={handleClick}>
                         <div>Mutual Friends</div>
                     </Link>
-                    <Link to="/Search" className="menu-li" id="/Search" onClick={handleClick}>
+                    <Link to="/Dashboard/Search" className="menu-li" id="/Search" onClick={handleClick}>
                         <div>Discover People</div>
                     </Link>
                 </div>
@@ -154,7 +148,8 @@ const Menu = () => {
                     <img src={user.profile_url} alt=""/>
                     <MdArrowDropDown size={30} color="rgb(107, 107, 107)" className='dropdown-icon' style={{marginLeft: '0.25vw'}}/>
                     <div className='menu-links flex'>
-                        <Link to='/Profile' className='menu-link flex'>
+                        <Link 
+                            to={'/Dashboard/Profile/' + user.firstname + "_" + user.lastname} className='menu-link flex'>
                             <div>Profile</div>
                             <BsFilePersonFill className='person-icon'/>
                         </Link>

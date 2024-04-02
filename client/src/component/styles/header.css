@@ -2,10 +2,10 @@
     position: sticky;
     inset: 0 auto auto 0;
     padding: 0 0 0 2vw;
-    row-gap: 2vh;
+    row-gap: 0;
     width: 100%;
     background: white;
-    box-shadow: 0 1px 10px rgb(175, 175, 175); 
+    border-bottom: 1px solid gray;
     z-index: 4;
     transition: 0.1s all ease-in;
 }
@@ -20,12 +20,11 @@
 .header-btns { 
     justify-content: flex-end;
     flex-wrap: wrap;
-    row-gap: 1vh;
     width: 100%;
 }
 
 .header-btns button { 
-    padding: 1.5vh 1.5vw; 
+    padding: 1.5vh 2.5vw; 
     height: 8vh; 
     font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
     font-weight: 500;

@@ -11,7 +11,7 @@
 .search-wrapper-text { 
     font-size: clamp(1.25rem, 2vw, 2rem); 
     font-weight: 700;
-    letter-spacing: 0.125rem; 
+    letter-spacing: 4px; 
 }
 
 .user-container { position: relative; min-height: 25vh; border-radius: 2rem; }

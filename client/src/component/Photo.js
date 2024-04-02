@@ -4,7 +4,7 @@ import axios from 'axios';
 import Modal from 'react-modal';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 
-const Photo = ({photo, photoID, render}) => {
+const Photo = ({photo, photoID, userID, render}) => {
 
     const modalStyles = {
         content : {
@@ -48,9 +48,11 @@ const Photo = ({photo, photoID, render}) => {
     const changeProfile = async (e) => {
         e.preventDefault();
         if (!src) { return; }
-        await axios.post(baseURL +'/users/change_profile', { user_id: user._id, url: src });
+        await axios.post(baseURL +'/users/change_profile', { user_id: userID, url: src });
         user.profile_url = src;
-        sessionStorage.setItem('user', JSON.stringify(user));
+        if (JSON.parse(sessionStorage.getItem('user'))._id === userID) {
+            sessionStorage.setItem('user', JSON.stringify(user));
+        }
         setSRC("");
         return render();
     }
@@ -59,8 +61,10 @@ const Photo = ({photo, photoID, render}) => {
         e.preventDefault();
         if (!src) { return; }
         user.background_url = src;
-        await axios.post(baseURL +'/users/change_background', { user_id: user._id, url: src });
-        sessionStorage.setItem('user', JSON.stringify(user));
+        await axios.post(baseURL +'/users/change_background', { user_id: userID, url: src });
+        if (JSON.parse(sessionStorage.getItem('user'))._id === userID) {
+            sessionStorage.setItem('user', JSON.stringify(user));
+        }
         setSRC("");
         return render();
     }
@@ -68,12 +72,14 @@ const Photo = ({photo, photoID, render}) => {
     return (
         <div className='photo-wrapper checkbox' onClick={handleClick}>
             <img src={photo} alt=""/>
-            <Modal isOpen={modal} style={modalStyles}>
-                <AiOutlineCloseCircle className='close-button' onClick={() => {setModal(false); }}/>
-                <img className="zoom-photo" src={photo} alt=""/>
-                <button className='set-button profile' onClick={changeProfile}>Set as profile</button>
-                <button className='set-button background' onClick={changeBackground}>Set as background</button>
-            </Modal>
+            {userID === JSON.parse(sessionStorage.getItem('user'))._id &&
+                <Modal isOpen={modal} style={modalStyles}>
+                    <AiOutlineCloseCircle className='close-button' onClick={() => {setModal(false);}}/>
+                    <img className="zoom-photo" src={photo} alt=""/>
+                    <button className='set-button profile' onClick={changeProfile}>Set as profile</button>
+                    <button className='set-button background' onClick={changeBackground}>Set as background</button>
+                </Modal>
+            }
         </div>
     )
 }

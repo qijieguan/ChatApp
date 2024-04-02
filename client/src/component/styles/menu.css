@@ -10,7 +10,7 @@
     max-width: 250%;
     color: orangered; 
     background: white;
-    box-shadow: 0 3px 3px rgb(236, 236, 236);
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 .menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); transform: translateY(-12.5%); }
@@ -106,27 +106,26 @@
         border-radius: 0;
     }
     .menu-li-wrapper.show { display: flex; transform: translateY(100%); padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
-    .menu-side-wrapper.show.expand { width: 35vw; transform: translate3d(0, -1vh, 0); }
     .menu-li { padding: 1vh 4vw; }
 }
 
 @media (max-width: 50rem) {
     .menu-bar { column-gap: 2vw; justify-content: flex-end; }
     .menu-icon { display: block; }
-    .menu-side-wrapper.show.expand { width: 45vw; }
+    .menu-side-wrapper.show { width: 45vw; }
     .menu-li-wrapper { flex-wrap: wrap; } 
     .menu-dropdown img { height: 6vh; width: 6vh; }
 }
 
 @media (max-width: 40rem) {
     .menu-bar { row-gap: 0.5vh; }
-    .menu-side-wrapper.show.expand { width: 65vw; }
+    .menu-side-wrapper.show { width: 65vw; }
     .menu-links { inset: auto 0 0 auto; width: 100%; border-radius: 0.25rem; }
     .menu-link .person-icon, .logout .login-icon { margin: 0 1vw; }
 }
 
 @media (max-width: 25rem) {
-    .menu-side-wrapper.show.expand { width: 80vw !important; }
+    .menu-side-wrapper.show { width: 80vw !important; }
     .menu-label-wrapper { display: none; }
     .menu-li { padding: 1vh 2vw; }
     .menu-li-search, .message-icon { padding: 1vh; }

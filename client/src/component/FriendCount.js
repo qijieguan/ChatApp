@@ -4,19 +4,31 @@ import axios from 'axios';
 import uuid from 'react-uuid';
 import { useState, useEffect } from 'react';
 
-const FriendCount = () => {
+const FriendCount = ({userID}) => {
 
     const friend_ids = useSelector(state => state.friends);
     const [friends, setFriends] = useState("");
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
-    useEffect(() => {
-        if (friend_ids) {
-            axios.post(baseURL +'/users/', { friend_ids: friend_ids })
-            .then((response) => { setFriends(response.data) });
-        }
+    useEffect(async () => {
+        getFriends();
     }, [baseURL, friend_ids]);
+
+    const getFriends = async () => {
+        if (userID !== JSON.parse(sessionStorage.getItem('user'))._id) {
+            axios.post(baseURL +'/friends/', { user_id: userID, })
+            .then((response) => { getFriendsCall(response.data); }); 
+        }
+        else {
+            if (friend_ids) { getFriendsCall(friend_ids); }
+        }
+    }
+
+    const getFriendsCall = async (friendIDS) => {
+        await axios.post(baseURL +'/users/', { friend_ids: friendIDS })
+        .then((response) => { setFriends(response.data) });
+    } 
 
     return (
         <div className='friend-count flex'>

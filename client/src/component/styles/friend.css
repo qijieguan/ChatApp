@@ -18,7 +18,7 @@
 .friend-wrapper-text { 
     font-size: clamp(1.25rem, 2vw, 2rem); 
     font-weight: 700;
-    letter-spacing: 0.125rem; 
+    letter-spacing: 4px; 
 }
 
 .friend-container {
@@ -93,6 +93,10 @@
     font-size: clamp(1rem, 1vw, 1.5rem);
     text-transform: capitalize;
     color: darkslategray;
+}
+
+.friend-name:hover {
+    text-decoration: underline;
 }
 
 .friend-bio {

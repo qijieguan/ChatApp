@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const FriendExtend = ({ friend }) => {
 
@@ -78,7 +78,12 @@ const FriendExtend = ({ friend }) => {
             </div>
             
             <div className='friend-detail flex'>
-                <span className='friend-name'>{friend.firstname} {friend.lastname}</span>
+                <Link className='friend-name'
+                    to={"/Dashboard/Profile/" + friend.firstname + "_" + friend.lastname}
+                    state={{user: friend}}
+                >
+                    {friend.firstname} {friend.lastname}
+                </Link>
                 <p className='friend-bio'>{friend.bio_content}</p>
             </div>
 

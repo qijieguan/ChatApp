@@ -1,11 +1,8 @@
 import './styles/community.css';
 
-import Data from './JSON/communities.json';
 import uuid from 'react-uuid';
 import { useNavigate} from 'react-router-dom';
 import { useState, useEffect } from 'react';
-
-import { useDispatch } from 'react-redux';
 
 import axios from 'axios';
 

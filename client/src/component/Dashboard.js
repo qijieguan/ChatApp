@@ -21,22 +21,8 @@ const Dashboard = () => {
     const [pathname, setPathname] = useState(null);
 
     useEffect(() => {
-        let pathname = location.pathname.includes('Dashboard') ? '/Dashboard' : location.pathname;
-        let element = document.getElementById(pathname);
-    
-        document.getElementsByClassName('active')[0]?.classList.remove('active');
-        element?.classList.add('active'); 
-        
+        console.log(location.pathname)
         setPathname(location.pathname);
-
-        document.querySelector('.highlight')?.classList.remove('highlight');
-        let param = '';
-        if (location.pathname.includes('Post')) { param = 'post' }
-        else if (location.pathname.includes('Community')) { param = 'community' }
-
-        setTimeout(() => {
-            document.getElementsByClassName(param + '-nav')[0]?.classList.add('highlight');
-        });
     }, [location]);
 
     return ( 
@@ -44,41 +30,42 @@ const Dashboard = () => {
             <Menu/>
             <SideNav mode={"static"}/>
             <SideNav mode={"dynamic"}/>
-            <div className='dashboard-overlay'/>
-            <div>
-                {pathname === '/Dashboard/Post' &&
-                    <PostSection/>
-                }
+            {pathname &&
+                <div>
+                    {pathname === '/Dashboard/Post' &&
+                        <PostSection/>
+                    }
 
-                {pathname && pathname.includes('/Comment') &&
-                    <CommentSection/>
-                }
+                    {pathname.includes('/Comment') &&
+                        <CommentSection/>
+                    }
 
-                {pathname === '/Dashboard/Chat' &&
-                    <ChatPage/>
-                }
+                    {pathname === '/Dashboard/Chat' &&
+                        <ChatPage/>
+                    }
 
-                {pathname === '/Dashboard/Community' &&
-                    <Community/>
-                }
+                    {pathname === '/Dashboard/Community' &&
+                        <Community/>
+                    }
 
-                {pathname && pathname.includes('/Dashboard/Community/') &&
-                    <CommunityPage/>
-                }
+                    {pathname.includes('/Dashboard/Community/') &&
+                        <CommunityPage/>
+                    }
 
-                {pathname === '/Friend' &&
-                    <Friend/>
-                }
+                    {pathname === '/Dashboard/Friend' &&
+                        <Friend/>
+                    }
 
-                {pathname === '/Search' &&
-                    <Search/>
-                }
+                    {pathname === '/Dashboard/Search' &&
+                        <Search/>
+                    }
 
-                {pathname === '/Profile' &&
-                    <Profile/>
-                }
+                    {pathname.includes('/Dashboard/Profile') &&
+                        <Profile/>
+                    }
 
-            </div>
+                </div>
+            }
         </div> 
     ); };
 
