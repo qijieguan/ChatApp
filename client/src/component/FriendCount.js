@@ -1,4 +1,6 @@
 import './styles/friend-count.css';
+import { CircularProgress } from '@mui/material';
+
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 import uuid from 'react-uuid';
@@ -38,9 +40,13 @@ const FriendCount = ({userID}) => {
                     friends.map(friend => {
                         return <img className='friend-header' src={friend.profile_url} key={uuid()} alt=""/>
                     })
-                    
                     :
-                    <h1>Your Following is Empty. Try searching for people to follow.</h1>
+                    <div className='loading-screen-wrapper flex'>
+                        <CircularProgress className='loading-screen'
+                            sx={{color:"darkslategray"}} 
+                        />
+                        <span>Loading</span>
+                    </div>
                 }
             </div>
         </div>

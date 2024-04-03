@@ -5,6 +5,27 @@
     grid-template-columns: minmax(min-content, auto) 1fr;
 }
 
+.loading-screen-wrapper {
+    position: absolute;
+    inset: 0 auto auto 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 1vh;
+    height: 100%;
+    width: 100%;
+    
+    z-index: 10;
+}
+
+.loading-screen {
+    margin-top: 20vh;
+    color: gray;
+}
+
+.loading-screen-wrapper > span {
+    font-weight: 500;
+}
+
 @media (max-width: 60rem) {
     .dashboard { padding-bottom: 7.5vh; grid-template-columns: 1fr; }
     .dashboard-overlay.show.active { display: block; }

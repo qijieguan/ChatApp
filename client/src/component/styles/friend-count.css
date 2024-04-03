@@ -1,11 +1,12 @@
 .friend-count {
+    position: relative;
     margin-bottom: auto;
     padding: 2vh 2vw;
     flex-direction: column;
     align-items: flex-start;
     text-align: center;
     width: 100%;
-    min-height: 35vh;
+    min-height: 45vh;
 }
 
 .friend-count-label {

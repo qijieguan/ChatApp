@@ -21,7 +21,6 @@ const Dashboard = () => {
     const [pathname, setPathname] = useState(null);
 
     useEffect(() => {
-        console.log(location.pathname)
         setPathname(location.pathname);
     }, [location]);
 

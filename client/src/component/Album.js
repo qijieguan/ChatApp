@@ -1,4 +1,6 @@
 import './styles/album.css';
+import { CircularProgress } from '@mui/material';
+
 import { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
 import axios from 'axios';
@@ -9,10 +11,9 @@ const Album = ({ callRender, album, userID }) => {
     var user = JSON.parse(sessionStorage.getItem('user'));
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
-    const [fullAlbum, setFullAlbum] = useState();
+    const [fullAlbum, setFullAlbum] = useState([]);
 
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
-
 
     useEffect(() => {
         getFullAlbum();
@@ -77,11 +78,17 @@ const Album = ({ callRender, album, userID }) => {
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE/BACKGROUND</div>
             
             <form className='album-list grid'>
-                {fullAlbum ?
+                {fullAlbum.length ?
                     fullAlbum.map(photo => 
                         <Photo key={uuid()} photo={photo} render={render} photoID={uuid()} userID={userID}/>
                     )
-                    : <h1>Photo Album is Empty</h1>
+                    :
+                    <div className='loading-screen-wrapper flex'>
+                        <CircularProgress className='loading-screen'
+                            sx={{color:"darkslategray"}} 
+                        />
+                        <span>Loading</span>
+                    </div>
                 }
             </form>
         </div>

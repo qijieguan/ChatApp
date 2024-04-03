@@ -1,5 +1,6 @@
 import './styles/friend.css';
 import { FcVoicePresentation } from 'react-icons/fc';
+import { CircularProgress } from '@mui/material';
 
 import axios from 'axios';
 import uuid from 'react-uuid';
@@ -21,8 +22,9 @@ const Friend = () => {
     }, [friend_ids, baseURL]);
 
     return (
-        <>
+        <section>
             <div className="friend-page">
+
             {friends.length ?
                 <div className='friend-wrapper grid'>
                     <div className="friend-wrapper-label flex"> 
@@ -32,10 +34,15 @@ const Friend = () => {
                     {friends.map(friend => <FriendExtend key={uuid()} friend={friend}/>)}
                 </div>
                 :
-                <h1>Add other users as friends!</h1>
+                <div className='loading-screen-wrapper flex'>
+                    <CircularProgress className='loading-screen'
+                        sx={{color:"darkslategray"}} 
+                    />
+                    <span>Loading</span>
+                </div>
             }
             </div>
-        </>
+        </section>
     );
 }
 

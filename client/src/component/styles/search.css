@@ -12,6 +12,7 @@
     font-size: clamp(1.25rem, 2vw, 2rem); 
     font-weight: 700;
     letter-spacing: 4px; 
+    color: rgb(150, 150, 150);
 }
 
 .user-container { position: relative; min-height: 25vh; border-radius: 2rem; }
