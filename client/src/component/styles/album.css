@@ -38,7 +38,7 @@
 
 .album-list { min-height: 40vh; grid-template-columns: 32% 32% 32%; row-gap: 2vh; width: 100%; }
 
-@media (max-width: 60rem) {
+@media (max-width: 50rem) {
     .album-section { width: 100%; }
     .album-list { grid-template-columns: 47% 47%; }
 }

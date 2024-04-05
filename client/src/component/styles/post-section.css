@@ -108,13 +108,10 @@
 
 .post-collection { flex-direction: column; row-gap: 2vh; width: 100%; }
 
-@media (max-width: 60rem) {
+@media (max-width: 50rem) {
     .post-section { margin: 2vh 0 5vh 0; }
     .post-form { width: 97.5%; }
     .post-collection { width: 97.5%; row-gap: 1vh; }
-}
-
-@media (max-width: 50rem) {
     .post-form { border-radius: 0.5rem; }   
     .post-form-header { padding: 2vh 3.5vw; row-gap: 0.5vh; border-radius: 0.5rem }
     .post-form-header-text { column-gap: 2vw; text-align: center; }
@@ -124,7 +121,6 @@
     .post-input-textarea { margin: 2.5vh auto 0 auto; width: 100%; border-radius: 0.25rem; }
     .post-image { margin-left: 0; }
 }
-
 
 @media (max-width: 25rem) {
     .smile-icon { display: none; }

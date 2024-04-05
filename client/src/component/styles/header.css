@@ -54,6 +54,6 @@
 }
 .header-banner-text span { font-weight: 500; color: white; }
 
-@media (max-width: 60rem) {
+@media (max-width: 50rem) {
     .header-banner { display: none; }
 }

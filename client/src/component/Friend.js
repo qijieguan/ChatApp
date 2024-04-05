@@ -29,7 +29,7 @@ const Friend = () => {
                 <div className='friend-wrapper grid'>
                     <div className="friend-wrapper-label flex"> 
                         <FcVoicePresentation className='friend-wrapper-icon'/>
-                        <span className='friend-wrapper-text'>FRIENDLIST OVERVIEW</span>
+                        <span className='friend-wrapper-text'>FRIENDS OVERVIEW</span>
                     </div>
                     {friends.map(friend => <FriendExtend key={uuid()} friend={friend}/>)}
                 </div>

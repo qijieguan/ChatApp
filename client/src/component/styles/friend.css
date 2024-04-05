@@ -7,11 +7,10 @@
 .friend-wrapper { grid-template-columns: 17.5% 17.5% 17.5% 17.5% 17.5%; row-gap: 5vh; justify-content: space-evenly; }
 .friend-wrapper-icon { 
     font-size: clamp(3rem, 4vw, 4rem);
-    margin-right: 2vw;
+    margin-right: 1vw;
 }
 .friend-wrapper-label {
     grid-column: -1 / 1;
-    justify-content: center;
     margin: 3vh auto 5vh 0;
     animation: fadeSlideLeft 0.5s ease-in forwards; 
 }
@@ -81,7 +80,7 @@
 }
 
 .friend-buttons .icon:hover {
-    color: darkcyan;
+    color: orange;
 }
 
 .friend-detail {
@@ -127,7 +126,7 @@
     100% { opacity: 1; width: 75%; }
 }
 
-@media (max-width: 60rem) {
+@media (max-width: 65rem) {
     .friend-wrapper { grid-template-columns: 22% 22% 22% 22%; gap: 2vh; width: 95%; }
 }
 
@@ -135,6 +134,7 @@
     .friend-wrapper { grid-template-columns: 30% 30% 30%; }
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 25rem) {
+    .friend-wrapper-icon { margin-right: 2vw; }
     .friend-wrapper { margin: 2vh auto; grid-template-columns: 97.5%; }
 }

@@ -47,7 +47,7 @@
 
 
 @media (max-width: 50rem) {
-    .chat-page { width: 100vw; }
+    .chat-page {  grid-template-columns: 65% 30%; width: 100vw; }
 }
 
 @media (max-width: 40rem) {

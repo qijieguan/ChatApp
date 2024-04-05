@@ -15,19 +15,17 @@ const Search = () => {
     useEffect(() => { axios.get(baseURL + '/users/').then((response) => { setUsers(response.data); }); }, [baseURL]);
 
     return(
-        <>
-            <div className="search">
-                <div className='search-wrapper grid'>
-                    <div className='search-wrapper-label flex'>
-                        <div>
-                            <FcGlobe className='search-wrapper-icon' size={60} style={{marginRight: '1rem'}}/>
-                        </div>
-                        <span className='search-wrapper-text'>DISCOVER NEW PEOPLE</span>
+        <section className="search">
+            <div className='search-wrapper grid'>
+                <div className='search-wrapper-label flex'>
+                    <div>
+                        <FcGlobe className='search-wrapper-icon'/>
                     </div>
-                    {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
+                    <span className='search-wrapper-text'>DISCOVER NEW PEOPLE</span>
                 </div>
+                {users.length > 0 ? users.map(user => <User key={uuid()} user={user}/>) : ""} 
             </div>
-        </>
+        </section>
     );
 }
 

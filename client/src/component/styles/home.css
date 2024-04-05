@@ -117,7 +117,7 @@
     z-index: 2;
 }
 
-.icon-wrapper {
+.card .icon-wrapper {
     padding: 2vh 2.25vh;
     background: black;
     border-radius: 5rem;
@@ -125,7 +125,7 @@
     transform: translateY(-50%);
 }
 
-.icon {
+.card .icon {
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     color: wheat; 
 }

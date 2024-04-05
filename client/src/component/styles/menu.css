@@ -91,8 +91,11 @@
 .menu-link > div { font-size: clamp(0.75rem, 1vw, 1rem); font-weight: 500; }
 .menu-dropdown:hover > .menu-links, .menu-links:hover { display: flex; flex-direction: column; }
 
+
 @media (max-width: 50rem) {
-    .menu-icon { margin: 7px 2.5vw 0 2.5vw; }
+    .menu-bar { column-gap: 2vw; justify-content: flex-end; }
+    .menu-icon { display: block; margin: 7px 2.5vw 0 2.5vw;  }
+    .menu-side-wrapper.show { width: 45vw; }
     .menu-li-search { display: flex; }
     .menu-li-wrapper {
         margin: 0;
@@ -107,12 +110,6 @@
     }
     .menu-li-wrapper.show { display: flex; transform: translateY(100%); padding: 2.5vh 1vw;  border-radius: 0 0 1rem 1rem; }
     .menu-li { padding: 1vh 4vw; }
-}
-
-@media (max-width: 50rem) {
-    .menu-bar { column-gap: 2vw; justify-content: flex-end; }
-    .menu-icon { display: block; }
-    .menu-side-wrapper.show { width: 45vw; }
     .menu-li-wrapper { flex-wrap: wrap; } 
     .menu-dropdown img { height: 6vh; width: 6vh; }
 }
