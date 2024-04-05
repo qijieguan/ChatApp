@@ -77,7 +77,7 @@
     z-index: 3;
 }
 
-.menu-link { justify-content: center; padding: 3vh 0; color: gray; border: 2px solid transparent; }
+.menu-link { justify-content: center; padding: 3vh 0; letter-spacing: 1px; color: gray; border: 2px solid transparent; }
 .menu-link:hover { opacity: 0.4; }
 
 .menu-link .person-icon, .logout .login-icon { 

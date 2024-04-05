@@ -16,7 +16,7 @@
     box-sizing: border-box;
 }
 
-.App { min-height: 100vh; background: rgb(247, 247, 247); }
+.App { min-height: 100vh; background: rgb(240, 240, 240); }
 
 .flex { display: flex; align-items: center; }
 .grid { display: grid; justify-content: space-evenly; }
@@ -33,6 +33,7 @@ input {
     outline: 0; 
     border: 0; 
 }
+input::placeholder { color: rgb(200, 200, 200); }
 
 textarea {
     text-indent: 0.5rem;
@@ -41,9 +42,13 @@ textarea {
     color: grey;
 }
 
+textarea::placeholder { color: rgb(200, 200, 200); }
+
 img {
     object-fit: cover;
 }
+
+button, a { cursor: pointer; }
 
 .overlay { position: absolute; top: 0; height: 100%; width: 100%; background-color: rgb(124, 124, 124, 0.4); }
 

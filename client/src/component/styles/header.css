@@ -5,7 +5,7 @@
     row-gap: 0;
     width: 100%;
     background: white;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(200, 200, 200);
     z-index: 4;
     transition: 0.1s all ease-in;
 }

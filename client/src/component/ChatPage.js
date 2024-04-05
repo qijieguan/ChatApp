@@ -39,9 +39,8 @@ const ChatPage = () => {
 
         document.querySelector('.conversation-log')?.classList.remove('focus');
         document.querySelector('.message-container')?.classList.add('focus');
-        if (document.querySelector('.menu').offsetWidth > 960) {
-            document.querySelector('.message-container')?.scrollIntoView({ block: 'start', behavior: 'smooth' });
-        }
+        
+        window.scrollTo(0, 0);
     }
 
     const renderChatLog = () => { getChatLog() };

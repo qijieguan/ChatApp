@@ -132,7 +132,7 @@ const MessageBox = ({ renderChatLog }) => {
                     textSet.map(text => <Text key={uuid()} textID={uuid()} friend={user} text={text}/>)
                     :
                     <div className='private-message-empty flex'>
-                        <span>Select a conversation to view messages</span>
+                        <span>Tap a conversation to see messages</span>
                         <FaCat className='cat-icon'/>
                     </div>
                 }

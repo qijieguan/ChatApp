@@ -65,7 +65,7 @@ const Register = () => {
     };
 
     return(
-        <form className="register-form grid" onSubmit={handleSubmit}>
+        <form className="register-form flex" onSubmit={handleSubmit}>
             <h1 className="register-label">Create Your Account</h1>
       
             <div className="image-input flex">
@@ -81,7 +81,7 @@ const Register = () => {
                 <div className="register-image-button" onClick={handleUpload}>Upload Image</div>
             </div>
 
-            <div className='register-inputs grid'>
+            <div className='register-inputs flex'>
                 <div className='register-input-wrapper flex'>
                     <h1 className='input-label'>First Name</h1>
                     <span>Please enter your first name</span>

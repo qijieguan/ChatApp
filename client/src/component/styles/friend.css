@@ -66,7 +66,7 @@
     align-items: flex-start;
     padding: 2vh 0;
     height: 100%;
-    background-color: rgba(65, 212, 212, 0.7);
+    background-color: rgb(0, 0, 0, 0.4);
     transform: translateX(-102%);
     transition: all 0.4s ease-in;
 }
@@ -76,7 +76,7 @@
 }
 
 .friend-buttons .icon { 
-    font-size: clamp(1rem, 1.5vw, 1.5rem); 
+    font-size: clamp(1rem, 1.25vw, 1.25rem); 
     color: white;
 }
 

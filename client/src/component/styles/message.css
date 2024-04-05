@@ -1,10 +1,10 @@
 .message-container { 
     flex-direction: column;
-    margin: 10vh 0 0 0;
+    margin: 8vh 0 0 0;
     padding-bottom: 2vh;
     width: 100%;
     color: rgb(68, 68, 68);
-    background: rgb(251, 251, 255);
+    background: rgb(253, 253, 253);
     box-shadow: 0 1px 3px rgb(240, 240, 240);
     border-radius: 0.75rem;
 }
@@ -16,7 +16,7 @@
     width: 100%; 
     box-shadow: 0 1px 2px gray; 
     color: white; 
-    background: linear-gradient(to right, black 10%, rgb(50, 50, 50)); 
+    background: orange; 
     border-radius: 0.75rem 0.75rem 0 0;
 }
 
@@ -38,8 +38,7 @@
     width: 12.5vh; 
     object-fit: cover; 
     border-radius: 0.5rem; 
-    box-shadow: 0 0 2px black;
-    border: 3px solid wheat;
+    border: 3px solid darkorange;
 }
 
 .recipient {
@@ -47,7 +46,6 @@
     font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 700;
     letter-spacing: 1px;
-    color: wheat;
 }
 
 .trash-btn {
@@ -60,21 +58,20 @@
 
 .trash-text {
     display: none;
-    padding: 2vh 2vw;
+    padding: 3vh 3vw;
     position: absolute;
-    inset: 0 0 auto auto;
+    inset: 0 auto auto 0;
     font-weight: 500;
     letter-spacing: 1px;
     width: max-content;
-    background: rgb(50, 50, 50);
-    transform: translate3d(75%, -95%, 0);
-    box-shadow: 0 0 3px black;
+    background: darkorange;
+    transform: translate3d(-75%, -95%, 0);
+    box-shadow: 0 0 3px rgb(63, 63, 63);
     border-radius: 0.5rem;
 }
 
 .trash-icon:hover + .trash-text, .trash-text:hover {
    display: block;
-   color: orange;
 }
 
 .private-message { 
@@ -84,7 +81,6 @@
     margin: 3vh 0 7.5vh 1.25%;
     height: 65vh; 
     width: 97.5%; 
-    background: rgb(251, 251, 255);
     scroll-behavior: smooth; 
     overflow-y: auto; 
 }
@@ -98,10 +94,10 @@
     row-gap: 1vh;
     text-align: center; 
     font-weight: 500; 
-    color: gray; 
+    color: orange; 
 }
 .private-message-empty > span { font-size: clamp(1rem, 1.5vw, 1.5rem); }
-.private-message-empty > .cat-icon { font-size: clamp(1.75rem, 2.5vw, 2.5rem); }
+.private-message-empty > .cat-icon { font-size: clamp(1.75rem, 2.5vw, 2.5rem); color: orange; }
 
 .end-message {
     grid-template-columns: 35% auto 35%;
@@ -137,13 +133,13 @@
 .text-image { max-height: 35vh; object-fit: cover; border-radius: 0.5rem; }
 
 .text-content { 
-    padding: 1vh 1vw 3vh 1vw; 
+    padding: 1vh 1vw 2vh 1vw; 
     font-size: clamp(0.75rem, 1vw, 1rem); 
     word-wrap: break-word;
     min-height: 15vh; 
     color: rgb(80, 80, 80);
-    background: white;
-    box-shadow: 0 1px 3px rgb(230, 230, 230);
+    background: rgb(241, 241, 241);
+    box-shadow: 0 0 1px rgb(230, 230, 230);
     border-radius: 0.5rem;
 }
 
@@ -152,7 +148,14 @@
 .check-icon { margin-left: 0.25vw; transform: translateY(30%); font-size: clamp(1.25rem, 1.75vw, 1.75rem);  }
 
 .text-input-wrapper { padding: 0 2vw; min-height: 5vh; width: 100%; }
-.text-input { column-gap: 1vw; height: 100%; width: 100%; background: white; border-bottom: 1px solid rgb(170, 170, 170); }
+.text-input { 
+    padding-bottom: 1vh;
+    column-gap: 1vw; 
+    height: 100%; 
+    width: 100%; 
+    background: transparent; 
+    border-bottom: 1px solid rgb(170, 170, 170); 
+}
 .text-input > input { height: 100%; width: 75%; text-indent: 0.5vw; color: black; }
 
 .camera-wrapper { position: relative; margin-left: auto; justify-content: flex-end; width: 10%; }
@@ -190,12 +193,14 @@
 @media (max-width: 40rem) { 
     .message-container { display: none; }
     .message-container.focus { display: unset; }
+    .private-message-headshot img { height: 12vh; width: 12vh; }
     .private-message { height: 50vh; row-gap: 5vh; }
     .end-message > span { font-weight: 300; }
 }
 
 @media (max-width: 25rem) {
-    .private-message-headshot img { height: 12vh; width: 12vh; }
+    .message-container { margin: 6vh 0 0 0; }
+    .private-message-headshot img { height: 10vh; width: 10vh; }
     .private-message { margin: 3vh 1vw 7.5vh 1vw; row-gap: 3.5vh; }
     .text-format { width: 100%; }
     .texter { height: 5vh; width: 5vh; }

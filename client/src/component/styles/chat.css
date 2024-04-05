@@ -1,7 +1,7 @@
-.chat-page { min-height: 75vh; grid-template-columns: 55% 37.5%; justify-content: space-evenly; width: 100%; }
+.chat-page { min-height: 75vh; grid-template-columns: 55% 40%; justify-content: space-evenly; width: 100%; }
 
 .conversation-log {
-    margin: 10vh 0 0 0;
+    margin: 3vh 0 0 0;
     padding-bottom: 5vh;
     width: 100%;
     min-height: 75vh;
@@ -31,7 +31,7 @@
     font-style: italic;
 }
 .conversation-wrapper { position: relative; width: 100%; color: gray; transition: all 0.1s ease-in; } 
-.conversation-wrapper.highlight { border-left: 5px solid rgb(180, 180, 180); background: rgb(236, 236, 236); }
+.conversation-wrapper.highlight { border-left: 5px solid darkorange; background: rgb(255, 235, 198); }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 10vh; width: 85%; transition: all 0.3s ease-in; }
 .conversation > img { 
     margin: auto 1vw auto 1.5vw; 
@@ -46,18 +46,18 @@
 .text-preview { margin-top: 1vh; font-size: 0.625rem; word-wrap: break-word; }
 
 
-@media (max-width: 60rem) {
+@media (max-width: 50rem) {
     .chat-page { width: 100vw; }
 }
 
 @media (max-width: 40rem) {
     .chat-page { margin: 1vh 1.25% 0 1.25%; grid-template-columns: 100%; width: 97.5%; }
-    .conversation-log { margin-left: 0.5vw; height: 30vh; width: 95vw; }
+    .conversation-log { height: 30vh; width: 95vw; }
     .conversation-log:not(.focus) { display: none; }
 }
 
 @media (max-width: 25rem) {
-    .conversation-log { margin-left: 0; width: 92.5vw; }
+    .conversation-log { width: 92.5vw; }
     .conversation-preview > h1 { font-size: 0.75rem; }
     .conversation > img { height: 7vh; width: 7vh; }
 }
