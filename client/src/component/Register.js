@@ -12,7 +12,7 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
-
+    
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
 
     const readFiles = (files) => {

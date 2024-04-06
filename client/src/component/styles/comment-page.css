@@ -7,12 +7,12 @@
 .comment-nav {
     margin-top: 3vh;
     position: sticky;
-    inset: 0 auto auto 5%;
     padding: 2vh 2vw;
     width: 95%;
     background: black;
     box-shadow: 0 2px 3px rgb(141, 141, 141);
-    z-index: 2;
+    border-radius: 0.25rem;
+    z-index: 5;
 }
 
 .comment-nav-link { column-gap: 0.5vw; color: white; }
@@ -27,8 +27,9 @@
     min-height: 30vh;
     width: 95%;
     row-gap: 1vh;
-    background: rgb(243, 243, 243);
+    background: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgb(228, 228, 228);
+    border-radius: 0.25rem;
 }
 
 .primary-post > .post-footer { border-bottom: 0; }
@@ -42,6 +43,8 @@
     border-radius: 4rem;
     box-shadow: 0 0 1px;
 }
+
+.primary-user .post-time { margin-left: 0; }
 
 .comment-page > .primary-text { font-size: clamp(0.625rem, 1vw, 1rem); }
 
@@ -109,7 +112,6 @@
     width: 97.5%;
     column-gap: 1vw;
     background: rgb(240, 240, 240);
-    box-shadow: 0 1px 1px rgb(247, 247, 247);
     overflow: hidden;
 }
 
@@ -121,7 +123,7 @@
     width: 9vh;
 }
 
-.comment-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 300; color: rgb(180, 180, 180); }
+.comment-name { font-size: clamp(0.75rem, 0.875vw, 0.875rem); font-weight: 300; color: darkslategray; }
 .comment-content { font-size: clamp(0.75rem, 1vw, 1rem); color: rgb(94, 94, 94); }
 
 .comment-empty { margin: 5vh auto 0 auto; justify-content: center; column-gap: 0.5vw; }
@@ -131,14 +133,14 @@
 
 @media (max-width: 50rem) { 
     .comment-page { width: 100%; }
-    .comment-nav { margin-top: 0; left: 0; width: 100%; }
+    .comment-nav { margin-top: 0; left: 0; }
     .comment-input-wrapper { flex-wrap: wrap; margin: 2.5vh 0; }
     .comment-input-wrapper > img { height: 6vh; width: 6vh; }
     .comment { padding: 1.5vh 1.5vw 1.5vh 2.5vw; flex-direction: column; align-items: flex-start; } 
 }
 
 @media (max-width: 25rem) {
-    .comment-nav { padding: 1vh 2vw; }
+    .comment-nav { padding: 1vh 2vw; width: 100%; }
     .primary-post { width: 100%; box-shadow: none; }
     .primary-user { column-gap: 3vw; }
     .comment-hr { display: none; }

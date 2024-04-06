@@ -75,15 +75,11 @@ const CommunityPage = () => {
     const checkIsJoined = (community) => {
         if (community.members.filter(member => member.member_id === user._id).length > 0) { return 'joined'; }
     }
-
-    const calcHeight = (e) => {
-        e.target.style.marginBottom = "-" + (e.target.offsetHeight * 0.975) + 'px'
-    }
-
+    
     return (
         <div>{community &&
             <div className="community-page flex">
-                <div className='community-bg' onLoad={calcHeight}>
+                <div className='community-bg'>
                     <img src={community.background_url} alt=""/>
                 </div>
 

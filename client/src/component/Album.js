@@ -6,9 +6,8 @@ import uuid from 'react-uuid';
 import axios from 'axios';
 import Photo from './Photo.js';
 
-const Album = ({ callRender, album, userID }) => {
+const Album = ({ callRender, album, userID, user }) => {
 
-    var user = JSON.parse(sessionStorage.getItem('user'));
     const [files, setFiles] = useState("");  
     const [url, setURL] = useState("");
     const [fullAlbum, setFullAlbum] = useState([]);
@@ -80,7 +79,7 @@ const Album = ({ callRender, album, userID }) => {
             <form className='album-list grid'>
                 {fullAlbum.length ?
                     fullAlbum.map(photo => 
-                        <Photo key={uuid()} photo={photo} render={render} photoID={uuid()} userID={userID}/>
+                        <Photo key={uuid()} photo={photo} render={render} photoID={uuid()} userID={userID} user={user}/>
                     )
                     :
                     <div className='loading-screen-wrapper flex'>

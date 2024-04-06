@@ -3,8 +3,9 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Modal from 'react-modal';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 
-const Photo = ({photo, photoID, userID, render}) => {
+const Photo = ({photo, photoID, userID, user, render}) => {
 
     const modalStyles = {
         content : {
@@ -28,9 +29,8 @@ const Photo = ({photo, photoID, userID, render}) => {
 
     Modal.setAppElement(document.getElementById('root'));
 
-
-    var user = JSON.parse(sessionStorage.getItem('user'));
     const baseURL = window.location.href.includes('localhost:3000') ? 'http://localhost:3001' : '';
+    const navigate = useNavigate();
 
     const [src, setSRC] = useState("");
     const [modal, setModal] = useState(false);
@@ -52,9 +52,12 @@ const Photo = ({photo, photoID, userID, render}) => {
         user.profile_url = src;
         if (JSON.parse(sessionStorage.getItem('user'))._id === userID) {
             sessionStorage.setItem('user', JSON.stringify(user));
+            setSRC("");
+            return render();
         }
-        setSRC("");
-        return render();
+        else {
+            navigate(`/Dashboard/Profile/${user.firstname}_${user.lastname}`, {state: {user: user}});
+        }
     }
 
     const changeBackground = async (e) => {
@@ -64,22 +67,25 @@ const Photo = ({photo, photoID, userID, render}) => {
         await axios.post(baseURL +'/users/change_background', { user_id: userID, url: src });
         if (JSON.parse(sessionStorage.getItem('user'))._id === userID) {
             sessionStorage.setItem('user', JSON.stringify(user));
+            setSRC("");
+            return render();
         }
-        setSRC("");
-        return render();
+        else {
+            navigate(`/Dashboard/Profile/${user.firstname}_${user.lastname}`, {state: {user: user}});
+        }
     }
 
     return (
         <div className='photo-wrapper checkbox' onClick={handleClick}>
             <img src={photo} alt=""/>
-            {userID === JSON.parse(sessionStorage.getItem('user'))._id &&
-                <Modal isOpen={modal} style={modalStyles}>
-                    <AiOutlineCloseCircle className='close-button' onClick={() => {setModal(false);}}/>
-                    <img className="zoom-photo" src={photo} alt=""/>
-                    <button className='set-button profile' onClick={changeProfile}>Set as profile</button>
-                    <button className='set-button background' onClick={changeBackground}>Set as background</button>
-                </Modal>
-            }
+          
+            <Modal isOpen={modal} style={modalStyles}>
+                <AiOutlineCloseCircle className='close-button' onClick={() => {setModal(false);}}/>
+                <img className="zoom-photo" src={photo} alt=""/>
+                <button className='set-button profile' onClick={changeProfile}>Set as profile</button>
+                <button className='set-button background' onClick={changeBackground}>Set as background</button>
+            </Modal>
+            
         </div>
     )
 }

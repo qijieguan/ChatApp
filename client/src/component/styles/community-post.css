@@ -1,4 +1,4 @@
-.community-page-post-wrapper { width: 90%; }
+.community-page-post-wrapper { width: 95%; }
 
 .community-page-post {
     position: relative;
@@ -9,6 +9,7 @@
     width: 100%;
     box-shadow: 0 1px 3px gray;
     background: white;
+    border-radius: 1rem;
     overflow: hidden;
     z-index: 2;
 }

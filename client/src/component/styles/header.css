@@ -12,7 +12,8 @@
 
 .app-logo {
     font-size: clamp(1.25rem, 1.75vw, 1.75rem);
-    font-family: fantasy;
+    font-family: cursive;
+    font-weight: 500;
     letter-spacing: 1px;
     color: orangered;
 }

@@ -13,7 +13,7 @@
     padding-left: 1.25vw;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: clamp(1.5rem, 1.75vw, 1.75rem);
+    font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     font-weight: 700;
     color: darkslategray;
     border-left: 5px solid;
@@ -36,9 +36,13 @@
     border-radius: 0.5rem;
 }
 
-.album-list { min-height: 40vh; grid-template-columns: 32% 32% 32%; row-gap: 2vh; width: 100%; }
+.album-list { min-height: 40vh; grid-template-columns: 23% 23% 23% 23%; row-gap: 2vh; width: 100%; }
 
-@media (max-width: 50rem) {
+@media (max-width: 60rem) {
+    .album-list { grid-template-columns: 30% 30% 30%; }
+}
+
+@media (max-width: 40rem) {
     .album-section { width: 100%; }
     .album-list { grid-template-columns: 47% 47%; }
 }

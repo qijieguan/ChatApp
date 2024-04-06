@@ -119,7 +119,7 @@
     padding: 2vh 0; 
     text-align: center; 
     font-weight: 700;
-    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
     width: 10vw; 
     color: grey; 
     border-bottom: 2px solid transparent; 

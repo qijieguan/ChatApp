@@ -6,7 +6,6 @@
     color: gray;
     background: white;
     border-radius: 0.5rem;
-    overflow: hidden;
 }
 
 .post-header { padding: 0 2vw; margin-bottom: 1vh; flex-wrap: wrap; column-gap: 0.75vw; width: 100%; }

@@ -60,6 +60,18 @@ const CommentPage = () => {
         } 
     },[location]);
 
+    const adjustNavProp = () => {
+        let menu = document.querySelector('.menu')?.getBoundingClientRect();
+        let comment_nav = document.querySelector('.comment-nav');
+
+        if (menu && comment_nav) {
+            comment_nav.style.top = menu.height + 'px';
+        }
+    }
+
+    adjustNavProp();
+    window.addEventListener('resize', () => { adjustNavProp(); });
+
     const parseStringTime = (timeStamp) => {
         if (!timeStamp) { return null; }
         let [Y, M, D, H, m, s] = timeStamp.split(/\D/);
@@ -202,9 +214,6 @@ const CommentPage = () => {
                     <div className='post-time'>{timeStamp}</div>
                 </div>
 
-                {post && post.primary_text && post.primary_text.length && 
-                    <div className='primary-text'>{post.primary_text}</div>
-                }
                 {post && post.primary_image && post.primary_image.length && 
                     <div className='primary-image-wrapper'>
                         <img src={post.primary_image} className='primary-image' alt=""/>
@@ -220,6 +229,11 @@ const CommentPage = () => {
                         </Modal>
                     </div>  
                 }
+
+                {post && post.primary_text && post.primary_text.length && 
+                    <div className='primary-text'>{post.primary_text}</div>
+                }
+
                 <div className='post-footer flex'>
                     <div className='post-like action flex' onClick={toggleLike}>
                         <AiFillLike className='post-icon'/>

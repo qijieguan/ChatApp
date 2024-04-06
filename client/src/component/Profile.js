@@ -128,7 +128,7 @@ const Profile = () => {
                     <div className='follow-tab media-nav-li' onClick={toggleSwitch}>Following</div>
                 </div>
                 {!toggle ?
-                    <Album callRender={callRender} album={user.photo_album} userID={user._id}/>
+                    <Album callRender={callRender} album={user.photo_album} userID={user._id} user={user}/>
                     :
                     <FriendCount userID={user._id}/>
                 }
