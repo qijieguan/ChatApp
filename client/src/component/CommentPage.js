@@ -29,7 +29,7 @@ const CommentPage = () => {
             backgroundColor: 'rgb(249, 249, 255)',
             border: '1px solid black',
         },
-        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '4' }
+        overlay: { backgroundColor: 'rgb(0, 0, 0, 0.7)', zIndex: '10' }
     };
 
     Modal.setAppElement(document.getElementById('root'));

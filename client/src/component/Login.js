@@ -27,9 +27,9 @@ const Login = () => {
             height: '50%',
             transform: 'translate(-50%, -50%)', 
             color: 'wheat',
-            backgroundColor: 'black',
-            border: '2px solid wheat',
-            borderRadius: '1rem',
+            backgroundColor: 'darkslategray',
+            border: '0',
+            borderRadius: '0.5rem',
             overflow: 'auto !important',
         },
         overlay: { backgroundColor: 'rgb(30, 30, 30, 0.7)', zIndex: '4' }

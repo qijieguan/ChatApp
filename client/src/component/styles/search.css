@@ -1,6 +1,6 @@
 .search { margin: 3vh auto 10vh auto; min-height: 120vh; width: 100%; color: white; }
 
-.search-wrapper { grid-template-columns: 22% 22% 22% 22%; justify-content: center; column-gap: 2vw; row-gap: 3vh; }
+.search-wrapper { grid-template-columns: 23% 23% 23% 23%; justify-content: center; column-gap: 1vw; row-gap: 3vh; }
 .search-wrapper-label {
     grid-column: -1 / 1;
     margin: 3vh auto 3vh 0;
@@ -11,10 +11,19 @@
     margin-right: 1vw;
 }
 .search-wrapper-text { 
-    font-size: clamp(1.25rem, 2vw, 2rem); 
+    font-size: clamp(1rem, 2vw, 2rem); 
     font-weight: 700;
     letter-spacing: 4px; 
     color: rgb(150, 150, 150);
+}
+
+.user-search-input {
+    grid-column: -1 / 1;
+    margin: 0 0 3vh 0;
+    padding: 1.5vh 0;
+    width: 80%;
+    background: rgb(250, 250, 250);
+    border-radius: 0.5rem;
 }
 
 .user {
@@ -22,7 +31,7 @@
     height: 50vh;
     width: 100%;
     z-index: 1;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     transition: 0.3s all 1s ease-in;
 }
@@ -47,6 +56,7 @@
     transform: translateY(85%);
     z-index: 2;
     transition: all 0.7s ease-in;
+    overflow: hidden;
 }
 
 .user-detail:hover {
@@ -54,9 +64,9 @@
 }
 
 .user-name { 
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
+    font-size: clamp(0.75rem, 1.5vw, 1.5rem);
     font-weight: 500;
-    word-break: break-all; 
+    white-space: nowrap;
     letter-spacing: 1px;
     height: 20%;
     width: 100%;
@@ -65,7 +75,7 @@
 
 .user-bio {
     height: 80%;
-    font-size: clamp(0.875rem, 1.125vw, 1.125rem);
+    font-size: clamp(0.75rem, 1.125vw, 1.125rem);
     line-height: 1.5;
     color: rgb(231, 231, 231);
 }
@@ -88,19 +98,19 @@
     border-radius: 1rem;
 }
 
-.user-actions span { font-size: clamp(0.875rem, 1vw, 1rem); font-weight: 500; letter-spacing: 1px; }
+.user-actions span { font-size: clamp(0.75rem, 1vw, 1rem); font-weight: 500; letter-spacing: 1px; }
 
 .icon-wrapper:hover .user-actions {
     display: block;
 }
 
 .user .icon {  
-    font-size: clamp(1.25rem, 2vw, 2rem);
+    font-size: clamp(1rem, 2vw, 2rem);
     color: white; 
 }
 
 .user-actions > .icon-wrapper { column-gap: 0.5vw; letter-spacing: 1px; }
-.user-actions > .icon-wrapper:hover { color: orange; }
+.user-actions > .icon-wrapper:hover { color: gold; }
 .person-icon { font-size: clamp(1rem, 1.5vw, 1.5rem); }
 
 @media (max-width: 50rem) {
@@ -112,11 +122,14 @@
 
 @media (max-width: 35rem) {
     .search-wrapper { margin: 2vh auto; grid-template-columns: 48% 48%; column-gap: 1vw; }
+    .user-search-input { margin: 1vh 0 2vh 0; width: 100%; }
 }
 
 @media (max-width: 25rem) {
-    .search-wrapper { grid-template-columns: 95%; row-gap: 1vh; } 
+    .search-wrapper { row-gap: 1vh; } 
     .search-wrapper-icon { margin-right: 2vw; }
-    .user { margin: 0 auto; width: 90%; }
-    .user-detail { padding: 2vh 3vw; }
+    .user { margin: 0 auto; height: 20vh; width: 100%; }
+    .user-detail { padding: 2vh 3vw; transform: translateY(70%); }
+    .user-actions { padding: 1vh 3vw; border-radius: 0.5rem; }
+    .user-name, .user-bio { text-align: center; }
 }

@@ -1,7 +1,7 @@
 .app-header { 
     position: sticky;
     inset: 0 auto auto 0;
-    padding: 0 0 0 2vw;
+    padding: 0 2vw;
     row-gap: 0;
     width: 100%;
     background: white;
@@ -12,29 +12,31 @@
 
 .app-logo {
     font-size: clamp(1.25rem, 1.75vw, 1.75rem);
-    font-family: cursive;
+    font-family: fantasy;
     font-weight: 500;
     letter-spacing: 1px;
-    color: orangered;
+    color: darkslategray;
 }
 
 .header-btns { 
+    padding: 2vh 0;
     justify-content: flex-end;
     flex-wrap: wrap;
+    gap: 1vw;
     width: 100%;
 }
 
 .header-btns button { 
-    padding: 1.5vh 2.5vw; 
-    height: 8vh; 
-    font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
+    padding: 1vh 2vw; 
+    text-transform: uppercase;
+    font-size: clamp(0.75rem, 1vw, 0.875rem); 
     font-weight: 500;
-    background: orangered; 
-    color: white;  
-    border-right: 1px solid;
+    color: grey;  
+    border-radius: 2rem;
 }
 
-.header-btns button:hover { background: white; color: orangered; }
+.header-btns button:not(.toggled):hover { color: black; background: rgb(236, 236, 236); }
+.header-btn.toggled { color: white; background: darkslategray; box-shadow: 0 0 1px darkslategray; }
 
 .header-banner { 
     position: relative; 
@@ -45,7 +47,7 @@
     background-image: url("https://cdn.pixabay.com/photo/2020/05/18/16/17/social-media-5187243_1280.png");
     background-size: cover;
     background-position: center; 
-    color: rgb(245, 245, 245); 
+    color: white; 
 }
 .header-banner-text { position: absolute; margin: auto; text-align: center; z-index: 1; }
 .header-banner-text * { 
@@ -53,8 +55,10 @@
     letter-spacing: 0.125rem;
     text-transform: uppercase;
 }
-.header-banner-text span { font-weight: 500; color: white; }
+.header-banner-text span { font-weight: 500; color: gold; }
+.header-banner .overlay { background: rgb(0, 0, 0, 0.4); }
 
 @media (max-width: 50rem) {
     .header-banner { display: none; }
+    .header-btns button { padding: 1vh 3vw; }
 }

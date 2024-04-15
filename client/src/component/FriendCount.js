@@ -36,7 +36,7 @@ const FriendCount = ({userID}) => {
         <div className='friend-count flex'>
             <h1 className='friend-count-label'>Following</h1>
             <div className='friend-headers flex'>
-                {friends.length ?
+                {friends.length > 0 ?
                     friends.map(friend => {
                         return <img className='friend-header' src={friend.profile_url} key={uuid()} alt=""/>
                     })

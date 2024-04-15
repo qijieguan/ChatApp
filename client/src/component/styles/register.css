@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: center; 
     flex-wrap: wrap;
-    row-gap: 1vh;
+    row-gap: 0;
     width: 90%; 
     color: grey;
 }
@@ -17,13 +17,14 @@
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
+    width: 100%;
     color: grey;
     background: rgb(247, 247, 247);
     border-radius: 0.5rem;
     animation: fadeSlideLeft 0.4s forwards;
 }
 
-.register-msg { color: orangered }
+.register-msg { color: darkslategray; }
 .image-input {
     margin: 0 auto;
     padding: 5vh 2vw; 
@@ -42,7 +43,7 @@
     padding: 2vh 2vw;
     font-size: clamp(0.75rem, 1vw, 1rem);
     color: white;
-    background: linear-gradient(to right, orangered 30%, orange);
+    background: linear-gradient(to right, darkslategray 30%, slategray);
     box-shadow: 0 0 3px gray;
     border-radius: 2rem;
 }
@@ -69,11 +70,11 @@
     row-gap: 0.5vh;
     width: 100%; 
 }
-.register-input-wrapper > h1 { margin: 0; color: orangered; font-weight: 700; letter-spacing: 0.5px; }
+.register-input-wrapper > h1 { margin: 0; color: darkslategray; font-weight: 700; letter-spacing: 0.5px; }
 .register-input-wrapper > span { margin: 1vh 0; font-size: clamp(0.75rem, 0.875vw, 0.875rem); color: rgb(180, 180, 180); }
-.register-input-wrapper > input { padding: 2vh 0; width: 100%; color: orangered; border-radius: 0.25rem; }
+.register-input-wrapper > input { padding: 2vh 0; width: 100%; color: darkslategray; border-radius: 0.25rem; }
 .input-label { font-size: 0.875rem; font-weight: 300; width: 100%; }
-.input-label::after { content: " *"; color: red; }
+.input-label::after { content: " *"; color: darkslategray; }
 .register-btn { 
     margin: 7.5vh auto 0 auto;
     padding: clamp(1rem, 2.5vw, 1.25rem) 0;
@@ -82,13 +83,13 @@
     letter-spacing: 0.125rem; 
     width: 80%;  
     color: white;
-    background: orangered;
+    background: darkslategray;
     border-radius: 1rem;
 }
 .register-btn:hover { opacity: 0.4; }
 
 @media (max-width: 50rem) {
-    .register-form { padding: 5vh 1vw 5vh 1vw; }
+    .register-form { padding: 5vh 1vw 5vh 1vw; width: 95%; }
     .register-label { margin: 2vh auto 2vh 0; }
     .image-input { justify-content: center; }
     .register-input-wrapper { padding: 0 2.5vw; }

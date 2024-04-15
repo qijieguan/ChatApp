@@ -8,7 +8,7 @@
     color: gainsboro;
     background: rgb(251, 251, 255);
     box-shadow: 0 1px 3px rgb(240, 240, 240);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     overflow: scroll;
 }
 
@@ -31,7 +31,7 @@
     font-style: italic;
 }
 .conversation-wrapper { position: relative; width: 100%; color: gray; transition: all 0.1s ease-in; } 
-.conversation-wrapper.highlight { border-left: 5px solid darkorange; background: rgb(255, 235, 198); }
+.conversation-wrapper.highlight { color: white; border-left: 5px solid darkslategray; background: slategray; }
 .conversation { padding: 1vh 0; justify-content: flex-start; height: 10vh; width: 85%; transition: all 0.3s ease-in; }
 .conversation > img { 
     margin: auto 1vw auto 1.5vw; 

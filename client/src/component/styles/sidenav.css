@@ -48,10 +48,10 @@
 }
 
 .menu-icon {
-    margin: 1vh 1vw 1vh 0;
+    margin: 1vh 2vw 1vh 0;
     position: relative;
     align-self: flex-end;
-    color: orangered;
+    color: darkslategray;
     font-size: clamp(1.25rem, 1.5vw, 1.5rem);
     height: fit-content;
     z-index: 2;
@@ -76,7 +76,7 @@
     max-height: 45%;
     width: 90%; 
     background: white;
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     z-index: 2;
     overflow: hidden;
 }
@@ -106,7 +106,6 @@
     display: none;
     font-weight: 300;
     font-size: 0.625rem;
-    letter-spacing: 1px;
     text-transform: uppercase;
     width: max-content; 
     color: grey;
@@ -119,7 +118,7 @@
     display: flex;
 }
 
-.side-nav-link:hover { color: orangered; }
+.side-nav-link:hover { color: darkslategray; }
 
 .side-label .icon { font-size: clamp(1rem, 1.5vw, 1.5rem); color: gray;  }
 
@@ -127,16 +126,16 @@
 .side-empty { padding: 3vh 0; justify-content: center; gap: 1vh; width: 100%; }
 .side-empty > span { font-size: clamp(1rem, 1.125vw, 1.125rem); }
 
-.side-li { grid-template-columns: auto auto; gap: 1vh; width: 100%; overflow: hidden; justify-content: flex-start; }
+.side-li { grid-template-columns: auto auto; gap: 1.5vh; width: 100%; overflow: hidden; justify-content: flex-start; }
 .side-li:hover .side-li-name { color: rgb(211, 211, 211); }
-.side-li-profile { object-fit: cover; height: 6vh; width: 6vh; border-radius: 0.5rem; box-shadow: 0 0 2px; }
+.side-li-profile { object-fit: cover; height: 6vh; width: 6vh; border-radius: 0.5rem; }
 .side-li-name { 
     margin: auto 0; 
     font-size: clamp(0.75rem, 0.875vw, 0.875rem); 
-    font-weight: 500;
     text-overflow: clip;
+    letter-spacing: 0;
     white-space: nowrap;
-    color: rgb(60, 60, 60); 
+    color: darkslategray; 
     width: 100%;
     overflow: hidden;
 }

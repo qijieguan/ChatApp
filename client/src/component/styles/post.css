@@ -10,16 +10,16 @@
 
 .post-header { padding: 0 2vw; margin-bottom: 1vh; flex-wrap: wrap; column-gap: 0.75vw; width: 100%; }
 .poster-image { object-fit: cover; height: 7vh; width: 7vh; border-radius: 3rem; }
-.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); }
+.poster-name { font-weight: 500; font-size: clamp(0.75rem, 1vw, 1rem); color: darkslategray; }
 .post-time {
     margin-left: auto;
     font-size: clamp(0.625rem, 0.875vw, 0.875rem);
     color: rgb(165, 165, 165);
 }
-.primary-text { align-self: flex-start; padding: 2vh 2.5vw 4vh 2.5vw; font-size: clamp(0.75rem, 1vw, 1rem); }
+.primary-text { align-self: flex-start; padding: 2vh 2.5vw; font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .primary-image-wrapper { margin: 1vh auto 0 auto; position: relative; width: 95%; }
-.primary-image { object-fit: cover; max-height: 50vh; width: 100%; border-radius: 0.25rem; }
+.primary-image { object-fit: cover; max-height: 40vh; width: 100%; border-radius: 0.5rem; }
 .image-zoom-icon-wrapper {
     padding: 2vh;
     position: absolute;
@@ -39,7 +39,7 @@
     inset: 5% 5% auto auto; 
     font-size: clamp(0.875rem, 1vw, 1rem); 
     color: white;
-    background: orange; 
+    background: darkslategray; 
     border-radius: 0.25rem;
     box-shadow: 0 1px 3px rgb(110, 110, 110);
 }
@@ -72,8 +72,8 @@
 .action:hover { opacity: 0.7; }
 .action > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
-.post-like.active { color: red; }
-.post-like.active > .like-count { color: white; background: red; }
+.post-like.active { color: darkslategray; }
+.post-like.active > .like-count { color: white; background: darkslategray; }
 
 .post-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
 
@@ -83,8 +83,6 @@
     font-weight: 500;
     font-size: clamp(0.625rem, 0.875vw, 0.875rem);
     border-radius: 0.25rem;
-    border: 1px solid;
-    box-shadow: 0 1px 1px rgb(180, 180, 180);
 }
 .comment-count { color: gray; }
 

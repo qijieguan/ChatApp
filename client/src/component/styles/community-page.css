@@ -94,7 +94,7 @@
 }
 
 .community-page-join::after { content: 'Join' }
-.community-page-join.joined { background: darkorange; }
+.community-page-join.joined { background: darkslategray; }
 .community-page-join.joined::after { content: 'Joined'; }
 
 .community-page-info-button {

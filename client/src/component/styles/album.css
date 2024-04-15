@@ -44,9 +44,5 @@
 
 @media (max-width: 40rem) {
     .album-section { width: 100%; }
-    .album-list { grid-template-columns: 47% 47%; }
-}
-
-@media (max-width: 25rem) {
-    .album-list { grid-template-columns: 95%; }
+    .album-list { grid-template-columns: 47% 47%; row-gap: 1vh; }
 }

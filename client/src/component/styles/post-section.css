@@ -10,10 +10,9 @@
     padding: 3.5vh 2.5vw;
     font-weight: 700;
     color: white;
-    background: linear-gradient(to right, red 20%, tomato);
+    background: linear-gradient(to right, darkslategray 20%, slategray);
     width: 100%;
     border-radius: 0.25rem;
-    box-shadow: 0 0 3px darkred;
 }
 .post-form-header-text { justify-content: center; flex-wrap: wrap; column-gap: 0.5vw; row-gap: 1vh; }
 .post-form-header-text > span:first-child { font-size: clamp(0.875rem, 1.5vw, 1.5rem); } 
@@ -23,15 +22,13 @@
 .post-form-header-button { 
     padding: 1vh 1vw;
     column-gap: 0.5vw; 
-    color: white;
-    background: orangered;
-    border: 2px solid;
+    color: rgb(230, 230, 230);
+    background: darkslategray;
     border-radius: 0.5rem;
-    box-shadow: 0 0 3px darkred;
 }
 .post-form-header-button:hover { opacity: 0.7; }
-.post-form-header-icon { font-size: clamp(1rem, 1.5vw, 1.5rem); }
-.post-form-header-button > span { font-size: clamp(0.75rem, 1.25vw, 1.25rem); }
+.post-form-header-icon { font-size: clamp(1rem, 1.25vw, 1.25rem); }
+.post-form-header-button > span { font-size: clamp(0.75rem, 1vw, 1rem); }
 
 .post-input { 
     flex-wrap: wrap; 
@@ -103,7 +100,7 @@
 
 .post-input-cancel { color: white; background: rgb(180, 180, 180); box-shadow: 0 0 2px rgb(230, 230, 230); }
 
-.post-input-submit { color: white; background: tomato; box-shadow: 0 2px 3px gray; }
+.post-input-submit { color: white; background: darkslategray; box-shadow: 0 2px 3px gray; }
 .post-input-submit-icon { margin-bottom: 5px; font-size: clamp(1rem, 1.5vw, 1.5rem); transform: rotate(-45deg); }
 
 .post-collection { flex-direction: column; row-gap: 2vh; width: 100%; }

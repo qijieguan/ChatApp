@@ -69,7 +69,13 @@ const SideNav = ({mode}) => {
                     My Group
                     <div className='icon-wrapper'>
                         <BsThreeDots className='icon'/>
-                        <Link to={{pathname: "/Dashboard/Community"}}  className='side-nav-link'>View Communities</Link>
+                        <Link 
+                            to={{pathname: "/Dashboard/Community"}}  
+                            className='side-nav-link'
+                            onClick={() => {closeSideNav()}}
+                        >
+                            View Communities
+                        </Link>
                     </div>
                 </label>
                 <div className='community-collection side-collection flex'>
@@ -100,7 +106,13 @@ const SideNav = ({mode}) => {
                     Friends
                     <div className='icon-wrapper'>
                         <BsThreeDots className='icon'/>
-                        <Link to={{pathname: "/Dashboard/Friend"}}  className='side-nav-link'>View Friends</Link>
+                        <Link 
+                            to={{pathname: "/Dashboard/Friend"}}  
+                            className='side-nav-link'
+                            onClick={() => {closeSideNav()}}
+                        >
+                            View Friends
+                        </Link>
                     </div>
                 </label>
                 <div className='friend-collection side-collection flex'>

@@ -2,15 +2,9 @@ import './styles/home.css';
 import Login from "./Login.js";
 import { FaWpforms, FaDatabase, FaRegHeart } from "react-icons/fa";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
-import axios from 'axios';
-import { useEffect } from 'react';
+
 
 const Home = () => { 
-
-    const url = "https://cdn.pixabay.com/photo/2016/07/13/11/32/photomontage-1514218_1280.jpg";
-
-    useEffect(() => {  
-    }, []);
 
     return ( 
         <div className="home flex">
@@ -20,26 +14,34 @@ const Home = () => {
                 <div className='home-image home-image-1'><div className='overlay'/></div>
             </section>
 
-            <section className='home-section home-section-2 flex'>
-                <div className='overlay grid'>
-                    <div className='quote top flex'>"How can mirrors be real if our eyes aren't real." <span>- Jaden Smith</span></div>
-                    <div className='quote top flex'>"Sir, this is a wendy's!" <span>- Wendy's employee</span></div>
-                    <div className='banner-text flex'>
-                        <h1>Meet New Faces Across the World</h1>
-                        <p className='flex'>"The journey of a thousand connections begins with one follow" <span>- Sun Tzu</span></p>
-                    </div>
-                    <div className='quote bottom flex'>"Hi everyone I’m Joe Biden’s wife." <span>- Joe Biden</span></div>
-                    <div className='quote bottom flex'>
-                        "If you don't like your job, you don't go on strike. You just go in every day and do it really half-assed - that's the American way."
-                        <span>- Homer Simpson</span>
-                    </div>
+            <section className='home-section home-section-2 grid'>
+                <div className='quote top flex'>
+                    "How can mirrors be real if our eyes aren't real."
+                    <div className='quote-profile quote-profile-2'/>
                 </div>
-                <img className='home-image home-image-2' src={url} alt=""/>
+                <div className='quote top flex'>
+                    "Sir, this is a wendy's!"
+                    <div className='quote-profile quote-profile-3'/>
+                </div>
+                <div className='banner-text flex'>
+                    <h1>Meet New Faces Across the World</h1>
+                    <p className='flex'>
+                        "The journey of a thousand connections begins with one follow"
+                        <div className='quote-profile quote-profile-1'/>
+                    </p>
+                </div>
+                <div className='quote bottom flex'>
+                    "Hi everyone I’m Joe Biden’s wife."
+                    <div className='quote-profile quote-profile-4'/>
+                </div>
+                <div className='quote bottom two flex'>
+                    "If you don't like your job, you don't go on strike. You just go in every day and do it really half-assed - that's the American way."
+                    <div className='quote-profile quote-profile-5'/>
+                </div>
+                <div className='overlay'/>
             </section>
 
             <section className='home-section home-section-3 grid'>
-                <div className='overlay-1'></div>
-                <div className='overlay-2'></div>
                 <div className='card flex'>
                     <div className='icon-wrapper'>
                         <FaWpforms className='icon'/>

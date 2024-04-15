@@ -6,7 +6,7 @@
     color: rgb(68, 68, 68);
     background: rgb(253, 253, 253);
     box-shadow: 0 1px 3px rgb(240, 240, 240);
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
 }
 
 .private-message-header { 
@@ -16,8 +16,8 @@
     width: 100%; 
     box-shadow: 0 1px 2px gray; 
     color: white; 
-    background: orange; 
-    border-radius: 0.75rem 0.75rem 0 0;
+    background: darkslategray; 
+    border-radius: 0.5rem 0.5rem 0 0;
 }
 
 #back-btn { background: transparent; color: white; }
@@ -38,7 +38,7 @@
     width: 12.5vh; 
     object-fit: cover; 
     border-radius: 0.5rem; 
-    border: 3px solid darkorange;
+    border: 3px solid darkslategray;
 }
 
 .recipient {
@@ -64,7 +64,7 @@
     font-weight: 500;
     letter-spacing: 1px;
     width: max-content;
-    background: darkorange;
+    background: darkslategray;
     transform: translate3d(-75%, -95%, 0);
     box-shadow: 0 0 3px rgb(63, 63, 63);
     border-radius: 0.5rem;
@@ -94,10 +94,10 @@
     row-gap: 1vh;
     text-align: center; 
     font-weight: 500; 
-    color: orange; 
+    color: darkslategray; 
 }
 .private-message-empty > span { font-size: clamp(1rem, 1.5vw, 1.5rem); }
-.private-message-empty > .cat-icon { font-size: clamp(1.75rem, 2.5vw, 2.5rem); color: orange; }
+.private-message-empty > .cat-icon { font-size: clamp(1.75rem, 2.5vw, 2.5rem); color: darkslategray; }
 
 .end-message {
     grid-template-columns: 35% auto 35%;
@@ -193,6 +193,7 @@
 @media (max-width: 40rem) { 
     .message-container { display: none; }
     .message-container.focus { display: unset; }
+    .private-message-header { padding: 2vh 2vw 5vh 2vw; }
     .private-message-headshot img { height: 12vh; width: 12vh; }
     .private-message { height: 50vh; row-gap: 5vh; }
     .end-message > span { font-weight: 300; }

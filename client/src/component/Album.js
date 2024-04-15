@@ -77,7 +77,7 @@ const Album = ({ callRender, album, userID, user }) => {
             <div className='album-label-2'>SELECT A PHOTO TO CHANGE PROFILE/BACKGROUND</div>
             
             <form className='album-list grid'>
-                {fullAlbum.length ?
+                {fullAlbum.length > 0 ?
                     fullAlbum.map(photo => 
                         <Photo key={uuid()} photo={photo} render={render} photoID={uuid()} userID={userID} user={user}/>
                     )

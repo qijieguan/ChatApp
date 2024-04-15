@@ -12,7 +12,7 @@
 /* font-family: 'Lobster', cursive; */
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
@@ -48,7 +48,8 @@ img {
     object-fit: cover;
 }
 
-button, a { cursor: pointer; }
+h1 { letter-spacing: 1px; }
+button, a { cursor: pointer; letter-spacing: 1px; background: transparent; }
 
 .overlay { position: absolute; top: 0; height: 100%; width: 100%; background-color: rgb(124, 124, 124, 0.4); }
 

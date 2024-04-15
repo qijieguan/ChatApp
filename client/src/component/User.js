@@ -33,7 +33,7 @@ const User = ({ user }) => {
                 <BsThreeDots className="icon"/>
                 <div className="user-actions">
                     {isFriend ?
-                        <span>Already Following</span>
+                        <span>Following</span>
                         :
                         <div className="icon-wrapper flex" onClick={() => {handleAdd()}}>
                             <IoPersonAddSharp className="person-icon"/>

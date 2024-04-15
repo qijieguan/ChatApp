@@ -59,13 +59,13 @@
 
 @media (max-width: 50rem) {
     .about-section { padding: 17.5vh 0 5vh 0; grid-template-columns: 100%; row-gap: 10vh; }
-    .about { min-height: 30vh; box-shadow: 0 1px 2px; width: 95%; }
+    .about { min-height: 30vh; width: 95%; }
     .about-image-wrapper { height: 7.5vh; }
     .about-image { height: 15vh; }
     .about > p { padding: 2vh 0; }
 }
 
 @media (max-width: 25rem) {
-    .about-section { padding: 20vh 0 5vh 0; }
+    .about-section { padding: 10vh 0 5vh 0; }
     .about > div:not(.about-image) { font-weight: 500; }
 }

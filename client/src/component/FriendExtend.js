@@ -6,7 +6,7 @@ import { deleteFriend } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Modal from 'react-modal';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
 
 const FriendExtend = ({ friend }) => {
@@ -27,9 +27,9 @@ const FriendExtend = ({ friend }) => {
             height: '50%',
             transform: 'translate(-50%, -50%)', 
             color: 'wheat',
-            backgroundColor: 'black',
-            border: '2px solid wheat',
-            borderRadius: '1rem',
+            backgroundColor: 'darkslategray',
+            borderRadius: '0.5rem',
+            border: '0',
             overflow: 'auto !important',
         },
         overlay: { backgroundColor: 'rgb(30, 30, 30, 0.7)', zIndex: '4' }
@@ -44,8 +44,6 @@ const FriendExtend = ({ friend }) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    useEffect(() => { }, [friend._id]);
 
     const handleChat = () => { 
         sessionStorage.setItem('select', friend._id);
@@ -67,7 +65,7 @@ const FriendExtend = ({ friend }) => {
                 <img className="friend-image" src={friend.profile_url} alt=""/>
               
                 <div className='friend-buttons flex'>
-                    <button className='chat-button' onClick={handleChat}>
+                    <button className='chat-button' onClick={() => {handleChat()}}>
                         <IoMdChatbubbles className="icon"/>
                     </button>
                     <button className='unfollow-button' onClick={() => {setModal(true)}}>

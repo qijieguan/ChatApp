@@ -1,6 +1,7 @@
 import './styles/post-section.css';
-import { AiOutlineSend, AiOutlineCamera, AiFillCloseCircle } from 'react-icons/ai';
+import { AiOutlineSend, AiOutlineCamera } from 'react-icons/ai';
 import { BsPencilSquare, BsFillEmojiSmileFill } from 'react-icons/bs';
+import { CircularProgress } from '@mui/material';
 
 import { useState, useEffect } from 'react';
 import PostCollection from './PostCollection.js';
@@ -156,10 +157,17 @@ const PostSection = () => {
             </form>
             
             <div className='post-collection flex'>
-                {postArr.length &&
+                {postArr.length > 0 ?
                     postArr.map(collection => 
                         <PostCollection key={uuid()} collection={collection} deletePost={deletePost}/>
                     )
+                    :
+                    <div className='loading-screen-wrapper flex'>
+                        <CircularProgress className='loading-screen'
+                            sx={{color:"darkslategray"}} 
+                        />
+                        <span>Loading</span>
+                    </div>
                 }
             </div>
         </div>

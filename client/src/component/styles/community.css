@@ -14,9 +14,6 @@
     align-items: flex-start;
     height: 30vh;
     width: 100%;
-    border-radius: 0.25rem;
-    background: white;
-    border-radius: 1rem 0 0 1rem;
     overflow: hidden;
 }
 
@@ -30,6 +27,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
 }
 
 .community-detail {
@@ -39,6 +37,7 @@
     padding: 2vw;
     height: 100%;
     width: 72%;
+
 }
 
 .community-name {
@@ -46,6 +45,7 @@
     font-size: clamp(0.875rem, 1.25vw, 1.25rem);
     font-weight: 700;
     letter-spacing: 0.5px;
+    color: darkslategray;
 }
 
 .community-description {
@@ -80,7 +80,7 @@
 
 .join-button.joined {
     content: 'Joined';
-    color: green;
+    color: darkslategray;
     width: fit-content;
     border: 1px solid;
     pointer-events: none;

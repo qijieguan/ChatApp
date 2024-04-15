@@ -8,28 +8,28 @@
     row-gap: 1vh;
     min-width: 100%;
     max-width: 250%;
-    color: orangered; 
+    color: darkslategray; 
     background: white;
     border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-.menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); transform: translateY(-12.5%); }
+.menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); transform: translateY(-20%); }
 
 .menu-label-wrapper { margin-left: 2vw; gap: 1vh; }
 
-.menu-li-icon { font-size: clamp(1.25rem, 2.125vw, 2.125rem); }
-.menu-li-icon.community-icon { font-size: clamp(2rem, 3vw, 3rem); }
+.menu-li-icon { font-size: clamp(1.5rem, 2.125vw, 2.125rem); }
+.menu-li-icon.community-icon { font-size: clamp(2.25rem, 3vw, 3rem); }
 
-.menu-label-wrapper > span { margin-top: 2px; font-size: clamp(1rem, 1.825vw, 1.825rem); letter-spacing: 1px; font-weight: 700; }
+.menu-label-wrapper > span { margin-top: 2px; font-size: clamp(1.25rem, 1.825vw, 1.825rem); letter-spacing: 1px; font-weight: 700; }
 
 .menu-li-search {
     margin-left: auto;
     display: none;
     padding: 1.375vh;
-    background: rgb(255, 239, 208);
+    background: slategray;
     border-radius: 0.5rem;
 }
-.menu-li-search * { color: orange; }
+.menu-li-search * { color: rgb(226, 226, 226); }
 .menu-li-search:hover { opacity: 0.7; }
 
 .menu-li-wrapper {
@@ -38,20 +38,20 @@
     column-gap: 0.5vw;
     row-gap: 1vh;
     color: white;
-    background: orangered;
+    background: darkslategray;
     box-shadow: 0 0 1px gray;
     border-radius: 0.5rem;
 }
 
 .menu-li { padding: 1vh 1.5vw; color: white; transition: all 0.2s ease-in; border-radius: 0.25rem; }
-.menu-li:hover { background: rgb(255, 121, 73); box-shadow: 0 0 2px; }
-.menu-li.active { background: rgb(255, 121, 73); box-shadow: 0 0 2px; }
+.menu-li:hover { background: slategray; box-shadow: 0 0 2px; }
+.menu-li.active { background: slategray; box-shadow: 0 0 2px; }
 .menu-li > div { font-size: clamp(0.625rem, 0.875vw, 0.875rem); font-weight: 500; letter-spacing: 0.5px; }
 
 .message-icon {
     padding: 1.375vh;
-    color: orange;
-    background: rgb(255, 239, 208);
+    color: rgb(226, 226, 226);
+    background: slategray;
     border-radius: 0.5rem;
 }
 .message-icon:hover { opacity: 0.7; }
@@ -63,7 +63,7 @@
     text-transform: capitalize; 
     font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
     font-weight: 500; 
-    color: tomato; 
+    color: darkslategray; 
 }
 
 .menu-links {

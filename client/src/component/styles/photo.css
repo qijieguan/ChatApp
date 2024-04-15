@@ -35,3 +35,7 @@
 .set-button.profile { background: orange; }
 .set-button.background { background: darkslategray; }
 
+@media (max-width: 25rem) {
+    .photo-wrapper { height: 15vh; border-radius: 0.5rem; }
+}
+

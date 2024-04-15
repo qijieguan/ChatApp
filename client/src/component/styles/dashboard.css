@@ -18,7 +18,7 @@
 
 .loading-screen {
     margin-top: 20vh;
-    color: gray;
+    color: darkslategray;
 }
 
 .loading-screen-wrapper > span {

@@ -2,7 +2,7 @@ import './styles/footer.css';
 
 const Footer = () => {
     return (
-        <div className='footer flex'>
+        <div className='footer grid'>
             <div className='hour'>
                 <h1>Hours of Operation</h1>
                 <li>Monday - Friday: 10AM - 5PM PST</li>
