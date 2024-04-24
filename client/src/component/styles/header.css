@@ -12,6 +12,7 @@
 }
 
 .app-logo {
+    margin: 0 1vw;
     font-size: clamp(1.25rem, 1.75vw, 1.75rem);
     font-family: fantasy;
     font-weight: 500;

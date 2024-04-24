@@ -121,7 +121,9 @@ const SideNav = ({mode}) => {
                             <Link 
                                 to={"/Dashboard/Profile/" + friend.firstname + "_" + friend.lastname}
                                 state={{user: friend}}
-                                className='side-friend side-li grid' key={uuid()}>
+                                className='side-friend side-li grid' key={uuid()}
+                                onClick={() => {closeSideNav()}}
+                            >
                                 <img className='side-friend-profile side-li-profile' src={friend.profile_url} alt=""/>
                                 <span  className='side-friend-name side-li-name'>{friend.firstname + " " + friend.lastname}</span>
                             </Link>
