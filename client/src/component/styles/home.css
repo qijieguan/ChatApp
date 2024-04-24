@@ -17,7 +17,14 @@
     box-shadow: 20px 20px 20px 20px inset white, -20px -20px 20px 20px inset white;
 }
 
-.home-section-1 { height: 100vh; justify-content: center; column-gap: 2vw; overflow: hidden; }
+.home-section-1 { 
+    position: sticky;
+    inset: 0 auto auto 0;
+    height: 100vh; 
+    justify-content: center; 
+    column-gap: 2vw; 
+    overflow: hidden; 
+}
 
 .home-image-1 {
     position: absolute;
@@ -29,6 +36,8 @@
 }
 
 .home-section-2 {
+    position: sticky;
+    inset: 0 auto auto 0;
     padding: 1vh 2vw;
     justify-content: center;
     grid-template-columns: 45% 45%;
@@ -49,7 +58,7 @@
     font-size: clamp(0.75rem, 1vw, 1rem); 
     height: fit-content;
     width: 75%; 
-    background:rgb(0, 0, 0, 0.7);
+    background:rgb(47, 79, 79, 0.7);
     border-radius: 1rem;
     z-index: 2;
 }
@@ -65,8 +74,7 @@
     letter-spacing: 1px;
     height: fit-content;
     width: 75%;
-    color: gold;
-    background:rgb(0, 0, 0, 0.7);
+    background:rgb(47, 79, 79, 0.7);
     border-radius: 1.5rem;
     z-index: 1;
 }
@@ -74,6 +82,7 @@
 .home-section-2 .banner-text h1 { 
     margin: 0;
     font-size: clamp(1.25rem, 2.5vw, 2.5rem);
+    text-transform: uppercase;
 }
 
 .home-section-2 .banner-text p { 
@@ -116,6 +125,7 @@
     padding: 10vh 0;
     grid-template-columns: 20% 20% 20% 20%;
     row-gap: 5vh;
+    background: rgb(232, 243, 243);
 }
 
 .card {

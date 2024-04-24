@@ -9,7 +9,7 @@
     width: 100%;
     box-shadow: 0 1px 3px gray;
     background: white;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     overflow: hidden;
     z-index: 2;
 }

@@ -1,7 +1,7 @@
-.menu { position: sticky; inset: 0 auto auto 0; grid-column: 1 / 3; align-items: flex-start; z-index: 4; }
+.menu { position: sticky; inset: 0 auto auto 0; grid-column: 1 / 3; align-items: flex-start; z-index: 2; }
 
 .menu-bar { 
-    padding: 1vh 1vw;
+    padding: 1vh 1vw 1vh 2vw;
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 3vw;
@@ -13,20 +13,27 @@
     border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-.menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); transform: translateY(-20%); }
+.menu-icon { display: none; font-size: clamp(1.25rem, 1.5vw, 1.5rem); }
 
-.menu-label-wrapper { margin-left: 2vw; gap: 1vh; }
+.menu-logo {
+    justify-content: center;
+    column-gap: 0.5vw;
+    font-size: clamp(1rem, 1.75vw, 1.75rem);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
-.menu-li-icon { font-size: clamp(1.5rem, 2.125vw, 2.125rem); }
-.menu-li-icon.community-icon { font-size: clamp(2.25rem, 3vw, 3rem); }
+.menu-btn-icon { font-size: clamp(1.5rem, 2vw, 2rem); }
 
-.menu-label-wrapper > span { margin-top: 2px; font-size: clamp(1.25rem, 1.825vw, 1.825rem); letter-spacing: 1px; font-weight: 700; }
+.menu-nav-li {
+    margin-left: auto;
+    column-gap: 1vw;
+}
 
 .menu-li-search {
-    margin-left: auto;
     display: none;
     padding: 1.375vh;
-    background: slategray;
+    background: darkslategray;
     border-radius: 0.5rem;
 }
 .menu-li-search * { color: rgb(226, 226, 226); }
@@ -39,19 +46,18 @@
     row-gap: 1vh;
     color: white;
     background: darkslategray;
-    box-shadow: 0 0 1px gray;
     border-radius: 0.5rem;
 }
 
-.menu-li { padding: 1vh 1.5vw; color: white; transition: all 0.2s ease-in; border-radius: 0.25rem; }
-.menu-li:hover { background: slategray; box-shadow: 0 0 2px; }
-.menu-li.active { background: slategray; box-shadow: 0 0 2px; }
+.menu-li { padding: 1vh 1.5vw; color: white; transition: all 0.2s ease-in; border-radius: 0.5rem; }
+.menu-li:hover { background: slategray; }
+.menu-li.active { background: slategray; }
 .menu-li > div { font-size: clamp(0.625rem, 0.875vw, 0.875rem); font-weight: 500; letter-spacing: 0.5px; }
 
 .message-icon {
     padding: 1.375vh;
     color: rgb(226, 226, 226);
-    background: slategray;
+    background: darkslategray;
     border-radius: 0.5rem;
 }
 .message-icon:hover { opacity: 0.7; }
@@ -62,7 +68,8 @@
 .menu-user { 
     text-transform: capitalize; 
     font-size: clamp(0.75rem, 1.125vw, 1.125rem); 
-    font-weight: 500; 
+    font-weight: 700; 
+    letter-spacing: 0.5px;
     color: darkslategray; 
 }
 

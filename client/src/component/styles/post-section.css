@@ -1,5 +1,5 @@
 
-.post-section { margin: 3vh 0 5vh 0; flex-direction: column; row-gap: 2vh; }
+.post-section { margin: 3vh 0 5vh 0; flex-direction: column; row-gap: 2vh; width: 99%; }
 
 .post-form { flex-wrap: wrap; column-gap: 1vw; width: 100%; background: white; border-radius: 0.5rem; }
 .post-form-header { 
@@ -10,8 +10,9 @@
     padding: 3.5vh 2.5vw;
     font-weight: 700;
     color: white;
-    background: linear-gradient(to right, darkslategray 20%, slategray);
     width: 100%;
+    background: linear-gradient(to right, darkslategray 20%, slategray);
+    box-shadow: 0 0 10px darkslategray;
     border-radius: 0.25rem;
 }
 .post-form-header-text { justify-content: center; flex-wrap: wrap; column-gap: 0.5vw; row-gap: 1vh; }

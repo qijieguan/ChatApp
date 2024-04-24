@@ -1,12 +1,10 @@
 import './styles/menu.css';
-import { AiFillHome, AiOutlineSearch } from 'react-icons/ai';
-import { BsSearch } from 'react-icons/bs';
-import { FaUserFriends } from 'react-icons/fa';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { BsFilePersonFill, BsFillChatDotsFill } from 'react-icons/bs';
 import { MdArrowDropDown } from 'react-icons/md';
-import { IoIosPeople } from 'react-icons/io';
 import { RiMenu2Fill } from 'react-icons/ri';
-import { BiCommentMinus , BiLogIn } from 'react-icons/bi';
+import { BiLogIn } from 'react-icons/bi';
+import { SiMusicbrainz } from "react-icons/si";
 
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
@@ -76,72 +74,38 @@ const Menu = () => {
     return (
         <div className='menu flex' >
             <div className="menu-bar flex" style={{display: !sessionStorage.getItem('isLogged') && 'none'}}>
-                <RiMenu2Fill className='menu-icon' onClick={() => {handleToggleSideNav()}}/>
-            
-                {window.location.href.includes('Dashboard/Post') &&
-                    <div className='menu-label-wrapper flex'>
-                        <AiFillHome className="menu-li-icon"/>
-                        <span>Home</span>
-                    </div>
-                }
-                {window.location.href.includes('/Chat') &&
-                    <div className='menu-label-wrapper flex'>
-                        <BsFillChatDotsFill className="menu-li-icon"/>
-                        <span>Chat</span>
-                    </div>
-                }
-                {window.location.href.includes('/Friend') &&
-                    <div className='menu-label-wrapper flex'>
-                        <FaUserFriends className="menu-li-icon"/>
-                        <span>Friends</span>
-                    </div>
-                }
-                {window.location.href.includes('/Search') &&
-                    <div className='menu-label-wrapper flex'>
-                        <BsSearch className="menu-li-icon"/>
-                        <span>Discover</span>
-                    </div>
-                }
-                {window.location.href.includes('/Profile') &&
-                    <div className='menu-label-wrapper flex'>
-                        <BsFilePersonFill className="menu-li-icon"/>
-                        <span>Profile</span>
-                    </div>
-                }
-                {window.location.href.includes('Dashboard/Community') && !window.location.href.includes('Post') &&
-                    <div className='menu-label-wrapper flex'>
-                        <IoIosPeople className="menu-li-icon community-icon"/>
-                        <span>Community</span>
-                    </div>
-                }
-                {window.location.href.includes('/Comment') &&
-                    <div className='menu-label-wrapper flex'>
-                        <BiCommentMinus className='menu-li-icon'/>
-                        <span>Comment</span>
-                    </div>
-                }
-
-                <div className='menu-li-search flex' onClick={handleToggleSearch}>
-                    <AiOutlineSearch color='rgb(100, 100, 100)'/>
+                <div className='menu-icon-wrapper'>
+                    <RiMenu2Fill className='menu-icon' onClick={() => {handleToggleSideNav()}}/>
                 </div>
+            
+                <label className='menu-logo flex'>
+                    VeeChat
+                    <SiMusicbrainz className='menu-btn-icon'/>
+                </label>
 
                 <div className='menu-li-wrapper flex'>
-                    <Link to='/Dashboard/Post' className="menu-li" id="/Dashboard" onClick={handleClick} >
+                    <Link to='/Dashboard/Post' className="menu-li" id="/Dashboard" onClick={(e) => {handleClick(e)}} >
                         <div>Explore</div>
                     </Link>
-                    <Link to='/Dashboard/Friend' className="menu-li" id="/Friend" onClick={handleClick}>
+                    <Link to='/Dashboard/Friend' className="menu-li" id="/Friend" onClick={(e) => {handleClick(e)}}>
                         <div>Mutual Friends</div>
                     </Link>
-                    <Link to="/Dashboard/Search" className="menu-li" id="/Search" onClick={handleClick}>
+                    <Link to="/Dashboard/Search" className="menu-li" id="/Search" onClick={(e) => {handleClick(e)}}>
                         <div>Discover People</div>
                     </Link>
                 </div>
 
-                <Link to="/Dashboard/Chat">
-                    <div className="message-icon flex">
-                        <BsFillChatDotsFill/>
+                <div className='menu-nav-li flex'>  
+                    <div className='menu-li-search flex' onClick={() => {handleToggleSearch()}}>
+                        <AiOutlineSearch color='rgb(100, 100, 100)'/>
                     </div>
-                </Link>
+
+                    <Link to="/Dashboard/Chat">
+                        <div className="message-icon flex">
+                            <BsFillChatDotsFill/>
+                        </div>
+                    </Link>
+                </div>
                 
                 <div className="menu-dropdown flex">
                     <div className='menu-user'>{user.firstname} {user.lastname.substring(0, 1)}</div>

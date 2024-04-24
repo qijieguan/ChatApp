@@ -1,6 +1,8 @@
 import './styles/header.css';
+import { SiMusicbrainz } from "react-icons/si";
+
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -54,7 +56,10 @@ const Header = () => {
         <> 
             {!sessionStorage.getItem("isLogged") ?
                 <header className='app-header flex'>
-                    <label className='app-logo'>VeeChat</label>
+                    <label className='app-logo flex'>
+                        VeeChat
+                        <SiMusicbrainz className='app-logo-icon'/>
+                    </label>
                     <div className="header-btns flex">
                         <Link to='/'><button className="header-btn login-btn" onClick={(e) => {toggleBtn(e)}}>Login</button></Link>
                         <button className='header-btn features-btn' onClick={() => {navRootRoute()}}>Features</button>
